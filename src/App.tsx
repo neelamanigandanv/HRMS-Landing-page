@@ -1,8 +1,11 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ScrollToTop from "./components/common/ScrollToTop";
+import CookieBanner from "./components/common/CookieBanner";
+import { DemoModalProvider } from "./context/DemoModalContext";
 import Home from "./pages/Home";
 import ProductOverview from "./pages/ProductOverview";
 import FeaturePage from "./pages/FeaturePage";
+import EmployeeManagementPage from "./pages/EmployeeManagementPage";
 import SolutionsOverview from "./pages/SolutionsOverview";
 import SolutionPage from "./pages/SolutionPage";
 import ResourcesOverview from "./pages/ResourcesOverview";
@@ -53,52 +56,56 @@ export function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <Routes>
-        {/* Core & Homepage */}
-        <Route path="/" element={<Home />} />
+      <CookieBanner />
+      <DemoModalProvider>
+        <Routes>
+          {/* Core & Homepage */}
+          <Route path="/" element={<Home />} />
 
-        {/* Product & Features */}
-        <Route path="/product" element={<ProductOverview />} />
-        <Route path="/features/:slug" element={<FeaturePage />} />
+          {/* Product & Features */}
+          <Route path="/product" element={<ProductOverview />} />
+          <Route path="/features/employee-management" element={<EmployeeManagementPage />} />
+          <Route path="/features/:slug" element={<FeaturePage />} />
 
-        {/* Solutions */}
-        <Route path="/solutions" element={<SolutionsOverview />} />
-        <Route path="/solutions/:slug" element={<SolutionPage />} />
+          {/* Solutions */}
+          <Route path="/solutions" element={<SolutionsOverview />} />
+          <Route path="/solutions/:slug" element={<SolutionPage />} />
 
-        {/* Resources & Support */}
-        <Route path="/resources" element={<ResourcesOverview />} />
-        <Route path="/resources/blog" element={<BlogList />} />
-        <Route path="/resources/blog/:slug" element={<BlogPost />} />
-        <Route path="/resources/hrms-glossary" element={<GlossaryPage />} />
-        <Route path="/resources/faqs" element={<FAQPage />} />
-        <Route path="/help" element={<HelpCenter />} />
-        <Route path="/help/getting-started" element={<GettingStartedPage />} />
-        <Route path="/support" element={<SupportPage />} />
-        <Route path="/resources/case-studies" element={<CaseStudiesPage />} />
+          {/* Resources & Support */}
+          <Route path="/resources" element={<ResourcesOverview />} />
+          <Route path="/resources/blog" element={<BlogList />} />
+          <Route path="/resources/blog/:slug" element={<BlogPost />} />
+          <Route path="/resources/hrms-glossary" element={<GlossaryPage />} />
+          <Route path="/resources/faqs" element={<FAQPage />} />
+          <Route path="/help" element={<HelpCenter />} />
+          <Route path="/help/getting-started" element={<GettingStartedPage />} />
+          <Route path="/support" element={<SupportPage />} />
+          <Route path="/resources/case-studies" element={<CaseStudiesPage />} />
 
-        {/* Company */}
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/partners" element={<PartnersPage />} />
-        <Route path="/careers" element={<CareersPage />} />
-        <Route path="/security" element={<SecurityPage />} />
+          {/* Company */}
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/partners" element={<PartnersPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/security" element={<SecurityPage />} />
 
-        {/* Conversion */}
-        <Route path="/request-demo" element={<RequestDemoPage />} />
-        <Route path="/thank-you" element={<ThankYouPage />} />
+          {/* Conversion */}
+          <Route path="/request-demo" element={<RequestDemoPage />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
 
-        {/* Legal */}
-        <Route path="/privacy-policy" element={<LegalPage />} />
-        <Route path="/cookie-policy" element={<LegalPage />} />
-        <Route path="/terms-of-service" element={<LegalPage />} />
-        <Route path="/data-processing-agreement" element={<LegalPage />} />
+          {/* Legal */}
+          <Route path="/privacy-policy" element={<LegalPage />} />
+          <Route path="/cookie-policy" element={<LegalPage />} />
+          <Route path="/terms-of-service" element={<LegalPage />} />
+          <Route path="/data-processing-agreement" element={<LegalPage />} />
 
-        {/* Discovery & Sitemaps */}
-        <Route path="/sitemap" element={<SitemapPage />} />
+          {/* Discovery & Sitemaps */}
+          <Route path="/sitemap" element={<SitemapPage />} />
 
-        {/* Fallback 404 */}
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+          {/* Fallback 404 */}
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </DemoModalProvider>
     </BrowserRouter>
   );
 }

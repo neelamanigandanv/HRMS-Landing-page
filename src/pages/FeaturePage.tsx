@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import FeatureTemplate from "../components/templates/FeatureTemplate";
+import EmployeeManagementPage from "./EmployeeManagementPage";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Button from "../components/ui/Button";
@@ -8,6 +9,11 @@ import { featuresMap } from "../data/featuresData";
 
 export function FeaturePage() {
   const { slug } = useParams<{ slug: string }>();
+
+  if (slug === "employee-management") {
+    return <EmployeeManagementPage />;
+  }
+
   const feature = slug ? featuresMap[slug] : null;
 
   if (!feature) {

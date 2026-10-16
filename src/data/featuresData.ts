@@ -7,6 +7,45 @@ export interface FeatureCapability {
   tag?: string;
 }
 
+export interface DemoTabRow {
+  badge: string;
+  badgeColor?: "green" | "purple" | "orange" | "blue";
+  title: string;
+  desc: string;
+  value: string;
+}
+
+export interface DemoTabItem {
+  id: string;
+  label: string;
+  icon: IconName;
+  title: string;
+  subtitle: string;
+  kpis: { value: string; label: string }[];
+  rows: DemoTabRow[];
+}
+
+export interface WorkflowStep {
+  step: string;
+  title: string;
+  desc: string;
+  icon: IconName;
+}
+
+export interface ConnectedModuleItem {
+  slug: string;
+  title: string;
+  icon: IconName;
+  desc: string;
+}
+
+export interface BusinessValueItem {
+  metric: string;
+  title: string;
+  desc: string;
+  icon: IconName;
+}
+
 export interface FeatureData {
   slug: string;
   title: string;
@@ -25,6 +64,10 @@ export interface FeatureData {
   mockupSubtitle: string;
   roiStats: { value: string; label: string; desc: string }[];
   faqs: { q: string; a: string }[];
+  demoTabs?: DemoTabItem[];
+  workflowSteps?: WorkflowStep[];
+  connectedModules?: ConnectedModuleItem[];
+  businessValues?: BusinessValueItem[];
 }
 
 export const featuresMap: Record<string, FeatureData> = {
@@ -114,6 +157,134 @@ export const featuresMap: Record<string, FeatureData> = {
       {
         q: "Can custom fields be added to employee profiles?",
         a: "Yes. You can define custom text, date, or dropdown fields such as Uniform Size, Work Permit Expiry, or Laptop Serial Number.",
+      },
+    ],
+    demoTabs: [
+      {
+        id: "profile",
+        label: "Digital Profile",
+        icon: "employee",
+        title: "Master Employee Record",
+        subtitle: "Unified profile connecting personal, banking, and branch data",
+        kpis: [
+          { value: "248 Staff", label: "Active Team Members" },
+          { value: "100%", label: "KYC Documents Verified" },
+          { value: "3 Hubs", label: "Connected Branches" },
+        ],
+        rows: [
+          { badge: "Active", badgeColor: "green", title: "Priya Sharma • Sr. Engineer", desc: "Engineering • Koramangala Hub • Reports to Rahul Nair", value: "Verified ✓" },
+          { badge: "Compliant", badgeColor: "green", title: "KYC & Identity Vault", desc: "Aadhaar, PAN & Bank Details securely validated", value: "100% Stored" },
+          { badge: "Assigned", badgeColor: "blue", title: "Equipment Custody", desc: "MacBook Pro M3 Max (LT-9824) handover signed", value: "In Custody" },
+          { badge: "Emergency", badgeColor: "purple", title: "Emergency Contact", desc: "Sunita Sharma (Parent) • Verified phone record", value: "Logged" },
+        ],
+      },
+      {
+        id: "org",
+        label: "Org Hierarchy",
+        icon: "branch",
+        title: "Dynamic Reporting Structures",
+        subtitle: "Visual departmental hierarchies and multi-tier approval chains",
+        kpis: [
+          { value: "8 Teams", label: "Departments" },
+          { value: "4 Levels", label: "Managerial Tiers" },
+          { value: "6 Roles", label: "Open Requisitions" },
+        ],
+        rows: [
+          { badge: "Department", badgeColor: "purple", title: "Product & Engineering", desc: "48 Members • Led by Vikram Nair (VP Eng)", value: "Hierarchy Live" },
+          { badge: "Department", badgeColor: "purple", title: "Sales & Client Growth", desc: "36 Members • Led by Rohan Mehta (Director)", value: "Hierarchy Live" },
+          { badge: "Department", badgeColor: "purple", title: "Finance & Taxation", desc: "18 Members • Led by Priya Shah (Head of Finance)", value: "Hierarchy Live" },
+          { badge: "Department", badgeColor: "purple", title: "People Operations (HR)", desc: "12 Members • Led by Ananya Kapoor (VP HR)", value: "Hierarchy Live" },
+        ],
+      },
+      {
+        id: "lifecycle",
+        label: "Life-Cycle Milestones",
+        icon: "calendar",
+        title: "Onboarding & Exit Timeline",
+        subtitle: "Track probations, contract renewals, anniversaries, and offboarding",
+        kpis: [
+          { value: "2 Today", label: "New Joiners" },
+          { value: "3 Due", label: "Probation Reviews" },
+          { value: "4 This Month", label: "Work Anniversaries" },
+        ],
+        rows: [
+          { badge: "Onboarding", badgeColor: "green", title: "Amit Kumar • Frontend Developer", desc: "Self-onboarding packet submitted & verified", value: "Joined Today" },
+          { badge: "Review Due", badgeColor: "orange", title: "Kavya S. • Associate PM", desc: "90-day probation review due in 7 days", value: "Action Required" },
+          { badge: "Milestone", badgeColor: "purple", title: "Rohan M. • 3 Year Anniversary", desc: "Company milestone badge granted", value: "Celebrated" },
+          { badge: "Exit", badgeColor: "blue", title: "Asset Recovery & Clearance", desc: "IT and Finance sign-off completed", value: "3/4 Signed" },
+        ],
+      },
+    ],
+    workflowSteps: [
+      {
+        step: "01",
+        title: "Digital Onboarding",
+        desc: "Send digital invitation links for candidates to upload KYC documents and bank records prior to day one.",
+        icon: "employee",
+      },
+      {
+        step: "02",
+        title: "Profile Verification",
+        desc: "HR validates identity paperwork and provisions branch rosters, departmental tags, and cost centers.",
+        icon: "document",
+      },
+      {
+        step: "03",
+        title: "Org Hierarchy Sync",
+        desc: "Dynamic organization charts redraw automatically as reporting lines and managerial structures evolve.",
+        icon: "branch",
+      },
+      {
+        step: "04",
+        title: "Lifecycle Milestones",
+        desc: "Automate probation reviews, promotion logs, equipment custody, and exit clearance checklists in one ledger.",
+        icon: "calendar",
+      },
+    ],
+    connectedModules: [
+      {
+        slug: "attendance-management",
+        title: "Attendance Management",
+        icon: "attendance",
+        desc: "Assigns shift rosters, biometric terminal IDs, and office geofence perimeters based on branch records.",
+      },
+      {
+        slug: "leave-management",
+        title: "Leave Management",
+        icon: "leave",
+        desc: "Inherits reporting managers and department heads for automated multi-tier leave approval chains.",
+      },
+      {
+        slug: "payroll-management",
+        title: "Payroll Management",
+        icon: "payroll",
+        desc: "Transfers salary structure templates, bank account numbers, and statutory PF/ESI identifiers directly.",
+      },
+    ],
+    businessValues: [
+      {
+        metric: "1 Master Ledger",
+        title: "Single Source of Truth",
+        desc: "Eliminate duplicate spreadsheets and outdated personnel folders across multiple branch locations.",
+        icon: "document",
+      },
+      {
+        metric: "2× Faster",
+        title: "Rapid Digital Onboarding",
+        desc: "Get new hires paperwork-complete, KYC-verified, and assigned to teams before their first morning in the office.",
+        icon: "clock",
+      },
+      {
+        metric: "Bank-Grade",
+        title: "Granular Privacy & Access",
+        desc: "Strict role-based permissions ensure confidential salary bands and personal papers remain protected.",
+        icon: "shield",
+      },
+      {
+        metric: "100% Audit Ready",
+        title: "Complete Change Audit Trail",
+        desc: "Maintain point-in-time promotion logs, transfer histories, and salary revision documentation.",
+        icon: "check",
       },
     ],
   },
@@ -206,6 +377,134 @@ export const featuresMap: Record<string, FeatureData> = {
         a: "Yes. You can enable 'Client Site Punch' with GPS tagging for field staff, allowing them to record their visits with live location stamps.",
       },
     ],
+    demoTabs: [
+      {
+        id: "daily-attendance",
+        label: "Daily Attendance",
+        icon: "attendance",
+        title: "Real-Time Branch Clock-In Roster",
+        subtitle: "Verified biometric punches and GPS mobile geofenced check-ins",
+        kpis: [
+          { value: "94.2%", label: "On-Time Arrival" },
+          { value: "228 / 248", label: "Present Today" },
+          { value: "0", label: "Proxy Punches" },
+        ],
+        rows: [
+          { badge: "On Time", badgeColor: "green", title: "Priya Sharma • Koramangala Hub", desc: "Mobile punch verified via GPS (09:12 AM) • Lat: 12.9352", value: "Verified ✓" },
+          { badge: "Biometric", badgeColor: "purple", title: "Vikram Nair • Mumbai HQ", desc: "eSSL biometric scanner terminal #02 (09:18 AM)", value: "Device Synced" },
+          { badge: "Field Punch", badgeColor: "blue", title: "Rohan Mehta • Client Visit", desc: "Geo-tagged punch with location selfie (09:25 AM)", value: "Approved" },
+          { badge: "Late (Grace)", badgeColor: "orange", title: "Kavya S. • Delhi Office", desc: "Checked in at 09:38 AM (within 15-min grace window)", value: "Grace Used" },
+        ],
+      },
+      {
+        id: "employee-records",
+        label: "Employee Records",
+        icon: "employee",
+        title: "Punch Logs & Regularization History",
+        subtitle: "Complete audit trail of clock-ins, clock-outs, and overtime approvals",
+        kpis: [
+          { value: "100%", label: "Device Sync Uptime" },
+          { value: "4 Req", label: "Pending Regularization" },
+          { value: "8.4 hrs", label: "Avg Shift Duration" },
+        ],
+        rows: [
+          { badge: "Completed", badgeColor: "green", title: "Arjun Malhotra • 8 hrs 42 mins", desc: "Clock In: 09:05 AM | Clock Out: 05:47 PM • 0 Penalties", value: "Valid Day" },
+          { badge: "Regularized", badgeColor: "blue", title: "Neha Srinivasan • Forgot Punch", desc: "Manager approved missed punch regularization request", value: "Corrected" },
+          { badge: "Overtime", badgeColor: "purple", title: "Devendra Patil • Production", desc: "Approved 2.5 overtime hours logged for weekend release", value: "+2.5 hrs OT" },
+          { badge: "Half Day", badgeColor: "orange", title: "Sunita Verma • First Half Off", desc: "Clock In: 01:45 PM • Logged as half-day present", value: "Half Day" },
+        ],
+      },
+      {
+        id: "shift-overview",
+        label: "Shift Overview",
+        icon: "calendar",
+        title: "Rotational Shifts & Roster Coverage",
+        subtitle: "Multi-branch shift templates, weekend rotations, and coverage planning",
+        kpis: [
+          { value: "4 Shifts", label: "Active Branch Rosters" },
+          { value: "100%", label: "Weekend Shift Coverage" },
+          { value: "3 Hubs", label: "Synchronized Schedules" },
+        ],
+        rows: [
+          { badge: "General", badgeColor: "green", title: "General Office Shift (09:00 - 18:00)", desc: "186 employees assigned • 45 min flexible lunch window", value: "Active" },
+          { badge: "Morning", badgeColor: "blue", title: "Early Support Roster (07:00 - 16:00)", desc: "24 customer support specialists • Mumbai & Bengaluru", value: "Active" },
+          { badge: "Night Shift", badgeColor: "purple", title: "Operations Night Roster (22:00 - 06:00)", desc: "18 logistics managers • Night allowance active", value: "Active" },
+          { badge: "Rotation", badgeColor: "orange", title: "Upcoming Weekend Shift Rotation", desc: "Auto-rotation scheduled for Monday morning roster swap", value: "Scheduled" },
+        ],
+      },
+    ],
+    workflowSteps: [
+      {
+        step: "01",
+        title: "Record Attendance",
+        desc: "Workers clock in using geofenced mobile apps, facial recognition kiosks, or connected biometric terminals.",
+        icon: "attendance",
+      },
+      {
+        step: "02",
+        title: "Review Working Hours",
+        desc: "The automated rule engine calculates total working hours, breaks, grace periods, and late arrival tallies.",
+        icon: "clock",
+      },
+      {
+        step: "03",
+        title: "Handle Exceptions",
+        desc: "Managers approve punch regularization requests, assign comp-offs, and clear missing check-out flags.",
+        icon: "check",
+      },
+      {
+        step: "04",
+        title: "Generate Reports",
+        desc: "Push clean, validated attendance and overtime logs directly into payroll with zero manual spreadsheet reconciliation.",
+        icon: "reports",
+      },
+    ],
+    connectedModules: [
+      {
+        slug: "employee-management",
+        title: "Employee Management",
+        icon: "employee",
+        desc: "Provides branch rosters, department hierarchies, and manager reporting lines for shift assignment.",
+      },
+      {
+        slug: "leave-management",
+        title: "Leave Management",
+        icon: "leave",
+        desc: "Synchronizes approved leaves and holidays so absent employees are not flagged as unexcused missing punches.",
+      },
+      {
+        slug: "payroll-management",
+        title: "Payroll Management",
+        icon: "payroll",
+        desc: "Transfers payable days, overtime hours, and late-mark deductions directly to month-end salary calculations.",
+      },
+    ],
+    businessValues: [
+      {
+        metric: "100%",
+        title: "Zero Buddy Punching",
+        desc: "GPS coordinates, geofences, and biometric hardware ensure verified physical presence at work.",
+        icon: "shield",
+      },
+      {
+        metric: "0 Hours",
+        title: "No Month-End Chasing",
+        desc: "Attendance feeds directly into payroll, eliminating days spent auditing missing register entries.",
+        icon: "clock",
+      },
+      {
+        metric: "Real-Time",
+        title: "Live Branch Visibility",
+        desc: "Instantly view who is clocked in, on client visits, or late across every branch location.",
+        icon: "globe",
+      },
+      {
+        metric: "Automatic",
+        title: "Precise Overtime Rules",
+        desc: "Automatically calculate overtime pay and comp-off credits according to company shift policies.",
+        icon: "wallet",
+      },
+    ],
   },
 
   "leave-management": {
@@ -296,6 +595,134 @@ export const featuresMap: Record<string, FeatureData> = {
         a: "Yes. Unused earned leaves are automatically calculated based on daily basic pay during exit clearance.",
       },
     ],
+    demoTabs: [
+      {
+        id: "leave-balances",
+        label: "Leave Balances & Accruals",
+        icon: "leave",
+        title: "Transparent Absence Ledger",
+        subtitle: "Real-time employee leave quotas, monthly accruals, and carry-forward limits",
+        kpis: [
+          { value: "14.5 Days", label: "Avg Team Balance" },
+          { value: "08 Staff", label: "Currently on Leave" },
+          { value: "100%", label: "Accrual Automation" },
+        ],
+        rows: [
+          { badge: "Casual Leave", badgeColor: "blue", title: "Casual Leave (CL) Quota", desc: "8.0 days available • 1.0 day accrued on the 1st of every month", value: "8.0 Left" },
+          { badge: "Earned Leave", badgeColor: "green", title: "Earned / Privilege Leave (EL)", desc: "14.5 days available • Encashable up to 30 days on exit", value: "14.5 Left" },
+          { badge: "Sick Leave", badgeColor: "purple", title: "Sick & Medical Leave (SL)", desc: "6.0 days available • Medical certificate required if > 2 days", value: "6.0 Left" },
+          { badge: "Maternity/Pat", badgeColor: "orange", title: "Parental Statutory Leaves", desc: "26 weeks paid maternity • 10 days paternity leave", value: "Available" },
+        ],
+      },
+      {
+        id: "approval-queue",
+        label: "Approval Queue",
+        icon: "check",
+        title: "Manager Routing & Conflict Detection",
+        subtitle: "Instant 1-click approvals with departmental staffing conflict alerts",
+        kpis: [
+          { value: "4 mins", label: "Avg Approval Speed" },
+          { value: "3 Pending", label: "Awaiting Action" },
+          { value: "0 Conflicts", label: "Staffing Safe" },
+        ],
+        rows: [
+          { badge: "Pending", badgeColor: "orange", title: "Priya Shah • Casual Leave (2 Days)", desc: "18 Mar - 19 Mar • Reason: Family wedding • No team overlap", value: "Needs Review" },
+          { badge: "Approved", badgeColor: "green", title: "Rohan Mehta • Sick Leave (1 Day)", desc: "14 Mar • Approved by Team Lead Vikram Nair", value: "Approved ✓" },
+          { badge: "Approved", badgeColor: "green", title: "Kavya S. • Work From Home", desc: "12 Mar • Single-day remote work authorized", value: "Approved ✓" },
+          { badge: "Notice", badgeColor: "purple", title: "Sandwich Rule Verification", desc: "Weekend between Friday & Monday evaluated per policy", value: "Verified" },
+        ],
+      },
+      {
+        id: "holiday-calendars",
+        label: "Holiday Calendars",
+        icon: "calendar",
+        title: "Multi-Branch Regional Calendars",
+        subtitle: "State-specific festive dates and statutory holiday schedules",
+        kpis: [
+          { value: "12 Days", label: "Statutory Holidays" },
+          { value: "3 Hubs", label: "State Calendars" },
+          { value: "2 Optional", label: "Restricted Holidays" },
+        ],
+        rows: [
+          { badge: "Maharashtra", badgeColor: "green", title: "Mumbai HQ • Maharashtra Day (1 May)", desc: "Mandatory state holiday applied to Mumbai branch roster", value: "State Holiday" },
+          { badge: "Karnataka", badgeColor: "blue", title: "Bengaluru Hub • Rajyotsava (1 Nov)", desc: "Mandatory state holiday applied to Bengaluru team roster", value: "State Holiday" },
+          { badge: "National", badgeColor: "purple", title: "Independence Day (15 Aug)", desc: "Company-wide paid statutory holiday across all branch hubs", value: "Pan-India" },
+          { badge: "Restricted", badgeColor: "orange", title: "Optional Festival Holiday (RH)", desc: "Employees choose 2 out of 5 regional festivals per year", value: "Self-Select" },
+        ],
+      },
+    ],
+    workflowSteps: [
+      {
+        step: "01",
+        title: "Check Balance & Apply",
+        desc: "Employees view remaining leave balances on their mobile app and submit requests in under 30 seconds.",
+        icon: "leave",
+      },
+      {
+        step: "02",
+        title: "Conflict Radar Check",
+        desc: "The system automatically scans departmental rosters to alert managers if multiple team members request overlapping dates.",
+        icon: "search",
+      },
+      {
+        step: "03",
+        title: "1-Click Manager Sign-Off",
+        desc: "Managers approve or decline requests with custom notes directly from push notifications or email links.",
+        icon: "check",
+      },
+      {
+        step: "04",
+        title: "Automatic Payroll LOP Sync",
+        desc: "Approved leaves are classified as paid or unpaid, automatically updating Loss of Pay (LOP) deductions in payroll.",
+        icon: "payroll",
+      },
+    ],
+    connectedModules: [
+      {
+        slug: "attendance-management",
+        title: "Attendance Management",
+        icon: "attendance",
+        desc: "Marks approved leaves on daily clock-in rosters so absent workers are never marked as missing punches.",
+      },
+      {
+        slug: "payroll-management",
+        title: "Payroll Management",
+        icon: "payroll",
+        desc: "Calculates Loss of Pay (LOP) salary deductions and tracks earned leave encashment payouts accurately.",
+      },
+      {
+        slug: "employee-management",
+        title: "Employee Management",
+        icon: "employee",
+        desc: "Links managerial hierarchies and branch holiday calendars based on employee department and office location.",
+      },
+    ],
+    businessValues: [
+      {
+        metric: "4 Mins",
+        title: "Rapid Mobile Approvals",
+        desc: "Eliminate WhatsApp chains and paper slips with instant smartphone notifications and quick approvals.",
+        icon: "clock",
+      },
+      {
+        metric: "Zero",
+        title: "Dispute-Free Accruals",
+        desc: "Transparent digital balances prevent year-end arguments over remaining casual and sick leave quotas.",
+        icon: "check",
+      },
+      {
+        metric: "100%",
+        title: "Automated LOP Deductions",
+        desc: "Unapproved absences and unpaid time off flow directly into payroll without manual spreadsheet data entry.",
+        icon: "wallet",
+      },
+      {
+        metric: "Multi-State",
+        title: "Regional Holiday Compliance",
+        desc: "Easily configure independent holiday calendars for Mumbai, Bengaluru, Delhi, and remote workforces.",
+        icon: "globe",
+      },
+    ],
   },
 
   "payroll-management": {
@@ -334,13 +761,13 @@ export const featuresMap: Record<string, FeatureData> = {
     capabilities: [
       {
         title: "Statutory Compliance Engine",
-        desc: "Built-in statutory rules for Indian PF (12%), ESI (0.75% / 3.25%), state-specific PT slabs, and income tax.",
+        desc: "Built-in statutory rules for provident fund contributions, healthcare deductions, state-specific tax slabs, and income tax withholdings.",
         icon: "shield",
         tag: "100% Compliant",
       },
       {
         title: "1-Click Bank Payouts",
-        desc: "Generate formatted NEFT/RTGS payment sheets for all major commercial banks in India.",
+        desc: "Generate formatted disbursement files and payment sheets for all major commercial banks.",
         icon: "download",
       },
       {
@@ -384,6 +811,134 @@ export const featuresMap: Record<string, FeatureData> = {
       {
         q: "What reports are available for our chartered accountant?",
         a: "LattiumHR generates PF ECR text files, ESIC monthly return summaries, PT state-wise challans, TDS 24Q quarterly sheets, and detailed salary registers.",
+      },
+    ],
+    demoTabs: [
+      {
+        id: "salary-register",
+        label: "Salary Register",
+        icon: "payroll",
+        title: "Master Payroll Calculation Register",
+        subtitle: "Gross earnings, statutory withholdings, and calculated net payouts",
+        kpis: [
+          { value: "₹28.42L", label: "Total Net Pay" },
+          { value: "248 Staff", label: "Processed in Run" },
+          { value: "100%", label: "Bank File Ready" },
+        ],
+        rows: [
+          { badge: "Processed", badgeColor: "green", title: "Engineering (48 Staff)", desc: "Gross: ₹11.2L • Deductions: ₹2.1L • Net: ₹9.1L", value: "Verified ✓" },
+          { badge: "Processed", badgeColor: "green", title: "Sales & Client Success (36 Staff)", desc: "Gross: ₹8.4L • Deductions: ₹1.6L • Net: ₹6.8L", value: "Verified ✓" },
+          { badge: "Processed", badgeColor: "green", title: "Operations & HR (28 Staff)", desc: "Gross: ₹5.2L • Deductions: ₹1.0L • Net: ₹4.2L", value: "Verified ✓" },
+          { badge: "Overtime", badgeColor: "purple", title: "Approved Overtime Payouts", desc: "42 hours calculated at double hourly wage rate", value: "₹38,500 Added" },
+        ],
+      },
+      {
+        id: "statutory-compliance",
+        label: "Statutory Compliance",
+        icon: "shield",
+        title: "Statutory Deductions & Challan Files",
+        subtitle: "Provident Fund, ESI, Professional Tax, and Income Tax withholdings",
+        kpis: [
+          { value: "100%", label: "Statutory Accuracy" },
+          { value: "4 Challans", label: "Generated Instantly" },
+          { value: "₹0", label: "Non-Compliance Risk" },
+        ],
+        rows: [
+          { badge: "PF ECR", badgeColor: "blue", title: "Provident Fund (EPFO ECR)", desc: "12% Employee + 12% Employer contributions computed", value: "ECR File Ready" },
+          { badge: "ESIC", badgeColor: "green", title: "Employee State Insurance (ESIC)", desc: "0.75% Employee + 3.25% Employer computed for eligible staff", value: "Return Ready" },
+          { badge: "PT Slabs", badgeColor: "purple", title: "State-Wise Professional Tax (PT)", desc: "Maharashtra, Karnataka, and Delhi regional slabs mapped", value: "Auto-Synced" },
+          { badge: "TDS 24Q", badgeColor: "orange", title: "Income Tax Deductions (TDS)", desc: "New vs Old tax regime deductions itemized per employee", value: "Challan 281" },
+        ],
+      },
+      {
+        id: "bank-payouts",
+        label: "Bank Payouts & Payslips",
+        icon: "download",
+        title: "1-Click Bank Disbursement Files",
+        subtitle: "Direct salary transfer files and instant encrypted PDF payslip generation",
+        kpis: [
+          { value: "HDFC / ICICI", label: "Bank Formats" },
+          { value: "248 PDFs", label: "Encrypted Payslips" },
+          { value: "30 Mins", label: "Total Cycle Time" },
+        ],
+        rows: [
+          { badge: "Batch Ready", badgeColor: "green", title: "Corporate Banking Payout Batch", desc: "Standard CMS/NEFT file generated with validated IFSC & A/C", value: "Download Ready" },
+          { badge: "Payslips", badgeColor: "blue", title: "Mobile Self-Service Payslips", desc: "Password-protected PDFs published to mobile app wallets", value: "Published" },
+          { badge: "WhatsApp", badgeColor: "green", title: "Salary Credit Notification", desc: "Automated SMS and email confirmation dispatched to staff", value: "Automated" },
+          { badge: "Ledger", badgeColor: "purple", title: "ERP & Accounting Journal Export", desc: "Tally / Zoho Books debit & credit ledger entries formatted", value: "Export Ready" },
+        ],
+      },
+    ],
+    workflowSteps: [
+      {
+        step: "01",
+        title: "Attendance & LOP Sync",
+        desc: "Pull finalized payable days, biometric hours, overtime records, and unpaid leave deductions automatically.",
+        icon: "clock",
+      },
+      {
+        step: "02",
+        title: "Statutory Computation",
+        desc: "Calculate PF, ESI, Professional Tax slabs, and TDS tax brackets with automatic validation rules.",
+        icon: "shield",
+      },
+      {
+        step: "03",
+        title: "Pre-Disbursement Review",
+        desc: "Preview gross-to-net salary variance reports, inspect department totals, and clear any payroll adjustments.",
+        icon: "check",
+      },
+      {
+        step: "04",
+        title: "Bank Payout & Payslips",
+        desc: "Download formatted bank disbursement files and publish encrypted payslips to employee mobile wallets.",
+        icon: "download",
+      },
+    ],
+    connectedModules: [
+      {
+        slug: "attendance-management",
+        title: "Attendance Management",
+        icon: "attendance",
+        desc: "Supplies verified punch logs, overtime hours, and late-arrival penalty deductions directly into payroll.",
+      },
+      {
+        slug: "leave-management",
+        title: "Leave Management",
+        icon: "leave",
+        desc: "Provides Loss of Pay (LOP) absence days and accrued earned leave encashment calculations.",
+      },
+      {
+        slug: "documents-compliance",
+        title: "Documents & Compliance",
+        icon: "document",
+        desc: "Stores tax regime declarations, Form 16 certificates, and statutory audit registers in one encrypted vault.",
+      },
+    ],
+    businessValues: [
+      {
+        metric: "30 Mins",
+        title: "Rapid Payroll Execution",
+        desc: "Reduce your payroll cycle from 4 stressful days of spreadsheet formulas to under 30 minutes.",
+        icon: "clock",
+      },
+      {
+        metric: "100%",
+        title: "Zero Compliance Fines",
+        desc: "Automatic statutory calculations ensure timely and flawless EPFO, ESIC, PT, and TDS filings.",
+        icon: "shield",
+      },
+      {
+        metric: "Bank-Ready",
+        title: "Seamless Direct Deposits",
+        desc: "Generate error-free bank payment batch files formatted for HDFC, ICICI, SBI, and Axis Bank.",
+        icon: "download",
+      },
+      {
+        metric: "Transparent",
+        title: "Dispute-Free Payslips",
+        desc: "Clean digital payslips clearly break down basic pay, allowances, deductions, and work days.",
+        icon: "document",
       },
     ],
   },

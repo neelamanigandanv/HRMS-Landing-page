@@ -2,12 +2,12 @@ import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "re
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
-import CookieBanner from "../components/common/CookieBanner";
 import SEO from "../components/layout/SEO";
 import Logo from "../components/ui/Logo";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import Icon, { IconName } from "../components/ui/Icon";
+import { useDemoModal } from "../context/DemoModalContext";
 
 export function DemoForm({ compact = false }: { compact?: boolean }) {
   const [sent, setSent] = useState(false);
@@ -1207,7 +1207,7 @@ const faqs = [
     "Yes. Create branch-specific policies, holiday calendars, roles, and dashboards while keeping a unified company-wide view.",
   ],
   [
-    "Is payroll compliant with Indian regulations?",
+    "Is payroll compliant with statutory regulations?",
     "Yes. Payroll supports PF, ESI, PT, TDS, and other statutory requirements with ready-to-use reports.",
   ],
   [
@@ -1284,6 +1284,7 @@ function CountUp({
 }
 
 export function Home() {
+  const { openDemoModal } = useDemoModal();
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("main section");
     sections.forEach((section) => section.classList.add("reveal-section"));
@@ -1584,7 +1585,7 @@ export function Home() {
               <article>
                 <div className="quote-mark">“</div>
                 <p>
-                  The support during migration was exceptional. The team understood Indian payroll
+                  The support during migration was exceptional. The team understood complex statutory payroll
                   and helped us configure every policy correctly.
                 </p>
                 <div>
@@ -1626,7 +1627,7 @@ export function Home() {
                 LattiumHR.
               </p>
               <div className="final-actions">
-                <Button to="/request-demo">
+                <Button onClick={() => openDemoModal()}>
                   Book a Free Demo <Icon name="arrow" />
                 </Button>
                 <Button href="#pricing" secondary>
@@ -1653,12 +1654,11 @@ export function Home() {
       </main>
 
       <Footer />
-      <CookieBanner />
 
       <div className="mobile-sticky">
-        <Link to="/request-demo">
+        <button type="button" onClick={() => openDemoModal()}>
           Book a Demo <Icon name="arrow" />
-        </Link>
+        </button>
       </div>
     </div>
   );

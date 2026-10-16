@@ -1,20 +1,24 @@
 import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import CookieBanner from "../common/CookieBanner";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
+import { useDemoModal } from "../../context/DemoModalContext";
 
 interface PageLayoutProps {
   children: ReactNode;
   breadcrumbs?: unknown;
   hideCTA?: boolean;
+  onOpenDemo?: () => void;
 }
 
 export function PageLayout({
   children,
   hideCTA = false,
+  onOpenDemo,
 }: PageLayoutProps) {
+  const { openDemoModal } = useDemoModal();
+
   return (
     <div className="app-shell inner-page-shell">
       <Navbar />
@@ -31,7 +35,7 @@ export function PageLayout({
                 Join 500+ growing multi-branch businesses running HR, attendance, and payroll on LattiumHR.
               </p>
               <div className="final-actions">
-                <Button to="/request-demo">
+                <Button onClick={onOpenDemo || (() => openDemoModal())}>
                   Request a Free Demo <Icon name="arrow" />
                 </Button>
                 <Button to="/contact" secondary>
@@ -55,7 +59,6 @@ export function PageLayout({
       )}
 
       <Footer />
-      <CookieBanner />
     </div>
   );
 }

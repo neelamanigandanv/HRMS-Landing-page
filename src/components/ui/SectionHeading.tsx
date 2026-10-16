@@ -4,14 +4,14 @@ export function SectionHeading({
   body,
   center = false,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   body?: string;
   center?: boolean;
 }) {
   return (
     <div className={`section-heading ${center ? "center" : ""}`}>
-      <span className="eyebrow">{eyebrow}</span>
+      {eyebrow && <span className="eyebrow">{eyebrow}</span>}
       <h2>{title}</h2>
       {body && <p>{body}</p>}
     </div>

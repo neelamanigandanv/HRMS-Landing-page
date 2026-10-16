@@ -9,16 +9,40 @@ import {
   resourcesNavItems,
   NavLinkItem,
 } from "../../data/navigationData";
+import { useDemoModal } from "../../context/DemoModalContext";
 
 export function Navbar() {
+  const { openDemoModal } = useDemoModal();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>(null);
   const navRef = useRef<HTMLElement>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
+
+  const handleMouseEnter = (menuName: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
+    setActiveMenu(menuName);
+  };
+
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    timeoutRef.current = setTimeout(() => {
+      setActiveMenu(null);
+    }, 220);
+  };
 
   // Close menus on route change
   useEffect(() => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
     setActiveMenu(null);
     setMobileOpen(false);
     setMobileExpandedSection(null);
@@ -28,11 +52,19 @@ export function Navbar() {
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
         setActiveMenu(null);
       }
     };
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
         setActiveMenu(null);
         setMobileOpen(false);
       }
@@ -41,12 +73,19 @@ export function Navbar() {
     document.addEventListener("mousedown", handleClickOutside);
     document.addEventListener("keydown", handleKeyDown);
     return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
 
   const toggleDropdown = (menuName: string) => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+      timeoutRef.current = null;
+    }
     setActiveMenu((prev) => (prev === menuName ? null : menuName));
   };
 
@@ -77,8 +116,8 @@ export function Navbar() {
           {/* Product Dropdown */}
           <div
             className={`nav-dropdown-wrapper ${activeMenu === "product" ? "is-open" : ""}`}
-            onMouseEnter={() => setActiveMenu("product")}
-            onMouseLeave={() => setActiveMenu(null)}
+            onMouseEnter={() => handleMouseEnter("product")}
+            onMouseLeave={handleMouseLeave}
           >
             <button
               type="button"
@@ -88,11 +127,16 @@ export function Navbar() {
               aria-haspopup="true"
             >
               <span>Product</span>
-              <Icon name="chevron" size={14} className="dropdown-caret" />
+              <Icon name="chevron-down" size={13} className="dropdown-caret" />
             </button>
 
             {activeMenu === "product" && (
-              <div className="mega-menu mega-menu-wide" role="menu">
+              <div
+                className="mega-menu mega-menu-wide"
+                role="menu"
+                onMouseEnter={() => handleMouseEnter("product")}
+                onMouseLeave={handleMouseLeave}
+              >
                 <div className="mega-menu-header">
                   <div>
                     <strong>LattiumHR Product Suite</strong>
@@ -131,8 +175,8 @@ export function Navbar() {
           {/* Solutions Dropdown */}
           <div
             className={`nav-dropdown-wrapper ${activeMenu === "solutions" ? "is-open" : ""}`}
-            onMouseEnter={() => setActiveMenu("solutions")}
-            onMouseLeave={() => setActiveMenu(null)}
+            onMouseEnter={() => handleMouseEnter("solutions")}
+            onMouseLeave={handleMouseLeave}
           >
             <button
               type="button"
@@ -142,11 +186,16 @@ export function Navbar() {
               aria-haspopup="true"
             >
               <span>Solutions</span>
-              <Icon name="chevron" size={14} className="dropdown-caret" />
+              <Icon name="chevron-down" size={13} className="dropdown-caret" />
             </button>
 
             {activeMenu === "solutions" && (
-              <div className="mega-menu mega-menu-solutions" role="menu">
+              <div
+                className="mega-menu mega-menu-solutions"
+                role="menu"
+                onMouseEnter={() => handleMouseEnter("solutions")}
+                onMouseLeave={handleMouseLeave}
+              >
                 <div className="mega-menu-header">
                   <div>
                     <strong>Tailored HR Solutions</strong>
@@ -185,8 +234,8 @@ export function Navbar() {
           {/* Resources Dropdown */}
           <div
             className={`nav-dropdown-wrapper ${activeMenu === "resources" ? "is-open" : ""}`}
-            onMouseEnter={() => setActiveMenu("resources")}
-            onMouseLeave={() => setActiveMenu(null)}
+            onMouseEnter={() => handleMouseEnter("resources")}
+            onMouseLeave={handleMouseLeave}
           >
             <button
               type="button"
@@ -196,11 +245,16 @@ export function Navbar() {
               aria-haspopup="true"
             >
               <span>Resources</span>
-              <Icon name="chevron" size={14} className="dropdown-caret" />
+              <Icon name="chevron-down" size={13} className="dropdown-caret" />
             </button>
 
             {activeMenu === "resources" && (
-              <div className="mega-menu mega-menu-resources" role="menu">
+              <div
+                className="mega-menu mega-menu-resources"
+                role="menu"
+                onMouseEnter={() => handleMouseEnter("resources")}
+                onMouseLeave={handleMouseLeave}
+              >
                 <div className="mega-menu-header">
                   <div>
                     <strong>Knowledge & Customer Support</strong>
@@ -246,7 +300,7 @@ export function Navbar() {
 
         {/* CTA Actions */}
         <div className="nav-actions">
-          <Button to="/request-demo" className="nav-primary-cta">
+          <Button onClick={() => openDemoModal()} className="nav-primary-cta">
             Request a Demo <Icon name="arrow" size={16} />
           </Button>
 
@@ -281,7 +335,7 @@ export function Navbar() {
                 >
                   <span>Product</span>
                   <Icon
-                    name="chevron"
+                    name="chevron-down"
                     size={16}
                     className={mobileExpandedSection === "product" ? "rotate-180" : ""}
                   />
@@ -309,7 +363,7 @@ export function Navbar() {
                 >
                   <span>Solutions</span>
                   <Icon
-                    name="chevron"
+                    name="chevron-down"
                     size={16}
                     className={mobileExpandedSection === "solutions" ? "rotate-180" : ""}
                   />
@@ -337,7 +391,7 @@ export function Navbar() {
                 >
                   <span>Resources</span>
                   <Icon
-                    name="chevron"
+                    name="chevron-down"
                     size={16}
                     className={mobileExpandedSection === "resources" ? "rotate-180" : ""}
                   />
@@ -359,7 +413,13 @@ export function Navbar() {
             </div>
 
             <div className="mobile-drawer-cta">
-              <Button to="/request-demo" className="btn-full">
+              <Button
+                onClick={() => {
+                  setMobileOpen(false);
+                  openDemoModal();
+                }}
+                className="btn-full"
+              >
                 Request a Demo <Icon name="arrow" size={16} />
               </Button>
             </div>

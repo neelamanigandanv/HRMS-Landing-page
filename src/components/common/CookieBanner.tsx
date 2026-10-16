@@ -20,23 +20,37 @@ export function CookieBanner() {
   });
 
   useEffect(() => {
+    // Read saved preferences if any
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (!saved) {
-      setIsOpen(true);
-    } else {
+    if (saved) {
       try {
         setPreferences(JSON.parse(saved));
       } catch {
-        setIsOpen(true);
+        // fallback
       }
     }
+
+    // Always show cookie banner when visitor enters or hard-refreshes the page
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 350);
 
     const handleOpenModal = () => {
       setShowModal(true);
     };
 
+    const handleForceOpenBanner = () => {
+      setIsOpen(true);
+    };
+
     window.addEventListener("open-cookie-preferences", handleOpenModal);
-    return () => window.removeEventListener("open-cookie-preferences", handleOpenModal);
+    window.addEventListener("open-cookie-banner", handleForceOpenBanner);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("open-cookie-preferences", handleOpenModal);
+      window.removeEventListener("open-cookie-banner", handleForceOpenBanner);
+    };
   }, []);
 
   const handleAcceptAll = () => {
@@ -65,9 +79,11 @@ export function CookieBanner() {
     <>
       {isOpen && !showModal && (
         <div className="cookie-banner" role="region" aria-label="Cookie consent banner">
-          <div className="container cookie-banner-inner">
+          <div className="cookie-banner-inner">
             <div className="cookie-text">
-              <Icon name="shield" size={20} className="cookie-icon" />
+              <div className="cookie-icon-wrapper" aria-hidden="true">
+                <Icon name="shield" size={18} className="cookie-icon" />
+              </div>
               <p>
                 We use strictly necessary cookies to ensure LattiumHR functions correctly. With your
                 consent, we also use optional analytics cookies to measure site performance and enhance your experience. Read our{" "}
@@ -79,21 +95,21 @@ export function CookieBanner() {
             <div className="cookie-actions">
               <button
                 type="button"
-                className="btn-text-link"
+                className="cookie-btn-pref"
                 onClick={() => setShowModal(true)}
               >
                 Preferences
               </button>
               <button
                 type="button"
-                className="btn btn-secondary btn-sm"
+                className="cookie-btn-essential"
                 onClick={handleRejectNonEssential}
               >
                 Essential Only
               </button>
               <button
                 type="button"
-                className="btn btn-sm"
+                className="cookie-btn-accept"
                 onClick={handleAcceptAll}
               >
                 Accept All

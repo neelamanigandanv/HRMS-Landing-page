@@ -42,7 +42,7 @@ export const productNavItems: NavLinkItem[] = [
   {
     title: "Payroll Management",
     href: "/features/payroll-management",
-    desc: "Automated salary processing with full Indian statutory compliance",
+    desc: "Automated salary processing with full statutory compliance",
     icon: "payroll",
     badge: "Compliant",
   },

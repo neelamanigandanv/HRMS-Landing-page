@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Logo from "../ui/Logo";
+import Icon from "../ui/Icon";
 import { footerColumns } from "../../data/navigationData";
 
 export function Footer() {
@@ -16,10 +17,43 @@ export function Footer() {
           <p>
             Connected, simple, and compliant HR software built for ambitious businesses with multiple branches.
           </p>
-          <div className="socials" aria-label="Social links">
-            <span title="LinkedIn">in</span>
-            <span title="Twitter / X">𝕏</span>
-            <span title="YouTube">▶</span>
+          <div className="socials" aria-label="Social media links">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              title="LinkedIn"
+            >
+              <Icon name="linkedin" size={20} />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter / X"
+              title="Twitter / X"
+            >
+              <Icon name="twitter" size={20} />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              title="Instagram"
+            >
+              <Icon name="instagram" size={20} />
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              title="Facebook"
+            >
+              <Icon name="facebook" size={20} />
+            </a>
           </div>
         </div>
 
