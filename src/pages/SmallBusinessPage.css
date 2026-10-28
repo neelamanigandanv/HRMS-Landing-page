@@ -1297,7 +1297,7 @@
   background-color: #F6F8F8;
   background-image: 
     radial-gradient(#E5EAEA 1.5px, transparent 1.5px),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 235, 243, 0.5) 100%);
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(246, 248, 248, 0.5) 100%);
   background-size: 20px 20px, 100% 100%;
   display: flex;
   align-items: center;

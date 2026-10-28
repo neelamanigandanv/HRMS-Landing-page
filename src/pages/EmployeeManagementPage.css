@@ -224,7 +224,7 @@
   box-shadow:
     0 20px 40px -10px rgba(25, 23, 53, 0.08),
     0 1px 3px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(235, 219, 230, 0.9);
+  border: 1px solid rgba(246, 248, 248, 0.9);
   text-align: left;
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   position: relative;
@@ -370,7 +370,7 @@
     0 25px 60px -15px rgba(25, 23, 53, 0.16),
     0 6px 18px rgba(0, 0, 0, 0.05);
   background: #ffffff;
-  border: 1px solid rgba(235, 219, 230, 0.8);
+  border: 1px solid rgba(246, 248, 248, 0.8);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
   z-index: 2;
 }
@@ -525,7 +525,7 @@
   padding: 0.2rem 0;
   gap: 6px;
   margin-bottom: 0.55rem;
-  border-bottom: 1px dashed rgba(235, 219, 230, 0.9);
+  border-bottom: 1px dashed rgba(246, 248, 248, 0.9);
 }
 
 .emp-bar-col {
@@ -970,7 +970,7 @@
 .emp-why-small-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 36px rgba(0, 75, 73, 0.08);
-  border-color: rgba(217, 70, 159, 0.4);
+  border-color: rgba(0, 75, 73, 0.4);
 }
 
 .emp-why-icon-badge {

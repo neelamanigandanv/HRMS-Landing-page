@@ -150,7 +150,7 @@ export function RecruitmentIllustration({}: IllustrationProps) {
 
           {/* Sliding Candidate Card */}
           <g className="pipeline-candidate-card" transform="translate(90, 32)">
-            <rect x="0" y="0" width="54" height="38" rx="6" fill="#004B49" filter="drop-shadow(0 4px 12px rgba(244, 114, 182, 0.45))" />
+            <rect x="0" y="0" width="54" height="38" rx="6" fill="#004B49" filter="drop-shadow(0 4px 12px rgba(0, 75, 73, 0.45))" />
             <circle cx="16" cy="18" r="6" fill="#00201F" />
             <rect x="26" y="15" width="20" height="4" rx="2" fill="#00201F" />
             <rect x="10" y="27" width="34" height="4" rx="2" fill="#34d399" />
@@ -250,7 +250,7 @@ export function AttendanceIllustration({}: IllustrationProps) {
 
           {/* Biometric Chip "09:28 AM" */}
           <g transform="translate(86, 28)">
-            <rect x="0" y="0" width="88" height="26" rx="13" fill="#00201F" stroke="#004B49" strokeWidth="1.5" filter="drop-shadow(0 4px 12px rgba(244, 114, 182, 0.35))" />
+            <rect x="0" y="0" width="88" height="26" rx="13" fill="#00201F" stroke="#004B49" strokeWidth="1.5" filter="drop-shadow(0 4px 12px rgba(0, 75, 73, 0.35))" />
             <circle cx="14" cy="13" r="4" fill="#34d399" className="live-pulse-dot" filter="drop-shadow(0 0 6px #34d399)" />
             <text x="24" y="17" fill="#ffffff" fontFamily="Inter, sans-serif" fontWeight="800" fontSize="10" letterSpacing="0.04em">
               09:28 AM
@@ -285,7 +285,7 @@ export function ComplianceIllustration({}: IllustrationProps) {
             fill="#00201F"
             stroke="#004B49"
             strokeWidth="2.5"
-            filter="drop-shadow(0 6px 18px rgba(244, 114, 182, 0.3))"
+            filter="drop-shadow(0 6px 18px rgba(0, 75, 73, 0.3))"
           />
           <path
             d="M50 8 C76 8 92 18 92 38 C92 70 60 92 50 100 C40 92 8 70 8 38 C8 18 24 8 50 8 Z"
@@ -334,7 +334,7 @@ export function OnboardingIllustration({}: IllustrationProps) {
 
         {/* Avatar Circle with Badge */}
         <g transform="translate(60, 36)">
-          <circle cx="32" cy="32" r="30" fill="#00201F" stroke="#004B49" strokeWidth="2.5" filter="drop-shadow(0 6px 16px rgba(244, 114, 182, 0.3))" />
+          <circle cx="32" cy="32" r="30" fill="#00201F" stroke="#004B49" strokeWidth="2.5" filter="drop-shadow(0 6px 16px rgba(0, 75, 73, 0.3))" />
           <circle cx="32" cy="24" r="10" fill="#F6F8F8" />
           <path d="M14 46c0-7 8-11 18-11s18 4 18 11" fill="#004B49" />
           <circle cx="50" cy="14" r="7" fill="#34d399" />
@@ -439,7 +439,7 @@ export function MultiBranchIllustration({}: IllustrationProps) {
 
         {/* Central HQ Hub */}
         <g transform="translate(160, 80)">
-          <circle cx="0" cy="0" r="28" fill="#00201F" stroke="#004B49" strokeWidth="2.5" filter="drop-shadow(0 6px 18px rgba(244, 114, 182, 0.45))" />
+          <circle cx="0" cy="0" r="28" fill="#00201F" stroke="#004B49" strokeWidth="2.5" filter="drop-shadow(0 6px 18px rgba(0, 75, 73, 0.45))" />
           <circle cx="0" cy="0" r="20" fill="#004B49" />
           <path d="M-6 6V-4L0 -9L6 -4V6H-6Z" fill="#00201F" />
         </g>

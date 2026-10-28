@@ -190,7 +190,7 @@
 .guide-card-tile:hover {
   border-color: #004B49;
   box-shadow:
-    0 16px 36px rgba(109, 40, 217, 0.12),
+    0 16px 36px rgba(0, 75, 73, 0.12),
     0 4px 12px rgba(0, 32, 31, 0.05);
   transform: perspective(1000px) translateY(-7px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
 }
@@ -653,13 +653,13 @@
   font-weight: 700;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(109, 40, 217, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.35);
   transition: all 0.25s ease;
 }
 
 .empty-state-clear-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(109, 40, 217, 0.45);
+  box-shadow: 0 6px 18px rgba(0, 75, 73, 0.45);
 }
 
 /* --------------------------------------------------------------------------

@@ -1228,7 +1228,7 @@ export function ProductOverview() {
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                   />
-                  <circle r="3.5" fill="#004B49" opacity="0.95" filter="drop-shadow(0 0 5px rgba(244, 114, 182, 0.85))">
+                  <circle r="3.5" fill="#004B49" opacity="0.95" filter="drop-shadow(0 0 5px rgba(0, 75, 73, 0.85))">
                     <animateMotion dur="2.2s" repeatCount="indefinite" path="M 105 0 C 105 48, 270 38, 270 68" />
                   </circle>
 
@@ -1238,7 +1238,7 @@ export function ProductOverview() {
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                   />
-                  <circle r="3.5" fill="#004B49" opacity="0.95" filter="drop-shadow(0 0 5px rgba(236, 72, 153, 0.85))">
+                  <circle r="3.5" fill="#004B49" opacity="0.95" filter="drop-shadow(0 0 5px rgba(0, 75, 73, 0.85))">
                     <animateMotion dur="2.0s" repeatCount="indefinite" path="M 270 0 L 270 68" />
                   </circle>
 
@@ -1248,7 +1248,7 @@ export function ProductOverview() {
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                   />
-                  <circle r="3.5" fill="#004B49" opacity="0.95" filter="drop-shadow(0 0 5px rgba(244, 114, 182, 0.85))">
+                  <circle r="3.5" fill="#004B49" opacity="0.95" filter="drop-shadow(0 0 5px rgba(0, 75, 73, 0.85))">
                     <animateMotion dur="2.4s" repeatCount="indefinite" path="M 435 0 C 435 48, 270 38, 270 68" />
                   </circle>
 
@@ -1267,7 +1267,7 @@ export function ProductOverview() {
                         {/* Animated moving dot travelling through the wave line */}
                         {isActive ? (
                           <g>
-                            <circle r="5.5" fill="rgba(244, 114, 182, 0.35)">
+                            <circle r="5.5" fill="rgba(0, 75, 73, 0.35)">
                               <animateMotion dur="1.4s" repeatCount="indefinite" path={p} />
                             </circle>
                             <circle r="3.5" fill="#ffffff" filter="drop-shadow(0 0 6px #004B49)">

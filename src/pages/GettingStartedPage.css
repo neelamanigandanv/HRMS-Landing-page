@@ -253,13 +253,13 @@
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(139, 38, 92, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.25);
 }
 
 .gs-header-btn-primary:hover {
   background-color: #004B49;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(139, 38, 92, 0.35);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.35);
   color: #ffffff;
 }
 
@@ -560,7 +560,7 @@
   font-size: 14px;
   font-weight: 700;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(139, 38, 92, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.25);
 }
 
 .gs-step-titles {
@@ -813,7 +813,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(139, 38, 92, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.25);
 }
 
 .gs-completion-info h3 {
@@ -1017,7 +1017,7 @@
 .gs-related-card:hover {
   border-color: #E5EAEA;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(139, 38, 92, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 75, 73, 0.08);
 }
 
 .gs-related-icon-wrap {
@@ -1070,7 +1070,7 @@
    7. "NEED MORE HELP?" SUPPORT BANNER
    ========================================================================== */
 .gs-support-section {
-  background: radial-gradient(circle at 10% 90%, rgba(184, 51, 106, 0.3) 0%, transparent 60%),
+  background: radial-gradient(circle at 10% 90%, rgba(0, 75, 73, 0.3) 0%, transparent 60%),
               linear-gradient(135deg, #00201F 0%, #00201F 60%, #00201F 100%);
   color: #ffffff;
   padding: 56px 0;

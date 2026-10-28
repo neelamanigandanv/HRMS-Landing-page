@@ -89,7 +89,7 @@
   mix-blend-mode: multiply;
   mask-image: radial-gradient(ellipse 48% 46% at 50% 50%, #000 66%, transparent 97%);
   -webkit-mask-image: radial-gradient(ellipse 48% 46% at 50% 50%, #000 66%, transparent 97%);
-  filter: hue-rotate(215deg) saturate(1.1) brightness(0.92) contrast(1.05) drop-shadow(0 20px 35px rgba(0, 32, 31, 0.06));
+  filter: hue-rotate(212deg) saturate(1.25) brightness(0.72) contrast(1.15) drop-shadow(0 20px 35px rgba(0, 32, 31, 0.08));
 }
 
 /* --------------------------------------------------------------------------
@@ -304,7 +304,7 @@
   line-height: 1;
   text-shadow:
     0 1px 1px rgba(255, 255, 255, 0.8),
-    0 -1px 1px rgba(50, 18, 55, 0.7);
+    0 -1px 1px rgba(0, 32, 31, 0.7);
   transform: translateY(-0.5px);
 }
 
