@@ -69,11 +69,11 @@ const architectureHubConfigs: Record<string, ArchitectureHubConfig> = {
   "core-hr": {
     id: "core-hr",
     title: "Core HR",
-    themeColor: "#852952",
-    bgTint: "#fbf8fa",
-    borderColor: "#ede4ec",
-    iconBg: "#f7ebf3",
-    hubGradient: "linear-gradient(145deg, #7b1d47 0%, #8b2c58 100%)",
+    themeColor: "#004B49",
+    bgTint: "#F6F8F8",
+    borderColor: "#E5EAEA",
+    iconBg: "#F6F8F8",
+    hubGradient: "linear-gradient(145deg, #004B49 0%, #003836 100%)",
     centerIcon: (
       <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="10" cy="7" r="3.2" />
@@ -125,11 +125,11 @@ const architectureHubConfigs: Record<string, ArchitectureHubConfig> = {
   "attendance": {
     id: "attendance",
     title: "Time & Attendance",
-    themeColor: "#852952",
-    bgTint: "#fbf8fa",
-    borderColor: "#ede4ec",
-    iconBg: "#f7ebf3",
-    hubGradient: "linear-gradient(145deg, #7b1d47 0%, #8b2c58 100%)",
+    themeColor: "#004B49",
+    bgTint: "#F6F8F8",
+    borderColor: "#E5EAEA",
+    iconBg: "#F6F8F8",
+    hubGradient: "linear-gradient(145deg, #004B49 0%, #003836 100%)",
     centerIcon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="9" />
@@ -177,11 +177,11 @@ const architectureHubConfigs: Record<string, ArchitectureHubConfig> = {
   "payroll": {
     id: "payroll",
     title: "Payroll",
-    themeColor: "#852952",
-    bgTint: "#fbf8fa",
-    borderColor: "#ede4ec",
-    iconBg: "#f7ebf3",
-    hubGradient: "linear-gradient(145deg, #7b1d47 0%, #8b2c58 100%)",
+    themeColor: "#004B49",
+    bgTint: "#F6F8F8",
+    borderColor: "#E5EAEA",
+    iconBg: "#F6F8F8",
+    hubGradient: "linear-gradient(145deg, #004B49 0%, #003836 100%)",
     centerIcon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -229,11 +229,11 @@ const architectureHubConfigs: Record<string, ArchitectureHubConfig> = {
   "talent-assets": {
     id: "talent-assets",
     title: "Talent & Operations",
-    themeColor: "#852952",
-    bgTint: "#fbf8fa",
-    borderColor: "#ede4ec",
-    iconBg: "#f7ebf3",
-    hubGradient: "linear-gradient(145deg, #7b1d47 0%, #8b2c58 100%)",
+    themeColor: "#004B49",
+    bgTint: "#F6F8F8",
+    borderColor: "#E5EAEA",
+    iconBg: "#F6F8F8",
+    hubGradient: "linear-gradient(145deg, #004B49 0%, #003836 100%)",
     centerIcon: (
       <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="10" cy="7" r="3.2" />
@@ -1228,7 +1228,7 @@ export function ProductOverview() {
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                   />
-                  <circle r="3.5" fill="#f472b6" opacity="0.95" filter="drop-shadow(0 0 5px rgba(244, 114, 182, 0.85))">
+                  <circle r="3.5" fill="#004B49" opacity="0.95" filter="drop-shadow(0 0 5px rgba(244, 114, 182, 0.85))">
                     <animateMotion dur="2.2s" repeatCount="indefinite" path="M 105 0 C 105 48, 270 38, 270 68" />
                   </circle>
 
@@ -1238,7 +1238,7 @@ export function ProductOverview() {
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                   />
-                  <circle r="3.5" fill="#ec4899" opacity="0.95" filter="drop-shadow(0 0 5px rgba(236, 72, 153, 0.85))">
+                  <circle r="3.5" fill="#004B49" opacity="0.95" filter="drop-shadow(0 0 5px rgba(236, 72, 153, 0.85))">
                     <animateMotion dur="2.0s" repeatCount="indefinite" path="M 270 0 L 270 68" />
                   </circle>
 
@@ -1248,7 +1248,7 @@ export function ProductOverview() {
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                   />
-                  <circle r="3.5" fill="#f472b6" opacity="0.95" filter="drop-shadow(0 0 5px rgba(244, 114, 182, 0.85))">
+                  <circle r="3.5" fill="#004B49" opacity="0.95" filter="drop-shadow(0 0 5px rgba(244, 114, 182, 0.85))">
                     <animateMotion dur="2.4s" repeatCount="indefinite" path="M 435 0 C 435 48, 270 38, 270 68" />
                   </circle>
 
@@ -1270,7 +1270,7 @@ export function ProductOverview() {
                             <circle r="5.5" fill="rgba(244, 114, 182, 0.35)">
                               <animateMotion dur="1.4s" repeatCount="indefinite" path={p} />
                             </circle>
-                            <circle r="3.5" fill="#ffffff" filter="drop-shadow(0 0 6px #ec4899)">
+                            <circle r="3.5" fill="#ffffff" filter="drop-shadow(0 0 6px #004B49)">
                               <animateMotion dur="1.4s" repeatCount="indefinite" path={p} />
                             </circle>
                           </g>
@@ -1286,7 +1286,7 @@ export function ProductOverview() {
                   {/* Center Hub (Avatar + checkmark) */}
                   <g className="po-cc-center-hub">
                     <circle cx="270" cy="92" r="30" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
-                    <circle cx="270" cy="92" r="22" fill="#852952" stroke="#ffffff" strokeWidth="2" filter="drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35))" />
+                    <circle cx="270" cy="92" r="22" fill="#004B49" stroke="#ffffff" strokeWidth="2" filter="drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35))" />
                     <foreignObject x="257" y="79" width="26" height="26" className="pointer-events-none">
                       <div className="po-cc-hub-icon-wrap">
                         <Icon name="check" size={16} />
@@ -1321,7 +1321,7 @@ export function ProductOverview() {
                           cy={pos.y}
                           r="20"
                           fill={isActive ? "#ffffff" : "rgba(255, 255, 255, 0.08)"}
-                          stroke={isActive ? "#852952" : "rgba(255, 255, 255, 0.22)"}
+                          stroke={isActive ? "#004B49" : "rgba(255, 255, 255, 0.22)"}
                           strokeWidth={isActive ? "2.5" : "1.5"}
                           filter={isActive ? "drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3))" : undefined}
                         />
@@ -1332,7 +1332,7 @@ export function ProductOverview() {
                               placeItems: "center",
                               width: "100%",
                               height: "100%",
-                              color: isActive ? "#852952" : "#cbd5e1",
+                              color: isActive ? "#004B49" : "#cbd5e1",
                             }}
                           >
                             <Icon name={step.iconName} size={15} />

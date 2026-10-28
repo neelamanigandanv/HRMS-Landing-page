@@ -1,7 +1,7 @@
 /* ==========================================================================
    LATTIUM HR - 3D HERO STAIRCASE ANIMATED VISUAL
    Light, clean, high-end fintech aesthetic (Studio render + 60fps loop)
-   Palette: Plum #8C2B66, Orchid #B8487C, Deep Plum #4A2250, Blush #F6E5EF, Gold #D8B26E
+   Palette: Plum #004B49, Orchid #004B49, Deep Plum #00201F, Blush #F6F8F8, Gold #D8B26E
    ========================================================================== */
 
 .hero-3d-visual-container {
@@ -25,8 +25,8 @@
   border-radius: 50%;
   background: radial-gradient(
     ellipse at 75% 25%,
-    rgba(246, 229, 239, 0.85) 0%,
-    rgba(252, 240, 247, 0.45) 50%,
+    rgba(246, 248, 248, 0.85) 0%,
+    rgba(246, 248, 248, 0.45) 50%,
     transparent 72%
   );
   filter: blur(40px);
@@ -89,7 +89,7 @@
   mix-blend-mode: multiply;
   mask-image: radial-gradient(ellipse 48% 46% at 50% 50%, #000 66%, transparent 97%);
   -webkit-mask-image: radial-gradient(ellipse 48% 46% at 50% 50%, #000 66%, transparent 97%);
-  filter: drop-shadow(0 20px 35px rgba(74, 34, 80, 0.08));
+  filter: hue-rotate(215deg) saturate(1.1) brightness(0.92) contrast(1.05) drop-shadow(0 20px 35px rgba(0, 32, 31, 0.06));
 }
 
 /* --------------------------------------------------------------------------
@@ -104,8 +104,8 @@
   border-radius: 26px;
   background: radial-gradient(
     ellipse at 50% 30%,
-    rgba(184, 72, 124, 0.45) 0%,
-    rgba(140, 43, 102, 0.2) 60%,
+    rgba(0, 75, 73, 0.22) 0%,
+    rgba(0, 32, 31, 0.10) 60%,
     transparent 80%
   );
   filter: blur(16px);
@@ -266,7 +266,7 @@
   border-radius: 50%;
   background: radial-gradient(circle at 35% 30%, #faecd0 0%, #d8b26e 40%, #c4994b 75%, #8f6520 100%);
   box-shadow:
-    0 10px 20px rgba(74, 34, 80, 0.28),
+    0 10px 20px rgba(0, 32, 31, 0.28),
     0 2px 6px rgba(143, 101, 32, 0.4),
     inset 0 1px 2px rgba(255, 255, 255, 0.85),
     inset 0 -2px 3px rgba(110, 75, 15, 0.6);
@@ -300,7 +300,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 19px;
   font-weight: 900;
-  color: #4a2250;
+  color: #00201F;
   line-height: 1;
   text-shadow:
     0 1px 1px rgba(255, 255, 255, 0.8),
@@ -328,7 +328,7 @@
   left: 50%;
   width: 36px;
   height: 14px;
-  background: radial-gradient(ellipse, rgba(74, 34, 80, 0.45) 0%, rgba(74, 34, 80, 0) 70%);
+  background: radial-gradient(ellipse, rgba(0, 32, 31, 0.45) 0%, rgba(0, 32, 31, 0) 70%);
   transform: translateX(-50%);
   border-radius: 50%;
   animation: shadowPulse 12s cubic-bezier(0.25, 1, 0.5, 1) infinite;
@@ -570,13 +570,13 @@
   align-items: center;
   gap: 7px;
   background: rgba(255, 255, 255, 0.96);
-  color: #4a2250;
+  color: #0B1514;
   font-size: 13px;
   font-weight: 700;
   padding: 5px 12px 5px 6px;
   border-radius: 9999px;
-  border: 1px solid rgba(140, 43, 102, 0.16);
-  box-shadow: 0 4px 14px rgba(74, 34, 80, 0.08);
+  border: 1px solid #E5EAEA;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -587,8 +587,8 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #f6e5ef;
-  color: #8c2b66;
+  background: #F6F8F8;
+  color: #004B49;
   font-size: 11px;
   font-weight: 800;
   display: flex;
@@ -601,34 +601,33 @@
   letter-spacing: -0.01em;
 }
 
-/* Active State: Turns Deep Plum with White Text When Coin Lands */
+/* Active State: Turns Deep Teal with White Text When Coin Lands */
 .step-floating-pill.is-active-step {
-  background: linear-gradient(135deg, #8c2b66 0%, #4a2250 100%);
+  background: #004B49;
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: #003836;
   box-shadow:
-    0 8px 24px rgba(140, 43, 102, 0.35),
-    0 0 16px rgba(184, 72, 124, 0.4);
+    0 8px 24px rgba(0, 75, 73, 0.22);
   transform: translate(-50%, -56%) scale(1.06);
 }
 
 .step-floating-pill.is-active-step .pill-number-circle {
   background: #ffffff;
-  color: #8c2b66;
+  color: #004B49;
 }
 
 /* --------------------------------------------------------------------------
-   FOUR GLOSSY PINK GLASS ORBS (Depth of Field & Ambient Bobbing)
+   FOUR GLOSSY GLASS ORBS (Depth of Field & Ambient Bobbing)
    -------------------------------------------------------------------------- */
 .glass-orb {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.85) 0%, rgba(237, 181, 213, 0.6) 40%, rgba(184, 72, 124, 0.45) 85%);
+  background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.85) 0%, rgba(229, 234, 234, 0.6) 40%, rgba(0, 75, 73, 0.2) 85%);
   box-shadow:
-    inset -3px -3px 8px rgba(140, 43, 102, 0.3),
+    inset -3px -3px 8px rgba(0, 32, 31, 0.15),
     inset 2px 2px 5px rgba(255, 255, 255, 0.9),
-    0 8px 20px rgba(140, 43, 102, 0.15);
+    0 8px 20px rgba(0, 32, 31, 0.08);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   z-index: 5;

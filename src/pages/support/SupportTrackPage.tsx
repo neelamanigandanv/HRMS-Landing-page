@@ -90,10 +90,10 @@ export default function SupportTrackPage() {
         title={`Track Ticket Status | ${SUPPORT_CONTACT_CONFIG.brandName} Support`}
         description="Check real-time status and engineer response updates for your existing HRMS support ticket."
       />
-      <div style={{ backgroundColor: '#fcfafc', borderBottom: '1px solid #ebdbe6', padding: '32px 24px' }}>
+      <div style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5EAEA', padding: '32px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#6b7280', marginBottom: '16px' }}>
-            <Link to="/support" style={{ color: '#7b2958', textDecoration: 'none' }}>Support</Link>
+            <Link to="/support" style={{ color: '#004B49', textDecoration: 'none' }}>Support</Link>
             <span>›</span>
             <span style={{ color: '#374151', fontWeight: 500 }}>Track Ticket</span>
           </nav>
@@ -189,7 +189,7 @@ export default function SupportTrackPage() {
               <Button type="submit">
                 Check status
               </Button>
-              <Link to="/support#ticket" style={{ fontSize: '14px', color: '#7b2958', fontWeight: 600, textDecoration: 'none' }}>
+              <Link to="/support#ticket" style={{ fontSize: '14px', color: '#004B49', fontWeight: 600, textDecoration: 'none' }}>
                 Need to raise a new ticket instead?
               </Link>
             </div>
@@ -201,14 +201,14 @@ export default function SupportTrackPage() {
           <div style={{
             backgroundColor: '#ffffff',
             borderRadius: '12px',
-            border: '1px solid #ebdbe6',
-            boxShadow: '0 4px 16px rgba(123, 41, 88, 0.05)',
+            border: '1px solid #E5EAEA',
+            boxShadow: '0 4px 16px rgba(0, 75, 73, 0.05)',
             overflow: 'hidden'
           }}>
             <div style={{
-              backgroundColor: '#faedf4',
+              backgroundColor: '#F6F8F8',
               padding: '20px 24px',
-              borderBottom: '1px solid #ebdbe6',
+              borderBottom: '1px solid #E5EAEA',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
@@ -216,7 +216,7 @@ export default function SupportTrackPage() {
               gap: '12px'
             }}>
               <div>
-                <span style={{ fontSize: '12px', fontWeight: 700, color: '#7b2958', textTransform: 'uppercase' }}>
+                <span style={{ fontSize: '12px', fontWeight: 700, color: '#004B49', textTransform: 'uppercase' }}>
                   Ticket Status
                 </span>
                 <h2 style={{ fontSize: '20px', fontWeight: 800, color: '#111827', margin: '2px 0 0' }}>
@@ -232,8 +232,8 @@ export default function SupportTrackPage() {
                 fontSize: '13px',
                 fontWeight: 700,
                 backgroundColor: '#ffffff',
-                color: '#7b2958',
-                border: '1px solid #dca5c7'
+                color: '#004B49',
+                border: '1px solid #E5EAEA'
               }}>
                 ● {foundTicket.status}
               </span>
@@ -257,7 +257,7 @@ export default function SupportTrackPage() {
                   <span style={{
                     fontSize: '13px',
                     fontWeight: 700,
-                    color: foundTicket.priority === 'Critical' ? '#dc2626' : '#7b2958'
+                    color: foundTicket.priority === 'Critical' ? '#dc2626' : '#004B49'
                   }}>
                     {foundTicket.priority} (SLA: {SUPPORT_SLAS[foundTicket.priority as keyof typeof SUPPORT_SLAS] || '4 hours'})
                   </span>
@@ -290,7 +290,7 @@ export default function SupportTrackPage() {
                     </div>
                   </div>
                   <div style={{ display: 'flex', gap: '12px' }}>
-                    <div style={{ width: '28px', height: '28px', borderRadius: '50%', backgroundColor: '#7b2958', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '12px' }}>
+                    <div style={{ width: '28px', height: '28px', borderRadius: '50%', backgroundColor: '#004B49', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '12px' }}>
                       ●
                     </div>
                     <div>
@@ -311,7 +311,7 @@ export default function SupportTrackPage() {
             <p style={{ color: '#6b7280', fontSize: '15px', marginBottom: '16px' }}>
               No ticket record found matching this ID.
             </p>
-            <Link to="/support#ticket" style={{ color: '#7b2958', fontWeight: 600, textDecoration: 'none' }}>
+            <Link to="/support#ticket" style={{ color: '#004B49', fontWeight: 600, textDecoration: 'none' }}>
               Raise a new ticket now →
             </Link>
           </div>

@@ -1,11 +1,11 @@
 /* ==========================================================================
    LATTIUM HR - ALL GUIDES SECTION
    - Clean white card (20px radius, 20px padding)
-   - Dark plum illustration banner (14px radius, #1c0b29)
+   - Dark plum illustration banner (14px radius, #00201F)
    - Bold title & clear description
    - 3 Checkmarked feature bullets (✓ in orchid/plum)
    - Footer: Below Left = "10 min read", Below Right = "Read guide →"
-   - Active tab color: Vibrant Violet (#7c3aed to #6d28d9), no numbers in tabs
+   - Active tab color: Vibrant Violet (#004B49 to #004B49), no numbers in tabs
    - Home Page Shine Beam Sweep on hover (no white blob)
    ========================================================================== */
 
@@ -13,7 +13,7 @@
 
 .all-guides-library-section {
   position: relative;
-  background-color: #fcf9f8;
+  background-color: #F6F8F8;
   padding: 80px 24px 120px 24px;
   overflow: hidden;
   font-family: 'Inter', sans-serif;
@@ -31,8 +31,8 @@
   height: 450px;
   background: radial-gradient(
     ellipse at 50% 20%,
-    rgba(246, 229, 239, 0.85) 0%,
-    rgba(252, 240, 247, 0.45) 50%,
+    rgba(246, 248, 248, 0.85) 0%,
+    rgba(246, 248, 248, 0.45) 50%,
     transparent 75%
   );
   filter: blur(50px);
@@ -60,7 +60,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #8c2b66;
+  color: #004B49;
   font-size: 11.5px;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -110,37 +110,37 @@
   align-items: center;
   gap: 7px;
   background: #ffffff;
-  border: 1px solid #ecdfe6;
+  border: 1px solid #E5EAEA;
   padding: 9px 20px;
   border-radius: 9999px;
   font-family: 'Inter', sans-serif;
   font-size: 13.5px;
   font-weight: 600;
-  color: #4a2250;
+  color: #00201F;
   cursor: pointer;
   white-space: nowrap;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 6px rgba(74, 34, 80, 0.02);
+  box-shadow: 0 2px 6px rgba(0, 32, 31, 0.02);
   outline: none;
 }
 
 .library-topic-chip:hover:not(.active) {
-  border-color: #f2d0e3;
-  background: #fdf6fa;
-  color: #7b2958;
+  border-color: #E5EAEA;
+  background: #F6F8F8;
+  color: #004B49;
   transform: translateY(-1px);
 }
 
 .library-topic-chip:focus-visible {
-  box-shadow: 0 0 0 2px #7b2958;
+  box-shadow: 0 0 0 2px #004B49;
 }
 
 /* ACTIVE TAB IS PRIMARY BUTTON COLOR */
 .library-topic-chip.active {
-  background: #7b2958;
+  background: #004B49;
   color: #ffffff;
-  border-color: #7b2958;
-  box-shadow: 0 4px 14px rgba(123, 41, 88, 0.28);
+  border-color: #004B49;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.28);
   font-weight: 700;
 }
 
@@ -157,12 +157,12 @@
 .guide-card-tile {
   position: relative;
   background: #ffffff;
-  border: 1px solid #ecdfe6;
+  border: 1px solid #E5EAEA;
   border-radius: 20px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 6px 20px rgba(74, 34, 80, 0.04);
+  box-shadow: 0 6px 20px rgba(0, 32, 31, 0.04);
   cursor: pointer;
   outline: none;
   user-select: none;
@@ -188,17 +188,17 @@
 
 /* Card Hover 3D Tilt & Lift */
 .guide-card-tile:hover {
-  border-color: #a78bfa;
+  border-color: #004B49;
   box-shadow:
     0 16px 36px rgba(109, 40, 217, 0.12),
-    0 4px 12px rgba(74, 34, 80, 0.05);
+    0 4px 12px rgba(0, 32, 31, 0.05);
   transform: perspective(1000px) translateY(-7px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
 }
 
 .guide-card-tile:focus-visible {
   box-shadow:
-    0 0 0 3px #7b2958,
-    0 12px 30px rgba(74, 34, 80, 0.1);
+    0 0 0 3px #004B49,
+    0 12px 30px rgba(0, 32, 31, 0.1);
 }
 
 /* --------------------------------------------------------------------------
@@ -235,44 +235,44 @@
   height: 182px;
   width: 100%;
   border-radius: 14px;
-  background: #1c0b29;
+  background: #00201F;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  border: 1px solid rgba(59, 23, 78, 0.6);
+  border: 1px solid rgba(0, 75, 73, 0.25);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 1. Payroll: Deep Violet-Plum (Matching Tech & Startups in reference) */
+/* 1. Payroll: Deep Teal */
 .card-illust-banner.banner-theme-payroll {
-  background: radial-gradient(ellipse at 50% 25%, #361445 0%, #200a2b 100%);
-  border-color: rgba(184, 72, 124, 0.45);
+  background: radial-gradient(ellipse at 50% 25%, #003836 0%, #00201F 100%);
+  border-color: rgba(0, 75, 73, 0.45);
 }
 
-/* 2. Leave: Deep Midnight Indigo-Navy (Matching Healthcare & Retail in reference) */
+/* 2. Leave: Deep Midnight Slate */
 .card-illust-banner.banner-theme-leave {
   background: radial-gradient(ellipse at 50% 25%, #1e204c 0%, #12132e 100%);
-  border-color: rgba(99, 102, 241, 0.45);
+  border-color: rgba(0, 75, 73, 0.35);
 }
 
-/* 3. Recruitment: Deep Warm Wine / Plum-Burgundy (Matching Manufacturing in reference) */
+/* 3. Recruitment: Deep Teal Night */
 .card-illust-banner.banner-theme-recruitment {
-  background: radial-gradient(ellipse at 50% 25%, #3c152d 0%, #240a1a 100%);
-  border-color: rgba(225, 29, 72, 0.45);
+  background: radial-gradient(ellipse at 50% 25%, #003836 0%, #00201F 100%);
+  border-color: rgba(0, 75, 73, 0.45);
 }
 
-/* 4. Expense: Deep Midnight Slate / Sapphire (Matching Financial Services in reference) */
+/* 4. Expense: Deep Midnight Slate / Sapphire */
 .card-illust-banner.banner-theme-expense {
   background: radial-gradient(ellipse at 50% 25%, #15223a 0%, #0d1626 100%);
   border-color: rgba(56, 189, 248, 0.45);
 }
 
-/* 5. Attendance: Deep Dark Royal Aubergine */
+/* 5. Attendance: Deep Dark Teal */
 .card-illust-banner.banner-theme-attendance {
-  background: radial-gradient(ellipse at 50% 25%, #2e1246 0%, #1a082a 100%);
-  border-color: rgba(168, 85, 247, 0.45);
+  background: radial-gradient(ellipse at 50% 25%, #003836 0%, #00201F 100%);
+  border-color: rgba(0, 75, 73, 0.45);
 }
 
 /* 6. Compliance: Deep Dark Emerald / Forest Night */
@@ -281,10 +281,10 @@
   border-color: rgba(52, 211, 153, 0.45);
 }
 
-/* 7. Onboarding: Deep Rich Boysenberry / Crimson Plum */
+/* 7. Onboarding: Deep Teal Surface */
 .card-illust-banner.banner-theme-onboarding {
-  background: radial-gradient(ellipse at 50% 25%, #401538 0%, #250a20 100%);
-  border-color: rgba(244, 114, 182, 0.45);
+  background: radial-gradient(ellipse at 50% 25%, #003836 0%, #00201F 100%);
+  border-color: rgba(0, 75, 73, 0.45);
 }
 
 /* 8. Performance: Deep Midnight Cobalt Sky */
@@ -477,7 +477,7 @@
 
 .guide-card-tile:hover .branch-line {
   stroke-width: 2.5px;
-  stroke: #f472b6;
+  stroke: #004B49;
   stroke-dasharray: none;
   transition: all 0.3s ease;
 }
@@ -504,7 +504,7 @@
 }
 
 .guide-card-tile:hover .card-item-title {
-  color: #7b2958;
+  color: #004B49;
 }
 
 /* Description */
@@ -536,11 +536,11 @@
   gap: 8px;
   font-size: 13px;
   line-height: 1.4;
-  color: #4a2250;
+  color: #00201F;
 }
 
 .card-check-icon {
-  color: #7b2958;
+  color: #004B49;
   font-weight: 800;
   font-size: 13px;
   line-height: 1.2;
@@ -558,7 +558,7 @@
 .card-footer-action-row {
   margin-top: auto;
   padding-top: 14px;
-  border-top: 1px solid #f2ebf0;
+  border-top: 1px solid #F6F8F8;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -581,7 +581,7 @@
   font-family: 'Inter', sans-serif;
   font-size: 13.5px;
   font-weight: 700;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -595,7 +595,7 @@
 }
 
 .guide-card-tile:hover .card-action-link {
-  color: #5c1840;
+  color: #00201F;
 }
 
 .guide-card-tile:hover .arrow-sym {
@@ -609,7 +609,7 @@
   text-align: center;
   padding: 70px 24px;
   background: #ffffff;
-  border: 1.5px dashed #ecdfe6;
+  border: 1.5px dashed #E5EAEA;
   border-radius: 20px;
   max-width: 580px;
   margin: 0 auto;
@@ -622,7 +622,7 @@
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  background: #f5f3ff;
+  background: #F6F8F8;
   margin-bottom: 20px;
 }
 
@@ -647,7 +647,7 @@
   align-items: center;
   padding: 10px 24px;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  background: linear-gradient(135deg, #004B49 0%, #004B49 100%);
   color: #ffffff;
   font-size: 13.5px;
   font-weight: 700;
@@ -669,11 +669,11 @@
   position: fixed;
   bottom: 28px;
   right: 28px;
-  background: #4a2250;
+  background: #00201F;
   color: #ffffff;
   padding: 12px 22px;
   border-radius: 9999px;
-  box-shadow: 0 10px 30px rgba(74, 34, 80, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 32, 31, 0.35);
   font-size: 13.5px;
   font-weight: 600;
   display: flex;

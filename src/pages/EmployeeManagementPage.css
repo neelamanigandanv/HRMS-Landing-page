@@ -6,8 +6,8 @@
    ========================================================================== */
 
 .emp-page-wrapper {
-  background-color: #faf9fb;
-  color: #1e131d;
+  background-color: #F6F8F8;
+  color: #00201F;
   font-family: inherit;
   overflow-x: hidden;
 }
@@ -18,11 +18,11 @@
 .emp-hero-rich {
   padding: 5rem 0 4.5rem;
   background:
-    radial-gradient(circle at 50% -15%, rgba(128, 43, 91, 0.08) 0%, transparent 60%),
-    linear-gradient(180deg, #fdfbfe 0%, #ffffff 65%, #fcf9fb 100%);
+    radial-gradient(circle at 50% -15%, rgba(0, 75, 73, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, #ffffff 65%, #F6F8F8 100%);
   position: relative;
   text-align: center;
-  border-bottom: 1px solid rgba(128, 43, 91, 0.08);
+  border-bottom: 1px solid rgba(0, 75, 73, 0.08);
   overflow: hidden;
   color: #191735;
 }
@@ -50,7 +50,7 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -61,11 +61,11 @@
   display: inline-block;
   width: 48px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(128, 43, 91, 0.35));
+  background: linear-gradient(90deg, transparent, rgba(0, 75, 73, 0.35));
 }
 
 .emp-hero-spotlight-tag::after {
-  background: linear-gradient(90deg, rgba(128, 43, 91, 0.35), transparent);
+  background: linear-gradient(90deg, rgba(0, 75, 73, 0.35), transparent);
 }
 
 .emp-hero-rich-title {
@@ -90,8 +90,8 @@
 }
 
 .emp-glow-text {
-  color: #802B5B;
-  background: linear-gradient(135deg, #802B5B 0%, #b54282 100%);
+  color: #004B49;
+  background: linear-gradient(135deg, #004B49 0%, #004B49 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -124,24 +124,24 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
-  border: 1px solid #802B5B;
+  border: 1px solid #004B49;
   border-radius: 10px;
   padding: 0 28px;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.28);
   transition: all 0.2s ease;
   min-height: 50px;
 }
 
 .emp-pill-btn-primary:hover {
-  background: #661e47;
-  border-color: #661e47;
+  background: #003836;
+  border-color: #003836;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.38);
+  box-shadow: 0 8px 24px rgba(0, 75, 73, 0.38);
 }
 
 .emp-pill-btn-secondary {
@@ -163,9 +163,9 @@
 }
 
 .emp-pill-btn-secondary:hover {
-  background: #fdf7fa;
-  color: #802B5B;
-  border-color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
+  border-color: #004B49;
   transform: translateY(-1px);
 }
 
@@ -234,7 +234,7 @@
 .emp-hero-float-card:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 28px 50px -12px rgba(128, 43, 91, 0.12),
+    0 28px 50px -12px rgba(0, 75, 73, 0.12),
     0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
@@ -288,8 +288,8 @@
   font-weight: 600;
   padding: 0.25rem 0.55rem;
   border-radius: 9999px;
-  background-color: #fdf2f8;
-  color: #802B5B;
+  background-color: #F6F8F8;
+  color: #004B49;
 }
 
 .emp-float-widget-pill-green {
@@ -350,7 +350,7 @@
 }
 
 .emp-dot-plum {
-  background-color: #802B5B;
+  background-color: #004B49;
 }
 
 .emp-dot-mint {
@@ -358,7 +358,7 @@
 }
 
 .emp-dot-violet {
-  background-color: #8b5cf6;
+  background-color: #004B49;
 }
 
 /* Center Photo Card */
@@ -378,7 +378,7 @@
 .emp-hero-center-photo-card:hover {
   transform: translateY(-3px) scale(1.005);
   box-shadow:
-    0 32px 70px -12px rgba(128, 43, 91, 0.18),
+    0 32px 70px -12px rgba(0, 75, 73, 0.18),
     0 8px 22px rgba(0, 0, 0, 0.06);
 }
 
@@ -464,7 +464,7 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #802B5B 0%, #b54282 100%);
+  background: linear-gradient(135deg, #004B49 0%, #004B49 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -541,17 +541,17 @@
   width: 100%;
   max-width: 16px;
   border-radius: 6px 6px 0 0;
-  background-color: #f1e4ee;
+  background-color: #F6F8F8;
   transition: all 0.3s ease;
 }
 
 .emp-bar-col:hover .emp-bar-fill {
-  background-color: #d8b8ce;
+  background-color: #E5EAEA;
 }
 
 .emp-bar-col.is-active .emp-bar-fill {
-  background: linear-gradient(180deg, #802B5B 0%, #b54282 100%);
-  box-shadow: 0 4px 10px rgba(128, 43, 91, 0.25);
+  background: linear-gradient(180deg, #004B49 0%, #004B49 100%);
+  box-shadow: 0 4px 10px rgba(0, 75, 73, 0.25);
 }
 
 .emp-bar-lbl {
@@ -610,11 +610,11 @@
   }
 }
 
-/* Reference Image Card: Flat light surface, minimal 4px radius, 6px solid bottom accent bar in #802B5B */
+/* Reference Image Card: Flat light surface, minimal 4px radius, 6px solid bottom accent bar in #004B49 */
 .emp-problem-card {
   background: #f6f6f6 !important;
   border: 1px solid #ededed !important;
-  border-bottom: 6px solid #802B5B !important;
+  border-bottom: 6px solid #004B49 !important;
   border-radius: 4px !important;
   padding: 2.75rem 2.25rem 2.5rem !important;
   display: flex !important;
@@ -628,8 +628,8 @@
 .emp-problem-card:hover {
   transform: translateY(-5px) !important;
   background: #f1f1f1 !important;
-  box-shadow: 0 14px 30px rgba(128, 43, 91, 0.09) !important;
-  border-bottom-color: #661e47 !important;
+  box-shadow: 0 14px 30px rgba(0, 75, 73, 0.09) !important;
+  border-bottom-color: #003836 !important;
 }
 
 /* Clean line icon top-left, no circle background, matching reference image */
@@ -638,7 +638,7 @@
   height: auto !important;
   background: none !important;
   border-radius: 0 !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
@@ -646,8 +646,8 @@
 }
 
 .emp-problem-icon-wrap svg {
-  color: #802B5B !important;
-  stroke: #802B5B !important;
+  color: #004B49 !important;
+  stroke: #004B49 !important;
 }
 
 .emp-problem-title {
@@ -706,7 +706,7 @@
 }
 
 .emp-page-wrapper .emp-eyebrow {
-  color: var(--indigo, #802B5B) !important;
+  color: var(--indigo, #004B49) !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 1.8px !important;
@@ -957,7 +957,7 @@
 
 .emp-why-small-card {
   background-color: #ffffff;
-  border: 1px solid #e8edf0;
+  border: 1px solid #E5EAEA;
   border-radius: 18px;
   padding: 1.5rem 1.35rem;
   display: flex;
@@ -969,7 +969,7 @@
 
 .emp-why-small-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(128, 43, 91, 0.08);
+  box-shadow: 0 16px 36px rgba(0, 75, 73, 0.08);
   border-color: rgba(217, 70, 159, 0.4);
 }
 
@@ -991,8 +991,8 @@
 }
 
 .emp-why-icon-badge.emp-badge-plum {
-  background-color: #fdf2f8;
-  color: #802B5B;
+  background-color: #F6F8F8;
+  color: #004B49;
 }
 
 .emp-why-icon-badge.emp-badge-blue {
@@ -1036,7 +1036,7 @@
 
 .emp-block-eyebrow {
   display: block !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
   font-size: 11px !important;
   font-weight: 700 !important;
   letter-spacing: 1.8px !important;
@@ -1066,12 +1066,12 @@
 }
 
 .emp-cap-bg-1 {
-  background-color: #fdf5f9;
-  /* Soft tint of primary #802B5B */
+  background-color: #F6F8F8;
+  /* Soft tint of primary #004B49 */
 }
 
 .emp-cap-bg-2 {
-  background-color: #f2f6f5;
+  background-color: #F6F8F8;
   /* Soft clean mint-slate tint */
 }
 
@@ -1096,7 +1096,7 @@
 }
 
 .emp-reference-block-card:hover {
-  box-shadow: 0 24px 55px -10px rgba(128, 43, 91, 0.1);
+  box-shadow: 0 24px 55px -10px rgba(0, 75, 73, 0.1);
   transform: translateY(-4px);
 }
 
@@ -1212,8 +1212,8 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #802B5B;
-  border: 1.5px solid #802B5B;
+  background: #004B49;
+  border: 1.5px solid #004B49;
   color: #ffffff;
   display: inline-flex;
   align-items: center;
@@ -1222,17 +1222,17 @@
   font-weight: 800;
   flex-shrink: 0;
   margin-top: 2px;
-  box-shadow: 0 2px 6px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 2px 6px rgba(0, 75, 73, 0.28);
   transition: all 0.25s ease;
 }
 
 .emp-block-check-item:hover .emp-block-check-badge,
 .emp-block-check-item:hover .emp-block-check-icon {
-  background: #661e47;
-  border-color: #661e47;
+  background: #003836;
+  border-color: #003836;
   color: #ffffff;
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.4);
 }
 
 .emp-block-check-text {
@@ -1260,7 +1260,7 @@
   background: transparent !important;
   border: none !important;
   padding: 0 !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
   font-size: 0.95rem !important;
   font-weight: 600 !important;
   letter-spacing: -0.01em;
@@ -1271,7 +1271,7 @@
 }
 
 .emp-block-callout-btn:hover {
-  color: #661e47 !important;
+  color: #003836 !important;
   transform: translateX(4px);
 }
 
@@ -1401,7 +1401,7 @@
   background: none;
   border: none;
   padding: 0;
-  color: #802B5B;
+  color: #004B49;
   font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -1447,7 +1447,7 @@
   text-align: center;
   position: relative;
   overflow: hidden !important;
-  box-shadow: 0 10px 30px -5px rgba(128, 43, 91, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 10px 30px -5px rgba(0, 75, 73, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
@@ -1482,7 +1482,7 @@
 
 .emp-process-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 22px 48px -10px rgba(128, 43, 91, 0.12), 0 8px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 22px 48px -10px rgba(0, 75, 73, 0.12), 0 8px 20px rgba(0, 0, 0, 0.03);
 }
 
 /* Top Notch Semicircle (Full half-circle background) */
@@ -1493,7 +1493,7 @@
   transform: translateX(-50%);
   width: 90px;
   height: 45px;
-  background: #faeef5;
+  background: #F6F8F8;
   border-bottom-left-radius: 45px;
   border-bottom-right-radius: 45px;
   display: flex;
@@ -1506,7 +1506,7 @@
 .emp-process-notch-num {
   font-size: 0.95rem;
   font-weight: 800;
-  color: #802B5B;
+  color: #004B49;
   letter-spacing: 0.04em;
   transition: all 0.35s ease;
 }
@@ -1514,8 +1514,8 @@
 /* When Card is Active or Hovered, notch becomes full solid primary color */
 .emp-process-card.is-active .emp-process-notch,
 .emp-process-card:hover .emp-process-notch {
-  background: #802B5B;
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.35);
+  background: #004B49;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.35);
 }
 
 .emp-process-card.is-active .emp-process-notch .emp-process-notch-num,
@@ -1532,18 +1532,18 @@
   align-items: center;
   justify-content: center;
   margin: 1.25rem 0 1.75rem;
-  background: #faeef4;
-  border: 1px solid #f4dfe9;
-  color: #802B5B;
+  background: #F6F8F8;
+  border: 1px solid #F6F8F8;
+  color: #004B49;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .emp-process-card.is-active .emp-process-icon-box,
 .emp-process-card:hover .emp-process-icon-box {
-  background: #802B5B;
-  border-color: #802B5B;
+  background: #004B49;
+  border-color: #004B49;
   color: #ffffff;
-  box-shadow: 0 10px 24px -4px rgba(128, 43, 91, 0.4);
+  box-shadow: 0 10px 24px -4px rgba(0, 75, 73, 0.4);
   transform: scale(1.04);
 }
 
@@ -1560,7 +1560,7 @@
 
 .emp-process-card.is-active .emp-process-card-title,
 .emp-process-card:hover .emp-process-card-title {
-  color: #802B5B;
+  color: #004B49;
 }
 
 /* Description */
@@ -1602,7 +1602,7 @@
   top: 0;
   bottom: 0;
   width: 175px;
-  background: #802B5B;
+  background: #004B49;
   z-index: 1;
 }
 
@@ -1641,7 +1641,7 @@
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.08em;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 0.75rem;
 }
 
@@ -1675,7 +1675,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   font-size: 0.9375rem;
   font-weight: 700;
@@ -1684,13 +1684,13 @@
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.3);
 }
 
 .emp-cta-btn:hover {
-  background: #661e47;
+  background: #003836;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(128, 43, 91, 0.4);
+  box-shadow: 0 8px 22px rgba(0, 75, 73, 0.4);
 }
 
 /* Secondary Button for Mid CTA Section */
@@ -1700,8 +1700,8 @@
   justify-content: center;
   gap: 8px;
   background: #ffffff;
-  color: #802B5B;
-  border: 1.5px solid #802B5B;
+  color: #004B49;
+  border: 1.5px solid #004B49;
   font-size: 0.9375rem;
   font-weight: 700;
   padding: 0.875rem 1.85rem;
@@ -1712,11 +1712,11 @@
 }
 
 .emp-cta-btn-secondary:hover {
-  background: #fdf2f7;
-  border-color: #661e47;
-  color: #661e47;
+  background: #F6F8F8;
+  border-color: #003836;
+  color: #003836;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(128, 43, 91, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 75, 73, 0.15);
 }
 
 .emp-cta-btn-secondary svg {
@@ -1823,21 +1823,21 @@
   flex: 0 0 calc(33.333% - 1rem);
   min-width: 320px;
   scroll-snap-align: start;
-  background: #faeef4;
-  border: 1px solid rgba(128, 43, 91, 0.12);
-  border-bottom: 5px solid #802B5B;
+  background: #F6F8F8;
+  border: 1px solid rgba(0, 75, 73, 0.12);
+  border-bottom: 5px solid #004B49;
   border-radius: 18px;
   padding: 2.25rem 2rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.05);
+  box-shadow: 0 8px 24px rgba(0, 75, 73, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .emp-testimonial-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(128, 43, 91, 0.12);
+  box-shadow: 0 16px 36px rgba(0, 75, 73, 0.12);
 }
 
 /* Brand Name / Logo at top */
@@ -1845,7 +1845,7 @@
   font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 1.25rem;
   text-transform: lowercase;
 }
@@ -1875,7 +1875,7 @@
   align-items: center;
   gap: 0.875rem;
   padding-top: 1.25rem;
-  border-top: 1px solid rgba(128, 43, 91, 0.1);
+  border-top: 1px solid rgba(0, 75, 73, 0.1);
 }
 
 .emp-testi-avatar {
@@ -1939,9 +1939,9 @@
 }
 
 .emp-testi-arrow-btn.prev:hover {
-  border-color: #802B5B;
-  color: #802B5B;
-  background: #faeef4;
+  border-color: #004B49;
+  color: #004B49;
+  background: #F6F8F8;
 }
 
 .emp-testi-arrow-btn.prev svg {
@@ -1950,15 +1950,15 @@
 
 /* Right arrow (solid primary button in reference image) */
 .emp-testi-arrow-btn.next {
-  background: #802B5B;
-  border: 1.5px solid #802B5B;
+  background: #004B49;
+  border: 1.5px solid #004B49;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.3);
 }
 
 .emp-testi-arrow-btn.next:hover {
-  background: #661e47;
-  border-color: #661e47;
+  background: #003836;
+  border-color: #003836;
   transform: scale(1.05);
 }
 
@@ -2023,7 +2023,7 @@
 }
 
 .emp-page-faq .faq-item button:hover {
-  color: #802B5B;
+  color: #004B49;
 }
 
 .emp-page-faq .faq-item button i {
@@ -2032,8 +2032,8 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: #faeef4;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   font-style: normal;
   font-size: 17px;
   font-weight: 500;
@@ -2042,14 +2042,14 @@
 }
 
 .emp-page-faq .faq-item.open button i {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
 }
 
 .emp-page-faq .faq-item p {
   padding-bottom: 22px;
   padding-right: 40px;
-  color: #555263;
+  color: #00201F;
   font-size: 14.5px;
   line-height: 1.65;
   margin: 0;
@@ -2076,11 +2076,11 @@
 .emp-why-num-badge {
   font-size: 0.8125rem;
   font-weight: 800;
-  color: #802B5B;
-  background: #faeef4;
+  color: #004B49;
+  background: #F6F8F8;
   padding: 4px 11px;
   border-radius: 9999px;
-  border: 1px solid rgba(128, 43, 91, 0.15);
+  border: 1px solid rgba(0, 75, 73, 0.15);
   letter-spacing: 0.04em;
 }
 
@@ -2099,7 +2099,7 @@
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
   font-size: 11px !important;
   font-weight: 700 !important;
   letter-spacing: 1.8px !important;
@@ -2136,7 +2136,7 @@
   border: 1px solid #edf2f0;
   border-radius: 22px;
   text-align: center;
-  box-shadow: 0 10px 30px -5px rgba(128, 43, 91, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 10px 30px -5px rgba(0, 75, 73, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
 }
@@ -2144,7 +2144,7 @@
 .emp-connected-card:hover,
 .emp-connected-card.is-active {
   transform: translateY(-8px);
-  box-shadow: 0 22px 48px -10px rgba(128, 43, 91, 0.12), 0 8px 20px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 22px 48px -10px rgba(0, 75, 73, 0.12), 0 8px 20px rgba(0, 0, 0, 0.03);
 }
 
 /* Compact semicircle notch with distinct clearance above the icon box - Restored previous background */
@@ -2155,8 +2155,8 @@
   transform: translateX(-50%) !important;
   width: 68px !important;
   height: 32px !important;
-  background: #faeef5 !important;
-  background-color: #faeef5 !important;
+  background: #F6F8F8 !important;
+  background-color: #F6F8F8 !important;
   border: none !important;
   border-bottom-left-radius: 32px !important;
   border-bottom-right-radius: 32px !important;
@@ -2172,15 +2172,15 @@
 .emp-connected-card .emp-process-notch .emp-process-notch-pill {
   font-size: 0.85rem !important;
   font-weight: 700 !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
   transition: color 0.3s ease !important;
 }
 
 /* Hover & Active: Turn to solid primary color */
 .emp-connected-card:hover .emp-process-notch,
 .emp-connected-card.is-active .emp-process-notch {
-  background: #802B5B !important;
-  background-color: #802B5B !important;
+  background: #004B49 !important;
+  background-color: #004B49 !important;
   box-shadow: none !important;
 }
 
@@ -2200,10 +2200,10 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background: #faeef4 !important;
-  background-color: #faeef4 !important;
-  border: 1px solid #f4dfe9 !important;
-  color: #802B5B !important;
+  background: #F6F8F8 !important;
+  background-color: #F6F8F8 !important;
+  border: 1px solid #F6F8F8 !important;
+  color: #004B49 !important;
   box-shadow: none !important;
   transition: all 0.25s ease !important;
   flex-shrink: 0 !important;
@@ -2212,9 +2212,9 @@
 /* Hover & Active: Turn to solid primary color */
 .emp-connected-card:hover .emp-process-icon-box,
 .emp-connected-card.is-active .emp-process-icon-box {
-  background: #802B5B !important;
-  background-color: #802B5B !important;
-  border-color: #802B5B !important;
+  background: #004B49 !important;
+  background-color: #004B49 !important;
+  border-color: #004B49 !important;
   color: #ffffff !important;
   box-shadow: none !important;
   transform: none !important;
@@ -2254,7 +2254,7 @@
   gap: 6px !important;
   font-size: 0.84rem !important;
   font-weight: 700 !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
   margin-top: 1.5rem !important;
   padding: 0 !important;
   background: transparent !important;
@@ -2270,7 +2270,7 @@
   background: transparent !important;
   background-color: transparent !important;
   border: none !important;
-  color: #661e47 !important;
+  color: #003836 !important;
   gap: 9px !important;
   transform: translateX(3px) !important;
 }
@@ -2292,7 +2292,7 @@
 
 
 /* ==========================================================================
-   2. WHY LATTIUMHR SECTION - RESTORED PREVIOUS ELEGANT CARD SIZES (#802B5B)
+   2. WHY LATTIUMHR SECTION - RESTORED PREVIOUS ELEGANT CARD SIZES (#004B49)
    ========================================================================== */
 .emp-why-choose-section {
   padding: 4.5rem 0 4.5rem !important;
@@ -2314,7 +2314,7 @@
   font-weight: 800 !important;
   letter-spacing: 1.8px !important;
   margin-bottom: 13px !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
   text-transform: uppercase !important;
   display: block !important;
 }
@@ -2381,7 +2381,7 @@
   border: none !important;
   box-shadow: none !important;
   padding: 0 !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
   font-size: 11px !important;
   font-weight: 700 !important;
   letter-spacing: 1.8px !important;
@@ -2498,7 +2498,7 @@
   padding: 1.65rem 1.45rem !important;
   border-radius: 18px !important;
   background-color: #ffffff !important;
-  border: 1px solid #e8edf0 !important;
+  border: 1px solid #E5EAEA !important;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.025) !important;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
   cursor: pointer !important;
@@ -2535,8 +2535,8 @@
 .emp-why-choose-section .emp-why-small-card:hover,
 .emp-why-small-card:hover {
   transform: translateY(-5px) !important;
-  box-shadow: 0 18px 38px rgba(128, 43, 91, 0.12) !important;
-  border-color: rgba(128, 43, 91, 0.35) !important;
+  box-shadow: 0 18px 38px rgba(0, 75, 73, 0.12) !important;
+  border-color: rgba(0, 75, 73, 0.35) !important;
 }
 
 .emp-why-choose-section .emp-why-small-card:hover::before,
@@ -2554,8 +2554,8 @@
   border-radius: 50% !important;
   right: -75px !important;
   top: -75px !important;
-  background: rgba(128, 43, 91, 0.05) !important;
-  border: 1px solid rgba(128, 43, 91, 0.12) !important;
+  background: rgba(0, 75, 73, 0.05) !important;
+  border: 1px solid rgba(0, 75, 73, 0.12) !important;
   transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.4s ease, border-color 0.4s ease !important;
   pointer-events: none !important;
   z-index: 1 !important;
@@ -2564,8 +2564,8 @@
 .emp-why-choose-section .emp-why-small-card:hover::after,
 .emp-why-small-card:hover::after {
   transform: scale(1.4) !important;
-  background: rgba(128, 43, 91, 0.09) !important;
-  border-color: rgba(128, 43, 91, 0.22) !important;
+  background: rgba(0, 75, 73, 0.09) !important;
+  border-color: rgba(0, 75, 73, 0.22) !important;
 }
 
 .emp-why-choose-section .emp-why-card-top-row,
@@ -2588,7 +2588,7 @@
   background: transparent !important;
   background-color: transparent !important;
   border: 1.5px solid #edf2f7 !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2598,19 +2598,19 @@
 
 .emp-why-choose-section .emp-why-icon-badge svg,
 .emp-why-icon-badge svg {
-  color: #802B5B !important;
-  stroke: #802B5B !important;
+  color: #004B49 !important;
+  stroke: #004B49 !important;
   transition: all 0.3s ease !important;
 }
 
 /* Small Card Icon Badge - HOVER: Solid Plum Background & Pure White Icon */
 .emp-why-choose-section .emp-why-small-card:hover .emp-why-icon-badge,
 .emp-why-small-card:hover .emp-why-icon-badge {
-  background: #802B5B !important;
-  background-color: #802B5B !important;
-  border-color: #802B5B !important;
+  background: #004B49 !important;
+  background-color: #004B49 !important;
+  border-color: #004B49 !important;
   color: #ffffff !important;
-  box-shadow: 0 8px 22px rgba(128, 43, 91, 0.4) !important;
+  box-shadow: 0 8px 22px rgba(0, 75, 73, 0.4) !important;
   transform: scale(1.08) !important;
 }
 
@@ -2641,7 +2641,7 @@
 
 .emp-why-choose-section .emp-why-small-card:hover .emp-why-card-title,
 .emp-why-small-card:hover .emp-why-card-title {
-  color: #802B5B !important;
+  color: #004B49 !important;
 }
 
 .emp-why-choose-section .emp-why-card-desc,
@@ -2687,11 +2687,11 @@
 }
 
 .emp-cap-bg-1 {
-  background-color: #f8f7fb;
+  background-color: #F6F8F8;
 }
 
 .emp-cap-bg-2 {
-  background-color: #fdf8fa;
+  background-color: #F6F8F8;
 }
 
 /* Dividing line between blocks that does not touch corners */
@@ -2712,7 +2712,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   font-size: 0.9375rem;
   font-weight: 700;
@@ -2720,14 +2720,14 @@
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.28);
   transition: all 0.25s ease;
 }
 
 .emp-block-callout-btn:hover {
-  background: #661e47;
+  background: #003836;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(128, 43, 91, 0.4);
+  box-shadow: 0 8px 22px rgba(0, 75, 73, 0.4);
 }
 
 /* Compact four stat cards: size reduced */
@@ -2778,7 +2778,7 @@
 }
 
 .emp-process-pill span {
-  color: #802B5B !important;
+  color: #004B49 !important;
   font-size: 11px !important;
   font-weight: 800 !important;
   letter-spacing: 2px !important;
@@ -2797,14 +2797,14 @@
   transform: translateX(-50%) !important;
   width: 90px !important;
   height: 45px !important;
-  background: #faeef4 !important;
+  background: #F6F8F8 !important;
   border-bottom-left-radius: 45px !important;
   border-bottom-right-radius: 45px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   padding-bottom: 4px !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
   font-size: 0.95rem !important;
   font-weight: 800 !important;
   letter-spacing: 0.04em !important;
@@ -2813,9 +2813,9 @@
 
 .emp-process-card.is-active .emp-process-notch,
 .emp-process-card:hover .emp-process-notch {
-  background: #802B5B !important;
+  background: #004B49 !important;
   color: #ffffff !important;
-  box-shadow: 0 6px 16px rgba(128, 43, 91, 0.35) !important;
+  box-shadow: 0 6px 16px rgba(0, 75, 73, 0.35) !important;
 }
 
 .emp-process-notch-num {
@@ -2826,24 +2826,24 @@
 /* ==========================================================================
    TESTIMONIALS SECTION REFINEMENTS
    ========================================================================== */
-/* Reduced card height, removed background, kept under-border in #802B5B */
+/* Reduced card height, removed background, kept under-border in #004B49 */
 .emp-testimonial-card {
   padding: 1.45rem 1.65rem 1.35rem !important;
   background: #ffffff !important;
-  border: 1px solid #e8edf0 !important;
-  border-bottom: 5px solid #802B5B !important;
+  border: 1px solid #E5EAEA !important;
+  border-bottom: 5px solid #004B49 !important;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03) !important;
 }
 
 .emp-testimonial-card:hover {
   transform: translateY(-4px) !important;
-  box-shadow: 0 14px 30px rgba(128, 43, 91, 0.1) !important;
+  box-shadow: 0 14px 30px rgba(0, 75, 73, 0.1) !important;
 }
 
 .emp-testi-brand {
   margin-bottom: 0.65rem !important;
   font-size: 1.25rem !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
 }
 
 .emp-testi-headline {

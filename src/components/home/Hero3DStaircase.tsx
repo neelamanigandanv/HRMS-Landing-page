@@ -55,12 +55,12 @@ export function Hero3DStaircase() {
       </div>
       <div className="hero-3d-sparkle sparkle-2" aria-hidden="true">
         <svg viewBox="0 0 20 20" width="14" height="14">
-          <path d="M10,0 L12,8 L20,10 L12,12 L10,20 L8,12 L0,10 L8,8 Z" fill="#B8487C" />
+          <path d="M10,0 L12,8 L20,10 L12,12 L10,20 L8,12 L0,10 L8,8 Z" fill="#004B49" />
         </svg>
       </div>
       <div className="hero-3d-sparkle sparkle-3" aria-hidden="true">
         <svg viewBox="0 0 20 20" width="18" height="18">
-          <path d="M10,0 L12,8 L20,10 L12,12 L10,20 L8,12 L0,10 L8,8 Z" fill="#8C2B66" />
+          <path d="M10,0 L12,8 L20,10 L12,12 L10,20 L8,12 L0,10 L8,8 Z" fill="#003836" />
         </svg>
       </div>
 

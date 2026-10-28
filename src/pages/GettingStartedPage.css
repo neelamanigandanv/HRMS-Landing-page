@@ -17,7 +17,7 @@
    1. CLEAN LIGHT DOCUMENTATION HEADER
    ========================================================================== */
 .gs-clean-header {
-  background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #F6F8F8 100%);
   border-bottom: 1px solid #e2e8f0;
   padding: 32px 0 44px;
   position: relative;
@@ -30,7 +30,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #7b2958 0%, #a42c6c 50%, #ff6b4a 100%);
+  background: linear-gradient(90deg, #004B49 0%, #004B49 50%, #ff6b4a 100%);
 }
 
 .gs-header-container {
@@ -71,7 +71,7 @@
 }
 
 .gs-header-breadcrumbs a:hover {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .gs-header-breadcrumbs-sep {
@@ -124,7 +124,7 @@
 .gs-util-btn:hover {
   background: #f8fafc;
   border-color: #cbd5e1;
-  color: #7b2958;
+  color: #004B49;
 }
 
 .gs-util-btn.copied {
@@ -145,9 +145,9 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #fcf2f7;
-  border: 1px solid #f6d6e7;
-  color: #8b265c;
+  background-color: #F6F8F8;
+  border: 1px solid #E5EAEA;
+  color: #004B49;
   font-size: 11.5px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -202,8 +202,8 @@
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: #faf2f7;
-  color: #8b265c;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -243,7 +243,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #8b265c;
+  background-color: #004B49;
   color: #ffffff;
   font-size: 13.5px;
   font-weight: 600;
@@ -257,7 +257,7 @@
 }
 
 .gs-header-btn-primary:hover {
-  background-color: #a42c6c;
+  background-color: #004B49;
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(139, 38, 92, 0.35);
   color: #ffffff;
@@ -353,8 +353,8 @@
 }
 
 .gs-step-nav-link.active {
-  background-color: #faeef5;
-  color: #8b265c;
+  background-color: #F6F8F8;
+  color: #004B49;
   font-weight: 600;
 }
 
@@ -373,7 +373,7 @@
 }
 
 .gs-step-nav-link.active .gs-step-nav-circle {
-  background-color: #8b265c;
+  background-color: #004B49;
   color: #ffffff;
 }
 
@@ -390,14 +390,14 @@
   justify-content: space-between;
   font-size: 11.5px;
   font-weight: 600;
-  color: #8b265c;
+  color: #004B49;
   text-decoration: none;
   line-height: 1.4;
   transition: color 0.15s ease;
 }
 
 .gs-sidebar-guide-link:hover {
-  color: #5c1840;
+  color: #00201F;
   text-decoration: underline;
 }
 
@@ -431,7 +431,7 @@
 }
 
 .gs-breadcrumb a:hover {
-  color: #8b265c;
+  color: #004B49;
 }
 
 .gs-breadcrumb-sep {
@@ -466,8 +466,8 @@
 
 /* "Before you begin" Callout */
 .gs-callout-card {
-  background-color: #faf4f8;
-  border: 1px solid #eed8e7;
+  background-color: #F6F8F8;
+  border: 1px solid #E5EAEA;
   border-radius: 12px;
   padding: 22px 24px;
   display: flex;
@@ -479,7 +479,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: #8b265c;
+  background-color: #004B49;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -518,7 +518,7 @@
 }
 
 .gs-callout-list svg {
-  color: #8b265c;
+  color: #004B49;
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -552,7 +552,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #8b265c;
+  background-color: #004B49;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -604,8 +604,8 @@
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  border: 1.5px solid #d8b4cb;
-  color: #8b265c;
+  border: 1.5px solid #E5EAEA;
+  color: #004B49;
   font-size: 11px;
   font-weight: 700;
   display: flex;
@@ -638,8 +638,8 @@
 }
 
 .gs-mini-mockup-nav {
-  background: #fbfcfe;
-  border-right: 1px solid #f1f4f9;
+  background: #F6F8F8;
+  border-right: 1px solid #F6F8F8;
   padding: 8px 6px;
   display: flex;
   flex-direction: column;
@@ -658,8 +658,8 @@
 }
 
 .gs-mini-nav-item.active {
-  background-color: #faeef5;
-  color: #8b265c;
+  background-color: #F6F8F8;
+  color: #004B49;
   font-weight: 600;
 }
 
@@ -684,7 +684,7 @@
 }
 
 .gs-mini-primary-btn {
-  background-color: #8b265c;
+  background-color: #004B49;
   color: #ffffff;
   font-size: 9.5px;
   font-weight: 600;
@@ -751,7 +751,7 @@
 }
 
 .gs-mini-location-info svg {
-  color: #8b265c;
+  color: #004B49;
 }
 
 .gs-mini-loc-name {
@@ -787,8 +787,8 @@
 
 /* Completion Card: "You're all set!" */
 .gs-completion-card {
-  background: #fcf7fa;
-  border: 1px solid #eedae8;
+  background: #F6F8F8;
+  border: 1px solid #E5EAEA;
   border-radius: 14px;
   padding: 24px 28px;
   display: flex;
@@ -807,7 +807,7 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background-color: #8b265c;
+  background-color: #004B49;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -842,7 +842,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background-color: #8b265c;
+  background-color: #004B49;
   color: #ffffff;
   font-size: 13px;
   font-weight: 600;
@@ -854,7 +854,7 @@
 }
 
 .gs-completion-btn:hover {
-  background-color: #a42c6c;
+  background-color: #004B49;
   transform: translateY(-1px);
   color: #ffffff;
 }
@@ -867,7 +867,7 @@
 }
 
 .gs-completion-back-link:hover {
-  color: #8b265c;
+  color: #004B49;
 }
 
 /* ==========================================================================
@@ -914,11 +914,11 @@
 }
 
 .gs-toc-item a:hover {
-  color: #8b265c;
+  color: #004B49;
 }
 
 .gs-toc-item.active a {
-  color: #8b265c;
+  color: #004B49;
   font-weight: 600;
 }
 
@@ -926,8 +926,8 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background-color: #faeef5;
-  color: #8b265c;
+  background-color: #F6F8F8;
+  color: #004B49;
   font-size: 10px;
   font-weight: 700;
   display: flex;
@@ -937,7 +937,7 @@
 }
 
 .gs-toc-item.active .gs-toc-badge {
-  background-color: #8b265c;
+  background-color: #004B49;
   color: #ffffff;
 }
 
@@ -983,13 +983,13 @@
   gap: 6px;
   font-size: 13px;
   font-weight: 600;
-  color: #8b265c;
+  color: #004B49;
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .gs-related-view-all:hover {
-  color: #5c1840;
+  color: #00201F;
   text-decoration: underline;
 }
 
@@ -1015,7 +1015,7 @@
 }
 
 .gs-related-card:hover {
-  border-color: #ebd0e2;
+  border-color: #E5EAEA;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(139, 38, 92, 0.08);
 }
@@ -1024,8 +1024,8 @@
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background-color: #faf0f6;
-  color: #8b265c;
+  background-color: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1058,7 +1058,7 @@
 }
 
 .gs-related-footer svg {
-  color: #8b265c;
+  color: #004B49;
   transition: transform 0.15s ease;
 }
 
@@ -1071,7 +1071,7 @@
    ========================================================================== */
 .gs-support-section {
   background: radial-gradient(circle at 10% 90%, rgba(184, 51, 106, 0.3) 0%, transparent 60%),
-              linear-gradient(135deg, #1b0718 0%, #290a21 60%, #150513 100%);
+              linear-gradient(135deg, #00201F 0%, #00201F 60%, #00201F 100%);
   color: #ffffff;
   padding: 56px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1107,7 +1107,7 @@
 
 .gs-support-left p {
   font-size: 13.5px;
-  color: #d8c2d2;
+  color: #E5EAEA;
   margin: 0;
   line-height: 1.6;
 }
@@ -1132,7 +1132,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fce7f3;
+  color: #F6F8F8;
   margin-bottom: 8px;
 }
 
@@ -1156,7 +1156,7 @@
   gap: 6px;
   font-size: 12px;
   font-weight: 600;
-  color: #fbcfe8;
+  color: #F6F8F8;
   text-decoration: none;
   transition: color 0.15s ease;
 }

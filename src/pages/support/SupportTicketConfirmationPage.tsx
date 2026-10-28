@@ -37,10 +37,10 @@ export default function SupportTicketConfirmationPage() {
         title={`Ticket Submitted #${ticketId || 'New'} | ${SUPPORT_CONTACT_CONFIG.brandName} Support`}
         description="Your support request has been received by our engineering and payroll support team."
       />
-      <div style={{ backgroundColor: '#fcfafc', borderBottom: '1px solid #ebdbe6', padding: '32px 24px' }}>
+      <div style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5EAEA', padding: '32px 24px' }}>
         <div style={{ maxWidth: '720px', margin: '0 auto' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#6b7280' }}>
-            <Link to="/support" style={{ color: '#7b2958', textDecoration: 'none' }}>Support</Link>
+            <Link to="/support" style={{ color: '#004B49', textDecoration: 'none' }}>Support</Link>
             <span>›</span>
             <span style={{ color: '#374151', fontWeight: 500 }}>Ticket Confirmation</span>
           </nav>
@@ -51,14 +51,14 @@ export default function SupportTicketConfirmationPage() {
         <div style={{
           backgroundColor: '#ffffff',
           borderRadius: '16px',
-          border: '1px solid #ebdbe6',
-          boxShadow: '0 4px 20px rgba(123, 41, 88, 0.06)',
+          border: '1px solid #E5EAEA',
+          boxShadow: '0 4px 20px rgba(0, 75, 73, 0.06)',
           overflow: 'hidden'
         }}>
           {/* Header Banner */}
           <div style={{
-            backgroundColor: '#faedf4',
-            borderBottom: '1px solid #ebdbe6',
+            backgroundColor: '#F6F8F8',
+            borderBottom: '1px solid #E5EAEA',
             padding: '32px',
             textAlign: 'center'
           }}>
@@ -66,7 +66,7 @@ export default function SupportTicketConfirmationPage() {
               width: '56px',
               height: '56px',
               borderRadius: '50%',
-              backgroundColor: '#7b2958',
+              backgroundColor: '#004B49',
               color: '#ffffff',
               display: 'inline-flex',
               alignItems: 'center',
@@ -87,8 +87,8 @@ export default function SupportTicketConfirmationPage() {
           <div style={{ padding: '32px' }}>
             {/* Ticket ID Highlight */}
             <div style={{
-              backgroundColor: '#faf5f8',
-              border: '1px dashed #dca5c7',
+              backgroundColor: '#F6F8F8',
+              border: '1px dashed #E5EAEA',
               borderRadius: '10px',
               padding: '16px 20px',
               display: 'flex',
@@ -99,7 +99,7 @@ export default function SupportTicketConfirmationPage() {
               gap: '12px'
             }}>
               <div>
-                <span style={{ fontSize: '12px', fontWeight: 600, color: '#7b2958', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <span style={{ fontSize: '12px', fontWeight: 600, color: '#004B49', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Your Reference Ticket ID
                 </span>
                 <div style={{ fontSize: '22px', fontWeight: 800, color: '#111827', letterSpacing: '0.02em', marginTop: '2px' }}>
@@ -112,9 +112,9 @@ export default function SupportTicketConfirmationPage() {
                 borderRadius: '12px',
                 fontSize: '12px',
                 fontWeight: 600,
-                backgroundColor: priorityKey === 'Critical' ? '#fee2e2' : '#faedf4',
-                color: priorityKey === 'Critical' ? '#dc2626' : '#7b2958',
-                border: '1px solid #ebdbe6'
+                backgroundColor: priorityKey === 'Critical' ? '#fee2e2' : '#F6F8F8',
+                color: priorityKey === 'Critical' ? '#dc2626' : '#004B49',
+                border: '1px solid #E5EAEA'
               }}>
                 Priority: {priorityKey}
               </span>
@@ -129,7 +129,7 @@ export default function SupportTicketConfirmationPage() {
               marginBottom: '24px'
             }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-                <div style={{ color: '#7b2958', marginTop: '2px' }}>
+                <div style={{ color: '#004B49', marginTop: '2px' }}>
                   <Icon name="clock" size={20} />
                 </div>
                 <div>

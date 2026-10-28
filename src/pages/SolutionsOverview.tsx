@@ -603,19 +603,19 @@ export function SolutionsOverview() {
                         <svg viewBox="0 0 340 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="so-vertical-art-svg">
                           {/* Left Monitor / Card */}
                           <g transform="translate(35, 20)">
-                            <circle cx="50" cy="20" r="14" fill="#f472b6" />
-                            <rect x="0" y="44" width="100" height="72" rx="8" fill="#150822" stroke="#3b174e" strokeWidth="1.5" />
-                            <rect x="16" y="66" width="68" height="6.5" rx="3.25" fill="#fce7f3" />
-                            <rect x="16" y="82" width="46" height="5.5" rx="2.75" fill="#f472b6" opacity="0.85" />
+                            <circle cx="50" cy="20" r="14" fill="#004B49" />
+                            <rect x="0" y="44" width="100" height="72" rx="8" fill="#00201F" stroke="#00201F" strokeWidth="1.5" />
+                            <rect x="16" y="66" width="68" height="6.5" rx="3.25" fill="#F6F8F8" />
+                            <rect x="16" y="82" width="46" height="5.5" rx="2.75" fill="#004B49" opacity="0.85" />
                           </g>
 
                           {/* Right Monitor / Card */}
                           <g transform="translate(185, 20)">
-                            <circle cx="50" cy="20" r="14" fill="#f472b6" />
-                            <rect x="0" y="44" width="100" height="72" rx="8" fill="#150822" stroke="#3b174e" strokeWidth="1.5" />
-                            <rect x="18" y="82" width="8" height="20" rx="2" fill="#a855f7" />
+                            <circle cx="50" cy="20" r="14" fill="#004B49" />
+                            <rect x="0" y="44" width="100" height="72" rx="8" fill="#00201F" stroke="#00201F" strokeWidth="1.5" />
+                            <rect x="18" y="82" width="8" height="20" rx="2" fill="#004B49" />
                             <rect x="33" y="66" width="8" height="36" rx="2" fill="#34d399" />
-                            <rect x="48" y="56" width="8" height="46" rx="2" fill="#f472b6" />
+                            <rect x="48" y="56" width="8" height="46" rx="2" fill="#004B49" />
                             <rect x="63" y="74" width="8" height="28" rx="2" fill="#38bdf8" />
                           </g>
                         </svg>
@@ -879,7 +879,7 @@ export function SolutionsOverview() {
                       <span>Faster approvals →</span>
                     </div>
                     <svg className="so-fl-noodle-line" viewBox="0 0 65 95" fill="none">
-                      <path d="M 2 15 C 30 10, 52 35, 48 58 C 44 78, 12 80, 24 55 C 32 38, 52 42, 62 25" stroke="#7b2958" strokeWidth="1.5" opacity="0.6" strokeLinecap="round" />
+                      <path d="M 2 15 C 30 10, 52 35, 48 58 C 44 78, 12 80, 24 55 C 32 38, 52 42, 62 25" stroke="#004B49" strokeWidth="1.5" opacity="0.6" strokeLinecap="round" />
                     </svg>
                   </div>
                 </div>
@@ -973,13 +973,13 @@ export function SolutionsOverview() {
                                 <svg viewBox="0 0 100 100" className="so-fl-donut-svg">
                                   <circle cx="50" cy="50" r="38" fill="none" stroke="#f1f5f9" strokeWidth="13" />
                                   {/* Basic: 62% */}
-                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#7b2958" strokeWidth="13"
+                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#004B49" strokeWidth="13"
                                     strokeDasharray="148 238.76" strokeDashoffset="0" transform="rotate(-90 50 50)" />
                                   {/* Allowances: 18% */}
-                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#a83b74" strokeWidth="13"
+                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#004B49" strokeWidth="13"
                                     strokeDasharray="43 238.76" strokeDashoffset="-148" transform="rotate(-90 50 50)" />
                                   {/* Deductions: 12% */}
-                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#ba8ec5" strokeWidth="13"
+                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#7C8886" strokeWidth="13"
                                     strokeDasharray="28.6 238.76" strokeDashoffset="-191" transform="rotate(-90 50 50)" />
                                   {/* Other: 8% */}
                                   <circle cx="50" cy="50" r="38" fill="none" stroke="#f59e0b" strokeWidth="13"
@@ -993,17 +993,17 @@ export function SolutionsOverview() {
 
                               <div className="so-fl-donut-legend">
                                 <div className="so-fl-legend-item">
-                                  <span className="dot" style={{ background: "#7b2958" }} />
+                                  <span className="dot" style={{ background: "#004B49" }} />
                                   <span className="name">Basic Salary</span>
                                   <span className="pct">62%</span>
                                 </div>
                                 <div className="so-fl-legend-item">
-                                  <span className="dot" style={{ background: "#a83b74" }} />
+                                  <span className="dot" style={{ background: "#004B49" }} />
                                   <span className="name">Allowances</span>
                                   <span className="pct">18%</span>
                                 </div>
                                 <div className="so-fl-legend-item">
-                                  <span className="dot" style={{ background: "#ba8ec5" }} />
+                                  <span className="dot" style={{ background: "#7C8886" }} />
                                   <span className="name">Deductions</span>
                                   <span className="pct">12%</span>
                                 </div>

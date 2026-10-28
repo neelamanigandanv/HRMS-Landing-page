@@ -583,7 +583,7 @@ export function ReportsAnalyticsPage() {
         {/* =========================================================================
             03B · DEEP-DIVE CAPABILITY BLOCKS (Alternating 3 Flagship Blocks)
             ========================================================================= */}
-        <section className="emp-section" style={{ background: "#fcfbfe", borderTop: "1px solid #f0ecf5" }}>
+        <section className="emp-section" style={{ background: "#F6F8F8", borderTop: "1px solid #E5EAEA" }}>
           <div className="container">
             <div className="emp-feature-blocks-wrapper">
               {capabilityBlocks.map((block, index) => {
@@ -756,22 +756,22 @@ export function ReportsAnalyticsPage() {
                 >
                   <defs>
                     <linearGradient id="reportsChartGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#802B5B" stopOpacity="0.28" />
-                      <stop offset="60%" stopColor="#802B5B" stopOpacity="0.08" />
-                      <stop offset="100%" stopColor="#802B5B" stopOpacity="0.0" />
+                      <stop offset="0%" stopColor="#004B49" stopOpacity="0.28" />
+                      <stop offset="60%" stopColor="#004B49" stopOpacity="0.08" />
+                      <stop offset="100%" stopColor="#004B49" stopOpacity="0.0" />
                     </linearGradient>
                     <linearGradient id="reportsLineGrad" x1="0" y1="0" x2="1" y2="0">
-                      <stop offset="0%" stopColor="#802B5B" />
-                      <stop offset="50%" stopColor="#a33d77" />
-                      <stop offset="100%" stopColor="#5146d8" />
+                      <stop offset="0%" stopColor="#004B49" />
+                      <stop offset="50%" stopColor="#003836" />
+                      <stop offset="100%" stopColor="#004B49" />
                     </linearGradient>
                   </defs>
 
                   {/* Horizontal Guide Grid Lines */}
-                  <line x1="60" y1="40" x2="860" y2="40" stroke="#ede8f5" strokeWidth="1" strokeDasharray="4 4" />
-                  <line x1="60" y1="95" x2="860" y2="95" stroke="#ede8f5" strokeWidth="1" strokeDasharray="4 4" />
-                  <line x1="60" y1="150" x2="860" y2="150" stroke="#ede8f5" strokeWidth="1" strokeDasharray="4 4" />
-                  <line x1="60" y1="205" x2="860" y2="205" stroke="#ede8f5" strokeWidth="1" />
+                  <line x1="60" y1="40" x2="860" y2="40" stroke="#F6F8F8" strokeWidth="1" strokeDasharray="4 4" />
+                  <line x1="60" y1="95" x2="860" y2="95" stroke="#F6F8F8" strokeWidth="1" strokeDasharray="4 4" />
+                  <line x1="60" y1="150" x2="860" y2="150" stroke="#F6F8F8" strokeWidth="1" strokeDasharray="4 4" />
+                  <line x1="60" y1="205" x2="860" y2="205" stroke="#F6F8F8" strokeWidth="1" />
 
                   {/* Benchmark Guideline */}
                   <line x1="60" y1="95" x2="860" y2="95" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="6 6" />
@@ -793,12 +793,12 @@ export function ReportsAnalyticsPage() {
                         strokeLinejoin="round"
                       />
                       {/* Data Points */}
-                      <circle cx="120" cy="160" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="260" cy="100" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="400" cy="85" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="540" cy="65" r="6" fill="#802B5B" stroke="#ffffff" strokeWidth="2.5" />
-                      <circle cx="680" cy="100" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="820" cy="75" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
+                      <circle cx="120" cy="160" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="260" cy="100" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="400" cy="85" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="540" cy="65" r="6" fill="#004B49" stroke="#ffffff" strokeWidth="2.5" />
+                      <circle cx="680" cy="100" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="820" cy="75" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
                     </>
                   )}
 
@@ -818,12 +818,12 @@ export function ReportsAnalyticsPage() {
                         strokeLinejoin="round"
                       />
                       {/* Data Points */}
-                      <circle cx="120" cy="170" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="260" cy="140" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="400" cy="120" r="6" fill="#802B5B" stroke="#ffffff" strokeWidth="2.5" />
-                      <circle cx="540" cy="155" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="680" cy="135" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="820" cy="150" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
+                      <circle cx="120" cy="170" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="260" cy="140" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="400" cy="120" r="6" fill="#004B49" stroke="#ffffff" strokeWidth="2.5" />
+                      <circle cx="540" cy="155" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="680" cy="135" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="820" cy="150" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
                     </>
                   )}
 
@@ -843,12 +843,12 @@ export function ReportsAnalyticsPage() {
                         strokeLinejoin="round"
                       />
                       {/* Data Points */}
-                      <circle cx="120" cy="180" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="260" cy="160" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="400" cy="135" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="540" cy="100" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="680" cy="80" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="3" />
-                      <circle cx="820" cy="55" r="6" fill="#802B5B" stroke="#ffffff" strokeWidth="2.5" />
+                      <circle cx="120" cy="180" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="260" cy="160" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="400" cy="135" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="540" cy="100" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="680" cy="80" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+                      <circle cx="820" cy="55" r="6" fill="#004B49" stroke="#ffffff" strokeWidth="2.5" />
                     </>
                   )}
 

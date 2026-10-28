@@ -579,7 +579,7 @@ export function GuideDetailPage() {
                         <div className="calc-output-box">
                           <div className="calc-inhand-hero">
                             <span className="calc-inhand-label">Available Leave Balance</span>
-                            <div className="calc-inhand-amount" style={{ color: "#7b2958" }}>
+                            <div className="calc-inhand-amount" style={{ color: "#004B49" }}>
                               {availableLeaveBalance} <span style={{ fontSize: "20px" }}>Days</span>
                             </div>
                             <span className="calc-inhand-note">
@@ -650,7 +650,7 @@ export function GuideDetailPage() {
                               </td>
                               <td>{rule.standard}</td>
                               <td>
-                                <span style={{ color: "#7b2958", fontWeight: 600 }}>
+                                <span style={{ color: "#004B49", fontWeight: 600 }}>
                                   {rule.recommendation}
                                 </span>
                               </td>
@@ -714,7 +714,7 @@ export function GuideDetailPage() {
                         <h3>
                           <Icon name="check" size={20} /> Annual Leave Audit Progress
                         </h3>
-                        <span style={{ fontWeight: 700, color: "#7b2958", fontSize: "14px" }}>
+                        <span style={{ fontWeight: 700, color: "#004B49", fontSize: "14px" }}>
                           {completedCount} of {checklist.length} Completed ({progressPercent}%)
                         </span>
                       </div>
@@ -992,7 +992,7 @@ export function GuideDetailPage() {
                         <div className="calc-output-box">
                           <div className="calc-inhand-hero">
                             <span className="calc-inhand-label">Estimated Monthly In-Hand Pay</span>
-                            <div className="calc-inhand-amount" style={{ color: "#7b2958" }}>
+                            <div className="calc-inhand-amount" style={{ color: "#004B49" }}>
                               {formatAmount(netInHand)}
                             </div>
                             <span className="calc-inhand-note">
@@ -1235,7 +1235,7 @@ export function GuideDetailPage() {
                         <h3>
                           <Icon name="check" size={20} /> Monthly Run Progress
                         </h3>
-                        <span style={{ fontWeight: 700, color: "#7b2958", fontSize: "14px" }}>
+                        <span style={{ fontWeight: 700, color: "#004B49", fontSize: "14px" }}>
                           {completedCount} of {checklist.length} Completed ({progressPercent}%)
                         </span>
                       </div>

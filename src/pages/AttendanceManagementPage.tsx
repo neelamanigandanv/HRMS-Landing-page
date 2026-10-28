@@ -373,7 +373,7 @@ export function AttendanceManagementPage() {
 
                 <div className="emp-donut-chart-wrap">
                   <svg width="120" height="120" viewBox="0 0 180 180" className="emp-donut-svg">
-                    <circle cx="90" cy="90" r="68" stroke="#f4edf3" strokeWidth="18" fill="none" />
+                    <circle cx="90" cy="90" r="68" stroke="#F6F8F8" strokeWidth="18" fill="none" />
                     {/* On-Time 82% (Emerald #10b981) */}
                     <circle
                       cx="90" cy="90" r="68"
@@ -382,18 +382,18 @@ export function AttendanceManagementPage() {
                       strokeLinecap="round"
                       transform="rotate(-90 90 90)"
                     />
-                    {/* Grace Period 12% (Plum #7b2958) */}
+                    {/* Grace Period 12% (Plum #004B49) */}
                     <circle
                       cx="90" cy="90" r="68"
-                      stroke="#7b2958" strokeWidth="18" fill="none"
+                      stroke="#004B49" strokeWidth="18" fill="none"
                       strokeDasharray="427" strokeDashoffset="375"
                       strokeLinecap="round"
                       transform="rotate(205 90 90)"
                     />
-                    {/* Remote Geofence 6% (Violet #8b5cf6) */}
+                    {/* Remote Geofence 6% (Violet #004B49) */}
                     <circle
                       cx="90" cy="90" r="68"
-                      stroke="#8b5cf6" strokeWidth="18" fill="none"
+                      stroke="#004B49" strokeWidth="18" fill="none"
                       strokeDasharray="427" strokeDashoffset="401"
                       strokeLinecap="round"
                       transform="rotate(248 90 90)"

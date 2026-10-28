@@ -55,9 +55,9 @@
 /* Center Hero Preview Image Mockup */
 .doc-hero-showcase-frame {
   background: #ffffff;
-  border: 1px solid rgba(81, 70, 216, 0.14);
+  border: 1px solid rgba(0, 75, 73, 0.14);
   border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(25, 23, 53, 0.12), 0 4px 16px rgba(128, 43, 91, 0.08);
+  box-shadow: 0 20px 60px rgba(25, 23, 53, 0.12), 0 4px 16px rgba(0, 75, 73, 0.08);
   overflow: hidden;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -65,7 +65,7 @@
 
 .doc-hero-showcase-frame:hover {
   transform: translateY(-4px);
-  box-shadow: 0 26px 70px rgba(25, 23, 53, 0.16), 0 8px 24px rgba(128, 43, 91, 0.12);
+  box-shadow: 0 26px 70px rgba(25, 23, 53, 0.16), 0 8px 24px rgba(0, 75, 73, 0.12);
 }
 
 .doc-hero-mockup-img {
@@ -81,7 +81,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 0;
-  border-bottom: 1px solid #f1edf5;
+  border-bottom: 1px solid #F6F8F8;
 }
 
 .doc-widget-metric-row:last-child {
@@ -140,7 +140,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #fbfafc;
+  background: #F6F8F8;
   border: 1px solid #edeaf4;
   border-radius: 8px;
   padding: 7px 10px;
@@ -230,5 +230,5 @@
    WHY LATTIUMHR STATS ALIGNMENT
    ========================================================================== */
 .doc-page-wrapper .emp-why-big-card {
-  background: linear-gradient(145deg, #ffffff 0%, #fbf9fc 100%);
+  background: linear-gradient(145deg, #ffffff 0%, #F6F8F8 100%);
 }

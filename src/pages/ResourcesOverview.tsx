@@ -392,29 +392,29 @@ export function ResourcesOverview() {
                   <div className="res-art-aura" />
                   <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="res-art-svg" aria-hidden="true">
                     {/* Marked Area 1: Soft cloud backdrop behind illustration */}
-                    <path d="M26 54 C26 24 46 12 80 12 C114 12 136 24 136 54 C136 82 114 94 80 94 C46 94 26 82 26 54 Z" fill="#f4eaf2" />
+                    <path d="M26 54 C26 24 46 12 80 12 C114 12 136 24 136 54 C136 82 114 94 80 94 C46 94 26 82 26 54 Z" fill="#F6F8F8" />
                     {/* Marked Area 1: Floating petals / droplets */}
-                    <path d="M44 22 C42 18 46 14 50 16 C54 18 52 24 48 24 C45 24 44 23 44 22 Z" fill="#b86d9a" opacity="0.75" />
-                    <path d="M36 30 C34 27 37 24 40 25 C43 26 42 31 39 31 C37 31 36 30 36 30 Z" fill="#9c3b74" opacity="0.65" />
-                    <path d="M138 32 C140 28 144 30 143 34 C142 38 136 36 138 32 Z" fill="#a4467c" opacity="0.6" />
-                    <circle cx="138" cy="72" r="2.5" fill="#c98ab2" opacity="0.6" />
+                    <path d="M44 22 C42 18 46 14 50 16 C54 18 52 24 48 24 C45 24 44 23 44 22 Z" fill="#004B49" opacity="0.75" />
+                    <path d="M36 30 C34 27 37 24 40 25 C43 26 42 31 39 31 C37 31 36 30 36 30 Z" fill="#004B49" opacity="0.65" />
+                    <path d="M138 32 C140 28 144 30 143 34 C142 38 136 36 138 32 Z" fill="#004B49" opacity="0.6" />
+                    <circle cx="138" cy="72" r="2.5" fill="#7C8886" opacity="0.6" />
 
-                    <rect x="42" y="16" width="68" height="88" rx="10" fill="#ffffff" stroke="#e8d7e3" strokeWidth="2" />
-                    <rect x="58" y="10" width="36" height="12" rx="4" fill="#8c285f" />
-                    <rect x="68" y="6" width="16" height="7" rx="3" fill="#6a1b46" />
-                    <rect x="52" y="32" width="12" height="12" rx="3" fill="#8c285f" />
+                    <rect x="42" y="16" width="68" height="88" rx="10" fill="#ffffff" stroke="#E5EAEA" strokeWidth="2" />
+                    <rect x="58" y="10" width="36" height="12" rx="4" fill="#004B49" />
+                    <rect x="68" y="6" width="16" height="7" rx="3" fill="#00201F" />
+                    <rect x="52" y="32" width="12" height="12" rx="3" fill="#004B49" />
                     <path d="M55 38L57 40L61 35" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    <rect x="69" y="36" width="32" height="4" rx="2" fill="#e2d0dc" />
-                    <rect x="52" y="50" width="12" height="12" rx="3" fill="#8c285f" />
+                    <rect x="69" y="36" width="32" height="4" rx="2" fill="#E5EAEA" />
+                    <rect x="52" y="50" width="12" height="12" rx="3" fill="#004B49" />
                     <path d="M55 56L57 58L61 53" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    <rect x="69" y="54" width="28" height="4" rx="2" fill="#e2d0dc" />
-                    <rect x="52" y="68" width="12" height="12" rx="3" fill="#8c285f" />
+                    <rect x="69" y="54" width="28" height="4" rx="2" fill="#E5EAEA" />
+                    <rect x="52" y="68" width="12" height="12" rx="3" fill="#004B49" />
                     <path d="M55 74L57 76L61 71" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                    <rect x="69" y="72" width="24" height="4" rx="2" fill="#e2d0dc" />
-                    <circle cx="104" cy="90" r="14" fill="#7b2958" />
+                    <rect x="69" y="72" width="24" height="4" rx="2" fill="#E5EAEA" />
+                    <circle cx="104" cy="90" r="14" fill="#004B49" />
                     <path d="M104 83v2m0 10v2m-5-7h2m10 0h-2m-3.54-3.54l1.41 1.41m-7.08 7.08l1.41 1.41m0-9.9l-1.41 1.41m7.08 7.08l-1.41 1.41" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
                     <circle cx="104" cy="90" r="4" fill="#ffffff" />
-                    <circle cx="104" cy="90" r="2" fill="#7b2958" />
+                    <circle cx="104" cy="90" r="2" fill="#004B49" />
                   </svg>
                 </div>
 
@@ -447,9 +447,9 @@ export function ResourcesOverview() {
                   <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="cornerWaveGrad1" x1="100" y1="100" x2="25" y2="35" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#ecd4e3" stopOpacity="0.85" />
-                        <stop offset="0.65" stopColor="#f5e6f0" stopOpacity="0.5" />
-                        <stop offset="1" stopColor="#fef8fc" stopOpacity="0" />
+                        <stop stopColor="#F6F8F8" stopOpacity="0.85" />
+                        <stop offset="0.65" stopColor="#F6F8F8" stopOpacity="0.5" />
+                        <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                     <path d="M10 100 C 45 98 68 82 84 55 C 93 40 98 22 100 0 L 100 100 Z" fill="url(#cornerWaveGrad1)" />
@@ -471,39 +471,39 @@ export function ResourcesOverview() {
                   <div className="res-art-aura" />
                   <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="res-art-svg" aria-hidden="true">
                     {/* Marked Area 1: Soft cloud backdrop behind illustration */}
-                    <path d="M26 54 C26 24 46 12 80 12 C114 12 136 24 136 54 C136 82 114 94 80 94 C46 94 26 82 26 54 Z" fill="#f4eaf2" />
+                    <path d="M26 54 C26 24 46 12 80 12 C114 12 136 24 136 54 C136 82 114 94 80 94 C46 94 26 82 26 54 Z" fill="#F6F8F8" />
                     {/* Marked Area 1: Floating petals / droplets */}
-                    <path d="M40 22 C38 18 42 14 46 16 C50 18 48 24 44 24 C41 24 40 23 40 22 Z" fill="#b86d9a" opacity="0.75" />
-                    <path d="M32 30 C30 27 33 24 36 25 C39 26 38 31 35 31 C33 31 32 30 32 30 Z" fill="#9c3b74" opacity="0.65" />
-                    <path d="M142 34 C144 30 148 32 147 36 C146 40 140 38 142 34 Z" fill="#a4467c" opacity="0.6" />
-                    <path d="M148 42 C150 39 153 41 152 44 C151 47 146 45 148 42 Z" fill="#c98ab2" opacity="0.65" />
+                    <path d="M40 22 C38 18 42 14 46 16 C50 18 48 24 44 24 C41 24 40 23 40 22 Z" fill="#004B49" opacity="0.75" />
+                    <path d="M32 30 C30 27 33 24 36 25 C39 26 38 31 35 31 C33 31 32 30 32 30 Z" fill="#004B49" opacity="0.65" />
+                    <path d="M142 34 C144 30 148 32 147 36 C146 40 140 38 142 34 Z" fill="#004B49" opacity="0.6" />
+                    <path d="M148 42 C150 39 153 41 152 44 C151 47 146 45 148 42 Z" fill="#7C8886" opacity="0.65" />
 
-                    <rect x="36" y="20" width="88" height="68" rx="8" fill="#ffffff" stroke="#e8d7e3" strokeWidth="2" />
+                    <rect x="36" y="20" width="88" height="68" rx="8" fill="#ffffff" stroke="#E5EAEA" strokeWidth="2" />
                     <path d="M37 28C37 23.58 40.58 20 45 20H115C119.42 20 123 23.58 123 28V32H37V28Z" fill="url(#browserHeaderGrad)" />
                     <circle cx="45" cy="26" r="2" fill="#ffffff" opacity="0.8" />
                     <circle cx="51" cy="26" r="2" fill="#ffffff" opacity="0.8" />
                     <circle cx="57" cy="26" r="2" fill="#ffffff" opacity="0.8" />
-                    <rect x="73" y="38" width="14" height="12" rx="3" fill="#7b2958" />
+                    <rect x="73" y="38" width="14" height="12" rx="3" fill="#004B49" />
                     <circle cx="80" cy="42" r="2.5" fill="#ffffff" />
                     <path d="M76 49c0-2 1.8-3 4-3s4 1 4 3" stroke="#ffffff" strokeWidth="1" strokeLinecap="round" />
-                    <path d="M80 50V56M60 56H100M60 56V62M80 56V62M100 56V62" stroke="#caa2ba" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    <rect x="53" y="62" width="14" height="12" rx="3" fill="#fae6f0" stroke="#dcbcd0" strokeWidth="1" />
-                    <circle cx="60" cy="66" r="2" fill="#7b2958" />
-                    <path d="M56 72c0-1.5 1.5-2.2 4-2.2s4 0.7 4 2.2" stroke="#7b2958" strokeWidth="1" strokeLinecap="round" />
-                    <rect x="73" y="62" width="14" height="12" rx="3" fill="#fae6f0" stroke="#dcbcd0" strokeWidth="1" />
-                    <circle cx="80" cy="66" r="2" fill="#7b2958" />
-                    <path d="M76 72c0-1.5 1.5-2.2 4-2.2s4 0.7 4 2.2" stroke="#7b2958" strokeWidth="1" strokeLinecap="round" />
-                    <rect x="93" y="62" width="14" height="12" rx="3" fill="#fae6f0" stroke="#dcbcd0" strokeWidth="1" />
-                    <circle cx="100" cy="66" r="2" fill="#7b2958" />
-                    <path d="M96 72c0-1.5 1.5-2.2 4-2.2s4 0.7 4 2.2" stroke="#7b2958" strokeWidth="1" strokeLinecap="round" />
-                    <circle cx="118" cy="85" r="14" fill="#7b2958" />
+                    <path d="M80 50V56M60 56H100M60 56V62M80 56V62M100 56V62" stroke="#E5EAEA" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    <rect x="53" y="62" width="14" height="12" rx="3" fill="#F6F8F8" stroke="#E5EAEA" strokeWidth="1" />
+                    <circle cx="60" cy="66" r="2" fill="#004B49" />
+                    <path d="M56 72c0-1.5 1.5-2.2 4-2.2s4 0.7 4 2.2" stroke="#004B49" strokeWidth="1" strokeLinecap="round" />
+                    <rect x="73" y="62" width="14" height="12" rx="3" fill="#F6F8F8" stroke="#E5EAEA" strokeWidth="1" />
+                    <circle cx="80" cy="66" r="2" fill="#004B49" />
+                    <path d="M76 72c0-1.5 1.5-2.2 4-2.2s4 0.7 4 2.2" stroke="#004B49" strokeWidth="1" strokeLinecap="round" />
+                    <rect x="93" y="62" width="14" height="12" rx="3" fill="#F6F8F8" stroke="#E5EAEA" strokeWidth="1" />
+                    <circle cx="100" cy="66" r="2" fill="#004B49" />
+                    <path d="M96 72c0-1.5 1.5-2.2 4-2.2s4 0.7 4 2.2" stroke="#004B49" strokeWidth="1" strokeLinecap="round" />
+                    <circle cx="118" cy="85" r="14" fill="#004B49" />
                     <path d="M118 78v2m0 10v2m-5-7h2m10 0h-2m-3.54-3.54l1.41 1.41m-7.08 7.08l1.41 1.41m0-9.9l-1.41 1.41m7.08 7.08l-1.41 1.41" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
                     <circle cx="118" cy="85" r="4" fill="#ffffff" />
-                    <circle cx="118" cy="85" r="2" fill="#7b2958" />
+                    <circle cx="118" cy="85" r="2" fill="#004B49" />
                     <defs>
                       <linearGradient id="browserHeaderGrad" x1="37" y1="20" x2="123" y2="32" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#6c1d47" />
-                        <stop offset="1" stopColor="#9c2d67" />
+                        <stop stopColor="#00201F" />
+                        <stop offset="1" stopColor="#004B49" />
                       </linearGradient>
                     </defs>
                   </svg>
@@ -538,9 +538,9 @@ export function ResourcesOverview() {
                   <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="cornerWaveGrad2" x1="100" y1="100" x2="25" y2="35" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#ecd4e3" stopOpacity="0.85" />
-                        <stop offset="0.65" stopColor="#f5e6f0" stopOpacity="0.5" />
-                        <stop offset="1" stopColor="#fef8fc" stopOpacity="0" />
+                        <stop stopColor="#F6F8F8" stopOpacity="0.85" />
+                        <stop offset="0.65" stopColor="#F6F8F8" stopOpacity="0.5" />
+                        <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                     <path d="M10 100 C 45 98 68 82 84 55 C 93 40 98 22 100 0 L 100 100 Z" fill="url(#cornerWaveGrad2)" />
@@ -562,25 +562,25 @@ export function ResourcesOverview() {
                   <div className="res-art-aura" />
                   <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="res-art-svg" aria-hidden="true">
                     {/* Marked Area 1: Soft cloud backdrop behind illustration */}
-                    <path d="M26 54 C26 24 46 12 80 12 C114 12 136 24 136 54 C136 82 114 94 80 94 C46 94 26 82 26 54 Z" fill="#f4eaf2" />
+                    <path d="M26 54 C26 24 46 12 80 12 C114 12 136 24 136 54 C136 82 114 94 80 94 C46 94 26 82 26 54 Z" fill="#F6F8F8" />
                     {/* Marked Area 1: Floating petals / droplets inside circled region */}
-                    <path d="M46 22 C44 18 48 14 52 16 C56 18 54 24 50 24 C47 24 46 23 46 22 Z" fill="#b86d9a" opacity="0.8" />
-                    <path d="M38 30 C36 27 39 24 42 25 C45 26 44 31 41 31 C39 31 38 30 38 30 Z" fill="#9c3b74" opacity="0.7" />
-                    <path d="M54 28 C56 31 53 34 50 33 C47 32 48 27 51 27 C53 27 54 28 54 28 Z" fill="#c98ab2" opacity="0.65" />
+                    <path d="M46 22 C44 18 48 14 52 16 C56 18 54 24 50 24 C47 24 46 23 46 22 Z" fill="#004B49" opacity="0.8" />
+                    <path d="M38 30 C36 27 39 24 42 25 C45 26 44 31 41 31 C39 31 38 30 38 30 Z" fill="#004B49" opacity="0.7" />
+                    <path d="M54 28 C56 31 53 34 50 33 C47 32 48 27 51 27 C53 27 54 28 54 28 Z" fill="#7C8886" opacity="0.65" />
                     
                     {/* Right-side sparkles */}
-                    <path d="M140 36 C142 32 146 34 145 38 C144 42 138 40 140 36 Z" fill="#a4467c" opacity="0.6" />
-                    <circle cx="136" cy="50" r="2" fill="#c98ab2" opacity="0.6" />
+                    <path d="M140 36 C142 32 146 34 145 38 C144 42 138 40 140 36 Z" fill="#004B49" opacity="0.6" />
+                    <circle cx="136" cy="50" r="2" fill="#7C8886" opacity="0.6" />
 
                     {/* Circular avatar container with team icons */}
-                    <circle cx="82" cy="56" r="32" fill="#ffffff" stroke="#ebdbe5" strokeWidth="2" />
-                    <circle cx="70" cy="52" r="7" fill="#691a44" opacity="0.85" />
-                    <path d="M58 72c0-5 5-8 12-8s12 3 12 8" fill="#691a44" opacity="0.85" />
-                    <circle cx="94" cy="52" r="7" fill="#691a44" opacity="0.85" />
-                    <path d="M82 72c0-5 5-8 12-8s12 3 12 8" fill="#691a44" opacity="0.85" />
-                    <circle cx="82" cy="48" r="8.5" fill="#4d1231" />
-                    <path d="M68 72c0-6 6.5-9.5 14-9.5s14 3.5 14 9.5" fill="#4d1231" />
-                    <circle cx="108" cy="80" r="13" fill="#7b2958" />
+                    <circle cx="82" cy="56" r="32" fill="#ffffff" stroke="#E5EAEA" strokeWidth="2" />
+                    <circle cx="70" cy="52" r="7" fill="#003836" opacity="0.85" />
+                    <path d="M58 72c0-5 5-8 12-8s12 3 12 8" fill="#003836" opacity="0.85" />
+                    <circle cx="94" cy="52" r="7" fill="#003836" opacity="0.85" />
+                    <path d="M82 72c0-5 5-8 12-8s12 3 12 8" fill="#003836" opacity="0.85" />
+                    <circle cx="82" cy="48" r="8.5" fill="#003836" />
+                    <path d="M68 72c0-6 6.5-9.5 14-9.5s14 3.5 14 9.5" fill="#003836" />
+                    <circle cx="108" cy="80" r="13" fill="#004B49" />
                     <path d="M108 74v12M102 80h12" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" />
                   </svg>
                 </div>
@@ -614,9 +614,9 @@ export function ResourcesOverview() {
                   <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="cornerWaveGrad3" x1="100" y1="100" x2="25" y2="35" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#ecd4e3" stopOpacity="0.85" />
-                        <stop offset="0.65" stopColor="#f5e6f0" stopOpacity="0.5" />
-                        <stop offset="1" stopColor="#fef8fc" stopOpacity="0" />
+                        <stop stopColor="#F6F8F8" stopOpacity="0.85" />
+                        <stop offset="0.65" stopColor="#F6F8F8" stopOpacity="0.5" />
+                        <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                     <path d="M10 100 C 45 98 68 82 84 55 C 93 40 98 22 100 0 L 100 100 Z" fill="url(#cornerWaveGrad3)" />
@@ -638,25 +638,25 @@ export function ResourcesOverview() {
                   <div className="res-art-aura" />
                   <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="res-art-svg" aria-hidden="true">
                     {/* Marked Area 1: Soft cloud backdrop behind illustration */}
-                    <path d="M26 54 C26 24 46 12 80 12 C114 12 136 24 136 54 C136 82 114 94 80 94 C46 94 26 82 26 54 Z" fill="#f4eaf2" />
+                    <path d="M26 54 C26 24 46 12 80 12 C114 12 136 24 136 54 C136 82 114 94 80 94 C46 94 26 82 26 54 Z" fill="#F6F8F8" />
                     {/* Marked Area 1: Floating petals / droplets */}
-                    <path d="M40 22 C38 18 42 14 46 16 C50 18 48 24 44 24 C41 24 40 23 40 22 Z" fill="#b86d9a" opacity="0.75" />
-                    <path d="M32 30 C30 27 33 24 36 25 C39 26 38 31 35 31 C33 31 32 30 32 30 Z" fill="#9c3b74" opacity="0.65" />
-                    <path d="M140 28 C142 24 146 26 145 30 C144 34 138 32 140 28 Z" fill="#a4467c" opacity="0.6" />
-                    <circle cx="120" cy="18" r="2" fill="#7b2958" />
+                    <path d="M40 22 C38 18 42 14 46 16 C50 18 48 24 44 24 C41 24 40 23 40 22 Z" fill="#004B49" opacity="0.75" />
+                    <path d="M32 30 C30 27 33 24 36 25 C39 26 38 31 35 31 C33 31 32 30 32 30 Z" fill="#004B49" opacity="0.65" />
+                    <path d="M140 28 C142 24 146 26 145 30 C144 34 138 32 140 28 Z" fill="#004B49" opacity="0.6" />
+                    <circle cx="120" cy="18" r="2" fill="#004B49" />
 
-                    <rect x="36" y="36" width="76" height="48" rx="6" fill="#ffffff" stroke="#e8d7e3" strokeWidth="2" />
-                    <path d="M28 84C28 82.8954 28.8954 82 30 82H118C119.105 82 120 82.8954 120 84V86C120 87.1046 119.105 88 118 88H30C28.8954 88 28 87.1046 28 86V84Z" fill="#d9c5d3" />
-                    <path d="M66 82H82V84H66V82Z" fill="#a892a2" />
-                    <ellipse cx="62" cy="74" rx="14" ry="7" fill="#f4e4ef" />
-                    <ellipse cx="86" cy="74" rx="14" ry="7" fill="#f4e4ef" />
-                    <ellipse cx="74" cy="70" rx="16" ry="9" fill="#fcf6fa" />
+                    <rect x="36" y="36" width="76" height="48" rx="6" fill="#ffffff" stroke="#E5EAEA" strokeWidth="2" />
+                    <path d="M28 84C28 82.8954 28.8954 82 30 82H118C119.105 82 120 82.8954 120 84V86C120 87.1046 119.105 88 118 88H30C28.8954 88 28 87.1046 28 86V84Z" fill="#E5EAEA" />
+                    <path d="M66 82H82V84H66V82Z" fill="#E5EAEA" />
+                    <ellipse cx="62" cy="74" rx="14" ry="7" fill="#F6F8F8" />
+                    <ellipse cx="86" cy="74" rx="14" ry="7" fill="#F6F8F8" />
+                    <ellipse cx="74" cy="70" rx="16" ry="9" fill="#F6F8F8" />
                     <g transform="translate(68, 20) rotate(32)">
                       <path d="M12 40L14 49L8 42L2 51L4 40Z" fill="#ff782d" />
                       <path d="M10 40L12 45L8 41L4 46L6 40Z" fill="#ffd15c" />
-                      <path d="M8 8C14 16 16 32 16 38H0C0 32 2 16 8 8Z" fill="#581639" />
-                      <path d="M8 8C11 13 13 18 13 22H3C3 18 5 13 8 8Z" fill="#7b2958" />
-                      <circle cx="8" cy="24" r="3.5" fill="#fdf2f8" stroke="#ffffff" strokeWidth="1" />
+                      <path d="M8 8C14 16 16 32 16 38H0C0 32 2 16 8 8Z" fill="#00201F" />
+                      <path d="M8 8C11 13 13 18 13 22H3C3 18 5 13 8 8Z" fill="#004B49" />
+                      <circle cx="8" cy="24" r="3.5" fill="#F6F8F8" stroke="#ffffff" strokeWidth="1" />
                       <path d="M0 30L-4 38L0 38Z" fill="#ff782d" />
                       <path d="M16 30L20 38L16 38Z" fill="#ff782d" />
                     </g>
@@ -692,9 +692,9 @@ export function ResourcesOverview() {
                   <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="cornerWaveGrad4" x1="100" y1="100" x2="25" y2="35" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#ecd4e3" stopOpacity="0.85" />
-                        <stop offset="0.65" stopColor="#f5e6f0" stopOpacity="0.5" />
-                        <stop offset="1" stopColor="#fef8fc" stopOpacity="0" />
+                        <stop stopColor="#F6F8F8" stopOpacity="0.85" />
+                        <stop offset="0.65" stopColor="#F6F8F8" stopOpacity="0.5" />
+                        <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                     <path d="M10 100 C 45 98 68 82 84 55 C 93 40 98 22 100 0 L 100 100 Z" fill="url(#cornerWaveGrad4)" />
@@ -780,7 +780,7 @@ export function ResourcesOverview() {
                 {/* Card 1: BrightPath Solutions */}
                 <div className="res-story-side-card">
                   <div className="res-story-side-icon-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#b83280" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="res-side-box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#004B49" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="res-side-box-icon">
                       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                       <circle cx="9" cy="7" r="4" />
                       <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -797,7 +797,7 @@ export function ResourcesOverview() {
                     <div className="res-story-stats-row">
                       <div className="res-story-stat-item">
                         <div className="res-story-stat-val">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#b83280" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="res-stat-icon">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="#004B49" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="res-stat-icon">
                             <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                             <polyline points="17 6 23 6 23 12" />
                           </svg>
@@ -808,7 +808,7 @@ export function ResourcesOverview() {
                       <div className="res-story-stat-sep" />
                       <div className="res-story-stat-item">
                         <div className="res-story-stat-val">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#b83280" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="res-stat-icon">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="#004B49" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="res-stat-icon">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
                           </svg>
@@ -837,7 +837,7 @@ export function ResourcesOverview() {
                 {/* Card 2: GreenLeaf Retail */}
                 <div className="res-story-side-card">
                   <div className="res-story-side-icon-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#b83280" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="res-side-box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#004B49" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="res-side-box-icon">
                       <circle cx="9" cy="21" r="1" />
                       <circle cx="20" cy="21" r="1" />
                       <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
@@ -853,7 +853,7 @@ export function ResourcesOverview() {
                     <div className="res-story-stats-row">
                       <div className="res-story-stat-item">
                         <div className="res-story-stat-val">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#b83280" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="res-stat-icon">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="#004B49" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="res-stat-icon">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                             <circle cx="9" cy="7" r="4" />
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -866,7 +866,7 @@ export function ResourcesOverview() {
                       <div className="res-story-stat-sep" />
                       <div className="res-story-stat-item">
                         <div className="res-story-stat-val">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="#b83280" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="res-stat-icon">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="#004B49" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="res-stat-icon">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                             <circle cx="12" cy="10" r="3" />
                           </svg>
@@ -956,7 +956,7 @@ export function ResourcesOverview() {
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="res-gloss-icon-svg">
                           <rect x="3" y="4" width="18" height="17" rx="3" />
                           <path d="M16 2v4M8 2v4M3 9.5h18" />
-                          <circle cx="16" cy="15.5" r="3" fill="#fae8f3" stroke="currentColor" strokeWidth="1.8" />
+                          <circle cx="16" cy="15.5" r="3" fill="#F6F8F8" stroke="currentColor" strokeWidth="1.8" />
                           <path d="M16 14v1.7l1 0.8" stroke="currentColor" strokeWidth="1.5" />
                         </svg>
                       )}
@@ -991,9 +991,9 @@ export function ResourcesOverview() {
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                       <defs>
                         <linearGradient id={`glossWaveGrad-${card.id}`} x1="100" y1="100" x2="25" y2="35" gradientUnits="userSpaceOnUse">
-                          <stop stopColor="#ecd4e3" stopOpacity="0.85" />
-                          <stop offset="0.65" stopColor="#f5e6f0" stopOpacity="0.5" />
-                          <stop offset="1" stopColor="#fef8fc" stopOpacity="0" />
+                          <stop stopColor="#F6F8F8" stopOpacity="0.85" />
+                          <stop offset="0.65" stopColor="#F6F8F8" stopOpacity="0.5" />
+                          <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
                         </linearGradient>
                       </defs>
                       <path d="M10 100 C 45 98 68 82 84 55 C 93 40 98 22 100 0 L 100 100 Z" fill={`url(#glossWaveGrad-${card.id})`} />
@@ -1052,29 +1052,29 @@ export function ResourcesOverview() {
 
                   <div className="res-help-card-art">
                     <svg viewBox="0 0 160 140" fill="none" xmlns="http://www.w3.org/2000/svg" className="res-help-art-svg" aria-hidden="true">
-                      <circle cx="85" cy="75" r="48" fill="#f6ebf4" />
+                      <circle cx="85" cy="75" r="48" fill="#E5EAEA" />
                       
                       {/* Open Book in 3D perspective */}
                       <g transform="translate(15, 24)">
-                        <path d="M70 95 L15 78 L20 28 L70 42 L120 28 L125 78 Z" fill="#ecd3e4" />
-                        <path d="M70 90 L20 75 L20 28 L70 42 Z" fill="#ffffff" stroke="#dfc4d7" strokeWidth="2" strokeLinejoin="round" />
-                        <path d="M28 42 L62 51 M28 51 L62 60 M28 60 L54 68" stroke="#d5b9cc" strokeWidth="2.5" strokeLinecap="round" />
-                        <path d="M70 90 L120 75 L120 28 L70 42 Z" fill="#ffffff" stroke="#dfc4d7" strokeWidth="2" strokeLinejoin="round" />
-                        <path d="M78 51 L112 42 M78 60 L112 51 M78 68 L104 60" stroke="#d5b9cc" strokeWidth="2.5" strokeLinecap="round" />
-                        <path d="M70 42 L70 90" stroke="#b24f88" strokeWidth="2.5" strokeLinecap="round" />
+                        <path d="M70 95 L15 78 L20 28 L70 42 L120 28 L125 78 Z" fill="#E5EAEA" />
+                        <path d="M70 90 L20 75 L20 28 L70 42 Z" fill="#ffffff" stroke="#E5EAEA" strokeWidth="2" strokeLinejoin="round" />
+                        <path d="M28 42 L62 51 M28 51 L62 60 M28 60 L54 68" stroke="#E5EAEA" strokeWidth="2.5" strokeLinecap="round" />
+                        <path d="M70 90 L120 75 L120 28 L70 42 Z" fill="#ffffff" stroke="#E5EAEA" strokeWidth="2" strokeLinejoin="round" />
+                        <path d="M78 51 L112 42 M78 60 L112 51 M78 68 L104 60" stroke="#E5EAEA" strokeWidth="2.5" strokeLinecap="round" />
+                        <path d="M70 42 L70 90" stroke="#004B49" strokeWidth="2.5" strokeLinecap="round" />
                       </g>
 
                       {/* Floating Magenta Question Bubble */}
                       <g transform="translate(106, 14)">
-                        <path d="M-6 8 L-14 4 M36 8 L44 4 M32 36 L40 42 M-2 32 L-8 38" stroke="#b24f88" strokeWidth="2.5" strokeLinecap="round" />
+                        <path d="M-6 8 L-14 4 M36 8 L44 4 M32 36 L40 42 M-2 32 L-8 38" stroke="#004B49" strokeWidth="2.5" strokeLinecap="round" />
                         <circle cx="15" cy="20" r="18" fill="url(#qBubbleGradHelp)" />
                         <text x="15" y="27" textAnchor="middle" fill="#ffffff" fontSize="20" fontWeight="800" fontFamily="sans-serif">?</text>
                       </g>
 
                       <defs>
                         <linearGradient id="qBubbleGradHelp" x1="0" y1="0" x2="30" y2="36" gradientUnits="userSpaceOnUse">
-                          <stop stopColor="#e24996" />
-                          <stop offset="1" stopColor="#7a1a52" />
+                          <stop stopColor="#004B49" />
+                          <stop offset="1" stopColor="#00201F" />
                         </linearGradient>
                       </defs>
                     </svg>
@@ -1148,9 +1148,9 @@ export function ResourcesOverview() {
                   <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="helpCornerGrad1" x1="100" y1="100" x2="25" y2="35" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#ecd4e3" stopOpacity="0.85" />
-                        <stop offset="0.65" stopColor="#f5e6f0" stopOpacity="0.5" />
-                        <stop offset="1" stopColor="#fef8fc" stopOpacity="0" />
+                        <stop stopColor="#F6F8F8" stopOpacity="0.85" />
+                        <stop offset="0.65" stopColor="#F6F8F8" stopOpacity="0.5" />
+                        <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                     <path d="M10 100 C 45 98 68 82 84 55 C 93 40 98 22 100 0 L 100 100 Z" fill="url(#helpCornerGrad1)" />
@@ -1174,39 +1174,39 @@ export function ResourcesOverview() {
 
                   <div className="res-help-card-art">
                     <svg viewBox="0 0 170 140" fill="none" xmlns="http://www.w3.org/2000/svg" className="res-help-art-svg" aria-hidden="true">
-                      <ellipse cx="95" cy="75" rx="55" ry="50" fill="#f4eaf3" />
+                      <ellipse cx="95" cy="75" rx="55" ry="50" fill="#E5EAEA" />
                       
                       {/* Floating chat bubble on left */}
                       <g transform="translate(18, 38)">
-                        <rect width="36" height="24" rx="12" fill="#ffffff" stroke="#ecd4e5" strokeWidth="1.5" />
-                        <path d="M26 24 L22 28 L22 24 Z" fill="#ffffff" stroke="#ecd4e5" strokeWidth="1.5" />
-                        <circle cx="12" cy="12" r="2" fill="#9c3b74" />
-                        <circle cx="18" cy="12" r="2" fill="#9c3b74" />
-                        <circle cx="24" cy="12" r="2" fill="#9c3b74" />
+                        <rect width="36" height="24" rx="12" fill="#ffffff" stroke="#E5EAEA" strokeWidth="1.5" />
+                        <path d="M26 24 L22 28 L22 24 Z" fill="#ffffff" stroke="#E5EAEA" strokeWidth="1.5" />
+                        <circle cx="12" cy="12" r="2" fill="#004B49" />
+                        <circle cx="18" cy="12" r="2" fill="#004B49" />
+                        <circle cx="24" cy="12" r="2" fill="#004B49" />
                       </g>
 
                       {/* Agent Body & Hair */}
                       <g transform="translate(65, 18)">
-                        <path d="M18 25 C14 10 42 10 48 25 C54 40 56 60 56 70 C50 72 45 65 42 50 C38 65 30 72 14 70 C14 60 16 40 18 25 Z" fill="#2d1326" />
+                        <path d="M18 25 C14 10 42 10 48 25 C54 40 56 60 56 70 C50 72 45 65 42 50 C38 65 30 72 14 70 C14 60 16 40 18 25 Z" fill="#00201F" />
                         <ellipse cx="33" cy="38" rx="14" ry="16" fill="#fcd9c7" />
-                        <path d="M19 28 C24 16 42 16 47 28 C45 23 38 22 33 25 C28 22 21 23 19 28 Z" fill="#2d1326" />
-                        <circle cx="28" cy="36" r="1.5" fill="#2d1326" />
-                        <circle cx="38" cy="36" r="1.5" fill="#2d1326" />
-                        <path d="M30 43 Q33 46 36 43" stroke="#9e4359" strokeWidth="1.5" strokeLinecap="round" fill="none" />
-                        <path d="M19 36 C18 20 48 20 47 36" stroke="#5d204a" strokeWidth="3" fill="none" strokeLinecap="round" />
-                        <rect x="16" y="32" width="5" height="12" rx="2.5" fill="#8c285f" />
-                        <rect x="45" y="32" width="5" height="12" rx="2.5" fill="#8c285f" />
-                        <path d="M20 40 Q25 48 30 47" stroke="#5d204a" strokeWidth="2" fill="none" strokeLinecap="round" />
-                        <circle cx="31" cy="47" r="2.2" fill="#8c285f" />
+                        <path d="M19 28 C24 16 42 16 47 28 C45 23 38 22 33 25 C28 22 21 23 19 28 Z" fill="#00201F" />
+                        <circle cx="28" cy="36" r="1.5" fill="#00201F" />
+                        <circle cx="38" cy="36" r="1.5" fill="#00201F" />
+                        <path d="M30 43 Q33 46 36 43" stroke="#004B49" strokeWidth="1.5" strokeLinecap="round" fill="none" />
+                        <path d="M19 36 C18 20 48 20 47 36" stroke="#00201F" strokeWidth="3" fill="none" strokeLinecap="round" />
+                        <rect x="16" y="32" width="5" height="12" rx="2.5" fill="#004B49" />
+                        <rect x="45" y="32" width="5" height="12" rx="2.5" fill="#004B49" />
+                        <path d="M20 40 Q25 48 30 47" stroke="#00201F" strokeWidth="2" fill="none" strokeLinecap="round" />
+                        <circle cx="31" cy="47" r="2.2" fill="#004B49" />
                         <rect x="30" y="52" width="6" height="8" fill="#f5cbb8" />
-                        <path d="M12 60 C18 56 48 56 54 60 L62 90 H4 Z" fill="#82285e" />
+                        <path d="M12 60 C18 56 48 56 54 60 L62 90 H4 Z" fill="#004B49" />
                         <path d="M28 60 L33 72 L38 60 Z" fill="#ffffff" />
                         
                         {/* Modern Laptop in front */}
                         <g transform="translate(-18, 55)">
-                          <path d="M20 18 L48 18 L45 42 L17 42 Z" fill="#dfd2e0" stroke="#cbb8ce" strokeWidth="1.5" />
+                          <path d="M20 18 L48 18 L45 42 L17 42 Z" fill="#E5EAEA" stroke="#E5EAEA" strokeWidth="1.5" />
                           <circle cx="32" cy="30" r="3" fill="#ffffff" />
-                          <path d="M12 42 L52 42 L56 46 L8 46 Z" fill="#beabbe" />
+                          <path d="M12 42 L52 42 L56 46 L8 46 Z" fill="#E5EAEA" />
                         </g>
                       </g>
                     </svg>
@@ -1294,9 +1294,9 @@ export function ResourcesOverview() {
                   <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
                     <defs>
                       <linearGradient id="helpCornerGrad2" x1="100" y1="100" x2="25" y2="35" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#ecd4e3" stopOpacity="0.85" />
-                        <stop offset="0.65" stopColor="#f5e6f0" stopOpacity="0.5" />
-                        <stop offset="1" stopColor="#fef8fc" stopOpacity="0" />
+                        <stop stopColor="#F6F8F8" stopOpacity="0.85" />
+                        <stop offset="0.65" stopColor="#F6F8F8" stopOpacity="0.5" />
+                        <stop offset="1" stopColor="#FFFFFF" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                     <path d="M10 100 C 45 98 68 82 84 55 C 93 40 98 22 100 0 L 100 100 Z" fill="url(#helpCornerGrad2)" />

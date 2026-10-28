@@ -39,7 +39,7 @@ export function SupportHelpCenterPage() {
         <div className="container" style={{ maxWidth: "1080px" }}>
           {/* Header */}
           <div className="mb-10 text-center max-w-2xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#7b2958] bg-[#faedf4] px-3 py-1 rounded-full inline-block mb-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#004B49] bg-[#F6F8F8] px-3 py-1 rounded-full inline-block mb-3">
               KNOWLEDGE BASE & GUIDES
             </span>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
@@ -58,7 +58,7 @@ export function SupportHelpCenterPage() {
               to="/support/help-center"
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
                 !slug
-                  ? "bg-[#7b2958] text-white"
+                  ? "bg-[#004B49] text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -70,7 +70,7 @@ export function SupportHelpCenterPage() {
                 to={`/support/help-center/${topic.slug}`}
                 className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
                   slug === topic.slug
-                    ? "bg-[#7b2958] text-white"
+                    ? "bg-[#004B49] text-white"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
@@ -85,23 +85,23 @@ export function SupportHelpCenterPage() {
               <Link
                 key={article.slug}
                 to={`/support/article/${article.slug}`}
-                className="p-6 rounded-2xl border border-gray-200 bg-white hover:border-[#7b2958] hover:shadow-lg transition group flex flex-col justify-between"
+                className="p-6 rounded-2xl border border-gray-200 bg-white hover:border-[#004B49] hover:shadow-lg transition group flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
-                    <span className="font-semibold text-[#7b2958] uppercase">
+                    <span className="font-semibold text-[#004B49] uppercase">
                       {article.topicSlug.replace("-", " ")}
                     </span>
                     <span>{article.readTime}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#7b2958] transition leading-snug mb-2">
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#004B49] transition leading-snug mb-2">
                     {article.title}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed mb-4">
                     {article.summary}
                   </p>
                 </div>
-                <span className="text-sm font-bold text-[#7b2958] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <span className="text-sm font-bold text-[#004B49] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                   Read Guide &rarr;
                 </span>
               </Link>
@@ -109,7 +109,7 @@ export function SupportHelpCenterPage() {
           </div>
 
           {/* Bottom Help Callout */}
-          <div className="p-8 rounded-2xl bg-gradient-to-r from-[#fdf6fa] to-[#fcf0f7] border border-[#f2d0e3] text-center max-w-xl mx-auto">
+          <div className="p-8 rounded-2xl bg-gradient-to-r from-[#F6F8F8] to-[#F6F8F8] border border-[#E5EAEA] text-center max-w-xl mx-auto">
             <h3 className="text-xl font-bold text-gray-900 mb-2">
               Can&apos;t find what you need?
             </h3>
@@ -119,7 +119,7 @@ export function SupportHelpCenterPage() {
             <div className="flex justify-center gap-3">
               <Link
                 to="/support#ticket"
-                className="px-5 py-2.5 bg-[#7b2958] text-white font-bold text-sm rounded-xl hover:bg-[#5c1840] transition"
+                className="px-5 py-2.5 bg-[#004B49] text-white font-bold text-sm rounded-xl hover:bg-[#00201F] transition"
               >
                 Raise a Ticket
               </Link>

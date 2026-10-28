@@ -887,7 +887,7 @@ export default function SupportPage() {
                         />
                         <div className="support-dropzone-icon">📎</div>
                         <div className="support-dropzone-text">
-                          Drag and drop files here, or <span style={{ color: '#7b2958', fontWeight: 600 }}>browse</span>
+                          Drag and drop files here, or <span style={{ color: '#004B49', fontWeight: 600 }}>browse</span>
                         </div>
                         <div className="support-dropzone-hint">
                           PNG, JPG, PDF up to 5 files, 5 MB each
@@ -1047,7 +1047,7 @@ export default function SupportPage() {
                       gap: '4px',
                       fontSize: '13px',
                       fontWeight: 700,
-                      color: '#7b2958',
+                      color: '#004B49',
                       textDecoration: 'none'
                     }}
                   >

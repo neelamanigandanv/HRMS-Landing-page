@@ -490,29 +490,29 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                   <svg className="impact-globe-svg" viewBox="0 0 320 320" fill="none">
                     <defs>
                       <radialGradient id="globeAtmosphere" cx="50%" cy="50%" r="50%">
-                        <stop offset="0%" stopColor="#802B5B" stopOpacity="0.85" />
-                        <stop offset="60%" stopColor="#3d1229" stopOpacity="0.45" />
-                        <stop offset="100%" stopColor="#170710" stopOpacity="0" />
+                        <stop offset="0%" stopColor="#004B49" stopOpacity="0.85" />
+                        <stop offset="60%" stopColor="#00201F" stopOpacity="0.45" />
+                        <stop offset="100%" stopColor="#00201F" stopOpacity="0" />
                       </radialGradient>
                     </defs>
                     {/* Atmospheric Glow */}
                     <circle cx="160" cy="160" r="140" fill="url(#globeAtmosphere)" />
                     {/* Concentric latitude dotted rings */}
-                    <ellipse cx="160" cy="160" rx="138" ry="138" stroke="#822d5b" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.5" />
-                    <ellipse cx="160" cy="160" rx="138" ry="95" stroke="#9e3970" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.55" />
-                    <ellipse cx="160" cy="160" rx="138" ry="50" stroke="#b84784" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.6" />
-                    <ellipse cx="160" cy="160" rx="138" ry="10" stroke="#d15c9a" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.65" />
+                    <ellipse cx="160" cy="160" rx="138" ry="138" stroke="#004B49" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.5" />
+                    <ellipse cx="160" cy="160" rx="138" ry="95" stroke="#004B49" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.55" />
+                    <ellipse cx="160" cy="160" rx="138" ry="50" stroke="#004B49" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.6" />
+                    <ellipse cx="160" cy="160" rx="138" ry="10" stroke="#004B49" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.65" />
                     {/* Longitude dotted arcs */}
-                    <ellipse cx="160" cy="160" rx="46" ry="138" stroke="#9e3970" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.55" />
-                    <ellipse cx="160" cy="160" rx="92" ry="138" stroke="#822d5b" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.5" />
-                    <line x1="160" y1="22" x2="160" y2="298" stroke="#d15c9a" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.65" />
+                    <ellipse cx="160" cy="160" rx="46" ry="138" stroke="#004B49" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.55" />
+                    <ellipse cx="160" cy="160" rx="92" ry="138" stroke="#004B49" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.5" />
+                    <line x1="160" y1="22" x2="160" y2="298" stroke="#004B49" strokeWidth="1.2" strokeDasharray="3 7" strokeOpacity="0.65" />
                     {/* Coordinate micro dots */}
-                    <circle cx="110" cy="115" r="2" fill="#f3b4d4" />
-                    <circle cx="195" cy="105" r="2.5" fill="#fbcfe8" />
-                    <circle cx="230" cy="155" r="2" fill="#f3b4d4" />
-                    <circle cx="140" cy="190" r="2.5" fill="#fbcfe8" />
-                    <circle cx="210" cy="215" r="2" fill="#f3b4d4" />
-                    <circle cx="95" cy="210" r="1.8" fill="#d15c9a" />
+                    <circle cx="110" cy="115" r="2" fill="#E5EAEA" />
+                    <circle cx="195" cy="105" r="2.5" fill="#F6F8F8" />
+                    <circle cx="230" cy="155" r="2" fill="#E5EAEA" />
+                    <circle cx="140" cy="190" r="2.5" fill="#F6F8F8" />
+                    <circle cx="210" cy="215" r="2" fill="#E5EAEA" />
+                    <circle cx="95" cy="210" r="1.8" fill="#004B49" />
                   </svg>
 
                   {/* Circular Avatar Pins floating over the globe */}
@@ -577,9 +577,9 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                     <svg viewBox="0 0 220 125" className="impact-gauge-svg">
                       <defs>
                         <linearGradient id="gaugeVioletGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#802B5B" />
-                          <stop offset="50%" stopColor="#b03e7f" />
-                          <stop offset="100%" stopColor="#f3b4d4" />
+                          <stop offset="0%" stopColor="#004B49" />
+                          <stop offset="50%" stopColor="#003836" />
+                          <stop offset="100%" stopColor="#E5EAEA" />
                         </linearGradient>
                       </defs>
                       {/* Background Inactive Arc */}

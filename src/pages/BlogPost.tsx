@@ -216,7 +216,7 @@ export function BlogPost() {
               <article className="article-center-col">
                 {/* Mobile "Jump to section" Dropdown */}
                 <div className="article-mobile-toc-wrap">
-                  <label htmlFor="mobile-toc-select" style={{ fontSize: "12px", fontWeight: 700, color: "#7b2958", display: "block", marginBottom: "6px" }}>
+                  <label htmlFor="mobile-toc-select" style={{ fontSize: "12px", fontWeight: 700, color: "#004B49", display: "block", marginBottom: "6px" }}>
                     JUMP TO SECTION:
                   </label>
                   <select

@@ -368,7 +368,7 @@ export function AllGuidesSection({ heroSearch = "" }: { heroSearch?: string }) {
           /* Empty Filter State */
           <div className="guides-library-empty-state">
             <div className="empty-state-icon-box">
-              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#7b2958" strokeWidth="1.8">
+              <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="#004B49" strokeWidth="1.8">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 <line x1="8" y1="11" x2="14" y2="11" strokeDasharray="2 2" />

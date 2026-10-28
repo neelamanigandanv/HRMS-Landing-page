@@ -368,11 +368,11 @@ export function DocumentsCompliancePage() {
 
                 <div className="emp-donut-chart-wrap">
                   <svg width="120" height="120" viewBox="0 0 180 180" className="emp-donut-svg">
-                    <circle cx="90" cy="90" r="68" stroke="#f4edf3" strokeWidth="18" fill="none" />
-                    {/* KYC Verified 72% (#802B5B) */}
+                    <circle cx="90" cy="90" r="68" stroke="#F6F8F8" strokeWidth="18" fill="none" />
+                    {/* KYC Verified 72% (#004B49) */}
                     <circle
                       cx="90" cy="90" r="68"
-                      stroke="#802B5B" strokeWidth="18" fill="none"
+                      stroke="#004B49" strokeWidth="18" fill="none"
                       strokeDasharray="427" strokeDashoffset="120"
                       strokeLinecap="round"
                       transform="rotate(-90 90 90)"
@@ -403,7 +403,7 @@ export function DocumentsCompliancePage() {
                 <div style={{ marginTop: "12px" }}>
                   <div className="doc-widget-metric-row">
                     <span className="doc-widget-metric-label">
-                      <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#802B5B" }} />
+                      <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#004B49" }} />
                       KYC & Identity Proofs
                     </span>
                     <strong className="doc-widget-metric-val">100% Verified</strong>

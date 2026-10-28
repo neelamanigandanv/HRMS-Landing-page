@@ -56,7 +56,7 @@ export function SupportSearchPage() {
         <div className="container" style={{ maxWidth: "960px" }}>
           {/* Top Search bar */}
           <div className="support-search-header mb-8">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#7b2958]">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#004B49]">
               HELP CENTER SEARCH
             </span>
             <h1 className="text-3xl font-extrabold text-gray-900 mt-2 mb-4">
@@ -69,11 +69,11 @@ export function SupportSearchPage() {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Search troubleshooting guides, payroll, biometric..."
-                className="flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:border-[#7b2958] outline-none text-base shadow-sm"
+                className="flex-1 px-4 py-3 rounded-xl border border-gray-300 focus:border-[#004B49] outline-none text-base shadow-sm"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-[#7b2958] text-white font-bold rounded-xl hover:bg-[#5c1840] transition"
+                className="px-6 py-3 bg-[#004B49] text-white font-bold rounded-xl hover:bg-[#00201F] transition"
               >
                 Search
               </button>
@@ -87,7 +87,7 @@ export function SupportSearchPage() {
               onClick={() => setSelectedTopic("all")}
               className={`px-4 py-1.5 rounded-full text-xs font-bold tracking-wide transition ${
                 selectedTopic === "all"
-                  ? "bg-[#7b2958] text-white"
+                  ? "bg-[#004B49] text-white"
                   : "bg-gray-100 text-gray-600 hover:bg-gray-200"
               }`}
             >
@@ -100,7 +100,7 @@ export function SupportSearchPage() {
                 onClick={() => setSelectedTopic(topic.slug)}
                 className={`px-4 py-1.5 rounded-full text-xs font-bold tracking-wide transition whitespace-nowrap ${
                   selectedTopic === topic.slug
-                    ? "bg-[#7b2958] text-white"
+                    ? "bg-[#004B49] text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -116,15 +116,15 @@ export function SupportSearchPage() {
                 <Link
                   key={article.slug}
                   to={`/support/article/${article.slug}`}
-                  className="block p-6 rounded-2xl border border-gray-200 bg-white hover:border-[#7b2958] hover:shadow-md transition group"
+                  className="block p-6 rounded-2xl border border-gray-200 bg-white hover:border-[#004B49] hover:shadow-md transition group"
                 >
                   <div className="flex items-center justify-between gap-4 mb-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#7b2958] bg-[#faedf4] px-2.5 py-0.5 rounded-full">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#004B49] bg-[#F6F8F8] px-2.5 py-0.5 rounded-full">
                       {article.topicSlug.replace("-", " ")}
                     </span>
                     <span className="text-xs text-gray-500">{article.readTime}</span>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#7b2958] transition">
+                  <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#004B49] transition">
                     {article.title}
                   </h3>
                   <p className="text-sm text-gray-600 mt-1 leading-relaxed">
@@ -134,7 +134,7 @@ export function SupportSearchPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-16 px-6 bg-[#fcf9f8] rounded-2xl border border-dashed border-gray-300">
+            <div className="text-center py-16 px-6 bg-[#F6F8F8] rounded-2xl border border-dashed border-gray-300">
               <Icon name="search" size={32} className="mx-auto text-gray-400 mb-3" />
               <h3 className="text-xl font-bold text-gray-900 mb-2">
                 We couldn&apos;t find that.
@@ -145,7 +145,7 @@ export function SupportSearchPage() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link
                   to="/support#ticket"
-                  className="px-5 py-2.5 bg-[#7b2958] text-white font-bold text-sm rounded-xl hover:bg-[#5c1840] transition"
+                  className="px-5 py-2.5 bg-[#004B49] text-white font-bold text-sm rounded-xl hover:bg-[#00201F] transition"
                 >
                   Raise a Ticket
                 </Link>

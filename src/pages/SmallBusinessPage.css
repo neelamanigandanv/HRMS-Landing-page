@@ -5,7 +5,7 @@
    ========================================================================== */
 
 .sb-page-wrapper {
-  background-color: #faf9fb;
+  background-color: #F6F8F8;
   color: #191735;
   font-family: inherit;
   overflow-x: hidden;
@@ -17,11 +17,11 @@
 .sb-hero-section {
   padding: 5rem 0 4.5rem;
   background:
-    radial-gradient(circle at 50% -10%, rgba(81, 70, 216, 0.08) 0%, transparent 60%),
-    linear-gradient(180deg, #fdfbfe 0%, #ffffff 65%, #fcf9fb 100%);
+    radial-gradient(circle at 50% -10%, rgba(0, 75, 73, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, #ffffff 65%, #F6F8F8 100%);
   position: relative;
   text-align: center;
-  border-bottom: 1px solid rgba(81, 70, 216, 0.08);
+  border-bottom: 1px solid rgba(0, 75, 73, 0.08);
 }
 
 .sb-hero-eyebrow-tag {
@@ -33,12 +33,12 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 1.4rem;
 }
 
 .sb-hero-eyebrow-sparkle {
-  color: #b54282;
+  color: #004B49;
   font-size: 0.75rem;
 }
 
@@ -54,7 +54,7 @@
 }
 
 .sb-glow-text {
-  background: linear-gradient(135deg, #802B5B 0%, #5146d8 60%, #b54282 100%);
+  background: linear-gradient(135deg, #004B49 0%, #004B49 60%, #004B49 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -86,23 +86,23 @@
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  background: linear-gradient(135deg, #802B5B 0%, #692149 100%);
+  background: linear-gradient(135deg, #004B49 0%, #003836 100%);
   color: #ffffff;
-  border: 1px solid #802B5B;
+  border: 1px solid #004B49;
   border-radius: 10px;
   padding: 0 28px;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.28);
   transition: all 0.22s ease;
   min-height: 50px;
 }
 
 .sb-btn-primary:hover {
-  background: linear-gradient(135deg, #6b1f4a 0%, #541739 100%);
+  background: linear-gradient(135deg, #00201F 0%, #00201F 100%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 26px rgba(128, 43, 91, 0.38);
+  box-shadow: 0 10px 26px rgba(0, 75, 73, 0.38);
 }
 
 .sb-btn-secondary {
@@ -124,9 +124,9 @@
 }
 
 .sb-btn-secondary:hover {
-  background: #fdf7fa;
-  color: #802B5B;
-  border-color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
+  border-color: #004B49;
   transform: translateY(-2px);
 }
 
@@ -166,7 +166,7 @@
   border: 1px solid rgba(223, 219, 249, 0.9);
   box-shadow:
     0 24px 60px -15px rgba(25, 23, 53, 0.12),
-    0 4px 16px rgba(81, 70, 216, 0.06);
+    0 4px 16px rgba(0, 75, 73, 0.06);
   overflow: hidden;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -175,7 +175,7 @@
 .sb-preview-window:hover {
   box-shadow:
     0 30px 70px -15px rgba(25, 23, 53, 0.16),
-    0 6px 20px rgba(81, 70, 216, 0.08);
+    0 6px 20px rgba(0, 75, 73, 0.08);
 }
 
 /* Window Topbar */
@@ -280,7 +280,7 @@
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  background: #fdfcfd;
+  background: #F6F8F8;
   border: 1px solid #ebe8f4;
   border-radius: 12px;
   padding: 14px 16px;
@@ -290,7 +290,7 @@
 .sb-mini-metric-card:hover {
   background: #ffffff;
   border-color: #dfdbf9;
-  box-shadow: 0 4px 12px rgba(81, 70, 216, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.05);
 }
 
 .sb-metric-icon {
@@ -304,8 +304,8 @@
 }
 
 .sb-metric-icon.purple {
-  background: rgba(128, 43, 91, 0.1);
-  color: #802B5B;
+  background: rgba(0, 75, 73, 0.1);
+  color: #004B49;
 }
 
 .sb-metric-icon.green {
@@ -389,8 +389,8 @@
 .sb-filter-badge {
   font-size: 0.7rem;
   font-weight: 700;
-  color: #802B5B;
-  background: #fdf2f8;
+  color: #004B49;
+  background: #F6F8F8;
   padding: 0.2rem 0.55rem;
   border-radius: 9999px;
 }
@@ -398,7 +398,7 @@
 .sb-panel-counter {
   font-size: 0.7rem;
   font-weight: 700;
-  color: #5146d8;
+  color: #004B49;
   background: #f1f0ff;
   padding: 0.2rem 0.55rem;
   border-radius: 9999px;
@@ -418,7 +418,7 @@
   background: #ffffff;
   padding: 8px 12px;
   border-radius: 10px;
-  border: 1px solid #f0edf6;
+  border: 1px solid #F6F8F8;
 }
 
 .sb-avatar {
@@ -434,8 +434,8 @@
 }
 
 .sb-avatar.av-1 {
-  background: #f3e8ff;
-  color: #7e22ce;
+  background: #F6F8F8;
+  color: #004B49;
 }
 
 .sb-avatar.av-2 {
@@ -444,8 +444,8 @@
 }
 
 .sb-avatar.av-3 {
-  background: #fce7f3;
-  color: #be185d;
+  background: #F6F8F8;
+  color: #004B49;
 }
 
 .sb-avatar.av-4 {
@@ -515,11 +515,11 @@
   background: #ffffff;
   padding: 10px 12px;
   border-radius: 10px;
-  border: 1px solid #f0edf6;
+  border: 1px solid #F6F8F8;
 }
 
 .sb-leave-calendar-badge {
-  background: #f8f7fc;
+  background: #F6F8F8;
   border: 1px solid #ebe8f4;
   border-radius: 8px;
   padding: 4px 8px;
@@ -531,7 +531,7 @@
   display: block;
   font-size: 0.625rem;
   font-weight: 700;
-  color: #802B5B;
+  color: #004B49;
   letter-spacing: 0.05em;
 }
 
@@ -544,7 +544,7 @@
 }
 
 .sb-leave-calendar-badge.next span {
-  color: #5146d8;
+  color: #004B49;
 }
 
 .sb-leave-details {
@@ -614,7 +614,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 0.85rem;
 }
 
@@ -645,7 +645,7 @@
 .sb-dayone-section {
   padding: 85px 0 90px;
   background: #ffffff;
-  border-bottom: 1px solid #f1eff5;
+  border-bottom: 1px solid #F6F8F8;
   position: relative;
 }
 
@@ -658,8 +658,8 @@
 }
 
 .sb-dayone-card {
-  background: #fbf9fb;
-  border: 1px solid #ede8f2;
+  background: #F6F8F8;
+  border: 1px solid #F6F8F8;
   border-radius: 12px;
   padding: 42px 28px 36px;
   display: flex;
@@ -674,30 +674,30 @@
 .sb-dayone-card:hover {
   transform: translateY(-5px);
   background: #ffffff;
-  border-color: rgba(128, 43, 91, 0.28);
-  box-shadow: 0 16px 36px -8px rgba(128, 43, 91, 0.12), 0 4px 12px rgba(25, 20, 50, 0.04);
+  border-color: rgba(0, 75, 73, 0.28);
+  box-shadow: 0 16px 36px -8px rgba(0, 75, 73, 0.12), 0 4px 12px rgba(25, 20, 50, 0.04);
 }
 
-/* Circular icon badge at top: eyebrow color #802B5B and reduced compact size */
+/* Circular icon badge at top: eyebrow color #004B49 and reduced compact size */
 .sb-dayone-icon-wrap {
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
-  box-shadow: 0 6px 16px -2px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 6px 16px -2px rgba(0, 75, 73, 0.28);
   transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
   flex-shrink: 0;
 }
 
 .sb-dayone-card:hover .sb-dayone-icon-wrap {
   transform: scale(1.08);
-  background: #682249;
-  box-shadow: 0 8px 22px -2px rgba(128, 43, 91, 0.4);
+  background: #004B49;
+  box-shadow: 0 8px 22px -2px rgba(0, 75, 73, 0.4);
 }
 
 /* Centered bold heading matching reference image */
@@ -729,7 +729,7 @@
   gap: 6px;
   padding: 4px 0;
   background: transparent;
-  color: #802B5B !important;
+  color: #004B49 !important;
   border: none;
   border-radius: 0;
   font-size: 0.925rem;
@@ -745,19 +745,19 @@
 .sb-dayone-link-arrow {
   font-size: 1.1rem;
   line-height: 1;
-  color: #802B5B;
+  color: #004B49;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .sb-dayone-card-link:hover {
   background: transparent;
-  color: #682249 !important;
+  color: #004B49 !important;
   box-shadow: none;
 }
 
 .sb-dayone-card:hover .sb-dayone-link-arrow {
   transform: translateY(3px);
-  color: #682249;
+  color: #004B49;
 }
 
 .sb-way-of-working-section {
@@ -795,7 +795,7 @@
 .sb-workspace-role-section {
   padding: 95px 0 90px;
   background: #ffffff;
-  border-bottom: 1px solid #f0edf6;
+  border-bottom: 1px solid #F6F8F8;
 }
 
 .sb-workspace-header {
@@ -908,14 +908,14 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #fdf2f8;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   margin-top: 2px;
-  border: 1px solid rgba(128, 43, 91, 0.16);
+  border: 1px solid rgba(0, 75, 73, 0.16);
 }
 
 .sb-workspace-point-text {
@@ -942,7 +942,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #802B5B 0%, #692149 100%);
+  background: linear-gradient(135deg, #004B49 0%, #003836 100%);
   color: #ffffff;
   font-size: 0.9375rem;
   font-weight: 600;
@@ -953,13 +953,13 @@
   transition: all 0.22s ease;
   width: fit-content;
   letter-spacing: 0.01em;
-  box-shadow: 0 4px 16px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 4px 16px rgba(0, 75, 73, 0.28);
 }
 
 .sb-role-cta-btn:hover {
-  background: linear-gradient(135deg, #6e204c 0%, #58163c 100%);
+  background: linear-gradient(135deg, #00201F 0%, #00201F 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 75, 73, 0.4);
 }
 
 .sb-role-cta-arrow {
@@ -1036,15 +1036,15 @@
 }
 
 .sb-role-vertical-strip:hover {
-  border-color: #802B5B;
-  background: #faf8fb;
-  box-shadow: 0 6px 18px rgba(128, 43, 91, 0.08);
+  border-color: #004B49;
+  background: #F6F8F8;
+  box-shadow: 0 6px 18px rgba(0, 75, 73, 0.08);
   transform: translateY(-2px);
 }
 
 .sb-role-vertical-strip:focus-visible {
-  border-color: #802B5B;
-  box-shadow: 0 0 0 3px rgba(128, 43, 91, 0.25);
+  border-color: #004B49;
+  box-shadow: 0 0 0 3px rgba(0, 75, 73, 0.25);
 }
 
 .sb-vertical-num {
@@ -1056,7 +1056,7 @@
 }
 
 .sb-role-vertical-strip:hover .sb-vertical-num {
-  color: #802B5B;
+  color: #004B49;
 }
 
 .sb-vertical-label {
@@ -1071,7 +1071,7 @@
 }
 
 .sb-role-vertical-strip:hover .sb-vertical-label {
-  color: #802B5B;
+  color: #004B49;
 }
 
 /* Mobile & Tablet Responsiveness */
@@ -1127,10 +1127,10 @@
   }
 
   .sb-mobile-pill-btn.is-active {
-    background: #802B5B;
+    background: #004B49;
     color: #ffffff;
-    border-color: #802B5B;
-    box-shadow: 0 4px 12px rgba(128, 43, 91, 0.28);
+    border-color: #004B49;
+    box-shadow: 0 4px 12px rgba(0, 75, 73, 0.28);
   }
 
   .sb-mobile-pill-btn .sb-pill-num {
@@ -1167,8 +1167,8 @@
    ========================================================================== */
 .sb-way-of-working-section {
   padding: 95px 0 100px;
-  background: #fdfcfe;
-  border-bottom: 1px solid #f0edf6;
+  background: #FFFFFF;
+  border-bottom: 1px solid #F6F8F8;
 }
 
 .sb-checkerboard-wrapper {
@@ -1207,7 +1207,7 @@
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 14px;
   display: inline-block;
 }
@@ -1251,7 +1251,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   font-size: 11px;
   font-weight: 800;
@@ -1268,7 +1268,7 @@
   gap: 8px;
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #802B5B;
+  color: #004B49;
   background: transparent;
   border: none;
   padding: 0;
@@ -1278,7 +1278,7 @@
 }
 
 .sb-cb-action-btn:hover {
-  color: #611a42;
+  color: #00201F;
   transform: translateX(3px);
 }
 
@@ -1294,9 +1294,9 @@
 
 /* Visual Column (Plum-tinted soft neutral texture matching eyebrow palette) */
 .sb-checkerboard-visual-col {
-  background-color: #f8eff4;
+  background-color: #F6F8F8;
   background-image: 
-    radial-gradient(#ebd6e2 1.5px, transparent 1.5px),
+    radial-gradient(#E5EAEA 1.5px, transparent 1.5px),
     linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(248, 235, 243, 0.5) 100%);
   background-size: 20px 20px, 100% 100%;
   display: flex;
@@ -1360,7 +1360,7 @@
 }
 
 .sb-m-count {
-  color: #802B5B;
+  color: #004B49;
   font-weight: 700;
 }
 
@@ -1478,8 +1478,8 @@
 }
 
 .sb-m-badge.active {
-  background: #faeef4;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
 }
 
 .sb-m-progress-bar {
@@ -1492,7 +1492,7 @@
 }
 
 .sb-m-progress-fill.green {
-  background: #802B5B;
+  background: #004B49;
   height: 100%;
   border-radius: 2px;
 }
@@ -1506,7 +1506,7 @@
 .sb-m-status-text {
   font-size: 0.625rem;
   font-weight: 600;
-  color: #802B5B;
+  color: #004B49;
   display: block;
 }
 
@@ -1624,10 +1624,10 @@
    ========================================================================== */
 .sb-why-lattium-section {
   padding: 95px 0 105px;
-  background: #fbfbfc;
+  background: #F6F8F8;
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid #f0edf6;
+  border-bottom: 1px solid #F6F8F8;
 }
 
 .sb-why-lattium-backdrop {
@@ -1652,7 +1652,7 @@
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   background: transparent;
   border: none;
   padding: 0;
@@ -1724,8 +1724,8 @@
 
 .sb-why-process-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 48px rgba(128, 43, 91, 0.12);
-  border-color: #dfd7e6;
+  box-shadow: 0 20px 48px rgba(0, 75, 73, 0.12);
+  border-color: #E5EAEA;
 }
 
 /* Subtle elegant shine sweep on why process card hover */
@@ -1772,7 +1772,7 @@
   justify-content: center;
   font-size: 0.875rem;
   font-weight: 800;
-  color: #802B5B;
+  color: #004B49;
   letter-spacing: 0.04em;
   margin-bottom: 28px;
   box-shadow: none;
@@ -1781,25 +1781,25 @@
 
 /* Top Notch on Hover: Background comes in */
 .sb-why-process-card:hover .sb-why-notch {
-  background: linear-gradient(135deg, #802B5B 0%, #692149 100%);
-  border-color: #802B5B;
+  background: linear-gradient(135deg, #004B49 0%, #003836 100%);
+  border-color: #004B49;
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.28);
 }
 
 /* Featured card: transparent by default, vibrant on hover */
 .sb-why-process-card.is-featured .sb-why-notch {
   background: transparent;
   border-color: #edf1f0;
-  color: #802B5B;
+  color: #004B49;
   box-shadow: none;
 }
 
 .sb-why-process-card.is-featured:hover .sb-why-notch {
-  background: linear-gradient(135deg, #802B5B 0%, #692149 100%);
-  border-color: #802B5B;
+  background: linear-gradient(135deg, #004B49 0%, #003836 100%);
+  border-color: #004B49;
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.28);
 }
 
 /* Centered Icon Box: Transparent with border by default */
@@ -1812,7 +1812,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 22px;
   box-shadow: none;
   transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
@@ -1820,27 +1820,27 @@
 
 /* Centered Icon Box on Hover: Background comes in */
 .sb-why-process-card:hover .sb-why-icon-box {
-  background: linear-gradient(135deg, #802B5B 0%, #692149 100%);
+  background: linear-gradient(135deg, #004B49 0%, #003836 100%);
   border-color: transparent;
   color: #ffffff;
   transform: scale(1.08);
-  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 75, 73, 0.28);
 }
 
 /* Featured card icon box: transparent by default, vibrant on hover */
 .sb-why-process-card.is-featured .sb-why-icon-box {
   background: transparent;
   border-color: #edf1f0;
-  color: #802B5B;
+  color: #004B49;
   box-shadow: none;
 }
 
 .sb-why-process-card.is-featured:hover .sb-why-icon-box {
-  background: linear-gradient(135deg, #802B5B 0%, #692149 100%);
+  background: linear-gradient(135deg, #004B49 0%, #003836 100%);
   border-color: transparent;
   color: #ffffff;
   transform: scale(1.08);
-  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 8px 24px rgba(0, 75, 73, 0.28);
 }
 
 /* Centered Card Title */
@@ -1854,7 +1854,7 @@
 }
 
 .sb-why-process-card.is-featured .sb-why-card-title {
-  color: #802B5B;
+  color: #004B49;
   font-weight: 800;
 }
 
@@ -1876,7 +1876,7 @@
   background:
     radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 10% 80%, rgba(0, 0, 0, 0.25) 0%, transparent 50%),
-    linear-gradient(135deg, #241432 0%, #802B5B 55%, #5d173e 100%);
+    linear-gradient(135deg, #00201F 0%, #004B49 55%, #00201F 100%);
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
@@ -1911,7 +1911,7 @@
   font-weight: 750;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #fbcfe8;
+  color: #F6F8F8;
   margin-bottom: 0.75rem;
 }
 
@@ -1925,7 +1925,7 @@
 }
 
 .sb-manifesto-highlight {
-  color: #fce7f3;
+  color: #F6F8F8;
   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
 }
 
@@ -2004,7 +2004,7 @@
   gap: 8px;
   width: 100%;
   background: #ffffff;
-  color: #802B5B;
+  color: #004B49;
   border: 1px solid #ffffff;
   border-radius: 9px;
   padding: 11px 22px;
@@ -2016,8 +2016,8 @@
 }
 
 .sb-manifesto-btn:hover {
-  background: #fdf2f8;
-  color: #692149;
+  background: #F6F8F8;
+  color: #003836;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
@@ -2072,7 +2072,7 @@
 /* ==========================================================================
    EXACT EMPLOYEE MANAGEMENT PAGE TYPOGRAPHY MATCHING FOR SMALL BUSINESS PAGE
    Matches font-weight, sizes, line-heights, letter-spacing and colors exactly:
-   - Eyebrows: 11px, font-weight: 800, letter-spacing: 1.8px, uppercase, #802B5B
+   - Eyebrows: 11px, font-weight: 800, letter-spacing: 1.8px, uppercase, #004B49
    - Section Titles: 39px, line-height: 1.15, letter-spacing: -1.6px, font-weight: 600, #191735
    - Subheadings: 15px, line-height: 1.7, font-weight: 400, color: #64748b, max-width: 640px
    ========================================================================== */
@@ -2087,7 +2087,7 @@
   margin-bottom: 13px !important;
   text-transform: uppercase !important;
   text-align: center !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
 }
 
 .sb-page-wrapper .sb-section-title,

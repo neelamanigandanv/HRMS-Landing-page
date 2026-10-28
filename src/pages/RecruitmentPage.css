@@ -81,8 +81,8 @@
   width: 24px !important;
   height: 24px !important;
   border-radius: 50% !important;
-  background: #802B5B !important;
-  border: 1.5px solid #802B5B !important;
+  background: #004B49 !important;
+  border: 1.5px solid #004B49 !important;
   color: #ffffff !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -91,17 +91,17 @@
   font-weight: 800 !important;
   flex-shrink: 0 !important;
   margin-top: 2px !important;
-  box-shadow: 0 2px 6px rgba(128, 43, 91, 0.28) !important;
+  box-shadow: 0 2px 6px rgba(0, 75, 73, 0.28) !important;
   transition: all 0.25s ease !important;
 }
 
 .rec-page-wrapper .emp-block-check-item:hover .emp-block-check-icon,
 .rec-page-wrapper .emp-block-check-item:hover .emp-block-check-badge {
-  background: #661e47 !important;
-  border-color: #661e47 !important;
+  background: #003836 !important;
+  border-color: #003836 !important;
   color: #ffffff !important;
   transform: scale(1.1) !important;
-  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.4) !important;
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.4) !important;
 }
 
 .rec-page-wrapper .emp-block-check-text {
@@ -162,12 +162,12 @@
    ========================================================================== */
 .rec-middle-cta-section {
   padding: 85px 0;
-  background: #fbfafc;
-  border-bottom: 1px solid #f0edf6;
+  background: #F6F8F8;
+  border-bottom: 1px solid #F6F8F8;
 }
 
 .rec-middle-cta-card {
-  background: linear-gradient(135deg, #191735 0%, #27206e 45%, #4a214d 100%);
+  background: linear-gradient(135deg, #191735 0%, #27206e 45%, #00201F 100%);
   border-radius: 24px;
   padding: 64px 40px;
   text-align: center;
@@ -202,7 +202,7 @@
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.2em;
-  color: #d8b8ce;
+  color: #E5EAEA;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 0.3rem 0.85rem;
@@ -221,7 +221,7 @@
 
 .rec-middle-cta-subhead {
   font-size: clamp(1rem, 1.6vw, 1.15rem);
-  color: #d1ceed;
+  color: #E5EAEA;
   line-height: 1.65;
   margin: 0 auto 28px;
   max-width: 620px;
@@ -250,8 +250,8 @@
 }
 
 .rec-btn-cta-white:hover {
-  background: #fdf7fa;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   transform: translateY(-2px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
 }

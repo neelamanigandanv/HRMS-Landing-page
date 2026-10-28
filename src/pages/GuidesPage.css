@@ -1,12 +1,12 @@
 /* ==========================================================================
    LATTIUM HR - GUIDES HUB PAGE STYLING
-   Brand Aesthetic: Deep Violet / Warm Berry (#7b2958, #b43f70, #fae8f2, #f2d0e3)
+   Brand Aesthetic: Deep Violet / Warm Berry (#004B49, #004B49, #F6F8F8, #E5EAEA)
    (No book mockups, no blue shades, no orange accents, card shine effect)
    ========================================================================== */
 
 .guides-page {
   background-color: #ffffff;
-  color: #1e131d;
+  color: #00201F;
   min-height: 100vh;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
@@ -27,8 +27,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at 50% 12%, #fcf0f7 0%, #ffffff 82%);
-  border-bottom: 1px solid #f2d0e3;
+  background: radial-gradient(ellipse at 50% 12%, #F6F8F8 0%, #ffffff 82%);
+  border-bottom: 1px solid #E5EAEA;
   position: relative;
   text-align: center;
 }
@@ -48,7 +48,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
   border: none;
   padding: 0;
@@ -56,7 +56,7 @@
 }
 
 .guides-eyebrow svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .guides-hero-title {
@@ -80,8 +80,8 @@
 }
 
 .guides-hero-title-accent {
-  color: #7b2958;
-  background: linear-gradient(135deg, #b43f70 0%, #7b2958 100%);
+  color: #004B49;
+  background: linear-gradient(135deg, #004B49 0%, #004B49 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -115,7 +115,7 @@
 }
 
 .guides-hero-btn-primary {
-  background: #7b2958;
+  background: #004B49;
   color: #ffffff;
   font-size: 14.5px;
   font-weight: 700;
@@ -127,13 +127,13 @@
   gap: 8px;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(123, 41, 88, 0.28);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.28);
 }
 
 .guides-hero-btn-primary:hover {
-  background: #5c1840;
+  background: #00201F;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(123, 41, 88, 0.38);
+  box-shadow: 0 8px 22px rgba(0, 75, 73, 0.38);
 }
 
 .guides-hero-btn-secondary {
@@ -143,7 +143,7 @@
   font-weight: 600;
   padding: 13px 24px;
   border-radius: 10px;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -152,29 +152,29 @@
 }
 
 .guides-hero-btn-secondary:hover {
-  border-color: #7b2958;
-  color: #7b2958;
+  border-color: #004B49;
+  color: #004B49;
 }
 
 .guides-search-box {
   display: flex;
   align-items: center;
   background: #ffffff;
-  border: 1.5px solid #f2d0e3;
+  border: 1.5px solid #E5EAEA;
   border-radius: 14px;
   padding: 4px 16px 4px 18px;
   min-height: 52px;
-  box-shadow: 0 10px 28px rgba(123, 41, 88, 0.06);
+  box-shadow: 0 10px 28px rgba(0, 75, 73, 0.06);
   transition: all 0.2s ease;
 }
 
 .guides-search-box:focus-within {
-  border-color: #7b2958;
-  box-shadow: 0 12px 32px rgba(123, 41, 88, 0.12), 0 0 0 3px rgba(123, 41, 88, 0.1);
+  border-color: #004B49;
+  box-shadow: 0 12px 32px rgba(0, 75, 73, 0.12), 0 0 0 3px rgba(0, 75, 73, 0.1);
 }
 
 .guides-search-icon {
-  color: #7b2958;
+  color: #004B49;
   margin-right: 12px;
   flex-shrink: 0;
 }
@@ -193,12 +193,12 @@
 }
 
 .guides-search-clear {
-  background: #fae8f2;
+  background: #F6F8F8;
   border: none;
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  color: #7b2958;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -207,8 +207,8 @@
 }
 
 .guides-search-clear:hover {
-  background: #f2d0e3;
-  color: #5c1840;
+  background: #E5EAEA;
+  color: #00201F;
 }
 
 /* 3 Related Keypoints Under Search Bar */
@@ -231,7 +231,7 @@
 }
 
 .guides-keypoint-item svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .guides-keypoint-dot {
@@ -257,7 +257,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
   border: none;
   padding: 0;
@@ -265,7 +265,7 @@
 }
 
 .guides-section-eyebrow svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .guides-section-title {
@@ -319,11 +319,11 @@
 }
 
 .carousel-btn:hover:not(:disabled) {
-  background: #7b2958;
+  background: #004B49;
   color: #ffffff;
-  border-color: #7b2958;
+  border-color: #004B49;
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(123, 41, 88, 0.25);
+  box-shadow: 0 6px 14px rgba(0, 75, 73, 0.25);
 }
 
 .carousel-btn:disabled {
@@ -341,7 +341,7 @@
 .handbook-card {
   background: #ffffff;
   border-radius: 20px;
-  border: 1.5px solid #f2e8ef;
+  border: 1.5px solid #F6F8F8;
   padding: 24px 22px;
   display: flex;
   flex-direction: column;
@@ -360,7 +360,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #7b2958, #b43f70);
+  background: linear-gradient(90deg, #004B49, #004B49);
   opacity: 0;
   transition: opacity 0.25s ease;
   z-index: 2;
@@ -368,8 +368,8 @@
 
 .handbook-card:hover {
   transform: translateY(-6px);
-  border-color: #f2d0e3;
-  box-shadow: 0 20px 40px rgba(123, 41, 88, 0.09);
+  border-color: #E5EAEA;
+  box-shadow: 0 20px 40px rgba(0, 75, 73, 0.09);
 }
 
 .handbook-card:hover::before {
@@ -389,7 +389,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
   border: none;
   padding: 0;
@@ -402,8 +402,8 @@
   border-radius: 14px;
   overflow: hidden;
   position: relative;
-  background: #fcf0f7;
-  border: 1px solid #ebdbe6;
+  background: #F6F8F8;
+  border: 1px solid #E5EAEA;
   margin-bottom: 18px;
 }
 
@@ -428,7 +428,7 @@
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  color: #7b2958;
+  color: #004B49;
   font-size: 11px;
   font-weight: 750;
   padding: 4px 10px;
@@ -438,7 +438,7 @@
 }
 
 .handbook-stat-chip svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 /* Card Body Content */
@@ -459,7 +459,7 @@
 }
 
 .handbook-card:hover .playbook-card-title {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .playbook-card-desc {
@@ -478,7 +478,7 @@
 .playbook-card-footer {
   margin-top: auto;
   padding-top: 14px;
-  border-top: 1px solid #f2e8ef;
+  border-top: 1px solid #F6F8F8;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -496,7 +496,7 @@
 .playbook-open-btn {
   font-size: 13px;
   font-weight: 700;
-  color: #7b2958;
+  color: #004B49;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -505,7 +505,7 @@
 
 .handbook-card:hover .playbook-open-btn {
   gap: 8px;
-  color: #7b2958;
+  color: #004B49;
 }
 
 /* ==========================================================================
@@ -513,8 +513,8 @@
    ========================================================================== */
 .all-guides-section {
   padding: 64px 0 72px 0;
-  background: #fdfafc;
-  border-top: 1px solid #f2d0e3;
+  background: #F6F8F8;
+  border-top: 1px solid #E5EAEA;
 }
 
 /* Centered Filter Tabs - Compact Height */
@@ -537,7 +537,7 @@
   line-height: 1.3;
   color: #475569;
   background: #ffffff;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   cursor: pointer;
   transition: all 0.2s ease;
   display: inline-flex;
@@ -546,15 +546,15 @@
 }
 
 .category-filter-chip:hover {
-  border-color: #7b2958;
-  color: #7b2958;
+  border-color: #004B49;
+  color: #004B49;
 }
 
 .category-filter-chip.active {
-  background: #7b2958;
+  background: #004B49;
   color: #ffffff;
-  border-color: #7b2958;
-  box-shadow: 0 4px 12px rgba(123, 41, 88, 0.25);
+  border-color: #004B49;
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.25);
 }
 
 /* 2-Column Grid */
@@ -567,7 +567,7 @@
 .guide-list-card {
   background: #ffffff;
   border-radius: 18px;
-  border: 1.5px solid #f2e8ef;
+  border: 1.5px solid #F6F8F8;
   padding: 24px;
   display: flex;
   gap: 20px;
@@ -582,8 +582,8 @@
 
 .guide-list-card:hover {
   transform: translateY(-4px);
-  border-color: #f2d0e3;
-  box-shadow: 0 16px 32px rgba(123, 41, 88, 0.08);
+  border-color: #E5EAEA;
+  box-shadow: 0 16px 32px rgba(0, 75, 73, 0.08);
 }
 
 /* Compact, Elegantly Sized Icon Box (Reduced from 60px to 42px) */
@@ -592,12 +592,12 @@
   height: 42px;
   flex-shrink: 0;
   border-radius: 12px;
-  background: linear-gradient(135deg, #7b2958 0%, #b43f70 100%);
+  background: linear-gradient(135deg, #004B49 0%, #004B49 100%);
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(123, 41, 88, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.2);
   margin-top: 2px;
 }
 
@@ -622,7 +622,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
   border: none;
   padding: 0;
@@ -638,7 +638,7 @@
 }
 
 .guide-list-readtime svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .guide-list-card-title {
@@ -652,7 +652,7 @@
 }
 
 .guide-list-card:hover .guide-list-card-title {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .guide-list-excerpt {
@@ -675,13 +675,13 @@
   margin-top: auto;
   padding-top: 12px;
   width: 100%;
-  border-top: 1px solid #f8eaf2;
+  border-top: 1px solid #F6F8F8;
 }
 
 .guide-list-action-link {
   font-size: 13px;
   font-weight: 700;
-  color: #7b2958;
+  color: #004B49;
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -690,7 +690,7 @@
 }
 
 .guide-list-card:hover .guide-list-action-link {
-  color: #5c1840;
+  color: #00201F;
   gap: 8px;
 }
 
@@ -700,7 +700,7 @@
 .save-more-time-section {
   padding: 64px 0;
   background: #ffffff;
-  border-top: 1px solid #f2d0e3;
+  border-top: 1px solid #E5EAEA;
 }
 
 .toolkit-cards-row {
@@ -710,8 +710,8 @@
 }
 
 .toolkit-card {
-  background: #fdfafc;
-  border: 1.5px solid #ebdbe6;
+  background: #F6F8F8;
+  border: 1.5px solid #E5EAEA;
   border-radius: 18px;
   padding: 32px 24px;
   display: flex;
@@ -727,16 +727,16 @@
 .toolkit-card:hover {
   transform: translateY(-6px);
   background: #ffffff;
-  border-color: #7b2958;
-  box-shadow: 0 16px 32px rgba(123, 41, 88, 0.08);
+  border-color: #004B49;
+  box-shadow: 0 16px 32px rgba(0, 75, 73, 0.08);
 }
 
 .toolkit-icon-wrapper {
   width: 68px;
   height: 68px;
   border-radius: 18px;
-  background: #fae8f2;
-  color: #7b2958;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -746,7 +746,7 @@
 
 .toolkit-card:hover .toolkit-icon-wrapper {
   transform: scale(1.08) rotate(2deg);
-  background: #7b2958;
+  background: #004B49;
   color: #ffffff;
 }
 
@@ -773,7 +773,7 @@
 .toolkit-meta-pill {
   font-size: 12.5px;
   font-weight: 700;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
   border: none;
   padding: 0;
@@ -828,7 +828,7 @@
    6. FINAL CTA (MATCHING HOME PAGE THEME - NO ORANGE)
    ========================================================================== */
 .guides-final-cta-section {
-  background: linear-gradient(135deg, #2b0b20 0%, #4a1538 50%, #7b2958 100%);
+  background: linear-gradient(135deg, #00201F 0%, #00201F 50%, #004B49 100%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -871,7 +871,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #fae8f2;
+  color: #F6F8F8;
   margin-bottom: 14px;
 }
 
@@ -888,7 +888,7 @@
 
 .guides-final-desc {
   font-size: 15.5px;
-  color: #ebdbe6;
+  color: #E5EAEA;
   line-height: 1.65;
   margin: 0 auto 32px;
   max-width: 640px;
@@ -907,7 +907,7 @@
 /* Primary Button in Pure White with Violet Text - NO ORANGE */
 .guides-final-btn-primary {
   background: #ffffff;
-  color: #7b2958;
+  color: #004B49;
   font-weight: 700;
   font-size: 15px;
   padding: 13px 28px;
@@ -923,7 +923,7 @@
 }
 
 .guides-final-btn-primary:hover {
-  background: #fae8f2;
+  background: #F6F8F8;
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
 }
@@ -949,8 +949,8 @@
 
 .guides-final-btn-secondary:hover {
   background: #f8f8fb;
-  color: #5146d8;
-  border-color: #c4c2d4;
+  color: #004B49;
+  border-color: #E5EAEA;
   transform: translateY(-1px);
   box-shadow: none;
 }
@@ -962,7 +962,7 @@
   gap: 28px;
   flex-wrap: wrap;
   font-size: 13px;
-  color: #ebdbe6;
+  color: #E5EAEA;
 }
 
 .guides-final-badge-item {
@@ -1037,8 +1037,8 @@
   width: 64px;
   height: 64px;
   border-radius: 18px;
-  background: #fae8f2;
-  color: #7b2958;
+  background: #F6F8F8;
+  color: #004B49;
   margin: 0 auto 18px auto;
   display: flex;
   align-items: center;
@@ -1077,11 +1077,11 @@
 
 .modal-input:focus {
   outline: none;
-  border-color: #7b2958;
+  border-color: #004B49;
 }
 
 .modal-submit-btn {
-  background: #7b2958;
+  background: #004B49;
   color: #ffffff;
   padding: 12px 20px;
   border-radius: 10px;
@@ -1093,7 +1093,7 @@
 }
 
 .modal-submit-btn:hover {
-  background: #5c1840;
+  background: #00201F;
 }
 
 /* Responsive */

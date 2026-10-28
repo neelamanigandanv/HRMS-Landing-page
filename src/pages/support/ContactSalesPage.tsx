@@ -50,10 +50,10 @@ export default function ContactSalesPage() {
         title={`Contact Sales & Schedule Demo | ${SUPPORT_CONTACT_CONFIG.brandName}`}
         description="Speak with our HRMS solution specialists to explore pricing, security compliance, and customized plans for your organization."
       />
-      <div style={{ backgroundColor: '#fcfafc', borderBottom: '1px solid #ebdbe6', padding: '36px 24px' }}>
+      <div style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5EAEA', padding: '36px 24px' }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#6b7280', marginBottom: '16px' }}>
-            <Link to="/support" style={{ color: '#7b2958', textDecoration: 'none' }}>Support</Link>
+            <Link to="/support" style={{ color: '#004B49', textDecoration: 'none' }}>Support</Link>
             <span>›</span>
             <span style={{ color: '#374151', fontWeight: 500 }}>Contact Sales</span>
           </nav>
@@ -61,12 +61,12 @@ export default function ContactSalesPage() {
             display: 'inline-block',
             padding: '4px 12px',
             borderRadius: '16px',
-            backgroundColor: '#faedf4',
-            color: '#7b2958',
+            backgroundColor: '#F6F8F8',
+            color: '#004B49',
             fontSize: '12px',
             fontWeight: 700,
             marginBottom: '12px',
-            border: '1px solid #ebdbe6'
+            border: '1px solid #E5EAEA'
           }}>
             Sales & Demo Inquiries
           </div>
@@ -95,8 +95,8 @@ export default function ContactSalesPage() {
                   width: '56px',
                   height: '56px',
                   borderRadius: '50%',
-                  backgroundColor: '#faedf4',
-                  color: '#7b2958',
+                  backgroundColor: '#F6F8F8',
+                  color: '#004B49',
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -228,7 +228,7 @@ export default function ContactSalesPage() {
                             type="checkbox"
                             checked={formData.modules.includes(m)}
                             onChange={() => handleModuleToggle(m)}
-                            style={{ accentColor: '#7b2958', width: '16px', height: '16px' }}
+                            style={{ accentColor: '#004B49', width: '16px', height: '16px' }}
                           />
                           {m}
                         </label>
@@ -270,9 +270,9 @@ export default function ContactSalesPage() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {/* Book a live demo slot */}
             <div style={{
-              backgroundColor: '#faedf4',
+              backgroundColor: '#F6F8F8',
               borderRadius: '16px',
-              border: '1px solid #ebdbe6',
+              border: '1px solid #E5EAEA',
               padding: '32px'
             }}>
               <div style={{
@@ -280,11 +280,11 @@ export default function ContactSalesPage() {
                 padding: '4px 10px',
                 borderRadius: '12px',
                 backgroundColor: '#ffffff',
-                color: '#7b2958',
+                color: '#004B49',
                 fontSize: '12px',
                 fontWeight: 700,
                 marginBottom: '12px',
-                border: '1px solid #ebdbe6'
+                border: '1px solid #E5EAEA'
               }}>
                 Instant Scheduling
               </div>
@@ -301,7 +301,7 @@ export default function ContactSalesPage() {
                   alignItems: 'center',
                   gap: '8px',
                   padding: '12px 20px',
-                  backgroundColor: '#7b2958',
+                  backgroundColor: '#004B49',
                   color: '#ffffff',
                   borderRadius: '8px',
                   fontWeight: 600,

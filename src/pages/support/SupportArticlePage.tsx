@@ -62,17 +62,17 @@ export default function SupportArticlePage() {
         title={`${article.title} | ${SUPPORT_CONTACT_CONFIG.brandName} Support`}
         description={article.summary}
       />
-      <div style={{ backgroundColor: '#fcfafc', borderBottom: '1px solid #ebdbe6', padding: '32px 24px' }}>
+      <div style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5EAEA', padding: '32px 24px' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>
           {/* Breadcrumb */}
           <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#6b7280', marginBottom: '16px' }}>
-            <Link to="/support" style={{ color: '#7b2958', textDecoration: 'none' }}>Support</Link>
+            <Link to="/support" style={{ color: '#004B49', textDecoration: 'none' }}>Support</Link>
             <span>›</span>
-            <Link to="/support/help-center" style={{ color: '#7b2958', textDecoration: 'none' }}>Help Center</Link>
+            <Link to="/support/help-center" style={{ color: '#004B49', textDecoration: 'none' }}>Help Center</Link>
             {topic && (
               <>
                 <span>›</span>
-                <Link to={`/support/help-center/${topic.slug}`} style={{ color: '#7b2958', textDecoration: 'none' }}>{topic.name}</Link>
+                <Link to={`/support/help-center/${topic.slug}`} style={{ color: '#004B49', textDecoration: 'none' }}>{topic.name}</Link>
               </>
             )}
             <span>›</span>
@@ -89,9 +89,9 @@ export default function SupportArticlePage() {
                 borderRadius: '16px',
                 fontSize: '12px',
                 fontWeight: 600,
-                backgroundColor: '#faedf4',
-                color: '#7b2958',
-                border: '1px solid #ebdbe6'
+                backgroundColor: '#F6F8F8',
+                color: '#004B49',
+                border: '1px solid #E5EAEA'
               }}>
                 <Icon name={topic.icon as any} size={14} />
                 {topic.name}
@@ -217,7 +217,7 @@ export default function SupportArticlePage() {
                       display: 'inline-block',
                       fontSize: '13px',
                       fontWeight: 600,
-                      color: '#7b2958',
+                      color: '#004B49',
                       textDecoration: 'none'
                     }}
                   >
@@ -235,7 +235,7 @@ export default function SupportArticlePage() {
                       display: 'inline-block',
                       fontSize: '13px',
                       fontWeight: 600,
-                      color: '#7b2958',
+                      color: '#004B49',
                       textDecoration: 'none'
                     }}
                   >
@@ -253,7 +253,7 @@ export default function SupportArticlePage() {
                       display: 'inline-block',
                       fontSize: '13px',
                       fontWeight: 600,
-                      color: '#7b2958',
+                      color: '#004B49',
                       textDecoration: 'none'
                     }}
                   >
@@ -289,7 +289,7 @@ export default function SupportArticlePage() {
                   }}
                 >
                   <span style={{ fontWeight: 600, fontSize: '15px' }}>{rel.title}</span>
-                  <span style={{ fontSize: '13px', color: '#7b2958', fontWeight: 600 }}>Read guide →</span>
+                  <span style={{ fontSize: '13px', color: '#004B49', fontWeight: 600 }}>Read guide →</span>
                 </Link>
               ))}
             </div>

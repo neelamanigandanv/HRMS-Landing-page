@@ -288,7 +288,7 @@ export function RecruitmentPage() {
 
                 <div className="emp-donut-chart-wrap">
                   <svg width="120" height="120" viewBox="0 0 180 180" className="emp-donut-svg">
-                    <circle cx="90" cy="90" r="68" stroke="#f4edf3" strokeWidth="18" fill="none" />
+                    <circle cx="90" cy="90" r="68" stroke="#F6F8F8" strokeWidth="18" fill="none" />
                     {/* Sourced & Applied 44% (Emerald #10b981) */}
                     <circle
                       cx="90"
@@ -302,12 +302,12 @@ export function RecruitmentPage() {
                       strokeLinecap="round"
                       transform="rotate(-90 90 90)"
                     />
-                    {/* Active Interviews 36% (Plum #802B5B) */}
+                    {/* Active Interviews 36% (Plum #004B49) */}
                     <circle
                       cx="90"
                       cy="90"
                       r="68"
-                      stroke="#802B5B"
+                      stroke="#004B49"
                       strokeWidth="18"
                       fill="none"
                       strokeDasharray="427"
@@ -315,12 +315,12 @@ export function RecruitmentPage() {
                       strokeLinecap="round"
                       transform="rotate(68 90 90)"
                     />
-                    {/* Offer Extended 20% (Violet #8b5cf6) */}
+                    {/* Offer Extended 20% (Violet #004B49) */}
                     <circle
                       cx="90"
                       cy="90"
                       r="68"
-                      stroke="#8b5cf6"
+                      stroke="#004B49"
                       strokeWidth="18"
                       fill="none"
                       strokeDasharray="427"

@@ -31,10 +31,10 @@ export default function SupportEmployeeHelpPage() {
         title={`Employee Help & HR Admin Contact | ${SUPPORT_CONTACT_CONFIG.brandName} Support`}
         description="Are you an employee using HRMS? Learn how to reach your company's internal HR team for payslips, leave, and login requests."
       />
-      <div style={{ backgroundColor: '#fcfafc', borderBottom: '1px solid #ebdbe6', padding: '36px 24px' }}>
+      <div style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E5EAEA', padding: '36px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
           <nav aria-label="Breadcrumb" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '13px', color: '#6b7280', marginBottom: '16px' }}>
-            <Link to="/support" style={{ color: '#7b2958', textDecoration: 'none' }}>Support</Link>
+            <Link to="/support" style={{ color: '#004B49', textDecoration: 'none' }}>Support</Link>
             <span>›</span>
             <span style={{ color: '#374151', fontWeight: 500 }}>Employee Help</span>
           </nav>
@@ -42,12 +42,12 @@ export default function SupportEmployeeHelpPage() {
             display: 'inline-block',
             padding: '4px 12px',
             borderRadius: '16px',
-            backgroundColor: '#faedf4',
-            color: '#7b2958',
+            backgroundColor: '#F6F8F8',
+            color: '#004B49',
             fontSize: '12px',
             fontWeight: 700,
             marginBottom: '12px',
-            border: '1px solid #ebdbe6'
+            border: '1px solid #E5EAEA'
           }}>
             Employee Self-Service Help
           </div>
@@ -146,13 +146,13 @@ export default function SupportEmployeeHelpPage() {
 
         {/* Are you an HR Administrator note */}
         <div style={{
-          backgroundColor: '#faf5f8',
-          border: '1px solid #ebdbe6',
+          backgroundColor: '#F6F8F8',
+          border: '1px solid #E5EAEA',
           borderRadius: '12px',
           padding: '24px',
           textAlign: 'center'
         }}>
-          <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#7b2958', margin: '0 0 6px' }}>
+          <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#004B49', margin: '0 0 6px' }}>
             Are you an HR Admin or Payroll Manager for your organization?
           </h3>
           <p style={{ fontSize: '14px', color: '#4b5563', margin: '0 0 16px' }}>
@@ -163,7 +163,7 @@ export default function SupportEmployeeHelpPage() {
             style={{
               display: 'inline-block',
               padding: '10px 20px',
-              backgroundColor: '#7b2958',
+              backgroundColor: '#004B49',
               color: '#ffffff',
               borderRadius: '8px',
               fontWeight: 600,

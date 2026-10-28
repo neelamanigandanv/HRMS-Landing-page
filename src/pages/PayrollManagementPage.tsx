@@ -371,7 +371,7 @@ export function PayrollManagementPage() {
 
                 <div className="emp-donut-chart-wrap">
                   <svg width="120" height="120" viewBox="0 0 180 180" className="emp-donut-svg">
-                    <circle cx="90" cy="90" r="68" stroke="#f4edf3" strokeWidth="18" fill="none" />
+                    <circle cx="90" cy="90" r="68" stroke="#F6F8F8" strokeWidth="18" fill="none" />
                     {/* Net Salary 72% (Emerald #10b981) */}
                     <circle
                       cx="90" cy="90" r="68"
@@ -380,18 +380,18 @@ export function PayrollManagementPage() {
                       strokeLinecap="round"
                       transform="rotate(-90 90 90)"
                     />
-                    {/* Statutory PF & Taxes 18% (Plum #7b2958) */}
+                    {/* Statutory PF & Taxes 18% (Plum #004B49) */}
                     <circle
                       cx="90" cy="90" r="68"
-                      stroke="#7b2958" strokeWidth="18" fill="none"
+                      stroke="#004B49" strokeWidth="18" fill="none"
                       strokeDasharray="427" strokeDashoffset="350"
                       strokeLinecap="round"
                       transform="rotate(169 90 90)"
                     />
-                    {/* Benefits & Claims 10% (Violet #8b5cf6) */}
+                    {/* Benefits & Claims 10% (Violet #004B49) */}
                     <circle
                       cx="90" cy="90" r="68"
-                      stroke="#8b5cf6" strokeWidth="18" fill="none"
+                      stroke="#004B49" strokeWidth="18" fill="none"
                       strokeDasharray="427" strokeDashoffset="384"
                       strokeLinecap="round"
                       transform="rotate(234 90 90)"

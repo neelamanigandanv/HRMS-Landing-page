@@ -81,8 +81,8 @@
   width: 24px !important;
   height: 24px !important;
   border-radius: 50% !important;
-  background: #802B5B !important;
-  border: 1.5px solid #802B5B !important;
+  background: #004B49 !important;
+  border: 1.5px solid #004B49 !important;
   color: #ffffff !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -91,17 +91,17 @@
   font-weight: 800 !important;
   flex-shrink: 0 !important;
   margin-top: 2px !important;
-  box-shadow: 0 2px 6px rgba(128, 43, 91, 0.28) !important;
+  box-shadow: 0 2px 6px rgba(0, 75, 73, 0.28) !important;
   transition: all 0.25s ease !important;
 }
 
 .asset-page-wrapper .emp-block-check-item:hover .emp-block-check-icon,
 .asset-page-wrapper .emp-block-check-item:hover .emp-block-check-badge {
-  background: #661e47 !important;
-  border-color: #661e47 !important;
+  background: #003836 !important;
+  border-color: #003836 !important;
   color: #ffffff !important;
   transform: scale(1.1) !important;
-  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.4) !important;
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.4) !important;
 }
 
 .asset-page-wrapper .emp-block-check-text {

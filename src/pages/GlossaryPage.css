@@ -1,14 +1,14 @@
 /* ==========================================================================
    LATTIUM HR - GLOSSARY PAGE STYLING
    A-Z HRMS Knowledge Center & Question Directory
-   Brand Palette: Deep Plum #7b2958, Warm Berry #b43f70, Blush #fae8f2 / #fcf0f7,
-   Ivory Canvas #FCF9F8, Subtle Gray Divider #DCD6CE
+   Brand Palette: Deep Plum #004B49, Warm Berry #004B49, Blush #F6F8F8 / #F6F8F8,
+   Ivory Canvas #F6F8F8, Subtle Gray Divider #E5EAEA
    Layout: Clean Single-Row Alphabet Strip + 3-Column Editorial Question Directory
    ========================================================================== */
 
 .glossary-hub-page {
-  background-color: #FCF9F8;
-  color: #1e131d;
+  background-color: #F6F8F8;
+  color: #00201F;
   min-height: 100vh;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
@@ -25,8 +25,8 @@
 .glossary-hero-section {
   min-height: calc(100vh - 72px);
   padding: 64px 0;
-  background: radial-gradient(ellipse at 50% 12%, #fcf0f7 0%, #FCF9F8 82%);
-  border-bottom: 1px solid #f2d0e3;
+  background: radial-gradient(ellipse at 50% 12%, #F6F8F8 0%, #F6F8F8 82%);
+  border-bottom: 1px solid #E5EAEA;
   text-align: center;
   position: relative;
   display: flex;
@@ -53,7 +53,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
   margin-bottom: 16px;
   text-align: center;
@@ -63,14 +63,14 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: #7b2958;
+  background-color: #004B49;
 }
 
 .glossary-hero-title {
   font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: clamp(34px, 4.4vw, 50px);
   font-weight: 850;
-  color: #1a0f18;
+  color: #00201F;
   line-height: 1.18;
   letter-spacing: -0.025em;
   margin: 0 auto 16px;
@@ -79,7 +79,7 @@
 }
 
 .glossary-hero-title-accent {
-  background: linear-gradient(135deg, #7b2958 0%, #b43f70 50%, #c83279 100%);
+  background: linear-gradient(135deg, #004B49 0%, #004B49 50%, #004B49 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -106,7 +106,7 @@
   display: flex;
   align-items: center;
   background: #ffffff;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   border-radius: 10px;
   padding: 4px 14px 4px 18px;
   min-height: 48px;
@@ -115,12 +115,12 @@
 }
 
 .glossary-search-box-wrap .faq-search-box:focus-within {
-  border-color: #7b2958;
-  box-shadow: 0 12px 32px rgba(92, 24, 64, 0.1), 0 0 0 3px rgba(123, 41, 88, 0.1);
+  border-color: #004B49;
+  box-shadow: 0 12px 32px rgba(92, 24, 64, 0.1), 0 0 0 3px rgba(0, 75, 73, 0.1);
 }
 
 .glossary-search-box-wrap .faq-search-icon {
-  color: #8b3c69;
+  color: #004B49;
   flex-shrink: 0;
   margin-right: 10px;
 }
@@ -143,7 +143,7 @@
 }
 
 .glossary-search-box-wrap .faq-search-clear-btn {
-  background: #f1e9ef;
+  background: #F6F8F8;
   border: none;
   width: 28px;
   height: 28px;
@@ -157,7 +157,7 @@
 }
 
 .glossary-search-box-wrap .faq-search-clear-btn:hover {
-  background: #e2d2de;
+  background: #E5EAEA;
   color: #332a30;
 }
 
@@ -175,9 +175,9 @@
   font-family: inherit;
   font-size: 11px;
   font-weight: 700;
-  color: #5c1840;
-  background: #f5edf3;
-  border: 1px solid #ebdbe6;
+  color: #00201F;
+  background: #F6F8F8;
+  border: 1px solid #E5EAEA;
   border-radius: 4px;
 }
 
@@ -208,29 +208,29 @@
 }
 
 .glossary-hero-btn--primary {
-  background: linear-gradient(135deg, #7b2958 0%, #5c1840 100%);
+  background: linear-gradient(135deg, #004B49 0%, #00201F 100%);
   color: #ffffff;
-  border: 1px solid #7b2958;
-  box-shadow: 0 4px 14px rgba(123, 41, 88, 0.25);
+  border: 1px solid #004B49;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.25);
 }
 
 .glossary-hero-btn--primary:hover {
-  background: linear-gradient(135deg, #8d3166 0%, #681c49 100%);
+  background: linear-gradient(135deg, #004B49 0%, #004B49 100%);
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(123, 41, 88, 0.32);
+  box-shadow: 0 6px 18px rgba(0, 75, 73, 0.32);
 }
 
 .glossary-hero-btn--secondary {
   background: #ffffff;
-  color: #1e131d;
-  border: 1.5px solid #ebdbe6;
+  color: #00201F;
+  border: 1.5px solid #E5EAEA;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .glossary-hero-btn--secondary:hover {
-  border-color: #7b2958;
-  color: #7b2958;
-  background: #fdfafc;
+  border-color: #004B49;
+  color: #004B49;
+  background: #F6F8F8;
   transform: translateY(-1px);
 }
 
@@ -249,17 +249,17 @@
   align-items: center;
   gap: 8px;
   font-size: 13.5px;
-  color: #554452;
+  color: #4B5857;
   font-weight: 500;
 }
 
 .glossary-point-check {
-  color: #7b2958;
+  color: #004B49;
   flex-shrink: 0;
 }
 
 .glossary-hero-point-item strong {
-  color: #7b2958;
+  color: #004B49;
   font-weight: 750;
 }
 
@@ -277,17 +277,17 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #fbf2f7;
+  background: #F6F8F8;
   padding: 4px 14px;
   border-radius: 9999px;
-  border: 1px solid #f2d0e3;
-  color: #4a3844;
+  border: 1px solid #E5EAEA;
+  color: #0B1514;
 }
 
 .glossary-meta-clear-link {
   background: transparent;
   border: none;
-  color: #7b2958;
+  color: #004B49;
   font-weight: 600;
   cursor: pointer;
   padding: 0;
@@ -297,7 +297,7 @@
 }
 
 .glossary-meta-clear-link:hover {
-  color: #5c1840;
+  color: #00201F;
 }
 
 /* ==========================================================================
@@ -305,7 +305,7 @@
    (NO full-bleed line touching sides)
    ========================================================================== */
 .glossary-alphabet-bar-wrapper {
-  background: #FCF9F8;
+  background: #F6F8F8;
   padding: 24px 0 20px;
   border-bottom: none;
   position: sticky;
@@ -343,7 +343,7 @@
   border-radius: 50%;
   background-color: #EDE8E3;
   color: #374151;
-  border: 1px solid #E2DCD6;
+  border: 1px solid #E5EAEA;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -363,17 +363,17 @@
 }
 
 .glossary-letter-pill:hover {
-  background-color: #F6E5EF;
-  color: #7b2958;
-  border-color: #f2d0e3;
+  background-color: #F6F8F8;
+  color: #004B49;
+  border-color: #E5EAEA;
   transform: translateY(-1px);
 }
 
 .glossary-letter-pill.active {
-  background-color: #7b2958;
+  background-color: #004B49;
   color: #ffffff;
-  border-color: #7b2958;
-  box-shadow: 0 2px 8px rgba(123, 41, 88, 0.25);
+  border-color: #004B49;
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.25);
   font-weight: 700;
 }
 
@@ -382,7 +382,7 @@
    ========================================================================== */
 .glossary-directory-section {
   padding: 56px 0 100px;
-  background-color: #FCF9F8;
+  background-color: #F6F8F8;
 }
 
 .glossary-directory-grid {
@@ -405,25 +405,25 @@
   font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 1.85rem;
   font-weight: 750;
-  color: #1a0f18;
+  color: #00201F;
   line-height: 1;
   display: block;
 }
 
 .glossary-letter-divider {
   height: 1.5px;
-  background-color: #DCD6CE;
+  background-color: #E5EAEA;
   margin-top: 8px;
   margin-bottom: 16px;
   width: 100%;
 }
 
 .glossary-letter-group.is-highlighted .glossary-letter-char {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .glossary-letter-group.is-highlighted .glossary-letter-divider {
-  background-color: #7b2958;
+  background-color: #004B49;
 }
 
 .glossary-questions-list {
@@ -457,7 +457,7 @@
 }
 
 .glossary-question-item-link:hover .glossary-question-title {
-  color: #8C2B66;
+  color: #004B49;
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 1.5px;
@@ -468,7 +468,7 @@
   text-align: center;
   padding: 64px 20px;
   background: #ffffff;
-  border: 1px dashed #ebdbe6;
+  border: 1px dashed #E5EAEA;
   border-radius: 20px;
   max-width: 600px;
   margin: 40px auto;
@@ -478,8 +478,8 @@
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: #fcf0f7;
-  color: #7b2958;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -489,13 +489,13 @@
 .glossary-empty-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #1a0f18;
+  color: #00201F;
   margin-bottom: 8px;
 }
 
 .glossary-empty-desc {
   font-size: 0.95rem;
-  color: #635460;
+  color: #00201F;
   line-height: 1.5;
   margin-bottom: 20px;
 }
@@ -506,7 +506,7 @@
   gap: 8px;
   padding: 10px 22px;
   border-radius: 9999px;
-  background-color: #7b2958;
+  background-color: #004B49;
   color: #ffffff;
   font-weight: 600;
   font-size: 0.9rem;
@@ -516,7 +516,7 @@
 }
 
 .glossary-reset-btn:hover {
-  background-color: #621e45;
+  background-color: #00201F;
 }
 
 @media (max-width: 1024px) {

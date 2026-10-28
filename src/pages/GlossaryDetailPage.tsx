@@ -72,7 +72,7 @@ export function GlossaryDetailPage() {
             </p>
             <Link
               to="/resources/hrms-glossary"
-              className="inline-flex items-center px-6 py-2.5 rounded-full bg-[#7b2958] text-white font-semibold text-sm hover:bg-[#5c1840] transition-all"
+              className="inline-flex items-center px-6 py-2.5 rounded-full bg-[#004B49] text-white font-semibold text-sm hover:bg-[#00201F] transition-all"
             >
               Browse All HRMS Terms &rarr;
             </Link>

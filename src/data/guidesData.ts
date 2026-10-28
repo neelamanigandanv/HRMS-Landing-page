@@ -47,7 +47,7 @@ export const featuredHandbooks: GuideHandbook[] = [
     subtitle: "Gross-to-net salary formulas, TDS calculations, EPF & ESIC filing timelines, and zero-penalty audit workflows.",
     category: "Payroll & Tax",
     readTime: "15 min read",
-    accentColor: "#7b2958",
+    accentColor: "#004B49",
     badge: "Statutory Masterclass",
     stat: "Zero-Penalty Audits",
     iconName: "payroll",
@@ -61,7 +61,7 @@ export const featuredHandbooks: GuideHandbook[] = [
     subtitle: "Resolving sandwich leave disputes, biometric sync, encashment liabilities, and eliminating 3.8% monthly payroll leakages.",
     category: "Workforce & Leave",
     readTime: "12 min read",
-    accentColor: "#b43f70",
+    accentColor: "#004B49",
     badge: "Leakage Prevention",
     stat: "Auto Biometric Sync",
     iconName: "calendar",
@@ -109,7 +109,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt:
       "What is Payroll? Payroll is the sum total of all compensation a company must pay to its employees for a set period of time or on a given date. Learn the complete gross-to-net cycle and statutory compliance rules.",
     badge: "Essential",
-    accentColor: "#f43f5e",
+    accentColor: "#004B49",
     author: "LattiumHR Payroll Advisory",
   },
   {
@@ -121,7 +121,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt:
       "What is Leave? Leave is simply taking time off from work after formally notifying management according to company and statutory guidelines. Learn how to configure automated accruals and holiday lists.",
     badge: "Operations",
-    accentColor: "#7b2958",
+    accentColor: "#004B49",
     author: "LattiumHR People Team",
   },
   {
@@ -133,7 +133,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt:
       "What is Recruitment Management? From structured candidate pipelines and multi-stage interviews to automated offer letter rollouts and seamless day-one onboarding across distributed branches.",
     badge: "Talent Acquisition",
-    accentColor: "#b43f70",
+    accentColor: "#004B49",
     author: "LattiumHR Talent Practice",
   },
   {
@@ -169,7 +169,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt:
       "A pragmatic framework for continuous 360-degree feedback, OKR goal alignment, quarterly calibration cycles, and transparent merit-based compensation linking.",
     badge: "Growth",
-    accentColor: "#7b2958",
+    accentColor: "#004B49",
     author: "LattiumHR Organizational Design",
   },
 ];

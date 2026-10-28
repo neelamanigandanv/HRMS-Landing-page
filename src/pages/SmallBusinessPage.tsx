@@ -913,7 +913,7 @@ export function SmallBusinessPage() {
                         <div className="sb-donut-circle">
                           <svg viewBox="0 0 36 36" className="sb-donut-svg">
                             <circle cx="18" cy="18" r="14" fill="none" stroke="#e2e8f0" strokeWidth="3.5" />
-                            <circle cx="18" cy="18" r="14" fill="none" stroke="#802B5B" strokeWidth="3.5" strokeDasharray="88" strokeDashoffset="2" strokeLinecap="round" transform="rotate(-90 18 18)" />
+                            <circle cx="18" cy="18" r="14" fill="none" stroke="#004B49" strokeWidth="3.5" strokeDasharray="88" strokeDashoffset="2" strokeLinecap="round" transform="rotate(-90 18 18)" />
                           </svg>
                           <span>98%</span>
                         </div>
@@ -1053,7 +1053,7 @@ export function SmallBusinessPage() {
                         <div className="sb-donut-circle">
                           <svg viewBox="0 0 36 36" className="sb-donut-svg">
                             <circle cx="18" cy="18" r="14" fill="none" stroke="#e2e8f0" strokeWidth="3.5" />
-                            <circle cx="18" cy="18" r="14" fill="none" stroke="#802B5B" strokeWidth="3.5" strokeDasharray="88" strokeDashoffset="0" strokeLinecap="round" transform="rotate(-90 18 18)" />
+                            <circle cx="18" cy="18" r="14" fill="none" stroke="#004B49" strokeWidth="3.5" strokeDasharray="88" strokeDashoffset="0" strokeLinecap="round" transform="rotate(-90 18 18)" />
                           </svg>
                           <span>100%</span>
                         </div>

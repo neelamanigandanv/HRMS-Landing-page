@@ -406,11 +406,11 @@ export function PerformanceManagementPage() {
 
                 <div className="emp-donut-chart-wrap">
                   <svg width="120" height="120" viewBox="0 0 180 180" className="emp-donut-svg">
-                    <circle cx="90" cy="90" r="68" stroke="#f4edf3" strokeWidth="18" fill="none" />
-                    {/* On Track 68% (Plum #802B5B) */}
+                    <circle cx="90" cy="90" r="68" stroke="#F6F8F8" strokeWidth="18" fill="none" />
+                    {/* On Track 68% (Plum #004B49) */}
                     <circle
                       cx="90" cy="90" r="68"
-                      stroke="#802B5B" strokeWidth="18" fill="none"
+                      stroke="#004B49" strokeWidth="18" fill="none"
                       strokeDasharray="427" strokeDashoffset="136"
                       strokeLinecap="round"
                       transform="rotate(-90 90 90)"

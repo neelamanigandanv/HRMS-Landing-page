@@ -1,12 +1,12 @@
 /* ==========================================================================
    SUPPORT HUB - DESIGN SYSTEM & ACCESSIBLE STYLING
-   Primary Palette: #7b2958 (plum), #5c1840 (dark plum), #faedf4 (soft tint)
-   Borders: #ebdbe6, #e5e7eb | Text: #111827, #374151, #4b5563, #6b7280
+   Primary Palette: #004B49 (plum), #00201F (dark plum), #F6F8F8 (soft tint)
+   Borders: #E5EAEA, #e5e7eb | Text: #111827, #374151, #4b5563, #6b7280
    ========================================================================== */
 
 .support-hub-page {
-  background-color: #faf9fb;
-  color: #1e131d;
+  background-color: #F6F8F8;
+  color: #00201F;
   font-family: inherit;
   min-height: 100vh;
 }
@@ -20,8 +20,8 @@
    1. HERO & SEARCH
    ---------------------------------------------------------------------------- */
 .support-hero-section {
-  background: radial-gradient(100% 120% at 50% 0%, #faedf4 0%, #faf9fb 100%);
-  border-bottom: 1px solid #ebdbe6;
+  background: radial-gradient(100% 120% at 50% 0%, #F6F8F8 0%, #F6F8F8 100%);
+  border-bottom: 1px solid #E5EAEA;
   padding: 4.5rem 0 3.5rem;
   text-align: center;
   position: relative;
@@ -39,14 +39,14 @@
   padding: 0.35rem 0.9rem;
   border-radius: 9999px;
   background-color: #ffffff;
-  border: 1px solid #ebdbe6;
-  color: #7b2958;
+  border: 1px solid #E5EAEA;
+  color: #004B49;
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   margin-bottom: 1.25rem;
-  box-shadow: 0 1px 3px rgba(123, 41, 88, 0.08);
+  box-shadow: 0 1px 3px rgba(0, 75, 73, 0.08);
 }
 
 .support-hero-title {
@@ -76,20 +76,20 @@
   display: flex;
   align-items: center;
   background-color: #ffffff;
-  border: 2px solid #ebdbe6;
+  border: 2px solid #E5EAEA;
   border-radius: 14px;
   padding: 0.35rem 0.4rem 0.35rem 1.1rem;
-  box-shadow: 0 8px 24px rgba(123, 41, 88, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 75, 73, 0.08);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .support-search-bar:focus-within {
-  border-color: #7b2958;
-  box-shadow: 0 8px 28px rgba(123, 41, 88, 0.16);
+  border-color: #004B49;
+  box-shadow: 0 8px 28px rgba(0, 75, 73, 0.16);
 }
 
 .support-search-icon {
-  color: #7b2958;
+  color: #004B49;
   margin-right: 0.75rem;
   flex-shrink: 0;
 }
@@ -109,7 +109,7 @@
 }
 
 .support-search-btn {
-  background-color: #7b2958;
+  background-color: #004B49;
   color: #ffffff;
   border: none;
   border-radius: 10px;
@@ -122,7 +122,7 @@
 }
 
 .support-search-btn:hover {
-  background-color: #5c1840;
+  background-color: #00201F;
 }
 
 /* Auto-suggest dropdown */
@@ -132,7 +132,7 @@
   left: 0;
   right: 0;
   background: #ffffff;
-  border: 1px solid #ebdbe6;
+  border: 1px solid #E5EAEA;
   border-radius: 12px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
   z-index: 50;
@@ -158,12 +158,12 @@
 
 .support-suggestion-item:hover,
 .support-suggestion-item:focus {
-  background-color: #faedf4;
+  background-color: #F6F8F8;
   outline: none;
 }
 
 .support-suggestion-arrow {
-  color: #7b2958;
+  color: #004B49;
   font-weight: 700;
   font-size: 0.875rem;
 }
@@ -185,10 +185,10 @@
 
 .support-chip-button {
   background-color: #ffffff;
-  border: 1px solid #ebdbe6;
+  border: 1px solid #E5EAEA;
   border-radius: 9999px;
   padding: 0.35rem 0.85rem;
-  color: #7b2958;
+  color: #004B49;
   font-size: 0.8125rem;
   font-weight: 600;
   cursor: pointer;
@@ -199,8 +199,8 @@
 }
 
 .support-chip-button:hover {
-  background-color: #faedf4;
-  border-color: #dca5c7;
+  background-color: #F6F8F8;
+  border-color: #E5EAEA;
   transform: translateY(-1px);
 }
 
@@ -269,16 +269,16 @@
 }
 
 .support-role-card.primary {
-  border: 2px solid #7b2958;
-  background: linear-gradient(180deg, #ffffff 0%, #fdf8fb 100%);
-  box-shadow: 0 6px 20px rgba(123, 41, 88, 0.1);
+  border: 2px solid #004B49;
+  background: linear-gradient(180deg, #ffffff 0%, #F6F8F8 100%);
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.1);
 }
 
 .support-role-badge-primary {
   position: absolute;
   top: -12px;
   right: 20px;
-  background-color: #7b2958;
+  background-color: #004B49;
   color: #ffffff;
   font-size: 0.6875rem;
   font-weight: 700;
@@ -294,7 +294,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #7b2958;
+  color: #004B49;
   margin-bottom: 0.75rem;
 }
 
@@ -319,14 +319,14 @@
   gap: 0.5rem;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: #7b2958;
+  color: #004B49;
   text-decoration: none;
   min-height: 44px;
   transition: gap 0.2s, color 0.2s;
 }
 
 .support-role-link:hover {
-  color: #5c1840;
+  color: #00201F;
   gap: 0.75rem;
 }
 
@@ -341,7 +341,7 @@
 
 .support-topic-card {
   background-color: #ffffff;
-  border: 1px solid #ebdbe6;
+  border: 1px solid #E5EAEA;
   border-radius: 14px;
   padding: 1.5rem;
   text-decoration: none;
@@ -353,16 +353,16 @@
 
 .support-topic-card:hover {
   transform: translateY(-2px);
-  border-color: #7b2958;
-  box-shadow: 0 8px 20px rgba(123, 41, 88, 0.08);
+  border-color: #004B49;
+  box-shadow: 0 8px 20px rgba(0, 75, 73, 0.08);
 }
 
 .support-topic-icon {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background-color: #faedf4;
-  color: #7b2958;
+  background-color: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -387,7 +387,7 @@
 .support-topic-cta {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #7b2958;
+  color: #004B49;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -410,15 +410,15 @@
 
 .support-faq-item {
   background-color: #ffffff;
-  border: 1px solid #ebdbe6;
+  border: 1px solid #E5EAEA;
   border-radius: 12px;
   overflow: hidden;
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .support-faq-item.active {
-  border-color: #7b2958;
-  box-shadow: 0 4px 14px rgba(123, 41, 88, 0.06);
+  border-color: #004B49;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.06);
 }
 
 .support-faq-trigger {
@@ -440,12 +440,12 @@
 
 .support-faq-trigger:hover,
 .support-faq-trigger:focus-visible {
-  color: #7b2958;
+  color: #004B49;
   outline: none;
 }
 
 .support-faq-chevron {
-  color: #7b2958;
+  color: #004B49;
   transition: transform 0.25s ease;
   font-size: 1.25rem;
   flex-shrink: 0;
@@ -471,7 +471,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #7b2958;
+  color: #004B49;
   font-weight: 600;
   font-size: 0.9375rem;
   text-decoration: none;
@@ -509,8 +509,8 @@
 }
 
 .support-channel-card.primary {
-  border: 2px solid #7b2958;
-  background: linear-gradient(180deg, #ffffff 0%, #faf3f7 100%);
+  border: 2px solid #004B49;
+  background: linear-gradient(180deg, #ffffff 0%, #F6F8F8 100%);
 }
 
 .support-channel-top {
@@ -521,8 +521,8 @@
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background-color: #faedf4;
-  color: #7b2958;
+  background-color: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -547,8 +547,8 @@
   display: inline-block;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #7b2958;
-  background-color: #faedf4;
+  color: #004B49;
+  background-color: #F6F8F8;
   padding: 0.2rem 0.55rem;
   border-radius: 6px;
 }
@@ -559,7 +559,7 @@
   gap: 0.4rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #7b2958;
+  color: #004B49;
   text-decoration: none;
   min-height: 44px;
   cursor: pointer;
@@ -588,10 +588,10 @@
 
 .support-ticket-form-card {
   background-color: #ffffff;
-  border: 1px solid #ebdbe6;
+  border: 1px solid #E5EAEA;
   border-radius: 16px;
   padding: 2.5rem;
-  box-shadow: 0 4px 20px rgba(123, 41, 88, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 75, 73, 0.05);
 }
 
 @media (max-width: 640px) {
@@ -656,15 +656,15 @@
 .support-input:focus,
 .support-select:focus,
 .support-textarea:focus {
-  border-color: #7b2958;
-  box-shadow: 0 0 0 3px rgba(123, 41, 88, 0.12);
+  border-color: #004B49;
+  box-shadow: 0 0 0 3px rgba(0, 75, 73, 0.12);
 }
 
 .support-input.error,
 .support-select.error,
 .support-textarea.error {
   border-color: #dc2626;
-  background-color: #fffbfb;
+  background-color: #F6F8F8;
 }
 
 .support-field-helper {
@@ -683,7 +683,7 @@
 
 /* Radio Group (Priority) */
 .support-priority-fieldset {
-  border: 1px solid #ebdbe6;
+  border: 1px solid #E5EAEA;
   border-radius: 10px;
   padding: 1rem 1.25rem 1.25rem;
   margin: 0;
@@ -717,19 +717,19 @@
 }
 
 .support-priority-label:hover {
-  background-color: #faedf4;
-  border-color: #dca5c7;
+  background-color: #F6F8F8;
+  border-color: #E5EAEA;
 }
 
 .support-priority-label.selected {
-  border-color: #7b2958;
-  background-color: #faedf4;
-  box-shadow: 0 0 0 1px #7b2958;
+  border-color: #004B49;
+  background-color: #F6F8F8;
+  box-shadow: 0 0 0 1px #004B49;
 }
 
 .support-priority-radio {
   margin-top: 0.2rem;
-  accent-color: #7b2958;
+  accent-color: #004B49;
   width: 16px;
   height: 16px;
 }
@@ -754,11 +754,11 @@
 
 /* Attachments Drag-Drop Area */
 .support-dropzone {
-  border: 2px dashed #ebdbe6;
+  border: 2px dashed #E5EAEA;
   border-radius: 10px;
   padding: 1.5rem;
   text-align: center;
-  background-color: #faf9fb;
+  background-color: #F6F8F8;
   cursor: pointer;
   transition: all 0.2s;
   min-height: 100px;
@@ -770,13 +770,13 @@
 
 .support-dropzone:hover,
 .support-dropzone.dragover {
-  border-color: #7b2958;
-  background-color: #faedf4;
+  border-color: #004B49;
+  background-color: #F6F8F8;
 }
 
 .support-dropzone-icon {
   font-size: 1.75rem;
-  color: #7b2958;
+  color: #004B49;
   margin-bottom: 0.5rem;
 }
 
@@ -828,7 +828,7 @@
 
 .support-consent-checkbox {
   margin-top: 0.2rem;
-  accent-color: #7b2958;
+  accent-color: #004B49;
   width: 18px;
   height: 18px;
   flex-shrink: 0;
@@ -841,7 +841,7 @@
 }
 
 .support-consent-text a {
-  color: #7b2958;
+  color: #004B49;
   text-decoration: underline;
 }
 
@@ -865,7 +865,7 @@
 .support-captcha-checkbox {
   width: 22px;
   height: 22px;
-  accent-color: #7b2958;
+  accent-color: #004B49;
   cursor: pointer;
 }
 
@@ -904,7 +904,7 @@
 
 .support-sidebar-card {
   background-color: #ffffff;
-  border: 1px solid #ebdbe6;
+  border: 1px solid #E5EAEA;
   border-radius: 14px;
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
@@ -931,7 +931,7 @@
   display: block;
   padding: 0.65rem 0.85rem;
   border-radius: 8px;
-  background-color: #faf9fb;
+  background-color: #F6F8F8;
   border: 1px solid #f3f4f6;
   color: #1f2937;
   font-size: 0.875rem;
@@ -942,9 +942,9 @@
 }
 
 .support-sidebar-article-link:hover {
-  background-color: #faedf4;
-  border-color: #ebdbe6;
-  color: #7b2958;
+  background-color: #F6F8F8;
+  border-color: #E5EAEA;
+  color: #004B49;
 }
 
 /* SLA Table */
@@ -970,9 +970,9 @@
 }
 
 .support-sla-table tr.highlight {
-  background-color: #faedf4;
+  background-color: #F6F8F8;
   font-weight: 700;
-  color: #7b2958;
+  color: #004B49;
 }
 
 .support-sla-badge {
@@ -1005,8 +1005,8 @@
 
 /* Track my ticket block */
 .support-track-cta-block {
-  background: linear-gradient(135deg, #faedf4 0%, #ffffff 100%);
-  border: 1px dashed #dca5c7;
+  background: linear-gradient(135deg, #F6F8F8 0%, #ffffff 100%);
+  border: 1px dashed #E5EAEA;
   border-radius: 12px;
   padding: 1.25rem;
 }
@@ -1014,7 +1014,7 @@
 .support-track-cta-title {
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #7b2958;
+  color: #004B49;
   margin: 0 0 0.35rem;
 }
 
@@ -1036,7 +1036,7 @@
 
 .support-resource-card {
   background-color: #ffffff;
-  border: 1px solid #ebdbe6;
+  border: 1px solid #E5EAEA;
   border-radius: 14px;
   padding: 1.75rem;
   display: flex;
@@ -1048,8 +1048,8 @@
 
 .support-resource-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(123, 41, 88, 0.08);
-  border-color: #7b2958;
+  box-shadow: 0 8px 20px rgba(0, 75, 73, 0.08);
+  border-color: #004B49;
 }
 
 .support-resource-top {
@@ -1063,8 +1063,8 @@
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background-color: #faedf4;
-  color: #7b2958;
+  background-color: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1073,11 +1073,11 @@
 .support-resource-badge {
   font-size: 0.6875rem;
   font-weight: 700;
-  color: #7b2958;
-  background-color: #faedf4;
+  color: #004B49;
+  background-color: #F6F8F8;
   padding: 0.2rem 0.55rem;
   border-radius: 9999px;
-  border: 1px solid #ebdbe6;
+  border: 1px solid #E5EAEA;
 }
 
 .support-resource-title {
@@ -1098,7 +1098,7 @@
 .support-resource-cta {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #7b2958;
+  color: #004B49;
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -1109,8 +1109,8 @@
    ---------------------------------------------------------------------------- */
 .support-trust-strip {
   background-color: #ffffff;
-  border-top: 1px solid #ebdbe6;
-  border-bottom: 1px solid #ebdbe6;
+  border-top: 1px solid #E5EAEA;
+  border-bottom: 1px solid #E5EAEA;
   padding: 1.25rem 0;
 }
 
@@ -1150,7 +1150,7 @@
 }
 
 .support-status-link {
-  color: #7b2958;
+  color: #004B49;
   font-weight: 600;
   text-decoration: underline;
   margin-left: 0.4rem;
@@ -1191,7 +1191,7 @@
    10. FINAL CTA
    ---------------------------------------------------------------------------- */
 .support-final-cta-section {
-  background: radial-gradient(100% 120% at 50% 100%, #faedf4 0%, #faf9fb 100%);
+  background: radial-gradient(100% 120% at 50% 100%, #F6F8F8 0%, #F6F8F8 100%);
   padding: 5rem 0;
   text-align: center;
 }

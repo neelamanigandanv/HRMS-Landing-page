@@ -665,7 +665,7 @@ export function AboutPage() {
             <defs>
               <linearGradient id="statIndigoArc" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#a5b4fc" stopOpacity="0.3" />
-                <stop offset="50%" stopColor="#5146d8" stopOpacity="1" />
+                <stop offset="50%" stopColor="#004B49" stopOpacity="1" />
                 <stop offset="100%" stopColor="#a5b4fc" stopOpacity="0.3" />
               </linearGradient>
             </defs>

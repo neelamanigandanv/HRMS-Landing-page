@@ -566,7 +566,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         icon: "chart",
         title: "Team Efficiency",
         subtitle: "85% Less Manual Inquiries",
-        color: "#802B5B",
+        color: "#004B49",
       },
       steps: [
         {
