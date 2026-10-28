@@ -38,13 +38,13 @@ export function SitemapPage() {
     {
       category: "Resources & Support",
       links: [
-        { title: "Resources Overview", path: "/resources", desc: "Knowledge, guides, and customer support hub" },
+        // { title: "Resources Overview", path: "/resources", desc: "Knowledge, guides, and customer support hub" },
         { title: "HR & Compliance Blog", path: "/resources/blog", desc: "Articles on payroll compliance, attendance, and culture" },
         { title: "Indian Statutory Payroll Guide 2025", path: "/resources/blog/indian-payroll-compliance-guide-2025", desc: "In-depth guide on PF, ESI, PT, and TDS" },
         { title: "Geofenced Attendance vs. Biometrics", path: "/resources/blog/geofenced-attendance-vs-biometric-scanners", desc: "Evaluation of mobile GPS vs. hardware scanners" },
         { title: "Cutting Employee Attrition by 18%", path: "/resources/blog/reducing-employee-attrition-with-better-hr-processes", desc: "How smooth HR processes build workplace trust" },
         { title: "HRMS Glossary", path: "/resources/hrms-glossary", desc: "A–Z dictionary of 50+ HRMS and statutory terms" },
-        { title: "Frequently Asked Questions", path: "/resources/faqs", desc: "Answers on setup, multi-branch, and security" },
+        { title: "Frequently Asked Questions", path: "/faq", desc: "Answers on setup, multi-branch, and security" },
         { title: "Help Center", path: "/help", desc: "Knowledge base documentation and tutorials" },
         { title: "Getting Started Guide", path: "/help/getting-started", desc: "Step-by-step 4-stage implementation blueprint" },
         { title: "Customer Support & SLAs", path: "/support", desc: "Direct support channels, response SLAs, and tickets" },

@@ -4,8 +4,10 @@ import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
 import { caseStudies } from "../data/resourcesData";
+import { useCurrency } from "../context/CurrencyContext";
 
 export function CaseStudiesPage() {
+  const { formatText } = useCurrency();
   const breadcrumbs = [
     { label: "Resources", to: "/resources" },
     { label: "Case Studies" },
@@ -62,7 +64,7 @@ export function CaseStudiesPage() {
                   <div className="cs-metrics-grid">
                     {cs.metrics.map((m, mIdx) => (
                       <div key={mIdx} className="cs-metric-box">
-                        <strong>{m.value}</strong>
+                        <strong>{formatText(m.value)}</strong>
                         <small>{m.label}</small>
                       </div>
                     ))}
@@ -94,7 +96,7 @@ export function CaseStudiesPage() {
                     {cs.results.map((res, rIdx) => (
                       <li key={rIdx}>
                         <Icon name="check" size={15} className="check-icon" />
-                        <span>{res}</span>
+                        <span>{formatText(res)}</span>
                       </li>
                     ))}
                   </ul>

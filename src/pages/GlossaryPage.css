@@ -1,0 +1,547 @@
+/* ==========================================================================
+   LATTIUM HR - GLOSSARY PAGE STYLING
+   A-Z HRMS Knowledge Center & Question Directory
+   Brand Palette: Deep Plum #7b2958, Warm Berry #b43f70, Blush #fae8f2 / #fcf0f7,
+   Ivory Canvas #FCF9F8, Subtle Gray Divider #DCD6CE
+   Layout: Clean Single-Row Alphabet Strip + 3-Column Editorial Question Directory
+   ========================================================================== */
+
+.glossary-hub-page {
+  background-color: #FCF9F8;
+  color: #1e131d;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+.glossary-container {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   1. HERO SECTION (Perfect text alignment, centered, generous spacing)
+   ========================================================================== */
+.glossary-hero-section {
+  min-height: calc(100vh - 72px);
+  padding: 64px 0;
+  background: radial-gradient(ellipse at 50% 12%, #fcf0f7 0%, #FCF9F8 82%);
+  border-bottom: 1px solid #f2d0e3;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.glossary-hero-content {
+  max-width: 840px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.glossary-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #7b2958;
+  background: transparent;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.glossary-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #7b2958;
+}
+
+.glossary-hero-title {
+  font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(34px, 4.4vw, 50px);
+  font-weight: 850;
+  color: #1a0f18;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin: 0 auto 16px;
+  text-align: center;
+  max-width: 820px;
+}
+
+.glossary-hero-title-accent {
+  background: linear-gradient(135deg, #7b2958 0%, #b43f70 50%, #c83279 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.glossary-hero-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 660px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+/* Elevated Search Box (Exact FAQ Design) */
+.glossary-search-box-wrap {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.glossary-search-box-wrap .faq-search-box {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #ebdbe6;
+  border-radius: 10px;
+  padding: 4px 14px 4px 18px;
+  min-height: 48px;
+  box-shadow: 0 8px 24px rgba(92, 24, 64, 0.06);
+  transition: all 0.25s ease;
+}
+
+.glossary-search-box-wrap .faq-search-box:focus-within {
+  border-color: #7b2958;
+  box-shadow: 0 12px 32px rgba(92, 24, 64, 0.1), 0 0 0 3px rgba(123, 41, 88, 0.1);
+}
+
+.glossary-search-box-wrap .faq-search-icon {
+  color: #8b3c69;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.glossary-search-box-wrap .faq-search-input {
+  flex: 1;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  background: transparent !important;
+  padding: 8px 0;
+}
+
+.glossary-search-box-wrap .faq-search-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.glossary-search-box-wrap .faq-search-clear-btn {
+  background: #f1e9ef;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #655b62;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.glossary-search-box-wrap .faq-search-clear-btn:hover {
+  background: #e2d2de;
+  color: #332a30;
+}
+
+.glossary-search-box-wrap .faq-search-shortcut-hint {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #94a3b8;
+  padding-right: 6px;
+  user-select: none;
+}
+
+.glossary-search-box-wrap .faq-search-shortcut-hint kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  color: #5c1840;
+  background: #f5edf3;
+  border: 1px solid #ebdbe6;
+  border-radius: 4px;
+}
+
+/* Hero Quick Action Buttons (Generous breathing space & sizing) */
+.glossary-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+.glossary-hero-btn {
+  min-height: 48px;
+  padding: 0 28px;
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+.glossary-hero-btn--primary {
+  background: linear-gradient(135deg, #7b2958 0%, #5c1840 100%);
+  color: #ffffff;
+  border: 1px solid #7b2958;
+  box-shadow: 0 4px 14px rgba(123, 41, 88, 0.25);
+}
+
+.glossary-hero-btn--primary:hover {
+  background: linear-gradient(135deg, #8d3166 0%, #681c49 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(123, 41, 88, 0.32);
+}
+
+.glossary-hero-btn--secondary {
+  background: #ffffff;
+  color: #1e131d;
+  border: 1.5px solid #ebdbe6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.glossary-hero-btn--secondary:hover {
+  border-color: #7b2958;
+  color: #7b2958;
+  background: #fdfafc;
+  transform: translateY(-1px);
+}
+
+/* Trust & Metric Points Below Buttons (Generous breathing space) */
+.glossary-hero-points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 34px;
+  flex-wrap: wrap;
+}
+
+.glossary-hero-point-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #554452;
+  font-weight: 500;
+}
+
+.glossary-point-check {
+  color: #7b2958;
+  flex-shrink: 0;
+}
+
+.glossary-hero-point-item strong {
+  color: #7b2958;
+  font-weight: 750;
+}
+
+.glossary-search-meta {
+  font-size: 0.86rem;
+  color: #73646f;
+  margin-top: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glossary-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fbf2f7;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  border: 1px solid #f2d0e3;
+  color: #4a3844;
+}
+
+.glossary-meta-clear-link {
+  background: transparent;
+  border: none;
+  color: #7b2958;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-size: 0.82rem;
+}
+
+.glossary-meta-clear-link:hover {
+  color: #5c1840;
+}
+
+/* ==========================================================================
+   2. HORIZONTAL A-Z ALPHABET STRIP (One row on desktop, circular pills)
+   (NO full-bleed line touching sides)
+   ========================================================================== */
+.glossary-alphabet-bar-wrapper {
+  background: #FCF9F8;
+  padding: 24px 0 20px;
+  border-bottom: none;
+  position: sticky;
+  top: 70px;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+}
+
+.glossary-alphabet-scroll-container {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 0;
+}
+
+.glossary-alphabet-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.glossary-alphabet-strip {
+  display: flex;
+  flex-wrap: nowrap; /* Strictly enforce single line, never two lines */
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Space between each letter pill */
+  min-width: max-content;
+  margin: 0 auto;
+  padding: 0 12px;
+}
+
+.glossary-letter-pill {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  border-radius: 50%;
+  background-color: #EDE8E3;
+  color: #374151;
+  border: 1px solid #E2DCD6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  font-family: 'Inter Tight', sans-serif;
+}
+
+.glossary-letter-pill.all-pill {
+  width: auto;
+  padding: 0 16px;
+  border-radius: 9999px;
+  font-size: 13.5px;
+}
+
+.glossary-letter-pill:hover {
+  background-color: #F6E5EF;
+  color: #7b2958;
+  border-color: #f2d0e3;
+  transform: translateY(-1px);
+}
+
+.glossary-letter-pill.active {
+  background-color: #7b2958;
+  color: #ffffff;
+  border-color: #7b2958;
+  box-shadow: 0 2px 8px rgba(123, 41, 88, 0.25);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   3. EDITORIAL QUESTION DIRECTORY (3 Columns matching uploaded screenshot)
+   ========================================================================== */
+.glossary-directory-section {
+  padding: 56px 0 100px;
+  background-color: #FCF9F8;
+}
+
+.glossary-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 52px 48px;
+  align-items: start;
+}
+
+.glossary-letter-group {
+  break-inside: avoid;
+  margin-bottom: 44px;
+}
+
+.glossary-letter-header {
+  margin-bottom: 6px;
+}
+
+.glossary-letter-char {
+  font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.85rem;
+  font-weight: 750;
+  color: #1a0f18;
+  line-height: 1;
+  display: block;
+}
+
+.glossary-letter-divider {
+  height: 1.5px;
+  background-color: #DCD6CE;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.glossary-letter-group.is-highlighted .glossary-letter-char {
+  color: #7b2958;
+}
+
+.glossary-letter-group.is-highlighted .glossary-letter-divider {
+  background-color: #7b2958;
+}
+
+.glossary-questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.glossary-question-item-link {
+  color: #2D2926;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  font-weight: 450;
+  text-decoration: none;
+  display: block;
+  transition: all 0.15s ease;
+  position: relative;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.glossary-question-title {
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.glossary-question-item-link:hover .glossary-question-title {
+  color: #8C2B66;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+}
+
+/* Empty State */
+.glossary-empty-state {
+  text-align: center;
+  padding: 64px 20px;
+  background: #ffffff;
+  border: 1px dashed #ebdbe6;
+  border-radius: 20px;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.glossary-empty-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fcf0f7;
+  color: #7b2958;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+
+.glossary-empty-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a0f18;
+  margin-bottom: 8px;
+}
+
+.glossary-empty-desc {
+  font-size: 0.95rem;
+  color: #635460;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.glossary-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 9999px;
+  background-color: #7b2958;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.glossary-reset-btn:hover {
+  background-color: #621e45;
+}
+
+@media (max-width: 1024px) {
+  .glossary-directory-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .glossary-hero-section {
+    padding: 60px 0 40px;
+  }
+
+  .glossary-hero-title {
+    font-size: 1.85rem;
+  }
+
+  .glossary-directory-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .glossary-search-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+}

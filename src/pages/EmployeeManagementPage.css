@@ -1,0 +1,2900 @@
+/* ==========================================================================
+   EMPLOYEE MANAGEMENT PAGE STYLESHEET
+   1. Dark Spotlight Stage Hero + Plum Showcase (Matching Sage HR layout)
+   2. Why Choose Us Section (1 Big Card with scenic bg + 4 Small Cards 2x2 grid)
+   3. Capabilities, Interactive ROI Calculator, Lifecycle & Ecosystem
+   ========================================================================== */
+
+.emp-page-wrapper {
+  background-color: #faf9fb;
+  color: #1e131d;
+  font-family: inherit;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   1. HERO SECTION (Clean Light Theme + Plum Under-Dashboard Showcase)
+   ========================================================================== */
+.emp-hero-rich {
+  padding: 5rem 0 4.5rem;
+  background:
+    radial-gradient(circle at 50% -15%, rgba(128, 43, 91, 0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #fdfbfe 0%, #ffffff 65%, #fcf9fb 100%);
+  position: relative;
+  text-align: center;
+  border-bottom: 1px solid rgba(128, 43, 91, 0.08);
+  overflow: hidden;
+  color: #191735;
+}
+
+/* Remove dark spotlight cones */
+.emp-hero-rich::before,
+.emp-hero-rich::after {
+  display: none;
+}
+
+.emp-hero-rich .container {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Spotlight Top Badge */
+.emp-hero-spotlight-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #802B5B;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.emp-hero-spotlight-tag::before,
+.emp-hero-spotlight-tag::after {
+  content: '';
+  display: inline-block;
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(128, 43, 91, 0.35));
+}
+
+.emp-hero-spotlight-tag::after {
+  background: linear-gradient(90deg, rgba(128, 43, 91, 0.35), transparent);
+}
+
+.emp-hero-rich-title {
+  font-size: clamp(2.75rem, 4.4vw, 3.65rem);
+  font-weight: 600;
+  color: #191735;
+  line-height: 1.14;
+  letter-spacing: -0.03em;
+  margin: 0 auto 1.35rem;
+  max-width: 860px;
+  text-align: center;
+}
+
+.emp-hero-br {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .emp-hero-br {
+    display: none;
+  }
+}
+
+.emp-glow-text {
+  color: #802B5B;
+  background: linear-gradient(135deg, #802B5B 0%, #b54282 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  text-shadow: none;
+}
+
+.emp-hero-rich-subhead {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  color: #555268;
+  line-height: 1.65;
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Dual Pill Action Buttons */
+.emp-hero-rich-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.emp-pill-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #802B5B;
+  color: #ffffff;
+  border: 1px solid #802B5B;
+  border-radius: 10px;
+  padding: 0 28px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(128, 43, 91, 0.28);
+  transition: all 0.2s ease;
+  min-height: 50px;
+}
+
+.emp-pill-btn-primary:hover {
+  background: #661e47;
+  border-color: #661e47;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.38);
+}
+
+.emp-pill-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  color: #191735;
+  border: 1px solid #d7d5e0;
+  border-radius: 10px;
+  padding: 0 24px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  min-height: 50px;
+}
+
+.emp-pill-btn-secondary:hover {
+  background: #fdf7fa;
+  color: #802B5B;
+  border-color: #802B5B;
+  transform: translateY(-1px);
+}
+
+/* Trust points row */
+.emp-hero-trust-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.85rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.emp-hero-trust-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #555268;
+}
+
+.emp-hero-trust-row span svg {
+  color: #10b981;
+}
+
+/* --------------------------------------------------------------------------
+   Open Floating Hero Stage (No Dark Border/Box, Half Visible in First Viewport)
+   -------------------------------------------------------------------------- */
+.emp-hero-floating-stage {
+  display: grid;
+  grid-template-columns: 290px minmax(360px, 1fr) 290px;
+  gap: 1.5rem;
+  align-items: center;
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  /* Half-visible effect: top portion prominently visible in hero fold */
+  margin-bottom: -110px;
+  z-index: 10;
+}
+
+@media (max-width: 1100px) {
+  .emp-hero-floating-stage {
+    grid-template-columns: 1fr;
+    max-width: 680px;
+    margin-bottom: 0;
+  }
+}
+
+/* Left & Right Floating UI Cards */
+.emp-hero-float-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem 1.35rem;
+  box-shadow:
+    0 20px 40px -10px rgba(25, 23, 53, 0.08),
+    0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(235, 219, 230, 0.9);
+  text-align: left;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  position: relative;
+  z-index: 3;
+}
+
+.emp-hero-float-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 28px 50px -12px rgba(128, 43, 91, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Left Widget: Compact height matching the right widget */
+.emp-hero-widget-left {
+  padding: 1.15rem 1.25rem 1.15rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-self: center !important;
+}
+
+.emp-hero-widget-left .emp-float-widget-header {
+  margin-bottom: 0.45rem;
+}
+
+.emp-hero-widget-right {
+  padding: 1.15rem 1.25rem 1.15rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-self: center !important;
+}
+
+.emp-hero-widget-right .emp-float-widget-header {
+  margin-bottom: 0.45rem;
+}
+
+.emp-float-widget-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.emp-float-widget-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #191735;
+  margin: 0 0 2px;
+}
+
+.emp-float-widget-sub {
+  font-size: 0.75rem;
+  color: #7b7891;
+  font-weight: 500;
+}
+
+.emp-float-widget-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+  background-color: #fdf2f8;
+  color: #802B5B;
+}
+
+.emp-float-widget-pill-green {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.25rem 0.55rem;
+  border-radius: 9999px;
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+/* Donut Chart inside Left Widget */
+.emp-donut-chart-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.15rem 0 0.45rem;
+}
+
+.emp-donut-svg {
+  width: 120px;
+  height: 120px;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.03));
+}
+
+.emp-donut-center-lbl {
+  font-size: 11px;
+  fill: #7b7891;
+  font-weight: 500;
+}
+
+.emp-donut-center-val {
+  font-size: 20px;
+  fill: #191735;
+  font-weight: 700;
+}
+
+.emp-donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #433f5b;
+}
+
+.emp-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.emp-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.emp-dot-plum {
+  background-color: #802B5B;
+}
+
+.emp-dot-mint {
+  background-color: #10b981;
+}
+
+.emp-dot-violet {
+  background-color: #8b5cf6;
+}
+
+/* Center Photo Card */
+.emp-hero-center-photo-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 25px 60px -15px rgba(25, 23, 53, 0.16),
+    0 6px 18px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border: 1px solid rgba(235, 219, 230, 0.8);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  z-index: 2;
+}
+
+.emp-hero-center-photo-card:hover {
+  transform: translateY(-3px) scale(1.005);
+  box-shadow:
+    0 32px 70px -12px rgba(128, 43, 91, 0.18),
+    0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.emp-hero-center-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .emp-hero-center-img {
+    height: 280px;
+  }
+}
+
+/* Floating Status Pills on Photo */
+.emp-photo-status-pill {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #065f46;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.emp-live-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+.emp-photo-country-pills {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.emp-photo-country-pills span {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #191735;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.emp-photo-profile-tag {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 0.65rem 0.9rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.emp-photo-profile-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #802B5B 0%, #b54282 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.emp-photo-profile-text {
+  text-align: left;
+  line-height: 1.25;
+}
+
+.emp-photo-profile-text strong {
+  display: block;
+  font-size: 0.8125rem;
+  color: #191735;
+}
+
+.emp-photo-profile-text span {
+  font-size: 0.7rem;
+  color: #7b7891;
+  font-weight: 500;
+}
+
+/* Right Widget Styles */
+.emp-widget-stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin-bottom: 0.45rem;
+}
+
+.emp-stat-number {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #191735;
+  line-height: 1;
+}
+
+.emp-stat-meta span {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #191735;
+}
+
+.emp-stat-meta small {
+  font-size: 0.6875rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.emp-mini-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0.2rem 0;
+  gap: 6px;
+  margin-bottom: 0.55rem;
+  border-bottom: 1px dashed rgba(235, 219, 230, 0.9);
+}
+
+.emp-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.emp-bar-fill {
+  width: 100%;
+  max-width: 16px;
+  border-radius: 6px 6px 0 0;
+  background-color: #f1e4ee;
+  transition: all 0.3s ease;
+}
+
+.emp-bar-col:hover .emp-bar-fill {
+  background-color: #d8b8ce;
+}
+
+.emp-bar-col.is-active .emp-bar-fill {
+  background: linear-gradient(180deg, #802B5B 0%, #b54282 100%);
+  box-shadow: 0 4px 10px rgba(128, 43, 91, 0.25);
+}
+
+.emp-bar-lbl {
+  font-size: 0.6875rem;
+  color: #8c889f;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.emp-widget-footer-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #065f46;
+  background-color: #ecfdf5;
+  padding: 0.25rem 0.55rem;
+  border-radius: 8px;
+}
+
+.emp-widget-footer-pill svg {
+  color: #10b981;
+}
+
+/* ==========================================================================
+   2. PROBLEM / CHALLENGES SECTION (Exact Reference Image Style)
+   ========================================================================== */
+.emp-problem-section {
+  padding-top: 100px !important;
+  padding-bottom: 2.25rem !important;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1100px) {
+  .emp-problem-section {
+    padding-top: 5rem;
+  }
+}
+
+.emp-problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 960px) {
+  .emp-problem-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+    gap: 1.75rem;
+  }
+}
+
+/* Reference Image Card: Flat light surface, minimal 4px radius, 6px solid bottom accent bar in #802B5B */
+.emp-problem-card {
+  background: #f6f6f6 !important;
+  border: 1px solid #ededed !important;
+  border-bottom: 6px solid #802B5B !important;
+  border-radius: 4px !important;
+  padding: 2.75rem 2.25rem 2.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+}
+
+.emp-problem-card:hover {
+  transform: translateY(-5px) !important;
+  background: #f1f1f1 !important;
+  box-shadow: 0 14px 30px rgba(128, 43, 91, 0.09) !important;
+  border-bottom-color: #661e47 !important;
+}
+
+/* Clean line icon top-left, no circle background, matching reference image */
+.emp-problem-icon-wrap {
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  border-radius: 0 !important;
+  color: #802B5B !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  margin-bottom: 1.75rem !important;
+}
+
+.emp-problem-icon-wrap svg {
+  color: #802B5B !important;
+  stroke: #802B5B !important;
+}
+
+.emp-problem-title {
+  font-size: 1.45rem !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 0 1.15rem !important;
+}
+
+.emp-problem-desc {
+  font-size: 0.9375rem !important;
+  line-height: 1.7 !important;
+  color: #4b5563 !important;
+  margin: 0 !important;
+  flex: 1 !important;
+}
+
+/* Section Divider Line (Centered, Not Touching Corners) */
+.emp-section-divider-line {
+  width: 72%;
+  max-width: 960px;
+  height: 1.5px;
+  margin: 2.25rem auto 0 !important;
+  background: linear-gradient(90deg, transparent 0%, #cbd5e1 20%, #cbd5e1 80%, transparent 100%);
+  opacity: 0.8;
+}
+
+
+/* ==========================================================================
+   2. WHY CHOOSE US SECTION (1 Big Card with scenic bg + 4 Small Cards 2x2 grid)
+   ========================================================================== */
+.emp-why-choose-section {
+  padding: 4.5rem 0 4.5rem;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.emp-why-choose-section .container {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Global Section Heading System (Matched EXACTLY to Home Page)
+   ========================================================================== */
+.emp-page-wrapper .emp-section-header,
+.emp-page-wrapper .emp-section-header.center,
+.emp-process-header {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 640px !important;
+  margin-bottom: 45px !important;
+}
+
+.emp-page-wrapper .emp-eyebrow {
+  color: var(--indigo, #802B5B) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.8px !important;
+  display: block !important;
+  margin-bottom: 13px !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+}
+
+.emp-page-wrapper .emp-section-title,
+.emp-process-title {
+  font-size: 39px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -1.6px !important;
+  font-weight: 600 !important;
+  color: var(--ink, #191735) !important;
+  margin: 0 auto 15px !important;
+  text-align: center !important;
+}
+
+.emp-page-wrapper .emp-section-subhead {
+  color: var(--muted, #64748b) !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  max-width: 640px !important;
+}
+
+@media (max-width: 768px) {
+
+  .emp-page-wrapper .emp-section-title,
+  .emp-process-title {
+    font-size: 28px !important;
+    letter-spacing: -1px !important;
+  }
+}
+
+/* Grid Layout: 1 Big Card (Left) + 4 Small Cards (Right) */
+.emp-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .emp-why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   The Big Card (Scenic Mountain Background + Floating Metric Widgets)
+   -------------------------------------------------------------------------- */
+.emp-why-big-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  padding: 1.85rem 1.75rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 440px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06);
+  background-image: url('/images/why-choose-scenic-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Dark atmospheric vignette gradient for crystal-clear readability */
+.emp-why-big-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(255, 255, 255, 0) 30%,
+      rgba(8, 20, 24, 0.72) 70%,
+      rgba(6, 16, 19, 0.94) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.emp-big-card-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+  position: relative;
+  z-index: 2;
+  line-height: 1.3;
+}
+
+/* Floating Card 1: Verified Profiles Metric */
+.emp-float-metric-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 0.65rem 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 0.85rem;
+  position: relative;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.emp-metric-card-left {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.emp-metric-icon-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background-color: #d1fae5;
+  color: #065f46;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+}
+
+.emp-metric-info small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 2px;
+}
+
+.emp-metric-info strong {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1;
+}
+
+.emp-metric-pill {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+/* Floating Card 2: Semi-Circular Speedometer Radial Gauge */
+.emp-float-gauge-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  padding: 0.9rem 1rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.emp-gauge-svg-wrap {
+  position: relative;
+  width: 190px;
+  height: 108px;
+  display: flex;
+  justify-content: center;
+}
+
+.emp-gauge-inner-data {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.emp-gauge-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-bottom: 2px;
+}
+
+.emp-gauge-score {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #111827;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 2px;
+}
+
+.emp-gauge-sub-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #111827;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+/* Bottom Description in Big Card */
+.emp-big-card-bottom-text {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 0.85rem;
+  line-height: 1.55;
+  position: relative;
+  z-index: 2;
+  margin-top: 1.15rem;
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   The Four Small Cards (2x2 Grid)
+   -------------------------------------------------------------------------- */
+.emp-why-small-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.15rem;
+}
+
+@media (max-width: 640px) {
+  .emp-why-small-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.emp-why-small-card {
+  background-color: #ffffff;
+  border: 1px solid #e8edf0;
+  border-radius: 18px;
+  padding: 1.5rem 1.35rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.025);
+}
+
+.emp-why-small-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(128, 43, 91, 0.08);
+  border-color: rgba(217, 70, 159, 0.4);
+}
+
+.emp-why-icon-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background-color: #e8f5e9;
+  color: #137333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.25rem;
+}
+
+.emp-why-icon-badge.emp-badge-emerald {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.emp-why-icon-badge.emp-badge-plum {
+  background-color: #fdf2f8;
+  color: #802B5B;
+}
+
+.emp-why-icon-badge.emp-badge-blue {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.emp-why-icon-badge.emp-badge-amber {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+.emp-why-card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.85rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.emp-why-card-desc {
+  font-size: 0.9125rem;
+  color: #4b5563;
+  line-height: 1.62;
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. EMPLOYEE MANAGEMENT CAPABILITIES (3 Reference Blocks)
+   ========================================================================== */
+.emp-capabilities-section {
+  padding: 2.25rem 0 0 !important;
+  background-color: transparent;
+  position: relative;
+}
+
+.emp-block-nav-row {
+  display: none !important;
+}
+
+.emp-block-eyebrow {
+  display: block !important;
+  color: #802B5B !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.8px !important;
+  text-transform: uppercase !important;
+  margin-top: 2px !important;
+  margin-bottom: 10px !important;
+  line-height: 1.2 !important;
+}
+
+.emp-capability-blocks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+
+/* Capability Full-Width Block Wrappers */
+.emp-cap-block-wrapper {
+  width: 100%;
+  padding: 4.5rem 0 4rem;
+  position: relative;
+}
+
+/* Distinct Outside Background Colors (Not inside card) */
+.emp-cap-bg-0 {
+  background-color: #f7f9fc;
+}
+
+.emp-cap-bg-1 {
+  background-color: #fdf5f9;
+  /* Soft tint of primary #802B5B */
+}
+
+.emp-cap-bg-2 {
+  background-color: #f2f6f5;
+  /* Soft clean mint-slate tint */
+}
+
+/* Dividing Line Between Blocks (Centered, Not Touching Corners) */
+.emp-block-divider-line {
+  width: 72%;
+  max-width: 920px;
+  height: 1.5px;
+  margin: 4.25rem auto 0;
+  background: linear-gradient(90deg, transparent 0%, #cbd5e1 20%, #cbd5e1 80%, transparent 100%);
+  opacity: 0.85;
+}
+
+/* Reference Block Card (Exact Reference Image Style) */
+.emp-reference-block-card {
+  background: #ffffff;
+  border: 1px solid #edf1ef;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.emp-reference-block-card:hover {
+  box-shadow: 0 24px 55px -10px rgba(128, 43, 91, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Top Deck: 2 Columns (Left Image + Right Content, perfectly top-aligned) */
+.emp-block-top-deck {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 3.25rem;
+  padding: 3.25rem 3.25rem 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1040px) {
+  .emp-block-top-deck {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding: 2.25rem 1.75rem 2rem;
+  }
+}
+
+/* Left Column: Vertical Image */
+.emp-block-img-col {
+  width: 100%;
+  height: 460px;
+  min-height: 420px;
+  max-height: 470px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.09);
+  position: relative;
+  align-self: start;
+  margin-top: 0;
+}
+
+@media (max-width: 1040px) {
+  .emp-block-img-col {
+    height: auto;
+    max-height: 360px;
+    min-height: 280px;
+  }
+}
+
+.emp-block-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.emp-reference-block-card:hover .emp-block-hero-img {
+  transform: scale(1.03);
+}
+
+/* Right Column: Starts at the exact top level of the image */
+.emp-block-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.emp-block-title {
+  font-size: clamp(1.85rem, 2.6vw, 2.45rem);
+  font-weight: 650 !important;
+  color: #1e293b;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 1rem;
+}
+
+.emp-block-title span.title-line {
+  display: block;
+}
+
+.emp-block-desc {
+  font-size: 0.95rem;
+  line-height: 1.68;
+  color: #64748b;
+  margin: 0 0 1.75rem;
+  max-width: 580px;
+}
+
+/* 2-Column Checklist: 6 points with generous spacing */
+.emp-block-checklist-grid,
+.emp-block-checklist-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.35rem 2.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+@media (max-width: 640px) {
+  .emp-block-checklist-grid,
+  .emp-block-checklist-2col {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+}
+
+.emp-block-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* Tick with solid background color and circle border normally */
+.emp-block-check-badge,
+.emp-block-check-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #802B5B;
+  border: 1.5px solid #802B5B;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 2px 6px rgba(128, 43, 91, 0.28);
+  transition: all 0.25s ease;
+}
+
+.emp-block-check-item:hover .emp-block-check-badge,
+.emp-block-check-item:hover .emp-block-check-icon {
+  background: #661e47;
+  border-color: #661e47;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.4);
+}
+
+.emp-block-check-text {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* Action Row: Positioned on the RIGHT side with right padding so it aligns equally with checklist text */
+.emp-block-action-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 1.75rem;
+  padding-right: 2.25rem;
+}
+
+
+.emp-block-callout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  color: #802B5B !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.emp-block-callout-btn:hover {
+  color: #661e47 !important;
+  transform: translateX(4px);
+}
+
+
+
+.emp-block-callout-btn svg {
+  transition: transform 0.25s ease;
+}
+
+.emp-block-callout-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Bottom Deck: Stats Strip (Reduced size & compact) */
+.emp-block-bottom-deck {
+  background: #f8fafc;
+  border-top: 1px solid #eef2f5;
+  padding: 1.15rem 2rem 1.25rem;
+  border-radius: 0 0 28px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 1040px) {
+  .emp-block-bottom-deck {
+    padding: 1rem 1.25rem 1.15rem;
+  }
+}
+
+/* Subtle background ripple lines */
+.emp-block-stats-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 300px;
+  pointer-events: none;
+  opacity: 0.45;
+  z-index: 1;
+}
+
+.emp-block-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 840px) {
+  .emp-block-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .emp-block-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+}
+
+.emp-block-stat-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.75rem 0.85rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+
+.emp-block-stat-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.emp-block-stat-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.15;
+  margin-bottom: 2px;
+  letter-spacing: -0.02em;
+}
+
+.emp-block-stat-lbl {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+
+
+
+/* ==========================================================================
+   5. WORK PROCESS / A SIMPLER WORKFLOW SECTION (Exact Reference Design)
+   ========================================================================== */
+.emp-process-section {
+  padding: 6.5rem 0 7rem;
+  background-color: #f7faf9;
+  position: relative;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.emp-process-section .container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+/* Header Area */
+.emp-process-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3.75rem;
+}
+
+.emp-process-eyebrow {
+  display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
+  color: #802B5B;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.emp-process-title {
+  font-size: clamp(2.1rem, 3.4vw, 2.85rem);
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.24;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+/* Grid of 3 Cards */
+.emp-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 992px) {
+  .emp-process-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+    gap: 2.5rem;
+  }
+}
+
+/* Individual Card with Shine Beam Sweep on Hover */
+.emp-process-card {
+  background: #ffffff;
+  border: 1px solid #edf2f0;
+  border-radius: 22px;
+  padding: 3.5rem 2rem 2.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden !important;
+  box-shadow: 0 10px 30px -5px rgba(128, 43, 91, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+/* Light gleam sweep animation across card on hover (like Home page card-3d-inner:after) */
+.emp-process-card::before,
+.emp-connected-card::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -150% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 75%,
+    transparent 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+}
+
+.emp-process-card:hover::before,
+.emp-connected-card:hover::before {
+  left: 150% !important;
+}
+
+.emp-process-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px -10px rgba(128, 43, 91, 0.12), 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Top Notch Semicircle (Full half-circle background) */
+.emp-process-notch {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 45px;
+  background: #faeef5;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.emp-process-notch-num {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #802B5B;
+  letter-spacing: 0.04em;
+  transition: all 0.35s ease;
+}
+
+/* When Card is Active or Hovered, notch becomes full solid primary color */
+.emp-process-card.is-active .emp-process-notch,
+.emp-process-card:hover .emp-process-notch {
+  background: #802B5B;
+  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.35);
+}
+
+.emp-process-card.is-active .emp-process-notch .emp-process-notch-num,
+.emp-process-card:hover .emp-process-notch .emp-process-notch-num {
+  color: #ffffff;
+}
+
+/* Icon Container */
+.emp-process-icon-box {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1.25rem 0 1.75rem;
+  background: #faeef4;
+  border: 1px solid #f4dfe9;
+  color: #802B5B;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.emp-process-card.is-active .emp-process-icon-box,
+.emp-process-card:hover .emp-process-icon-box {
+  background: #802B5B;
+  border-color: #802B5B;
+  color: #ffffff;
+  box-shadow: 0 10px 24px -4px rgba(128, 43, 91, 0.4);
+  transform: scale(1.04);
+}
+
+/* Title */
+.emp-process-card-title {
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 1.1rem;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  transition: color 0.3s ease;
+}
+
+.emp-process-card.is-active .emp-process-card-title,
+.emp-process-card:hover .emp-process-card-title {
+  color: #802B5B;
+}
+
+/* Description */
+.emp-process-card-desc {
+  font-size: 0.875rem;
+  line-height: 1.68;
+  color: #64748b;
+  margin: 0;
+  max-width: 295px;
+  text-align: center;
+}
+
+
+/* =========================================================================
+   6. CENTER CTA SECTION (Replaces Impact Section - Matches Reference Image 1)
+   ========================================================================= */
+.emp-center-cta-section {
+  padding: 5.5rem 0 6rem;
+  background: #ffffff;
+  position: relative;
+}
+
+.emp-center-cta-card {
+  position: relative;
+  background: #f6f8f8;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  min-height: 340px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2ebe8;
+}
+
+/* Primary color accent block (replaces the red block from reference) */
+.emp-cta-primary-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 175px;
+  background: #802B5B;
+  z-index: 1;
+}
+
+/* Overlapping Photorealistic Image Container */
+.emp-cta-img-wrap {
+  position: relative;
+  z-index: 2;
+  margin-left: 80px;
+  width: 310px;
+  height: 230px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+  border: 4px solid #ffffff;
+  background: #ffffff;
+}
+
+.emp-cta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content Area on the right */
+.emp-cta-content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 4rem 3rem 3.5rem;
+  flex: 1;
+}
+
+.emp-cta-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #802B5B;
+  margin-bottom: 0.75rem;
+}
+
+.emp-cta-title {
+  font-size: 2.15rem;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 1rem;
+}
+
+.emp-cta-desc {
+  font-size: 1rem;
+  line-height: 1.68;
+  color: #4b5563;
+  margin: 0 0 2rem;
+  max-width: 580px;
+}
+
+/* Mid CTA Button Group with Primary and Secondary Buttons */
+.emp-cta-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Button in Primary Color with "Book a Demo" */
+.emp-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #802B5B;
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  padding: 0.875rem 2.25rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.3);
+}
+
+.emp-cta-btn:hover {
+  background: #661e47;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(128, 43, 91, 0.4);
+}
+
+/* Secondary Button for Mid CTA Section */
+.emp-cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #802B5B;
+  border: 1.5px solid #802B5B;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  padding: 0.875rem 1.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.emp-cta-btn-secondary:hover {
+  background: #fdf2f7;
+  border-color: #661e47;
+  color: #661e47;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(128, 43, 91, 0.15);
+}
+
+.emp-cta-btn-secondary svg {
+  transition: transform 0.25s ease;
+}
+
+.emp-cta-btn-secondary:hover svg {
+  transform: translateX(4px);
+}
+
+@media (max-width: 960px) {
+  .emp-center-cta-card {
+    flex-direction: column;
+    padding-bottom: 2.5rem;
+    align-items: flex-start;
+  }
+
+  .emp-cta-primary-bar {
+    width: 100%;
+    height: 110px;
+    bottom: auto;
+  }
+
+  .emp-cta-img-wrap {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 270px;
+    height: 195px;
+  }
+
+  .emp-cta-content {
+    padding: 2rem 2rem 0;
+  }
+
+  .emp-cta-title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .emp-cta-primary-bar {
+    height: 80px;
+  }
+
+  .emp-cta-img-wrap {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: 200px;
+  }
+
+  .emp-cta-content {
+    padding: 1.75rem 1.25rem 0;
+    text-align: center;
+  }
+
+  .emp-cta-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .emp-cta-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================================
+   8. TESTIMONIALS SECTION (Matches Reference Image 2 with Primary Color Theme)
+   ========================================================================= */
+.emp-testimonials-section {
+  padding: 6.5rem 0 6rem;
+  background: #fbfdfc;
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid #edf2f0;
+}
+
+.emp-testimonials-section .emp-section-header {
+  margin-bottom: 3.5rem;
+}
+
+.emp-testimonials-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.emp-testimonials-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0.25rem 1.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.emp-testimonials-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Testimonial Card with soft primary color background and solid primary under border */
+.emp-testimonial-card {
+  flex: 0 0 calc(33.333% - 1rem);
+  min-width: 320px;
+  scroll-snap-align: start;
+  background: #faeef4;
+  border: 1px solid rgba(128, 43, 91, 0.12);
+  border-bottom: 5px solid #802B5B;
+  border-radius: 18px;
+  padding: 2.25rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.emp-testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(128, 43, 91, 0.12);
+}
+
+/* Brand Name / Logo at top */
+.emp-testi-brand {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #802B5B;
+  margin-bottom: 1.25rem;
+  text-transform: lowercase;
+}
+
+/* Bold Headline */
+.emp-testi-headline {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.4;
+  margin: 0 0 0.875rem;
+  letter-spacing: -0.01em;
+}
+
+/* Quote paragraph */
+.emp-testi-quote {
+  font-size: 0.875rem;
+  line-height: 1.68;
+  color: #4b5563;
+  margin: 0 0 1.75rem;
+  flex-grow: 1;
+}
+
+/* Author row at bottom */
+.emp-testi-author {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(128, 43, 91, 0.1);
+}
+
+.emp-testi-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  flex-shrink: 0;
+}
+
+.emp-testi-author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.emp-testi-author-info strong {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.emp-testi-author-info span {
+  font-size: 0.775rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Navigation Controls at Bottom Right (Exact layout like reference image) */
+.emp-testi-nav-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1.75rem;
+  padding-right: 0.5rem;
+}
+
+.emp-testi-nav-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.emp-testi-arrow-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Left arrow (outline in reference image) */
+.emp-testi-arrow-btn.prev {
+  background: #ffffff;
+  border: 1.5px solid #d1d5db;
+  color: #374151;
+}
+
+.emp-testi-arrow-btn.prev:hover {
+  border-color: #802B5B;
+  color: #802B5B;
+  background: #faeef4;
+}
+
+.emp-testi-arrow-btn.prev svg {
+  transform: rotate(180deg);
+}
+
+/* Right arrow (solid primary button in reference image) */
+.emp-testi-arrow-btn.next {
+  background: #802B5B;
+  border: 1.5px solid #802B5B;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.3);
+}
+
+.emp-testi-arrow-btn.next:hover {
+  background: #661e47;
+  border-color: #661e47;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .emp-testimonial-card {
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .emp-testimonial-card {
+    flex: 0 0 85%;
+    min-width: 280px;
+  }
+
+  .emp-testi-nav-row {
+    justify-content: center;
+  }
+}
+
+/* =========================================================================
+   9. FAQ SECTION (Exact Home Page 2-Column Style)
+   ========================================================================= */
+.emp-page-faq {
+  padding: 6.5rem 0 7rem;
+  background: #fafafd;
+  border-top: 1px solid #edf1f0;
+}
+
+.emp-page-faq .faq-grid {
+  display: grid;
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 100px;
+}
+
+.emp-page-faq .faq-grid .section-heading {
+  margin-bottom: 20px;
+}
+
+.emp-page-faq .faq-list {
+  border-top: 1px solid #dedce5;
+}
+
+.emp-page-faq .faq-item {
+  border-bottom: 1px solid #dedce5;
+}
+
+.emp-page-faq .faq-item button {
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 22px 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  color: #111827;
+  font-size: 15.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.emp-page-faq .faq-item button:hover {
+  color: #802B5B;
+}
+
+.emp-page-faq .faq-item button i {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #faeef4;
+  color: #802B5B;
+  font-style: normal;
+  font-size: 17px;
+  font-weight: 500;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.emp-page-faq .faq-item.open button i {
+  background: #802B5B;
+  color: #ffffff;
+}
+
+.emp-page-faq .faq-item p {
+  padding-bottom: 22px;
+  padding-right: 40px;
+  color: #555263;
+  font-size: 14.5px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .emp-page-faq .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+
+/* =========================================================================
+   WHY LATTIUM IS BEST - Number Badges (01 to 05)
+   ========================================================================= */
+.emp-why-card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.emp-why-num-badge {
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: #802B5B;
+  background: #faeef4;
+  padding: 4px 11px;
+  border-radius: 9999px;
+  border: 1px solid rgba(128, 43, 91, 0.15);
+  letter-spacing: 0.04em;
+}
+
+.emp-why-big-badge {
+  display: block;
+  margin-bottom: 1.15rem;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.emp-why-big-pill {
+  display: inline-block;
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  color: #802B5B !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.8px !important;
+  text-transform: uppercase !important;
+}
+
+.emp-why-big-pill strong {
+  display: none !important;
+}
+
+/* =========================================================================
+   7. CONNECTED MODULES (Works Better Together - Matches Work Process Card Style)
+   ========================================================================= */
+.emp-connected-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.5rem !important;
+  max-width: 1240px;
+  margin: 3.5rem auto 0;
+}
+
+.emp-connected-card {
+  text-decoration: none !important;
+  color: inherit !important;
+  padding: 3.75rem 1.5rem 2rem !important;
+  min-height: 340px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  background: #ffffff;
+  border: 1px solid #edf2f0;
+  border-radius: 22px;
+  text-align: center;
+  box-shadow: 0 10px 30px -5px rgba(128, 43, 91, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.emp-connected-card:hover,
+.emp-connected-card.is-active {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px -10px rgba(128, 43, 91, 0.12), 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+/* Compact semicircle notch with distinct clearance above the icon box - Restored previous background */
+.emp-connected-card .emp-process-notch {
+  position: absolute !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 68px !important;
+  height: 32px !important;
+  background: #faeef5 !important;
+  background-color: #faeef5 !important;
+  border: none !important;
+  border-bottom-left-radius: 32px !important;
+  border-bottom-right-radius: 32px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-bottom: 2px !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.emp-connected-card .emp-process-notch .emp-process-notch-num,
+.emp-connected-card .emp-process-notch .emp-process-notch-pill {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: #802B5B !important;
+  transition: color 0.3s ease !important;
+}
+
+/* Hover & Active: Turn to solid primary color */
+.emp-connected-card:hover .emp-process-notch,
+.emp-connected-card.is-active .emp-process-notch {
+  background: #802B5B !important;
+  background-color: #802B5B !important;
+  box-shadow: none !important;
+}
+
+.emp-connected-card:hover .emp-process-notch .emp-process-notch-num,
+.emp-connected-card:hover .emp-process-notch .emp-process-notch-pill,
+.emp-connected-card.is-active .emp-process-notch .emp-process-notch-num,
+.emp-connected-card.is-active .emp-process-notch .emp-process-notch-pill {
+  color: #ffffff !important;
+}
+
+/* Icon Box with generous space below the number notch - Restored previous background & border */
+.emp-connected-card .emp-process-icon-box {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 14px !important;
+  margin: 1.15rem auto 1.25rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #faeef4 !important;
+  background-color: #faeef4 !important;
+  border: 1px solid #f4dfe9 !important;
+  color: #802B5B !important;
+  box-shadow: none !important;
+  transition: all 0.25s ease !important;
+  flex-shrink: 0 !important;
+}
+
+/* Hover & Active: Turn to solid primary color */
+.emp-connected-card:hover .emp-process-icon-box,
+.emp-connected-card.is-active .emp-process-icon-box {
+  background: #802B5B !important;
+  background-color: #802B5B !important;
+  border-color: #802B5B !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.emp-connected-card:hover .emp-process-icon-box svg,
+.emp-connected-card.is-active .emp-process-icon-box svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+.emp-connected-card .emp-process-icon-box svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.emp-connected-card .emp-process-card-title {
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.65rem !important;
+  line-height: 1.3 !important;
+}
+
+.emp-connected-card .emp-process-card-desc {
+  font-size: 0.84rem !important;
+  font-weight: 400 !important;
+  line-height: 1.62 !important;
+  max-width: 250px;
+  margin: 0 0 auto !important;
+}
+
+/* Borderless & background-free Explore Module Button */
+.emp-connected-explore-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+  color: #802B5B !important;
+  margin-top: 1.5rem !important;
+  padding: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.emp-connected-card:hover .emp-connected-explore-pill,
+.emp-connected-card.is-active .emp-connected-explore-pill {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: #661e47 !important;
+  gap: 9px !important;
+  transform: translateX(3px) !important;
+}
+
+@media (max-width: 1100px) {
+  .emp-connected-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .emp-connected-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 380px;
+    margin: 2.5rem auto 0;
+  }
+}
+
+
+/* ==========================================================================
+   2. WHY LATTIUMHR SECTION - RESTORED PREVIOUS ELEGANT CARD SIZES (#802B5B)
+   ========================================================================== */
+.emp-why-choose-section {
+  padding: 4.5rem 0 4.5rem !important;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.emp-why-choose-section .emp-section-header,
+.emp-why-choose-section .emp-section-header.center {
+  margin-bottom: 45px !important;
+  max-width: 640px !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.emp-why-choose-section .emp-eyebrow {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.8px !important;
+  margin-bottom: 13px !important;
+  color: #802B5B !important;
+  text-transform: uppercase !important;
+  display: block !important;
+}
+
+.emp-why-choose-section .emp-section-title {
+  font-size: 39px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -1.6px !important;
+  font-weight: 600 !important;
+  color: var(--ink, #191735) !important;
+  margin: 0 auto 15px !important;
+}
+
+.emp-why-choose-section .emp-section-subhead {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: var(--muted, #64748b) !important;
+  margin: 0 auto !important;
+  max-width: 640px !important;
+}
+
+.emp-why-choose-section .emp-why-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1.08fr !important;
+  gap: 2rem !important;
+  align-items: stretch !important;
+}
+
+/* Left Big Card (01) */
+.emp-why-choose-section .emp-why-big-card {
+  min-height: 440px !important;
+  padding: 1.85rem 1.75rem 1.65rem !important;
+  border-radius: 22px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.06) !important;
+}
+
+.emp-why-big-top-deck {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  margin-bottom: auto;
+}
+
+/* Eyebrow: NO background, NO border */
+.emp-why-choose-section .emp-why-big-badge,
+.emp-why-big-badge {
+  position: relative !important;
+  z-index: 2 !important;
+  margin-bottom: 1.15rem !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+.emp-why-choose-section .emp-why-big-pill,
+.emp-why-big-pill {
+  display: inline-block !important;
+  background: none !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  color: #802B5B !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.8px !important;
+  text-transform: uppercase !important;
+}
+
+.emp-why-choose-section .emp-why-big-pill strong,
+.emp-why-big-pill strong {
+  display: none !important;
+}
+
+/* Two matching width floating metric cards */
+.emp-why-choose-section .emp-float-metric-card,
+.emp-float-metric-card {
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 14px !important;
+  padding: 0.65rem 0.95rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.75rem !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 0.85rem !important;
+  position: relative !important;
+  z-index: 2 !important;
+  border: 1px solid rgba(255, 255, 255, 0.9) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.emp-why-choose-section .emp-metric-card-left,
+.emp-metric-card-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+}
+
+.emp-why-choose-section .emp-metric-icon-box,
+.emp-metric-icon-box {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 12px !important;
+  background-color: #d1fae5 !important;
+  color: #065f46 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.15rem !important;
+  flex-shrink: 0 !important;
+}
+
+.emp-why-choose-section .emp-metric-info small,
+.emp-metric-info small {
+  display: block !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  color: #4b5563 !important;
+  margin-bottom: 2px !important;
+}
+
+.emp-why-choose-section .emp-metric-info strong,
+.emp-metric-info strong {
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #111827 !important;
+  line-height: 1 !important;
+}
+
+.emp-why-choose-section .emp-metric-pill,
+.emp-metric-pill {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  padding: 0.4rem 0.7rem !important;
+  border-radius: 8px !important;
+  background-color: #f3f4f6 !important;
+  color: #374151 !important;
+  white-space: nowrap !important;
+}
+
+.emp-why-choose-section .emp-big-card-bottom-text,
+.emp-big-card-bottom-text {
+  font-size: 0.85rem !important;
+  line-height: 1.55 !important;
+  margin-top: 1.15rem !important;
+  margin-bottom: 0 !important;
+  color: rgba(255, 255, 255, 0.94) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Hide numbers in small cards */
+.emp-why-choose-section .emp-why-num-badge,
+.emp-why-num-badge {
+  display: none !important;
+}
+
+/* Right Small Cards (2x2 Grid - Equal Dimensions & Equal Text Lines) */
+.emp-why-choose-section .emp-why-small-grid,
+.emp-why-small-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  grid-template-rows: 1fr 1fr !important;
+  gap: 1.25rem !important;
+  align-items: stretch !important;
+  height: 100% !important;
+}
+
+.emp-why-choose-section .emp-why-small-card,
+.emp-why-small-card {
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 1.65rem 1.45rem !important;
+  border-radius: 18px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e8edf0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.025) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  cursor: pointer !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+}
+
+/* Diagonal Shine Effect on Hover */
+.emp-why-choose-section .emp-why-small-card::before,
+.emp-why-small-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -150% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 255, 255, 0) 70%,
+    transparent 100%
+  ) !important;
+  transform: skewX(-25deg) !important;
+  transition: all 0.75s ease !important;
+  pointer-events: none !important;
+  z-index: 3 !important;
+}
+
+.emp-why-choose-section .emp-why-small-card:hover,
+.emp-why-small-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 18px 38px rgba(128, 43, 91, 0.12) !important;
+  border-color: rgba(128, 43, 91, 0.35) !important;
+}
+
+.emp-why-choose-section .emp-why-small-card:hover::before,
+.emp-why-small-card:hover::before {
+  left: 150% !important;
+}
+
+/* Half-Circle at Top-Right Corner (like Homepage THE DIFFERENCE section compare-card:before) */
+.emp-why-choose-section .emp-why-small-card::after,
+.emp-why-small-card::after {
+  content: "" !important;
+  position: absolute !important;
+  width: 140px !important;
+  height: 140px !important;
+  border-radius: 50% !important;
+  right: -75px !important;
+  top: -75px !important;
+  background: rgba(128, 43, 91, 0.05) !important;
+  border: 1px solid rgba(128, 43, 91, 0.12) !important;
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.4s ease, border-color 0.4s ease !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.emp-why-choose-section .emp-why-small-card:hover::after,
+.emp-why-small-card:hover::after {
+  transform: scale(1.4) !important;
+  background: rgba(128, 43, 91, 0.09) !important;
+  border-color: rgba(128, 43, 91, 0.22) !important;
+}
+
+.emp-why-choose-section .emp-why-card-top-row,
+.emp-why-card-top-row,
+.emp-why-choose-section .emp-why-card-title,
+.emp-why-card-title,
+.emp-why-choose-section .emp-why-card-desc,
+.emp-why-card-desc {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Small Card Icon Badge - Default: NO background, subtle outline */
+.emp-why-choose-section .emp-why-icon-badge,
+.emp-why-icon-badge {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 14px !important;
+  margin-bottom: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 1.5px solid #edf2f7 !important;
+  color: #802B5B !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  flex-shrink: 0 !important;
+}
+
+.emp-why-choose-section .emp-why-icon-badge svg,
+.emp-why-icon-badge svg {
+  color: #802B5B !important;
+  stroke: #802B5B !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Small Card Icon Badge - HOVER: Solid Plum Background & Pure White Icon */
+.emp-why-choose-section .emp-why-small-card:hover .emp-why-icon-badge,
+.emp-why-small-card:hover .emp-why-icon-badge {
+  background: #802B5B !important;
+  background-color: #802B5B !important;
+  border-color: #802B5B !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 22px rgba(128, 43, 91, 0.4) !important;
+  transform: scale(1.08) !important;
+}
+
+.emp-why-choose-section .emp-why-small-card:hover .emp-why-icon-badge svg,
+.emp-why-choose-section .emp-why-small-card:hover .emp-why-icon-badge svg *,
+.emp-why-small-card:hover .emp-why-icon-badge svg,
+.emp-why-small-card:hover .emp-why-icon-badge svg * {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  fill: none !important;
+}
+
+/* Exact Equal Line Heights Across All 4 Cards */
+.emp-why-choose-section .emp-why-card-title,
+.emp-why-card-title {
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  margin: 0 0 0.65rem !important;
+  line-height: 1.32 !important;
+  letter-spacing: -0.015em !important;
+  min-height: 2.7em !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  flex-shrink: 0 !important;
+  transition: color 0.3s ease !important;
+}
+
+.emp-why-choose-section .emp-why-small-card:hover .emp-why-card-title,
+.emp-why-small-card:hover .emp-why-card-title {
+  color: #802B5B !important;
+}
+
+.emp-why-choose-section .emp-why-card-desc,
+.emp-why-card-desc {
+  font-size: 0.84rem !important;
+  font-weight: 400 !important;
+  color: #64748b !important;
+  line-height: 1.58 !important;
+  margin: 0 !important;
+  flex: 1 1 auto !important;
+}
+
+@media (max-width: 1024px) {
+  .emp-why-choose-section .emp-why-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .emp-why-choose-section .emp-why-small-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
+}
+
+
+/* ==========================================================================
+   CAPABILITIES SECTION REFINEMENTS
+   ========================================================================== */
+.emp-capabilities-section {
+  padding: 2.25rem 0 0 !important;
+}
+
+/* Outer wrapper for each capability block with separate background outside card */
+.emp-cap-block-wrapper {
+  padding: 2.25rem 0 !important;
+  position: relative;
+  width: 100%;
+}
+
+.emp-cap-bg-0 {
+  background-color: #ffffff;
+}
+
+.emp-cap-bg-1 {
+  background-color: #f8f7fb;
+}
+
+.emp-cap-bg-2 {
+  background-color: #fdf8fa;
+}
+
+/* Dividing line between blocks that does not touch corners */
+.emp-block-divider-line {
+  width: 72%;
+  max-width: 860px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #cbd5e1 20%, #cbd5e1 80%, transparent 100%);
+  margin: 2.25rem auto 0;
+}
+
+/* Book a Demo button only (avatar and phone removed) */
+.emp-block-action-row {
+  margin-top: 1.5rem;
+}
+
+.emp-block-callout-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #802B5B;
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  padding: 0.8rem 2.25rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.28);
+  transition: all 0.25s ease;
+}
+
+.emp-block-callout-btn:hover {
+  background: #661e47;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(128, 43, 91, 0.4);
+}
+
+/* Compact four stat cards: size reduced */
+.emp-block-bottom-deck {
+  padding: 0.95rem 2rem 1.1rem !important;
+}
+
+.emp-block-stat-box {
+  padding: 0.65rem 0.75rem 0.6rem !important;
+  border-radius: 10px !important;
+  min-height: auto !important;
+}
+
+.emp-block-stat-val {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1px !important;
+  line-height: 1.2 !important;
+}
+
+.emp-block-stat-lbl {
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+}
+
+.emp-process-subhead {
+  color: var(--muted, #64748b) !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+  max-width: 640px !important;
+  margin: 14px auto 0 !important;
+  text-align: center !important;
+}
+
+/* ==========================================================================
+   WORK PROCESS SECTION REFINEMENTS
+   ========================================================================== */
+/* Eyebrow: remove background and border, style text in primary color */
+.emp-process-pill {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-bottom: 0.85rem !important;
+  display: inline-block !important;
+}
+
+.emp-process-pill span {
+  color: #802B5B !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+}
+
+.emp-process-pill-dot {
+  display: none !important;
+}
+
+/* Notch: full half-circle with background color */
+.emp-process-notch {
+  position: absolute !important;
+  top: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 90px !important;
+  height: 45px !important;
+  background: #faeef4 !important;
+  border-bottom-left-radius: 45px !important;
+  border-bottom-right-radius: 45px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-bottom: 4px !important;
+  color: #802B5B !important;
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.emp-process-card.is-active .emp-process-notch,
+.emp-process-card:hover .emp-process-notch {
+  background: #802B5B !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 16px rgba(128, 43, 91, 0.35) !important;
+}
+
+.emp-process-notch-num {
+  color: inherit !important;
+  font-weight: 800 !important;
+}
+
+/* ==========================================================================
+   TESTIMONIALS SECTION REFINEMENTS
+   ========================================================================== */
+/* Reduced card height, removed background, kept under-border in #802B5B */
+.emp-testimonial-card {
+  padding: 1.45rem 1.65rem 1.35rem !important;
+  background: #ffffff !important;
+  border: 1px solid #e8edf0 !important;
+  border-bottom: 5px solid #802B5B !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03) !important;
+}
+
+.emp-testimonial-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 14px 30px rgba(128, 43, 91, 0.1) !important;
+}
+
+.emp-testi-brand {
+  margin-bottom: 0.65rem !important;
+  font-size: 1.25rem !important;
+  color: #802B5B !important;
+}
+
+.emp-testi-headline {
+  font-size: 1.05rem !important;
+  line-height: 1.35 !important;
+  margin: 0 0 0.5rem !important;
+  color: #111827 !important;
+}
+
+.emp-testi-quote {
+  font-size: 0.84rem !important;
+  line-height: 1.55 !important;
+  margin: 0 0 1rem !important;
+  color: #4b5563 !important;
+}
+
+.emp-testi-author {
+  padding-top: 0.85rem !important;
+  border-top: 1px solid #f1f5f9 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+.emp-testi-avatar {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+/* ==========================================================================
+   GLOBAL HEADING FONT-WEIGHT REDUCTION (Refined semi-bold matching homepage)
+   ========================================================================== */
+.emp-page-wrapper h1,
+.emp-page-wrapper h2,
+.emp-page-wrapper h3,
+.emp-page-wrapper h4,
+.emp-page-wrapper .emp-hero-rich-title,
+.emp-page-wrapper .emp-section-title,
+.emp-page-wrapper .emp-problem-title,
+.emp-page-wrapper .emp-problem-card-title,
+.emp-page-wrapper .emp-big-card-title,
+.emp-page-wrapper .emp-why-card-title,
+.emp-page-wrapper .emp-process-title,
+.emp-page-wrapper .emp-process-card-title,
+.emp-page-wrapper .emp-cta-title,
+.emp-page-wrapper .emp-why-choose-section .emp-section-title {
+  font-weight: 600 !important;
+}
+
+/* ✦ EMPLOYEE MANAGEMENT CAPABILITIES ✦ feature block headlines: font-weight 650 */
+.emp-block-title,
+.emp-page-wrapper .emp-block-title {
+  font-weight: 650 !important;
+}

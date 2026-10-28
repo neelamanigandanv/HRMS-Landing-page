@@ -1,128 +1,185 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
-import SectionHeading from "../components/ui/SectionHeading";
 import Icon from "../components/ui/Icon";
-import { blogPosts, BlogPost } from "../data/resourcesData";
+import { useDemoModal } from "../context/DemoModalContext";
+import { blogArticles, BlogPostData } from "../data/blogData";
+import "./Blog.css";
+
+const CATEGORIES = ["Attendance", "Payroll", "HR Software", "Engagement", "Performance"] as const;
 
 export function BlogList() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const { openDemoModal } = useDemoModal();
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [visibleCount, setVisibleCount] = useState<number>(6);
 
-  const categories = ["All", "Payroll & Compliance", "Attendance & Operations", "Retention & Culture"];
+  // Filtered Articles based on category selection
+  const filteredArticles = useMemo(() => {
+    return blogArticles.filter((article: BlogPostData) => {
+      return selectedCategory === "All" || article.category === selectedCategory;
+    });
+  }, [selectedCategory]);
 
-  const filteredPosts = blogPosts.filter((post: BlogPost) => {
-    const matchesSearch =
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory =
-      selectedCategory === "All" || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const displayedArticles = filteredArticles.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredArticles.length;
+
+  const handleCategorySelect = (category: string) => {
+    setSelectedCategory(category);
+    setVisibleCount(6); // reset pagination on filter change
+  };
 
   const breadcrumbs = [
+    { label: "Home", to: "/" },
     { label: "Resources", to: "/resources" },
     { label: "Blog" },
   ];
 
   return (
-    <PageLayout breadcrumbs={breadcrumbs}>
+    <PageLayout breadcrumbs={breadcrumbs} onOpenDemo={() => openDemoModal()}>
       <SEO
-        title="HR & Payroll Insights Blog | LattiumHR"
-        description="Actionable insights, regulatory compliance updates, and workforce management best practices for growing businesses."
-        canonicalPath="/resources/blog"
+        title="Blog & Playbooks — HRMS, Attendance & Statutory Payroll Guides | LattiumHR"
+        description="Actionable guides, statutory compliance playbooks, and workforce management best practices for growing multi-branch teams."
+        canonicalPath="/blog"
       />
 
-      <section className="blog-hero">
-        <div className="container">
-          <div className="product-hero-center">
-            <span className="feature-badge">
-              <Icon name="file-text" size={14} /> HR & PAYROLL INSIGHTS
-            </span>
-            <h1>Knowledge for modern workforce leaders</h1>
-            <p>
-              Actionable guides on Indian labor compliance, attendance geofencing, multi-branch
-              governance, and retention strategies.
-            </p>
+      <div className="blog-page">
+        {/* 1. HERO SECTION (Elevated Brand Aesthetic) */}
+        <section className="blog-hero-section">
+          <div className="blog-hero-ambient" />
+          <div className="container">
+            <div className="blog-hero-centered">
+              <span className="blog-eyebrow-chip">
+                <Icon name="sparkle" size={13} />
+                HR &amp; WORKFORCE PLAYBOOKS
+              </span>
+              <h1 className="blog-main-title">
+                Practical HR Guides for <br className="blog-title-br" />
+                <span className="blog-title-accent">Growing Organizations</span>
+              </h1>
+              <p className="blog-main-subtitle">
+                Actionable playbooks, statutory compliance breakdowns, and operational best practices to help you build and scale a high-trust workplace.
+              </p>
 
-            {/* Search Input */}
-            <div className="blog-search-bar">
-              <Icon name="search" size={18} className="search-icon" />
-              <input
-                type="text"
-                placeholder="Search articles on payroll, attendance, compliance..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                aria-label="Search articles"
-              />
-              {searchTerm && (
-                <button
-                  type="button"
-                  className="clear-search-btn"
-                  onClick={() => setSearchTerm("")}
-                >
-                  <Icon name="x" size={14} />
-                </button>
-              )}
-            </div>
-
-            {/* Category Pills */}
-            <div className="category-filter-pills">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  className={`filter-pill ${selectedCategory === cat ? "active" : ""}`}
-                  onClick={() => setSelectedCategory(cat)}
-                >
-                  {cat}
-                </button>
-              ))}
+              {/* 2. CATEGORY PILLS FILTER BAR (Centered, Clean, No Dropdown / Search) */}
+              <div className="blog-filter-bar">
+                <div className="blog-category-pills" role="tablist" aria-label="Filter by category">
+                  <button
+                    type="button"
+                    className={`blog-cat-btn ${selectedCategory === "All" ? "is-active" : ""}`}
+                    onClick={() => handleCategorySelect("All")}
+                  >
+                    All Articles
+                  </button>
+                  {CATEGORIES.map((cat) => (
+                    <button
+                      key={cat}
+                      type="button"
+                      className={`blog-cat-btn ${selectedCategory === cat ? "is-active" : ""}`}
+                      onClick={() => handleCategorySelect(cat)}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Blog Cards Grid */}
-      <section className="blog-grid-section">
-        <div className="container">
-          {filteredPosts.length === 0 ? (
-            <div className="no-results-box">
-              <Icon name="search" size={32} />
-              <p>No articles found matching your query. Try a different search term.</p>
-            </div>
-          ) : (
-            <div className="blog-posts-grid">
-              {filteredPosts.map((post) => (
-                <article key={post.slug} className="blog-post-card">
-                  <div className="blog-card-meta">
-                    <span className="blog-cat-badge">{post.category}</span>
-                    <span className="blog-read-time">{post.readTime}</span>
-                  </div>
-                  <h3>
-                    <Link to={`/resources/blog/${post.slug}`}>{post.title}</Link>
-                  </h3>
-                  <p>{post.excerpt}</p>
-
-                  <div className="blog-card-footer">
-                    <div className="author-box">
-                      <span className="author-avatar">{post.author.avatar}</span>
-                      <div>
-                        <strong>{post.author.name}</strong>
-                        <small>{post.date}</small>
+        {/* 3. BLOG CARDS GRID SECTION */}
+        <section className="blog-grid-section">
+          <div className="container">
+            {filteredArticles.length === 0 ? (
+              <div className="blog-empty-state">
+                <Icon name="book-open" size={40} className="blog-empty-icon" />
+                <h3>No articles found in this category</h3>
+                <p>Check back soon or explore articles across other HR topics.</p>
+                <button
+                  type="button"
+                  className="blog-cat-btn is-active"
+                  style={{ marginTop: "16px" }}
+                  onClick={() => setSelectedCategory("All")}
+                >
+                  View All Articles
+                </button>
+              </div>
+            ) : (
+              <>
+                <div className="blog-cards-grid">
+                  {displayedArticles.map((article: BlogPostData) => (
+                    <Link
+                      key={article.slug}
+                      to={`/blog/${article.slug}`}
+                      className="blog-card"
+                      aria-label={`Read article: ${article.title}`}
+                    >
+                      {/* Cover Image on top */}
+                      <div className="blog-card-img-wrap">
+                        <img
+                          src={article.coverImage}
+                          alt={article.title}
+                          className="blog-card-img"
+                          loading="lazy"
+                        />
                       </div>
-                    </div>
-                    <Link to={`/resources/blog/${post.slug}`} className="read-more-link">
-                      Read <Icon name="arrow" size={14} />
+
+                      {/* Card Content Body */}
+                      <div className="blog-card-body">
+                        {/* Small Chips: "Blog" and the category */}
+                        <div className="blog-card-chips">
+                          <span className="blog-chip-brand">Blog</span>
+                          <span className="blog-chip-category">{article.category}</span>
+                        </div>
+
+                        {/* Title (max 2 lines) */}
+                        <h2 className="blog-card-title">{article.title}</h2>
+
+                        {/* Short Excerpt (max 2 lines) */}
+                        <p className="blog-card-excerpt">{article.excerpt}</p>
+
+                        {/* Meta Line: Views, Read time, Date */}
+                        <div className="blog-card-meta-line">
+                          <span className="blog-card-meta-item">
+                            <Icon name="users" size={13} /> {article.views}
+                          </span>
+                          <span>•</span>
+                          <span className="blog-card-meta-item">
+                            <Icon name="clock" size={13} /> {article.readTime}
+                          </span>
+                          <span>•</span>
+                          <span className="blog-card-meta-item">
+                            <Icon name="calendar" size={13} /> {article.date}
+                          </span>
+                        </div>
+
+                        {/* Author Avatar and Name */}
+                        <div className="blog-card-author-row">
+                          <div className="blog-card-author-avatar">{article.author.avatar}</div>
+                          <span className="blog-card-author-name">{article.author.name}</span>
+                        </div>
+                      </div>
                     </Link>
+                  ))}
+                </div>
+
+                {/* Pagination / Load More Button */}
+                {hasMore && (
+                  <div className="blog-load-more-wrap">
+                    <button
+                      type="button"
+                      className="blog-load-more-btn"
+                      onClick={() => setVisibleCount((prev) => prev + 3)}
+                    >
+                      Load More Articles <Icon name="arrow" size={14} />
+                    </button>
                   </div>
-                </article>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+                )}
+              </>
+            )}
+          </div>
+        </section>
+      </div>
     </PageLayout>
   );
 }

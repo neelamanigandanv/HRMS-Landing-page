@@ -1381,7 +1381,7 @@ export function ResourcesOverview() {
 
             {/* View All FAQs Button & Contact Hint */}
             <div className="res-faq-bottom-action">
-              <Link to="/resources/faqs" className="res-faq-view-all-btn">
+              <Link to="/faq" className="res-faq-view-all-btn">
                 <span>View All FAQs</span>
                 <Icon name="arrow" size={14} />
               </Link>

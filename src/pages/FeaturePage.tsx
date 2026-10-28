@@ -1,6 +1,9 @@
 import { useParams, Link } from "react-router-dom";
 import FeatureTemplate from "../components/templates/FeatureTemplate";
 import EmployeeManagementPage from "./EmployeeManagementPage";
+import AttendanceManagementPage from "./AttendanceManagementPage";
+import LeaveManagementPage from "./LeaveManagementPage";
+import PayrollManagementPage from "./PayrollManagementPage";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Button from "../components/ui/Button";
@@ -12,6 +15,18 @@ export function FeaturePage() {
 
   if (slug === "employee-management") {
     return <EmployeeManagementPage />;
+  }
+
+  if (slug === "attendance-management") {
+    return <AttendanceManagementPage />;
+  }
+
+  if (slug === "leave-management") {
+    return <LeaveManagementPage />;
+  }
+
+  if (slug === "payroll-management") {
+    return <PayrollManagementPage />;
   }
 
   const feature = slug ? featuresMap[slug] : null;

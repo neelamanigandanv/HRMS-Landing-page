@@ -1,0 +1,855 @@
+/* ==========================================================================
+   LATTIUM HR - 3D HERO STAIRCASE ANIMATED VISUAL
+   Light, clean, high-end fintech aesthetic (Studio render + 60fps loop)
+   Palette: Plum #8C2B66, Orchid #B8487C, Deep Plum #4A2250, Blush #F6E5EF, Gold #D8B26E
+   ========================================================================== */
+
+.hero-3d-visual-container {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+/* Faint Pink Glow at Top Right */
+.hero-3d-ambient-glow {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at 75% 25%,
+    rgba(246, 229, 239, 0.85) 0%,
+    rgba(252, 240, 247, 0.45) 50%,
+    transparent 72%
+  );
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+  animation: ambientGlowPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes ambientGlowPulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   CAMERA RIG: Gentle ambient 3D drift (drifts left and right by a few degrees)
+   -------------------------------------------------------------------------- */
+.hero-3d-camera-rig {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  animation: cameraDrift 10s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes cameraDrift {
+  0% {
+    transform: rotateX(1.2deg) rotateY(-2deg) translateY(-2px);
+  }
+  100% {
+    transform: rotateX(-1deg) rotateY(2deg) translateY(2px);
+  }
+}
+
+.hero-3d-render-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The Base 3D Studio Render Image - Seamlessly blended, eliminating square boundary */
+.hero-3d-base-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  mix-blend-mode: multiply;
+  mask-image: radial-gradient(ellipse 48% 46% at 50% 50%, #000 66%, transparent 97%);
+  -webkit-mask-image: radial-gradient(ellipse 48% 46% at 50% 50%, #000 66%, transparent 97%);
+  filter: drop-shadow(0 20px 35px rgba(74, 34, 80, 0.08));
+}
+
+/* --------------------------------------------------------------------------
+   STEP 5 SOFT GLOW AURA (lights up when coin reaches Step 5 Growth)
+   -------------------------------------------------------------------------- */
+.step-5-glow-aura {
+  position: absolute;
+  top: 18%;
+  left: 63%;
+  width: 130px;
+  height: 170px;
+  border-radius: 26px;
+  background: radial-gradient(
+    ellipse at 50% 30%,
+    rgba(184, 72, 124, 0.45) 0%,
+    rgba(140, 43, 102, 0.2) 60%,
+    transparent 80%
+  );
+  filter: blur(16px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2;
+}
+
+.step-5-glow-aura.is-active {
+  opacity: 1;
+  animation: step5Pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes step5Pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   CELEBRATION SPARKLES BURST OVER STEP 5
+   -------------------------------------------------------------------------- */
+.growth-sparkles-burst {
+  position: absolute;
+  top: 14%;
+  left: 71%;
+  width: 80px;
+  height: 80px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 4;
+}
+
+.growth-sparkles-burst.is-bursting {
+  opacity: 1;
+}
+
+.burst-star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #d8b26e;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #f5df9e;
+}
+
+.is-bursting .star-1 {
+  animation: burstFloat1 1.8s ease-out infinite;
+}
+.is-bursting .star-2 {
+  animation: burstFloat2 1.8s ease-out 0.2s infinite;
+}
+.is-bursting .star-3 {
+  animation: burstFloat3 1.8s ease-out 0.4s infinite;
+}
+.is-bursting .star-4 {
+  animation: burstFloat4 1.8s ease-out 0.1s infinite;
+}
+.is-bursting .star-5 {
+  animation: burstFloat5 1.8s ease-out 0.3s infinite;
+}
+
+@keyframes burstFloat1 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-24px, -36px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes burstFloat2 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(26px, -42px) scale(1.6);
+    opacity: 0;
+  }
+}
+
+@keyframes burstFloat3 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-10px, -50px) scale(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes burstFloat4 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(16px, -28px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+@keyframes burstFloat5 {
+  0% {
+    transform: translate(0, 0) scale(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-30px, -20px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   THE ANIMATED CHAMPAGNE-GOLD COIN (12-second seamless loop)
+   -------------------------------------------------------------------------- */
+.coin-anim-track {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: none;
+  animation: coinJourney 12s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+/* Champagne Gold 3D Coin Body */
+.coin-body-gold {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #faecd0 0%, #d8b26e 40%, #c4994b 75%, #8f6520 100%);
+  box-shadow:
+    0 10px 20px rgba(74, 34, 80, 0.28),
+    0 2px 6px rgba(143, 101, 32, 0.4),
+    inset 0 1px 2px rgba(255, 255, 255, 0.85),
+    inset 0 -2px 3px rgba(110, 75, 15, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  animation: coinSpinSquash 12s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+/* Milled Rim */
+.coin-milled-rim {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 30%, #f7dfa4 0%, #caa052 70%, #9e7328 100%);
+}
+
+.coin-inner-face {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Plum "L" Monogram Engraved */
+.coin-engraved-l {
+  font-family: 'Inter', sans-serif;
+  font-size: 19px;
+  font-weight: 900;
+  color: #4a2250;
+  line-height: 1;
+  text-shadow:
+    0 1px 1px rgba(255, 255, 255, 0.8),
+    0 -1px 1px rgba(50, 18, 55, 0.7);
+  transform: translateY(-0.5px);
+}
+
+.coin-reflection-sheen {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 16px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.65);
+  filter: blur(1.5px);
+  transform: rotate(-28deg);
+  pointer-events: none;
+}
+
+/* Dynamic Contact Shadow */
+.coin-cast-shadow {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 36px;
+  height: 14px;
+  background: radial-gradient(ellipse, rgba(74, 34, 80, 0.45) 0%, rgba(74, 34, 80, 0) 70%);
+  transform: translateX(-50%);
+  border-radius: 50%;
+  animation: shadowPulse 12s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+/* --------------------------------------------------------------------------
+   KEYFRAME ANIMATIONS FOR COIN HOPPING & GLIDING
+   0s: Step 1 (left: 28.5%, top: 66%)
+   1.2s: Step 2 (left: 40%, top: 56%)
+   2.6s: Step 3 (left: 51%, top: 45%)
+   4.0s: Step 4 (left: 61.5%, top: 34%)
+   5.4s: Step 5 (left: 71.5%, top: 23%)
+   6.5s-8.5s: Pause on Step 5
+   8.5s-11.2s: Smooth glide back to Step 1
+   11.2s-12.0s: Settle on Step 1
+   -------------------------------------------------------------------------- */
+@keyframes coinJourney {
+  /* 0 - 8.33% (0s - 1.0s): Resting on Step 1 */
+  0%,
+  8.33% {
+    left: 28.5%;
+    top: 66.5%;
+  }
+
+  /* 8.33% - 18.33% (1.0s - 2.2s): Hop 1 -> 2 (Parabolic arc) */
+  13.33% {
+    top: 47%;
+  }
+  18.33%,
+  20% {
+    left: 39.8%;
+    top: 56.5%;
+  }
+
+  /* 20% - 30% (2.4s - 3.6s): Hop 2 -> 3 (Parabolic arc) */
+  25% {
+    top: 37%;
+  }
+  30%,
+  31.67% {
+    left: 50.8%;
+    top: 45.5%;
+  }
+
+  /* 31.67% - 41.67% (3.8s - 5.0s): Hop 3 -> 4 (Parabolic arc) */
+  36.67% {
+    top: 26%;
+  }
+  41.67%,
+  43.33% {
+    left: 61.5%;
+    top: 34.5%;
+  }
+
+  /* 43.33% - 53.33% (5.2s - 6.4s): Hop 4 -> 5 (Parabolic arc) */
+  48.33% {
+    top: 15%;
+  }
+  53.33%,
+  70% {
+    left: 71.8%;
+    top: 23.5%;
+  }
+
+  /* 70% - 91.67% (8.4s - 11.0s): Glide back down in a gentle arc */
+  80% {
+    left: 52%;
+    top: 40%;
+  }
+  91.67%,
+  100% {
+    left: 28.5%;
+    top: 66.5%;
+  }
+}
+
+/* Coin Squash, Stretch, Spin & Settle */
+@keyframes coinSpinSquash {
+  0%,
+  8.33% {
+    transform: scale(1, 1) rotateY(0deg);
+  }
+
+  /* Hop 1 -> 2: Spin 360deg and squash on land */
+  13.33% {
+    transform: scale(0.92, 1.08) rotateY(180deg);
+  }
+  18.33% {
+    transform: scale(1.18, 0.82) rotateY(360deg);
+  }
+  20% {
+    transform: scale(1, 1) rotateY(360deg);
+  }
+
+  /* Hop 2 -> 3 */
+  25% {
+    transform: scale(0.92, 1.08) rotateY(540deg);
+  }
+  30% {
+    transform: scale(1.18, 0.82) rotateY(720deg);
+  }
+  31.67% {
+    transform: scale(1, 1) rotateY(720deg);
+  }
+
+  /* Hop 3 -> 4 */
+  36.67% {
+    transform: scale(0.92, 1.08) rotateY(900deg);
+  }
+  41.67% {
+    transform: scale(1.18, 0.82) rotateY(1080deg);
+  }
+  43.33% {
+    transform: scale(1, 1) rotateY(1080deg);
+  }
+
+  /* Hop 4 -> 5 */
+  48.33% {
+    transform: scale(0.92, 1.08) rotateY(1260deg);
+  }
+  53.33% {
+    transform: scale(1.18, 0.82) rotateY(1440deg);
+  }
+  55% {
+    transform: scale(0.96, 1.04) rotateY(1440deg);
+  }
+  57%,
+  70% {
+    transform: scale(1, 1) rotateY(1440deg);
+  }
+
+  /* Glide back down smoothly */
+  80% {
+    transform: scale(1.04, 0.96) rotateY(1620deg);
+  }
+  91.67% {
+    transform: scale(1.12, 0.88) rotateY(1800deg);
+  }
+  95% {
+    transform: scale(0.98, 1.02) rotateY(1800deg);
+  }
+  100% {
+    transform: scale(1, 1) rotateY(1800deg);
+  }
+}
+
+/* Dynamic Shadow Scale & Blur */
+@keyframes shadowPulse {
+  0%,
+  8.33% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+  13.33% {
+    opacity: 0.22;
+    transform: translateX(-50%) scale(0.55);
+  }
+  18.33% {
+    opacity: 0.75;
+    transform: translateX(-50%) scale(1.25);
+  }
+  20% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+
+  25% {
+    opacity: 0.22;
+    transform: translateX(-50%) scale(0.55);
+  }
+  30% {
+    opacity: 0.75;
+    transform: translateX(-50%) scale(1.25);
+  }
+  31.67% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+
+  36.67% {
+    opacity: 0.22;
+    transform: translateX(-50%) scale(0.55);
+  }
+  41.67% {
+    opacity: 0.75;
+    transform: translateX(-50%) scale(1.25);
+  }
+  43.33% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+
+  48.33% {
+    opacity: 0.22;
+    transform: translateX(-50%) scale(0.55);
+  }
+  53.33% {
+    opacity: 0.75;
+    transform: translateX(-50%) scale(1.25);
+  }
+  57%,
+  70% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+
+  /* Glide */
+  80% {
+    opacity: 0.35;
+    transform: translateX(-50%) scale(0.7);
+  }
+  91.67% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1.15);
+  }
+  100% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   THE 5 FLOATING RESPONSIVE PILL LABELS
+   -------------------------------------------------------------------------- */
+.hero-3d-pills-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.step-floating-pill {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #4a2250;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 12px 5px 6px;
+  border-radius: 9999px;
+  border: 1px solid rgba(140, 43, 102, 0.16);
+  box-shadow: 0 4px 14px rgba(74, 34, 80, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.pill-number-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f6e5ef;
+  color: #8c2b66;
+  font-size: 11px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pill-step-name {
+  letter-spacing: -0.01em;
+}
+
+/* Active State: Turns Deep Plum with White Text When Coin Lands */
+.step-floating-pill.is-active-step {
+  background: linear-gradient(135deg, #8c2b66 0%, #4a2250 100%);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 8px 24px rgba(140, 43, 102, 0.35),
+    0 0 16px rgba(184, 72, 124, 0.4);
+  transform: translate(-50%, -56%) scale(1.06);
+}
+
+.step-floating-pill.is-active-step .pill-number-circle {
+  background: #ffffff;
+  color: #8c2b66;
+}
+
+/* --------------------------------------------------------------------------
+   FOUR GLOSSY PINK GLASS ORBS (Depth of Field & Ambient Bobbing)
+   -------------------------------------------------------------------------- */
+.glass-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at 32% 28%, rgba(255, 255, 255, 0.85) 0%, rgba(237, 181, 213, 0.6) 40%, rgba(184, 72, 124, 0.45) 85%);
+  box-shadow:
+    inset -3px -3px 8px rgba(140, 43, 102, 0.3),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.9),
+    0 8px 20px rgba(140, 43, 102, 0.15);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 5;
+}
+
+/* Foreground Orb 1 (Bottom Left - Blurred) */
+.orb-fg-1 {
+  width: 48px;
+  height: 48px;
+  bottom: 6%;
+  left: 6%;
+  filter: blur(3.5px);
+  opacity: 0.88;
+  animation: orbBob1 7s ease-in-out infinite alternate;
+}
+
+/* Foreground Orb 2 (Top Right - Blurred) */
+.orb-fg-2 {
+  width: 58px;
+  height: 58px;
+  top: 4%;
+  right: 4%;
+  filter: blur(4px);
+  opacity: 0.85;
+  animation: orbBob2 8.5s ease-in-out infinite alternate;
+}
+
+/* Background Orb 1 (Middle Left - Sharp) */
+.orb-bg-1 {
+  width: 22px;
+  height: 22px;
+  top: 36%;
+  left: 10%;
+  opacity: 0.9;
+  z-index: 2;
+  animation: orbBob3 6.5s ease-in-out infinite alternate;
+}
+
+/* Background Orb 2 (Middle Right - Sharp) */
+.orb-bg-2 {
+  width: 24px;
+  height: 24px;
+  top: 38%;
+  right: 12%;
+  opacity: 0.9;
+  z-index: 2;
+  animation: orbBob4 8s ease-in-out infinite alternate;
+}
+
+@keyframes orbBob1 {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-16px) rotate(15deg);
+  }
+}
+
+@keyframes orbBob2 {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(18px) rotate(-12deg);
+  }
+}
+
+@keyframes orbBob3 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes orbBob4 {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(12px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   TWINKLING FOUR-POINT SPARKLES
+   -------------------------------------------------------------------------- */
+.hero-3d-sparkle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.sparkle-1 {
+  top: 22%;
+  left: 16%;
+  animation: sparkleTwinkle1 4s ease-in-out infinite;
+}
+
+.sparkle-2 {
+  top: 12%;
+  left: 56%;
+  animation: sparkleTwinkle2 5s ease-in-out 1s infinite;
+}
+
+.sparkle-3 {
+  top: 26%;
+  right: 14%;
+  animation: sparkleTwinkle3 4.5s ease-in-out 2s infinite;
+}
+
+@keyframes sparkleTwinkle1 {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(45deg);
+  }
+}
+
+@keyframes sparkleTwinkle2 {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.1) rotate(45deg);
+  }
+}
+
+@keyframes sparkleTwinkle3 {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.7) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(45deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE SCALING
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .hero-3d-visual-container {
+    max-width: 480px;
+    margin: 20px auto 0 auto;
+  }
+
+  .step-floating-pill {
+    font-size: 11.5px;
+    padding: 4px 10px 4px 5px;
+  }
+
+  .pill-number-circle {
+    width: 17px;
+    height: 17px;
+    font-size: 9.5px;
+  }
+
+  .coin-anim-track {
+    width: 40px;
+    height: 40px;
+  }
+
+  .coin-body-gold {
+    width: 36px;
+    height: 36px;
+  }
+
+  .coin-milled-rim {
+    width: 30px;
+    height: 30px;
+  }
+
+  .coin-engraved-l {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-3d-visual-container {
+    max-width: 360px;
+  }
+
+  .step-floating-pill {
+    font-size: 10px;
+    padding: 3px 8px 3px 4px;
+    gap: 5px;
+  }
+
+  .pill-number-circle {
+    width: 15px;
+    height: 15px;
+    font-size: 8.5px;
+  }
+
+  .coin-anim-track {
+    width: 32px;
+    height: 32px;
+  }
+
+  .coin-body-gold {
+    width: 30px;
+    height: 30px;
+  }
+
+  .coin-milled-rim {
+    width: 24px;
+    height: 24px;
+  }
+
+  .coin-engraved-l {
+    font-size: 13px;
+  }
+}

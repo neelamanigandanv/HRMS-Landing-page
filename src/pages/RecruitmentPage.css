@@ -1,0 +1,257 @@
+/* ==========================================================================
+   RECRUITMENT PAGE STYLESHEET
+   Inherits the complete, polished design system of EmployeeManagementPage
+   with dedicated recruitment widgets, middle CTA band, and visual decks.
+   ========================================================================== */
+
+@import "./EmployeeManagementPage.css";
+
+/* Live Status Pulse on Recruitment Showcase */
+.rec-live-pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  margin-right: 6px;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: rec-pulse-glow 2s infinite;
+}
+
+@keyframes rec-pulse-glow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* ==========================================================================
+   HERO & PROBLEM SECTION TRANSITION
+   Ample top breathing room for the open floating stage overlap
+   ========================================================================== */
+.rec-page-wrapper .emp-problem-section {
+  padding-top: 130px !important;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1100px) {
+  .rec-page-wrapper .emp-problem-section {
+    padding-top: 4rem !important;
+  }
+}
+
+/* ==========================================================================
+   RECRUITMENT CAPABILITIES: Generous Keypoint Spacing & Solid Circle Border Ticks
+   ========================================================================== */
+.rec-page-wrapper .emp-block-checklist-2col,
+.rec-page-wrapper .emp-block-checklist-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.4rem 2.75rem !important;
+  margin-top: 1.65rem !important;
+  margin-bottom: 2.35rem !important;
+}
+
+@media (max-width: 640px) {
+  .rec-page-wrapper .emp-block-checklist-2col,
+  .rec-page-wrapper .emp-block-checklist-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.15rem !important;
+  }
+}
+
+.rec-page-wrapper .emp-block-check-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+/* Tick Icon with Solid Background Color and Circle Border */
+.rec-page-wrapper .emp-block-check-icon,
+.rec-page-wrapper .emp-block-check-badge {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  background: #802B5B !important;
+  border: 1.5px solid #802B5B !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  flex-shrink: 0 !important;
+  margin-top: 2px !important;
+  box-shadow: 0 2px 6px rgba(128, 43, 91, 0.28) !important;
+  transition: all 0.25s ease !important;
+}
+
+.rec-page-wrapper .emp-block-check-item:hover .emp-block-check-icon,
+.rec-page-wrapper .emp-block-check-item:hover .emp-block-check-badge {
+  background: #661e47 !important;
+  border-color: #661e47 !important;
+  color: #ffffff !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.4) !important;
+}
+
+.rec-page-wrapper .emp-block-check-text {
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  line-height: 1.5 !important;
+}
+
+/* Top Deck Alignment */
+.rec-page-wrapper .emp-block-top-deck {
+  align-items: start !important;
+}
+
+.rec-page-wrapper .emp-block-content-col {
+  justify-content: flex-start !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.rec-page-wrapper .emp-block-eyebrow {
+  margin-top: 2px !important;
+  line-height: 1.2 !important;
+}
+
+.rec-page-wrapper .emp-block-img-col {
+  align-self: start !important;
+  margin-top: 0 !important;
+}
+
+.rec-page-wrapper .emp-block-hero-img {
+  width: 100% !important;
+  height: 440px !important;
+  object-fit: cover !important;
+  border-radius: 20px !important;
+}
+
+@media (max-width: 1040px) {
+  .rec-page-wrapper .emp-block-hero-img {
+    height: 340px !important;
+  }
+}
+
+/* ==========================================================================
+   WHY LATTIUMHR RECRUITMENT: Dedicated Scenic Background
+   ========================================================================== */
+.rec-page-wrapper .rec-why-big-card,
+.rec-page-wrapper .emp-why-big-card {
+  background-image: url('/images/why-choose-scenic-bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative;
+}
+
+/* ==========================================================================
+   MIDDLE CTA SECTION (Directly after Why LattiumHR section)
+   Homepage-inspired dark blue, violet, and plum gradient band
+   ========================================================================== */
+.rec-middle-cta-section {
+  padding: 85px 0;
+  background: #fbfafc;
+  border-bottom: 1px solid #f0edf6;
+}
+
+.rec-middle-cta-card {
+  background: linear-gradient(135deg, #191735 0%, #27206e 45%, #4a214d 100%);
+  border-radius: 24px;
+  padding: 64px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px -15px rgba(25, 23, 53, 0.35);
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.rec-middle-cta-glow {
+  position: absolute;
+  top: -160px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(181, 66, 130, 0.32) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.rec-middle-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.rec-cta-eyebrow-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  color: #d8b8ce;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  margin-bottom: 18px;
+}
+
+.rec-middle-cta-title {
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 14px;
+}
+
+.rec-middle-cta-subhead {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  color: #d1ceed;
+  line-height: 1.65;
+  margin: 0 auto 28px;
+  max-width: 620px;
+}
+
+.rec-middle-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rec-btn-cta-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #191735;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 34px;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: all 0.22s ease;
+}
+
+.rec-btn-cta-white:hover {
+  background: #fdf7fa;
+  color: #802B5B;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+}

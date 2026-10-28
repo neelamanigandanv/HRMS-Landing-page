@@ -1,0 +1,1226 @@
+/* ==========================================================================
+   Getting Started Guide - Set Up Your Organization
+   Pixel-accurate recreation of LattiumHR Getting Started Guide
+   ========================================================================== */
+
+.gs-page-wrapper {
+  background-color: #f8fafc;
+  min-height: 100vh;
+  color: #1e293b;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+/* ==========================================================================
+   1. CLEAN LIGHT DOCUMENTATION HEADER
+   ========================================================================== */
+.gs-clean-header {
+  background: linear-gradient(180deg, #ffffff 0%, #f9fbfd 100%);
+  border-bottom: 1px solid #e2e8f0;
+  padding: 32px 0 44px;
+  position: relative;
+}
+
+.gs-clean-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #7b2958 0%, #a42c6c 50%, #ff6b4a 100%);
+}
+
+.gs-header-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Top utility bar with breadcrumbs & action pills */
+.gs-header-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.gs-header-breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.gs-header-breadcrumbs a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gs-header-breadcrumbs a:hover {
+  color: #7b2958;
+}
+
+.gs-header-breadcrumbs-sep {
+  color: #cbd5e1;
+  font-size: 11px;
+}
+
+.gs-header-breadcrumbs-current {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.gs-header-utilities {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.gs-util-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #475569;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.gs-util-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.gs-util-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #7b2958;
+}
+
+.gs-util-btn.copied {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+
+/* Main title area */
+.gs-header-main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 900px;
+}
+
+.gs-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #fcf2f7;
+  border: 1px solid #f6d6e7;
+  color: #8b265c;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.gs-header-title {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+  margin: 0;
+}
+
+.gs-header-lead {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+/* 3 Quick highlights strip */
+.gs-header-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.gs-highlight-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.2s ease;
+}
+
+.gs-highlight-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.gs-highlight-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #faf2f7;
+  color: #8b265c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gs-highlight-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gs-highlight-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #64748b;
+}
+
+.gs-highlight-value {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Header Action Buttons */
+.gs-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.gs-header-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #8b265c;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(139, 38, 92, 0.25);
+}
+
+.gs-header-btn-primary:hover {
+  background-color: #a42c6c;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(139, 38, 92, 0.35);
+  color: #ffffff;
+}
+
+.gs-header-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #334155;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #cbd5e1;
+  transition: all 0.2s ease;
+}
+
+.gs-header-btn-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #1e293b;
+}
+
+/* ==========================================================================
+   2. MAIN GUIDE 3-COLUMN LAYOUT
+   ========================================================================== */
+.gs-main-section {
+  padding: 40px 0 64px;
+  background-color: #f9f9fb;
+}
+
+.gs-main-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 220px;
+  gap: 36px;
+  align-items: start;
+}
+
+/* ==========================================================================
+   3. LEFT SIDEBAR
+   ========================================================================== */
+.gs-left-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 90px;
+}
+
+.gs-sidebar-card {
+  background: #ffffff;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.gs-sidebar-heading {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 14px 4px;
+}
+
+.gs-steps-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gs-step-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  transition: all 0.15s ease;
+}
+
+.gs-step-nav-link:hover {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+.gs-step-nav-link.active {
+  background-color: #faeef5;
+  color: #8b265c;
+  font-weight: 600;
+}
+
+.gs-step-nav-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  background-color: #f1f5f9;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.gs-step-nav-link.active .gs-step-nav-circle {
+  background-color: #8b265c;
+  color: #ffffff;
+}
+
+/* Related Guides in Left Sidebar */
+.gs-sidebar-guides-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gs-sidebar-guide-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #8b265c;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.15s ease;
+}
+
+.gs-sidebar-guide-link:hover {
+  color: #5c1840;
+  text-decoration: underline;
+}
+
+.gs-sidebar-guide-link svg {
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+/* ==========================================================================
+   4. CENTER COLUMN (GUIDE CONTENT)
+   ========================================================================== */
+.gs-content-col {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Breadcrumb */
+.gs-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.gs-breadcrumb a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.gs-breadcrumb a:hover {
+  color: #8b265c;
+}
+
+.gs-breadcrumb-sep {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.gs-breadcrumb-current {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Center Heading */
+.gs-content-header {
+  margin-bottom: -6px;
+}
+
+.gs-content-header h2 {
+  font-size: 32px;
+  font-weight: 750;
+  color: #1e293b;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.gs-content-header p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+}
+
+/* "Before you begin" Callout */
+.gs-callout-card {
+  background-color: #faf4f8;
+  border: 1px solid #eed8e7;
+  border-radius: 12px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.gs-callout-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #8b265c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.gs-callout-body {
+  flex: 1;
+}
+
+.gs-callout-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 10px;
+}
+
+.gs-callout-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gs-callout-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.gs-callout-list svg {
+  color: #8b265c;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Guide Step Card */
+.gs-step-card {
+  background: #ffffff;
+  border: 1px solid #edf0f5;
+  border-radius: 14px;
+  padding: 28px 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.gs-step-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gs-step-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.gs-step-number-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #8b265c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(139, 38, 92, 0.25);
+}
+
+.gs-step-titles {
+  flex: 1;
+}
+
+.gs-step-titles h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.gs-step-titles p {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #64748b;
+  margin: 0;
+}
+
+.gs-substeps-list {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gs-substep-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #334155;
+}
+
+.gs-substep-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid #d8b4cb;
+  color: #8b265c;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.gs-substep-text strong {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* Step Right: Mini UI Mockup Window */
+.gs-step-mockup {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  font-size: 11px;
+  color: #1e293b;
+}
+
+.gs-mini-mockup-body {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  min-height: 180px;
+}
+
+.gs-mini-mockup-nav {
+  background: #fbfcfe;
+  border-right: 1px solid #f1f4f9;
+  padding: 8px 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gs-mini-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.gs-mini-nav-item.active {
+  background-color: #faeef5;
+  color: #8b265c;
+  font-weight: 600;
+}
+
+.gs-mini-mockup-content {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gs-mini-mockup-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.gs-mini-mockup-title {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.gs-mini-primary-btn {
+  background-color: #8b265c;
+  color: #ffffff;
+  font-size: 9.5px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: default;
+}
+
+.gs-mini-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gs-mini-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.gs-mini-label {
+  font-size: 9.5px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.gs-mini-input {
+  height: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  padding: 0 8px;
+  font-size: 10px;
+  background-color: #ffffff;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+}
+
+/* Locations List in Mini Mockup */
+.gs-mini-locations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gs-mini-location-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 6px;
+}
+
+.gs-mini-location-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gs-mini-location-info svg {
+  color: #8b265c;
+}
+
+.gs-mini-loc-name {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.gs-mini-loc-city {
+  font-size: 9.5px;
+  color: #64748b;
+}
+
+/* Department Rows in Mini Mockup */
+.gs-mini-departments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gs-mini-dept-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 5px;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+/* Completion Card: "You're all set!" */
+.gs-completion-card {
+  background: #fcf7fa;
+  border: 1px solid #eedae8;
+  border-radius: 14px;
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.gs-completion-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.gs-completion-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #8b265c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(139, 38, 92, 0.25);
+}
+
+.gs-completion-info h3 {
+  font-size: 17px;
+  font-weight: 750;
+  color: #1e293b;
+  margin: 0 0 4px;
+}
+
+.gs-completion-info p {
+  font-size: 12.5px;
+  color: #64748b;
+  margin: 0;
+  max-width: 420px;
+  line-height: 1.5;
+}
+
+.gs-completion-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.gs-completion-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #8b265c;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.gs-completion-btn:hover {
+  background-color: #a42c6c;
+  transform: translateY(-1px);
+  color: #ffffff;
+}
+
+.gs-completion-back-link {
+  font-size: 11.5px;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.gs-completion-back-link:hover {
+  color: #8b265c;
+}
+
+/* ==========================================================================
+   5. RIGHT SIDEBAR ("ON THIS PAGE")
+   ========================================================================== */
+.gs-right-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.gs-toc-card {
+  background: #ffffff;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.gs-toc-heading {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 14px;
+}
+
+.gs-toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gs-toc-item a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: #64748b;
+  transition: color 0.15s ease;
+}
+
+.gs-toc-item a:hover {
+  color: #8b265c;
+}
+
+.gs-toc-item.active a {
+  color: #8b265c;
+  font-weight: 600;
+}
+
+.gs-toc-badge {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #faeef5;
+  color: #8b265c;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gs-toc-item.active .gs-toc-badge {
+  background-color: #8b265c;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   6. RELATED GUIDES SECTION
+   ========================================================================== */
+.gs-related-section {
+  padding: 56px 0 64px;
+  background-color: #ffffff;
+  border-top: 1px solid #edf0f5;
+}
+
+.gs-related-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.gs-related-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.gs-related-header h2 {
+  font-size: 22px;
+  font-weight: 750;
+  color: #1e293b;
+  margin: 0 0 6px;
+  letter-spacing: -0.015em;
+}
+
+.gs-related-header p {
+  font-size: 13.5px;
+  color: #64748b;
+  margin: 0;
+}
+
+.gs-related-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #8b265c;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.gs-related-view-all:hover {
+  color: #5c1840;
+  text-decoration: underline;
+}
+
+.gs-related-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.gs-related-card {
+  background: #ffffff;
+  border: 1px solid #edf0f5;
+  border-radius: 12px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  min-height: 180px;
+}
+
+.gs-related-card:hover {
+  border-color: #ebd0e2;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 38, 92, 0.08);
+}
+
+.gs-related-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: #faf0f6;
+  color: #8b265c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.gs-related-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.gs-related-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #64748b;
+  margin: 0 0 16px;
+}
+
+.gs-related-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: #94a3b8;
+  padding-top: 10px;
+  border-top: 1px solid #f8fafc;
+}
+
+.gs-related-footer svg {
+  color: #8b265c;
+  transition: transform 0.15s ease;
+}
+
+.gs-related-card:hover .gs-related-footer svg {
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   7. "NEED MORE HELP?" SUPPORT BANNER
+   ========================================================================== */
+.gs-support-section {
+  background: radial-gradient(circle at 10% 90%, rgba(184, 51, 106, 0.3) 0%, transparent 60%),
+              linear-gradient(135deg, #1b0718 0%, #290a21 60%, #150513 100%);
+  color: #ffffff;
+  padding: 56px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gs-support-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.gs-support-left-eyebrow {
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ff8b71;
+  margin-bottom: 10px;
+}
+
+.gs-support-left h2 {
+  font-size: 30px;
+  font-weight: 750;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0 0 10px;
+  letter-spacing: -0.02em;
+}
+
+.gs-support-left p {
+  font-size: 13.5px;
+  color: #d8c2d2;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.gs-support-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.gs-support-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gs-support-col-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fce7f3;
+  margin-bottom: 8px;
+}
+
+.gs-support-col h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.gs-support-col p {
+  font-size: 12px;
+  color: #cbd5e1;
+  line-height: 1.45;
+  margin: 0 0 8px;
+}
+
+.gs-support-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fbcfe8;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.gs-support-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 1180px) {
+  .gs-main-container {
+    grid-template-columns: 200px minmax(0, 1fr);
+  }
+
+  .gs-right-sidebar {
+    display: none;
+  }
+
+  .gs-related-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gs-support-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 900px) {
+  .gs-hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .gs-hero-title {
+    font-size: 32px;
+  }
+
+  .gs-main-container {
+    grid-template-columns: 1fr;
+  }
+
+  .gs-left-sidebar {
+    display: none;
+  }
+
+  .gs-step-card {
+    grid-template-columns: 1fr;
+  }
+
+  .gs-completion-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gs-completion-right {
+    align-items: flex-start;
+  }
+
+  .gs-support-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

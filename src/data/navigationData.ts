@@ -14,13 +14,13 @@ export interface NavSection {
 }
 
 export const productNavItems: NavLinkItem[] = [
-  {
-    title: "Product Overview",
-    href: "/product",
-    desc: "All-in-one HRMS architecture built for modern multi-branch teams",
-    icon: "sparkle",
-    badge: "Unified",
-  },
+  // {
+  //   title: "Product Overview",
+  //   href: "/product",
+  //   desc: "All-in-one HRMS architecture built for modern multi-branch teams",
+  //   icon: "sparkle",
+  //   badge: "Unified",
+  // },
   {
     title: "Employee Management",
     href: "/features/employee-management",
@@ -85,18 +85,12 @@ export const productNavItems: NavLinkItem[] = [
 ];
 
 export const solutionsNavItems: NavLinkItem[] = [
-  {
-    title: "Solutions Overview",
-    href: "/solutions",
-    desc: "Explore how LattiumHR adapts to your team size, role, and industry",
-    icon: "branch",
-  },
-  {
-    title: "Small Businesses (1–50)",
-    href: "/solutions/small-businesses",
-    desc: "Move off spreadsheets with quick 2-week launch and zero overhead",
-    icon: "zap",
-  },
+  // {
+  //   title: "Solutions Overview",
+  //   href: "/solutions",
+  //   desc: "Explore how LattiumHR adapts to your team size, role, and industry",
+  //   icon: "branch",
+  // },
   {
     title: "Mid-Sized Businesses (50–500)",
     href: "/solutions/mid-sized-businesses",
@@ -110,6 +104,12 @@ export const solutionsNavItems: NavLinkItem[] = [
     icon: "building",
   },
   {
+    title: "Small Businesses (1–50)",
+    href: "/solutions/small-businesses",
+    desc: "Move off spreadsheets with quick 2-week launch and zero overhead",
+    icon: "zap",
+  },
+  {
     title: "For HR Teams",
     href: "/solutions/hr-teams",
     desc: "Eliminate repetitive paperwork, manual leave tracking, and inquiries",
@@ -121,13 +121,13 @@ export const solutionsNavItems: NavLinkItem[] = [
     desc: "Accurate payroll calculations, statutory reports, and audit trails",
     icon: "finance",
   },
-  {
-    title: "Multi-Location Businesses",
-    href: "/solutions/multi-location",
-    desc: "Branch-specific rules with unified central headquarters visibility",
-    icon: "globe",
-    badge: "Core Strength",
-  },
+  // {
+  //   title: "Multi-Location Businesses",
+  //   href: "/solutions/multi-location",
+  //   desc: "Branch-specific rules with unified central headquarters visibility",
+  //   icon: "globe",
+  //   badge: "Core Strength",
+  // },
   {
     title: "Industry Solutions",
     href: "/solutions/industries",
@@ -137,15 +137,15 @@ export const solutionsNavItems: NavLinkItem[] = [
 ];
 
 export const resourcesNavItems: NavLinkItem[] = [
+  // {
+  //   title: "Resources Overview",
+  //   href: "/resources",
+  //   desc: "Guides, tools, glossary terms, and support to elevate your HR operations",
+  //   icon: "book-open",
+  // },
   {
-    title: "Resources Overview",
-    href: "/resources",
-    desc: "Guides, tools, glossary terms, and support to elevate your HR operations",
-    icon: "book-open",
-  },
-  {
-    title: "Blog & Articles",
-    href: "/resources/blog",
+    title: "Blog",
+    href: "/blog",
     desc: "Best practices on payroll compliance, attendance, and workforce retention",
     icon: "file-text",
   },
@@ -157,7 +157,7 @@ export const resourcesNavItems: NavLinkItem[] = [
   },
   {
     title: "FAQs",
-    href: "/resources/faqs",
+    href: "/faq",
     desc: "Answers to common questions about setup, branches, security, and mobile",
     icon: "help-circle",
   },
@@ -168,11 +168,11 @@ export const resourcesNavItems: NavLinkItem[] = [
     icon: "help-circle",
   },
   {
-    title: "Getting Started Guide",
-    href: "/help/getting-started",
-    desc: "Step-by-step 4-stage implementation roadmap from kickoff to go-live",
-    icon: "check",
-    badge: "Guide",
+    title: "Guides & Toolkits",
+    href: "/guides",
+    desc: "Comprehensive playbooks on payroll, HRMS, leave, and statutory compliance",
+    icon: "book-open",
+    badge: "Guides",
   },
   {
     title: "Customer Support",
@@ -180,12 +180,12 @@ export const resourcesNavItems: NavLinkItem[] = [
     desc: "Dedicated support specialists, SLA commitments, and response times",
     icon: "phone",
   },
-  {
-    title: "Case Studies",
-    href: "/resources/case-studies",
-    desc: "Real transformation stories from 500+ multi-branch businesses",
-    icon: "award",
-  },
+  // {
+  //   title: "Case Studies",
+  //   href: "/resources/case-studies",
+  //   desc: "Real transformation stories from 500+ multi-branch businesses",
+  //   icon: "award",
+  // },
 ];
 
 export const footerColumns = [
@@ -204,22 +204,24 @@ export const footerColumns = [
     title: "Solutions",
     links: [
       { label: "Solutions Overview", href: "/solutions" },
-      { label: "Small Businesses", href: "/solutions/small-businesses" },
       { label: "Mid-Sized Businesses", href: "/solutions/mid-sized-businesses" },
       { label: "Enterprises", href: "/solutions/enterprises" },
+      { label: "Small Businesses", href: "/solutions/small-businesses" },
       { label: "HR Teams", href: "/solutions/hr-teams" },
       { label: "Finance Teams", href: "/solutions/finance-teams" },
+      { label: "Industry Solutions", href: "/solutions/industries" },
     ],
   },
   {
-    title: "Resources",
+    title: "Resources & Support",
     links: [
-      { label: "Blog", href: "/resources/blog" },
+      { label: "Help Center", href: "/support/help-center" },
+      { label: "Raise a Ticket", href: "/support#ticket" },
+      { label: "Track My Ticket", href: "/support/track" },
+      { label: "System Status", href: "https://status.lattiumhr.com" },
+      { label: "Contact Sales", href: "/contact-sales" },
       { label: "HRMS Glossary", href: "/resources/hrms-glossary" },
-      { label: "FAQs", href: "/resources/faqs" },
-      { label: "Help Center", href: "/help" },
-      { label: "Support", href: "/support" },
-      { label: "Case Studies", href: "/resources/case-studies" },
+      { label: "Guides & Playbooks", href: "/guides" },
     ],
   },
   {
@@ -236,10 +238,11 @@ export const footerColumns = [
     title: "Legal",
     links: [
       { label: "Privacy Policy", href: "/privacy-policy" },
-      { label: "Cookie Policy", href: "/cookie-policy" },
       { label: "Terms of Service", href: "/terms-of-service" },
+      { label: "Cookie Policy", href: "/cookie-policy" },
       { label: "Data Processing Agreement", href: "/data-processing-agreement" },
       { label: "HTML Sitemap", href: "/sitemap" },
     ],
   },
 ];
+

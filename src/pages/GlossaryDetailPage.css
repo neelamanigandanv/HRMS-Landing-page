@@ -1,0 +1,655 @@
+/* ==========================================================================
+   LATTIUM HR - GLOSSARY DETAIL QUESTION VIEW
+   Clean Simple Editorial Layout with Website Primary Brand Palette (#7b2958)
+   Two-column article with matching height CTA card & full-width key features
+   ========================================================================== */
+
+.glossary-simple-detail-page {
+  background-color: #ffffff;
+  color: #1a0f18;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Increased max width for generous layout */
+.glossary-simple-container {
+  width: min(1320px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   1. ARTICLE SECTION
+   ========================================================================== */
+.glossary-article-section-wrap {
+  padding: 44px 0 64px;
+}
+
+/* Breadcrumbs: HR GLOSSARY > TERM DEFINED */
+.glossary-simple-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.glossary-bc-root {
+  color: #7b2958;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.glossary-bc-root:hover {
+  color: #5c1840;
+  text-decoration: underline;
+}
+
+.glossary-bc-separator {
+  color: #b43f70;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.glossary-bc-current {
+  color: #7b2958;
+  font-weight: 800;
+}
+
+.glossary-breadcrumb-star-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.glossary-breadcrumb-sparkles {
+  color: #7b2958;
+  display: inline-block;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.glossary-breadcrumb-star-wrap:hover .glossary-breadcrumb-sparkles {
+  transform: scale(1.18) rotate(6deg);
+}
+
+/* Main Headline Container (Full width across container to guarantee ONE single line) */
+.glossary-title-container {
+  margin-bottom: 28px;
+  width: 100%;
+}
+
+.glossary-simple-title {
+  font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(26px, 2.7vw, 40px);
+  font-weight: 850;
+  color: #7b2958;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+/* Two-column layout with right card matching height of editorial answer */
+.glossary-simple-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 370px;
+  gap: 48px;
+  align-items: stretch; /* Forces left content and right card to have the same height */
+}
+
+/* Left Column: Editorial Paragraphs */
+.glossary-simple-content {
+  font-size: 1.05rem;
+  line-height: 1.84;
+  color: #374151;
+  display: flex;
+  flex-direction: column;
+}
+
+.glossary-p-lead {
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: #1f2937;
+  margin-bottom: 22px;
+  font-weight: 450;
+}
+
+.glossary-p-body {
+  font-size: 1.05rem;
+  line-height: 1.84;
+  color: #475569;
+  margin-bottom: 22px;
+  font-weight: 400;
+}
+
+.glossary-p-body:last-child {
+  margin-bottom: 0;
+}
+
+/* Right Column: Sidebar CTA Card matching exact height of the answer, positioned slightly above */
+.glossary-simple-sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: -52px; /* Lightly improved position higher above as requested */
+}
+
+.glossary-primary-cta-card {
+  height: 100%;
+  background: linear-gradient(180deg, #ffffff 0%, #fdf9fc 100%);
+  border: 1.5px solid #ebdbe6;
+  border-radius: 20px;
+  padding: 38px 30px; /* Generous breathing space inside */
+  box-shadow: 0 8px 24px rgba(123, 41, 88, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Balanced vertical centering */
+  box-sizing: border-box;
+  transition: all 0.25s ease;
+}
+
+.glossary-primary-cta-card:hover {
+  border-color: #d889b2;
+  box-shadow: 0 12px 32px rgba(123, 41, 88, 0.09);
+}
+
+.glossary-sidebar-card-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.glossary-sidebar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: 9999px;
+  background: #faedf4;
+  color: #7b2958;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px; /* Generous breathing space */
+  align-self: flex-start;
+}
+
+.glossary-primary-cta-title {
+  font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #7b2958;
+  line-height: 1.28;
+  margin: 0 0 12px 0; /* Breathing space */
+}
+
+.glossary-primary-cta-desc {
+  font-size: 0.92rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0 0 24px 0; /* Breathing space before form */
+}
+
+.glossary-primary-cta-form {
+  display: flex;
+  flex-direction: column;
+  gap: 13px; /* Breathing space between input and button */
+}
+
+.glossary-sidebar-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.glossary-sidebar-input-icon {
+  position: absolute;
+  left: 14px;
+  color: #8c7383;
+  pointer-events: none;
+}
+
+.glossary-primary-cta-input {
+  width: 100%;
+  border: 1.5px solid #e5d3de;
+  border-radius: 12px;
+  padding: 12px 16px 12px 40px;
+  font-size: 14px;
+  background: #ffffff;
+  color: #111827;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.glossary-primary-cta-input:focus {
+  border-color: #7b2958;
+  box-shadow: 0 0 0 3px rgba(123, 41, 88, 0.12);
+}
+
+.glossary-primary-cta-btn {
+  width: 100%;
+  background: #7b2958;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 13px 20px;
+  font-size: 14.5px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 12px rgba(123, 41, 88, 0.22);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: inherit;
+}
+
+.glossary-primary-cta-btn:hover {
+  background: #5c1840;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(123, 41, 88, 0.3);
+}
+
+/* ==========================================================================
+   FULL WIDTH KEY RULES & OPERATIONAL STANDARDS CARD (Border Removed for Points)
+   ========================================================================== */
+.glossary-fullwidth-features-card {
+  margin-top: 48px;
+  padding: 38px 44px;
+  background: #fdfafc;
+  border: 1.5px solid #f2d0e3;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(123, 41, 88, 0.04);
+}
+
+.glossary-features-card-header {
+  margin-bottom: 24px;
+}
+
+.glossary-features-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #7b2958;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.glossary-features-card-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #1a0f18;
+  margin: 0 0 8px 0;
+}
+
+.glossary-features-card-sub {
+  font-size: 0.96rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.glossary-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 40px;
+}
+
+/* BORDER REMOVED FOR POINTS as requested */
+.glossary-feature-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 8px 0;
+  transition: all 0.15s ease;
+}
+
+.glossary-feature-point-item:hover {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.glossary-feature-point-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #7b2958;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.glossary-feature-point-text {
+  font-size: 0.98rem;
+  line-height: 1.58;
+  color: #2e242c;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   2. THREE-CARD TOPICS SECTION ("A" TOPICS, "B" TOPICS, "C" TOPICS)
+   Proper padding, clean gap, refined icons, and aligned badges
+   ========================================================================== */
+.glossary-three-topics-section {
+  padding: 68px 0 92px;
+  background-color: #fcf9f8;
+  border-top: 1px solid #ebdbe6;
+  margin-top: 56px;
+}
+
+.glossary-three-topics-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.glossary-three-topics-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #7b2958;
+  margin-bottom: 10px;
+}
+
+.glossary-three-topics-title {
+  font-family: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(24px, 2.7vw, 30px);
+  font-weight: 700;
+  color: #1a0f18;
+  margin: 0 0 10px 0;
+}
+
+.glossary-three-topics-desc {
+  font-size: 0.98rem;
+  color: #64748b;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.glossary-three-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* Elevated Modern Card Design with Balanced Padding and Spacing */
+.glossary-topic-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fdfafd 100%);
+  border: 1.5px solid #ebdbe6;
+  border-radius: 20px;
+  padding: 24px 22px;
+  box-shadow: 0 4px 18px rgba(123, 41, 88, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.22s ease;
+}
+
+.glossary-topic-card:hover {
+  border-color: #d889b2;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(123, 41, 88, 0.09);
+}
+
+/* Card Header: Left group (Avatar + Heading) and Right Badge with ample space between */
+.glossary-topic-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f2e6ee;
+}
+
+.glossary-topic-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Refined, well-proportioned avatar (NOT big) */
+.glossary-topic-letter-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #7b2958 0%, #b43f70 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Inter Tight', sans-serif;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(123, 41, 88, 0.16);
+}
+
+.glossary-topic-card-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1a0f18;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Badge with proper padding & alignment */
+.glossary-topic-count-pill {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7b2958;
+  background: #faedf4;
+  padding: 3px 9px;
+  border-radius: 9999px;
+  border: 1px solid #f2d0e3;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.glossary-topic-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+/* Refined item rows with NO borders around points as requested */
+.glossary-topic-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 6px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.93rem;
+  font-weight: 500;
+  line-height: 1.45;
+  transition: all 0.18s ease;
+}
+
+.glossary-topic-card-link:hover {
+  background: #faedf4;
+  border: none;
+  color: #7b2958;
+  padding-left: 10px;
+  transform: translateX(2px);
+}
+
+.glossary-topic-card-link.is-current {
+  background: #fdf2f8;
+  border: none;
+  color: #7b2958;
+  font-weight: 700;
+  padding-left: 10px;
+}
+
+.glossary-topic-link-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.glossary-topic-link-icon {
+  color: #7b2958;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.glossary-topic-link-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.glossary-topic-link-arrow {
+  color: #a6386e;
+  opacity: 0.4;
+  transition: all 0.18s ease;
+  flex-shrink: 0;
+  margin-left: 6px;
+}
+
+.glossary-topic-card-link:hover .glossary-topic-link-arrow {
+  opacity: 1;
+  transform: translateX(2px);
+  color: #7b2958;
+}
+
+.glossary-topic-card-footer {
+  padding-top: 14px;
+  border-top: 1px solid #f2e6ee;
+}
+
+.glossary-topic-explore-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 100%;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1.5px solid #7b2958;
+  color: #7b2958;
+  font-weight: 700;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.glossary-topic-explore-btn:hover {
+  background: #7b2958;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(123, 41, 88, 0.22);
+}
+
+/* ==========================================================================
+   RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 960px) {
+  .glossary-simple-title {
+    font-size: clamp(24px, 3.2vw, 32px);
+    white-space: normal;
+  }
+
+  .glossary-simple-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+
+  .glossary-simple-sidebar {
+    position: static;
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .glossary-primary-cta-card {
+    height: auto;
+  }
+
+  .glossary-features-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .glossary-fullwidth-features-card {
+    padding: 28px 24px;
+  }
+
+  .glossary-three-topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .glossary-article-section-wrap {
+    padding: 32px 0 44px;
+  }
+
+  .glossary-simple-title {
+    font-size: 1.65rem;
+    white-space: normal;
+    margin-bottom: 16px;
+  }
+
+  .glossary-fullwidth-features-card {
+    padding: 22px 18px;
+    margin-top: 36px;
+  }
+
+  .glossary-three-topics-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .glossary-three-topics-section {
+    padding: 44px 0 60px;
+    margin-top: 36px;
+  }
+}

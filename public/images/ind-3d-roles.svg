@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 230" width="285" height="230">
+  <defs>
+    <!-- Background: Soft indigo/plum luxury light gradient tailored for white cards -->
+    <linearGradient id="bgGradRoles" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdfafd" />
+      <stop offset="50%" stop-color="#f5eff9" />
+      <stop offset="100%" stop-color="#eae0f3" />
+    </linearGradient>
+
+    <!-- 3D Shield Outer (Rich Royal Purple / Plum) -->
+    <linearGradient id="shieldOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#802B5B" />
+      <stop offset="50%" stop-color="#5b1f41" />
+      <stop offset="100%" stop-color="#2d0b20" />
+    </linearGradient>
+
+    <!-- 3D Shield Inner (Vibrant Violet / Indigo) -->
+    <linearGradient id="shieldInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a83a79" />
+      <stop offset="100%" stop-color="#5146d8" />
+    </linearGradient>
+
+    <!-- 3D Golden Key / Lock Gradient -->
+    <linearGradient id="goldKey" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+
+    <!-- 3D Floating Manager Pill Badge -->
+    <linearGradient id="mgrBadge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+
+    <filter id="shadowRoles" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#331526" flood-opacity="0.14" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="285" height="230" fill="url(#bgGradRoles)" rx="16" />
+
+  <!-- Floating Ambient Particles & Orbs -->
+  <circle cx="48" cy="60" r="16" fill="#facc15" opacity="0.35" filter="url(#shadowRoles)" />
+  <circle cx="238" cy="65" r="14" fill="#ffffff" opacity="0.8" filter="url(#shadowRoles)" />
+  <circle cx="240" cy="165" r="10" fill="#a83a79" opacity="0.2" />
+
+  <!-- Main 3D Security Shield -->
+  <g filter="url(#shadowRoles)" transform="translate(85, 38)">
+    <!-- Shield Outer 3D Body -->
+    <path d="M 58 4 C 84 16 108 8 114 8 C 114 62 98 112 58 138 C 18 112 2 62 2 8 C 8 8 32 16 58 4 Z" fill="url(#shieldOuter)" />
+    
+    <!-- Shield Inner Bevel Inset -->
+    <path d="M 58 14 C 79 24 98 18 104 18 C 104 60 90 102 58 124 C 26 102 12 60 12 18 C 18 18 37 24 58 14 Z" fill="url(#shieldInner)" />
+
+    <!-- Shield Gloss Highlight Sheen -->
+    <path d="M 58 14 C 79 24 98 18 104 18 C 104 60 90 102 58 124 Z" fill="#ffffff" opacity="0.16" />
+
+    <!-- Center 3D Keyhole / Padlock Emblem -->
+    <g transform="translate(42, 45)">
+      <!-- Padlock Shackle -->
+      <path d="M 8 18 L 8 10 C 8 3 24 3 24 10 L 24 18" fill="none" stroke="url(#goldKey)" stroke-width="5" stroke-linecap="round" />
+      <!-- Padlock Body -->
+      <rect x="0" y="16" width="32" height="26" rx="6" fill="url(#goldKey)" />
+      <!-- Keyhole -->
+      <circle cx="16" cy="27" r="3" fill="#3b0f26" />
+      <path d="M 14.5 27 L 17.5 27 L 19 35 L 13 35 Z" fill="#3b0f26" />
+    </g>
+  </g>
+
+  <!-- 3D Floating Golden Security Key (Left Side) -->
+  <g filter="url(#shadowRoles)" transform="translate(28, 90) rotate(-24)">
+    <circle cx="18" cy="18" r="14" fill="url(#goldKey)" />
+    <circle cx="18" cy="18" r="6" fill="#f89596" />
+    <rect x="30" y="14" width="28" height="8" rx="3" fill="url(#goldKey)" />
+    <rect x="46" y="22" width="6" height="8" rx="2" fill="url(#goldKey)" />
+    <rect x="54" y="22" width="4" height="6" rx="1.5" fill="url(#goldKey)" />
+  </g>
+
+  <!-- 3D Floating Manager / Role Level Badge (Right Side) -->
+  <g filter="url(#shadowRoles)" transform="translate(190, 85) rotate(12)">
+    <rect x="0" y="0" width="56" height="42" rx="12" fill="url(#mgrBadge)" />
+    <!-- User avatar icon in badge -->
+    <circle cx="28" cy="16" r="6" fill="#802B5B" />
+    <path d="M 18 32 C 18 26 38 26 38 32" fill="none" stroke="#802B5B" stroke-width="3" stroke-linecap="round" />
+    <!-- Verification small check badge -->
+    <circle cx="44" cy="10" r="6" fill="#16a34a" />
+    <path d="M 41 10 L 43 12 L 47 8" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg>

@@ -82,7 +82,7 @@
 
 .res-exact-section-title {
   font-size: 39px;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--ink, #191735);
   letter-spacing: -1.6px;
   line-height: 1.15;
@@ -887,7 +887,7 @@
 
 .res-roadmap-main-title {
   font-size: 39px;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--ink, #191735);
   letter-spacing: -1.6px;
   margin: 0 0 15px;
@@ -1160,7 +1160,7 @@
 
 .res-stories-title {
   font-size: 39px;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--ink, #191735);
   letter-spacing: -1.6px;
   margin: 0 0 15px;
@@ -1192,6 +1192,7 @@
   display: grid;
   grid-template-columns: 280px 1fr;
   text-decoration: none;
+  cursor: default;
   padding: 1.25rem;
   gap: 1.5rem;
   box-shadow: 0 4px 20px rgba(123, 41, 88, 0.03);
@@ -1237,13 +1238,13 @@
   align-items: center;
   gap: 0.35rem;
   font-size: 0.72rem;
-  font-weight: 800;
+  font-weight: 700;
   color: #b83280;
-  background: #fdf2f8;
-  border: 1px solid #fae2ee;
-  border-radius: 9999px;
-  padding: 0.22rem 0.65rem;
-  letter-spacing: 0.04em;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  letter-spacing: 0.06em;
   width: fit-content;
   margin-bottom: 0.65rem;
 }
@@ -1333,9 +1334,10 @@
   padding: 1.35rem 1.45rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.35rem;
   text-decoration: none;
+  cursor: default;
   box-shadow: 0 4px 16px rgba(123, 41, 88, 0.025);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   flex: 1;
@@ -1347,22 +1349,23 @@
   box-shadow: 0 8px 24px rgba(123, 41, 88, 0.07);
 }
 
-/* Compact, refined icon box - avoids looking big */
+/* Compact, refined icon box - top aligned and reduced */
 .res-story-side-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   background: #fdf2f8;
   border: 1px solid #fae2ee;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .res-side-box-icon {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   stroke: #b83280;
 }
 
@@ -1426,21 +1429,21 @@
 .res-story-stat-val {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  font-size: 0.95rem;
-  font-weight: 800;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  font-weight: 700;
   color: #111827;
   line-height: 1.1;
 }
 
 .res-stat-icon {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   stroke: #b83280;
 }
 
 .res-story-stat-lbl {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   color: #6b7280;
   font-weight: 500;
 }
@@ -1483,12 +1486,19 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: #b83280;
+  text-decoration: none;
+  cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
   margin-top: 0.65rem;
+}
+
+.res-story-side-link:hover {
+  color: #8c1e5d;
+  transform: translateX(3px);
 }
 
 .res-story-side-card:hover .res-story-side-link {
@@ -1562,7 +1572,7 @@
 /* Headline */
 .res-glossary-main-title {
   font-size: 39px;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--ink, #191735);
   letter-spacing: -1.6px;
   margin: 0 0 15px;
@@ -1796,7 +1806,7 @@
 /* Headline */
 .res-help-main-title {
   font-size: 39px;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--ink, #191735);
   letter-spacing: -1.6px;
   margin: 0 0 15px;
@@ -2097,7 +2107,7 @@
 /* Main title */
 .res-faq-main-title {
   font-size: 39px;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--ink, #191735);
   letter-spacing: -1.6px;
   margin: 0 0 15px;

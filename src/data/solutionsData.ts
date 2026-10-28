@@ -6,11 +6,163 @@ export interface SolutionCapability {
   icon: IconName;
 }
 
+export interface WorkflowStep {
+  number?: number;
+  title: string;
+  description: string;
+}
+
+export interface WorkflowProcessData {
+  eyebrow?: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  imageAlt: string;
+  badge: {
+    icon: IconName;
+    title: string;
+    subtitle: string;
+    color?: string;
+  };
+  steps: WorkflowStep[];
+}
+
+export interface SolutionSlideItem {
+  eyebrow: string;
+  title: string;
+  description: string;
+  checkmarks: string[];
+  buttonText: string;
+  buttonLink?: string;
+  image: string;
+  imageAlt: string;
+}
+
+export interface HorizontalStepItem {
+  stepNumber: number;
+  title: string;
+  description: string;
+}
+
+export interface SolutionHeroVisual {
+  image: string;
+  imageAlt: string;
+  badgeLive?: string;
+  widgetLeft?: {
+    icon: IconName;
+    title: string;
+    subtitle: string;
+    value: string;
+  };
+  widgetRight?: {
+    icon: IconName;
+    title: string;
+    subtitle: string;
+    value: string;
+  };
+}
+
+export interface SolutionTestimonial {
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+  avatar?: string;
+}
+
+export interface SolutionFaq {
+  q: string;
+  a: string;
+}
+
+export interface SolutionFooterCta {
+  eyebrow: string;
+  title: string;
+  description: string;
+  primaryBtnText: string;
+  primaryBtnLink?: string;
+  secondaryBtnText: string;
+  secondaryBtnLink?: string;
+  points: string[];
+}
+
+export interface ImpactGlobeAvatar {
+  name: string;
+  avatar: string;
+  role?: string;
+  top: string;
+  left: string;
+}
+
+export interface SolutionImpactBento {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  cardDark: {
+    title: string;
+    description: string;
+    buttonLink?: string;
+    globeAvatars: ImpactGlobeAvatar[];
+  };
+  cardTopMiddle: {
+    title: string;
+    description: string;
+    metricValue: string;
+    metricLabel: string;
+  };
+  cardTopRight: {
+    statValue: string;
+    statTrend: string;
+    statLabel: string;
+    avatars: string[];
+    gaugePercent: number;
+    gaugeLabel: string;
+  };
+  cardBottomWide: {
+    title: string;
+    subtitle: string;
+    statValue: string;
+    statTrend: string;
+    yAxisLabels: string[];
+    chartBars: { label: string; height: number; value?: string }[];
+  };
+}
+
+export interface RelatedSolutionCard {
+  title: string;
+  badge?: string;
+  description: string;
+  link: string;
+  linkText?: string;
+  icon: IconName;
+}
+
+export interface SolutionRelatedSolutions {
+  eyebrow?: string;
+  title?: string;
+  subtitle?: string;
+  cards: RelatedSolutionCard[];
+}
+
+export interface SolutionMidCta {
+  tag?: string;
+  title: string;
+  description: string;
+  primaryBtnText: string;
+  primaryBtnLink?: string;
+  secondaryBtnText?: string;
+  secondaryBtnLink?: string;
+  checklist?: string[];
+}
+
 export interface SolutionData {
   slug: string;
   title: string;
   badge: string;
   headline: string;
+  heroHeadlineAccent?: string;
+  heroTrustPoints?: string[];
+  heroVisual?: SolutionHeroVisual;
   subhead: string;
   challengesTitle: string;
   challengesDesc: string;
@@ -18,12 +170,24 @@ export interface SolutionData {
   capabilitiesTitle: string;
   capabilitiesDesc: string;
   capabilities: SolutionCapability[];
+  interactiveSlides?: SolutionSlideItem[];
+  horizontalSteps?: HorizontalStepItem[];
+  workflowProcess?: WorkflowProcessData;
+  midCta?: SolutionMidCta;
+  impactBento?: SolutionImpactBento;
   benefitsTitle: string;
   benefitsDesc: string;
   benefits: { metric: string; title: string; desc: string }[];
+  hideUseCases?: boolean;
   useCasesTitle: string;
   useCases: { scenario: string; solution: string; outcome: string }[];
-  recommendedModules: { name: string; desc: string; link: string }[];
+  hideRecommendedModules?: boolean;
+  recommendedModules?: { name: string; desc: string; link: string }[];
+  relatedSolutions?: SolutionRelatedSolutions;
+  testimonialsStats?: { value: string; label: string }[];
+  testimonials?: SolutionTestimonial[];
+  faqs?: SolutionFaq[];
+  footerCta?: SolutionFooterCta;
 }
 
 export const solutionsMap: Record<string, SolutionData> = {
@@ -263,6 +427,29 @@ export const solutionsMap: Record<string, SolutionData> = {
     title: "Solutions for HR Teams",
     badge: "HR Operations & Experience",
     headline: "Eliminate repetitive administrative paperwork and elevate employee experience",
+    heroHeadlineAccent: "Elevate Employee Experience.",
+    heroTrustPoints: [
+      "85% Less Routine Queries",
+      "100% Digital Day-One Onboarding",
+      "14-Day Rapid Deployment",
+    ],
+    heroVisual: {
+      image: "/images/hero-employee-directory-team.jpg",
+      imageAlt: "HR operations team managing workforce directory and leave approvals",
+      badgeLive: "Active Directory · 1,450 Staff",
+      widgetLeft: {
+        icon: "sparkle",
+        title: "Digital Onboarding",
+        subtitle: "100% KYC & Bank Verified",
+        value: "+38 New Hires",
+      },
+      widgetRight: {
+        icon: "leave",
+        title: "Self-Service",
+        subtitle: "85% Faster Approvals",
+        value: "1-Tap Workflow",
+      },
+    },
     subhead:
       "Give your HR team their time back. Automate routine leave requests, onboarding documentation, attendance tracking, and policy acknowledgments so you can focus on talent development and culture.",
     challengesTitle: "Why HR Professionals Feel Overwhelmed",
@@ -271,15 +458,18 @@ export const solutionsMap: Record<string, SolutionData> = {
     challenges: [
       {
         problem: "Constant Employee Queries for Routine Info",
-        consequence: "Answering endless calls asking 'How many leaves do I have left?' or 'Can you resend my June payslip?'",
+        consequence:
+          "HR teams lose countless hours answering repetitive calls and emails asking 'How many leaves do I have left?' or 'Can you resend my June payslip?' Disconnected systems force HR into constant manual lookups rather than strategic talent initiatives.",
       },
       {
         problem: "Chasing Managers for Reviews & Approvals",
-        consequence: "Manually following up on pending leave requests, expense approvals, and appraisal scorecards.",
+        consequence:
+          "Routine leave requests, appraisal scorecards, and document validations stall when managers miss email threads. HR professionals spend their days manually following up on pending approvals instead of building workplace engagement.",
       },
       {
         problem: "Stressful Month-End Attendance Reconciliations",
-        consequence: "Working late nights before salary day manually compiling punches, loss of pay days, and overtime.",
+        consequence:
+          "Compiling raw biometric punch logs, multi-shift rosters, loss of pay (LOP) deductions, and overtime across multiple branches creates late-night panic and manual calculation errors right before salary day.",
       },
     ],
     capabilitiesTitle: "Tools Designed for the Modern People Team",
@@ -307,6 +497,168 @@ export const solutionsMap: Record<string, SolutionData> = {
         icon: "mail",
       },
     ],
+    interactiveSlides: [
+      {
+        eyebrow: "✦ DIGITAL ONBOARDING & KYC ✦",
+        title: "Automated digital onboarding with zero day-one paperwork.",
+        description:
+          "Eliminate physical paperwork and manual data entry. Issue automated digital offer letters, verify identity documents in real-time, and welcome new team members with structured role checklists before their very first day.",
+        checkmarks: [
+          "Instant Digital KYC & Document Vaults",
+          "Pre-Boarding Checklists & Role Welcome Kits",
+        ],
+        buttonText: "EXPLORE ONBOARDING →",
+        buttonLink: "/features/employee-management",
+        image: "/images/emp-block-onboarding.jpg",
+        imageAlt: "HR team welcoming new employee with digital welcome kit and laptop",
+      },
+      {
+        eyebrow: "✦ EMPLOYEE SELF-SERVICE (ESS) ✦",
+        title: "Empower your workforce with 1-tap mobile self-service.",
+        description:
+          "Free your HR team from 85% of repetitive administrative questions. Employees easily check remaining leave quotas, log daily geofenced punches, download monthly salary payslips, and manage personal profiles right from iOS and Android.",
+        checkmarks: [
+          "1-Tap Mobile Attendance & Geofenced Clock-Ins",
+          "Instant Payslip Downloads & Tax Form Access",
+        ],
+        buttonText: "EXPLORE SELF-SERVICE →",
+        buttonLink: "/features/attendance-management",
+        image: "/images/sb-employee-workspace.jpg",
+        imageAlt: "Employee comfortably checking self-service mobile app on smartphone in office",
+      },
+      {
+        eyebrow: "✦ LEAVE & SHIFT WORKFLOWS ✦",
+        title: "Configurable leave policies and multi-tier approval chains.",
+        description:
+          "Tailor leave types, accrual logic, carry-over limits, and holiday calendars across multi-branch locations. Department managers approve requests in one tap with real-time team calendar visibility and automated payroll synchronization.",
+        checkmarks: [
+          "Custom Accrual & Sandwich Rule Automation",
+          "1-Tap Mobile Approvals & Team Calendar Sync",
+        ],
+        buttonText: "EXPLORE LEAVE SUITE →",
+        buttonLink: "/features/leave-management",
+        image: "/images/sb-manager-workspace.jpg",
+        imageAlt: "HR manager and team collaborating around conference table discussing leave and shift planning",
+      },
+      {
+        eyebrow: "✦ PEOPLE ANALYTICS & RETENTION ✦",
+        title: "Real-time workforce intelligence for proactive leadership.",
+        description:
+          "Transform scattered employee records into actionable strategic foresight. Spot retention trends and attrition risks before they happen, monitor department headcount changes, and export 100% audit-ready statutory reports in seconds.",
+        checkmarks: [
+          "Departmental Retention Radar & Attrition Alerts",
+          "1-Click Statutory & Audit Compliance Exports",
+        ],
+        buttonText: "EXPLORE PEOPLE ANALYTICS →",
+        buttonLink: "/features/reports-analytics",
+        image: "/images/solutions-consultation-cta.jpg",
+        imageAlt: "HR leadership analyzing workforce intelligence and retention reports on digital tablet",
+      },
+    ],
+    workflowProcess: {
+      eyebrow: "✦ WORKFLOW PROCESS ✦",
+      title: "How LattiumHR Powers Your People Operations",
+      subtitle:
+        "A proven step-by-step framework that eliminates administrative bottlenecks, accelerates approvals, and keeps your entire workforce connected.",
+      image: "/images/hero-hr-working-pro.jpg",
+      imageAlt: "HR operations team collaborating on employee onboarding and leave management workflows",
+      badge: {
+        icon: "chart",
+        title: "Team Efficiency",
+        subtitle: "85% Less Manual Inquiries",
+        color: "#802B5B",
+      },
+      steps: [
+        {
+          number: 1,
+          title: "Discovery & Automated Ingestion",
+          description:
+            "Import employee directories, map branch reporting hierarchies, and configure customized leave quotas and holiday calendars in minutes.",
+        },
+        {
+          number: 2,
+          title: "Self-Service & Approval Workflows",
+          description:
+            "Employees submit mobile attendance, leaves, and documents while managers approve requests instantly through 1-tap automated chains.",
+        },
+        {
+          number: 3,
+          title: "Real-Time Oversight & Continuous Optimization",
+          description:
+            "Track department headcount, monitor attrition patterns, and generate audit-ready statutory reports with zero manual collation.",
+        },
+      ],
+    },
+    midCta: {
+      tag: "✦ INTERACTIVE HR CONSULTATION ✦",
+      title: "Wondering how your specific leave, attendance, and shift rules will run?",
+      description:
+        "Schedule a 20-minute tailored walkthrough. Our HR solutions team will demonstrate live on screen how LattiumHR configures for your organizational hierarchy, approval matrices, and salary structures.",
+      primaryBtnText: "Schedule Tailored Walkthrough",
+      primaryBtnLink: "/request-demo",
+      secondaryBtnText: "Speak with an HR Specialist",
+      secondaryBtnLink: "/contact",
+      checklist: [
+        "Live interactive screen walkthrough of your HR workflows",
+        "Free white-glove employee directory & leave data migration",
+        "Custom policy configuration & guaranteed 14-day go-live",
+      ],
+    },
+    impactBento: {
+      eyebrow: "✦ STRATEGIC WORKFORCE IMPACT ✦",
+      title: "Measurable Impact for HR Operations",
+      subtitle:
+        "Transform HR from a reactive administrative function into a proactive, data-driven strategic driver for your organization.",
+      cardDark: {
+        title: "Multi-Branch Workforce Intelligence",
+        description:
+          "Unify employee profiles, statutory compliance, and departmental reporting lines across every branch and remote hub with zero data silos.",
+        buttonLink: "/features/employee-management",
+        globeAvatars: [
+          { name: "Ananya K.", avatar: "/images/leader-ananya-kapoor.jpg", role: "Head of People", top: "25%", left: "26%" },
+          { name: "Kavya S.", avatar: "/images/leader-kavya-sundaram.jpg", role: "HRBP Lead", top: "52%", left: "58%" },
+          { name: "Rohan M.", avatar: "/images/leader-rohan-mehta.jpg", role: "Talent Ops", top: "72%", left: "34%" },
+          { name: "David C.", avatar: "/images/testi-avatar-1.jpg", role: "Staffing Lead", top: "24%", left: "80%" },
+          { name: "Priya N.", avatar: "/images/testi-avatar-2.jpg", role: "Payroll Specialist", top: "82%", left: "74%" },
+        ],
+      },
+      cardTopMiddle: {
+        title: "Paperless HR Automation",
+        description:
+          "Self-service onboarding submissions, automated probation reviews, and 1-tap leave approvals eliminate administrative bottlenecks.",
+        metricValue: "85%",
+        metricLabel: "Fewer Routine Inquiries",
+      },
+      cardTopRight: {
+        statValue: "98.4%",
+        statTrend: "↗",
+        statLabel: "Onboarding Completion",
+        avatars: [
+          "/images/leader-ananya-kapoor.jpg",
+          "/images/leader-kavya-sundaram.jpg",
+          "/images/testi-avatar-1.jpg",
+          "/images/testi-avatar-2.jpg",
+        ],
+        gaugePercent: 96,
+        gaugeLabel: "Annual Staff Retention Score",
+      },
+      cardBottomWide: {
+        title: "Monthly HR Hours Saved via Automation",
+        subtitle: "Consolidated hours saved across employee onboarding, attendance tracking, and pre-payroll.",
+        statValue: "140 hrs",
+        statTrend: "↗",
+        yAxisLabels: ["160h", "120h", "80h", "0h"],
+        chartBars: [
+          { label: "Jan", height: 48, value: "65 hrs" },
+          { label: "Feb", height: 62, value: "88 hrs" },
+          { label: "Mar", height: 72, value: "102 hrs" },
+          { label: "Apr", height: 80, value: "115 hrs" },
+          { label: "May", height: 88, value: "125 hrs" },
+          { label: "Jun", height: 94, value: "135 hrs" },
+          { label: "Jul", height: 98, value: "140 hrs" },
+        ],
+      },
+    },
     benefitsTitle: "Measurable Impact for HR Operations",
     benefitsDesc:
       "Transform HR from a reactive administrative function into a proactive strategic partner for leadership.",
@@ -315,6 +667,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       { metric: "100%", title: "Automated Onboarding", desc: "Digital verification replaces manual paper filing cabinets." },
       { metric: "15 hrs", title: "Saved Weekly per HR Member", desc: "Reinvest administrative time into employee engagement and training." },
     ],
+    hideUseCases: true,
     useCasesTitle: "Day in the Life with LattiumHR",
     useCases: [
       {
@@ -328,11 +681,115 @@ export const solutionsMap: Record<string, SolutionData> = {
         outcome: "Data-driven presentation delivered to leadership without scrambling to compile historical data.",
       },
     ],
+    hideRecommendedModules: true,
     recommendedModules: [
       { name: "Employee Management", desc: "Digital workforce directory and self-service", link: "/features/employee-management" },
       { name: "Leave Management", desc: "Automated leave accruals and approvals", link: "/features/leave-management" },
       { name: "Documents & Compliance", desc: "Centralized policy management and vaults", link: "/features/documents-compliance" },
     ],
+    relatedSolutions: {
+      eyebrow: "✦ RELATED SOLUTIONS ✦",
+      title: "Explore Solutions for Your Business",
+      subtitle:
+        "Discover how LattiumHR connects workforce management across your organization, from regional branch networks to enterprise payroll governance.",
+      cards: [
+        {
+          title: "Small Businesses",
+          description:
+            "Zero-setup HR, geofenced mobile clock-in, and automated payroll tailored for agile startups and teams under 50.",
+          link: "/solutions/small-businesses",
+          linkText: "Learn more →",
+          icon: "zap",
+        },
+        {
+          title: "Mid-Sized Businesses",
+          description:
+            "Standardize multi-department workflows, regional branch policies, and automated approval hierarchies as your team scales.",
+          link: "/solutions/mid-sized-businesses",
+          linkText: "Learn more →",
+          icon: "chart",
+        },
+        {
+          title: "Enterprises",
+          description:
+            "Enterprise-grade role hierarchies, custom approval matrices, audit logging, and deep ERP integrations for large workforces.",
+          link: "/solutions/enterprises",
+          linkText: "Learn more →",
+          icon: "shield",
+        },
+        {
+          title: "Finance Teams",
+          description:
+            "Zero-error payroll processing, automated statutory compliance (PF, ESI, PT, TDS), and instant encrypted bank payout files.",
+          link: "/solutions/finance-teams",
+          linkText: "Learn more →",
+          icon: "finance",
+        },
+      ],
+    },
+    testimonials: [
+      {
+        quote:
+          "Before LattiumHR, my team spent half our days answering 'How many casual leaves do I have left?' and chasing managers for sign-offs. With self-service and automated workflows, employee inquiries dropped by 85% in month one.",
+        author: "Kavya Sundaram",
+        role: "VP of People & Culture",
+        company: "ZetaScale Technologies",
+        avatar: "KS",
+      },
+      {
+        quote:
+          "Onboarding 25 new hires every month used to drown us in paper verification and Excel trackers. Now new team members complete their KYC, policy sign-offs, and bank details on their phones before day one.",
+        author: "Rohan Varma",
+        role: "HR Operations Lead",
+        company: "Apex Retail Chains",
+        avatar: "RV",
+      },
+      {
+        quote:
+          "Month-end attendance reconciliation used to mean three days of late nights compiling punches, leave adjustments, and loss-of-pay deductions. LattiumHR syncs biometric punches directly to payroll in seconds.",
+        author: "Ananya Deshmukh",
+        role: "Head of Human Resources",
+        company: "Credence Global",
+        avatar: "AD",
+      },
+    ],
+    faqs: [
+      {
+        q: "How does Employee Self-Service (ESS) reduce routine HR inquiries?",
+        a: "Employees download the mobile app or log into the web portal to check real-time leave balances, view holiday calendars, download monthly payslips, and submit reimbursement claims directly. This eliminates 85% of routine phone calls and emails to the HR desk.",
+      },
+      {
+        q: "How does digital onboarding work for remote and multi-branch hires?",
+        a: "As soon as an offer is extended, LattiumHR generates a secure digital link. New hires upload government IDs, enter bank details, and digitally sign employment agreements before their first day. HR receives an automated checklist and verified document vault ready for orientation.",
+      },
+      {
+        q: "Can we customize leave rules, approval chains, and attendance shifts?",
+        a: "Yes, completely. LattiumHR supports multi-tier approval chains (Reporting Manager → Department Head → HR), sandwich rule policies, custom probation accruals, comp-off credits, and regional holiday calendars tailored per branch.",
+      },
+      {
+        q: "How long does it take to migrate our existing employee database?",
+        a: "Most HR teams go live within 7 to 14 days. Our migration specialists import your employee directory, historical leave balances, and departmental hierarchies via bulk templates or direct API connectors with zero data loss.",
+      },
+      {
+        q: "Does LattiumHR integrate with our biometric hardware and attendance systems?",
+        a: "Yes. LattiumHR integrates natively with standard biometric fingerprint and facial recognition turnstiles, as well as geofenced mobile check-ins with selfie verification for field and remote staff.",
+      },
+    ],
+    footerCta: {
+      eyebrow: "READY TO ELEVATE YOUR HR OPERATIONS?",
+      title: "Your HR Team Deserves Better than Spreadsheets & Paperwork.",
+      description:
+        "Join hundreds of forward-thinking people teams running automated onboarding, self-service leave approvals, and seamless attendance on LattiumHR.",
+      primaryBtnText: "Book a Free Demo",
+      primaryBtnLink: "/request-demo",
+      secondaryBtnText: "Explore All Features",
+      secondaryBtnLink: "/features",
+      points: [
+        "Free personalised demo & consultation",
+        "No credit card required",
+        "Go live in 7–14 days",
+      ],
+    },
   },
 
   "finance-teams": {
@@ -384,6 +841,40 @@ export const solutionsMap: Record<string, SolutionData> = {
         icon: "reports",
       },
     ],
+    workflowProcess: {
+      eyebrow: "✦ WORKFLOW PROCESS ✦",
+      title: "The Zero-Error Payroll & Compliance Framework",
+      subtitle:
+        "From automated attendance collation to direct corporate bank disbursements and statutory filings — a seamless, verifiable financial flow.",
+      image: "/images/industry-finance.jpg",
+      imageAlt: "Finance and payroll specialists verifying monthly salary payout registers and statutory sheets",
+      badge: {
+        icon: "finance",
+        title: "Payroll Precision",
+        subtitle: "99.9% Calculation Accuracy",
+        color: "#0f766e",
+      },
+      steps: [
+        {
+          number: 1,
+          title: "Input Collation & Rule Verification",
+          description:
+            "Automatically gather verified punch records, approved leaves, overtime hours, and loan deductions without manual spreadsheet copy-pasting.",
+        },
+        {
+          number: 2,
+          title: "Automated Gross-to-Net Calculations",
+          description:
+            "The calculation engine computes statutory PF, ESI, professional tax, and income tax TDS slabs across multiple branches and states in one run.",
+        },
+        {
+          number: 3,
+          title: "1-Click Disbursement & Compliance Filing",
+          description:
+            "Generate encrypted corporate bank payment files (HDFC, ICICI, SBI) and export ready-to-upload government ECR challan registers.",
+        },
+      ],
+    },
     benefitsTitle: "Measurable Impact for Finance",
     benefitsDesc:
       "Eliminate payroll calculation errors, avoid compliance penalties, and reconcile accounts in record time.",

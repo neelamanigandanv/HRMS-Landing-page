@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 285 230" width="285" height="230">
+  <defs>
+    <!-- Background: Soft gold/plum luxury light gradient tailored for white cards -->
+    <linearGradient id="payBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fefcf8" />
+      <stop offset="50%" stop-color="#f8f4ec" />
+      <stop offset="100%" stop-color="#efe7db" />
+    </linearGradient>
+
+    <!-- 3D Card Body Gradient (Ceramic White) -->
+    <linearGradient id="payCardBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="70%" stop-color="#f9f7f4" />
+      <stop offset="100%" stop-color="#e8e2d8" />
+    </linearGradient>
+
+    <!-- Card Header Gradient (Brand Plum) -->
+    <linearGradient id="payHeaderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#802B5B" />
+      <stop offset="100%" stop-color="#b03e7f" />
+    </linearGradient>
+
+    <!-- 3D Gold Coin Gradient -->
+    <linearGradient id="goldCoinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#facc15" />
+      <stop offset="85%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#a16207" />
+    </linearGradient>
+
+    <!-- 3D Gold Coin Edge Rim -->
+    <linearGradient id="goldCoinRim" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#854d0e" />
+    </linearGradient>
+
+    <!-- 3D Emerald Pill Badge -->
+    <linearGradient id="pillEmerald" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <!-- 3D Rose/Plum Pill Badge -->
+    <linearGradient id="pillRose" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e11d48" />
+      <stop offset="100%" stop-color="#802B5B" />
+    </linearGradient>
+
+    <!-- Soft Drop Shadows -->
+    <filter id="payShadow3d" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#3b2b18" flood-opacity="0.14" />
+    </filter>
+    <filter id="payBadgeShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#2a0d1d" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="285" height="230" fill="url(#payBgGrad)" rx="16" />
+
+  <!-- Floating Ambient 3D Glass Orbs -->
+  <circle cx="44" cy="48" r="14" fill="#ffffff" opacity="0.8" filter="url(#payShadow3d)" />
+  <circle cx="240" cy="42" r="16" fill="#fde047" opacity="0.4" filter="url(#payShadow3d)" />
+  <circle cx="242" cy="174" r="11" fill="#10b981" opacity="0.25" />
+  <circle cx="46" cy="180" r="8" fill="#fde047" opacity="0.2" />
+
+  <!-- Main 3D Floating Salary / Payroll Card -->
+  <g filter="url(#payShadow3d)" transform="translate(72, 38)">
+    <!-- Base Card Surface -->
+    <rect width="142" height="136" rx="16" fill="url(#payCardBody)" />
+    
+    <!-- Top Header Bar (Plum) -->
+    <path d="M 0 16 C 0 7.16 7.16 0 16 0 L 126 0 C 134.84 0 142 7.16 142 16 L 142 34 L 0 34 Z" fill="url(#payHeaderGrad)" />
+    
+    <!-- Header Title & Dots -->
+    <text x="14" y="22" fill="#ffffff" font-size="11" font-weight="800" font-family="system-ui, -apple-system, sans-serif" letter-spacing="0.5">PAYROLL ROLL</text>
+    <circle cx="124" cy="17" r="3" fill="#4ade80" />
+
+    <!-- Ledger Rows -->
+    <!-- Row 1: Basic Pay -->
+    <rect x="14" y="46" width="60" height="7" rx="3.5" fill="#a49eb5" opacity="0.4" />
+    <rect x="94" y="46" width="34" height="7" rx="3.5" fill="#1f1838" opacity="0.8" />
+
+    <!-- Row 2: Overtime & Allowances -->
+    <rect x="14" y="61" width="48" height="7" rx="3.5" fill="#a49eb5" opacity="0.4" />
+    <rect x="100" y="61" width="28" height="7" rx="3.5" fill="#10b981" />
+
+    <!-- Row 3: Statutory Deductions (PF/Tax) -->
+    <rect x="14" y="76" width="54" height="7" rx="3.5" fill="#a49eb5" opacity="0.4" />
+    <rect x="104" y="76" width="24" height="7" rx="3.5" fill="#e11d48" opacity="0.75" />
+
+    <!-- Divider Line -->
+    <line x1="14" y1="92" x2="128" y2="92" stroke="#ded4ec" stroke-width="1.5" stroke-dasharray="3 3" />
+
+    <!-- Net Pay Total Highlight Row -->
+    <rect x="14" y="102" width="114" height="22" rx="6" fill="#802B5B" opacity="0.08" />
+    <text x="22" y="117" fill="#802B5B" font-size="9" font-weight="700" font-family="system-ui, -apple-system, sans-serif">NET SALARY</text>
+    <text x="86" y="117" fill="#802B5B" font-size="10.5" font-weight="900" font-family="system-ui, -apple-system, sans-serif">100% OK</text>
+  </g>
+
+  <!-- 3D Stacked Golden Coins (Bottom Left Foreground) -->
+  <!-- Coin 1 (Bottom) -->
+  <g filter="url(#payBadgeShadow)" transform="translate(42, 134)">
+    <ellipse cx="22" cy="22" rx="22" ry="12" fill="url(#goldCoinRim)" />
+    <ellipse cx="22" cy="18" rx="20" ry="10" fill="url(#goldCoinGrad)" />
+  </g>
+  <!-- Coin 2 (Middle) -->
+  <g filter="url(#payBadgeShadow)" transform="translate(42, 122)">
+    <ellipse cx="22" cy="22" rx="22" ry="12" fill="url(#goldCoinRim)" />
+    <ellipse cx="22" cy="18" rx="20" ry="10" fill="url(#goldCoinGrad)" />
+  </g>
+  <!-- Coin 3 (Top with Currency Mark) -->
+  <g filter="url(#payBadgeShadow)" transform="translate(42, 110)">
+    <ellipse cx="22" cy="22" rx="22" ry="12" fill="url(#goldCoinRim)" />
+    <ellipse cx="22" cy="18" rx="20" ry="10" fill="url(#goldCoinGrad)" />
+    <text x="18" y="22" fill="#78350f" font-size="12" font-weight="900" font-family="system-ui, -apple-system, sans-serif">₹</text>
+  </g>
+
+  <!-- 3D Floating Pill 1: "HOURLY / OT ✓" (Top Left) -->
+  <g filter="url(#payBadgeShadow)" transform="translate(24, 38)">
+    <rect width="90" height="28" rx="14" fill="url(#pillEmerald)" />
+    <!-- Specular highlight -->
+    <rect x="2" y="2" width="86" height="12" rx="6" fill="#ffffff" opacity="0.25" />
+    <text x="12" y="18" fill="#ffffff" font-size="9" font-weight="800" font-family="system-ui, -apple-system, sans-serif" letter-spacing="0.4">HOURLY / OT ✓</text>
+  </g>
+
+  <!-- 3D Floating Pill 2: "BONUS + TIPS" (Bottom Right) -->
+  <g filter="url(#payBadgeShadow)" transform="translate(160, 168)">
+    <rect width="98" height="26" rx="13" fill="url(#pillRose)" />
+    <rect x="2" y="2" width="94" height="11" rx="5" fill="#ffffff" opacity="0.22" />
+    <!-- Coin / Star icon -->
+    <circle cx="15" cy="13" r="4.5" fill="#fde047" />
+    <text x="26" y="17" fill="#ffffff" font-size="9" font-weight="800" font-family="system-ui, -apple-system, sans-serif" letter-spacing="0.3">BONUS + TIPS</text>
+  </g>
+
+  <!-- 3D Floating Pill 3: "100% Verified" (Top Right) -->
+  <g filter="url(#payBadgeShadow)" transform="translate(186, 68)">
+    <rect width="76" height="22" rx="11" fill="#ffffff" />
+    <circle cx="11" cy="11" r="3.5" fill="#10b981" />
+    <text x="20" y="15" fill="#1f1838" font-size="8.5" font-weight="800" font-family="system-ui, -apple-system, sans-serif">Auto Pay</text>
+  </g>
+</svg>

@@ -8,6 +8,8 @@ import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import Icon, { IconName } from "../components/ui/Icon";
 import { useDemoModal } from "../context/DemoModalContext";
+import { useCurrency } from "../context/CurrencyContext";
+import Hero3DStaircase from "../components/home/Hero3DStaircase";
 
 export function DemoForm({ compact = false }: { compact?: boolean }) {
   const [sent, setSent] = useState(false);
@@ -367,6 +369,7 @@ function LeaveMockup() {
 }
 
 function ManagerMockup() {
+  const { isIndia } = useCurrency();
   const days = ["M", "T", "W", "T", "F", "S", "S"];
   return (
     <div className="mockup manager-mockup">
@@ -418,7 +421,7 @@ function ManagerMockup() {
           <span className="person-avatar a1">RM</span>
           <div>
             <strong>Rohan Mehta</strong>
-            <small>Reimbursement · ₹2,450</small>
+            <small>Reimbursement · {isIndia ? "₹2,450" : "$30"}</small>
           </div>
           <em>Pending</em>
         </div>
@@ -428,6 +431,7 @@ function ManagerMockup() {
 }
 
 function PayrollMockup() {
+  const { isIndia } = useCurrency();
   return (
     <div className="mockup payroll-mockup">
       <div className="mock-top">
@@ -441,7 +445,7 @@ function PayrollMockup() {
       </div>
       <div className="payroll-total">
         <small>Net payroll</small>
-        <strong>₹28,42,650</strong>
+        <strong>{isIndia ? "₹28,42,650" : "$34,500"}</strong>
         <span>
           <Icon name="check" size={14} /> Inputs verified
         </span>
@@ -449,21 +453,21 @@ function PayrollMockup() {
       <div className="payroll-breakdown">
         <div>
           <span>Gross pay</span>
-          <strong>₹34.8L</strong>
+          <strong>{isIndia ? "₹34.8L" : "$42.5K"}</strong>
           <i>
             <b style={{ width: "86%" }} />
           </i>
         </div>
         <div>
           <span>Deductions</span>
-          <strong>₹6.4L</strong>
+          <strong>{isIndia ? "₹6.4L" : "$7.8K"}</strong>
           <i>
             <b style={{ width: "35%" }} />
           </i>
         </div>
         <div>
           <span>Net pay</span>
-          <strong>₹28.4L</strong>
+          <strong>{isIndia ? "₹28.4L" : "$34.7K"}</strong>
           <i>
             <b style={{ width: "72%" }} />
           </i>
@@ -1083,18 +1087,26 @@ function ModuleCarousel3D() {
 }
 
 function PriceEstimator() {
+  const { isIndia, currencySymbol, formatSetup } = useCurrency();
   const [plan, setPlan] = useState<"standard" | "professional" | "enterprise">("standard");
   const [users, setUsers] = useState(75);
-  const price = useMemo(
-    () =>
-      plan === "standard"
+
+  const price = useMemo(() => {
+    if (plan === "enterprise") return 0;
+    if (isIndia) {
+      return plan === "standard"
         ? Math.max(5000, users * 99)
-        : plan === "professional"
-        ? Math.max(10000, users * 199)
-        : 0,
-    [plan, users]
-  );
-  const setup = plan === "standard" ? "₹25,000" : "₹50,000";
+        : Math.max(10000, users * 199);
+    } else {
+      // International / USD pricing: Standard $1.50/user (min $65), Professional $2.50/user (min $130)
+      return plan === "standard"
+        ? Math.max(65, Math.round(users * 1.5))
+        : Math.max(130, Math.round(users * 2.5));
+    }
+  }, [plan, users, isIndia]);
+
+  const setupText = formatSetup(plan);
+
   return (
     <div className="estimator">
       <div className="plan-options">
@@ -1166,11 +1178,11 @@ function PriceEstimator() {
             <div className="estimate-result">
               <small>YOUR ESTIMATED MONTHLY PRICE</small>
               <div>
-                <strong>₹{price.toLocaleString("en-IN")}</strong>
+                <strong>{currencySymbol}{price.toLocaleString(isIndia ? "en-IN" : "en-US")}</strong>
                 <span>
                   / month
                   <br />
-                  <em>+ GST</em>
+                  <em>{isIndia ? "+ GST" : "billed monthly"}</em>
                 </span>
               </div>
               <p>
@@ -1183,7 +1195,7 @@ function PriceEstimator() {
               </span>
               <div>
                 <small>ONE-TIME SETUP</small>
-                <strong>From {setup}</strong>
+                <strong>From {setupText}</strong>
               </div>
               <em>Includes migration, configuration & training</em>
             </div>
@@ -1369,7 +1381,9 @@ export function Home() {
                 </div>
               </div>
             </div>
-            <DemoForm />
+
+            {/* Hero Right Visual: Premium 3D Staircase Looping Animation */}
+            <Hero3DStaircase />
           </div>
           <div className="container company-strip">
             <span>POWERING PEOPLE AT</span>
@@ -1609,7 +1623,7 @@ export function Home() {
                 title="Everything you need to know"
                 body="Can’t find what you’re looking for? Our team is happy to help."
               />
-              <Link className="text-link" to="/resources/faqs">
+              <Link className="text-link" to="/faq">
                 View all FAQs <Icon name="arrow" size={17} />
               </Link>
             </div>

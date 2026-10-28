@@ -1,0 +1,202 @@
+/* ==========================================================================
+   ATTENDANCE MANAGEMENT PAGE STYLESHEET
+   Inherits the complete, polished design system of EmployeeManagementPage
+   with dedicated attendance pulse indicators, roster widgets, and badges.
+   ========================================================================== */
+
+@import "./EmployeeManagementPage.css";
+
+/* Live Status Pulse on Attendance Showcase */
+.att-live-pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  margin-right: 6px;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: att-pulse-glow 2s infinite;
+}
+
+@keyframes att-pulse-glow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Attendance Mini Punch Card in Hero Showcase */
+.att-punch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  background: #ffffff;
+  border: 1px solid #eef2f6;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.att-punch-row:hover {
+  border-color: #cbd5e1;
+  transform: translateX(2px);
+  background: #fdfdfd;
+}
+
+.att-punch-user {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.att-punch-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #802B5B 0%, #b54282 100%);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.att-punch-meta {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.att-punch-name {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.2;
+}
+
+.att-punch-dept {
+  font-size: 0.68rem;
+  color: #64748b;
+}
+
+.att-punch-time {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #059669;
+  background: #ecfdf5;
+  padding: 0.2rem 0.55rem;
+  border-radius: 9999px;
+  border: 1px solid #d1fae5;
+}
+
+/* Shift Mini Breakdown */
+.att-shift-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin: 0.75rem 0;
+}
+
+.att-shift-stat {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.4rem;
+  text-align: center;
+}
+
+.att-shift-stat strong {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1.1;
+}
+
+.att-shift-stat span {
+  font-size: 0.65rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   ATTENDANCE CAPABILITIES: Generous Keypoint Spacing & Circle Border Ticks
+   ========================================================================== */
+.att-page-wrapper .emp-block-checklist-2col,
+.att-page-wrapper .emp-block-checklist-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.4rem 2.75rem !important;
+  margin-top: 1.65rem !important;
+  margin-bottom: 2.35rem !important;
+}
+
+@media (max-width: 640px) {
+  .att-page-wrapper .emp-block-checklist-2col,
+  .att-page-wrapper .emp-block-checklist-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.15rem !important;
+  }
+}
+
+.att-page-wrapper .emp-block-check-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+/* Tick Icon with Solid Background Color and Circle Border Normally */
+.att-page-wrapper .emp-block-check-icon,
+.att-page-wrapper .emp-block-check-badge {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  background: #802B5B !important;
+  border: 1.5px solid #802B5B !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  flex-shrink: 0 !important;
+  margin-top: 2px !important;
+  box-shadow: 0 2px 6px rgba(128, 43, 91, 0.28) !important;
+  transition: all 0.25s ease !important;
+}
+
+.att-page-wrapper .emp-block-check-item:hover .emp-block-check-icon,
+.att-page-wrapper .emp-block-check-item:hover .emp-block-check-badge {
+  background: #661e47 !important;
+  border-color: #661e47 !important;
+  color: #ffffff !important;
+  transform: scale(1.1) !important;
+  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.4) !important;
+}
+
+.att-page-wrapper .emp-block-check-text {
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  line-height: 1.5 !important;
+}
+
+/* ==========================================================================
+   WHY LATTIUM ATTENDANCE: Dedicated Corporate Campus Sunrise Background Image
+   ========================================================================== */
+.att-page-wrapper .emp-why-big-card,
+.att-page-wrapper .emp-why-choose-section .emp-why-big-card {
+  background-image: url('/images/att-why-scenic-bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+}

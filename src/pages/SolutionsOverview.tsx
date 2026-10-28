@@ -6,6 +6,7 @@ import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
 import { useDemoModal } from "../context/DemoModalContext";
+import { useCurrency } from "../context/CurrencyContext";
 
 const faqList = [
   {
@@ -35,56 +36,153 @@ const faqList = [
   },
 ];
 
-const branchPillars = [
+const verticalIndustries = [
   {
-    id: "centralized",
-    icon: "building" as const,
-    title: "Centralized Workforce Management",
-    desc: "Keep employee records and workforce information organized across all your branches.",
-    image: "/images/branch-hq.jpg",
-    alt: "Centralized workforce management operations monitoring distributed branches",
+    id: "tech-startups",
+    name: "Tech & Startups",
+    bestFor: "Best for: product companies, SaaS, IT services and hybrid teams",
+    desc: "Run hybrid attendance, sprint-aligned leaves and confidential ESOP workflows without spreadsheets.",
+    features: [
+      {
+        title: "Hybrid & remote geo-punching",
+        desc: "Geo-fence, selfie, IP or Wi-Fi rules for office, home and field.",
+      },
+      {
+        title: "Sprint-aligned leave rules",
+        desc: "Block leave in release weeks and auto-create comp-offs.",
+      },
+      {
+        title: "Confidential salary bands",
+        desc: "Role-based visibility keeps pay data private.",
+      },
+      {
+        title: "ESOP & vesting tracking",
+        desc: "Grants, vesting schedules and exercises in one place.",
+      },
+      {
+        title: "Automated onboarding & offboarding",
+        desc: "Checklists for laptops, access and exit clearance.",
+      },
+      {
+        title: "Flexible reimbursements & perks",
+        desc: "Claims, wellness and learning budgets with approvals.",
+      },
+    ],
+    stat: "Up to [XX]% less payroll processing time",
+    compliance: ["PF", "ESI", "PT", "TDS", "LWF"],
+        link: "/solutions/industries",
   },
   {
-    id: "branch-control",
-    icon: "setup" as const,
-    title: "Branch-Level Control",
-    desc: "Let branch managers handle day-to-day HR activities with permissions suited to their roles.",
-    image: "/images/branch-regional.jpg",
-    alt: "Branch managers handling local team activities with role-based permissions",
+    id: "healthcare-retail",
+    name: "Healthcare & Retail",
+    desc: "Manage rotational rosters, overtime calculations and location-locked shifts without attendance gaps.",
+    features: [
+      {
+        title: "Multi-shift roster planning",
+        desc: "Automated shift rotations, night allowances and emergency coverage swaps.",
+      },
+      {
+        title: "Store & branch geo-tagging",
+        desc: "Geofenced punches locked strictly to POS and clinic premises.",
+      },
+      {
+        title: "Overtime & penalty formulas",
+        desc: "Real-time tracking of late marks, split shifts and holiday overtime.",
+      },
+      {
+        title: "Uniform & asset issuance",
+        desc: "Central inventory for scrubs, badges, barcode scanners and registers.",
+      },
+      {
+        title: "Part-time & contract payouts",
+        desc: "Hourly wage computation synced directly with verified biometric logs.",
+      },
+      {
+        title: "License & credential alerts",
+        desc: "Automated expiry warnings for medical council registrations and safety.",
+      },
+    ],
+    stat: "Up to 99.4% shift coverage accuracy across branches",
+    compliance: ["PF", "ESI", "Shop & Est", "Minimum Wages", "Gratuity"],
+        link: "/solutions/industries",
   },
   {
-    id: "consistent-ops",
-    icon: "attendance" as const,
-    title: "Consistent HR Operations",
-    desc: "Maintain consistent attendance, leave and workforce processes across every location.",
-    image: "/images/branch-biometric.jpg",
-    alt: "Consistent attendance and leave synchronization across all locations",
+    id: "manufacturing",
+    name: "Manufacturing",
+    desc: "Handle contractor pools, overtime compliances and shop-floor shift rotations at enterprise scale.",
+    features: [
+      {
+        title: "Contractor & vendor pools",
+        desc: "Track daily contract labor headcounts and agency billing audits.",
+      },
+      {
+        title: "Biometric turnstile sync",
+        desc: "Zero-lag integration with face-recognition and fingerprint gates.",
+      },
+      {
+        title: "Double overtime calculations",
+        desc: "Automated computation for statutory overtime formulas and hazard pay.",
+      },
+      {
+        title: "Shift handover locks",
+        desc: "Production floor attendance locks before relief team check-in is complete.",
+      },
+      {
+        title: "Safety & incident tracking",
+        desc: "Record on-site safety trainings, incident logs and clearance badges.",
+      },
+      {
+        title: "SMS & WhatsApp wage slips",
+        desc: "Instant digital payslip delivery for non-desk and floor workers.",
+      },
+    ],
+    stat: "Zero compliance penalties across 12+ statutory audit cycles",
+    compliance: ["Factories Act", "PF", "ESI", "Bonus Act", "Contract Labor Act"],
+        link: "/solutions/industries",
   },
   {
-    id: "visibility",
-    icon: "chart" as const,
-    title: "Real-Time Workforce Visibility",
-    desc: "Get a clearer view of employee activity and HR operations across your organization.",
-    image: "/images/branch-payroll.jpg",
-    alt: "Executive dashboard showing real-time workforce visibility across the organization",
+    id: "financial-services",
+    name: "Financial Services",
+    desc: "Billable timesheets synced to payroll with multi-entity runs and strict audit trails.",
+    features: [
+      {
+        title: "Timesheet-to-payroll sync",
+        desc: "Automatically calculate billable vs non-billable client allocations.",
+      },
+      {
+        title: "Multi-entity salary runs",
+        desc: "Run separate payrolls across registered subsidiaries seamlessly.",
+      },
+      {
+        title: "Financial audit logs",
+        desc: "Immutable time-stamped trails for salary edits and tax revisions.",
+      },
+      {
+        title: "Incentive & commission slabs",
+        desc: "Formula-based sales payouts calculated on closed deal metrics.",
+      },
+      {
+        title: "Maker-Checker workflows",
+        desc: "Multi-tier finance approval workflows before bank disbursement.",
+      },
+      {
+        title: "Strict compensation secrecy",
+        desc: "Role-based segregation for partner draws and executive packages.",
+      },
+    ],
+    stat: "100% audit-ready statutory reports in under 5 minutes",
+    compliance: ["PF", "TDS Form 16", "PT", "ESI", "ROC Filings"],
+        link: "/solutions/industries",
   },
 ];
 
 export function SolutionsOverview() {
   const breadcrumbs = [{ label: "Solutions" }];
   const { openDemoModal } = useDemoModal();
+  const { isIndia } = useCurrency();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [activeBranchIndex, setActiveBranchIndex] = useState(0);
-  const [isBranchAutoPaused, setIsBranchAutoPaused] = useState(false);
   const [hoveredStage, setHoveredStage] = useState<number | null>(null);
-
-  useEffect(() => {
-    if (isBranchAutoPaused) return;
-    const interval = setInterval(() => {
-      setActiveBranchIndex((prev) => (prev + 1) % branchPillars.length);
-    }, 3600);
-    return () => clearInterval(interval);
-  }, [isBranchAutoPaused]);
+  const [activeIndustryTab, setActiveIndustryTab] = useState(0);
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("main section");
@@ -176,129 +274,392 @@ export function SolutionsOverview() {
               center
             />
 
-            <div className="so-stages-grid">
-              {/* Card 1: Small Business */}
-              <div
-                className="so-stage-card"
-                onMouseEnter={() => setHoveredStage(0)}
-                onMouseLeave={() => setHoveredStage(null)}
-              >
-                <div className="so-stage-card-top">
-                  <div className="so-card-icon-wrap">
-                    <Icon name="zap" size={20} />
+            <div className="so-biz-full-cards-stack">
+              {/* Card 1: Standard (Small Business) */}
+              <div className="so-biz-full-card so-biz-full-card--standard">
+                <div className="so-biz-full-grid">
+                  {/* Left Column: Plan Content & Features */}
+                  <div className="so-biz-full-content">
+                    <div className="so-biz-eyebrow">
+                      <Icon name="zap" size={13} />
+                      <span>STANDARD</span>
+                    </div>
+
+                    <h3 className="so-biz-plan-headline">Simplify HR. Focus on Growth.</h3>
+                    <p className="so-biz-plan-desc">
+                      Replace spreadsheets and paperwork with one system for employee records, attendance and leave, with self-service for every employee.
+                    </p>
+
+                    <div className="so-biz-divider" />
+
+                    <div className="so-biz-features-section">
+                      <div className="so-biz-features-eyebrow">
+                        <span className="so-biz-check-mark">✓</span> CORE SOLUTIONS INCLUDED
+                      </div>
+                      <div className="so-biz-features-grid">
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="employee" size={14} />
+                          </span>
+                          <span>Centralized Digital Employee Records</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="attendance" size={14} />
+                          </span>
+                          <span>Automated Geofenced Attendance & Leave</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="users" size={14} />
+                          </span>
+                          <span>Mobile Employee Self-Service Portal</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="setup" size={14} />
+                          </span>
+                          <span>Streamlined Onboarding & Approval Workflows</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="chart" size={14} />
+                          </span>
+                          <span>Real-Time Workforce & Attendance Analytics</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="payroll" size={14} />
+                          </span>
+                          <span>Payroll-Ready Hours & Statutory Compliance</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="so-biz-footer-row">
+                      <Link to="/solutions/small-businesses" className="so-biz-explore-btn">
+                        Explore Solutions <Icon name="arrow" size={14} />
+                      </Link>
+                      <button type="button" onClick={() => openDemoModal()} className="so-biz-features-link">
+                        See all features
+                      </button>
+                    </div>
                   </div>
-                  <span className="so-stage-emp-pill">Small Business</span>
+
+                  {/* Right Column: Real UI Dashboard Preview */}
+                  <div className="so-biz-visual-col">
+                    <div className="so-biz-img-frame">
+                      <img
+                        src="/images/solution-small-business.jpg"
+                        alt="LattiumHR Standard Solution Dashboard"
+                        className="so-biz-card-img"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
                 </div>
-
-                <h3 className="so-card-title">Simplify HR. Focus on Growth.</h3>
-
-                <p className="so-card-desc">
-                  Manage employee records, attendance, leave and payroll in one place without the burden of manual HR processes.
-                </p>
-
-                <ul className="so-checklist">
-                  <li className="so-checklist-item">
-                    <span className="so-check-ico">✓</span>
-                    <span>Organize employee information</span>
-                  </li>
-                  <li className="so-checklist-item">
-                    <span className="so-check-ico">✓</span>
-                    <span>Simplify everyday HR tasks</span>
-                  </li>
-                  <li className="so-checklist-item">
-                    <span className="so-check-ico">✓</span>
-                    <span>Keep attendance and leave records in sync</span>
-                  </li>
-                </ul>
-
-                <Link to="/solutions/small-businesses" className="so-card-link-btn">
-                  Explore Solutions →
-                </Link>
               </div>
 
-              {/* Card 2: Mid-Sized Business */}
-              <div
-                className={`so-stage-card ${hoveredStage === null || hoveredStage === 1 ? "so-stage-card--featured" : ""}`}
-                onMouseEnter={() => setHoveredStage(1)}
-                onMouseLeave={() => setHoveredStage(null)}
-              >
-                <div className="so-stage-card-top">
-                  <div className="so-card-icon-wrap">
-                    <Icon name="chart" size={20} />
+              {/* Line Divider */}
+              <div className="so-fl-card-divider" />
+
+              {/* Card 2: Professional (Mid-Sized Business) - Prominent Featured Styling */}
+              <div className="so-biz-full-card so-biz-full-card--professional so-biz-full-card--reverse">
+                <div className="so-biz-full-grid">
+                  {/* Left Column in reverse: Real UI Dashboard Preview */}
+                  <div className="so-biz-visual-col">
+                    <div className="so-biz-img-frame">
+                      <img
+                        src="/images/solution-mid-sized.jpg"
+                        alt="LattiumHR Professional Solution Multi-Branch Dashboard"
+                        className="so-biz-card-img"
+                        loading="lazy"
+                      />
+                    </div>
                   </div>
-                  <span className="so-stage-emp-pill">Mid-Sized Business</span>
+
+                  {/* Right Column in reverse: Plan Content & Features */}
+                  <div className="so-biz-full-content">
+                    <div className="so-biz-eyebrow">
+                      <Icon name="chart" size={13} />
+                      <span>PROFESSIONAL</span>
+                    </div>
+
+                    <h3 className="so-biz-plan-headline">Automate Work. Empower Teams.</h3>
+                    <p className="so-biz-plan-desc">
+                      Automate approvals, shifts and payroll, and give managers the tools to run performance and goals for their own teams.
+                    </p>
+
+                    <div className="so-biz-divider" />
+
+                    <div className="so-biz-features-section">
+                      <div className="so-biz-features-eyebrow">
+                        <span className="so-biz-check-mark">✓</span> EVERYTHING IN STANDARD, PLUS
+                      </div>
+                      <div className="so-biz-features-grid">
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="attendance" size={14} />
+                          </span>
+                          <span>Multi-Shift Scheduling & Overtime Controls</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="payroll" size={14} />
+                          </span>
+                          <span>Automated Payroll & Direct Disbursements</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="users" size={14} />
+                          </span>
+                          <span>Manager Delegation & Team Approvals</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="target" size={14} />
+                          </span>
+                          <span>Performance Appraisals & Goal Tracking</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="zap" size={14} />
+                          </span>
+                          <span>Workflow Automation & Device Integrations</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="so-biz-footer-row">
+                      <Link to="/solutions/mid-sized-businesses" className="so-biz-explore-btn">
+                        Explore Solutions <Icon name="arrow" size={14} />
+                      </Link>
+                      <button type="button" onClick={() => openDemoModal()} className="so-biz-features-link">
+                        See all features
+                      </button>
+                    </div>
+                  </div>
                 </div>
-
-                <h3 className="so-card-title">Automate Work. Empower Teams.</h3>
-
-                <p className="so-card-desc">
-                  Connect HR workflows, reduce repetitive tasks and give managers better visibility into employee operations as your workforce grows.
-                </p>
-
-                <ul className="so-checklist">
-                  <li className="so-checklist-item">
-                    <span className="so-check-ico">✓</span>
-                    <span>Automate routine HR workflows</span>
-                  </li>
-                  <li className="so-checklist-item">
-                    <span className="so-check-ico">✓</span>
-                    <span>Coordinate teams and departments</span>
-                  </li>
-                  <li className="so-checklist-item">
-                    <span className="so-check-ico">✓</span>
-                    <span>Improve workforce visibility</span>
-                  </li>
-                </ul>
-
-                <Link to="/solutions/mid-sized-businesses" className="so-card-link-btn">
-                  Explore Solutions →
-                </Link>
               </div>
+
+              {/* Line Divider */}
+              <div className="so-fl-card-divider" />
 
               {/* Card 3: Enterprise */}
-              <div
-                className="so-stage-card"
-                onMouseEnter={() => setHoveredStage(2)}
-                onMouseLeave={() => setHoveredStage(null)}
-              >
-                <div className="so-stage-card-top">
-                  <div className="so-card-icon-wrap">
-                    <Icon name="building" size={20} />
+              <div className="so-biz-full-card so-biz-full-card--enterprise">
+                <div className="so-biz-full-grid">
+                  {/* Left Column: Plan Content & Features */}
+                  <div className="so-biz-full-content">
+                    <div className="so-biz-eyebrow">
+                      <Icon name="building" size={13} />
+                      <span>ENTERPRISE</span>
+                    </div>
+
+                    <h3 className="so-biz-plan-headline">Control Complexity. Scale with Confidence.</h3>
+                    <p className="so-biz-plan-desc">
+                      Run every location from one platform with custom workflows, detailed permissions and reports built for leadership, backed by priority support.
+                    </p>
+
+                    <div className="so-biz-divider" />
+
+                    <div className="so-biz-features-section">
+                      <div className="so-biz-features-eyebrow">
+                        <span className="so-biz-check-mark">✓</span> EVERYTHING IN PROFESSIONAL, PLUS
+                      </div>
+                      <div className="so-biz-features-grid">
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="setup" size={14} />
+                          </span>
+                          <span>Multi-Entity Custom Workflow Engine</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="lock" size={14} />
+                          </span>
+                          <span>Granular Role-Based Access & Audit Logs</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="chart" size={14} />
+                          </span>
+                          <span>Custom BI Reports & Executive Analytics</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="globe" size={14} />
+                          </span>
+                          <span>Multi-Branch & Global Location Governance</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="shield" size={14} />
+                          </span>
+                          <span>Single Sign-On (SSO), SCIM & Enterprise Security</span>
+                        </div>
+                        <div className="so-biz-feature-item">
+                          <span className="so-biz-feat-icon-box">
+                            <Icon name="chat" size={14} />
+                          </span>
+                          <span>Dedicated Success Manager & 24/7 SLA</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="so-biz-footer-row">
+                      <Link to="/solutions/enterprises" className="so-biz-explore-btn">
+                        Explore Solutions <Icon name="arrow" size={14} />
+                      </Link>
+                      <button type="button" onClick={() => openDemoModal()} className="so-biz-features-link">
+                        See all features
+                      </button>
+                    </div>
                   </div>
-                  <span className="so-stage-emp-pill">Enterprise</span>
+
+                  {/* Right Column: Real UI Dashboard Preview */}
+                  <div className="so-biz-visual-col">
+                    <div className="so-biz-img-frame">
+                      <img
+                        src="/images/solution-enterprise.jpg"
+                        alt="LattiumHR Enterprise Global Operations Dashboard"
+                        className="so-biz-card-img"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
                 </div>
-
-                <h3 className="so-card-title">Control Complexity. Scale with Confidence.</h3>
-
-                <p className="so-card-desc">
-                  Manage complex organizational structures, multiple entities, locations and role-based access through a connected HRMS platform.
-                </p>
-
-                <ul className="so-checklist">
-                  <li className="so-checklist-item">
-                    <span className="so-check-ico">✓</span>
-                    <span>Manage multiple entities and locations</span>
-                  </li>
-                  <li className="so-checklist-item">
-                    <span className="so-check-ico">✓</span>
-                    <span>Control access with role-based permissions</span>
-                  </li>
-                  <li className="so-checklist-item">
-                    <span className="so-check-ico">✓</span>
-                    <span>Centralize workforce information</span>
-                  </li>
-                </ul>
-
-                <Link to="/solutions/enterprises" className="so-card-link-btn">
-                  Explore Solutions →
-                </Link>
               </div>
             </div>
           </div>
         </section>
 
         {/* =================================================================
-            3. FUNCTIONAL LEADERSHIP SOLUTIONS (EXACT REFERENCE PARITY WITH PRIMARY THEME)
+            3. VERTICAL WORKFLOW SOLUTIONS SECTION (BY INDUSTRY)
+            ================================================================= */}
+        <section className="so-section so-industry-section" id="industries">
+          <div className="container">
+            <SectionHeading
+              eyebrow="VERTICAL WORKFLOW SOLUTIONS"
+              title="Pre-Engineered Solutions for Your Industry's Operating Realities"
+              body="Choose your industry to see the exact workflows, compliance and reports we have already built in."
+              center
+            />
+
+            {/* Industry Pill Tabs */}
+            <div className="so-vertical-tabs-wrap">
+              {verticalIndustries.map((ind, idx) => {
+                const isActive = activeIndustryTab === idx;
+                return (
+                  <button
+                    key={ind.id}
+                    type="button"
+                    className={`so-vertical-tab-btn ${isActive ? "active" : ""}`}
+                    onClick={() => setActiveIndustryTab(idx)}
+                  >
+                    {ind.name}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Showcase Card */}
+            {(() => {
+              const currentIndustry = verticalIndustries[activeIndustryTab] || verticalIndustries[0];
+              return (
+                <div className="so-vertical-showcase-card">
+                  <div className="so-vertical-showcase-grid">
+                    {/* Left Column */}
+                    <div className="so-vertical-left-col">
+                      <span className="so-vertical-industry-eyebrow">VERTICAL WORKFLOW BLUEPRINT</span>
+                      <h3 className="so-vertical-industry-name">{currentIndustry.name}</h3>
+                      <p className="so-vertical-industry-desc">{currentIndustry.desc}</p>
+
+                      <div className="so-vertical-features-grid">
+                        {currentIndustry.features.map((feat, idx) => (
+                          <div key={idx} className="so-vertical-feat-card">
+                            <div className="so-vertical-feat-icon">
+                              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="so-check-svg">
+                                <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                              </svg>
+                            </div>
+                            <div className="so-vertical-feat-text">
+                              <h4 className="so-vertical-feat-title">{feat.title}</h4>
+                              <p className="so-vertical-feat-desc">{feat.desc}</p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="so-vertical-actions-row">
+                        <Link to={currentIndustry.link} className="so-vertical-cta-btn">
+                          Explore full solution →
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="so-vertical-right-col">
+                      <div className="so-vertical-art-banner">
+                        <svg viewBox="0 0 340 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="so-vertical-art-svg">
+                          {/* Left Monitor / Card */}
+                          <g transform="translate(35, 20)">
+                            <circle cx="50" cy="20" r="14" fill="#f472b6" />
+                            <rect x="0" y="44" width="100" height="72" rx="8" fill="#150822" stroke="#3b174e" strokeWidth="1.5" />
+                            <rect x="16" y="66" width="68" height="6.5" rx="3.25" fill="#fce7f3" />
+                            <rect x="16" y="82" width="46" height="5.5" rx="2.75" fill="#f472b6" opacity="0.85" />
+                          </g>
+
+                          {/* Right Monitor / Card */}
+                          <g transform="translate(185, 20)">
+                            <circle cx="50" cy="20" r="14" fill="#f472b6" />
+                            <rect x="0" y="44" width="100" height="72" rx="8" fill="#150822" stroke="#3b174e" strokeWidth="1.5" />
+                            <rect x="18" y="82" width="8" height="20" rx="2" fill="#a855f7" />
+                            <rect x="33" y="66" width="8" height="36" rx="2" fill="#34d399" />
+                            <rect x="48" y="56" width="8" height="46" rx="2" fill="#f472b6" />
+                            <rect x="63" y="74" width="8" height="28" rx="2" fill="#38bdf8" />
+                          </g>
+                        </svg>
+                      </div>
+
+                      <div className="so-vertical-stat-box">
+                        <svg viewBox="0 0 20 20" fill="currentColor" className="so-stat-trend-svg">
+                          <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
+                        </svg>
+                        <span>{currentIndustry.stat}</span>
+                      </div>
+
+                      <div className="so-vertical-compliance-box">
+                        <div className="so-vertical-compliance-title">COMPLIANCE BUILT IN</div>
+                        <div className="so-vertical-compliance-pills">
+                          {currentIndustry.compliance.map((c) => (
+                            <span key={c} className="so-vertical-compliance-pill">
+                              {c}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="so-vertical-guarantee-card">
+                        <div className="so-vertical-guarantee-icon">
+                          <svg viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 1.944A11.954 11.954 0 012.166 5C2.056 5.649 2 6.319 2 7c0 5.225 3.34 9.67 8 11.317C14.66 16.67 18 12.225 18 7c0-.682-.057-1.35-.166-2.001A11.954 11.954 0 0110 1.944zM14.707 7.707a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l5-5z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        <div className="so-vertical-guarantee-content">
+                          <strong className="so-vertical-guarantee-title">Pre-Engineered &amp; Audit-Ready</strong>
+                          <p className="so-vertical-guarantee-desc">Fully configured to statutory labor acts, provident fund, and TDS guidelines with zero penalty risk.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })()}
+          </div>
+        </section>
+
+        {/* =================================================================
+            4. FUNCTIONAL LEADERSHIP SOLUTIONS (EXACT REFERENCE PARITY WITH PRIMARY THEME)
             ================================================================= */}
         <section className="so-fl-section" id="roles">
           <div className="container">
@@ -581,7 +942,7 @@ export function SolutionsOverview() {
                             <div className="so-fl-stat-head">
                               <span className="so-fl-stat-name">Total Payroll</span>
                             </div>
-                            <div className="so-fl-stat-val">₹ 48,75,000</div>
+                            <div className="so-fl-stat-val">{isIndia ? "₹ 48,75,000" : "$ 59,200"}</div>
                             <div className="so-fl-stat-badge so-fl-stat-badge--green">↑ 2.5% vs last month</div>
                           </div>
 
@@ -625,7 +986,7 @@ export function SolutionsOverview() {
                                     strokeDasharray="19.1 238.76" strokeDashoffset="-219.6" transform="rotate(-90 50 50)" />
                                 </svg>
                                 <div className="so-fl-donut-center-text">
-                                  <span className="amount">₹48.75L</span>
+                                  <span className="amount">{isIndia ? "₹48.75L" : "$59.2K"}</span>
                                   <span className="lbl">Total</span>
                                 </div>
                               </div>
@@ -807,472 +1168,7 @@ export function SolutionsOverview() {
         </section>
 
         {/* =================================================================
-            5. STANDALONE MULTI-BRANCH NETWORK ARCHITECTURE SECTION
-            ================================================================= */}
-        <section className="so-section so-multibranch-section" id="multi-branch">
-          <div className="container">
-            <SectionHeading
-              eyebrow="DISTRIBUTED BRANCH ARCHITECTURE"
-              title="Every Branch Connected. Every Team in Sync."
-              body="Manage employees, attendance and HR operations across multiple locations from one centralized platform—while giving each branch the access and visibility it needs."
-              center
-            />
-
-            <div
-              className="so-branch-showcase"
-              onMouseEnter={() => setIsBranchAutoPaused(true)}
-              onMouseLeave={() => setIsBranchAutoPaused(false)}
-            >
-              <div className="so-branch-quad-grid">
-                {/* Left Side: Top-Left & Bottom-Left */}
-                <div className="so-branch-side-col so-branch-side--left">
-                  {/* Top-Left Corner */}
-                  <div
-                    className={`so-branch-corner-card ${activeBranchIndex === 0 ? "is-active" : ""}`}
-                    onClick={() => setActiveBranchIndex(0)}
-                    onMouseEnter={() => setActiveBranchIndex(0)}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={branchPillars[0].title}
-                  >
-                    <div className="so-branch-icon-bubble">
-                      <Icon name={branchPillars[0].icon} size={18} />
-                    </div>
-                    <h3 className="so-branch-corner-title">{branchPillars[0].title}</h3>
-                    <p className="so-branch-corner-desc">{branchPillars[0].desc}</p>
-                    <div className="so-branch-card-action">
-                      <Link to="/solutions/multi-location" className="so-branch-card-btn">
-                        Explore Multi-Branch Solutions <Icon name="arrow" size={13} />
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* Bottom-Left Corner */}
-                  <div
-                    className={`so-branch-corner-card ${activeBranchIndex === 2 ? "is-active" : ""}`}
-                    onClick={() => setActiveBranchIndex(2)}
-                    onMouseEnter={() => setActiveBranchIndex(2)}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={branchPillars[2].title}
-                  >
-                    <div className="so-branch-icon-bubble">
-                      <Icon name={branchPillars[2].icon} size={18} />
-                    </div>
-                    <h3 className="so-branch-corner-title">{branchPillars[2].title}</h3>
-                    <p className="so-branch-corner-desc">{branchPillars[2].desc}</p>
-                    <div className="so-branch-card-action">
-                      <Link to="/solutions/multi-location" className="so-branch-card-btn">
-                        Explore Multi-Branch Solutions <Icon name="arrow" size={13} />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Center Column: Modern Rounded Display Frame */}
-                <div className="so-branch-center-col">
-                  <div className="so-branch-display-frame">
-                    <div className="so-branch-display-ambient" />
-                    <div className="so-branch-display-window">
-                      {branchPillars.map((pillar, idx) => (
-                        <img
-                          key={pillar.id}
-                          src={pillar.image}
-                          alt={pillar.alt}
-                          className={`so-branch-display-img ${idx === activeBranchIndex ? "is-active" : ""}`}
-                          loading={idx === 0 ? "eager" : "lazy"}
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Indicator Dots for Slides */}
-                  <div className="so-branch-dots" role="tablist" aria-label="Branch Architecture Slides">
-                    {branchPillars.map((pillar, idx) => (
-                      <button
-                        key={pillar.id}
-                        type="button"
-                        role="tab"
-                        aria-selected={idx === activeBranchIndex}
-                        className={`so-branch-dot ${idx === activeBranchIndex ? "is-active" : ""}`}
-                        onClick={() => setActiveBranchIndex(idx)}
-                        aria-label={`View ${pillar.title}`}
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Right Side: Top-Right & Bottom-Right */}
-                <div className="so-branch-side-col so-branch-side--right">
-                  {/* Top-Right Corner */}
-                  <div
-                    className={`so-branch-corner-card ${activeBranchIndex === 1 ? "is-active" : ""}`}
-                    onClick={() => setActiveBranchIndex(1)}
-                    onMouseEnter={() => setActiveBranchIndex(1)}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={branchPillars[1].title}
-                  >
-                    <div className="so-branch-icon-bubble">
-                      <Icon name={branchPillars[1].icon} size={18} />
-                    </div>
-                    <h3 className="so-branch-corner-title">{branchPillars[1].title}</h3>
-                    <p className="so-branch-corner-desc">{branchPillars[1].desc}</p>
-                    <div className="so-branch-card-action">
-                      <Link to="/solutions/multi-location" className="so-branch-card-btn">
-                        Explore Multi-Branch Solutions <Icon name="arrow" size={13} />
-                      </Link>
-                    </div>
-                  </div>
-
-                  {/* Bottom-Right Corner */}
-                  <div
-                    className={`so-branch-corner-card ${activeBranchIndex === 3 ? "is-active" : ""}`}
-                    onClick={() => setActiveBranchIndex(3)}
-                    onMouseEnter={() => setActiveBranchIndex(3)}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={branchPillars[3].title}
-                  >
-                    <div className="so-branch-icon-bubble">
-                      <Icon name={branchPillars[3].icon} size={18} />
-                    </div>
-                    <h3 className="so-branch-corner-title">{branchPillars[3].title}</h3>
-                    <p className="so-branch-corner-desc">{branchPillars[3].desc}</p>
-                    <div className="so-branch-card-action">
-                      <Link to="/solutions/multi-location" className="so-branch-card-btn">
-                        Explore Multi-Branch Solutions <Icon name="arrow" size={13} />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Section Bottom CTA */}
-            <div className="so-branch-bottom-action">
-              <Link to="/solutions/multi-location" className="so-branch-cta-btn">
-                Explore Multi-Branch Solutions <Icon name="arrow" size={15} />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* =================================================================
-            6. STANDALONE INDUSTRY SOLUTIONS SECTION (4 CARDS WITH CLEAR HD IMAGES)
-            ================================================================= */}
-        <section className="so-section so-industry-section" id="industries">
-          <div className="container">
-            <SectionHeading
-              eyebrow="VERTICAL WORKFLOW SOLUTIONS"
-              title="Pre-Engineered Solutions for Your Industry's Operating Realities"
-              center
-            />
-
-            <div className="so-industry-grid-4">
-              {/* Card 1: Tech & Startups */}
-              <div className="so-industry-card">
-                <div className="so-industry-img-box">
-                  <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="so-industry-vector">
-                    <defs>
-                      <linearGradient id="tech-bg" x1="0" y1="0" x2="320" y2="180" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stopColor="#351848" />
-                        <stop offset="100%" stopColor="#5a2470" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="320" height="180" fill="url(#tech-bg)" />
-                    <path d="M 0 115 Q 160 85 320 115 L 320 180 L 0 180 Z" fill="#441a54" opacity="0.6" />
-                    <path d="M 0 138 L 320 138 L 320 180 L 0 180 Z" fill="#240f32" />
-                    <line x1="0" y1="138" x2="320" y2="138" stroke="#1c0a27" strokeWidth="2" />
-
-                    {/* Person 1 (behind left monitor) */}
-                    <circle cx="95" cy="65" r="13" fill="#fbcfe8" />
-                    <path d="M 72 88 C 72 75 118 75 118 88" fill="#831843" />
-
-                    {/* Monitor 1 (Left) */}
-                    <rect x="91" y="116" width="8" height="22" fill="#1b1226" />
-                    <rect x="76" y="136" width="38" height="3" rx="1.5" fill="#1b1226" />
-                    <rect x="52" y="72" width="86" height="52" rx="6" fill="#150d20" stroke="#4a2260" strokeWidth="2" />
-                    <rect x="62" y="84" width="45" height="3.5" rx="1.5" fill="#f472b6" />
-                    <rect x="62" y="93" width="65" height="3.5" rx="1.5" fill="#e2e8f0" opacity="0.8" />
-                    <rect x="62" y="102" width="32" height="3.5" rx="1.5" fill="#c084fc" />
-
-                    {/* Person 2 (behind right monitor) */}
-                    <circle cx="215" cy="65" r="13" fill="#fbcfe8" />
-                    <path d="M 192 88 C 192 75 238 75 238 88" fill="#831843" />
-
-                    {/* Monitor 2 (Right) */}
-                    <rect x="211" y="116" width="8" height="22" fill="#1b1226" />
-                    <rect x="196" y="136" width="38" height="3" rx="1.5" fill="#1b1226" />
-                    <rect x="172" y="72" width="86" height="52" rx="6" fill="#150d20" stroke="#4a2260" strokeWidth="2" />
-                    <rect x="184" y="98" width="7" height="18" rx="1.5" fill="#a855f7" />
-                    <rect x="196" y="86" width="7" height="30" rx="1.5" fill="#c084fc" />
-                    <rect x="208" y="92" width="7" height="24" rx="1.5" fill="#f472b6" />
-                    <rect x="220" y="82" width="7" height="34" rx="1.5" fill="#e2e8f0" />
-                    <rect x="232" y="102" width="7" height="14" rx="1.5" fill="#a855f7" />
-
-                    {/* Green Desk Plant on Right */}
-                    <path d="M 282 138 Q 284 122 280 112" stroke="#4ade80" strokeWidth="3" fill="none" strokeLinecap="round" />
-                    <path d="M 280 112 C 272 102 288 98 284 110 Z" fill="#4ade80" />
-                    <path d="M 282 125 C 290 118 292 128 283 129 Z" fill="#22c55e" />
-                  </svg>
-                </div>
-                <div className="so-industry-body">
-                  <h4 className="so-industry-title">Tech &amp; Startups</h4>
-                  <p className="so-industry-snippet">
-                    Hybrid geo-punching, sprint-aligned leaves and confidential ESOP workflows.
-                  </p>
-                  <ul className="so-industry-highlights">
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Hybrid &amp; remote geo-punching</span>
-                    </li>
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Sprint-aligned leave rules</span>
-                    </li>
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Confidential salary bands &amp; ESOP</span>
-                    </li>
-                  </ul>
-                  <Link to="/solutions/industries" className="so-industry-cta-link">
-                    Explore solution →
-                  </Link>
-                </div>
-              </div>
-
-              {/* Card 2: Healthcare & Retail */}
-              <div className="so-industry-card">
-                <div className="so-industry-img-box">
-                  <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="so-industry-vector">
-                    <defs>
-                      <linearGradient id="health-bg" x1="0" y1="0" x2="320" y2="180" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stopColor="#2c174f" />
-                        <stop offset="100%" stopColor="#4f2580" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="320" height="180" fill="url(#health-bg)" />
-                    <rect x="0" y="146" width="320" height="34" fill="#210f3c" />
-
-                    {/* Shelves on left */}
-                    <rect x="30" y="42" width="138" height="96" rx="4" fill="#1d0d35" stroke="#482270" strokeWidth="2" />
-                    <line x1="30" y1="74" x2="168" y2="74" stroke="#482270" strokeWidth="2" />
-                    <line x1="30" y1="106" x2="168" y2="106" stroke="#482270" strokeWidth="2" />
-
-                    {/* Top shelf items */}
-                    <rect x="40" y="52" width="10" height="18" rx="2" fill="#ffffff" />
-                    <rect x="58" y="49" width="10" height="21" rx="2" fill="#f472b6" />
-                    <rect x="76" y="54" width="10" height="16" rx="2" fill="#38bdf8" />
-                    <rect x="94" y="50" width="10" height="20" rx="2" fill="#ffffff" />
-                    <rect x="112" y="52" width="10" height="18" rx="2" fill="#4ade80" />
-                    <rect x="130" y="49" width="10" height="21" rx="2" fill="#c084fc" />
-                    <rect x="148" y="53" width="10" height="17" rx="2" fill="#ffffff" />
-
-                    {/* Middle shelf items */}
-                    <rect x="40" y="83" width="14" height="19" rx="2" fill="#f472b6" />
-                    <rect x="62" y="80" width="12" height="22" rx="2" fill="#4ade80" />
-                    <rect x="82" y="85" width="16" height="17" rx="2" fill="#ffffff" />
-                    <rect x="106" y="81" width="14" height="21" rx="2" fill="#38bdf8" />
-                    <rect x="128" y="83" width="12" height="19" rx="2" fill="#ffffff" />
-                    <rect x="148" y="80" width="12" height="22" rx="2" fill="#c084fc" />
-
-                    {/* Bottom shelf items */}
-                    <rect x="40" y="115" width="12" height="19" rx="2" fill="#ffffff" />
-                    <rect x="60" y="118" width="14" height="16" rx="2" fill="#38bdf8" />
-                    <rect x="82" y="113" width="12" height="21" rx="2" fill="#f472b6" />
-                    <rect x="102" y="115" width="15" height="19" rx="2" fill="#4ade80" />
-                    <rect x="125" y="113" width="14" height="21" rx="2" fill="#ffffff" />
-                    <rect x="147" y="117" width="13" height="17" rx="2" fill="#c084fc" />
-
-                    {/* Person on right */}
-                    <circle cx="235" cy="74" r="18" fill="#fed7aa" />
-                    <path d="M 215 70 Q 235 50 255 70 Z" fill="#381928" />
-                    <path d="M 200 180 C 200 126 270 126 270 180 Z" fill="#ffffff" />
-                    <rect x="231" y="132" width="8" height="18" rx="1.5" fill="#7c3aed" />
-                    <rect x="226" y="137" width="18" height="8" rx="1.5" fill="#7c3aed" />
-                  </svg>
-                </div>
-                <div className="so-industry-body">
-                  <h4 className="so-industry-title">Healthcare &amp; Retail</h4>
-                  <p className="so-industry-snippet">
-                    24/7 rotating rosters, shift swaps and store overtime approvals.
-                  </p>
-                  <ul className="so-industry-highlights">
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>24/7 roster &amp; shift swaps</span>
-                    </li>
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Supervisor overtime validation</span>
-                    </li>
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Split-shift &amp; Sunday premiums</span>
-                    </li>
-                  </ul>
-                  <Link to="/solutions/industries" className="so-industry-cta-link">
-                    Explore solution →
-                  </Link>
-                </div>
-              </div>
-
-              {/* Card 3: Manufacturing */}
-              <div className="so-industry-card">
-                <div className="so-industry-img-box">
-                  <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="so-industry-vector">
-                    <defs>
-                      <linearGradient id="manuf-bg" x1="0" y1="0" x2="320" y2="180" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stopColor="#44173d" />
-                        <stop offset="100%" stopColor="#6e2055" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="320" height="180" fill="url(#manuf-bg)" />
-
-                    {/* Sawtooth Factory Roof Silhouette */}
-                    <path d="M 0 95 L 45 70 L 45 95 L 100 68 L 100 95 L 155 68 L 155 95 L 210 68 L 210 95 L 320 58 L 320 180 L 0 180 Z" fill="#2d0e28" opacity="0.5" />
-
-                    {/* Sun Gear / Cogwheel on top right */}
-                    <g transform="translate(262, 48)">
-                      <circle cx="0" cy="0" r="16" fill="none" stroke="#fbcfe8" strokeWidth="4.5" strokeDasharray="3.5 3.5" />
-                      <circle cx="0" cy="0" r="8" fill="#fbcfe8" />
-                    </g>
-
-                    {/* Conveyor Belt System */}
-                    <rect x="30" y="130" width="260" height="12" rx="6" fill="#1b0818" />
-                    <line x1="40" y1="136" x2="280" y2="136" stroke="#9d3278" strokeWidth="2.5" strokeDasharray="7 5" />
-                    <rect x="55" y="142" width="9" height="30" fill="#1b0818" />
-                    <rect x="155" y="142" width="9" height="30" fill="#1b0818" />
-                    <rect x="255" y="142" width="9" height="30" fill="#1b0818" />
-
-                    {/* Manufactured parts on conveyor */}
-                    <rect x="75" y="120" width="16" height="10" rx="3" fill="#ffffff" />
-                    <rect x="180" y="108" width="18" height="11" rx="3" fill="#ffffff" />
-                    <rect x="180" y="119" width="18" height="11" rx="3" fill="#fbcfe8" />
-                    <rect x="235" y="118" width="18" height="12" rx="3" fill="#ffffff" />
-                    <rect x="260" y="122" width="16" height="8" rx="2" fill="#fbcfe8" />
-
-                    {/* Robotic Arm */}
-                    <rect x="120" y="124" width="24" height="8" rx="2" fill="#160814" />
-                    <circle cx="132" cy="116" r="8" fill="#160814" />
-                    <line x1="132" y1="116" x2="148" y2="58" stroke="#facc15" strokeWidth="9" strokeLinecap="round" />
-                    <circle cx="148" cy="58" r="8" fill="#160814" />
-                    <line x1="148" y1="58" x2="189" y2="84" stroke="#facc15" strokeWidth="8" strokeLinecap="round" />
-                    <circle cx="189" cy="84" r="6" fill="#160814" />
-                    <rect x="186" y="84" width="6" height="24" rx="1.5" fill="#160814" />
-                  </svg>
-                </div>
-                <div className="so-industry-body">
-                  <h4 className="so-industry-title">Manufacturing</h4>
-                  <p className="so-industry-snippet">
-                    Contractor compliance, Form B registers and turnstile biometric gates.
-                  </p>
-                  <ul className="so-industry-highlights">
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Contract labour billing &amp; CLRA</span>
-                    </li>
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Overtime cap &amp; fatigue alerts</span>
-                    </li>
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Biometric hardware sync</span>
-                    </li>
-                  </ul>
-                  <Link to="/solutions/industries" className="so-industry-cta-link">
-                    Explore solution →
-                  </Link>
-                </div>
-              </div>
-
-              {/* Card 4: Financial Services */}
-              <div className="so-industry-card">
-                <div className="so-industry-img-box">
-                  <svg viewBox="0 0 320 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="so-industry-vector">
-                    <defs>
-                      <linearGradient id="fin-bg" x1="0" y1="0" x2="320" y2="180" gradientUnits="userSpaceOnUse">
-                        <stop offset="0%" stopColor="#17183d" />
-                        <stop offset="100%" stopColor="#2c225e" />
-                      </linearGradient>
-                    </defs>
-                    <rect width="320" height="180" fill="url(#fin-bg)" />
-
-                    {/* City Skyline Silhouettes */}
-                    <rect x="25" y="98" width="22" height="82" fill="#13142e" />
-                    <rect x="42" y="78" width="26" height="102" fill="#191a38" />
-                    <rect x="76" y="105" width="20" height="75" fill="#13142e" />
-                    <rect x="105" y="65" width="32" height="115" fill="#201f46" />
-                    <rect x="145" y="92" width="28" height="88" fill="#171836" />
-                    <rect x="185" y="58" width="36" height="122" fill="#22214c" />
-                    <rect x="230" y="82" width="26" height="98" fill="#191a3c" />
-                    <rect x="268" y="104" width="32" height="76" fill="#13142e" />
-
-                    {/* Window lights */}
-                    <circle cx="55" cy="90" r="1.5" fill="#ffffff" opacity="0.6" />
-                    <circle cx="55" cy="105" r="1.5" fill="#ffffff" opacity="0.6" />
-                    <circle cx="120" cy="78" r="1.5" fill="#ffffff" opacity="0.7" />
-                    <circle cx="120" cy="92" r="1.5" fill="#ffffff" opacity="0.7" />
-                    <circle cx="202" cy="72" r="1.5" fill="#ffffff" opacity="0.8" />
-                    <circle cx="202" cy="86" r="1.5" fill="#ffffff" opacity="0.8" />
-                    <circle cx="242" cy="95" r="1.5" fill="#ffffff" opacity="0.6" />
-
-                    {/* Rising Trend Line Graph */}
-                    <polyline
-                      points="35,142 80,118 125,130 170,96 215,106 268,54"
-                      fill="none"
-                      stroke="#f472b6"
-                      strokeWidth="3.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <circle cx="35" cy="142" r="4" fill="#ffffff" stroke="#f472b6" strokeWidth="2.5" />
-                    <circle cx="80" cy="118" r="4" fill="#ffffff" stroke="#f472b6" strokeWidth="2.5" />
-                    <circle cx="125" cy="130" r="4" fill="#ffffff" stroke="#f472b6" strokeWidth="2.5" />
-                    <circle cx="170" cy="96" r="4" fill="#ffffff" stroke="#f472b6" strokeWidth="2.5" />
-                    <circle cx="215" cy="106" r="4" fill="#ffffff" stroke="#f472b6" strokeWidth="2.5" />
-                    <circle cx="268" cy="54" r="4" fill="#ffffff" stroke="#f472b6" strokeWidth="2.5" />
-
-                    {/* Gold Rupee Coin at Peak */}
-                    <circle cx="288" cy="40" r="11" fill="#f59e0b" stroke="#fbbf24" strokeWidth="1.5" />
-                    <circle cx="288" cy="40" r="8.5" fill="none" stroke="#d97706" strokeWidth="1" />
-                    <text x="288" y="44" fontSize="10.5" fontWeight="900" fill="#78350f" textAnchor="middle" fontFamily="system-ui">
-                      ₹
-                    </text>
-                  </svg>
-                </div>
-                <div className="so-industry-body">
-                  <h4 className="so-industry-title">Financial Services</h4>
-                  <p className="so-industry-snippet">
-                    Billable timesheets synced to payroll with multi-entity runs and audit trails.
-                  </p>
-                  <ul className="so-industry-highlights">
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Timesheet-to-payroll sync</span>
-                    </li>
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Multi-currency salary runs</span>
-                    </li>
-                    <li>
-                      <span className="ico">✓</span>
-                      <span>Role-based financial audit trails</span>
-                    </li>
-                  </ul>
-                  <Link to="/solutions/industries" className="so-industry-cta-link">
-                    Explore solution →
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =================================================================
-            7. FAQ SECTION (EXACT REFERENCE PARITY)
+            5. FAQ SECTION (EXACT REFERENCE PARITY)
             ================================================================= */}
         <section className="faq-section" id="faq">
           <div className="container faq-grid">
@@ -1282,7 +1178,7 @@ export function SolutionsOverview() {
                 title="Everything you need to know"
                 body="Can’t find what you’re looking for? Our team is happy to help."
               />
-              <Link className="text-link" to="/resources/faqs">
+              <Link className="text-link" to="/faq#pricing-and-plans">
                 View all FAQs <Icon name="arrow" size={17} />
               </Link>
             </div>

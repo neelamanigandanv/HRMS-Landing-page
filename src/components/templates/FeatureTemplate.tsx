@@ -12,8 +12,10 @@ import {
   ConnectedModuleItem,
   BusinessValueItem,
 } from "../../data/featuresData";
+import { useCurrency } from "../../context/CurrencyContext";
 
 export function FeatureTemplate({ feature }: { feature: FeatureData }) {
+  const { formatText } = useCurrency();
   const [activeTabIdx, setActiveTabIdx] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
@@ -222,7 +224,7 @@ export function FeatureTemplate({ feature }: { feature: FeatureData }) {
               <div className="mockup-header-bar">
                 <div>
                   <strong>{feature.mockupTitle}</strong>
-                  <small>{feature.mockupSubtitle}</small>
+                  <small>{formatText(feature.mockupSubtitle)}</small>
                 </div>
                 <span className="mockup-status-pill">
                   <Icon name="check" size={12} /> Active Sync
@@ -233,8 +235,8 @@ export function FeatureTemplate({ feature }: { feature: FeatureData }) {
                 <div className="mockup-stats-strip">
                   {feature.roiStats.map((stat, idx) => (
                     <div key={idx} className="mini-stat">
-                      <strong>{stat.value}</strong>
-                      <small>{stat.label}</small>
+                      <strong>{formatText(stat.value)}</strong>
+                      <small>{formatText(stat.label)}</small>
                     </div>
                   ))}
                 </div>
@@ -337,8 +339,8 @@ export function FeatureTemplate({ feature }: { feature: FeatureData }) {
             <div className="demo-kpis-strip">
               {activeTab.kpis.map((kpi, kIdx) => (
                 <div key={kIdx} className="demo-kpi-item">
-                  <strong>{kpi.value}</strong>
-                  <small>{kpi.label}</small>
+                  <strong>{formatText(kpi.value)}</strong>
+                  <small>{formatText(kpi.label)}</small>
                 </div>
               ))}
             </div>
@@ -350,10 +352,10 @@ export function FeatureTemplate({ feature }: { feature: FeatureData }) {
                     {row.badge}
                   </span>
                   <div className="demo-row-details">
-                    <strong>{row.title}</strong>
-                    <small>{row.desc}</small>
+                    <strong>{formatText(row.title)}</strong>
+                    <small>{formatText(row.desc)}</small>
                   </div>
-                  <span className="demo-row-val">{row.value}</span>
+                  <span className="demo-row-val">{formatText(row.value)}</span>
                 </div>
               ))}
             </div>
@@ -473,13 +475,13 @@ export function FeatureTemplate({ feature }: { feature: FeatureData }) {
             {businessValues.map((bv, idx) => (
               <div key={idx} className="business-value-card">
                 <div className="bv-header-row">
-                  <span className="bv-metric">{bv.metric}</span>
+                  <span className="bv-metric">{formatText(bv.metric)}</span>
                   <div className="bv-icon-box">
                     <Icon name={bv.icon} size={18} />
                   </div>
                 </div>
-                <strong>{bv.title}</strong>
-                <p>{bv.desc}</p>
+                <strong>{formatText(bv.title)}</strong>
+                <p>{formatText(bv.desc)}</p>
               </div>
             ))}
           </div>
@@ -516,6 +518,11 @@ export function FeatureTemplate({ feature }: { feature: FeatureData }) {
                   {openFaq === idx && <p>{faq.a}</p>}
                 </div>
               ))}
+            </div>
+            <div style={{ textAlign: "center", marginTop: "28px" }}>
+              <Link to="/faq" className="text-link" style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                View all FAQs <Icon name="arrow" size={15} />
+              </Link>
             </div>
           </div>
         </section>

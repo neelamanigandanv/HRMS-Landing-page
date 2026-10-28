@@ -10,9 +10,11 @@ import {
   NavLinkItem,
 } from "../../data/navigationData";
 import { useDemoModal } from "../../context/DemoModalContext";
+import { useCurrency } from "../../context/CurrencyContext";
 
 export function Navbar() {
   const { openDemoModal } = useDemoModal();
+  const { currency, currencySymbol, toggleCurrency } = useCurrency();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpandedSection, setMobileExpandedSection] = useState<string | null>(null);
@@ -106,13 +108,6 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="nav-links-desktop" aria-label="Main Navigation">
-          <Link
-            to="/"
-            className={`nav-link-item ${location.pathname === "/" ? "active" : ""}`}
-          >
-            Home
-          </Link>
-
           {/* Product Dropdown */}
           <div
             className={`nav-dropdown-wrapper ${activeMenu === "product" ? "is-open" : ""}`}
@@ -239,7 +234,7 @@ export function Navbar() {
           >
             <button
               type="button"
-              className={`nav-link-item dropdown-trigger ${isCurrentActive("/resources") || isCurrentActive("/help") || isCurrentActive("/support") ? "active" : ""}`}
+              className={`nav-link-item dropdown-trigger ${isCurrentActive("/resources") || isCurrentActive("/help") || isCurrentActive("/support") || isCurrentActive("/blog") ? "active" : ""}`}
               onClick={() => toggleDropdown("resources")}
               aria-expanded={activeMenu === "resources"}
               aria-haspopup="true"
@@ -260,9 +255,9 @@ export function Navbar() {
                     <strong>Knowledge & Customer Support</strong>
                     <p>Compliance guides, glossary terms, help documentation, and direct support.</p>
                   </div>
-                  <Link to="/resources" className="mega-overview-btn">
+                  {/* <Link to="/resources" className="mega-overview-btn">
                     Resources Overview <Icon name="arrow" size={14} />
-                  </Link>
+                  </Link> */}
                 </div>
 
                 <div className="mega-grid-resources">
@@ -300,8 +295,8 @@ export function Navbar() {
 
         {/* CTA Actions */}
         <div className="nav-actions">
-          <Button onClick={() => openDemoModal()} className="nav-primary-cta">
-            Request a Demo <Icon name="arrow" size={16} />
+          <Button to="/contact" className="nav-primary-cta">
+            Contact Us <Icon name="arrow" size={16} />
           </Button>
 
           {/* Mobile Menu Toggle Button */}
@@ -322,9 +317,6 @@ export function Navbar() {
         <div className="mobile-drawer-overlay">
           <div className="mobile-drawer-content">
             <div className="mobile-drawer-links">
-              <Link to="/" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>
-                Home
-              </Link>
 
               {/* Mobile Product Accordion */}
               <div className="mobile-nav-accordion">
@@ -414,13 +406,11 @@ export function Navbar() {
 
             <div className="mobile-drawer-cta">
               <Button
-                onClick={() => {
-                  setMobileOpen(false);
-                  openDemoModal();
-                }}
+                to="/contact"
+                onClick={() => setMobileOpen(false)}
                 className="btn-full"
               >
-                Request a Demo <Icon name="arrow" size={16} />
+                Contact Us <Icon name="arrow" size={16} />
               </Button>
             </div>
           </div>

@@ -1,0 +1,316 @@
+/* ==========================================================================
+   PERFORMANCE MANAGEMENT PAGE STYLESHEET
+   Follows EmployeeManagementPage design system:
+   Plum (#802B5B) & violet highlights, clean typography, 5-step workflow,
+   floating dashboard stage, and high-fidelity appraisal widgets.
+   ========================================================================== */
+
+@import "./EmployeeManagementPage.css";
+
+/* Live Status Pulse on Performance Showcase */
+.perf-live-pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  margin-right: 6px;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: perf-pulse-glow 2s infinite;
+}
+
+@keyframes perf-pulse-glow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* ==========================================================================
+   HERO TRANSITION & STAGE
+   ========================================================================== */
+.perf-page-wrapper .emp-hero-floating-stage {
+  max-width: 1220px;
+}
+
+.perf-page-wrapper .emp-problem-section {
+  padding-top: 130px !important;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1100px) {
+  .perf-page-wrapper .emp-problem-section {
+    padding-top: 4rem !important;
+  }
+}
+
+/* Center Hero Preview Image Mockup */
+.perf-hero-showcase-frame {
+  background: #ffffff;
+  border: 1px solid rgba(81, 70, 216, 0.14);
+  border-radius: 24px;
+  box-shadow: 0 25px 60px -15px rgba(25, 23, 53, 0.16), 0 6px 18px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perf-hero-showcase-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 70px -12px rgba(128, 43, 91, 0.18), 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.perf-hero-mockup-img {
+  width: 100%;
+  height: 380px !important;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .perf-hero-mockup-img {
+    height: 280px !important;
+  }
+}
+
+/* Hero Widget Specifics */
+.perf-widget-metric-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1edf5;
+}
+
+.perf-widget-metric-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.perf-widget-metric-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8125rem;
+  color: #555268;
+  font-weight: 500;
+}
+
+.perf-widget-metric-val {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #191735;
+}
+
+.perf-widget-pill-amber {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #d97706;
+  background: #fffbeb;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+/* ==========================================================================
+   CHALLENGES 4-COLUMN BALANCED GRID
+   ========================================================================== */
+.perf-page-wrapper .emp-problem-grid,
+.perf-problem-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.5rem !important;
+}
+
+@media (max-width: 1080px) {
+  .perf-page-wrapper .emp-problem-grid,
+  .perf-problem-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .perf-page-wrapper .emp-problem-grid,
+  .perf-problem-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   5-STEP WORKFLOW GRID ADAPTATION
+   ========================================================================== */
+.perf-process-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 2.5rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1100px) {
+  .perf-process-grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .perf-process-grid-5 {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 2rem auto 0;
+  }
+}
+
+.perf-process-card {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #edf2f0;
+  border-radius: 20px !important;
+  padding: 3.5rem 1.15rem 2.25rem !important;
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden !important;
+  box-shadow: 0 10px 30px -5px rgba(128, 43, 91, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
+}
+
+.perf-process-card:hover,
+.perf-process-card.is-active {
+  border-color: #802B5B !important;
+  box-shadow: 0 20px 45px -8px rgba(128, 43, 91, 0.14) !important;
+  transform: translateY(-6px);
+}
+
+.perf-process-card .emp-process-card-title {
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  color: #191735 !important;
+  margin: 0 0 8px !important;
+}
+
+.perf-process-card .emp-process-card-desc {
+  font-size: 0.8125rem !important;
+  line-height: 1.55 !important;
+  color: #555268 !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+   CAPABILITY FEATURES MATRIX TAB / SUB-SECTION
+   ========================================================================== */
+.perf-matrix-section {
+  padding: 5rem 0 4.5rem;
+  background: #fbf9fc;
+  border-bottom: 1px solid #f0ecf5;
+}
+
+.perf-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 2.75rem;
+}
+
+@media (max-width: 960px) {
+  .perf-matrix-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .perf-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.perf-matrix-card {
+  background: #ffffff;
+  border: 1px solid #eae6f2;
+  border-radius: 16px;
+  padding: 2rem 1.6rem;
+  transition: all 0.25s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.perf-matrix-card:hover {
+  border-color: #802B5B;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(128, 43, 91, 0.08);
+}
+
+.perf-matrix-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(128, 43, 91, 0.08);
+  color: #802B5B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  transition: all 0.25s ease;
+}
+
+.perf-matrix-card:hover .perf-matrix-icon-wrap {
+  background: #802B5B;
+  color: #ffffff;
+}
+
+.perf-matrix-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #191735;
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.perf-matrix-desc {
+  font-size: 0.9125rem;
+  color: #555268;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.perf-matrix-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #059669;
+  background: #ecfdf5;
+  padding: 4px 10px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+/* ==========================================================================
+   HOW IT WORKS TOGETHER (ECOSYSTEM CARDS)
+   ========================================================================== */
+.perf-ecosystem-role-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #802B5B;
+  margin-bottom: 6px;
+  display: block;
+}
