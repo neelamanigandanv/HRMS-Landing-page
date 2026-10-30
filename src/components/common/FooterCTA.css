@@ -1,0 +1,467 @@
+/* ==========================================================================
+   LATTIUM HR - MODERN FLOATING FOOTER CTA BANNER
+   - Floating wide card with high-resolution photographic workplace background
+   - Visible, properly illuminated background image
+   - Pure white two-line headline with sharp text contrast
+   - Off-white two-line subheadline
+   - Action buttons: "Book a Demo" & "Estimate Price"
+   - Border radius: exactly 6px (matching Home Page Hero section buttons)
+   - Smooth bottom overlap with the dark footer
+   ========================================================================== */
+
+.footer-cta-wrapper {
+  position: relative;
+  z-index: 10;
+  padding: 48px 0 48px 0;
+  margin-bottom: 0; /* Fully inside container, bottom border and rounded corners never clipped */
+  /* Two-tone background: top half is transparent/page bg, bottom half is dark footer #17152e */
+  background: linear-gradient(to bottom, transparent 0%, transparent 50%, #17152e 50%, #17152e 100%);
+}
+
+/* Wide Container holding the card */
+.footer-cta-wrapper .container-wide {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* The Floating Hero Card */
+.footer-cta-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  padding: 84px 32px 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(10, 8, 16, 0.35), 0 4px 16px rgba(0, 0, 0, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  background-color: #1a1523;
+  /* Lightened gradient overlay so the workforce photo is clearly and properly visible */
+  background-image:
+    linear-gradient(180deg, rgba(14, 10, 22, 0.32) 0%, rgba(14, 10, 22, 0.44) 100%),
+    url('/images/footer-cta-workforce-bg.jpg');
+  background-size: cover;
+  background-position: center 32%;
+  background-repeat: no-repeat;
+}
+
+/* Subtle background vignette for edge feathering while leaving center background photo vivid */
+.footer-cta-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.05) 0%, rgba(10, 8, 16, 0.32) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Content Container */
+.footer-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Two-Line Pure White Headline */
+.footer-cta-headline {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 850;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px 0;
+  text-wrap: balance;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8), 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.footer-cta-headline span {
+  display: inline;
+}
+
+/* Two-Line Subheadline */
+.footer-cta-subheadline {
+  font-size: clamp(14px, 1.35vw, 15.5px);
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 660px;
+  margin: 0 auto 34px auto;
+  text-wrap: balance;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 450;
+}
+
+/* Responsive Line Breaks for Desktop */
+@media (min-width: 769px) {
+  .footer-cta-br {
+    display: inline;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-cta-br {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   ACTION BUTTONS ROW (Matching Home Page Hero Section Button Border Radius)
+   ========================================================================== */
+.footer-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Primary Button: Book a Demo
+   Exact 6px border radius matching Home Page Hero section button */
+.footer-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  height: 46px;
+  background: #802B5B;
+  color: #ffffff;
+  border: 1px solid #802B5B;
+  border-radius: 6px; /* Exactly like home page hero section button border radius */
+  padding: 0 0.35rem 0 1.25rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(128, 43, 91, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.footer-cta-btn-primary:hover {
+  background: #661e47;
+  border-color: #661e47;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(128, 43, 91, 0.5);
+}
+
+.footer-cta-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* White inner arrow box - 4px radius matching the home page hero */
+.footer-cta-arrow-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 4px; /* Exactly matching home page hero arrow box */
+  background: #ffffff;
+  color: #802B5B;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: transform 0.18s ease;
+}
+
+.footer-cta-btn-primary:hover .footer-cta-arrow-box {
+  transform: translateX(2px);
+}
+
+/* Secondary Button: Estimate Price
+   Exact 6px border radius matching Home Page Hero section button */
+.footer-cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 46px;
+  background: #ffffff;
+  color: #0c152e;
+  border: 1.5px solid #ffffff;
+  border-radius: 6px; /* Exactly like home page hero section button border radius */
+  padding: 0 1.35rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.footer-cta-btn-secondary:hover {
+  background: #faedf4;
+  border-color: #ffffff;
+  color: #802B5B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.footer-cta-btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 992px) {
+  .footer-cta-wrapper {
+    margin-bottom: 0;
+    padding: 36px 0 36px 0;
+  }
+
+  .footer-cta-card {
+    padding: 64px 24px 70px;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-cta-wrapper {
+    margin-bottom: 0;
+    padding: 28px 0 28px 0;
+  }
+
+  .footer-cta-wrapper .container-wide {
+    width: calc(100% - 24px);
+  }
+
+  .footer-cta-card {
+    padding: 48px 18px 54px;
+    border-radius: 20px;
+  }
+
+  .footer-cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .footer-cta-btn-primary,
+  .footer-cta-btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .footer-cta-btn-primary {
+    justify-content: space-between;
+  }
+}
+
+/* ==========================================================================
+   FULL-WIDTH NEON CURTAIN VARIANT (Exact match to reference media_1793365887111_dc3535e9.png)
+   100% full-width, edge-to-edge section with photorealistic neon fluted ribbed glass curtain
+   ========================================================================== */
+
+.footer-cta-neon-fullwidth {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #030006;
+  background-image:
+    linear-gradient(90deg, #020005 0%, rgba(2, 0, 5, 0.92) 36%, rgba(2, 0, 5, 0.3) 54%, transparent 100%),
+    url('/images/cta-neon-curtain-bg.jpg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  padding: 106px 24px 114px 24px;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 114, 182, 0.18);
+  border-bottom: 1px solid rgba(255, 114, 182, 0.24);
+  box-shadow: inset 0 20px 40px rgba(0, 0, 0, 0.65), inset 0 -20px 40px rgba(0, 0, 0, 0.65);
+  z-index: 10;
+}
+
+.footer-cta-neon-fullwidth .neon-curtain-container,
+.footer-cta-card.neon-curtain-card .footer-cta-content {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+/* Glassmorphic Pill Badge with Yellow Icon */
+.neon-curtain-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 16px 5px 6px;
+  border-radius: 9999px;
+  background: rgba(22, 8, 26, 0.72);
+  border: 1px solid rgba(255, 117, 186, 0.38);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #ffffff;
+  font-size: 0.8125rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 18px rgba(255, 115, 185, 0.16);
+}
+
+.neon-curtain-badge-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #facc15;
+  color: #16071a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(250, 204, 21, 0.45);
+}
+
+.neon-curtain-badge-icon svg {
+  stroke-width: 3.5;
+}
+
+/* Two-Line Pure White Headline */
+.neon-curtain-headline {
+  font-size: clamp(34px, 4.6vw, 56px) !important;
+  font-weight: 850 !important;
+  color: #ffffff !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 0 16px 0 !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 115, 185, 0.22) !important;
+}
+
+/* Two-Line Subheadline with Colon */
+.neon-curtain-subheadline {
+  font-size: clamp(14px, 1.3vw, 15.5px) !important;
+  line-height: 1.62 !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  max-width: 720px !important;
+  margin: 0 auto 34px auto !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95) !important;
+  font-weight: 450 !important;
+}
+
+.neon-curtain-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Primary Button: Vibrant Rose-Pink (#ff75ba) with Dark Plum text and White Arrow Badge */
+.neon-curtain-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  height: 46px;
+  padding: 0 14px 0 22px;
+  background: #ff75ba;
+  color: #16071a;
+  border: 1px solid #ff75ba;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 6px 22px rgba(255, 117, 186, 0.5), 0 2px 6px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.neon-curtain-btn-primary:hover {
+  background: #ff8ac5;
+  border-color: #ff8ac5;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 117, 186, 0.65), 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.neon-curtain-btn-primary:active {
+  transform: translateY(0);
+}
+
+.neon-curtain-arrow-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #ff75ba;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: transform 0.18s ease;
+}
+
+.neon-curtain-btn-primary:hover .neon-curtain-arrow-circle {
+  transform: translateX(3px);
+}
+
+/* Secondary Button: Dark Obsidian with Neon Pink Border */
+.neon-curtain-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 24px;
+  background: rgba(18, 6, 22, 0.65);
+  border: 1.5px solid rgba(255, 117, 186, 0.45);
+  color: #ffffff;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.neon-curtain-btn-secondary:hover {
+  background: rgba(255, 117, 186, 0.14);
+  border-color: #ff75ba;
+  color: #ffd6ec;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 117, 186, 0.28);
+}
+
+.neon-curtain-btn-secondary:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .footer-cta-neon-fullwidth {
+    padding: 72px 18px 80px 18px;
+  }
+  .neon-curtain-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .neon-curtain-btn-primary,
+  .neon-curtain-btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}

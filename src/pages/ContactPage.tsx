@@ -1,24 +1,23 @@
 import { FormEvent, useState } from "react";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
-import SectionHeading from "../components/ui/SectionHeading";
-import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
 import CustomSelect from "../components/ui/CustomSelect";
 import { submitEnquiry, NatureOfEnquiry } from "../services/enquiryService";
+import "./ContactPage.css";
 
 const CONTACT_TEAM_SIZE_OPTIONS = [
-  { value: "1-50", label: "1 – 50 employees", desc: "Startups & small teams" },
-  { value: "51-200", label: "51 – 200 employees", desc: "Mid-sized growing orgs" },
-  { value: "201-500", label: "201 – 500 employees", desc: "Multi-branch enterprises" },
-  { value: "500+", label: "500+ employees", desc: "Large workforce & conglomerates" },
+  { value: "1-50", label: "1 – 50 employees" },
+  { value: "51-200", label: "51 – 200 employees" },
+  { value: "201-500", label: "201 – 500 employees" },
+  { value: "500+", label: "500+ employees" },
 ];
 
 const CONTACT_INQUIRY_OPTIONS = [
-  { value: "Sales", label: "Schedule Live Product Demo", desc: "Tailored 30-min product walkthrough" },
-  { value: "Pricing", label: "Custom Pricing Quote", desc: "Volume & enterprise discounts" },
-  { value: "Partnership", label: "Implementation Partnership", desc: "System integrator or reseller alliances" },
-  { value: "General", label: "General Inquiry", desc: "Questions & business queries" },
+  { value: "Sales", label: "Schedule Live Product Demo" },
+  { value: "Pricing", label: "Custom Pricing Quote" },
+  { value: "Partnership", label: "Implementation Partnership" },
+  { value: "General", label: "General Inquiry" },
 ];
 
 export function ContactPage() {
@@ -84,223 +83,253 @@ export function ContactPage() {
     <PageLayout breadcrumbs={breadcrumbs} hideCTA>
       <SEO
         title="Contact Us | Connect with LattiumHR Team"
-        description="Get in touch with our product specialists, request a personalized consultation, or visit our offices in Mumbai, Bengaluru, and Delhi NCR."
+        description="Get in touch with our product specialists, request a personalized consultation, or contact our support team directly."
         canonicalPath="/contact"
       />
 
-      <section className="contact-hero">
-        <div className="container">
-          <div className="product-hero-center">
-            <span className="feature-badge">
-              <Icon name="mail" size={14} /> GET IN TOUCH
-            </span>
-            <h1>Let’s talk about your people operations</h1>
-            <p>
-              Whether you are evaluating HRMS platforms, need guidance on multi-branch attendance, or
-              have questions about statutory compliance, our team is ready to help.
+      <div className="contact-page-clean">
+        <div className="contact-clean-container">
+          {/* =================================================================
+              LEFT COLUMN: Eyebrow, Heading, Subheading & 3 Horizontal Cards
+              ================================================================= */}
+          <div className="contact-left-col">
+            <div className="contact-clean-eyebrow">
+              <span className="contact-sparkle">✦</span>
+              <span>GET IN TOUCH</span>
+              <span className="contact-sparkle">✦</span>
+            </div>
+
+            <h1 className="contact-clean-title">
+              Let’s talk about your{" "}
+              <span className="contact-highlight-plum">people operations</span>
+            </h1>
+
+            <p className="contact-clean-desc">
+              Whether you are evaluating HRMS platforms, need guidance on multi-branch
+              attendance, or have questions about statutory compliance, our team is ready to help.
             </p>
-          </div>
-        </div>
-      </section>
 
-      <section className="contact-main-section">
-        <div className="container contact-grid">
-          {/* Contact Details Column */}
-          <div className="contact-info-panel">
-            <h3>Direct Contact Channels</h3>
-            <p>Reach out to the appropriate department for immediate assistance.</p>
-
-            <div className="contact-channels-list">
-              <div className="contact-channel-item">
-                <span className="channel-icon-mini">
-                  <Icon name="mail" size={18} />
-                </span>
-                <div>
-                  <small>SALES & PRODUCT DEMOS</small>
-                  <strong>sales@lattiumhr.com</strong>
-                  <p>Response within 2 business hours</p>
+            {/* Three Horizontal Cards */}
+            <div className="contact-cards-stack">
+              {/* Card 1: Direct Email */}
+              <a href="mailto:sales@lattiumhr.com" className="contact-h-card">
+                <div className="contact-h-icon">
+                  <Icon name="mail" size={20} />
                 </div>
-              </div>
-
-              <div className="contact-channel-item">
-                <span className="channel-icon-mini">
-                  <Icon name="phone" size={18} />
-                </span>
-                <div>
-                  <small>PHONE CONSULTATION</small>
-                  <strong>+91 80001 23456</strong>
-                  <p>Mon–Fri: 9:30 AM – 6:30 PM IST</p>
+                <div className="contact-h-content">
+                  <span className="contact-h-label">SALES &amp; DEMOS</span>
+                  <span className="contact-h-main">sales@lattiumhr.com</span>
+                  <span className="contact-h-sub">Guaranteed response within 2 business hours</span>
                 </div>
-              </div>
+                <div className="contact-h-arrow">
+                  <Icon name="arrow" size={16} />
+                </div>
+              </a>
 
-              <div className="contact-channel-item">
-                <span className="channel-icon-mini">
-                  <Icon name="help-circle" size={18} />
-                </span>
-                <div>
-                  <small>CUSTOMER SUPPORT</small>
-                  <strong>support@lattiumhr.com</strong>
-                  <p>Guaranteed SLA response times</p>
+              {/* Card 2: Phone Helpline */}
+              <a href="tel:+9108041228900" className="contact-h-card">
+                <div className="contact-h-icon">
+                  <Icon name="phone" size={20} />
+                </div>
+                <div className="contact-h-content">
+                  <span className="contact-h-label">DIRECT PHONE HELPLINE</span>
+                  <span className="contact-h-main">+91 (080) 4122-8900</span>
+                  <span className="contact-h-sub">Monday – Saturday: 9:00 AM – 7:00 PM IST</span>
+                </div>
+                <div className="contact-h-arrow">
+                  <Icon name="arrow" size={16} />
+                </div>
+              </a>
+
+              {/* Card 3: Corporate Headquarters */}
+              <div className="contact-h-card">
+                <div className="contact-h-icon">
+                  <Icon name="map-pin" size={20} />
+                </div>
+                <div className="contact-h-content">
+                  <span className="contact-h-label">GLOBAL HEADQUARTERS</span>
+                  <span className="contact-h-main">Platina Tower, BKC, Mumbai</span>
+                  <span className="contact-h-sub">Level 8, G Block, Bandra Kurla Complex 400051</span>
+                </div>
+                <div className="contact-h-arrow">
+                  <Icon name="arrow" size={16} />
                 </div>
               </div>
             </div>
 
-            <div className="contact-offices-box">
-              <h4>Regional Office Addresses</h4>
-              <div className="office-address-item">
-                <strong>Mumbai Headquarters</strong>
-                <p>Level 8, Platina Tower, Bandra Kurla Complex, Mumbai 400051</p>
-              </div>
-              <div className="office-address-item">
-                <strong>Bengaluru Tech Hub</strong>
-                <p>100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru 560038</p>
-              </div>
-              <div className="office-address-item">
-                <strong>Delhi NCR Office</strong>
-                <p>Building 10B, DLF Cyber City, Gurugram, Haryana 122002</p>
-              </div>
+            <div className="contact-left-trust-pill">
+              <Icon name="shield" size={15} />
+              <span>Bilateral NDA Protected • ISO 27001 Certified • Zero Spam</span>
             </div>
           </div>
 
-          {/* Inquiry Form Column */}
-          <div className="contact-form-panel">
-            {submitted ? (
-              <div className="contact-success-state">
-                <div className="success-icon">
-                  <Icon name="check" size={32} />
-                </div>
-                <h3>Message Received</h3>
-                <p>
-                  Thank you <strong>{contactData.name}</strong>. A product specialist will review your
-                  inquiry and contact you at <strong>{contactData.email}</strong> shortly.
-                </p>
-                <button
-                  type="button"
-                  className="btn btn-secondary btn-sm"
-                  onClick={() => setSubmitted(false)}
-                >
-                  Send Another Inquiry
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="contact-form">
-                <h3>Send Us a Message</h3>
-                <div className="form-grid">
-                  <label>
-                    <span>Full Name *</span>
-                    <input
-                      type="text"
-                      required
-                      placeholder="Your name"
-                      value={contactData.name}
-                      onChange={(e) =>
-                        setContactData((prev) => ({ ...prev, name: e.target.value }))
-                      }
-                    />
-                  </label>
-                  <label>
-                    <span>Work Email *</span>
-                    <input
-                      type="email"
-                      required
-                      placeholder="you@company.com"
-                      value={contactData.email}
-                      onChange={(e) =>
-                        setContactData((prev) => ({ ...prev, email: e.target.value }))
-                      }
-                    />
-                  </label>
-                  <label>
-                    <span>Phone Number *</span>
-                    <input
-                      type="tel"
-                      required
-                      placeholder="+91 98765 43210"
-                      value={contactData.phone}
-                      onChange={(e) =>
-                        setContactData((prev) => ({ ...prev, phone: e.target.value }))
-                      }
-                    />
-                  </label>
-                  <label>
-                    <span>Company Name</span>
-                    <input
-                      type="text"
-                      placeholder="Your company name"
-                      value={contactData.company}
-                      onChange={(e) =>
-                        setContactData((prev) => ({ ...prev, company: e.target.value }))
-                      }
-                    />
-                  </label>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-                    <label htmlFor="contact-team-size" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
-                      Team Size
-                    </label>
-                    <CustomSelect
-                      id="contact-team-size"
-                      options={CONTACT_TEAM_SIZE_OPTIONS}
-                      value={contactData.teamSize}
-                      onChange={(val) => setContactData((prev) => ({ ...prev, teamSize: val }))}
-                    />
+          {/* =================================================================
+              RIGHT COLUMN: Contact Form Card
+              ================================================================= */}
+          <div className="contact-right-col">
+            <div className="contact-form-card">
+              {submitted ? (
+                <div className="contact-success-state-clean">
+                  <div className="contact-success-icon-wrap">
+                    <Icon name="check" size={30} />
                   </div>
-                  <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-                    <label htmlFor="contact-inquiry-type" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
-                      Nature of Inquiry
-                    </label>
-                    <CustomSelect
-                      id="contact-inquiry-type"
-                      options={CONTACT_INQUIRY_OPTIONS}
-                      value={contactData.inquiryType}
-                      onChange={(val) => setContactData((prev) => ({ ...prev, inquiryType: val }))}
-                    />
-                  </div>
-                </div>
-                <label className="message-label">
-                  <span>How can we help your team?</span>
-                  <textarea
-                    rows={4}
-                    placeholder="Tell us about your current HR setup, number of branches, or key challenges..."
-                    value={contactData.message}
-                    onChange={(e) =>
-                      setContactData((prev) => ({ ...prev, message: e.target.value }))
-                    }
-                  />
-                </label>
-
-                {submitError && (
-                  <div
-                    style={{
-                      backgroundColor: "#fef2f2",
-                      border: "1px solid #fecaca",
-                      borderRadius: "8px",
-                      padding: "10px 14px",
-                      color: "#991b1b",
-                      fontSize: "13px",
-                      lineHeight: "1.5",
-                      marginBottom: "14px",
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: "8px",
+                  <h3 className="contact-success-title">Message Received!</h3>
+                  <p className="contact-success-text">
+                    Thank you <strong>{contactData.name}</strong>. A workforce specialist
+                    will review your inquiry and contact you at <strong>{contactData.email}</strong> shortly.
+                  </p>
+                  <button
+                    type="button"
+                    className="contact-reset-btn"
+                    onClick={() => {
+                      setSubmitted(false);
+                      setContactData({
+                        name: "",
+                        email: "",
+                        phone: "",
+                        company: "",
+                        teamSize: "51-200",
+                        inquiryType: "Sales",
+                        message: "",
+                      });
                     }}
-                    role="alert"
                   >
-                    <Icon name="x" size={16} className="mt-0.5 flex-shrink-0" />
-                    <span>{submitError}</span>
+                    Send Another Message
+                  </button>
+                </div>
+              ) : (
+                <div>
+                  <div className="contact-form-header">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the details below and our team will get back to you within 2 hours.</p>
                   </div>
-                )}
 
-                <Button type="submit" disabled={isSubmitting} className="form-submit">
-                  {isSubmitting ? "Sending Inquiry..." : "Send Inquiry"} <Icon name="arrow" />
-                </Button>
-                <small className="privacy-note">
-                  <Icon name="shield" size={13} /> We respect your privacy. No marketing spam.
-                </small>
-              </form>
-            )}
+                  <form onSubmit={handleSubmit} noValidate className="contact-form-body">
+                    <div className="contact-fields-grid">
+                      <div className="contact-input-group">
+                        <label className="contact-label-text">
+                          Full Name <span className="required-star">*</span>
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="e.g. Kavya Sharma"
+                          value={contactData.name}
+                          onChange={(e) =>
+                            setContactData((prev) => ({ ...prev, name: e.target.value }))
+                          }
+                          className="contact-text-input"
+                        />
+                      </div>
+
+                      <div className="contact-input-group">
+                        <label className="contact-label-text">
+                          Work Email <span className="required-star">*</span>
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          placeholder="kavya@company.com"
+                          value={contactData.email}
+                          onChange={(e) =>
+                            setContactData((prev) => ({ ...prev, email: e.target.value }))
+                          }
+                          className="contact-text-input"
+                        />
+                      </div>
+
+                      <div className="contact-input-group">
+                        <label className="contact-label-text">
+                          Phone Number <span className="required-star">*</span>
+                        </label>
+                        <input
+                          type="tel"
+                          required
+                          placeholder="+91 98765 43210"
+                          value={contactData.phone}
+                          onChange={(e) =>
+                            setContactData((prev) => ({ ...prev, phone: e.target.value }))
+                          }
+                          className="contact-text-input"
+                        />
+                      </div>
+
+                      <div className="contact-input-group">
+                        <label className="contact-label-text">Company Name</label>
+                        <input
+                          type="text"
+                          placeholder="e.g. Acme Retail Pvt Ltd"
+                          value={contactData.company}
+                          onChange={(e) =>
+                            setContactData((prev) => ({ ...prev, company: e.target.value }))
+                          }
+                          className="contact-text-input"
+                        />
+                      </div>
+
+                      <div className="contact-input-group">
+                        <label className="contact-label-text">Team Size</label>
+                        <CustomSelect
+                          id="contact-team-size"
+                          options={CONTACT_TEAM_SIZE_OPTIONS}
+                          value={contactData.teamSize}
+                          onChange={(val) => setContactData((prev) => ({ ...prev, teamSize: val }))}
+                        />
+                      </div>
+
+                      <div className="contact-input-group">
+                        <label className="contact-label-text">Nature of Inquiry</label>
+                        <CustomSelect
+                          id="contact-inquiry-type"
+                          options={CONTACT_INQUIRY_OPTIONS}
+                          value={contactData.inquiryType}
+                          onChange={(val) => setContactData((prev) => ({ ...prev, inquiryType: val }))}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="contact-input-group full-width">
+                      <label className="contact-label-text">
+                        How can we help your team?
+                      </label>
+                      <textarea
+                        rows={3}
+                        placeholder="Tell us about your current HR setup, number of branches, or key challenges..."
+                        value={contactData.message}
+                        onChange={(e) =>
+                          setContactData((prev) => ({ ...prev, message: e.target.value }))
+                        }
+                        className="contact-textarea-input"
+                      />
+                    </div>
+
+                    {submitError && (
+                      <div className="contact-form-error" role="alert">
+                        <Icon name="x" size={16} />
+                        <span>{submitError}</span>
+                      </div>
+                    )}
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="contact-form-submit-btn"
+                    >
+                      <span>{isSubmitting ? "Sending Inquiry..." : "Submit Inquiry"}</span>
+                      <Icon name="arrow" size={15} />
+                    </button>
+
+                    <div className="contact-form-privacy">
+                      <Icon name="shield" size={13} />
+                      <span>We respect your privacy. 100% confidential. No spam.</span>
+                    </div>
+                  </form>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </section>
+      </div>
     </PageLayout>
   );
 }

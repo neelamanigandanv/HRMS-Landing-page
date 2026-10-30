@@ -126,6 +126,8 @@ export function App() {
             <Route path="/solutions/finance-teams" element={<SolutionPage />} />
             <Route path="/solutions/finance-team" element={<SolutionPage />} />
             <Route path="/solutions/finance" element={<SolutionPage />} />
+            <Route path="/solutions/hr-teams" element={<SolutionPage />} />
+            <Route path="/solutions/hr-team" element={<SolutionPage />} />
             <Route path="/solutions/:slug" element={<SolutionPage />} />
 
             {/* Blog & Resources */}

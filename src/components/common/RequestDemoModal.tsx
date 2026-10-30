@@ -296,7 +296,9 @@ export function RequestDemoModal({
             <div className="form-grid">
               {/* Full Name */}
               <label>
-                <span>Full Name *</span>
+                <span>
+                  Full Name <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
+                </span>
                 <input
                   type="text"
                   value={formData.name}
@@ -316,7 +318,9 @@ export function RequestDemoModal({
 
               {/* Work Email */}
               <label>
-                <span>Work Email *</span>
+                <span>
+                  Work Email <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
+                </span>
                 <input
                   type="email"
                   value={formData.email}
@@ -335,7 +339,9 @@ export function RequestDemoModal({
 
               {/* Phone */}
               <label>
-                <span>Phone Number *</span>
+                <span>
+                  Phone Number <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
+                </span>
                 <input
                   type="tel"
                   value={formData.phone}
@@ -354,7 +360,9 @@ export function RequestDemoModal({
 
               {/* Company */}
               <label>
-                <span>Company Name *</span>
+                <span>
+                  Company Name <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
+                </span>
                 <input
                   type="text"
                   value={formData.company}
@@ -374,7 +382,7 @@ export function RequestDemoModal({
               {/* Team Size */}
               <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
                 <label htmlFor="modal-team-size" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
-                  Team Size *
+                  Team Size <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
                 </label>
                 <CustomSelect
                   id="modal-team-size"

@@ -541,64 +541,27 @@ export default function SupportPage() {
                 Tell Us How We Can Help
               </h2>
               <p className="support-section-subtext">
-                Fill in the details below. Our {TYPE_CONFIG[selectedType].assignedTeam} will
-                review your request and reply to your work email.
+                Fill in the details below. Our support specialists will review your request and get back to you within 4 hours.
               </p>
             </div>
 
             {/* Centered Form Wrapper */}
             <div className="support-form-wrapper">
                   {submittedTicket ? (
-                    /* Confirmation Screen with Reference Number */
+                    /* Confirmation Screen */
                     <div className="support-confirmation-card">
                       <div className="support-conf-icon-wrap">
                         <Icon name="check" size={36} />
                       </div>
-                      <h3 className="support-conf-title">Request Successfully Received!</h3>
+                      <h3 className="support-conf-title">Thank You! Request Received</h3>
                       <p className="support-conf-sub">
-                        Thank you, <strong>{submittedTicket.name}</strong>. Your support request has
-                        been registered in our dispatch system and routed to our{" "}
-                        <strong>{submittedTicket.assignedTeam}</strong>.
+                        Thank you, <strong>{submittedTicket.name}</strong>. We have received your inquiry. Our support team will review your request and get back to you within <strong>4 hours</strong> at <strong>{submittedTicket.workEmail}</strong>.
                       </p>
 
-                      {/* Reference Number Box */}
-                      <div className="support-ref-badge-box">
-                        <span className="support-ref-label">Official Reference Number</span>
-                        <div className="support-ref-value-row">
-                          <span className="support-ref-number">{submittedTicket.id}</span>
-                          <button
-                            type="button"
-                            onClick={() => handleCopyRef(submittedTicket.id)}
-                            className="support-ref-copy-btn"
-                          >
-                            {copiedRef ? "Copied! ✓" : "Copy Ref"}
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Metadata Summary */}
-                      <div className="support-conf-meta-grid">
-                        <div className="support-conf-meta-item">
-                          <strong>Work Email</strong>
-                          <span>{submittedTicket.workEmail}</span>
-                        </div>
-                        <div className="support-conf-meta-item">
-                          <strong>Category</strong>
-                          <span>{submittedTicket.category}</span>
-                        </div>
-                        <div className="support-conf-meta-item">
-                          <strong>Estimated SLA</strong>
-                          <span>{submittedTicket.expectedResponseSLA}</span>
-                        </div>
-                      </div>
-
                       {/* Actions */}
-                      <div className="support-conf-actions">
-                        <Button onClick={handleResetForm} secondary>
+                      <div className="support-conf-actions" style={{ marginTop: "24px", justifyContent: "center" }}>
+                        <Button onClick={handleResetForm}>
                           Submit Another Request
-                        </Button>
-                        <Button to={`/support/track?id=${submittedTicket.id}`}>
-                          Track Request Status <Icon name="arrow" size={15} />
                         </Button>
                         <Button to="/help" secondary>
                           Browse Help Center
@@ -649,25 +612,7 @@ export default function SupportPage() {
                         </button>
                       </div>
 
-                      {/* Active Routing Card */}
-                      <div className="support-assigned-desk-card">
-                        <div className="assigned-desk-header">
-                          <span className="assigned-desk-badge">
-                            <Icon name="shield" size={13} /> ACTIVE ROUTING
-                          </span>
-                          <strong className="assigned-desk-name">{TYPE_CONFIG[selectedType].title}</strong>
-                        </div>
-                        <div className="assigned-desk-meta-rows">
-                          <div className="assigned-desk-row">
-                            <span className="desk-lbl">Assigned Team:</span>
-                            <strong className="desk-val">{TYPE_CONFIG[selectedType].assignedTeam}</strong>
-                          </div>
-                          <div className="assigned-desk-row">
-                            <span className="desk-lbl">Target Resolution SLA:</span>
-                            <strong className="desk-val sla">{TYPE_CONFIG[selectedType].targetSLA}</strong>
-                          </div>
-                        </div>
-                      </div>
+                      
 
                       {submitError && (
                         <div

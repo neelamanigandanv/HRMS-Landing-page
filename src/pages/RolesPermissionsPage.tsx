@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon, { IconName } from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -677,35 +678,7 @@ export function RolesPermissionsPage() {
           </div>
         </section>
 
-        {/* =========================================================================
-            3B. ROLE EXAMPLES MATRIX (6 Roles Specified by User)
-            ========================================================================= */}
-        <section className="roles-examples-section" aria-labelledby="examples-title">
-          <div className="container">
-            <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ SUPPORTED ROLE PROFILES ✦</span>
-              <h2 id="examples-title" className="emp-section-title">
-                Six Pre-Built Roles for Seamless Team Governance
-              </h2>
-              <p className="emp-section-subhead">
-                Every role is pre-configured with intuitive boundaries while remaining fully customizable to fit your business structure.
-              </p>
-            </div>
-
-            <div className="roles-examples-grid">
-              {roleExamples.map((item, idx) => (
-                <div key={idx} className="roles-example-card">
-                  <div className="roles-example-icon-wrap">{item.icon}</div>
-                  <h3 className="roles-example-title">{item.role}</h3>
-                  <p className="roles-example-desc">{item.desc}</p>
-                  <span className="roles-example-scope-tag">
-                    <Icon name="shield" size={13} /> {item.scope}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         {/* =========================================================================
             4. HOW ACCESS CONTROL WORKS (From User Assignment to Controlled Access)
@@ -1082,36 +1055,7 @@ export function RolesPermissionsPage() {
         {/* =========================================================================
             9. FINAL CTA SECTION
             ========================================================================= */}
-        <section className="final-cta emp-final-cta-section" aria-labelledby="final-cta-heading">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">READY TO SECURE ACCESS?</span>
-              <h2 id="final-cta-heading">Ready to Secure Your Workforce Operations?</h2>
-              <p>
-                Discover how LattiumHR keeps sensitive employee information protected, compliant, and clearly organized across every department.
-              </p>
-              <div className="final-actions">
-                <Button onClick={handleOpenDemo}>
-                  Request a Demo <Icon name="arrow" />
-                </Button>
-                <Button to="/contact" secondary>
-                  Contact Our Team
-                </Button>
-              </div>
-              <div className="final-points">
-                <span>
-                  <Icon name="check" /> Free personalized 30-min walkthrough
-                </span>
-                <span>
-                  <Icon name="check" /> Granular RBAC & branch governance
-                </span>
-                <span>
-                  <Icon name="check" /> 100% India Data Residency
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </main>
 
       <Footer />

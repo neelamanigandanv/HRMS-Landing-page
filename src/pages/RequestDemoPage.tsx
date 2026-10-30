@@ -234,8 +234,10 @@ export function RequestDemoPage() {
 
               <form onSubmit={handleSubmit} noValidate className="demo-page-form">
                 <div className="form-grid">
-                  <label>
-                    <span>Full Name *</span>
+                  <label className="form-field-group">
+                    <span className="field-label-text">
+                      Full Name <span className="required-star">*</span>
+                    </span>
                     <input
                       type="text"
                       value={formData.name}
@@ -252,8 +254,10 @@ export function RequestDemoPage() {
                     )}
                   </label>
 
-                  <label>
-                    <span>Work Email *</span>
+                  <label className="form-field-group">
+                    <span className="field-label-text">
+                      Work Email <span className="required-star">*</span>
+                    </span>
                     <input
                       type="email"
                       value={formData.email}
@@ -270,8 +274,10 @@ export function RequestDemoPage() {
                     )}
                   </label>
 
-                  <label>
-                    <span>Phone Number *</span>
+                  <label className="form-field-group">
+                    <span className="field-label-text">
+                      Phone Number <span className="required-star">*</span>
+                    </span>
                     <input
                       type="tel"
                       value={formData.phone}
@@ -288,8 +294,10 @@ export function RequestDemoPage() {
                     )}
                   </label>
 
-                  <label>
-                    <span>Company Name *</span>
+                  <label className="form-field-group">
+                    <span className="field-label-text">
+                      Company Name <span className="required-star">*</span>
+                    </span>
                     <input
                       type="text"
                       value={formData.company}
@@ -307,14 +315,15 @@ export function RequestDemoPage() {
                   </label>
 
                   <div className="form-field-group">
-                    <label htmlFor="team-size-select" className="field-label-text">
-                      Team Size *
+                    <label htmlFor="team-size-select" className="field-label-row">
+                      <span>Team Size</span>
+                      <span className="required-star">*</span>
                     </label>
                     <CustomSelect
                       id="team-size-select"
                       options={TEAM_SIZE_OPTIONS}
                       value={formData.employees}
-                      placeholder="Select number of employees"
+                      placeholder="Select team size"
                       onChange={(val) => handleChange("employees", val)}
                       onBlur={() => handleBlur("employees")}
                       hasError={Boolean(errors.employees && touched.employees)}
@@ -327,8 +336,8 @@ export function RequestDemoPage() {
                   </div>
 
                   <div className="form-field-group">
-                    <label htmlFor="interest-select" className="field-label-text">
-                      Primary Area of Interest
+                    <label htmlFor="interest-select" className="field-label-row">
+                      <span>Primary Area of Interest</span>
                     </label>
                     <CustomSelect
                       id="interest-select"

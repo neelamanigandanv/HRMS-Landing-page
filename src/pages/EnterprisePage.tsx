@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import { useDemoModal } from "../context/DemoModalContext";
@@ -1238,44 +1239,7 @@ export function EnterprisePage() {
         {/* =========================================================================
             SECTION 8 — FINAL CTA (Deep Purple Gradient Banner with Trust Checklist)
             ========================================================================= */}
-        <section className="final-cta sb-final-cta-section" aria-labelledby="final-cta-heading">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">✦ READY TO MODERNIZE ENTERPRISE HR? ✦</span>
-              <h2 id="final-cta-heading">
-                Bring consumer-grade simplicity to your enterprise workforce.
-              </h2>
-              <p>
-                Join industry leaders running high-volume attendance, multi-state payroll, and global governance on LattiumHR.
-              </p>
-
-              <div className="final-actions">
-                <button
-                  type="button"
-                  className="btn"
-                  onClick={handleOpenDemo}
-                >
-                  Schedule Enterprise Consultation <Icon name="arrow" />
-                </button>
-                <a href="/contact-sales" className="btn btn-secondary">
-                  Speak with Enterprise Sales
-                </a>
-              </div>
-
-              <div className="final-points">
-                <span>
-                  <Icon name="check" /> Dedicated enterprise solution architect
-                </span>
-                <span>
-                  <Icon name="check" /> Two-way SAP, Oracle &amp; NetSuite connectors
-                </span>
-                <span>
-                  <Icon name="check" /> Guaranteed 99.99% uptime with SOC 2 compliance
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </main>
 
       <Footer />

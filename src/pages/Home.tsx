@@ -11,6 +11,7 @@ import CustomSelect from "../components/ui/CustomSelect";
 import { useDemoModal } from "../context/DemoModalContext";
 import { useCurrency } from "../context/CurrencyContext";
 import { submitEnquiry } from "../services/enquiryService";
+import FooterCTA from "../components/common/FooterCTA";
 import "../components/home/CorporateHero.css";
 
 export function DemoForm({ compact = false }: { compact?: boolean }) {
@@ -604,6 +605,7 @@ const roleSections = [
       "Documents & asset tracking",
     ],
     mock: <PeopleMockup />,
+    link: "/solutions/hr-teams",
   },
   {
     role: "FOR EMPLOYEES",
@@ -616,6 +618,7 @@ const roleSections = [
       "Submit reimbursements",
     ],
     mock: <LeaveMockup />,
+    link: "/features/employee-management",
   },
   {
     role: "FOR MANAGERS",
@@ -628,6 +631,7 @@ const roleSections = [
       "Team calendars & insights",
     ],
     mock: <ManagerMockup />,
+    link: "/solutions/mid-sized-businesses",
   },
   {
     role: "FOR FINANCE",
@@ -640,6 +644,7 @@ const roleSections = [
       "One-click digital payslips",
     ],
     mock: <PayrollMockup />,
+    link: "/solutions/finance-teams",
   },
   {
     role: "FOR FOUNDERS & EXECUTIVES",
@@ -652,6 +657,7 @@ const roleSections = [
       "Decision-ready reports",
     ],
     mock: <CEOMockup />,
+    link: "/solutions/enterprises",
   },
 ];
 
@@ -697,7 +703,7 @@ function RoleSection({
               </li>
             ))}
           </ul>
-          <Link to="/request-demo" className="text-link">
+          <Link to={item.link} className="text-link">
             Explore this workspace <Icon name="arrow" size={17} />
           </Link>
         </div>
@@ -1113,6 +1119,7 @@ function ModuleCarousel3D() {
 }
 
 function PriceEstimator() {
+  const { openDemoModal } = useDemoModal();
   const { isIndia, currencySymbol, formatSetup } = useCurrency();
   const [plan, setPlan] = useState<"standard" | "professional" | "enterprise">("standard");
   const [users, setUsers] = useState(75);
@@ -1165,7 +1172,15 @@ function PriceEstimator() {
             </span>
             <h3>Built around your business</h3>
             <p>Let’s create a plan for your scale, structure, and security needs.</p>
-            <Button to="/contact">
+            <Button
+              onClick={() =>
+                openDemoModal({
+                  title: "Talk to Sales",
+                  subtitle: "Connect with our workforce solution experts for a tailored enterprise consultation.",
+                  defaultInterest: "Enterprise Solution",
+                })
+              }
+            >
               Talk to Sales <Icon name="arrow" />
             </Button>
           </div>
@@ -1225,7 +1240,16 @@ function PriceEstimator() {
               </div>
               <em>Includes migration, configuration & training</em>
             </div>
-            <Button to="/request-demo" className="estimate-cta">
+            <Button
+              className="estimate-cta"
+              onClick={() =>
+                openDemoModal({
+                  title: "Get an Exact Quote",
+                  subtitle: `Personalized quote estimate for ${users} employees on the ${plan.charAt(0).toUpperCase() + plan.slice(1)} plan.`,
+                  defaultInterest: `${plan.charAt(0).toUpperCase() + plan.slice(1)} Plan - ${users} Employees`,
+                })
+              }
+            >
               Get an exact quote <Icon name="arrow" />
             </Button>
           </>
@@ -1656,42 +1680,9 @@ export function Home() {
             <FAQ />
           </div>
         </section>
-
-        <section className="final-cta">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">READY TO SIMPLIFY HR?</span>
-              <h2>Your people deserve better than spreadsheets.</h2>
-              <p>
-                Join 500+ growing businesses worldwide running HR, attendance, and payroll on
-                LattiumHR.
-              </p>
-              <div className="final-actions">
-                <Button onClick={() => openDemoModal()}>
-                  Book a Free Demo <Icon name="arrow" />
-                </Button>
-                <Button href="#pricing" secondary>
-                  Estimate Your Price
-                </Button>
-              </div>
-              <div className="final-points">
-                <span>
-                  <Icon name="check" />
-                  Free personalised demo
-                </span>
-                <span>
-                  <Icon name="check" />
-                  No credit card required
-                </span>
-                <span>
-                  <Icon name="check" />
-                  Go live in 2–4 weeks
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
+
+      <FooterCTA />
 
       <Footer />
 

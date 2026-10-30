@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import { useDemoModal } from "../context/DemoModalContext";
@@ -1238,44 +1239,7 @@ export function MidSizedBusinessPage() {
         {/* =========================================================================
             SECTION 8 — FINAL CTA (Deep Purple Gradient Banner with Trust Checklist)
             ========================================================================= */}
-        <section className="final-cta sb-final-cta-section" aria-labelledby="final-cta-heading">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">✦ READY TO SCALE OPERATIONS? ✦</span>
-              <h2 id="final-cta-heading">
-                Give your mid-sized business the HR system it deserves.
-              </h2>
-              <p>
-                Join 500+ growing companies running multi-branch HR, biometric attendance, and automated statutory payroll on LattiumHR.
-              </p>
-
-              <div className="final-actions">
-                <button
-                  type="button"
-                  className="btn"
-                  onClick={handleOpenDemo}
-                >
-                  Request a Free Demo <Icon name="arrow" />
-                </button>
-                <a href="/contact-sales" className="btn btn-secondary">
-                  Talk to Sales
-                </a>
-              </div>
-
-              <div className="final-points">
-                <span>
-                  <Icon name="check" /> Free personalized 30-min walkthrough
-                </span>
-                <span>
-                  <Icon name="check" /> Dedicated data migration specialist
-                </span>
-                <span>
-                  <Icon name="check" /> Live in 2 to 3 weeks with zero downtime
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </main>
 
       <Footer />

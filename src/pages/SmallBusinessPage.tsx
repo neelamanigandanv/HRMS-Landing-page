@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -1400,36 +1401,7 @@ export function SmallBusinessPage() {
         {/* =========================================================================
             SECTION 8 — FINAL CTA (Ready to Make HR Simpler?)
             ========================================================================= */}
-        <section className="final-cta sb-final-cta-section" aria-labelledby="final-cta-heading">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">READY TO SIMPLIFY HR?</span>
-              <h2 id="final-cta-heading">Ready to Make HR Simpler?</h2>
-              <p>
-                See how LattiumHR can bring more structure to your everyday HR operations.
-              </p>
-              <div className="final-actions">
-                <Button onClick={handleOpenDemo}>
-                  Request a Demo <Icon name="arrow" />
-                </Button>
-                <Button to="/contact" secondary>
-                  Contact Our Team
-                </Button>
-              </div>
-              <div className="final-points">
-                <span>
-                  <Icon name="check" /> Free personalized 30-min walkthrough
-                </span>
-                <span>
-                  <Icon name="check" /> No credit card required
-                </span>
-                <span>
-                  <Icon name="check" /> Ready to go live in 2 weeks
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </main>
 
       {/* Website's Existing Footer */}

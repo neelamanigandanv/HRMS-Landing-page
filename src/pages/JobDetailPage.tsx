@@ -143,16 +143,13 @@ export function JobDetailPage() {
               <Link to="/careers" className="job-detail-back-pill">
                 <span className="back-arrow-icon">←</span> Back to All Open Positions
               </Link>
-              <div className="job-detail-posted-badge">
-                <Icon name="clock" size={13} /> Posted {new Date(job.postedDate).toLocaleDateString("en-IN", { month: "short", day: "numeric", year: "numeric" })}
-              </div>
             </div>
 
             <div className="job-detail-hero-content">
-              {/* Eyebrow: Border and Background Removed as Requested */}
+              {/* Eyebrow */}
               <div className="job-detail-clean-eyebrow">
                 <span className="careers-sparkle">✦</span>
-                <span>{job.department.toUpperCase()} • CAREER OPPORTUNITY</span>
+                <span>{job.department.toUpperCase()} • FULL-TIME ROLE</span>
                 <span className="careers-sparkle">✦</span>
               </div>
 
@@ -160,12 +157,12 @@ export function JobDetailPage() {
                 {job.title}
               </h1>
 
-              {/* Short Summary Subtitle to balance space and provide instant clarity */}
+              {/* Short Summary Subtitle */}
               <p className="job-detail-subtitle">
                 {job.shortSummary}
               </p>
 
-              {/* Comprehensive Meta Pills Row */}
+              {/* Clean Core Meta Pills */}
               <div className="job-detail-meta-tags">
                 <span className="job-meta-pill">
                   <Icon name="map-pin" size={14} /> {job.location}
@@ -175,14 +172,6 @@ export function JobDetailPage() {
                 </span>
                 <span className="job-meta-pill">
                   <Icon name="briefcase" size={14} /> {job.experience}
-                </span>
-                {job.salaryRange && (
-                  <span className="job-meta-pill salary">
-                    <Icon name="wallet" size={14} /> {job.salaryRange}
-                  </span>
-                )}
-                <span className="job-meta-pill guarantee">
-                  <Icon name="shield" size={14} /> 48-Hour Response SLA
                 </span>
               </div>
 

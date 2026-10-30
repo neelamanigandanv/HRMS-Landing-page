@@ -1396,6 +1396,51 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
+.job-detail-live-hiring-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #166534;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 9999px;
+  padding: 0.4rem 0.95rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.job-detail-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.25);
+  animation: pulse-dot 1.8s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.job-detail-trust-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.825rem;
+  color: #64748b;
+  margin-top: 1.25rem;
+  font-weight: 550;
+  flex-wrap: wrap;
+}
+
+.job-detail-trust-line .dot {
+  color: #cbd5e1;
+}
+
 .job-detail-hero-content {
   display: flex;
   flex-direction: column;
@@ -2753,5 +2798,259 @@
     width: 100%;
     justify-content: center;
   }
+}
+
+/* ==========================================================================
+   CAREERS OPEN APPLICATION FORM SECTION
+   ========================================================================== */
+.careers-open-app-section {
+  padding: 5.5rem 0 6rem;
+  background: #ffffff;
+  border-top: 1px solid #ebdcd5;
+}
+
+.careers-open-app-card {
+  background: #fdfafc;
+  border: 1.5px solid #ebdcd5;
+  border-radius: 24px;
+  padding: 3rem 3.25rem;
+  box-shadow: 0 16px 48px rgba(25, 23, 53, 0.05);
+}
+
+.careers-open-app-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.careers-open-app-title {
+  font-size: clamp(1.85rem, 2.8vw, 2.35rem);
+  font-weight: 850;
+  color: #191735;
+  line-height: 1.25;
+  margin: 0 0 0.85rem;
+  letter-spacing: -0.02em;
+}
+
+.careers-open-app-desc {
+  font-size: 0.95rem;
+  color: #555268;
+  line-height: 1.6;
+  margin: 0 0 2rem;
+}
+
+.careers-open-app-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.careers-open-benefit-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.careers-open-benefit-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #faedf4;
+  color: #802B5B;
+  border: 1px solid rgba(128, 43, 91, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.careers-open-benefit-item strong {
+  display: block;
+  font-size: 0.925rem;
+  font-weight: 750;
+  color: #191735;
+  margin-bottom: 2px;
+}
+
+.careers-open-benefit-item p {
+  font-size: 0.84rem;
+  color: #64748b;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.careers-open-app-form {
+  background: #ffffff;
+  border: 1.5px solid #ebdcd5;
+  border-radius: 20px;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+}
+
+.careers-open-fields-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1.1rem;
+}
+
+.careers-open-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+  width: 100%;
+}
+
+.careers-open-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.careers-open-field label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #191735;
+  display: flex;
+  align-items: center;
+}
+
+.careers-open-field input,
+.careers-open-field select,
+.careers-open-field textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #191735;
+  background: #fafafc;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.careers-open-field select {
+  cursor: pointer;
+}
+
+.careers-open-field input:focus,
+.careers-open-field select:focus,
+.careers-open-field textarea:focus {
+  border-color: #802B5B;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(128, 43, 91, 0.12);
+}
+
+.careers-open-app-success {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1.5px solid #ebdcd5;
+}
+
+.careers-open-success-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f0fdf4;
+  color: #166534;
+  border: 2px solid #bbf7d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+}
+
+.careers-open-app-success h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #191735;
+  margin: 0 0 0.5rem;
+}
+
+.careers-open-app-success p {
+  font-size: 0.925rem;
+  color: #555268;
+  line-height: 1.6;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+  .careers-open-app-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .careers-open-app-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .careers-open-fields-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   ON-PAGE APPLICATION CARD (Exact match to ApplyModal popup card)
+   ========================================================================== */
+.careers-modal-card.onpage-apply-card {
+  max-width: 760px;
+  max-height: none;
+  margin: 0 auto;
+  box-shadow: 0 16px 48px rgba(25, 23, 53, 0.08);
+  border: 1.5px solid #ebdcd5;
+  border-radius: 24px;
+  animation: none;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.careers-modal-card.onpage-apply-card .careers-modal-header {
+  padding: 1.75rem 2.25rem;
+  background: #fafafc;
+  border-bottom: 1.5px solid #ebdcd5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.careers-modal-card.onpage-apply-card .careers-modal-body {
+  overflow-y: visible;
+  padding: 2.25rem 2.25rem;
+}
+
+.careers-role-switch-select {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: #802B5B;
+  background: #faedf4;
+  border: 1.5px solid rgba(128, 43, 91, 0.2);
+  border-radius: 999px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.careers-role-switch-select:hover,
+.careers-role-switch-select:focus {
+  background: #ffffff;
+  border-color: #802B5B;
+  box-shadow: 0 0 0 3px rgba(128, 43, 91, 0.12);
+}
+
+.required,
+.required-star,
+.careers-form-label .required {
+  color: #ef4444 !important;
+  font-weight: 700;
+  margin-left: 2px;
 }
 

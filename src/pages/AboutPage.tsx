@@ -189,9 +189,7 @@ export function AboutPage() {
         <div className="container">
           <div className="about-hero-center">
             <span className="hero-badge">
-              <i>
-                <Icon name="sparkle" size={14} />
-              </i>
+              <Icon name="sparkle" size={14} />
               ABOUT LATTIUMHR
             </span>
 
@@ -200,10 +198,20 @@ export function AboutPage() {
             </h1>
 
             <p className="about-hero-lead">
-              We are a team of HR practitioners, technologists, and problem solvers who lived through the
-              headaches of manual registers and disjointed spreadsheets. We built LattiumHR to give managers
-              complete operational visibility and their personal time back.
+              We are a team of HR practitioners, engineers, and customer advocates who experienced the
+              chaos of physical registers and broken spreadsheets. We built LattiumHR to give leaders
+              effortless workforce control and their personal time back.
             </p>
+
+            {/* Hero Action Buttons */}
+            <div style={{ display: "flex", gap: "12px", margin: "8px 0 24px", justifyContent: "center", flexWrap: "wrap" }}>
+              <Button to="/request-demo">
+                Book a Free Demo <Icon name="arrow" size={15} />
+              </Button>
+              <Button to="/careers" secondary>
+                View Open Positions <Icon name="briefcase" size={15} />
+              </Button>
+            </div>
 
             {/* Credibility & Trust Highlight Pills */}
             <div className="about-hero-trust-strip">
@@ -227,15 +235,15 @@ export function AboutPage() {
               </div>
               <div className="about-hero-trust-pill">
                 <span className="pill-icon">
-                  <Icon name="sparkle" size={13} />
+                  <Icon name="shield" size={13} />
                 </span>
-                <span>100% Pan-India Statutory Compliance</span>
+                <span>100% India Statutory Compliance</span>
               </div>
             </div>
 
             <div className="about-hero-mission-pill">
               <span className="trust-dot" />
-              <span>Built for leaders who care deeply about their workforce</span>
+              <span>Built for modern leaders who value transparency &amp; people</span>
             </div>
           </div>
         </div>

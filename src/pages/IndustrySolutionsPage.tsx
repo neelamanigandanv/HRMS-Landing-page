@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -220,7 +221,7 @@ export function IndustrySolutionsPage() {
         "Automated lecture and exam duty honorarium calculation sheets",
       ],
       ctaText: "Configure for Education",
-      bgImage: "/images/about-team-hero.jpg",
+      bgImage: "/images/industry-education.jpg",
       bgAlt: "Prestigious academic university campus library and lecture quad",
       fgImage: "/images/industry-education.jpg",
       fgAlt: "University dean and academic administrator scheduling faculty timetables",
@@ -925,40 +926,7 @@ export function IndustrySolutionsPage() {
       {/* ======================================================================
           09 · FINAL CTA (Matching Home Page Final CTA Layout)
           ====================================================================== */}
-      <section className="final-cta">
-        <div className="container final-grid">
-          <div>
-            <span className="eyebrow">READY TO CONFIGURE FOR YOUR INDUSTRY?</span>
-            <h2>HR Built for the Way Your Industry Really Works.</h2>
-            <p>
-              Shifts, rotations, seasonal spikes, and multi-location branch rosters — experience how simple
-              workforce operations feel when the software adapts to you.
-            </p>
-            <div className="final-actions">
-              <Button onClick={() => openDemoModal({ title: "Industry Solutions Demo" })}>
-                Book a Free Demo <Icon name="arrow" />
-              </Button>
-              <Button to="/contact-sales" secondary>
-                Speak with a Specialist
-              </Button>
-            </div>
-            <div className="final-points">
-              <span>
-                <Icon name="check" />
-                14-day guided onboarding
-              </span>
-              <span>
-                <Icon name="check" />
-                Free employee data migration
-              </span>
-              <span>
-                <Icon name="check" />
-                Dedicated shift setup support
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FooterCTA />
 
       <Footer />
     </div>

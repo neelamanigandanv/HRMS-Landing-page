@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -1036,47 +1037,7 @@ export function AssetManagementPage() {
         {/* =========================================================================
             10. BOTTOM CONVERSION CTA BANNER (Exact Flagship Footer CTA)
             ========================================================================= */}
-        <section className="final-cta">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">✦ READY TO ELIMINATE GHOST ASSETS? ✦</span>
-              <h2>Your equipment deserves better than spreadsheets.</h2>
-              <p>
-                Join 500+ growing businesses worldwide running IT hardware, digital handovers, and exit clearance on Lattium HR.
-              </p>
-              <div className="final-actions">
-                <Button
-                  onClick={() =>
-                    openDemoModal({
-                      title: "Book an Asset Management Demo",
-                      subtitle:
-                        "Experience serialized hardware tracking, mobile digital handovers, and offboarding exit clearance with Lattium HR.",
-                    })
-                  }
-                >
-                  Book a Free Demo <Icon name="arrow" />
-                </Button>
-                <Button to="/contact-sales" secondary>
-                  Estimate Your Price
-                </Button>
-              </div>
-              <div className="final-points">
-                <span>
-                  <Icon name="check" />
-                  Free personalised demo
-                </span>
-                <span>
-                  <Icon name="check" />
-                  No credit card required
-                </span>
-                <span>
-                  <Icon name="check" />
-                  Go live in 2–4 weeks
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </main>
 
       <Footer />

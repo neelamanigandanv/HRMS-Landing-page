@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon, { IconName } from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -19,6 +20,18 @@ export function ReportsAnalyticsPage() {
   const [activeDateFilter, setActiveDateFilter] = useState<DateFilter>("30d");
   const [activeMetricFilter, setActiveMetricFilter] = useState<MetricFilter>("attendance");
   const [activeConnectedCard, setActiveConnectedCard] = useState<number | null>(null);
+  const [activeWorkflowCard, setActiveWorkflowCard] = useState<number>(1);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scrollSlider = (direction: "left" | "right") => {
+    if (sliderRef.current) {
+      const scrollAmount = 380;
+      sliderRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   const handleOpenDemo = () => {
     openDemoModal({
@@ -32,6 +45,95 @@ export function ReportsAnalyticsPage() {
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
+
+  // 3-Step Reporting Process Workflow
+  const workflowSteps = [
+    {
+      number: "01",
+      title: "Ingest & Synchronize",
+      description:
+        "Automatically ingest raw biometric device logs, geofenced mobile check-ins, leave applications, and master employee records into one data pipeline.",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="16" y1="13" x2="8" y2="13" />
+          <line x1="16" y1="17" x2="8" y2="17" />
+          <polyline points="10 9 9 9 8 9" />
+        </svg>
+      ),
+    },
+    {
+      number: "02",
+      title: "Filter, Segment & Compare",
+      description:
+        "Slice and compare workforce data across branch locations, departments, and shifts to identify absenteeism trends and overtime spikes in real-time.",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10" />
+          <line x1="12" y1="20" x2="12" y2="4" />
+          <line x1="6" y1="20" x2="6" y2="14" />
+        </svg>
+      ),
+    },
+    {
+      number: "03",
+      title: "1-Click Export & Share",
+      description:
+        "Generate audit-ready Excel and CSV reports with one click, automate scheduled email digests to executive leadership, and reconcile payroll.",
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="7 10 12 15 17 10" />
+          <line x1="12" y1="15" x2="12" y2="3" />
+        </svg>
+      ),
+    },
+  ];
+
+  // Customer Testimonials for Reports & Analytics
+  const testimonials = [
+    {
+      id: 1,
+      brand: "stripe",
+      headline: "Month-end reporting time went from 3 full days to under 15 minutes",
+      quote:
+        "Reconciling attendance logs, shift rotations, and loss of pay from 6 distribution warehouses used to take our HR team the entire first weekend of every month. With LattiumHR, reports are instantly generated and reconciled.",
+      name: "Freddy Dean",
+      role: "VP of People Operations, Modern Logistics",
+      avatar: "/images/testi-avatar-1.jpg",
+    },
+    {
+      id: 2,
+      brand: "zendesk",
+      headline: "Spotted a 14% overtime leakage across our manufacturing shifts",
+      quote:
+        "The multi-branch attendance comparison report highlighted chronic unplanned overtime in our second shift within two weeks of deployment. The visibility paid for our LattiumHR subscription three times over.",
+      name: "Sarah Jenkins",
+      role: "Head of Workforce Analytics, Apex Consumer Goods",
+      avatar: "/images/testi-avatar-2.jpg",
+    },
+    {
+      id: 3,
+      brand: "notion",
+      headline: "Passed our statutory labor audit with zero discrepancies in LOP logs",
+      quote:
+        "When state labor auditors requested historical leave registers and attendance records for 400 employees, we exported verified Excel reports with full timestamp logs in two clicks.",
+      name: "Rohan Mehta",
+      role: "Director of HR & Operations, FinPulse Tech",
+      avatar: "/images/leader-rohan-mehta.jpg",
+    },
+    {
+      id: 4,
+      brand: "hubspot",
+      headline: "Executive headcount comparisons that the CFO actually reads every Monday",
+      quote:
+        "LattiumHR turned messy spreadsheet data into clean, visual metrics that our leadership team actually relies on for strategic headcount budgeting and attrition planning.",
+      name: "Ananya Kapoor",
+      role: "Chief People Officer, ZenHealth Labs",
+      avatar: "/images/leader-ananya-kapoor.jpg",
+    },
+  ];
 
   // =========================================================================
   // 02 · REPORTING CHALLENGES
@@ -140,7 +242,7 @@ export function ReportsAnalyticsPage() {
     {
       id: "workforce-demographics",
       badge: "01 Employee Records & Directory",
-      eyebrow: "✦ 01. WORKFORCE DIRECTORIES & PROFILES ✦",
+      eyebrow: "✦ WORKFORCE DIRECTORIES & PROFILES ✦",
       image: "/images/reports-block-workforce.jpg",
       imageAlt: "HR leadership team reviewing workforce demographic reports and employee headcount summaries on a digital tablet",
       title: "Centralized Employee Records & Workforce Summaries",
@@ -168,7 +270,7 @@ export function ReportsAnalyticsPage() {
     {
       id: "attendance-leave-patterns",
       badge: "02 Attendance & Leave Trends",
-      eyebrow: "✦ 02. ATTENDANCE & LEAVE PATTERNS ✦",
+      eyebrow: "✦ ATTENDANCE & LEAVE PATTERNS ✦",
       image: "/images/reports-block-attendance.jpg",
       imageAlt: "Operations specialist and HR manager analyzing attendance trends and leave utilization on modern monitors",
       title: "Attendance Patterns & Recorded Workdays",
@@ -196,7 +298,7 @@ export function ReportsAnalyticsPage() {
     {
       id: "payroll-exportable",
       badge: "03 Payroll Summaries & Exports",
-      eyebrow: "✦ 03. PAYROLL READINESS & EXPORTS ✦",
+      eyebrow: "✦ PAYROLL READINESS & EXPORTS ✦",
       image: "/images/reports-block-payroll.jpg",
       imageAlt: "Finance controller and HR director reviewing monthly salary summaries, payroll cost graphs, and exportable data tables",
       title: "Salary Summaries & Exportable Data Downloads",
@@ -519,7 +621,7 @@ export function ReportsAnalyticsPage() {
         <section className="emp-problem-section" id="challenges" aria-labelledby="problem-heading">
           <div className="container">
             <div className="emp-problem-header">
-              <span className="emp-eyebrow">✦ 02 · REPORTING CHALLENGES ✦</span>
+              <span className="emp-eyebrow">✦ REPORTING CHALLENGES ✦</span>
               <h2 id="problem-heading" className="emp-section-title">
                 When Workforce Data Is Hard to Understand.
               </h2>
@@ -551,7 +653,7 @@ export function ReportsAnalyticsPage() {
         <section className="emp-section" id="capabilities" aria-labelledby="capabilities-heading" style={{ background: "#ffffff" }}>
           <div className="container">
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ 03 · REPORTING CAPABILITIES ✦</span>
+              <span className="emp-eyebrow">✦ REPORTING CAPABILITIES ✦</span>
               <h2 id="capabilities-heading" className="emp-section-title">
                 See the Workforce Information That Matters.
               </h2>
@@ -657,6 +759,55 @@ export function ReportsAnalyticsPage() {
         </section>
 
         {/* =========================================================================
+            03C · 3-STEP REPORTING WORKFLOW
+            ========================================================================= */}
+        <section className="emp-process-section" id="process" aria-labelledby="workflow-heading">
+          <div className="container">
+            <div className="emp-process-header">
+              <span className="emp-process-eyebrow">✦ 3-STEP REPORTING WORKFLOW ✦</span>
+              <h2 id="workflow-heading" className="emp-process-title">
+                From Raw Clock-Ins to Boardroom Intelligence
+              </h2>
+              <p className="emp-process-subhead">
+                A structured, automated 3-stage reporting lifecycle designed to eliminate manual spreadsheet consolidation and deliver decision-ready workforce clarity.
+              </p>
+            </div>
+
+            <div className="emp-process-grid">
+              {workflowSteps.map((step, idx) => {
+                const isActive = activeWorkflowCard === idx;
+                return (
+                  <div
+                    key={step.number}
+                    className={`emp-process-card ${isActive ? "is-active" : ""}`}
+                    onMouseEnter={() => setActiveWorkflowCard(idx)}
+                    onClick={() => setActiveWorkflowCard(idx)}
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={isActive}
+                  >
+                    <div className="emp-process-notch" aria-label={`Step ${step.number}`}>
+                      <span className="emp-process-notch-num">{step.number}</span>
+                    </div>
+
+                    <div className="emp-process-icon-box" aria-hidden="true">
+                      {step.icon}
+                    </div>
+
+                    <h3 className="emp-process-card-title">{step.title}</h3>
+                    <p className="emp-process-card-desc">{step.description}</p>
+                    <div className="emp-process-step-indicator">
+                      <span>Stage {step.number} of 03</span>
+                      <Icon name="arrow" size={14} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================================
             04 · ANALYTICS & INSIGHTS
             Headline: Understand the Trends Behind Your Numbers.
             Subhead: Show how available workforce data can help HR teams identify...
@@ -666,7 +817,7 @@ export function ReportsAnalyticsPage() {
         <section className="reports-analytics-section" id="analytics" aria-labelledby="analytics-heading">
           <div className="container">
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ 04 · ANALYTICS & INSIGHTS ✦</span>
+              <span className="emp-eyebrow">✦ ANALYTICS & INSIGHTS ✦</span>
               <h2 id="analytics-heading" className="emp-section-title">
                 Understand the Trends Behind Your Numbers.
               </h2>
@@ -923,7 +1074,7 @@ export function ReportsAnalyticsPage() {
         <section className="reports-why-section" id="why-lattium" aria-labelledby="why-heading">
           <div className="container">
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ 05 · WHY LATTIUMHR ✦</span>
+              <span className="emp-eyebrow">✦ WHY LATTIUMHR ✦</span>
               <h2 id="why-heading" className="emp-section-title">
                 Less Time Compiling Reports. More Time Understanding Them.
               </h2>
@@ -958,7 +1109,7 @@ export function ReportsAnalyticsPage() {
 
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/emp-cta-collaboration.jpg"
+                  src="/images/reports-cta-analytics.jpg"
                   alt="HR leaders and management reviewing report summaries in a collaborative meeting"
                   className="emp-cta-img"
                   loading="lazy"
@@ -1002,7 +1153,7 @@ export function ReportsAnalyticsPage() {
         <section className="emp-section emp-connected-section" id="connected-modules">
           <div className="container">
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ 07 · HOW IT WORKS TOGETHER ✦</span>
+              <span className="emp-eyebrow">✦ HOW IT WORKS TOGETHER ✦</span>
               <h2 className="emp-section-title">
                 Connect Workforce Data Across Your HRMS.
               </h2>
@@ -1051,6 +1202,69 @@ export function ReportsAnalyticsPage() {
         </section>
 
         {/* =========================================================================
+            07B · TESTIMONIALS SECTION (Above FAQ - Same design as Employee Management)
+            ========================================================================= */}
+        <section className="emp-testimonials-section" aria-labelledby="testi-title">
+          <div className="container">
+            <div className="emp-section-header center">
+              <span className="emp-eyebrow">✦ CUSTOMER STORIES ✦</span>
+              <h2 id="testi-title" className="emp-section-title">
+                Trusted by Data-Driven People Teams
+              </h2>
+              <p className="emp-section-subhead">
+                Discover how growing organizations eliminate manual report compilation, reconcile attendance records, and gain boardroom-ready workforce visibility.
+              </p>
+            </div>
+
+            <div className="emp-testimonials-wrap">
+              <div className="emp-testimonials-track" ref={sliderRef}>
+                {testimonials.map((item) => (
+                  <article key={item.id} className="emp-testimonial-card">
+                    <div className="emp-testi-brand">{item.brand}</div>
+                    <h3 className="emp-testi-headline">{item.headline}</h3>
+                    <p className="emp-testi-quote">{item.quote}</p>
+                    <div className="emp-testi-author">
+                      <img
+                        src={item.avatar}
+                        alt={item.name}
+                        className="emp-testi-avatar"
+                        loading="lazy"
+                      />
+                      <div className="emp-testi-author-info">
+                        <strong>{item.name}</strong>
+                        <span>{item.role}</span>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              {/* Slider Navigation Buttons at Bottom Right */}
+              <div className="emp-testi-nav-row">
+                <div className="emp-testi-nav-btns">
+                  <button
+                    type="button"
+                    className="emp-testi-arrow-btn prev"
+                    onClick={() => scrollSlider("left")}
+                    aria-label="Previous testimonial"
+                  >
+                    <Icon name="arrow" size={16} />
+                  </button>
+                  <button
+                    type="button"
+                    className="emp-testi-arrow-btn next"
+                    onClick={() => scrollSlider("right")}
+                    aria-label="Next testimonial"
+                  >
+                    <Icon name="arrow" size={16} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =========================================================================
             08 · FAQ SECTION
             Heading: Common Questions About HR Reports & Analytics
             4 Questions requested by the user.
@@ -1091,36 +1305,7 @@ export function ReportsAnalyticsPage() {
         {/* =========================================================================
             FINAL CTA SECTION
             ========================================================================= */}
-        <section className="final-cta emp-final-cta-section" aria-labelledby="final-cta-heading">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">READY FOR CLEARER WORKFORCE DATA?</span>
-              <h2 id="final-cta-heading">Ready to Turn Your HR Data Into Clearer Decisions?</h2>
-              <p>
-                Discover how LattiumHR organizes employee profiles, attendance records, and leave summaries into decision-ready reports for your team.
-              </p>
-              <div className="final-actions">
-                <Button onClick={handleOpenDemo}>
-                  Request a Demo <Icon name="arrow" />
-                </Button>
-                <Button to="/contact" secondary>
-                  Contact Our Team
-                </Button>
-              </div>
-              <div className="final-points">
-                <span>
-                  <Icon name="check" /> Free personalized 30-min walkthrough
-                </span>
-                <span>
-                  <Icon name="check" /> Export to CSV & Excel (.xlsx)
-                </span>
-                <span>
-                  <Icon name="check" /> 100% India Data Residency
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </main>
 
       <Footer />

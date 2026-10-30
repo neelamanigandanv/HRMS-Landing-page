@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon, { IconName } from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -642,35 +643,7 @@ export function PerformanceManagementPage() {
           </div>
         </section>
 
-        {/* =========================================================================
-            3B. CAPABILITIES FEATURE MATRIX (All 6 Required Features)
-            ========================================================================= */}
-        <section className="perf-matrix-section" aria-labelledby="matrix-title">
-          <div className="container">
-            <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ SUPPORTED CAPABILITIES ✦</span>
-              <h2 id="matrix-title" className="emp-section-title">
-                Six Integrated Features for Modern Teams
-              </h2>
-              <p className="emp-section-subhead">
-                Every capability you need to measure, nurture, and reward employee growth in one centralized HR platform.
-              </p>
-            </div>
-
-            <div className="perf-matrix-grid">
-              {capabilitiesMatrix.map((item, idx) => (
-                <div key={idx} className="perf-matrix-card">
-                  <div className="perf-matrix-icon-wrap">{item.icon}</div>
-                  <h3 className="perf-matrix-title">{item.title}</h3>
-                  <p className="perf-matrix-desc">{item.desc}</p>
-                  <span className="perf-matrix-badge">
-                    <Icon name="check" size={12} /> {item.badge}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        
 
         {/* =========================================================================
             4. PERFORMANCE REVIEW WORKFLOW (From Setting Goals to Recognizing Progress)
@@ -969,36 +942,7 @@ export function PerformanceManagementPage() {
         {/* =========================================================================
             9. FINAL CTA SECTION
             ========================================================================= */}
-        <section className="final-cta emp-final-cta-section" aria-labelledby="final-cta-heading">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">READY TO ELEVATE PERFORMANCE?</span>
-              <h2 id="final-cta-heading">Turn Employee Performance Into Real Progress.</h2>
-              <p>
-                See how LattiumHR can bring structure, fairness, and transparency to your team's goals and review cycles.
-              </p>
-              <div className="final-actions">
-                <Button onClick={handleOpenDemo}>
-                  Request a Demo <Icon name="arrow" />
-                </Button>
-                <Button to="/contact" secondary>
-                  Contact Our Team
-                </Button>
-              </div>
-              <div className="final-points">
-                <span>
-                  <Icon name="check" /> Free personalized 30-min walkthrough
-                </span>
-                <span>
-                  <Icon name="check" /> Zero setup fees or credit card required
-                </span>
-                <span>
-                  <Icon name="check" /> Ready to deploy in under 2 weeks
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </main>
 
       <Footer />

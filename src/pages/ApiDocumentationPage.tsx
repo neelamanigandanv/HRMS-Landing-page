@@ -158,7 +158,7 @@ export default function ApiDocumentationPage() {
   }, [currentApi.responses, activeResponseStatus]);
 
   return (
-    <PageLayout breadcrumbs={breadcrumbs}>
+    <PageLayout breadcrumbs={breadcrumbs} hideCTA={true}>
       <SEO
         title="LattiumHR API Documentation | Developer REST API Reference"
         description="Explore LattiumHR API endpoints, understand request methods, view schemas, and find code examples to integrate authentication, onboarding, payroll, assets, surveys, and offboarding."
@@ -209,12 +209,16 @@ export default function ApiDocumentationPage() {
                 >
                   Explore Endpoints <Icon name="arrow" size={15} />
                 </a>
-                <a
-                  href="/guides/payroll-management-guide"
+                <button
+                  type="button"
                   className="api-hero-btn-secondary"
+                  onClick={() => {
+                    handleModuleClick("authentication");
+                    document.getElementById("explore-api-documentation")?.scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
-                  Integration Guide
-                </a>
+                  <Icon name="lock" size={14} /> Quickstart &amp; Auth
+                </button>
               </div>
             </div>
           </div>

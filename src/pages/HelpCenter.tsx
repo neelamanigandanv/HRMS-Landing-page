@@ -1,9 +1,10 @@
-  import { useState, useMemo, useRef, FormEvent } from "react";
+import { useState, useMemo, useRef, FormEvent } from "react";
 import { Link } from "react-router-dom";
-im    port PageLayout from "../components/layout/PageLayout";
+import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import { SUPPORT_ARTICLES_DATABASE } from "../data/supportData";
+import { ALL_GUIDE_QUESTIONS } from "../data/guidesData";
 import { HelpTopicIllustration } from "../components/help/HelpTopicIllustration";
 import { HelpWorkflowIsometric } from "../components/help/HelpWorkflowIsometric";
 import "./HelpCenter.css";
@@ -100,7 +101,7 @@ export function HelpCenter() {
       title: "Employee Management",
       desc: "Directory, digital profiles, onboarding paperwork, organizational charts, and asset custody tracking.",
       icon: "users",
-      link: "/features/employee-management",
+      link: "/guides/employee-onboarding-guide",
       articlesCount: 16,
     },
     {
@@ -108,7 +109,7 @@ export function HelpCenter() {
       title: "Attendance & Shifts",
       desc: "Biometric clock-in sync, GPS geofencing, multi-shift rotational rosters, and overtime calculations.",
       icon: "clock",
-      link: "/features/attendance-management",
+      link: "/guides/attendance-management-guide",
       articlesCount: 22,
     },
     {
@@ -116,7 +117,7 @@ export function HelpCenter() {
       title: "Leave Management",
       desc: "Leave policies, automated monthly accruals, sandwich rule logic, holiday calendars, and approval chains.",
       icon: "calendar",
-      link: "/features/leave-management",
+      link: "/guides/leave-management-guide",
       articlesCount: 18,
     },
     {
@@ -124,7 +125,7 @@ export function HelpCenter() {
       title: "Payroll Management",
       desc: "Salary structures, statutory PF, ESI, state PT slabs, TDS deductions, direct bank files, and payslips.",
       icon: "credit-card",
-      link: "/features/payroll-management",
+      link: "/guides/payroll-management-guide",
       articlesCount: 28,
     },
     {
@@ -132,7 +133,7 @@ export function HelpCenter() {
       title: "Recruitment & Onboarding",
       desc: "Hiring pipelines, candidate scorecards, digital offer letters, pre-boarding checklists, and KYC vaults.",
       icon: "briefcase",
-      link: "/features/recruitment",
+      link: "/guides/recruitment-management-guide",
       articlesCount: 14,
     },
     {
@@ -140,7 +141,7 @@ export function HelpCenter() {
       title: "Documents & Compliance",
       desc: "Encrypted document vaults, e-signatures, audit log trails, policy acknowledgments, and statutory filing readiness.",
       icon: "shield",
-      link: "/features/documents-compliance",
+      link: "/guides/statutory-compliance-guide",
       articlesCount: 15,
     },
     {
@@ -148,7 +149,7 @@ export function HelpCenter() {
       title: "Reports & Analytics",
       desc: "Visual workforce intelligence, headcount growth, attrition forecasting, and scheduled compliance exports.",
       icon: "chart",
-      link: "/features/reports-analytics",
+      link: "/guides/multibranch-hr-setup-guide",
       articlesCount: 19,
     },
     {
@@ -156,7 +157,7 @@ export function HelpCenter() {
       title: "Roles & Permissions",
       desc: "Granular Role-Based Access Control (RBAC), branch administrative delegation, and data privacy governance.",
       icon: "lock",
-      link: "/features/roles-permissions",
+      link: "/guides/multibranch-hr-setup-guide",
       articlesCount: 11,
     },
   ];
@@ -318,6 +319,19 @@ export function HelpCenter() {
     });
   }, [searchTerms, faqs]);
 
+  // Questions from our guides (User requested: show ONLY questions from guides in search)
+  const matchedGuideQuestions = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const q = searchQuery.toLowerCase().trim();
+    return ALL_GUIDE_QUESTIONS.filter(
+      (item) =>
+        item.question.toLowerCase().includes(q) ||
+        item.answer.toLowerCase().includes(q) ||
+        item.guideTitle.toLowerCase().includes(q) ||
+        item.category.toLowerCase().includes(q)
+    );
+  }, [searchQuery]);
+
   // Top 5 for instant autocomplete preview in hero
   const instantPreviewArticles = useMemo(() => {
     return matchedArticles.slice(0, 5);
@@ -388,19 +402,19 @@ export function HelpCenter() {
               {/* Instant Search Results Dropdown */}
               {isSearchActive && (
                 <div className="help-instant-results" role="region" aria-label="Search preview">
-                  {instantPreviewArticles.length > 0 ? (
+                  {matchedGuideQuestions.length > 0 ? (
                     <>
-                      {instantPreviewArticles.map((art) => (
+                      {matchedGuideQuestions.slice(0, 5).map((q) => (
                         <Link
-                          key={art.slug}
-                          to={`/support/article/${art.slug}`}
+                          key={`${q.guideSlug}-${q.id}`}
+                          to={`/guides/${q.guideSlug}#${q.id}`}
                           className="help-instant-result-item"
                         >
                           <div className="help-instant-item-left">
-                            <span className="help-instant-item-title">{art.title}</span>
-                            <span className="help-instant-item-desc">{art.summary}</span>
+                            <span className="help-instant-item-title">{q.question}</span>
+                            <span className="help-instant-item-desc">{q.answer}</span>
                           </div>
-                          <span className="help-instant-item-tag">{art.readTime}</span>
+                          <span className="help-instant-item-tag">{q.guideTitle}</span>
                         </Link>
                       ))}
                       <button
@@ -408,16 +422,12 @@ export function HelpCenter() {
                         onClick={scrollToResults}
                         className="help-instant-footer-btn"
                       >
-                        View all {totalResultsCount} matching results below ↓
+                        View all {matchedGuideQuestions.length} matching guide questions below ↓
                       </button>
                     </>
                   ) : (
                     <div style={{ padding: "16px", textAlign: "center", color: "#64748b", fontSize: "14px" }}>
-                      No direct articles matched &ldquo;{searchQuery}&rdquo;. Try browsing topics below or{" "}
-                      <Link to="/support" style={{ color: "#802B5B", fontWeight: 700 }}>
-                        contact support
-                      </Link>
-                      .
+                      No guide questions matched &ldquo;{searchQuery}&rdquo;. Try searching for &ldquo;Payroll&rdquo;, &ldquo;Attendance&rdquo;, &ldquo;Leave&rdquo;, or &ldquo;Gratuity&rdquo;.
                     </div>
                   )}
                 </div>
@@ -457,13 +467,13 @@ export function HelpCenter() {
               <div className="help-search-results-header">
                 <div className="help-search-stats">
                   <span className="help-search-count-badge">
-                    <Icon name="search" size={12} /> SEARCH RESULTS
+                    <Icon name="help-circle" size={12} /> GUIDE QUESTIONS & ANSWERS
                   </span>
                   <h2 id="search-results-title" className="help-search-results-title">
-                    Results for &ldquo;{searchQuery}&rdquo;
+                    Questions for &ldquo;{searchQuery}&rdquo;
                   </h2>
                   <p className="help-search-results-subtitle">
-                    Found <strong>{totalResultsCount}</strong> matching guides, topics, and answers
+                    Found <strong>{matchedGuideQuestions.length}</strong> verified questions from our official guides
                   </p>
                 </div>
 
@@ -476,141 +486,30 @@ export function HelpCenter() {
                 </button>
               </div>
 
-              {totalResultsCount > 0 ? (
-                <>
-                  {/* Category Filter Pills */}
-                  <div className="help-search-filter-pills">
-                    <button
-                      type="button"
-                      className={`help-search-filter-pill ${activeFilterTab === "all" ? "active" : ""}`}
-                      onClick={() => setActiveFilterTab("all")}
-                    >
-                      All Results ({totalResultsCount})
-                    </button>
-                    {matchedArticles.length > 0 && (
-                      <button
-                        type="button"
-                        className={`help-search-filter-pill ${activeFilterTab === "articles" ? "active" : ""}`}
-                        onClick={() => setActiveFilterTab("articles")}
+              {matchedGuideQuestions.length > 0 ? (
+                <div>
+                  <div className="help-search-cards-grid">
+                    {matchedGuideQuestions.map((q) => (
+                      <Link
+                        key={`${q.guideSlug}-${q.id}`}
+                        to={`/guides/${q.guideSlug}#${q.id}`}
+                        className="help-search-card"
                       >
-                        Help Articles ({matchedArticles.length})
-                      </button>
-                    )}
-                    {(matchedCategories.length > 0 || matchedGuides.length > 0) && (
-                      <button
-                        type="button"
-                        className={`help-search-filter-pill ${activeFilterTab === "guides" ? "active" : ""}`}
-                        onClick={() => setActiveFilterTab("guides")}
-                      >
-                        Modules & Guides ({matchedCategories.length + matchedGuides.length})
-                      </button>
-                    )}
-                    {matchedFaqs.length > 0 && (
-                      <button
-                        type="button"
-                        className={`help-search-filter-pill ${activeFilterTab === "faqs" ? "active" : ""}`}
-                        onClick={() => setActiveFilterTab("faqs")}
-                      >
-                        FAQs ({matchedFaqs.length})
-                      </button>
-                    )}
-                  </div>
-
-                  {/* Matching Articles Grid */}
-                  {(activeFilterTab === "all" || activeFilterTab === "articles") && matchedArticles.length > 0 && (
-                    <div>
-                      <div className="help-search-cards-grid">
-                        {matchedArticles.map((art) => (
-                          <Link
-                            key={art.slug}
-                            to={`/support/article/${art.slug}`}
-                            className="help-search-card"
-                          >
-                            <div>
-                              <div className="help-search-card-meta">
-                                <span className="help-search-card-badge">
-                                  {art.topicSlug.replace("-", " ")}
-                                </span>
-                                <span className="help-search-card-time">⏱️ {art.readTime}</span>
-                              </div>
-                              <h3 className="help-search-card-title">{art.title}</h3>
-                              <p className="help-search-card-desc">{art.summary}</p>
-                            </div>
-                            <span className="help-search-card-action">
-                              Read Step-by-Step Guide <Icon name="arrow" size={14} />
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Matching Modules & Guides */}
-                  {(activeFilterTab === "all" || activeFilterTab === "guides") &&
-                    (matchedCategories.length > 0 || matchedGuides.length > 0) && (
-                      <div style={{ marginBottom: "48px" }}>
-                        <h3 style={{ fontSize: "1.25rem", fontWeight: 800, color: "#191735", marginBottom: "16px" }}>
-                          Matching Modules & Walkthroughs
-                        </h3>
-                        <div className="help-categories-grid" style={{ marginBottom: "24px" }}>
-                          {matchedCategories.map((cat) => (
-                            <Link key={cat.id} to={cat.link} className="help-category-card">
-                              <div className="help-cat-icon-wrap" aria-hidden="true">
-                                <Icon name={cat.icon} size={22} />
-                              </div>
-                              <h4 className="help-cat-name">{cat.title}</h4>
-                              <p className="help-cat-desc">{cat.desc}</p>
-                              <span className="help-cat-link-row">
-                                Explore Module <Icon name="arrow" size={14} />
-                              </span>
-                            </Link>
-                          ))}
+                        <div>
+                          <div className="help-search-card-meta">
+                            <span className="help-search-card-badge">{q.guideTitle}</span>
+                            <span className="help-search-card-time">📖 {q.category}</span>
+                          </div>
+                          <h3 className="help-search-card-title">{q.question}</h3>
+                          <p className="help-search-card-desc">{q.answer}</p>
                         </div>
-
-                        {matchedGuides.length > 0 && (
-                          <div className="help-guides-grid">
-                            {matchedGuides.map((guide) => (
-                              <Link key={guide.number} to={guide.link} className="help-guide-card">
-                                <span className="help-guide-num">{guide.number}</span>
-                                <h4 className="help-guide-title">{guide.title}</h4>
-                                <p className="help-guide-desc">{guide.desc}</p>
-                                <span className="help-guide-action">
-                                  Start Walkthrough <Icon name="arrow" size={14} />
-                                </span>
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    )}
-
-                  {/* Matching FAQs */}
-                  {(activeFilterTab === "all" || activeFilterTab === "faqs") && matchedFaqs.length > 0 && (
-                    <div className="help-search-faqs-block">
-                      <h3 className="help-search-faqs-title">
-                        <Icon name="help-circle" size={22} color="#802B5B" /> Matching Questions & Answers
-                      </h3>
-                      <div className="faq-list">
-                        {matchedFaqs.map((f, i) => (
-                          <div
-                            className={`faq-item ${openSearchFaq === i ? "open" : ""}`}
-                            key={f.q}
-                          >
-                            <button
-                              type="button"
-                              onClick={() => toggleSearchFaq(i)}
-                              aria-expanded={openSearchFaq === i}
-                            >
-                              <span>{f.q}</span>
-                              <i aria-hidden="true">{openSearchFaq === i ? "−" : "+"}</i>
-                            </button>
-                            {openSearchFaq === i && <p>{f.a}</p>}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </>
+                        <span className="help-search-card-action">
+                          View in Guide Detail Page <Icon name="arrow" size={14} />
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               ) : (
                 /* Empty Search State */
                 <div className="help-search-empty-box">
@@ -709,6 +608,7 @@ export function HelpCenter() {
 
             {/* =========================================================================
                 3. POPULAR HELP ARTICLES — Answers to Common HRMS Questions
+                   (Displaying Verified Questions from Official Guides)
                 ========================================================================= */}
             <section className="help-articles-section" id="popular-articles" aria-labelledby="articles-title">
               <div className="container">
@@ -718,24 +618,24 @@ export function HelpCenter() {
                     Answers to Common HRMS Questions
                   </h2>
                   <p className="help-section-desc">
-                    Quickly resolve everyday administrative questions with our most frequently referenced support walkthroughs.
+                    Quickly resolve everyday operational questions with verified answers directly linked to our in-depth guides.
                   </p>
                 </div>
 
                 <div className="help-articles-list">
-                  {popularArticles.map((art) => (
+                  {ALL_GUIDE_QUESTIONS.slice(0, 6).map((q) => (
                     <Link
-                      key={art.slug}
-                      to={`/support/article/${art.slug}`}
+                      key={`${q.guideSlug}-${q.id}`}
+                      to={`/guides/${q.guideSlug}#${q.id}`}
                       className="help-article-card"
                     >
                       <div className="help-article-card-main">
                         <div className="help-article-badges">
-                          <span className="help-article-topic-badge">{art.topic}</span>
-                          <span className="help-article-read-time">⏱️ {art.readTime}</span>
+                          <span className="help-article-topic-badge">{q.guideTitle}</span>
+                          <span className="help-article-read-time">📖 {q.category}</span>
                         </div>
-                        <h3 className="help-article-card-title">{art.title}</h3>
-                        <p className="help-article-card-summary">{art.summary}</p>
+                        <h3 className="help-article-card-title">{q.question}</h3>
+                        <p className="help-article-card-summary">{q.answer}</p>
                       </div>
                       <div className="help-article-card-arrow" aria-hidden="true">
                         <Icon name="arrow" size={16} />
@@ -754,7 +654,7 @@ export function HelpCenter() {
               <div className="container">
                 <div className="help-workflow-card-container">
                   <div className="help-workflow-grid">
-                    {/* Left Column: Heading, Subtitle & 3D Isometric Illustration */}
+                    {/* Left Column: Heading, Subtitle, Explore Guide Button & 3D Isometric Illustration */}
                     <div className="help-workflow-left-col">
                       <span className="help-workflow-eyebrow">✦ STEP-BY-STEP GUIDES ✦</span>
                       <h2 id="guides-title" className="help-workflow-title">
@@ -764,6 +664,12 @@ export function HelpCenter() {
                         Follow our structured 5-step onboarding path designed to configure company policies,
                         integrate biometric attendance, and run zero-defect payroll.
                       </p>
+
+                      <div className="help-workflow-action-wrap" style={{ marginTop: "18px", marginBottom: "22px" }}>
+                        <Link to="/guides" className="help-btn-primary" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+                          Explore All Guides <Icon name="arrow" size={15} />
+                        </Link>
+                      </div>
 
                       <div className="help-workflow-isometric-box">
                         <HelpWorkflowIsometric className="help-workflow-isometric-svg" />
@@ -787,6 +693,9 @@ export function HelpCenter() {
                                 {guide.number}. {guide.title}
                               </h3>
                               <p className="help-workflow-step-desc">{guide.desc}</p>
+                              <div style={{ marginTop: "8px", fontSize: "12.5px", fontWeight: 700, color: "#802B5B", display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                                Explore Guide <Icon name="arrow" size={12} />
+                              </div>
                             </div>
                           </Link>
                         ))}
