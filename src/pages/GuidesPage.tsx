@@ -3,10 +3,12 @@ import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
+import { useDemoModal } from "../context/DemoModalContext";
 import AllGuidesSection from "../components/guides/AllGuidesSection";
 import "./GuidesPage.css";
 
 export function GuidesPage() {
+  const { openDemoModal } = useDemoModal();
   // Search query state for elevated search box
   const [searchQuery, setSearchQuery] = useState<string>("");
 
@@ -120,7 +122,7 @@ export function GuidesPage() {
               </p>
 
               <div className="guides-final-actions">
-                <Button to="/request-demo" className="guides-final-btn-primary">
+                <Button onClick={() => openDemoModal()} className="guides-final-btn-primary">
                   Book a Free Demo <Icon name="arrow" size={16} />
                 </Button>
                 <Button to="/contact" className="guides-final-btn-secondary">

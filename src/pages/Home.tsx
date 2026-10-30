@@ -7,12 +7,15 @@ import Logo from "../components/ui/Logo";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import Icon, { IconName } from "../components/ui/Icon";
+import CustomSelect from "../components/ui/CustomSelect";
 import { useDemoModal } from "../context/DemoModalContext";
 import { useCurrency } from "../context/CurrencyContext";
-import Hero3DStaircase from "../components/home/Hero3DStaircase";
+import { submitEnquiry } from "../services/enquiryService";
+import "../components/home/CorporateHero.css";
 
 export function DemoForm({ compact = false }: { compact?: boolean }) {
   const [sent, setSent] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -63,7 +66,7 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
     setErrors((prev) => ({ ...prev, [field]: err }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const newErrors: { [K in keyof typeof formData]?: string } = {};
     (Object.keys(formData) as (keyof typeof formData)[]).forEach((field) => {
@@ -79,16 +82,33 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
     }
 
     setIsSubmitting(true);
-    setTimeout(() => {
+    setSubmitError(null);
+
+    try {
+      await submitEnquiry({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company_name: "Prospect Company",
+        team_size: formData.employees,
+        primary_area_of_interest: "Full Platform Walkthrough",
+        nature_of_enquiry: "SCHEDULE_LIVE_DEMO",
+        notes: "Demo requested via Home inline form",
+        source_page: "/",
+      });
       setIsSubmitting(false);
       setSent(true);
-    }, 400);
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setSubmitError(err?.message || "Failed to submit demo request.");
+    }
   };
 
   const handleReset = () => {
     setFormData({ name: "", email: "", phone: "", employees: "" });
     setErrors({});
     setTouched({});
+    setSubmitError(null);
     setSent(false);
   };
 
@@ -181,30 +201,36 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
             </span>
           )}
         </label>
-        <label>
-          <span>Employees</span>
-          <select
+        <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+          <label htmlFor="home-hero-employees" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
+            Employees *
+          </label>
+          <CustomSelect
+            id="home-hero-employees"
+            options={[
+              { value: "1-50", label: "1 – 50", desc: "Startups & agile teams" },
+              { value: "51-200", label: "51 – 200", desc: "Growing companies" },
+              { value: "201-500", label: "201 – 500", desc: "Medium enterprises" },
+              { value: "500+", label: "500+", desc: "Large enterprises" },
+            ]}
             value={formData.employees}
-            onChange={(e) => handleChange("employees", e.target.value)}
+            placeholder="Select team size"
+            onChange={(val) => handleChange("employees", val)}
             onBlur={() => handleBlur("employees")}
-            className={errors.employees && touched.employees ? "has-error" : ""}
-            aria-invalid={Boolean(errors.employees && touched.employees)}
-          >
-            <option value="" disabled>
-              Select team size
-            </option>
-            <option value="1-50">1 – 50</option>
-            <option value="51-200">51 – 200</option>
-            <option value="201-500">201 – 500</option>
-            <option value="500+">500+</option>
-          </select>
+            hasError={Boolean(errors.employees && touched.employees)}
+          />
           {errors.employees && touched.employees && (
             <span className="field-error">
               <Icon name="x" size={11} /> {errors.employees}
             </span>
           )}
-        </label>
+        </div>
       </div>
+      {submitError && (
+        <div style={{ color: "#ef4444", fontSize: "12px", marginBottom: "8px" }} role="alert">
+          {submitError}
+        </div>
+      )}
       <button type="submit" className="btn form-submit" disabled={isSubmitting}>
         {isSubmitting ? "Submitting..." : "Book a Demo"}
       </button>
@@ -1328,63 +1354,63 @@ export function Home() {
       <Navbar />
 
       <main>
-        <section className="hero" id="demo">
-          <div className="hero-glow" />
-          <div className="container hero-grid">
-            <div className="hero-copy">
-              <span className="hero-badge">
-                <i>
-                  <Icon name="sparkle" size={14} />
-                </i>
-                Built for ambitious businesses worldwide
-              </span>
-              <h1>
-                <span>HR, Payroll & Attendance</span>
-                <span>
-                  for <em>Every Branch,</em>
-                </span>
-                <span>in One System</span>
-              </h1>
-              <p>
-                Replace spreadsheets and scattered tools with one simple HRMS your entire team will
-                love — from first clock-in to final payslip.
-              </p>
-              <div className="hero-actions">
-                <Button to="/request-demo">
-                  Book a Demo <Icon name="arrow" />
-                </Button>
-                <Button href="#pricing" secondary>
-                  Estimate Price
-                </Button>
+        <section className="corporate-hero-section" id="demo">
+          {/* Right-aligned photo with seamless gradient fade to white */}
+          <div className="corporate-hero-bg-wrapper" aria-hidden="true">
+            <div className="corporate-hero-media">
+              <img
+                src="/images/hero-colleagues-clean.png"
+                alt="LattiumHR enterprise HR and payroll leaders collaborating"
+                className="corporate-hero-image"
+              />
+              <div className="corporate-hero-gradient-overlay" />
+            </div>
+          </div>
+
+          <div className="container corporate-hero-container">
+            <div className="corporate-hero-content">
+              {/* Eyebrow in signature Plum #802B5B replacing the green from reference */}
+              <div className="corporate-hero-eyebrow">
+                INNOVATE. CONNECT. GROW.
               </div>
-              <div className="hero-benefits">
-                <div className="hero-benefit-item">
-                  <strong className="benefit-num benefit-num-2x">2×</strong>
-                  <p>
-                    <b>Faster</b>
-                    <small>Employee onboarding</small>
-                  </p>
-                </div>
-                <div className="hero-benefit-item">
-                  <strong className="benefit-num benefit-num-pct">99%</strong>
-                  <p>
-                    <b>Faster</b>
-                    <small>HR processes</small>
-                  </p>
-                </div>
-                <div className="hero-benefit-item">
-                  <strong className="benefit-num benefit-num-247">24/7</strong>
-                  <p>
-                    <b>Workforce</b>
-                    <small>Anywhere, any time</small>
-                  </p>
-                </div>
+
+              {/* Bold, commanding, clean corporate headline */}
+              <h1 className="corporate-hero-title">
+                <span className="hero-title-line">HR, Payroll &amp; Attendance</span>
+                <span className="hero-title-line">
+                  for <span className="hero-highlight-plum">Every Branch,</span>
+                </span>
+                <span className="hero-title-line">in One System</span>
+              </h1>
+
+              {/* Clean descriptive paragraph */}
+              <p className="corporate-hero-description">
+                From automated attendance to statutory payroll, we provide innovative workforce
+                solutions that keep your entire business connected, efficient, and compliant.
+              </p>
+
+              {/* Two Action Buttons matching the reference image styling */}
+              <div className="corporate-hero-actions">
+                <button
+                  type="button"
+                  className="corporate-hero-btn-primary"
+                  onClick={() => openDemoModal()}
+                >
+                  <span>Book a Demo</span>
+                  <span className="corporate-btn-arrow-box" aria-hidden="true">
+                    <Icon name="arrow" size={14} />
+                  </span>
+                </button>
+
+                <a href="#pricing" className="corporate-hero-btn-secondary">
+                  <span>Estimate Price</span>
+                  <Icon name="arrow" size={14} />
+                </a>
               </div>
             </div>
-
-            {/* Hero Right Visual: Premium 3D Staircase Looping Animation */}
-            <Hero3DStaircase />
           </div>
+
+          {/* Social Proof Companies Strip */}
           <div className="container company-strip">
             <span>POWERING PEOPLE AT</span>
             <div>

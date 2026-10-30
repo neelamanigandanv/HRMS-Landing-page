@@ -1,5 +1,21 @@
 import { FormEvent, useEffect, useState } from "react";
 import Icon from "../ui/Icon";
+import CustomSelect from "../ui/CustomSelect";
+import { submitEnquiry } from "../../services/enquiryService";
+
+const MODAL_TEAM_SIZE_OPTIONS = [
+  { value: "1-50", label: "1 – 50 employees" },
+  { value: "51-200", label: "51 – 200 employees" },
+  { value: "201-500", label: "201 – 500 employees" },
+  { value: "500+", label: "500+ employees" },
+];
+
+const MODAL_INTEREST_OPTIONS = [
+  { value: "Full Platform", label: "All-In-One Platform" },
+  { value: "Attendance & Geofencing", label: "Attendance & Geofencing" },
+  { value: "Statutory Payroll", label: "Statutory Payroll Management" },
+  { value: "Multi-Branch Governance", label: "Multi-Branch Governance" },
+];
 
 export interface RequestDemoModalProps {
   isOpen: boolean;
@@ -7,6 +23,7 @@ export interface RequestDemoModalProps {
   title?: string;
   subtitle?: string;
   defaultInterest?: string;
+  defaultEmail?: string;
 }
 
 export function RequestDemoModal({
@@ -15,10 +32,11 @@ export function RequestDemoModal({
   title = "See LattiumHR in Action",
   subtitle = "Get a personalised 30-min walkthrough with a product specialist",
   defaultInterest = "",
+  defaultEmail = "",
 }: RequestDemoModalProps) {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    email: defaultEmail || "",
     phone: "",
     company: "",
     employees: "",
@@ -29,6 +47,7 @@ export function RequestDemoModal({
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Close on Escape & Lock body scroll
   useEffect(() => {
@@ -55,10 +74,18 @@ export function RequestDemoModal({
     if (isOpen) {
       setIsSubmitted(false);
       setIsSubmitting(false);
+      setSubmitError(null);
       setErrors({});
       setTouched({});
+      if (defaultEmail || defaultInterest) {
+        setFormData((prev) => ({
+          ...prev,
+          email: defaultEmail || prev.email,
+          interest: defaultInterest || prev.interest,
+        }));
+      }
     }
-  }, [isOpen]);
+  }, [isOpen, defaultEmail, defaultInterest]);
 
   const validateField = (field: string, value: string): string => {
     const trimmed = value.trim();
@@ -103,7 +130,7 @@ export function RequestDemoModal({
     setErrors((prev) => ({ ...prev, [field]: err }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const fieldsToValidate = ["name", "email", "phone", "company", "employees"];
     const newErrors: Record<string, string> = {};
@@ -127,16 +154,34 @@ export function RequestDemoModal({
     }
 
     setIsSubmitting(true);
-    setTimeout(() => {
+    setSubmitError(null);
+
+    try {
+      await submitEnquiry({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company_name: formData.company,
+        team_size: formData.employees,
+        primary_area_of_interest: formData.interest || "Platform Suite",
+        nature_of_enquiry: "SCHEDULE_LIVE_DEMO",
+        notes: `Demo request from modal (${title})`,
+        source_page: typeof window !== "undefined" ? window.location.pathname + window.location.hash : "/demo-modal",
+      });
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 450);
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setSubmitError(
+        err?.message || "Failed to submit demo request. Please check your connection and try again."
+      );
+    }
   };
 
   const handleReset = () => {
     setFormData({
       name: "",
-      email: "",
+      email: defaultEmail || "",
       phone: "",
       company: "",
       employees: "",
@@ -144,6 +189,7 @@ export function RequestDemoModal({
     });
     setErrors({});
     setTouched({});
+    setSubmitError(null);
     setIsSubmitted(false);
   };
 
@@ -326,48 +372,63 @@ export function RequestDemoModal({
               </label>
 
               {/* Team Size */}
-              <label>
-                <span>Team Size *</span>
-                <select
+              <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+                <label htmlFor="modal-team-size" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
+                  Team Size *
+                </label>
+                <CustomSelect
+                  id="modal-team-size"
+                  options={MODAL_TEAM_SIZE_OPTIONS}
                   value={formData.employees}
-                  onChange={(e) => handleChange("employees", e.target.value)}
+                  placeholder="Select team size"
+                  onChange={(val) => handleChange("employees", val)}
                   onBlur={() => handleBlur("employees")}
-                  className={errors.employees && touched.employees ? "has-error" : ""}
-                  aria-invalid={Boolean(errors.employees && touched.employees)}
-                >
-                  <option value="" disabled>
-                    Select team size
-                  </option>
-                  <option value="1-50">1 – 50 employees</option>
-                  <option value="51-200">51 – 200 employees</option>
-                  <option value="201-500">201 – 500 employees</option>
-                  <option value="500+">500+ employees</option>
-                </select>
+                  hasError={Boolean(errors.employees && touched.employees)}
+                />
                 {errors.employees && touched.employees && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.employees}
                   </span>
                 )}
-              </label>
+              </div>
 
               {/* Module Interest */}
-              <label>
-                <span>Primary Focus</span>
-                <select
+              <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+                <label htmlFor="modal-primary-focus" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
+                  Primary Focus
+                </label>
+                <CustomSelect
+                  id="modal-primary-focus"
+                  options={MODAL_INTEREST_OPTIONS}
                   value={formData.interest}
-                  onChange={(e) => handleChange("interest", e.target.value)}
-                >
-                  <option value="" disabled>
-                    Select primary focus
-                  </option>
-                  <option value="Full Platform">All Modules (Full Suite)</option>
-                  <option value="Attendance & Geofencing">Attendance & Geofencing</option>
-                  <option value="Payroll & Compliance">Payroll & Compliance</option>
-                  <option value="Core HR & Onboarding">Core HR & Directory</option>
-                  <option value="Multi-Branch Operations">Multi-Branch Operations</option>
-                </select>
-              </label>
+                  placeholder="Select primary focus"
+                  onChange={(val) => handleChange("interest", val)}
+                />
+              </div>
             </div>
+
+            {submitError && (
+              <div
+                style={{
+                  backgroundColor: "#fef2f2",
+                  border: "1px solid #fecaca",
+                  borderRadius: "8px",
+                  padding: "10px 14px",
+                  color: "#991b1b",
+                  fontSize: "13px",
+                  lineHeight: "1.5",
+                  marginTop: "12px",
+                  marginBottom: "4px",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "8px",
+                }}
+                role="alert"
+              >
+                <span style={{ fontWeight: "bold", fontSize: "14px", lineHeight: "1" }}>!</span>
+                <span>{submitError}</span>
+              </div>
+            )}
 
             <button type="submit" className="btn form-submit" disabled={isSubmitting}>
               {isSubmitting ? (

@@ -180,6 +180,12 @@ export const resourcesNavItems: NavLinkItem[] = [
     desc: "Dedicated support specialists, SLA commitments, and response times",
     icon: "phone",
   },
+  {
+    title: "API Documentation",
+    href: "/resources/api-documentation",
+    desc: "Developer REST endpoints, authentication flows, payloads, and code examples",
+    icon: "file-text",
+  },
   // {
   //   title: "Case Studies",
   //   href: "/resources/case-studies",
@@ -216,12 +222,9 @@ export const footerColumns = [
     title: "Resources & Support",
     links: [
       { label: "Help Center", href: "/support/help-center" },
-      { label: "Raise a Ticket", href: "/support#ticket" },
-      { label: "Track My Ticket", href: "/support/track" },
-      { label: "System Status", href: "https://status.lattiumhr.com" },
-      { label: "Contact Sales", href: "/contact-sales" },
       { label: "HRMS Glossary", href: "/resources/hrms-glossary" },
       { label: "Guides & Playbooks", href: "/guides" },
+      { label: "API Documentation", href: "/resources/api-documentation" },
     ],
   },
   {

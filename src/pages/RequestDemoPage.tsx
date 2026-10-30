@@ -4,6 +4,23 @@ import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
+import CustomSelect from "../components/ui/CustomSelect";
+import { submitEnquiry } from "../services/enquiryService";
+import "./RequestDemoPage.css";
+
+const TEAM_SIZE_OPTIONS = [
+  { value: "1-50", label: "1 – 50 employees" },
+  { value: "51-200", label: "51 – 200 employees" },
+  { value: "201-500", label: "201 – 500 employees" },
+  { value: "500+", label: "500+ employees" },
+];
+
+const INTEREST_OPTIONS = [
+  { value: "Full Platform", label: "All-In-One Platform" },
+  { value: "Attendance & Geofencing", label: "Attendance & Geofencing" },
+  { value: "Statutory Payroll", label: "Statutory Payroll Management" },
+  { value: "Multi-Branch Governance", label: "Multi-Branch Governance" },
+];
 
 export function RequestDemoPage() {
   const navigate = useNavigate();
@@ -19,6 +36,7 @@ export function RequestDemoPage() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validate = (field: string, value: string): string => {
     const trimmed = value.trim();
@@ -63,7 +81,7 @@ export function RequestDemoPage() {
     }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     const fields = ["name", "email", "phone", "company", "employees"];
@@ -79,12 +97,28 @@ export function RequestDemoPage() {
     if (Object.keys(newErrors).length > 0) return;
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    // Simulate backend submission confirmation
-    setTimeout(() => {
+    try {
+      await submitEnquiry({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company_name: formData.company,
+        team_size: formData.employees,
+        primary_area_of_interest: formData.interest || "Full Platform",
+        nature_of_enquiry: "SCHEDULE_LIVE_DEMO",
+        notes: formData.notes || "",
+        source_page: "/request-demo",
+      });
       setIsSubmitting(false);
       navigate("/thank-you", { state: { submittedData: formData } });
-    }, 600);
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setSubmitError(
+        err?.message || "Failed to submit demo request. Please check your connection and try again."
+      );
+    }
   };
 
   const breadcrumbs = [{ label: "Request a Demo" }];
@@ -101,60 +135,91 @@ export function RequestDemoPage() {
         <div className="container demo-page-grid">
           {/* Left Column: Value Proposition & What to Expect */}
           <div className="demo-copy-col">
-            <span className="feature-badge">
-              <Icon name="sparkle" size={14} /> PERSONALIZED PRODUCT TOUR
-            </span>
-            <h1>See how LattiumHR fits your organization</h1>
-            <p className="demo-hero-intro">
-              Join 500+ businesses worldwide running core HR, geofenced attendance, and statutory
-              payroll on one connected platform.
-            </p>
+            <div className="demo-copy-top">
+              <div className="demo-eyebrow">
+                <span className="demo-sparkle">✦</span>
+                <span>PERSONALIZED PRODUCT TOUR</span>
+                <span className="demo-sparkle">✦</span>
+              </div>
 
-            <div className="demo-expectations-box">
-              <h3>What you’ll get in your 30-minute session:</h3>
-              <ul className="expectations-list">
-                <li>
-                  <span className="exp-icon">
-                    <Icon name="check" size={14} />
-                  </span>
-                  <div>
-                    <strong>Tailored Workflow Walkthrough</strong>
-                    <p>Live demo customized to your employee count, office locations, and shift patterns.</p>
-                  </div>
-                </li>
-                <li>
-                  <span className="exp-icon">
-                    <Icon name="check" size={14} />
-                  </span>
-                  <div>
-                    <strong>Statutory Compliance Review</strong>
-                    <p>Learn how automated PF, ESI, state PT, and TDS rules eliminate calculation errors.</p>
-                  </div>
-                </li>
-                <li>
-                  <span className="exp-icon">
-                    <Icon name="check" size={14} />
-                  </span>
-                  <div>
-                    <strong>Data Migration & Go-Live Roadmap</strong>
-                    <p>See how your dedicated onboarding specialist migrates records in 2–4 weeks.</p>
-                  </div>
-                </li>
-              </ul>
+              <h1>
+                See how LattiumHR <span className="demo-highlight-plum">fits your organization</span>
+              </h1>
+
+              <p className="demo-hero-intro">
+                Take a personalized 30-minute walkthrough configured for your team size,
+                multi-branch structure, and statutory payroll workflows.
+              </p>
             </div>
 
-            <div className="demo-trust-badges">
-              <div className="trust-pill">
-                <strong>500+</strong>
-                <small>Active Companies</small>
+            <div className="demo-highlights-list">
+              <div className="demo-highlight-item">
+                <span className="demo-highlight-icon">
+                  <Icon name="check" size={14} />
+                </span>
+                <div className="demo-highlight-text">
+                  <strong>Tailored Workflow Walkthrough</strong>
+                  <span>Customized to your shift rosters, branch locations, and team size.</span>
+                </div>
               </div>
-              <div className="trust-pill">
-                <strong>98%</strong>
-                <small>On-Time Payroll</small>
+
+              <div className="demo-highlight-item">
+                <span className="demo-highlight-icon">
+                  <Icon name="check" size={14} />
+                </span>
+                <div className="demo-highlight-text">
+                  <strong>Statutory Payroll &amp; Compliance</strong>
+                  <span>Automated PF, ESIC, State PT, and TDS rules with zero-leakage calculations.</span>
+                </div>
               </div>
-              <div className="trust-pill">
-                <strong>4.8 / 5</strong>
-                <small>Customer Rating</small>
+
+              <div className="demo-highlight-item">
+                <span className="demo-highlight-icon">
+                  <Icon name="check" size={14} />
+                </span>
+                <div className="demo-highlight-text">
+                  <strong>Biometric &amp; Geofencing Sync</strong>
+                  <span>Real-time mobile selfie punch, GPS perimeter tracking, and device sync.</span>
+                </div>
+              </div>
+
+              <div className="demo-highlight-item">
+                <span className="demo-highlight-icon">
+                  <Icon name="check" size={14} />
+                </span>
+                <div className="demo-highlight-text">
+                  <strong>Fast 2–4 Week Go-Live</strong>
+                  <span>Dedicated implementation manager and risk-free historical data migration.</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="demo-copy-bottom">
+              <div className="demo-trust-strip">
+                <div className="demo-stat-pill">
+                  <strong>500+</strong>
+                  <span>Enterprises</span>
+                </div>
+                <div className="demo-stat-divider" />
+                <div className="demo-stat-pill">
+                  <strong>99.9%</strong>
+                  <span>Payroll SLA</span>
+                </div>
+                <div className="demo-stat-divider" />
+                <div className="demo-stat-pill">
+                  <strong>4.9 / 5</strong>
+                  <span>User Rating</span>
+                </div>
+              </div>
+
+              <div className="demo-side-guarantee">
+                <div className="demo-side-guarantee-left">
+                  <Icon name="shield" size={14} />
+                  <span>Strict bilateral NDA &amp; enterprise data security</span>
+                </div>
+                <a href="tel:+9108041228900" className="demo-side-phone-link">
+                  <Icon name="phone" size={12} /> +91 (080) 4122-8900
+                </a>
               </div>
             </div>
           </div>
@@ -241,42 +306,38 @@ export function RequestDemoPage() {
                     )}
                   </label>
 
-                  <label>
-                    <span>Team Size *</span>
-                    <select
+                  <div className="form-field-group">
+                    <label htmlFor="team-size-select" className="field-label-text">
+                      Team Size *
+                    </label>
+                    <CustomSelect
+                      id="team-size-select"
+                      options={TEAM_SIZE_OPTIONS}
                       value={formData.employees}
-                      onChange={(e) => handleChange("employees", e.target.value)}
+                      placeholder="Select number of employees"
+                      onChange={(val) => handleChange("employees", val)}
                       onBlur={() => handleBlur("employees")}
-                      className={errors.employees && touched.employees ? "has-error" : ""}
-                      aria-invalid={Boolean(errors.employees && touched.employees)}
-                    >
-                      <option value="" disabled>
-                        Select number of employees
-                      </option>
-                      <option value="1-50">1 – 50 employees</option>
-                      <option value="51-200">51 – 200 employees</option>
-                      <option value="201-500">201 – 500 employees</option>
-                      <option value="500+">500+ employees</option>
-                    </select>
+                      hasError={Boolean(errors.employees && touched.employees)}
+                    />
                     {errors.employees && touched.employees && (
                       <span className="field-error">
                         <Icon name="x" size={11} /> {errors.employees}
                       </span>
                     )}
-                  </label>
+                  </div>
 
-                  <label>
-                    <span>Primary Area of Interest</span>
-                    <select
+                  <div className="form-field-group">
+                    <label htmlFor="interest-select" className="field-label-text">
+                      Primary Area of Interest
+                    </label>
+                    <CustomSelect
+                      id="interest-select"
+                      options={INTEREST_OPTIONS}
                       value={formData.interest}
-                      onChange={(e) => handleChange("interest", e.target.value)}
-                    >
-                      <option value="Full Platform">All-In-One Platform</option>
-                      <option value="Attendance & Geofencing">Attendance & Geofencing</option>
-                      <option value="Statutory Payroll">Statutory Payroll Management</option>
-                      <option value="Multi-Branch Governance">Multi-Branch Governance</option>
-                    </select>
-                  </label>
+                      placeholder="Choose primary interest"
+                      onChange={(val) => handleChange("interest", val)}
+                    />
+                  </div>
                 </div>
 
                 <label className="message-label">
@@ -288,6 +349,28 @@ export function RequestDemoPage() {
                     onChange={(e) => handleChange("notes", e.target.value)}
                   />
                 </label>
+
+                {submitError && (
+                  <div
+                    style={{
+                      backgroundColor: "#fef2f2",
+                      border: "1px solid #fecaca",
+                      borderRadius: "8px",
+                      padding: "10px 14px",
+                      color: "#991b1b",
+                      fontSize: "13px",
+                      lineHeight: "1.5",
+                      marginBottom: "14px",
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "8px",
+                    }}
+                    role="alert"
+                  >
+                    <Icon name="x" size={16} className="mt-0.5 flex-shrink-0" />
+                    <span>{submitError}</span>
+                  </div>
+                )}
 
                 <Button type="submit" disabled={isSubmitting} className="form-submit">
                   {isSubmitting ? "Submitting..." : "Schedule My 30-Min Demo"}

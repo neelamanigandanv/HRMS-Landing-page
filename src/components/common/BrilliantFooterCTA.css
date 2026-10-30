@@ -1,0 +1,278 @@
+/* ==========================================================================
+   BRILLIANT FOOTER CTA SECTION
+   Inspired by high-impact tech & architectural CTA banners
+   Brand Primary Plum: #802B5B | Deep Base: #521838 | Vibrant Center: #a23875
+   ========================================================================== */
+
+.brilliant-footer-cta {
+  position: relative;
+  overflow: hidden;
+  background-color: #802B5B;
+  background: radial-gradient(ellipse at 50% 50%, #9e3871 0%, #802B5B 45%, #521838 100%);
+  padding: 6.5rem 1.5rem;
+  color: #ffffff;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* 1. Subtle Dot Matrix Tech Pattern */
+.brilliant-cta-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.22) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.65;
+  mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 80%);
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 80%);
+}
+
+/* 2. Concentric Radar Rings Radiating Behind Headline */
+.brilliant-radar-rings {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 900px;
+  height: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.brilliant-ring {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.brilliant-ring-1 {
+  width: 300px;
+  height: 300px;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.brilliant-ring-2 {
+  width: 480px;
+  height: 480px;
+  border-color: rgba(255, 255, 255, 0.09);
+}
+
+.brilliant-ring-3 {
+  width: 680px;
+  height: 680px;
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.brilliant-ring-4 {
+  width: 880px;
+  height: 880px;
+  border-color: rgba(255, 255, 255, 0.035);
+}
+
+/* 3. Corner Precision Brackets */
+.brilliant-corner-bracket {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: rgba(255, 255, 255, 0.32);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bracket-tl {
+  top: 25%;
+  left: 10%;
+  border-width: 1.5px 0 0 1.5px;
+}
+
+.bracket-tr {
+  top: 25%;
+  right: 10%;
+  border-width: 1.5px 1.5px 0 0;
+}
+
+.bracket-bl {
+  bottom: 25%;
+  left: 10%;
+  border-width: 0 0 1.5px 1.5px;
+}
+
+.bracket-br {
+  bottom: 25%;
+  right: 10%;
+  border-width: 0 1.5px 1.5px 0;
+}
+
+/* 4. Foreground Content */
+.brilliant-cta-container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Small, Tracked Uppercase Eyebrow */
+.brilliant-cta-eyebrow {
+  display: inline-block;
+  font-size: 0.785rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+/* Huge Bold All-Caps Headline matching the reference image */
+.brilliant-cta-title {
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+  text-wrap: balance;
+}
+
+.brilliant-title-line {
+  display: block;
+}
+
+/* Subtitle Description */
+.brilliant-cta-description {
+  font-size: 0.975rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Action Buttons Container */
+.brilliant-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.15rem;
+}
+
+/* Primary Button (White solid with brand plum text) */
+.brilliant-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 1.85rem;
+  background: #ffffff;
+  color: #802B5B;
+  border: 1.5px solid #ffffff;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.22);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.brilliant-btn-primary:hover {
+  background: #fdf2f7;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+}
+
+.brilliant-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button (Glass translucent button matching reference) */
+.brilliant-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 1.85rem;
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 750;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.brilliant-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.brilliant-btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .bracket-tl,
+  .bracket-bl {
+    left: 4%;
+  }
+
+  .bracket-tr,
+  .bracket-br {
+    right: 4%;
+  }
+
+  .brilliant-radar-rings {
+    width: 650px;
+    height: 650px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brilliant-footer-cta {
+    padding: 4.5rem 1.25rem;
+  }
+
+  .brilliant-corner-bracket {
+    display: none;
+  }
+
+  .brilliant-cta-title {
+    font-size: 2.35rem;
+  }
+
+  .brilliant-cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.85rem;
+  }
+
+  .brilliant-btn-primary,
+  .brilliant-btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

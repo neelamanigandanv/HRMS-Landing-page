@@ -4,9 +4,27 @@ import SEO from "../components/layout/SEO";
 import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
+import CustomSelect from "../components/ui/CustomSelect";
+import { submitEnquiry, NatureOfEnquiry } from "../services/enquiryService";
+
+const CONTACT_TEAM_SIZE_OPTIONS = [
+  { value: "1-50", label: "1 – 50 employees", desc: "Startups & small teams" },
+  { value: "51-200", label: "51 – 200 employees", desc: "Mid-sized growing orgs" },
+  { value: "201-500", label: "201 – 500 employees", desc: "Multi-branch enterprises" },
+  { value: "500+", label: "500+ employees", desc: "Large workforce & conglomerates" },
+];
+
+const CONTACT_INQUIRY_OPTIONS = [
+  { value: "Sales", label: "Schedule Live Product Demo", desc: "Tailored 30-min product walkthrough" },
+  { value: "Pricing", label: "Custom Pricing Quote", desc: "Volume & enterprise discounts" },
+  { value: "Partnership", label: "Implementation Partnership", desc: "System integrator or reseller alliances" },
+  { value: "General", label: "General Inquiry", desc: "Questions & business queries" },
+];
 
 export function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [contactData, setContactData] = useState({
     name: "",
     email: "",
@@ -17,10 +35,47 @@ export function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!contactData.name || !contactData.email) return;
-    setSubmitted(true);
+
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const natureMap: Record<string, NatureOfEnquiry> = {
+      Sales: "SCHEDULE_LIVE_DEMO",
+      Pricing: "CUSTOM_PRICE",
+      Partnership: "IMPLEMENTATION_PARTNERSHIP",
+      General: "GENERAL_ENQUIRY",
+    };
+
+    try {
+      await submitEnquiry({
+        name: contactData.name,
+        email: contactData.email,
+        phone: contactData.phone,
+        company_name: contactData.company || "Not Specified",
+        team_size: contactData.teamSize,
+        primary_area_of_interest:
+          contactData.inquiryType === "Sales"
+            ? "Product Walkthrough"
+            : contactData.inquiryType === "Pricing"
+            ? "Enterprise Pricing"
+            : contactData.inquiryType === "Partnership"
+            ? "Partner Program"
+            : "Platform Suite",
+        nature_of_enquiry: natureMap[contactData.inquiryType] || "GENERAL_ENQUIRY",
+        notes: contactData.message,
+        source_page: "/contact",
+      });
+      setIsSubmitting(false);
+      setSubmitted(true);
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setSubmitError(
+        err?.message || "Failed to submit inquiry. Please check your connection and try again."
+      );
+    }
   };
 
   const breadcrumbs = [{ label: "Contact Us" }];
@@ -178,34 +233,28 @@ export function ContactPage() {
                       }
                     />
                   </label>
-                  <label>
-                    <span>Team Size</span>
-                    <select
+                  <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+                    <label htmlFor="contact-team-size" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
+                      Team Size
+                    </label>
+                    <CustomSelect
+                      id="contact-team-size"
+                      options={CONTACT_TEAM_SIZE_OPTIONS}
                       value={contactData.teamSize}
-                      onChange={(e) =>
-                        setContactData((prev) => ({ ...prev, teamSize: e.target.value }))
-                      }
-                    >
-                      <option value="1-50">1 – 50 employees</option>
-                      <option value="51-200">51 – 200 employees</option>
-                      <option value="201-500">201 – 500 employees</option>
-                      <option value="500+">500+ employees</option>
-                    </select>
-                  </label>
-                  <label>
-                    <span>Nature of Inquiry</span>
-                    <select
+                      onChange={(val) => setContactData((prev) => ({ ...prev, teamSize: val }))}
+                    />
+                  </div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+                    <label htmlFor="contact-inquiry-type" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
+                      Nature of Inquiry
+                    </label>
+                    <CustomSelect
+                      id="contact-inquiry-type"
+                      options={CONTACT_INQUIRY_OPTIONS}
                       value={contactData.inquiryType}
-                      onChange={(e) =>
-                        setContactData((prev) => ({ ...prev, inquiryType: e.target.value }))
-                      }
-                    >
-                      <option value="Sales">Schedule Live Product Demo</option>
-                      <option value="Pricing">Custom Pricing Quote</option>
-                      <option value="Partnership">Implementation Partnership</option>
-                      <option value="General">General Inquiry</option>
-                    </select>
-                  </label>
+                      onChange={(val) => setContactData((prev) => ({ ...prev, inquiryType: val }))}
+                    />
+                  </div>
                 </div>
                 <label className="message-label">
                   <span>How can we help your team?</span>
@@ -218,8 +267,31 @@ export function ContactPage() {
                     }
                   />
                 </label>
-                <Button type="submit" className="form-submit">
-                  Send Inquiry <Icon name="arrow" />
+
+                {submitError && (
+                  <div
+                    style={{
+                      backgroundColor: "#fef2f2",
+                      border: "1px solid #fecaca",
+                      borderRadius: "8px",
+                      padding: "10px 14px",
+                      color: "#991b1b",
+                      fontSize: "13px",
+                      lineHeight: "1.5",
+                      marginBottom: "14px",
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "8px",
+                    }}
+                    role="alert"
+                  >
+                    <Icon name="x" size={16} className="mt-0.5 flex-shrink-0" />
+                    <span>{submitError}</span>
+                  </div>
+                )}
+
+                <Button type="submit" disabled={isSubmitting} className="form-submit">
+                  {isSubmitting ? "Sending Inquiry..." : "Send Inquiry"} <Icon name="arrow" />
                 </Button>
                 <small className="privacy-note">
                   <Icon name="shield" size={13} /> We respect your privacy. No marketing spam.

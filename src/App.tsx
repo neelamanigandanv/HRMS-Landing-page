@@ -19,6 +19,8 @@ import ReportsAnalyticsPage from "./pages/ReportsAnalyticsPage";
 import SolutionsOverview from "./pages/SolutionsOverview";
 import SolutionPage from "./pages/SolutionPage";
 import SmallBusinessPage from "./pages/SmallBusinessPage";
+import MidSizedBusinessPage from "./pages/MidSizedBusinessPage";
+import EnterprisePage from "./pages/EnterprisePage";
 import IndustrySolutionsPage from "./pages/IndustrySolutionsPage";
 import ResourcesOverview from "./pages/ResourcesOverview";
 import BlogList from "./pages/BlogList";
@@ -37,12 +39,14 @@ import SupportTrackPage from "./pages/support/SupportTrackPage";
 import SupportEmployeeHelpPage from "./pages/support/SupportEmployeeHelpPage";
 import ContactSalesPage from "./pages/support/ContactSalesPage";
 import CaseStudiesPage from "./pages/CaseStudiesPage";
+import ApiDocumentationPage from "./pages/ApiDocumentationPage";
 import GuidesPage from "./pages/GuidesPage";
 import GuideDetailPage from "./pages/GuideDetailPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import PartnersPage from "./pages/PartnersPage";
 import CareersPage from "./pages/CareersPage";
+import JobDetailPage from "./pages/JobDetailPage";
 import SecurityPage from "./pages/SecurityPage";
 import RequestDemoPage from "./pages/RequestDemoPage";
 import ThankYouPage from "./pages/ThankYouPage";
@@ -111,6 +115,17 @@ export function App() {
             <Route path="/industries" element={<IndustrySolutionsPage />} />
             <Route path="/solutions/small-businesses" element={<SmallBusinessPage />} />
             <Route path="/solutions/small-business" element={<SmallBusinessPage />} />
+            <Route path="/solutions/mid-sized-businesses" element={<MidSizedBusinessPage />} />
+            <Route path="/solutions/mid-sized-business" element={<MidSizedBusinessPage />} />
+            <Route path="/solutions/mid-sized" element={<MidSizedBusinessPage />} />
+            <Route path="/solutions/mid-size" element={<MidSizedBusinessPage />} />
+            <Route path="/solutions/mid-market" element={<MidSizedBusinessPage />} />
+            <Route path="/solutions/enterprises" element={<EnterprisePage />} />
+            <Route path="/solutions/enterprise" element={<EnterprisePage />} />
+            <Route path="/solutions/large-enterprise" element={<EnterprisePage />} />
+            <Route path="/solutions/finance-teams" element={<SolutionPage />} />
+            <Route path="/solutions/finance-team" element={<SolutionPage />} />
+            <Route path="/solutions/finance" element={<SolutionPage />} />
             <Route path="/solutions/:slug" element={<SolutionPage />} />
 
             {/* Blog & Resources */}
@@ -141,6 +156,9 @@ export function App() {
             <Route path="/contact-sales" element={<ContactSalesPage />} />
             <Route path="/privacy" element={<LegalPage />} />
             <Route path="/resources/case-studies" element={<CaseStudiesPage />} />
+            {/* Developer API Documentation */}
+            <Route path="/resources/api-documentation" element={<ApiDocumentationPage />} />
+            <Route path="/api-documentation" element={<ApiDocumentationPage />} />
 
             {/* Guides & Handbooks */}
             <Route path="/guides" element={<GuidesPage />} />
@@ -154,6 +172,7 @@ export function App() {
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/partners" element={<PartnersPage />} />
             <Route path="/careers" element={<CareersPage />} />
+            <Route path="/careers/:jobId" element={<JobDetailPage />} />
             <Route path="/security" element={<SecurityPage />} />
 
             {/* Conversion */}

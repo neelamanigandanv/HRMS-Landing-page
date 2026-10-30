@@ -1,0 +1,191 @@
+/* ==========================================================================
+   CUSTOM SELECT DROPDOWN COMPONENT
+   Modern, elegant SaaS select menu matching LattiumHR design language
+   Brand Plum: #802B5B | Soft Plum Tint: #faedf4 | Dark Ink: #191735
+   ========================================================================== */
+
+.custom-select-container {
+  position: relative;
+  width: 100%;
+  user-select: none;
+}
+
+/* Trigger Button */
+.custom-select-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.725rem 0.95rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #191735;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 2px rgba(25, 23, 53, 0.02);
+  outline: none;
+}
+
+.custom-select-trigger:hover:not(:disabled) {
+  border-color: #cbd5e1;
+  background: #fafafc;
+}
+
+.custom-select-container.is-open .custom-select-trigger,
+.custom-select-trigger:focus-visible {
+  border-color: #802B5B;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(128, 43, 91, 0.12), 0 2px 6px rgba(128, 43, 91, 0.04);
+}
+
+.custom-select-container.has-error .custom-select-trigger {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.custom-select-trigger:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+  border-color: #e2e8f0;
+}
+
+.custom-select-trigger-label {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #191735;
+  font-weight: 650;
+}
+
+.custom-select-trigger-label.is-placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.custom-select-caret {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #802B5B;
+  flex-shrink: 0;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-select-caret.rotate {
+  transform: rotate(180deg);
+}
+
+/* Floating Dropdown Menu */
+.custom-select-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #ffffff;
+  border: 1.5px solid #ebdcd5;
+  border-radius: 14px;
+  box-shadow:
+    0 16px 36px rgba(25, 23, 53, 0.12),
+    0 4px 12px rgba(25, 23, 53, 0.04);
+  padding: 6px;
+  max-height: 280px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+  animation: customSelectFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-select-dropdown::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-select-dropdown::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 4px;
+}
+
+@keyframes customSelectFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.custom-select-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+/* Option item */
+.custom-select-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: #191735;
+  font-size: 0.925rem;
+  font-weight: 600;
+}
+
+.custom-select-option:hover {
+  background-color: #faedf4;
+  color: #802B5B;
+}
+
+.custom-select-option.is-selected {
+  background-color: #fdf2f7;
+  color: #802B5B;
+  font-weight: 750;
+}
+
+.custom-select-option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.custom-select-option-label {
+  display: block;
+  line-height: 1.35;
+}
+
+.custom-select-option-desc {
+  display: block;
+  font-size: 0.775rem;
+  font-weight: 500;
+  color: #64748b;
+  line-height: 1.3;
+}
+
+.custom-select-option:hover .custom-select-option-desc,
+.custom-select-option.is-selected .custom-select-option-desc {
+  color: #802B5B;
+  opacity: 0.85;
+}
+
+.custom-select-check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #802B5B;
+  flex-shrink: 0;
+}
+

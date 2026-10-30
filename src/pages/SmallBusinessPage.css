@@ -2054,11 +2054,129 @@
 
 /* ==========================================================================
    SECTION 6 — FREQUENTLY ASKED QUESTIONS
-   Inherits .faq-section, .emp-page-faq from existing project styles
+   Matches Home Page FAQ Section: background, spacing, positioning, and typography
    ========================================================================== */
 .sb-faq-section {
-  padding: 90px 0;
-  background: #ffffff;
+  padding: 100px 0 !important;
+  background: #f6f1ed !important;
+}
+
+.sb-faq-section .faq-grid {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.sb-page-wrapper .sb-faq-section .section-heading {
+  margin-bottom: 24px;
+}
+
+.sb-page-wrapper .sb-faq-section .eyebrow {
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 1.8px !important;
+  display: block !important;
+  margin: 0 0 13px 0 !important;
+  text-transform: uppercase !important;
+  text-align: left !important;
+  color: #802B5B !important;
+}
+
+.sb-page-wrapper .sb-faq-section .section-heading h2 {
+  font-size: 39px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -1.6px !important;
+  font-weight: 600 !important;
+  color: #191735 !important;
+  margin: 0 0 15px 0 !important;
+  text-align: left !important;
+}
+
+.sb-page-wrapper .sb-faq-section .section-heading p {
+  color: #64748b !important;
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+  margin: 0 0 24px 0 !important;
+  text-align: left !important;
+  max-width: 500px !important;
+}
+
+.sb-faq-section .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  color: #802B5B;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.15s ease;
+}
+
+.sb-faq-section .text-link:hover {
+  text-decoration: underline;
+  color: #672047;
+}
+
+.sb-faq-section .faq-list {
+  border-top: 1px solid #dedce5;
+}
+
+.sb-faq-section .faq-item {
+  border-bottom: 1px solid #dedce5;
+}
+
+.sb-faq-section .faq-item button {
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 22px 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  color: #191735;
+  font-size: 15.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.sb-faq-section .faq-item button:hover {
+  color: #802B5B;
+}
+
+.sb-faq-section .faq-item button i {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eeecff;
+  color: var(--indigo, #53457a);
+  font-style: normal;
+  font-size: 17px;
+  font-weight: 600;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.sb-faq-section .faq-item p {
+  color: #64748b;
+  line-height: 1.65;
+  font-size: 14.5px;
+  padding-bottom: 22px;
+  padding-right: 36px;
+  margin: 0;
+  text-align: left;
+}
+
+@media (max-width: 960px) {
+  .sb-faq-section .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
 
 /* ==========================================================================
@@ -2078,7 +2196,6 @@
    ========================================================================== */
 .sb-page-wrapper .sb-eyebrow,
 .sb-page-wrapper .sb-why-eyebrow,
-.sb-page-wrapper .sb-faq-section .eyebrow,
 .sb-page-wrapper .sb-final-cta-section .eyebrow {
   font-size: 11px !important;
   font-weight: 800 !important;
@@ -2092,7 +2209,6 @@
 
 .sb-page-wrapper .sb-section-title,
 .sb-page-wrapper .sb-why-title,
-.sb-page-wrapper .sb-faq-section .section-heading h2,
 .sb-page-wrapper .sb-final-cta-section h2,
 .sb-page-wrapper h2:not(.sb-manifesto-headline) {
   font-size: 39px !important;
@@ -2111,7 +2227,6 @@
 
 .sb-page-wrapper .sb-section-subhead,
 .sb-page-wrapper .sb-why-subhead,
-.sb-page-wrapper .sb-faq-section .section-heading p,
 .sb-page-wrapper .sb-final-cta-section p {
   color: #64748b !important;
   font-size: 15px !important;

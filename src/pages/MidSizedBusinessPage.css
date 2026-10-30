@@ -1,0 +1,30 @@
+/* ==========================================================================
+   MID-SIZED BUSINESS SOLUTION PAGE STYLESHEET
+   Reuses and extends the pixel-perfect layout of SmallBusinessPage,
+   with subtle enhancements for multi-branch, multi-department enterprise depth.
+   ========================================================================== */
+
+@import "./SmallBusinessPage.css";
+
+/* Mid-Sized specific accent polish */
+.ms-hero-gradient-text {
+  background: linear-gradient(135deg, #802B5B 0%, #3b33a8 50%, #b54282 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.ms-branch-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-left: 6px;
+}
+

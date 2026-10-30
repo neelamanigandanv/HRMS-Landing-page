@@ -5,10 +5,12 @@ import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
 import SEO from '@/components/layout/SEO';
 import { SUPPORT_CONTACT_CONFIG } from '@/data/supportData';
+import { submitEnquiry } from '@/services/enquiryService';
 
 export default function ContactSalesPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     fullName: '',
     workEmail: '',
@@ -35,13 +37,37 @@ export default function ContactSalesPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.fullName.trim() || !formData.workEmail.trim() || !formData.companyName.trim()) {
+      return;
+    }
+
     setLoading(true);
-    setTimeout(() => {
+    setSubmitError(null);
+
+    try {
+      await submitEnquiry({
+        name: formData.fullName,
+        email: formData.workEmail,
+        company_name: formData.companyName,
+        team_size: formData.teamSize,
+        primary_area_of_interest:
+          formData.modules.length > 0
+            ? formData.modules.join(', ')
+            : 'Enterprise HR Suite',
+        nature_of_enquiry: 'CUSTOM_PRICE',
+        notes: formData.message || '',
+        source_page: '/contact-sales',
+      });
       setLoading(false);
       setSubmitted(true);
-    }, 600);
+    } catch (err: any) {
+      setLoading(false);
+      setSubmitError(
+        err?.message || 'Failed to submit inquiry. Please check your connection and try again.'
+      );
+    }
   };
 
   return (
@@ -257,6 +283,27 @@ export default function ContactSalesPage() {
                       }}
                     />
                   </div>
+
+                  {submitError && (
+                    <div
+                      style={{
+                        backgroundColor: '#fef2f2',
+                        border: '1px solid #fecaca',
+                        borderRadius: '8px',
+                        padding: '10px 14px',
+                        color: '#991b1b',
+                        fontSize: '13px',
+                        lineHeight: '1.5',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '8px',
+                      }}
+                      role="alert"
+                    >
+                      <Icon name="x" size={16} className="mt-0.5 flex-shrink-0" />
+                      <span>{submitError}</span>
+                    </div>
+                  )}
 
                   <Button type="submit" disabled={loading} className="w-full justify-center">
                     {loading ? 'Submitting...' : 'Request Pricing & Demo'}

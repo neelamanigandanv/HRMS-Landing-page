@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
+import { useDemoModal } from "../context/DemoModalContext";
 import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
 import { useCurrency } from "../context/CurrencyContext";
@@ -10,6 +11,7 @@ import "./Blog.css";
 import "./GuideDetailPage.css";
 
 export function GuideDetailPage() {
+  const { openDemoModal } = useDemoModal();
   const { slug } = useParams<{ slug?: string }>();
   const { currency, currencySymbol } = useCurrency();
 
@@ -1387,7 +1389,7 @@ export function GuideDetailPage() {
                 LattiumHR.
               </p>
               <div className="final-actions">
-                <Button to="/request-demo">
+                <Button onClick={() => openDemoModal()}>
                   Book a Free Demo <Icon name="arrow" />
                 </Button>
                 <Button to="/contact" secondary>

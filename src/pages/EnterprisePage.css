@@ -1,0 +1,32 @@
+/* ==========================================================================
+   ENTERPRISE SOLUTION PAGE STYLESHEET
+   Reuses and extends the pixel-perfect layout of SmallBusinessPage,
+   incorporating enterprise-grade styling and high-volume workforce aesthetics.
+   ========================================================================== */
+
+@import "./SmallBusinessPage.css";
+
+/* Enterprise Specific Accents */
+.ent-hero-gradient-text {
+  background: linear-gradient(135deg, #802B5B 0%, #1e1b4b 50%, #4338ca 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.ent-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+

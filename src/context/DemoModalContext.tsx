@@ -5,6 +5,7 @@ export interface DemoModalOptions {
   title?: string;
   subtitle?: string;
   defaultInterest?: string;
+  defaultEmail?: string;
 }
 
 interface DemoModalContextType {
@@ -53,6 +54,7 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
         title={modalOptions.title}
         subtitle={modalOptions.subtitle}
         defaultInterest={modalOptions.defaultInterest}
+        defaultEmail={modalOptions.defaultEmail}
       />
     </DemoModalContext.Provider>
   );

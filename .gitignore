@@ -3,6 +3,9 @@ dist/
 build/
 .cache/
 .env*
+!.env.example
+!.env
+!.env.production
 .vite/
 vite.config.*.timestamp-*
 *.tsbuildinfo
@@ -13,6 +16,8 @@ logs/
 .tmp-*
 /.figma/design-context/
 scratch/
+*.docx
+*.xml
 
 # Platform-managed agentplat state, not project source. In the
 # client-initiated single-repo workspace layout (make's `Path: "."` spec) the

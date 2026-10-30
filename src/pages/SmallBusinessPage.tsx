@@ -1364,7 +1364,7 @@ export function SmallBusinessPage() {
         {/* =========================================================================
             SECTION 6 — FREQUENTLY ASKED QUESTIONS (Small Business HR, Answered)
             ========================================================================= */}
-        <section className="faq-section emp-page-faq sb-faq-section" id="faqs" aria-labelledby="faq-heading">
+        <section className="faq-section sb-faq-section" id="faqs" aria-labelledby="faq-heading">
           <div className="container faq-grid">
             <div>
               <div className="section-heading">

@@ -5,8 +5,10 @@ import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
 import { caseStudies } from "../data/resourcesData";
 import { useCurrency } from "../context/CurrencyContext";
+import { useDemoModal } from "../context/DemoModalContext";
 
 export function CaseStudiesPage() {
+  const { openDemoModal } = useDemoModal();
   const { formatText } = useCurrency();
   const breadcrumbs = [
     { label: "Resources", to: "/resources" },
@@ -33,7 +35,7 @@ export function CaseStudiesPage() {
               payroll, and unified their branches on LattiumHR.
             </p>
             <div className="feature-hero-actions">
-              <Button to="/request-demo">
+              <Button onClick={() => openDemoModal()}>
                 Request a Live Demo <Icon name="arrow" size={16} />
               </Button>
             </div>
