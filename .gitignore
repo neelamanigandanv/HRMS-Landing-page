@@ -25,3 +25,4 @@ scratch/
 # beside it.
 /.plugins/
 /.opencode-skills/
+.unlighthouse/

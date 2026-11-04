@@ -256,7 +256,7 @@ export function ContactPage() {
                     <div className="contact-fields-grid">
                       <div className="contact-input-group">
                         <label className="contact-label-text">
-                          Full Name <span className="required-star">*</span>
+                          Name <span className="required-star">*</span>
                         </label>
                         <input
                           type="text"

@@ -58,6 +58,8 @@ export function CareersPage() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [currentLocation, setCurrentLocation] = useState("");
+  const [resumeLink, setResumeLink] = useState("");
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [linkedinUrl, setLinkedinUrl] = useState("");
   const [portfolioUrl, setPortfolioUrl] = useState("");
@@ -118,12 +120,12 @@ export function CareersPage() {
     }
   };
 
-  // Validation
+  // Validation for Direct Application
   const validateForm = () => {
     const errors: Record<string, string> = {};
 
     if (!fullName.trim()) {
-      errors.fullName = "Full name is required.";
+      errors.fullName = "Name is required.";
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -138,12 +140,12 @@ export function CareersPage() {
       errors.phone = phoneErr;
     }
 
-    if (!resumeFile) {
-      errors.resume = "Please upload your resume (PDF, DOC, DOCX up to 5 MB).";
+    if (!currentLocation.trim()) {
+      errors.currentLocation = "Current location is required.";
     }
 
     if (!totalExperience) {
-      errors.totalExperience = "Please select your total work experience.";
+      errors.totalExperience = "Please select your relevant work experience.";
     }
 
     if (!noticePeriod) {
@@ -176,19 +178,23 @@ export function CareersPage() {
       work_email: email.trim(),
       email: email.trim(),
       phone: phone.trim(),
-      company_name: currentCompany.trim() ? `Current: ${currentCompany.trim()}` : "Candidate Profile",
-      source_page: "/careers",
+      location: currentLocation.trim(),
+      company_name: currentCompany.trim() ? `Current: ${currentCompany.trim()}` : "Direct Candidate",
+      source_page: "/careers/direct",
       nature_of_enquiry: "JOB_APPLICATION",
+      notes: `Location: ${currentLocation.trim()} | Exp: ${totalExperience} | Notice: ${noticePeriod} | Why: ${coverNote.trim()}`,
       extra_data: {
         target_role: targetRoleName,
+        current_location: currentLocation.trim(),
+        relevant_experience: totalExperience,
         total_experience: totalExperience,
         notice_period: noticePeriod,
         current_company: currentCompany.trim() || "Not Specified",
         expected_ctc: expectedCtc.trim() || "Not Specified",
         linkedin_portfolio_url: [linkedinUrl.trim(), portfolioUrl.trim()].filter(Boolean).join(" | "),
-        linkedin_url: linkedinUrl.trim(),
-        portfolio_url: portfolioUrl.trim(),
-        resume_url: resumeFile ? resumeFile.name : "",
+        resume_link: resumeLink.trim(),
+        resume_url: resumeFile ? resumeFile.name : (resumeLink.trim() || ""),
+        why_are_you_interested_in_lattium_hr: coverNote.trim(),
         why_lattium_hr: coverNote.trim(),
       },
     };
@@ -572,13 +578,12 @@ export function CareersPage() {
                     </div>
                   </div>
                 ) : (
-                  /* Application Form matching Popup Card */
                   <form onSubmit={handleFormSubmit} noValidate className="careers-apply-form">
                     <div className="careers-form-grid">
-                      {/* Full Name */}
+                      {/* 1. Name */}
                       <div className="careers-form-group">
                         <label htmlFor="onpage-app-fullname" className="careers-form-label">
-                          Full Name <span className="required">*</span>
+                          Name <span className="required">*</span>
                         </label>
                         <input
                           id="onpage-app-fullname"
@@ -594,10 +599,10 @@ export function CareersPage() {
                         )}
                       </div>
 
-                      {/* Work Email */}
+                      {/* 2. Email Address */}
                       <div className="careers-form-group">
                         <label htmlFor="onpage-app-email" className="careers-form-label">
-                          Work Email <span className="required">*</span>
+                          Email Address <span className="required">*</span>
                         </label>
                         <input
                           id="onpage-app-email"
@@ -613,7 +618,7 @@ export function CareersPage() {
                         )}
                       </div>
 
-                      {/* Phone Number with Country Selector */}
+                      {/* 3. Phone Number */}
                       <div className="careers-form-group">
                         <label htmlFor="onpage-app-phone" className="careers-form-label">
                           Phone Number <span className="required">*</span>
@@ -640,31 +645,38 @@ export function CareersPage() {
                         )}
                       </div>
 
-                      {/* Applying For Role / Department */}
+                      {/* 4. Current Location */}
                       <div className="careers-form-group">
-                        <label htmlFor="onpage-app-role" className="careers-form-label">
-                          Target Role / Position <span className="required">*</span>
+                        <label htmlFor="onpage-app-location" className="careers-form-label">
+                          Current Location <span className="required">*</span>
                         </label>
-                        <CustomSelect
-                          id="onpage-app-role"
-                          options={ROLE_OPTIONS}
-                          value={selectedJob ? selectedJob.id : "general"}
-                          onChange={(val) => {
-                            if (val === "general") {
-                              setSelectedJob(null);
-                            } else {
-                              const found = JOB_OPENINGS.find((j) => j.id === val);
-                              if (found) setSelectedJob(found);
+                        <input
+                          id="onpage-app-location"
+                          type="text"
+                          value={currentLocation}
+                          onChange={(e) => {
+                            setCurrentLocation(e.target.value);
+                            if (formErrors.currentLocation) {
+                              setFormErrors((prev) => {
+                                const copy = { ...prev };
+                                delete copy.currentLocation;
+                                return copy;
+                              });
                             }
                           }}
-                          placeholder="Select target role"
+                          placeholder="e.g. Bengaluru, India"
+                          className={`careers-form-input ${formErrors.currentLocation ? "error" : ""}`}
+                          required
                         />
+                        {formErrors.currentLocation && (
+                          <span className="careers-form-error">{formErrors.currentLocation}</span>
+                        )}
                       </div>
 
-                      {/* Total Experience */}
+                      {/* 5. Relevant Experience */}
                       <div className="careers-form-group">
                         <label htmlFor="onpage-app-experience" className="careers-form-label">
-                          Total Experience <span className="required">*</span>
+                          Relevant Experience <span className="required">*</span>
                         </label>
                         <CustomSelect
                           id="onpage-app-experience"
@@ -684,7 +696,7 @@ export function CareersPage() {
                         )}
                       </div>
 
-                      {/* Notice Period */}
+                      {/* 6. Notice Period */}
                       <div className="careers-form-group">
                         <label htmlFor="onpage-app-notice" className="careers-form-label">
                           Notice Period <span className="required">*</span>
@@ -706,138 +718,27 @@ export function CareersPage() {
                           <span className="careers-form-error">{formErrors.noticePeriod}</span>
                         )}
                       </div>
-
-                      {/* Current Company */}
-                      <div className="careers-form-group">
-                        <label htmlFor="onpage-app-company" className="careers-form-label">
-                          Current Company <span className="optional">(Optional)</span>
-                        </label>
-                        <input
-                          id="onpage-app-company"
-                          type="text"
-                          value={currentCompany}
-                          onChange={(e) => setCurrentCompany(e.target.value)}
-                          placeholder="e.g. Current Employer or Self-Employed"
-                          className="careers-form-input"
-                        />
-                      </div>
-
-                      {/* Expected CTC */}
-                      <div className="careers-form-group">
-                        <label htmlFor="onpage-app-ctc" className="careers-form-label">
-                          Expected CTC <span className="optional">(Optional)</span>
-                        </label>
-                        <input
-                          id="onpage-app-ctc"
-                          type="text"
-                          value={expectedCtc}
-                          onChange={(e) => setExpectedCtc(e.target.value)}
-                          placeholder="e.g. ₹16,00,000 / year"
-                          className="careers-form-input"
-                        />
-                      </div>
-
-                      {/* LinkedIn Profile URL */}
-                      <div className="careers-form-group">
-                        <label htmlFor="onpage-app-linkedin" className="careers-form-label">
-                          LinkedIn Profile <span className="optional">(Optional)</span>
-                        </label>
-                        <input
-                          id="onpage-app-linkedin"
-                          type="url"
-                          value={linkedinUrl}
-                          onChange={(e) => setLinkedinUrl(e.target.value)}
-                          placeholder="https://linkedin.com/in/yourprofile"
-                          className="careers-form-input"
-                        />
-                      </div>
-
-                      {/* Portfolio / Personal Website */}
-                      <div className="careers-form-group">
-                        <label htmlFor="onpage-app-portfolio" className="careers-form-label">
-                          Portfolio / Website <span className="optional">(Optional)</span>
-                        </label>
-                        <input
-                          id="onpage-app-portfolio"
-                          type="url"
-                          value={portfolioUrl}
-                          onChange={(e) => setPortfolioUrl(e.target.value)}
-                          placeholder="https://portfolio.me or GitHub"
-                          className="careers-form-input"
-                        />
-                      </div>
                     </div>
 
-                    {/* Resume Upload Dropzone */}
-                    <div className="careers-form-group full-width">
-                      <label className="careers-form-label">
-                        Resume / CV <span className="required">*</span>
+                    {/* 7. Resume / CV Link */}
+                    <div className="careers-form-group full-width" style={{ marginTop: "1rem" }}>
+                      <label htmlFor="onpage-app-resume-link" className="careers-form-label">
+                        Resume / CV Link <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Google Drive, Dropbox, or LinkedIn URL)</span>
                       </label>
-                      <div
-                        className={`careers-dropzone ${isDragOver ? "dragover" : ""} ${
-                          formErrors.resume ? "error" : ""
-                        }`}
-                        onDragOver={(e) => {
-                          e.preventDefault();
-                          setIsDragOver(true);
-                        }}
-                        onDragLeave={() => setIsDragOver(false)}
-                        onDrop={(e) => {
-                          e.preventDefault();
-                          setIsDragOver(false);
-                          handleFileChange(e.dataTransfer.files);
-                        }}
-                        onClick={() => fileInputRef.current?.click()}
-                        role="button"
-                        tabIndex={0}
-                        onKeyDown={(e) => {
-                          if (e.key === "Enter" || e.key === " ") fileInputRef.current?.click();
-                        }}
-                        aria-label="Upload resume file dropzone"
-                      >
-                        <input
-                          ref={fileInputRef}
-                          type="file"
-                          accept=".pdf,.doc,.docx"
-                          style={{ display: "none" }}
-                          onChange={(e) => handleFileChange(e.target.files)}
-                        />
-                        <div className="careers-dropzone-icon">📄</div>
-                        <div className="careers-dropzone-text">
-                          Drag and drop your resume here, or{" "}
-                          <span className="browse-link">browse files</span>
-                        </div>
-                        <div className="careers-dropzone-hint">
-                          Accepts PDF, DOC, DOCX up to 5 MB
-                        </div>
-                      </div>
-
-                      {/* File Preview */}
-                      {resumeFile && (
-                        <div className="careers-file-preview">
-                          <span className="file-info">
-                            📎 <strong>{resumeFile.name}</strong> (
-                            {(resumeFile.size / 1024).toFixed(0)} KB)
-                          </span>
-                          <button
-                            type="button"
-                            onClick={removeResumeFile}
-                            className="file-remove-btn"
-                            aria-label="Remove uploaded resume"
-                          >
-                            × Remove
-                          </button>
-                        </div>
-                      )}
-                      {formErrors.resume && (
-                        <span className="careers-form-error">{formErrors.resume}</span>
-                      )}
+                      <input
+                        id="onpage-app-resume-link"
+                        type="url"
+                        value={resumeLink}
+                        onChange={(e) => setResumeLink(e.target.value)}
+                        placeholder="https://drive.google.com/file/d/..."
+                        className="careers-form-input"
+                      />
                     </div>
 
-                    {/* Cover Note */}
-                    <div className="careers-form-group full-width">
+                    {/* 8. Why are you interested in LattiumHR? */}
+                    <div className="careers-form-group full-width" style={{ marginTop: "1rem" }}>
                       <label htmlFor="onpage-app-covernote" className="careers-form-label">
-                        Why LattiumHR? / What do you want to build? <span className="optional">(Optional)</span>
+                        Why are you interested in LattiumHR? <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
                       </label>
                       <textarea
                         id="onpage-app-covernote"
@@ -850,7 +751,7 @@ export function CareersPage() {
                     </div>
 
                     {/* Consent Checkbox */}
-                    <div className="careers-form-group full-width">
+                    <div className="careers-form-group full-width" style={{ marginTop: "1rem" }}>
                       <label className="careers-checkbox-label">
                         <input
                           type="checkbox"

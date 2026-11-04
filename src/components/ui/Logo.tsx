@@ -1,6 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 
-export function Logo({ light = false }: { light?: boolean }) {
+export interface LogoProps {
+  light?: boolean;
+  className?: string;
+  height?: number;
+}
+
+export function Logo({ light = false, className = "", height }: LogoProps) {
   const navigate = useNavigate();
 
   const handleClick = (e: React.MouseEvent) => {
@@ -12,11 +18,21 @@ export function Logo({ light = false }: { light?: boolean }) {
     }
   };
 
+  const logoSrc = light ? "/images/logo-white.png" : "/images/logo.png";
+
   return (
-    <Link to="/" onClick={handleClick} className={`logo ${light ? "logo-light" : ""}`} aria-label="nuvendix home">
-      <span className="logo-text nuvendix-logo">
-        nuvendix
-      </span>
+    <Link
+      to="/"
+      onClick={handleClick}
+      className={`logo ${light ? "logo-light" : ""} ${className}`.trim()}
+      aria-label="zentilos home"
+    >
+      <img
+        src={logoSrc}
+        alt="zentilos"
+        className="logo-img"
+        style={height ? { height: `${height}px` } : undefined}
+      />
     </Link>
   );
 }

@@ -922,7 +922,7 @@ export function JobDetailPage() {
                       {/* Cover Note */}
                       <div className="job-form-field full-width" style={{ marginTop: "1.2rem" }}>
                         <label htmlFor="app-covernote">
-                          Why LattiumHR? / What excites you about this role? <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
+                          Why LattiumHR? / What do you want to build? <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
                         </label>
                         <textarea
                           id="app-covernote"

@@ -24,7 +24,7 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
     employees: "",
   });
   const [errors, setErrors] = useState<{ [K in keyof typeof formData]?: string }>({});
-  const [touched, setTouched] = useState<{ [K in keyof typeof formData]?: boolean }>({});
+  const [submitAttempted, setSubmitAttempted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateField = (field: keyof typeof formData, value: string): string => {
@@ -55,27 +55,29 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
 
   const handleChange = (field: keyof typeof formData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    if (touched[field]) {
+    if (submitAttempted) {
       const err = validateField(field, value);
       setErrors((prev) => ({ ...prev, [field]: err }));
     }
   };
 
   const handleBlur = (field: keyof typeof formData) => {
-    setTouched((prev) => ({ ...prev, [field]: true }));
-    const err = validateField(field, formData[field]);
-    setErrors((prev) => ({ ...prev, [field]: err }));
+    if (submitAttempted) {
+      const err = validateField(field, formData[field]);
+      setErrors((prev) => ({ ...prev, [field]: err }));
+    }
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitAttempted(true);
+
     const newErrors: { [K in keyof typeof formData]?: string } = {};
     (Object.keys(formData) as (keyof typeof formData)[]).forEach((field) => {
       const err = validateField(field, formData[field]);
       if (err) newErrors[field] = err;
     });
 
-    setTouched({ name: true, email: true, phone: true, employees: true });
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
@@ -109,7 +111,7 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
   const handleReset = () => {
     setFormData({ name: "", email: "", phone: "", employees: "" });
     setErrors({});
-    setTouched({});
+    setSubmitAttempted(false);
     setSubmitError(null);
     setSent(false);
   };
@@ -159,11 +161,11 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
             value={formData.name}
             onChange={(e) => handleChange("name", e.target.value)}
             onBlur={() => handleBlur("name")}
-            className={errors.name && touched.name ? "has-error" : ""}
+            className={submitAttempted && errors.name ? "has-error" : ""}
             placeholder="Your full name"
-            aria-invalid={Boolean(errors.name && touched.name)}
+            aria-invalid={Boolean(submitAttempted && errors.name)}
           />
-          {errors.name && touched.name && (
+          {submitAttempted && errors.name && (
             <span className="field-error">
               <Icon name="x" size={11} /> {errors.name}
             </span>
@@ -176,11 +178,11 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
             value={formData.email}
             onChange={(e) => handleChange("email", e.target.value)}
             onBlur={() => handleBlur("email")}
-            className={errors.email && touched.email ? "has-error" : ""}
+            className={submitAttempted && errors.email ? "has-error" : ""}
             placeholder="you@company.com"
-            aria-invalid={Boolean(errors.email && touched.email)}
+            aria-invalid={Boolean(submitAttempted && errors.email)}
           />
-          {errors.email && touched.email && (
+          {submitAttempted && errors.email && (
             <span className="field-error">
               <Icon name="x" size={11} /> {errors.email}
             </span>
@@ -193,11 +195,11 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
             value={formData.phone}
             onChange={(e) => handleChange("phone", e.target.value)}
             onBlur={() => handleBlur("phone")}
-            className={errors.phone && touched.phone ? "has-error" : ""}
+            className={submitAttempted && errors.phone ? "has-error" : ""}
             placeholder="+91 98765 43210"
-            aria-invalid={Boolean(errors.phone && touched.phone)}
+            aria-invalid={Boolean(submitAttempted && errors.phone)}
           />
-          {errors.phone && touched.phone && (
+          {submitAttempted && errors.phone && (
             <span className="field-error">
               <Icon name="x" size={11} /> {errors.phone}
             </span>
@@ -219,9 +221,9 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
             placeholder="Select team size"
             onChange={(val) => handleChange("employees", val)}
             onBlur={() => handleBlur("employees")}
-            hasError={Boolean(errors.employees && touched.employees)}
+            hasError={Boolean(submitAttempted && errors.employees)}
           />
-          {errors.employees && touched.employees && (
+          {submitAttempted && errors.employees && (
             <span className="field-error">
               <Icon name="x" size={11} /> {errors.employees}
             </span>
@@ -1450,167 +1452,150 @@ export function Home() {
           </div>
         </section>
 
-        <section className="before-after" id="platform">
+        <section className="difference-showcase-section" id="platform">
           <div className="container">
             <SectionHeading
               eyebrow="✦ THE DIFFERENCE ✦"
               title="From HR chaos to total clarity"
-              body="See what changes when your people operations, attendance, and payroll finally work together."
+              body="See what changes when your people operations, attendance, and payroll run on LattiumHR."
               center
             />
-            <div className="compare-grid diff-bento-grid">
-              {/* CARD 1: BEFORE LATTIUMHR (Text Top, Visual Bottom - Matching Left Card in Reference Image) */}
-              <div className="diff-bento-card diff-bento-before">
-                <div className="diff-bento-text">
-                  <small className="diff-bento-eyebrow">BEFORE LATTIUMHR</small>
-                  <h3 className="diff-bento-title">Scattered &amp; manual</h3>
-                  <p className="diff-bento-desc">
-                    Workforce operations scattered across WhatsApp chats, paper registers, and error-prone spreadsheets that don't talk to each other.
-                  </p>
+
+            {/* Main Side-by-Side Comparison Container */}
+            <div className="diff-showcase-wrapper">
+              {/* LEFT CARD: MANUAL / TRADITIONAL PROCESS */}
+              <div className="diff-card-manual">
+                <div className="diff-manual-header">
+                  <span className="diff-manual-tag">
+                    <Icon name="clock" size={14} />
+                    <span>Manual / Traditional Process</span>
+                  </span>
+                  <h3 className="diff-manual-title">
+                    Manual / Traditional Process
+                  </h3>
                 </div>
 
-                <div className="diff-bento-visual diff-visual-chart">
-                  <div className="diff-bento-grid-bg" aria-hidden="true" />
-
-                  {/* SVG Chart Line (Matches Reference Image Left Card with Primary Color #802B5B) */}
-                  <svg className="diff-chart-svg" viewBox="0 0 500 240" fill="none" preserveAspectRatio="none">
-                    {/* Secondary lighter curve */}
-                    <path
-                      d="M 10 190 Q 90 170 170 160 T 310 145 T 390 105 T 480 125"
-                      stroke="rgba(128, 43, 91, 0.25)"
-                      strokeWidth="2.5"
-                      strokeOpacity="0.85"
-                      fill="none"
-                    />
-                    {/* Primary curve in website primary color #802B5B */}
-                    <path
-                      d="M 10 165 Q 80 155 160 178 T 280 130 T 385 92 T 480 115"
-                      stroke="#802B5B"
-                      strokeWidth="3.5"
-                      strokeLinecap="round"
-                      fill="none"
-                    />
-                    {/* Dotted vertical guideline from node */}
-                    <line x1="385" y1="92" x2="385" y2="240" stroke="rgba(128, 43, 91, 0.22)" strokeDasharray="3 3" strokeWidth="1.5" />
-                    {/* Focal peak node in website primary color #802B5B */}
-                    <circle cx="385" cy="92" r="10" fill="#802B5B" />
-                    <circle cx="385" cy="92" r="5" fill="#ffffff" />
-                  </svg>
-
-                  {/* Floating Metric Card (Matches www.hextone.com card in Reference Image) */}
-                  <div className="diff-chart-content">
-                    {/* Left Column: Metric Card + 2 Danger Badges */}
-                    <div className="diff-chart-col diff-col-left">
-                      <div className="diff-floating-card">
-                        <div className="diff-floating-pill">
-                          <div className="diff-pill-left">
-                            <Icon name="globe" size={12} />
-                            <span>manual-operations.internal</span>
-                          </div>
-                          <span className="diff-help-dot">?</span>
-                        </div>
-                        <div className="diff-floating-stats">
-                          <div className="diff-floating-stat">
-                            <span className="diff-stat-label">Hours Wasted</span>
-                            <strong className="diff-stat-value">42 hrs/mo</strong>
-                          </div>
-                          <div className="diff-floating-stat">
-                            <span className="diff-stat-label">Payroll Errors</span>
-                            <strong className="diff-stat-value">18.4%</strong>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="diff-pill diff-pill-danger" title="Leave on WhatsApp — Requests get buried and lost across group chats">
-                        <span className="diff-pill-icon icon-whatsapp"><Icon name="whatsapp" size={14} /></span>
-                        <span className="diff-pill-text">Leave on WhatsApp</span>
-                        <span className="diff-pill-status status-danger">✕</span>
-                      </div>
-                      <div className="diff-pill diff-pill-danger" title="Attendance in registers — Paper sign-ins prone to proxy punching & errors">
-                        <span className="diff-pill-icon icon-att"><Icon name="attendance" size={14} /></span>
-                        <span className="diff-pill-text">Attendance in registers</span>
-                        <span className="diff-pill-status status-danger">✕</span>
-                      </div>
+                <div className="diff-manual-list">
+                  <div className="diff-manual-item">
+                    <span className="diff-manual-point-icon" aria-hidden="true">
+                      <Icon name="phone" size={18} />
+                    </span>
+                    <div className="diff-manual-text">
+                      <strong className="diff-manual-item-title">HR calls employees manually</strong>
+                      <p className="diff-manual-item-desc">Time-consuming follow-ups every day</p>
                     </div>
+                  </div>
 
-                    {/* Right Column: 3 Danger Badges Balanced Vertically */}
-                    <div className="diff-chart-col diff-col-right">
-                      <div className="diff-pill diff-pill-danger" title="Payroll in spreadsheets — Manual formulas with frequent calculation errors">
-                        <span className="diff-pill-icon icon-pay"><Icon name="payroll" size={14} /></span>
-                        <span className="diff-pill-text">Payroll in spreadsheets</span>
-                        <span className="diff-pill-status status-danger">✕</span>
-                      </div>
-                      <div className="diff-pill diff-pill-danger" title="Documents in email — Scattered attachments with zero access control">
-                        <span className="diff-pill-icon icon-doc"><Icon name="document" size={14} /></span>
-                        <span className="diff-pill-text">Documents in email</span>
-                        <span className="diff-pill-status status-danger">✕</span>
-                      </div>
-                      <div className="diff-pill diff-pill-danger" title="Assets… somewhere — No central record of who holds company devices">
-                        <span className="diff-pill-icon icon-asset"><Icon name="asset" size={14} /></span>
-                        <span className="diff-pill-text">Assets… somewhere</span>
-                        <span className="diff-pill-status status-danger">✕</span>
-                      </div>
+                  <div className="diff-manual-item">
+                    <span className="diff-manual-point-icon" aria-hidden="true">
+                      <Icon name="clock" size={18} />
+                    </span>
+                    <div className="diff-manual-text">
+                      <strong className="diff-manual-item-title">Attendance manually verified</strong>
+                      <p className="diff-manual-item-desc">High chance of errors and proxy entries</p>
+                    </div>
+                  </div>
+
+                  <div className="diff-manual-item">
+                    <span className="diff-manual-point-icon" aria-hidden="true">
+                      <Icon name="calendar" size={18} />
+                    </span>
+                    <div className="diff-manual-text">
+                      <strong className="diff-manual-item-title">Missing entries every day</strong>
+                      <p className="diff-manual-item-desc">Incomplete data leads to payroll delays</p>
+                    </div>
+                  </div>
+
+                  <div className="diff-manual-item">
+                    <span className="diff-manual-point-icon" aria-hidden="true">
+                      <Icon name="payroll" size={18} />
+                    </span>
+                    <div className="diff-manual-text">
+                      <strong className="diff-manual-item-title">Payroll corrections every month</strong>
+                      <p className="diff-manual-item-desc">Rework, disputes and loss of productivity</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* CARD 2: WITH LATTIUMHR (Visual Top, Text Bottom - Matching Right Card in Reference Image) */}
-              <div className="diff-bento-card diff-bento-after">
-                <div className="diff-bento-visual diff-visual-pills">
-                  <div className="diff-bento-grid-bg" aria-hidden="true" />
+              {/* FLOATING CENTRAL "Vs" BADGE */}
+              <div className="diff-vs-badge" aria-hidden="true">
+                <span>Vs</span>
+              </div>
 
-                  {/* 8 Feature Pills in 4 rows × 2 cols (Exact match to Reference Image Right Card) */}
-                  <div className="diff-pills-matrix">
-                    <div className="diff-pill diff-pill-success" title="Leave tracked & approved — Self-service requests with automated balances">
-                      <span className="diff-pill-icon icon-leave"><Icon name="leave" size={14} /></span>
-                      <span className="diff-pill-text">Leave Approvals</span>
-                      <span className="diff-pill-status status-success">✓</span>
-                    </div>
-                    <div className="diff-pill diff-pill-success" title="Attendance in real time — Biometric & mobile geo-checkins with live sync">
-                      <span className="diff-pill-icon icon-att"><Icon name="attendance" size={14} /></span>
-                      <span className="diff-pill-text">Live Attendance</span>
-                      <span className="diff-pill-status status-success">✓</span>
-                    </div>
-                    <div className="diff-pill diff-pill-success" title="Payroll auto-calculated — One-click salary runs synced from attendance">
-                      <span className="diff-pill-icon icon-pay"><Icon name="payroll" size={14} /></span>
-                      <span className="diff-pill-text">Auto-Payroll</span>
-                      <span className="diff-pill-status status-success">✓</span>
-                    </div>
-                    <div className="diff-pill diff-pill-success" title="Documents in one place — Encrypted cloud repository with expiry alerts">
-                      <span className="diff-pill-icon icon-doc"><Icon name="document" size={14} /></span>
-                      <span className="diff-pill-text">Document Vault</span>
-                      <span className="diff-pill-status status-success">✓</span>
-                    </div>
-                    <div className="diff-pill diff-pill-success" title="Assets assigned & visible — End-to-end device tracking from hire to exit">
-                      <span className="diff-pill-icon icon-asset"><Icon name="asset" size={14} /></span>
-                      <span className="diff-pill-text">Asset Tracking</span>
-                      <span className="diff-pill-status status-success">✓</span>
-                    </div>
-                    <div className="diff-pill diff-pill-success" title="Statutory compliance — PF, ESI, TDS, and PT calculated with statutory precision">
-                      <span className="diff-pill-icon icon-shield"><Icon name="shield" size={14} /></span>
-                      <span className="diff-pill-text">100% Compliance</span>
-                      <span className="diff-pill-status status-success">✓</span>
-                    </div>
-                    <div className="diff-pill diff-pill-success" title="Employee self-service — Employees mark attendance, apply leaves, and get payslips">
-                      <span className="diff-pill-icon icon-mobile"><Icon name="employee" size={14} /></span>
-                      <span className="diff-pill-text">Self-Service App</span>
-                      <span className="diff-pill-status status-success">✓</span>
-                    </div>
-                    <div className="diff-pill diff-pill-success" title="Direct salary payouts — Automated payout advice and instant bank transfers">
-                      <span className="diff-pill-icon icon-bank"><Icon name="check" size={14} /></span>
-                      <span className="diff-pill-text">Direct Payouts</span>
-                      <span className="diff-pill-status status-success">✓</span>
-                    </div>
-                  </div>
+              {/* RIGHT CARD: LATTIUM AUTOMATED PROCESS */}
+              <div className="diff-card-automated">
+                {/* Background Executive Working Photo */}
+                <div className="diff-automated-bg-media">
+                  <img
+                    src="/images/difference-automated-pro.jpg"
+                    alt="LattiumHR automated workforce management"
+                    className="diff-automated-photo"
+                  />
+                  <div className="diff-automated-gradient-overlay" />
                 </div>
 
-                <div className="diff-bento-text">
-                  <small className="diff-bento-eyebrow">WITH LATTIUMHR</small>
-                  <h3 className="diff-bento-title">Connected &amp; automatic</h3>
-                  <p className="diff-bento-desc">
-                    All people operations, biometric attendance, auto-payroll, and encrypted document vaults working together in real time.
-                  </p>
+                {/* Content Overlay with Balanced 2-Column Structure */}
+                <div className="diff-automated-content">
+                  {/* Left Column: Top Header + Bottom 2 Capability Badges */}
+                  <div className="diff-auto-col-left">
+                    <div className="diff-automated-header">
+                      <span className="diff-automated-tag">LATTIUM</span>
+                      <h3 className="diff-automated-title">
+                        Lattium Automated<br />Process
+                      </h3>
+                    </div>
+
+                    <div className="diff-auto-badges-left">
+                      {/* Floating Card 1: GPS + Selfie Verified */}
+                      <div className="diff-floating-pill-card">
+                        <span className="diff-pill-card-icon">
+                          <Icon name="map-pin" size={16} />
+                        </span>
+                        <span className="diff-pill-card-label">GPS + Selfie Verified Instantly</span>
+                        <span className="diff-pill-card-check">✓</span>
+                      </div>
+
+                      {/* Floating Card 2: Automated Workflow */}
+                      <div className="diff-floating-pill-card">
+                        <span className="diff-pill-card-icon">
+                          <Icon name="zap" size={16} />
+                        </span>
+                        <span className="diff-pill-card-label">Automated Workflow End to End</span>
+                        <span className="diff-pill-card-check">✓</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column: 3 Capability Badges Evenly Stacked */}
+                  <div className="diff-auto-col-right">
+                    {/* Floating Card 3: WhatsApp Reminder */}
+                    <div className="diff-floating-pill-card">
+                      <span className="diff-pill-card-icon">
+                        <Icon name="whatsapp" size={16} />
+                      </span>
+                      <span className="diff-pill-card-label">WhatsApp Reminder Automatically Sent</span>
+                      <span className="diff-pill-card-check">✓</span>
+                    </div>
+
+                    {/* Floating Card 4: No Missing Entries */}
+                    <div className="diff-floating-pill-card">
+                      <span className="diff-pill-card-icon">
+                        <Icon name="calendar" size={16} />
+                      </span>
+                      <span className="diff-pill-card-label">No Missing Entries Any Day</span>
+                      <span className="diff-pill-card-check">✓</span>
+                    </div>
+
+                    {/* Floating Card 5: Payroll Ready */}
+                    <div className="diff-floating-pill-card">
+                      <span className="diff-pill-card-icon">
+                        <Icon name="payroll" size={16} />
+                      </span>
+                      <span className="diff-pill-card-label">Payroll-Ready Every Day</span>
+                      <span className="diff-pill-card-check">✓</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

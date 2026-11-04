@@ -36,7 +36,7 @@ export function RequestDemoPage() {
     notes: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [submitAttempted, setSubmitAttempted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
@@ -58,14 +58,15 @@ export function RequestDemoPage() {
   };
 
   const handleBlur = (field: string) => {
-    setTouched((prev) => ({ ...prev, [field]: true }));
-    const err = validate(field, (formData as any)[field]);
-    setErrors((prev) => ({ ...prev, [field]: err }));
+    if (submitAttempted) {
+      const err = validate(field, (formData as any)[field]);
+      setErrors((prev) => ({ ...prev, [field]: err }));
+    }
   };
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    if (touched[field]) {
+    if (submitAttempted) {
       const err = validate(field, value);
       setErrors((prev) => ({ ...prev, [field]: err }));
     }
@@ -73,6 +74,7 @@ export function RequestDemoPage() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitAttempted(true);
 
     const fields = ["name", "email", "phone", "company", "employees"];
     const newErrors: Record<string, string> = {};
@@ -81,7 +83,6 @@ export function RequestDemoPage() {
       if (err) newErrors[f] = err;
     });
 
-    setTouched({ name: true, email: true, phone: true, company: true, employees: true });
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) return;
@@ -234,11 +235,11 @@ export function RequestDemoPage() {
                       value={formData.name}
                       onChange={(e) => handleChange("name", e.target.value)}
                       onBlur={() => handleBlur("name")}
-                      className={errors.name && touched.name ? "has-error" : ""}
+                      className={submitAttempted && errors.name ? "has-error" : ""}
                       placeholder="e.g. Kavya Sharma"
-                      aria-invalid={Boolean(errors.name && touched.name)}
+                      aria-invalid={Boolean(submitAttempted && errors.name)}
                     />
-                    {errors.name && touched.name && (
+                    {submitAttempted && errors.name && (
                       <span className="field-error">
                         <Icon name="x" size={11} /> {errors.name}
                       </span>
@@ -254,11 +255,11 @@ export function RequestDemoPage() {
                       value={formData.email}
                       onChange={(e) => handleChange("email", e.target.value)}
                       onBlur={() => handleBlur("email")}
-                      className={errors.email && touched.email ? "has-error" : ""}
+                      className={submitAttempted && errors.email ? "has-error" : ""}
                       placeholder="kavya@company.com"
-                      aria-invalid={Boolean(errors.email && touched.email)}
+                      aria-invalid={Boolean(submitAttempted && errors.email)}
                     />
-                    {errors.email && touched.email && (
+                    {submitAttempted && errors.email && (
                       <span className="field-error">
                         <Icon name="x" size={11} /> {errors.email}
                       </span>
@@ -275,10 +276,10 @@ export function RequestDemoPage() {
                       value={formData.phone}
                       onChange={(fullNumber) => handleChange("phone", fullNumber)}
                       onBlur={() => handleBlur("phone")}
-                      hasError={Boolean(errors.phone && touched.phone)}
+                      hasError={Boolean(submitAttempted && errors.phone)}
                       required
                     />
-                    {errors.phone && touched.phone && (
+                    {submitAttempted && errors.phone && (
                       <span className="field-error">
                         <Icon name="x" size={11} /> {errors.phone}
                       </span>
@@ -294,11 +295,11 @@ export function RequestDemoPage() {
                       value={formData.company}
                       onChange={(e) => handleChange("company", e.target.value)}
                       onBlur={() => handleBlur("company")}
-                      className={errors.company && touched.company ? "has-error" : ""}
+                      className={submitAttempted && errors.company ? "has-error" : ""}
                       placeholder="e.g. Acme Retail Pvt Ltd"
-                      aria-invalid={Boolean(errors.company && touched.company)}
+                      aria-invalid={Boolean(submitAttempted && errors.company)}
                     />
-                    {errors.company && touched.company && (
+                    {submitAttempted && errors.company && (
                       <span className="field-error">
                         <Icon name="x" size={11} /> {errors.company}
                       </span>
@@ -316,9 +317,9 @@ export function RequestDemoPage() {
                       placeholder="Select team size"
                       onChange={(val) => handleChange("employees", val)}
                       onBlur={() => handleBlur("employees")}
-                      hasError={Boolean(errors.employees && touched.employees)}
+                      hasError={Boolean(submitAttempted && errors.employees)}
                     />
-                    {errors.employees && touched.employees && (
+                    {submitAttempted && errors.employees && (
                       <span className="field-error">
                         <Icon name="x" size={11} /> {errors.employees}
                       </span>
@@ -340,7 +341,7 @@ export function RequestDemoPage() {
                 </div>
 
                 <label className="message-label">
-                  <span>Additional Notes (Optional)</span>
+                  <span>Addition Notes (Optional)</span>
                   <textarea
                     rows={3}
                     placeholder="Tell us about specific challenges (e.g. multi-state PT, shift rotations)..."

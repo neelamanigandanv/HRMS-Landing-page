@@ -35,6 +35,7 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [targetRole, setTargetRole] = useState(job ? job.title : "");
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [linkedinUrl, setLinkedinUrl] = useState("");
   const [totalExperience, setTotalExperience] = useState("");
@@ -79,6 +80,7 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
       setIsSubmitted(false);
       setFormErrors({});
       setIsSubmitting(false);
+      setTargetRole(job ? job.title : "");
     }
   }, [isOpen, job]);
 
@@ -317,10 +319,10 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
                   )}
                 </div>
 
-                {/* Email */}
+                {/* Work Email */}
                 <div className="careers-form-group">
                   <label htmlFor="app-email" className="careers-form-label">
-                    Email Address <span className="required">*</span>
+                    Work Email <span className="required">*</span>
                   </label>
                   <input
                     id="app-email"
@@ -361,6 +363,22 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
                   {formErrors.phone && (
                     <span className="careers-form-error">{formErrors.phone}</span>
                   )}
+                </div>
+
+                {/* Target Role / Position */}
+                <div className="careers-form-group">
+                  <label htmlFor="app-target-role" className="careers-form-label">
+                    Target Role / Position <span className="required">*</span>
+                  </label>
+                  <input
+                    id="app-target-role"
+                    type="text"
+                    value={targetRole}
+                    onChange={(e) => setTargetRole(e.target.value)}
+                    placeholder="e.g. Senior Frontend Engineer"
+                    className="careers-form-input"
+                    required
+                  />
                 </div>
 
                 {/* LinkedIn or Portfolio */}
@@ -524,7 +542,7 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
               {/* Cover Note */}
               <div className="careers-form-group full-width">
                 <label htmlFor="app-covernote" className="careers-form-label">
-                  Cover Note / Why LattiumHR? <span className="optional">(Optional)</span>
+                  Why LattiumHR? / What do you want to build? <span className="optional">(Optional)</span>
                 </label>
                 <textarea
                   id="app-covernote"

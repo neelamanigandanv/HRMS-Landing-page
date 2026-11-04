@@ -46,7 +46,7 @@ export function RequestDemoModal({
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [submitAttempted, setSubmitAttempted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
@@ -78,7 +78,7 @@ export function RequestDemoModal({
       setIsSubmitting(false);
       setSubmitError(null);
       setErrors({});
-      setTouched({});
+      setSubmitAttempted(false);
       if (defaultEmail || defaultInterest) {
         setFormData((prev) => ({
           ...prev,
@@ -108,20 +108,25 @@ export function RequestDemoModal({
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    if (touched[field]) {
+    // Only re-validate dynamically if user has already tried to submit
+    if (submitAttempted) {
       const err = validateField(field, value);
       setErrors((prev) => ({ ...prev, [field]: err }));
     }
   };
 
   const handleBlur = (field: string) => {
-    setTouched((prev) => ({ ...prev, [field]: true }));
-    const err = validateField(field, (formData as Record<string, string>)[field] || "");
-    setErrors((prev) => ({ ...prev, [field]: err }));
+    // Only validate on blur if user has already attempted to submit
+    if (submitAttempted) {
+      const err = validateField(field, (formData as Record<string, string>)[field] || "");
+      setErrors((prev) => ({ ...prev, [field]: err }));
+    }
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitAttempted(true);
+
     const fieldsToValidate = ["name", "email", "phone", "company", "employees"];
     const newErrors: Record<string, string> = {};
 
@@ -130,16 +135,15 @@ export function RequestDemoModal({
       if (err) newErrors[field] = err;
     });
 
-    setTouched({
-      name: true,
-      email: true,
-      phone: true,
-      company: true,
-      employees: true,
-    });
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
+      // Focus first error field for clean accessible UX
+      const firstError = fieldsToValidate.find((f) => newErrors[f]);
+      if (firstError) {
+        const el = document.getElementById(`modal-${firstError}`);
+        if (el) el.focus();
+      }
       return;
     }
 
@@ -184,7 +188,7 @@ export function RequestDemoModal({
       interest: defaultInterest || "",
     });
     setErrors({});
-    setTouched({});
+    setSubmitAttempted(false);
     setSubmitError(null);
     setIsSubmitted(false);
   };
@@ -291,94 +295,105 @@ export function RequestDemoModal({
 
             <div className="form-grid">
               {/* Full Name */}
-              <label>
-                <span>
-                  Full Name <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
-                </span>
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-name" className="demo-field-label">
+                  <span>Full Name</span>
+                  <span className="required-star">*</span>
+                </label>
                 <input
+                  id="modal-name"
+                  name="name"
                   type="text"
                   value={formData.name}
                   onChange={(e) => handleChange("name", e.target.value)}
                   onBlur={() => handleBlur("name")}
-                  className={errors.name && touched.name ? "has-error" : ""}
+                  className={submitAttempted && errors.name ? "has-error" : ""}
                   placeholder="e.g. Rahul Sharma"
-                  aria-invalid={Boolean(errors.name && touched.name)}
+                  aria-invalid={Boolean(submitAttempted && errors.name)}
                   autoFocus
                 />
-                {errors.name && touched.name && (
+                {submitAttempted && errors.name && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.name}
                   </span>
                 )}
-              </label>
+              </div>
 
               {/* Work Email */}
-              <label>
-                <span>
-                  Work Email <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
-                </span>
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-email" className="demo-field-label">
+                  <span>Work Email</span>
+                  <span className="required-star">*</span>
+                </label>
                 <input
+                  id="modal-email"
+                  name="email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
                   onBlur={() => handleBlur("email")}
-                  className={errors.email && touched.email ? "has-error" : ""}
+                  className={submitAttempted && errors.email ? "has-error" : ""}
                   placeholder="rahul@company.com"
-                  aria-invalid={Boolean(errors.email && touched.email)}
+                  aria-invalid={Boolean(submitAttempted && errors.email)}
                 />
-                {errors.email && touched.email && (
+                {submitAttempted && errors.email && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.email}
                   </span>
                 )}
-              </label>
+              </div>
 
               {/* Phone with Country Selector */}
-              <label>
-                <span>
-                  Phone Number <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
-                </span>
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-phone" className="demo-field-label">
+                  <span>Phone Number</span>
+                  <span className="required-star">*</span>
+                </label>
                 <PhoneInput
                   id="modal-phone"
                   name="phone"
                   value={formData.phone}
                   onChange={(fullNumber) => handleChange("phone", fullNumber)}
                   onBlur={() => handleBlur("phone")}
-                  hasError={Boolean(errors.phone && touched.phone)}
+                  hasError={Boolean(submitAttempted && errors.phone)}
                   required
                 />
-                {errors.phone && touched.phone && (
+                {submitAttempted && errors.phone && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.phone}
                   </span>
                 )}
-              </label>
+              </div>
 
               {/* Company */}
-              <label>
-                <span>
-                  Company Name <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
-                </span>
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-company" className="demo-field-label">
+                  <span>Company Name</span>
+                  <span className="required-star">*</span>
+                </label>
                 <input
+                  id="modal-company"
+                  name="company"
                   type="text"
                   value={formData.company}
                   onChange={(e) => handleChange("company", e.target.value)}
                   onBlur={() => handleBlur("company")}
-                  className={errors.company && touched.company ? "has-error" : ""}
+                  className={submitAttempted && errors.company ? "has-error" : ""}
                   placeholder="Acme Technologies"
-                  aria-invalid={Boolean(errors.company && touched.company)}
+                  aria-invalid={Boolean(submitAttempted && errors.company)}
                 />
-                {errors.company && touched.company && (
+                {submitAttempted && errors.company && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.company}
                   </span>
                 )}
-              </label>
+              </div>
 
               {/* Team Size */}
-              <div className="modal-field-group">
-                <label htmlFor="modal-team-size" className="modal-label-text">
-                  Team Size <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-team-size" className="demo-field-label">
+                  <span>Team Size</span>
+                  <span className="required-star">*</span>
                 </label>
                 <CustomSelect
                   id="modal-team-size"
@@ -387,9 +402,9 @@ export function RequestDemoModal({
                   placeholder="Select team size"
                   onChange={(val) => handleChange("employees", val)}
                   onBlur={() => handleBlur("employees")}
-                  hasError={Boolean(errors.employees && touched.employees)}
+                  hasError={Boolean(submitAttempted && errors.employees)}
                 />
-                {errors.employees && touched.employees && (
+                {submitAttempted && errors.employees && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.employees}
                   </span>
@@ -397,9 +412,9 @@ export function RequestDemoModal({
               </div>
 
               {/* Module Interest */}
-              <div className="modal-field-group">
-                <label htmlFor="modal-primary-focus" className="modal-label-text">
-                  Primary Area of Interest
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-primary-focus" className="demo-field-label">
+                  <span>Primary Area of Interest</span>
                 </label>
                 <CustomSelect
                   id="modal-primary-focus"
