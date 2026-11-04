@@ -232,3 +232,97 @@
 .doc-page-wrapper .emp-why-big-card {
   background: linear-gradient(145deg, #ffffff 0%, #fbf9fc 100%);
 }
+
+
+/* ==========================================================================
+   THE CHALLENGES WE SOLVE: EXACTLY LIKE EMPLOYEE MANAGEMENT PAGE (3 Cards)
+   ========================================================================== */
+.doc-page-wrapper .emp-problem-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 2rem !important;
+  align-items: stretch !important;
+}
+
+@media (max-width: 960px) {
+  .doc-page-wrapper .emp-problem-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px !important;
+    margin: 0 auto !important;
+    gap: 1.75rem !important;
+  }
+}
+
+/* ==========================================================================
+   WHY LATTIUMHR: 2-LINE BALANCED HEADING
+   ========================================================================== */
+.doc-page-wrapper .emp-why-choose-section .emp-section-title {
+  max-width: 860px !important;
+  margin: 0 auto 15px !important;
+  text-wrap: balance !important;
+}
+
+/* ==========================================================================
+   WORKFLOW PROCESS: EXACTLY LIKE EMPLOYEE MANAGEMENT PAGE
+   - Soft plum notch (#faeef5) and icon box (#faeef4 with #f4dfe9 border)
+   - On hover: Solid primary plum (#802B5B) with white text & icon
+   ========================================================================== */
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card .emp-process-notch {
+  background: #faeef5 !important;
+  border: none !important;
+  box-shadow: none !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card .emp-process-notch .emp-process-notch-num {
+  font-size: 0.95rem !important;
+  font-weight: 800 !important;
+  color: #802B5B !important;
+  letter-spacing: 0.04em !important;
+  transition: color 0.35s ease !important;
+}
+
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card .emp-process-icon-box {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 18px !important;
+  background: #faeef4 !important;
+  border: 1px solid #f4dfe9 !important;
+  color: #802B5B !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card .emp-process-icon-box svg {
+  color: #802B5B !important;
+  stroke: #802B5B !important;
+  transition: all 0.35s ease !important;
+}
+
+/* Hover & Active States: Exact match to Employee Management */
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card:hover .emp-process-notch,
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card.is-active .emp-process-notch {
+  background: #802B5B !important;
+  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.35) !important;
+}
+
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card:hover .emp-process-notch .emp-process-notch-num,
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card.is-active .emp-process-notch .emp-process-notch-num {
+  color: #ffffff !important;
+}
+
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card:hover .emp-process-icon-box,
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card.is-active .emp-process-icon-box {
+  background: #802B5B !important;
+  border-color: #802B5B !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px -4px rgba(128, 43, 91, 0.4) !important;
+  transform: scale(1.04) !important;
+}
+
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card:hover .emp-process-icon-box svg,
+.doc-page-wrapper .doc-process-grid-4col .emp-process-card.is-active .emp-process-icon-box svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}

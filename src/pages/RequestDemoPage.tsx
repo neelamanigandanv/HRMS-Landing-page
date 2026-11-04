@@ -5,6 +5,8 @@ import SEO from "../components/layout/SEO";
 import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
 import CustomSelect from "../components/ui/CustomSelect";
+import PhoneInput from "../components/common/PhoneInput";
+import { validatePhoneNumber, FormValidators } from "../utils/phoneUtils";
 import { submitEnquiry } from "../services/enquiryService";
 import "./RequestDemoPage.css";
 
@@ -39,32 +41,20 @@ export function RequestDemoPage() {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validate = (field: string, value: string): string => {
-    const trimmed = value.trim();
-    if (field === "name") {
-      if (!trimmed) return "Please enter your full name";
-      if (trimmed.length < 2) return "Name must be at least 2 characters";
-      return "";
+    switch (field) {
+      case "name":
+        return FormValidators.name(value);
+      case "email":
+        return FormValidators.email(value);
+      case "phone":
+        return validatePhoneNumber(value);
+      case "company":
+        return FormValidators.company(value);
+      case "employees":
+        return FormValidators.teamSize(value);
+      default:
+        return "";
     }
-    if (field === "email") {
-      if (!trimmed) return "Work email is required";
-      if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(trimmed)) return "Enter a valid work email";
-      return "";
-    }
-    if (field === "phone") {
-      const digits = trimmed.replace(/\D/g, "");
-      if (!digits) return "Phone number is required";
-      if (digits.length < 10) return "Minimum 10 digits required";
-      return "";
-    }
-    if (field === "company") {
-      if (!trimmed) return "Company name is required";
-      return "";
-    }
-    if (field === "employees") {
-      if (!value) return "Please select your team size";
-      return "";
-    }
-    return "";
   };
 
   const handleBlur = (field: string) => {
@@ -101,12 +91,13 @@ export function RequestDemoPage() {
 
     try {
       await submitEnquiry({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        company_name: formData.company,
+        name: formData.name.trim(),
+        work_email: formData.email.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        company_name: formData.company.trim(),
         team_size: formData.employees,
-        primary_area_of_interest: formData.interest || "Full Platform",
+        primary_area_of_interest: formData.interest || "Payroll & HRMS",
         nature_of_enquiry: "SCHEDULE_LIVE_DEMO",
         notes: formData.notes || "",
         source_page: "/request-demo",
@@ -278,14 +269,14 @@ export function RequestDemoPage() {
                     <span className="field-label-text">
                       Phone Number <span className="required-star">*</span>
                     </span>
-                    <input
-                      type="tel"
+                    <PhoneInput
+                      id="demo-phone"
+                      name="phone"
                       value={formData.phone}
-                      onChange={(e) => handleChange("phone", e.target.value)}
+                      onChange={(fullNumber) => handleChange("phone", fullNumber)}
                       onBlur={() => handleBlur("phone")}
-                      className={errors.phone && touched.phone ? "has-error" : ""}
-                      placeholder="+91 98765 43210"
-                      aria-invalid={Boolean(errors.phone && touched.phone)}
+                      hasError={Boolean(errors.phone && touched.phone)}
+                      required
                     />
                     {errors.phone && touched.phone && (
                       <span className="field-error">
@@ -315,9 +306,8 @@ export function RequestDemoPage() {
                   </label>
 
                   <div className="form-field-group">
-                    <label htmlFor="team-size-select" className="field-label-row">
-                      <span>Team Size</span>
-                      <span className="required-star">*</span>
+                    <label htmlFor="team-size-select" className="field-label-text">
+                      Team Size <span className="required-star">*</span>
                     </label>
                     <CustomSelect
                       id="team-size-select"
@@ -336,8 +326,8 @@ export function RequestDemoPage() {
                   </div>
 
                   <div className="form-field-group">
-                    <label htmlFor="interest-select" className="field-label-row">
-                      <span>Primary Area of Interest</span>
+                    <label htmlFor="interest-select" className="field-label-text">
+                      Primary Area of Interest
                     </label>
                     <CustomSelect
                       id="interest-select"

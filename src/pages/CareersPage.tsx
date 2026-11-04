@@ -12,13 +12,43 @@ import {
 import JobCard from "../components/careers/JobCard";
 import HiringStepper from "../components/careers/HiringStepper";
 import ApplyModal from "../components/careers/ApplyModal";
+import CustomSelect, { CustomSelectOption } from "../components/ui/CustomSelect";
+import PhoneInput from "../components/common/PhoneInput";
+import { validatePhoneNumber } from "../utils/phoneUtils";
+import { submitCrmEnquiry } from "../services/enquiryService";
 import "./CareersPage.css";
 
+const GENERAL_ROLE_OPTION: CustomSelectOption = {
+  value: "general",
+  label: "General Application (Open Consideration across teams)",
+};
+
+const ROLE_OPTIONS: CustomSelectOption[] = [
+  GENERAL_ROLE_OPTION,
+  ...JOB_OPENINGS.map((j) => ({
+    value: j.id,
+    label: `${j.title} (${j.department})`,
+  })),
+];
+
+const EXPERIENCE_OPTIONS: CustomSelectOption[] = [
+  { value: "0–1 years (Entry / Fresher)", label: "0–1 years (Entry / Fresher)" },
+  { value: "1–3 years", label: "1–3 years" },
+  { value: "3–5 years", label: "3–5 years" },
+  { value: "5–8 years", label: "5–8 years" },
+  { value: "8+ years (Senior / Lead)", label: "8+ years (Senior / Lead)" },
+];
+
+const NOTICE_PERIOD_OPTIONS: CustomSelectOption[] = [
+  { value: "Immediate Joiner (0–15 days)", label: "Immediate Joiner (0–15 days)" },
+  { value: "30 Days", label: "30 Days" },
+  { value: "60 Days", label: "60 Days" },
+  { value: "90 Days", label: "90 Days" },
+];
+
 export function CareersPage() {
-  // Active selected job for on-page form (defaults to People & Talent Acquisition Specialist)
-  const defaultJob =
-    JOB_OPENINGS.find((j) => j.id === "people-culture-lead") || JOB_OPENINGS[0];
-  const [selectedJob, setSelectedJob] = useState<JobOpening>(defaultJob);
+  // Active selected job for on-page form (null = General Application)
+  const [selectedJob, setSelectedJob] = useState<JobOpening | null>(null);
 
   // Application Modal state (fallback)
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
@@ -30,6 +60,7 @@ export function CareersPage() {
   const [phone, setPhone] = useState("");
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [linkedinUrl, setLinkedinUrl] = useState("");
+  const [portfolioUrl, setPortfolioUrl] = useState("");
   const [totalExperience, setTotalExperience] = useState("");
   const [currentCompany, setCurrentCompany] = useState("");
   const [noticePeriod, setNoticePeriod] = useState("");
@@ -40,6 +71,7 @@ export function CareersPage() {
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [applicationRefId, setApplicationRefId] = useState("");
   const [isDragOver, setIsDragOver] = useState(false);
 
@@ -101,11 +133,9 @@ export function CareersPage() {
       errors.email = "Please enter a valid email address.";
     }
 
-    const phoneRegex = /^[0-9+\s\-()]{8,18}$/;
-    if (!phone.trim()) {
-      errors.phone = "Phone number is required.";
-    } else if (!phoneRegex.test(phone.trim())) {
-      errors.phone = "Please enter a valid phone number.";
+    const phoneErr = validatePhoneNumber(phone);
+    if (phoneErr) {
+      errors.phone = phoneErr;
     }
 
     if (!resumeFile) {
@@ -128,16 +158,55 @@ export function CareersPage() {
     return Object.keys(errors).length === 0;
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
     setIsSubmitting(true);
-    setTimeout(() => {
-      const genId = `APP-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
+    setSubmitError(null);
+
+    const targetRoleName = selectedJob
+      ? `${selectedJob.title} (${selectedJob.department})`
+      : selectedRoleId === "general"
+      ? "General Application"
+      : ROLE_OPTIONS.find((r) => r.value === selectedRoleId)?.label || "General Application";
+
+    const payload = {
+      full_name: fullName.trim(),
+      name: fullName.trim(),
+      work_email: email.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      company_name: currentCompany.trim() ? `Current: ${currentCompany.trim()}` : "Candidate Profile",
+      source_page: "/careers",
+      nature_of_enquiry: "JOB_APPLICATION",
+      extra_data: {
+        target_role: targetRoleName,
+        total_experience: totalExperience,
+        notice_period: noticePeriod,
+        current_company: currentCompany.trim() || "Not Specified",
+        expected_ctc: expectedCtc.trim() || "Not Specified",
+        linkedin_portfolio_url: [linkedinUrl.trim(), portfolioUrl.trim()].filter(Boolean).join(" | "),
+        linkedin_url: linkedinUrl.trim(),
+        portfolio_url: portfolioUrl.trim(),
+        resume_url: resumeFile ? resumeFile.name : "",
+        why_lattium_hr: coverNote.trim(),
+      },
+    };
+
+    try {
+      const res = await submitCrmEnquiry(payload);
+      const genId = res.data?.id
+        ? String(res.data.id)
+        : `APP-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
       setApplicationRefId(genId);
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 700);
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setSubmitError(
+        err?.message || "Failed to submit application. Please check your connection and try again."
+      );
+    }
   };
 
   // When clicking "Apply Now" on any job card in Open Positions section, scroll down to the on-page form
@@ -192,11 +261,11 @@ export function CareersPage() {
                 <span className="careers-sparkle">✦</span>
               </div>
 
-              {/* Properly Balanced Heading with Responsive Break */}
+              {/* Two-Line Properly Balanced Heading */}
               <h1 id="careers-hero-heading" className="careers-hero-title">
                 Build Software That Makes Work Better
                 <br className="careers-hero-br" />
-                for <span className="careers-hero-glow">Thousands of People</span>
+                <span className="careers-hero-glow">for Modern Growing Teams</span>
               </h1>
 
               {/* One-line description */}
@@ -355,9 +424,15 @@ export function CareersPage() {
                 </div>
               </div>
 
-              {/* Rich Culture & Operating Ethic Content Box (Fills 2-Column Space in Row 2 Right Side) */}
+              {/* Rich Culture & Operating Ethic Content Box with Image & Glassmorphic Overlay */}
               <div className="careers-gallery-item careers-culture-callout-card">
-                <div className="careers-culture-callout-inner">
+                <img
+                  src="/images/work-process-team.jpg"
+                  alt="LattiumHR high trust collaborative culture"
+                  className="careers-gallery-img"
+                  loading="lazy"
+                />
+                <div className="careers-culture-callout-overlay">
                   <div className="careers-culture-callout-header">
                     <span className="careers-culture-tag">
                       <Icon name="sparkle" size={13} /> HIGH TRUST &amp; FREEDOM
@@ -412,43 +487,37 @@ export function CareersPage() {
             />
 
             <div className="careers-modal-card onpage-apply-card">
-              {/* Header Exactly Like Popup Card */}
+              {/* Application Form Card Header */}
               <div className="careers-modal-header">
-                <div>
-                  <span className="careers-modal-eyebrow">
-                    APPLY FOR {selectedJob ? selectedJob.department.toUpperCase() : "PEOPLE & HR"}
-                  </span>
-                  <h2 id="application-heading" className="careers-modal-title">
-                    {selectedJob ? selectedJob.title : "People & Talent Acquisition Specialist"}
-                  </h2>
-                  <div className="careers-modal-meta">
-                    <span>
-                      <Icon name="map-pin" size={13} /> {selectedJob ? selectedJob.location : "Mumbai HQ, India (Hybrid)"}
-                    </span>
-                    <span>•</span>
-                    <span>{selectedJob ? selectedJob.type : "Full-Time"}</span>
+                <div className="job-form-header-area" style={{ margin: 0, padding: 0, border: "none" }}>
+                  <div className="job-form-header-icon-box">
+                    <Icon name="sparkle" size={22} />
+                  </div>
+                  <div className="job-form-header-text">
+                    <h3 id="application-heading" className="job-form-heading">
+                      {selectedJob ? `Apply for ${selectedJob.title}` : "Submit Your Application"}
+                    </h3>
+                    <p className="job-form-subheading">
+                      {selectedJob ? (
+                        <span>
+                          <strong>{selectedJob.department}</strong> • {selectedJob.location} • 48h response SLA
+                        </span>
+                      ) : (
+                        "Direct application to our talent acquisition team • 48h response SLA"
+                      )}
+                    </p>
                   </div>
                 </div>
-
-                {/* Role Switcher Pill Dropdown */}
-                <div className="careers-modal-header-action">
-                  <select
-                    id="onpage-role-select"
-                    value={selectedJob ? selectedJob.id : "people-culture-lead"}
-                    onChange={(e) => {
-                      const found = JOB_OPENINGS.find((j) => j.id === e.target.value);
-                      if (found) setSelectedJob(found);
-                    }}
-                    className="careers-role-switch-select"
-                    aria-label="Select target position"
+                {selectedJob && (
+                  <button
+                    type="button"
+                    onClick={() => setSelectedJob(null)}
+                    className="careers-modal-clear-role-btn"
+                    title="Switch to General Application"
                   >
-                    {JOB_OPENINGS.map((j) => (
-                      <option key={j.id} value={j.id}>
-                        {j.title} ({j.department})
-                      </option>
-                    ))}
-                  </select>
-                </div>
+                    <Icon name="x" size={12} /> Switch to General Application
+                  </button>
+                )}
               </div>
 
               {/* Form Body OR Thank You View */}
@@ -463,7 +532,7 @@ export function CareersPage() {
                     <h3 className="careers-thank-you-title">Application Received!</h3>
                     <p className="careers-thank-you-text">
                       Thank you for applying for{" "}
-                      <strong>{selectedJob ? selectedJob.title : "People & Talent Acquisition Specialist"}</strong> at LattiumHR.
+                      <strong>{selectedJob ? selectedJob.title : "a position at LattiumHR"}</strong>.
                       Our talent team will review your background and reach out at <strong>{email}</strong> within{" "}
                       <strong>48 business hours</strong>.
                     </p>
@@ -486,6 +555,7 @@ export function CareersPage() {
                           setPhone("");
                           setResumeFile(null);
                           setLinkedinUrl("");
+                          setPortfolioUrl("");
                           setTotalExperience("");
                           setNoticePeriod("");
                           setCurrentCompany("");
@@ -543,18 +613,26 @@ export function CareersPage() {
                         )}
                       </div>
 
-                      {/* Phone Number */}
+                      {/* Phone Number with Country Selector */}
                       <div className="careers-form-group">
                         <label htmlFor="onpage-app-phone" className="careers-form-label">
                           Phone Number <span className="required">*</span>
                         </label>
-                        <input
+                        <PhoneInput
                           id="onpage-app-phone"
-                          type="tel"
+                          name="phone"
                           value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          placeholder="+91 98765 43210"
-                          className={`careers-form-input ${formErrors.phone ? "error" : ""}`}
+                          onChange={(fullNumber) => {
+                            setPhone(fullNumber);
+                            if (formErrors.phone) {
+                              setFormErrors((prev) => {
+                                const copy = { ...prev };
+                                delete copy.phone;
+                                return copy;
+                              });
+                            }
+                          }}
+                          hasError={Boolean(formErrors.phone)}
                           required
                         />
                         {formErrors.phone && (
@@ -567,22 +645,20 @@ export function CareersPage() {
                         <label htmlFor="onpage-app-role" className="careers-form-label">
                           Target Role / Position <span className="required">*</span>
                         </label>
-                        <select
+                        <CustomSelect
                           id="onpage-app-role"
-                          value={selectedJob ? selectedJob.id : "people-culture-lead"}
-                          onChange={(e) => {
-                            const found = JOB_OPENINGS.find((j) => j.id === e.target.value);
-                            if (found) setSelectedJob(found);
+                          options={ROLE_OPTIONS}
+                          value={selectedJob ? selectedJob.id : "general"}
+                          onChange={(val) => {
+                            if (val === "general") {
+                              setSelectedJob(null);
+                            } else {
+                              const found = JOB_OPENINGS.find((j) => j.id === val);
+                              if (found) setSelectedJob(found);
+                            }
                           }}
-                          className="careers-form-select"
-                          required
-                        >
-                          {JOB_OPENINGS.map((j) => (
-                            <option key={j.id} value={j.id}>
-                              {j.title} ({j.department})
-                            </option>
-                          ))}
-                        </select>
+                          placeholder="Select target role"
+                        />
                       </div>
 
                       {/* Total Experience */}
@@ -590,20 +666,19 @@ export function CareersPage() {
                         <label htmlFor="onpage-app-experience" className="careers-form-label">
                           Total Experience <span className="required">*</span>
                         </label>
-                        <select
+                        <CustomSelect
                           id="onpage-app-experience"
+                          options={EXPERIENCE_OPTIONS}
                           value={totalExperience}
-                          onChange={(e) => setTotalExperience(e.target.value)}
-                          className={`careers-form-select ${formErrors.totalExperience ? "error" : ""}`}
-                          required
-                        >
-                          <option value="">Select experience level</option>
-                          <option value="0–1 years (Entry / Fresher)">0–1 years (Entry / Fresher)</option>
-                          <option value="1–3 years">1–3 years</option>
-                          <option value="3–5 years">3–5 years</option>
-                          <option value="5–8 years">5–8 years</option>
-                          <option value="8+ years (Senior / Lead)">8+ years (Senior / Lead)</option>
-                        </select>
+                          onChange={(val) => {
+                            setTotalExperience(val);
+                            if (formErrors.totalExperience) {
+                              setFormErrors({ ...formErrors, totalExperience: "" });
+                            }
+                          }}
+                          placeholder="Select experience level"
+                          hasError={!!formErrors.totalExperience}
+                        />
                         {formErrors.totalExperience && (
                           <span className="careers-form-error">{formErrors.totalExperience}</span>
                         )}
@@ -614,19 +689,19 @@ export function CareersPage() {
                         <label htmlFor="onpage-app-notice" className="careers-form-label">
                           Notice Period <span className="required">*</span>
                         </label>
-                        <select
+                        <CustomSelect
                           id="onpage-app-notice"
+                          options={NOTICE_PERIOD_OPTIONS}
                           value={noticePeriod}
-                          onChange={(e) => setNoticePeriod(e.target.value)}
-                          className={`careers-form-select ${formErrors.noticePeriod ? "error" : ""}`}
-                          required
-                        >
-                          <option value="">Select notice period</option>
-                          <option value="Immediate Joiner (0–15 days)">Immediate Joiner (0–15 days)</option>
-                          <option value="30 Days">30 Days</option>
-                          <option value="60 Days">60 Days</option>
-                          <option value="90 Days">90 Days</option>
-                        </select>
+                          onChange={(val) => {
+                            setNoticePeriod(val);
+                            if (formErrors.noticePeriod) {
+                              setFormErrors({ ...formErrors, noticePeriod: "" });
+                            }
+                          }}
+                          placeholder="Select notice period"
+                          hasError={!!formErrors.noticePeriod}
+                        />
                         {formErrors.noticePeriod && (
                           <span className="careers-form-error">{formErrors.noticePeriod}</span>
                         )}
@@ -662,17 +737,32 @@ export function CareersPage() {
                         />
                       </div>
 
-                      {/* LinkedIn or Portfolio URL */}
-                      <div className="careers-form-group full-width">
+                      {/* LinkedIn Profile URL */}
+                      <div className="careers-form-group">
                         <label htmlFor="onpage-app-linkedin" className="careers-form-label">
-                          LinkedIn / Portfolio URL <span className="optional">(Optional)</span>
+                          LinkedIn Profile <span className="optional">(Optional)</span>
                         </label>
                         <input
                           id="onpage-app-linkedin"
                           type="url"
                           value={linkedinUrl}
                           onChange={(e) => setLinkedinUrl(e.target.value)}
-                          placeholder="https://linkedin.com/in/yourprofile or portfolio"
+                          placeholder="https://linkedin.com/in/yourprofile"
+                          className="careers-form-input"
+                        />
+                      </div>
+
+                      {/* Portfolio / Personal Website */}
+                      <div className="careers-form-group">
+                        <label htmlFor="onpage-app-portfolio" className="careers-form-label">
+                          Portfolio / Website <span className="optional">(Optional)</span>
+                        </label>
+                        <input
+                          id="onpage-app-portfolio"
+                          type="url"
+                          value={portfolioUrl}
+                          onChange={(e) => setPortfolioUrl(e.target.value)}
+                          placeholder="https://portfolio.me or GitHub"
                           className="careers-form-input"
                         />
                       </div>
@@ -782,6 +872,12 @@ export function CareersPage() {
                         <span className="careers-form-error">{formErrors.consent}</span>
                       )}
                     </div>
+
+                    {submitError && (
+                      <div className="careers-form-error-banner" style={{ color: "#ef4444", background: "#fef2f2", border: "1px solid #fecaca", padding: "10px 14px", borderRadius: "8px", marginBottom: "16px", fontSize: "14px" }}>
+                        <span>{submitError}</span>
+                      </div>
+                    )}
 
                     {/* Submit Button Row */}
                     <div className="careers-form-submit-row">

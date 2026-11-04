@@ -102,7 +102,7 @@ export function LegalPage() {
       <LegalTemplate
         title="Cookie"
         highlightedTitle="Policy"
-        badge="TRANSPARENCY & TRACKING DIRECTIVE"
+        badge="COOKIE DIRECTIVE"
         lastUpdated="October 2026"
         version="Version 2.3 (Audited Directive)"
         summary="How LattiumHR utilizes strictly necessary tokens and privacy-first storage technologies to deliver secure, performant HRMS operations without third-party ad tracking."
@@ -229,7 +229,7 @@ export function LegalPage() {
       <LegalTemplate
         title="Terms of"
         highlightedTitle="Service"
-        badge="COMMERCIAL TERMS & MASTER SAAS AGREEMENT"
+        badge="TERMS OF SERVICE"
         lastUpdated="October 2026"
         version="Version 3.1 (Commercial Directive)"
         summary="The complete legal and operational terms governing enterprise access, employee licensing, 99.99% uptime SLAs, customer data ownership, and cloud software subscriptions."
@@ -322,7 +322,7 @@ export function LegalPage() {
       <LegalTemplate
         title="Data Processing"
         highlightedTitle="Agreement"
-        badge="DPDP ACT 2023 & FIDUCIARY SAFEGUARDS"
+        badge="DPA DIRECTIVE"
         lastUpdated="October 2026"
         version="Version 2.2 (Data Protection Directive)"
         summary="Technical and organizational measures, sub-processor governance, and statutory data processor commitments protecting employee records under the India DPDP Act 2023."
@@ -467,7 +467,7 @@ export function LegalPage() {
     <LegalTemplate
       title="Privacy"
       highlightedTitle="Policy"
-      badge="PRIVACY DIRECTIVE & DPDP ACT 2023 COMMITMENT"
+      badge="PRIVACY DIRECTIVE"
       lastUpdated="October 2026"
       version="Version 4.2 (Enterprise Directive)"
       summary="How LattiumHR protects confidential workforce identity, biometric records, and banking data with domestic Tier-III storage, zero data selling, and layered cryptographic controls."

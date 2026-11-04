@@ -189,14 +189,6 @@ export default function ApiDocumentationPage() {
                 Comprehensive HTTP endpoints, JSON payload schemas, real-time webhooks, and copy-paste code snippets to integrate your core workforce, biometric hardware, and payroll engine.
               </p>
 
-              {/* Developer Badges */}
-              <div className="api-hero-badges-row">
-                <span className="api-hero-badge"><Icon name="sparkle" size={13} /> OpenAPI 3.1 &amp; Postman Ready</span>
-                <span className="api-hero-badge"><Icon name="lock" size={13} /> OAuth 2.0 &amp; Bearer Tokens</span>
-                <span className="api-hero-badge"><Icon name="shield" size={13} /> 99.99% Core API Uptime SLA</span>
-                <span className="api-hero-badge"><Icon name="check" size={13} /> Real-Time Webhooks</span>
-              </div>
-
               {/* Action Buttons */}
               <div className="api-hero-actions">
                 <a
@@ -219,6 +211,14 @@ export default function ApiDocumentationPage() {
                 >
                   <Icon name="lock" size={14} /> Quickstart &amp; Auth
                 </button>
+              </div>
+
+              {/* Developer Badges / Key Points */}
+              <div className="api-hero-badges-row">
+                <span className="api-hero-badge"><Icon name="sparkle" size={14} /> OpenAPI 3.1 &amp; Postman Ready</span>
+                <span className="api-hero-badge"><Icon name="lock" size={14} /> OAuth 2.0 &amp; Bearer Tokens</span>
+                <span className="api-hero-badge"><Icon name="shield" size={14} /> 99.99% Core API Uptime SLA</span>
+                <span className="api-hero-badge"><Icon name="check" size={14} /> Real-Time Webhooks</span>
               </div>
             </div>
           </div>

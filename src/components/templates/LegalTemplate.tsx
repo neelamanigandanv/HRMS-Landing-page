@@ -182,7 +182,7 @@ export function LegalTemplate({
           <div className="guide-detail-container">
             <div className="guide-hero-centered-content">
               <span className="guide-hero-eyebrow">
-                <Icon name="shield" size={13} /> {badge} • LAST UPDATED {lastUpdated.toUpperCase()}
+                <Icon name="shield" size={13} /> {badge}
               </span>
 
               <h1 id="legal-page-title" className="guide-hero-title">

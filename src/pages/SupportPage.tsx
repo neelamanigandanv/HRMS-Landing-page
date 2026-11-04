@@ -218,7 +218,25 @@ export default function SupportPage() {
     setIsSubmitting(true);
 
     try {
-      // 1. Submit to local Support Ticket Service (creates reference number and persists in session)
+      // 1. Submit directly to centralized CRM backend public enquiry endpoint (POST /api/platform/enquiries/public)
+      const res = await submitEnquiry({
+        name: fullName.trim(),
+        work_email: workEmail.trim(),
+        email: workEmail.trim(),
+        company_name: companyName.trim(),
+        source_page: "/support",
+        nature_of_enquiry: "SUPPORT_REQUEST",
+        notes: `[${selectedType.toUpperCase()}] ${subject.trim()}: ${description.trim()}`,
+        extra_data: {
+          issue_category: issueCategory,
+          subject: subject.trim(),
+          issue_description: description.trim(),
+          attachment_url: attachedFiles.length > 0 ? attachedFiles[0].name : "",
+          support_type: selectedType,
+        },
+      });
+
+      // 2. Once verified stored in CRM backend, also store in local ticket tracker
       const ticket = await submitSupportTicket({
         name: fullName.trim(),
         email: workEmail.trim(),
@@ -233,21 +251,8 @@ export default function SupportPage() {
         consent,
       });
 
-      // 2. Also forward to backend public enquiry API endpoint (POST /neuverve/public/enquiry)
-      try {
-        await submitEnquiry({
-          name: fullName.trim(),
-          email: workEmail.trim(),
-          company_name: companyName.trim(),
-          primary_area_of_interest: issueCategory,
-          nature_of_enquiry:
-            selectedType === "sales" ? "SCHEDULE_LIVE_DEMO" : "GENERAL_ENQUIRY",
-          notes: `[Ref: ${ticket.id}] [${selectedType.toUpperCase()}] ${subject.trim()}: ${description.trim()}`,
-          source_page: "/support#submit-request",
-        });
-      } catch (backendErr) {
-        // Log backend sync notice without blocking customer confirmation
-        console.warn("Backend enquiry sync notice:", backendErr);
+      if (res.data?.id) {
+        ticket.id = String(res.data.id);
       }
 
       setSubmittedTicket(ticket);
@@ -326,7 +331,7 @@ export default function SupportPage() {
                   Submit a Support Request <Icon name="arrow" size={16} />
                 </Button>
                 <Button to="/help" secondary className="support-hero-btn-secondary">
-                  Visit Help Center
+                  View Help Center
                 </Button>
               </div>
 
@@ -1039,13 +1044,6 @@ export default function SupportPage() {
                   </span>
                 </div>
               </Link>
-            </div>
-
-            {/* Central CTA Button */}
-            <div className="support-quick-footer-action">
-              <Button to="/help" className="support-hero-btn-primary">
-                Explore Help Center <Icon name="arrow" size={16} />
-              </Button>
             </div>
           </div>
         </section>

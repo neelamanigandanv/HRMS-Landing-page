@@ -146,7 +146,7 @@ export function AssetManagementPage() {
       id: "digital-handovers",
       badge: "02 Digital Allocations",
       eyebrow: "✦ 02. DIGITAL HANDOVERS ✦",
-      image: "/images/asset-block-handover.jpg",
+      image: "/images/asset-block-handover.jpg?v=2",
       imageAlt: "Employee signing digital asset handover form on mobile tablet during first-day onboarding",
       title: "Frictionless Equipment Allocation & E-Signatures",
       description:

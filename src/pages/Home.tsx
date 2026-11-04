@@ -87,9 +87,10 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
 
     try {
       await submitEnquiry({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
+        name: formData.name.trim(),
+        work_email: formData.email.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
         company_name: "Prospect Company",
         team_size: formData.employees,
         primary_area_of_interest: "Full Platform Walkthrough",
@@ -1155,7 +1156,7 @@ function PriceEstimator() {
             className={plan === id ? "active" : ""}
             onClick={() => setPlan(id)}
           >
-            <span>{plan === id && <Icon name="check" size={13} />}</span>
+            <span>{plan === id && <Icon name="check" size={14} />}</span>
             <strong>
               {name}
               {id === "professional" && <em>POPULAR</em>}
@@ -1227,12 +1228,12 @@ function PriceEstimator() {
                 </span>
               </div>
               <p>
-                <Icon name="check" size={14} /> Minimum plan covers up to 50 users
+                <Icon name="check" size={16} /> Minimum plan covers up to 50 users
               </p>
             </div>
             <div className="setup-price">
               <span>
-                <Icon name="setup" />
+                <Icon name="setup" size={20} />
               </span>
               <div>
                 <small>ONE-TIME SETUP</small>
@@ -1452,68 +1453,165 @@ export function Home() {
         <section className="before-after" id="platform">
           <div className="container">
             <SectionHeading
-              eyebrow="THE DIFFERENCE"
+              eyebrow="✦ THE DIFFERENCE ✦"
               title="From HR chaos to total clarity"
-              body="See what changes when your people operations finally work together."
+              body="See what changes when your people operations, attendance, and payroll finally work together."
               center
             />
-            <div className="compare-grid">
-              <div className="compare-card before">
-                <div className="compare-title">
-                  <span>
-                    <Icon name="x" />
-                  </span>
-                  <div>
-                    <small>BEFORE LATTIUMHR</small>
-                    <strong>Scattered & manual</strong>
+            <div className="compare-grid diff-bento-grid">
+              {/* CARD 1: BEFORE LATTIUMHR (Text Top, Visual Bottom - Matching Left Card in Reference Image) */}
+              <div className="diff-bento-card diff-bento-before">
+                <div className="diff-bento-text">
+                  <small className="diff-bento-eyebrow">BEFORE LATTIUMHR</small>
+                  <h3 className="diff-bento-title">Scattered &amp; manual</h3>
+                  <p className="diff-bento-desc">
+                    Workforce operations scattered across WhatsApp chats, paper registers, and error-prone spreadsheets that don't talk to each other.
+                  </p>
+                </div>
+
+                <div className="diff-bento-visual diff-visual-chart">
+                  <div className="diff-bento-grid-bg" aria-hidden="true" />
+
+                  {/* SVG Chart Line (Matches Reference Image Left Card with Primary Color #802B5B) */}
+                  <svg className="diff-chart-svg" viewBox="0 0 500 240" fill="none" preserveAspectRatio="none">
+                    {/* Secondary lighter curve */}
+                    <path
+                      d="M 10 190 Q 90 170 170 160 T 310 145 T 390 105 T 480 125"
+                      stroke="rgba(128, 43, 91, 0.25)"
+                      strokeWidth="2.5"
+                      strokeOpacity="0.85"
+                      fill="none"
+                    />
+                    {/* Primary curve in website primary color #802B5B */}
+                    <path
+                      d="M 10 165 Q 80 155 160 178 T 280 130 T 385 92 T 480 115"
+                      stroke="#802B5B"
+                      strokeWidth="3.5"
+                      strokeLinecap="round"
+                      fill="none"
+                    />
+                    {/* Dotted vertical guideline from node */}
+                    <line x1="385" y1="92" x2="385" y2="240" stroke="rgba(128, 43, 91, 0.22)" strokeDasharray="3 3" strokeWidth="1.5" />
+                    {/* Focal peak node in website primary color #802B5B */}
+                    <circle cx="385" cy="92" r="10" fill="#802B5B" />
+                    <circle cx="385" cy="92" r="5" fill="#ffffff" />
+                  </svg>
+
+                  {/* Floating Metric Card (Matches www.hextone.com card in Reference Image) */}
+                  <div className="diff-chart-content">
+                    {/* Left Column: Metric Card + 2 Danger Badges */}
+                    <div className="diff-chart-col diff-col-left">
+                      <div className="diff-floating-card">
+                        <div className="diff-floating-pill">
+                          <div className="diff-pill-left">
+                            <Icon name="globe" size={12} />
+                            <span>manual-operations.internal</span>
+                          </div>
+                          <span className="diff-help-dot">?</span>
+                        </div>
+                        <div className="diff-floating-stats">
+                          <div className="diff-floating-stat">
+                            <span className="diff-stat-label">Hours Wasted</span>
+                            <strong className="diff-stat-value">42 hrs/mo</strong>
+                          </div>
+                          <div className="diff-floating-stat">
+                            <span className="diff-stat-label">Payroll Errors</span>
+                            <strong className="diff-stat-value">18.4%</strong>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="diff-pill diff-pill-danger" title="Leave on WhatsApp — Requests get buried and lost across group chats">
+                        <span className="diff-pill-icon icon-whatsapp"><Icon name="whatsapp" size={14} /></span>
+                        <span className="diff-pill-text">Leave on WhatsApp</span>
+                        <span className="diff-pill-status status-danger">✕</span>
+                      </div>
+                      <div className="diff-pill diff-pill-danger" title="Attendance in registers — Paper sign-ins prone to proxy punching & errors">
+                        <span className="diff-pill-icon icon-att"><Icon name="attendance" size={14} /></span>
+                        <span className="diff-pill-text">Attendance in registers</span>
+                        <span className="diff-pill-status status-danger">✕</span>
+                      </div>
+                    </div>
+
+                    {/* Right Column: 3 Danger Badges Balanced Vertically */}
+                    <div className="diff-chart-col diff-col-right">
+                      <div className="diff-pill diff-pill-danger" title="Payroll in spreadsheets — Manual formulas with frequent calculation errors">
+                        <span className="diff-pill-icon icon-pay"><Icon name="payroll" size={14} /></span>
+                        <span className="diff-pill-text">Payroll in spreadsheets</span>
+                        <span className="diff-pill-status status-danger">✕</span>
+                      </div>
+                      <div className="diff-pill diff-pill-danger" title="Documents in email — Scattered attachments with zero access control">
+                        <span className="diff-pill-icon icon-doc"><Icon name="document" size={14} /></span>
+                        <span className="diff-pill-text">Documents in email</span>
+                        <span className="diff-pill-status status-danger">✕</span>
+                      </div>
+                      <div className="diff-pill diff-pill-danger" title="Assets… somewhere — No central record of who holds company devices">
+                        <span className="diff-pill-icon icon-asset"><Icon name="asset" size={14} /></span>
+                        <span className="diff-pill-text">Assets… somewhere</span>
+                        <span className="diff-pill-status status-danger">✕</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                {[
-                  ["leave", "Leave on WhatsApp"],
-                  ["attendance", "Attendance in registers"],
-                  ["payroll", "Payroll in spreadsheets"],
-                  ["document", "Documents in email"],
-                  ["asset", "Assets… somewhere"],
-                ].map((x) => (
-                  <div className="compare-row" key={x[1]}>
-                    <span>
-                      <Icon name={x[0] as IconName} />
-                    </span>
-                    <p>{x[1]}</p>
-                    <em>!</em>
-                  </div>
-                ))}
               </div>
-              <div className="switch-arrow">
-                <Icon name="arrow" />
-              </div>
-              <div className="compare-card after">
-                <div className="compare-title">
-                  <span>
-                    <Icon name="check" />
-                  </span>
-                  <div>
-                    <small>WITH LATTIUMHR</small>
-                    <strong>Connected & automatic</strong>
+
+              {/* CARD 2: WITH LATTIUMHR (Visual Top, Text Bottom - Matching Right Card in Reference Image) */}
+              <div className="diff-bento-card diff-bento-after">
+                <div className="diff-bento-visual diff-visual-pills">
+                  <div className="diff-bento-grid-bg" aria-hidden="true" />
+
+                  {/* 8 Feature Pills in 4 rows × 2 cols (Exact match to Reference Image Right Card) */}
+                  <div className="diff-pills-matrix">
+                    <div className="diff-pill diff-pill-success" title="Leave tracked & approved — Self-service requests with automated balances">
+                      <span className="diff-pill-icon icon-leave"><Icon name="leave" size={14} /></span>
+                      <span className="diff-pill-text">Leave Approvals</span>
+                      <span className="diff-pill-status status-success">✓</span>
+                    </div>
+                    <div className="diff-pill diff-pill-success" title="Attendance in real time — Biometric & mobile geo-checkins with live sync">
+                      <span className="diff-pill-icon icon-att"><Icon name="attendance" size={14} /></span>
+                      <span className="diff-pill-text">Live Attendance</span>
+                      <span className="diff-pill-status status-success">✓</span>
+                    </div>
+                    <div className="diff-pill diff-pill-success" title="Payroll auto-calculated — One-click salary runs synced from attendance">
+                      <span className="diff-pill-icon icon-pay"><Icon name="payroll" size={14} /></span>
+                      <span className="diff-pill-text">Auto-Payroll</span>
+                      <span className="diff-pill-status status-success">✓</span>
+                    </div>
+                    <div className="diff-pill diff-pill-success" title="Documents in one place — Encrypted cloud repository with expiry alerts">
+                      <span className="diff-pill-icon icon-doc"><Icon name="document" size={14} /></span>
+                      <span className="diff-pill-text">Document Vault</span>
+                      <span className="diff-pill-status status-success">✓</span>
+                    </div>
+                    <div className="diff-pill diff-pill-success" title="Assets assigned & visible — End-to-end device tracking from hire to exit">
+                      <span className="diff-pill-icon icon-asset"><Icon name="asset" size={14} /></span>
+                      <span className="diff-pill-text">Asset Tracking</span>
+                      <span className="diff-pill-status status-success">✓</span>
+                    </div>
+                    <div className="diff-pill diff-pill-success" title="Statutory compliance — PF, ESI, TDS, and PT calculated with statutory precision">
+                      <span className="diff-pill-icon icon-shield"><Icon name="shield" size={14} /></span>
+                      <span className="diff-pill-text">100% Compliance</span>
+                      <span className="diff-pill-status status-success">✓</span>
+                    </div>
+                    <div className="diff-pill diff-pill-success" title="Employee self-service — Employees mark attendance, apply leaves, and get payslips">
+                      <span className="diff-pill-icon icon-mobile"><Icon name="employee" size={14} /></span>
+                      <span className="diff-pill-text">Self-Service App</span>
+                      <span className="diff-pill-status status-success">✓</span>
+                    </div>
+                    <div className="diff-pill diff-pill-success" title="Direct salary payouts — Automated payout advice and instant bank transfers">
+                      <span className="diff-pill-icon icon-bank"><Icon name="check" size={14} /></span>
+                      <span className="diff-pill-text">Direct Payouts</span>
+                      <span className="diff-pill-status status-success">✓</span>
+                    </div>
                   </div>
                 </div>
-                {[
-                  ["leave", "Leave tracked & approved"],
-                  ["attendance", "Attendance in real time"],
-                  ["payroll", "Payroll auto-calculated"],
-                  ["document", "Documents in one place"],
-                  ["asset", "Assets assigned & visible"],
-                ].map((x) => (
-                  <div className="compare-row" key={x[1]}>
-                    <span>
-                      <Icon name={x[0] as IconName} />
-                    </span>
-                    <p>{x[1]}</p>
-                    <em>
-                      <Icon name="check" size={14} />
-                    </em>
-                  </div>
-                ))}
+
+                <div className="diff-bento-text">
+                  <small className="diff-bento-eyebrow">WITH LATTIUMHR</small>
+                  <h3 className="diff-bento-title">Connected &amp; automatic</h3>
+                  <p className="diff-bento-desc">
+                    All people operations, biometric attendance, auto-payroll, and encrypted document vaults working together in real time.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

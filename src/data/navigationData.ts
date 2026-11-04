@@ -219,8 +219,11 @@ export const footerColumns = [
     ],
   },
   {
-    title: "Resources & Support",
+    title: "Resources",
     links: [
+      { label: "Blog", href: "/blog" },
+      { label: "FAQ", href: "/faq" },
+      { label: "Customer Support", href: "/support" },
       { label: "Help Center", href: "/support/help-center" },
       { label: "HRMS Glossary", href: "/resources/hrms-glossary" },
       { label: "Guides & Playbooks", href: "/guides" },

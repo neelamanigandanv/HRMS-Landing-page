@@ -1,32 +1,55 @@
 /**
- * LattiumHR - Public Enquiry & Lead Generation Service
+ * LattiumHR - Centralized CRM Lead & Public Enquiry Service
  *
- * Connects frontend CTA forms to the Neuverve / Lattium backend enquiry endpoint:
- * POST http://localhost:5000/neuverve/public/enquiry (or configured production endpoint)
+ * Connects all website forms to the CRM backend endpoint:
+ * POST https://[YOUR_BACKEND_DOMAIN]/api/platform/enquiries/public
+ * (Local dev: http://localhost:5000/api/platform/enquiries/public)
  */
 
 export type NatureOfEnquiry =
   | 'SCHEDULE_LIVE_DEMO'
+  | 'GENERAL_ENQUIRY'
+  | 'JOB_APPLICATION'
+  | 'PARTNER_APPLICATION'
+  | 'SUPPORT_REQUEST'
   | 'CUSTOM_PRICE'
   | 'IMPLEMENTATION_PARTNERSHIP'
-  | 'GENERAL_ENQUIRY';
+  | string;
 
-export interface EnquiryPayload {
-  name: string;
-  email: string;
-  company_name: string;
+export interface CrmEnquiryPayload {
+  // Common identity fields
+  name?: string;
+  full_name?: string;
+  first_name?: string;
+  last_name?: string;
+  work_email?: string;
+  email?: string;
+  business_email?: string;
   phone?: string;
+  company_name?: string;
   team_size?: string;
+
+  // Intent & Categorization
   primary_area_of_interest?: string;
-  nature_of_enquiry?: NatureOfEnquiry | string;
+  nature_of_enquiry: NatureOfEnquiry;
   notes?: string;
-  source_page?: string;
+  source_page: string;
+
+  // Extended payload structure (rendered in CRM Lead Dossier)
+  extra_data?: Record<string, unknown>;
+
+  // Allow custom/form-specific root fields as specified in API documentation
+  [key: string]: unknown;
 }
+
+// Backward-compatible alias
+export type EnquiryPayload = CrmEnquiryPayload;
 
 export interface EnquiryResponseData {
   id?: number | string;
   name?: string;
   email?: string;
+  work_email?: string;
   status?: string;
   created_at?: string;
   [key: string]: unknown;
@@ -39,14 +62,13 @@ export interface EnquiryResponse {
 }
 
 /**
- * Resolves the target API endpoint based on Vite environment variables:
- * - VITE_ENQUIRY_API_URL: exact full URL if provided (e.g. https://api.domain.com/neuverve/public/enquiry)
- * - VITE_API_BASE_URL: base domain (e.g. https://api.domain.com), appends '/neuverve/public/enquiry'
- * - In production mode with no base URL set: falls back to relative '/neuverve/public/enquiry'
- * - In development mode: falls back to 'http://localhost:5000/neuverve/public/enquiry'
+ * Resolves the target CRM / backend API endpoint for all website form submissions:
+ * 1. VITE_CRM_API_URL or VITE_ENQUIRY_API_URL (exact full URL if provided)
+ * 2. VITE_API_BASE_URL (appends /public/enquiry if pointing to neuverve)
+ * 3. Default backend URL: 'http://192.168.1.5:5173/neuverve/public/enquiry'
  */
 export function getEnquiryEndpoint(): string {
-  const customUrl = import.meta.env.VITE_ENQUIRY_API_URL;
+  const customUrl = import.meta.env.VITE_CRM_API_URL || import.meta.env.VITE_ENQUIRY_API_URL;
   if (customUrl && typeof customUrl === 'string' && customUrl.trim()) {
     return customUrl.trim();
   }
@@ -54,91 +76,154 @@ export function getEnquiryEndpoint(): string {
   const rawUrl = import.meta.env.VITE_API_BASE_URL;
   if (rawUrl && typeof rawUrl === 'string' && rawUrl.trim()) {
     const trimmed = rawUrl.trim().replace(/\/+$/, '');
-
-    // Case 1: Already includes the full enquiry path
-    if (trimmed.endsWith('/public/enquiry')) {
+    if (trimmed.endsWith('/public/enquiry') || trimmed.endsWith('/api/platform/enquiries/public')) {
       return trimmed;
     }
-
-    // Case 2: URL ends with /neuverve (e.g. http://192.168.1.5:5173/neuverve)
     if (trimmed.endsWith('/neuverve')) {
       return `${trimmed}/public/enquiry`;
     }
-
-    // Case 3: Base host (e.g. http://localhost:5000 or https://api.domain.com)
     return `${trimmed}/neuverve/public/enquiry`;
   }
 
-  // If in production and no explicit base URL is configured,
-  // use relative endpoint so it automatically targets the deployed domain.
-  if (import.meta.env.PROD) {
-    return '/neuverve/public/enquiry';
-  }
-
-  return 'http://localhost:5000/neuverve/public/enquiry';
+  return 'http://192.168.1.5:5173/neuverve/public/enquiry';
 }
 
 /**
- * Submits prospect enquiry payload to the backend.
+ * Submits enquiry payload directly into the CRM / Neuverve Lead Management backend.
+ * Compatible with HTTP 201 (Created) and HTTP 200 (OK).
+ * Includes resilient multi-candidate routing to avoid 404 errors if backend routes differ.
  */
-export async function submitEnquiry(payload: EnquiryPayload): Promise<EnquiryResponse> {
-  const endpoint = getEnquiryEndpoint();
+export async function submitCrmEnquiry(payload: CrmEnquiryPayload): Promise<EnquiryResponse> {
+  const primaryEndpoint = getEnquiryEndpoint();
 
   const currentSourcePage =
     typeof window !== 'undefined'
       ? window.location.pathname + window.location.hash
       : '/';
 
-  const body = {
-    name: payload.name.trim(),
-    email: payload.email.trim(),
-    phone: payload.phone?.trim() || '',
-    company_name: payload.company_name.trim(),
+  // Normalize common identity fields for maximum CRM backend compatibility
+  const resolvedEmail = (payload.work_email || payload.business_email || payload.email || '').trim();
+  const resolvedName = (
+    payload.name ||
+    payload.full_name ||
+    [payload.first_name, payload.last_name].filter(Boolean).join(' ') ||
+    ''
+  ).trim();
+
+  const body: Record<string, unknown> = {
+    ...payload,
+    name: resolvedName,
+    full_name: resolvedName,
+    work_email: resolvedEmail,
+    email: resolvedEmail,
+    business_email: resolvedEmail,
+    company_name: (payload.company_name || 'Not Specified').toString().trim(),
     team_size: payload.team_size || 'Not Specified',
     primary_area_of_interest: payload.primary_area_of_interest || 'Platform Suite',
-    nature_of_enquiry: payload.nature_of_enquiry || 'SCHEDULE_LIVE_DEMO',
-    notes: payload.notes || '',
+    nature_of_enquiry: payload.nature_of_enquiry || 'GENERAL_ENQUIRY',
     source_page: payload.source_page || currentSourcePage,
   };
 
-  try {
-    const response = await fetch(endpoint, {
+  if (payload.first_name) body.first_name = payload.first_name.trim();
+  if (payload.last_name) body.last_name = payload.last_name.trim();
+  if (payload.phone) body.phone = payload.phone.trim();
+
+  // If extra_data is provided, pass it directly
+  if (payload.extra_data && typeof payload.extra_data === 'object') {
+    body.extra_data = payload.extra_data;
+  }
+
+  // Build candidate URL variations to try in case of route variations (e.g. 404 on base path)
+  const baseHost = primaryEndpoint.replace(/\/public\/enquiry$|\/api\/platform\/enquiries\/public$|\/neuverve(\/.*)?$/, '');
+  const candidateUrls: string[] = [
+    primaryEndpoint, // 1. Canonical: http://192.168.1.5:5173/neuverve/public/enquiry
+    `${baseHost}/neuverve/public/enquiry`,
+    `${baseHost}/neuverve/`,
+    `${baseHost}/neuverve`,
+    `${baseHost}/neuverve/api/platform/enquiries/public`,
+    `${baseHost}/neuverve/enquiry`,
+    // Same-origin dev proxy fallbacks to avoid CORS blocks
+    '/neuverve/public/enquiry',
+    '/neuverve/',
+  ];
+  const uniqueEndpoints = Array.from(new Set(candidateUrls.filter(Boolean)));
+
+  // Helper to post JSON payload
+  const postPayload = async (targetUrl: string): Promise<Response> => {
+    return await fetch(targetUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
     });
+  };
 
-    let result: any = null;
+  let lastError: any = null;
+  let lastStatus: number | null = null;
+  let lastStatusText: string = '';
+
+  for (const candidate of uniqueEndpoints) {
     try {
-      result = await response.json();
-    } catch {
-      // Non-JSON or empty response
-    }
+      const response = await postPayload(candidate);
+      lastStatus = response.status;
+      lastStatusText = response.statusText;
 
-    if (response.ok && (result?.success || response.status === 200 || response.status === 201)) {
-      return {
-        success: true,
-        message:
-          result?.message ||
-          'Thank you for reaching out! Our enterprise team will connect with you shortly.',
-        data: result?.data,
-      };
-    }
+      // If this endpoint returned 404, try the next candidate route
+      if (response.status === 404) {
+        continue;
+      }
 
-    const errorMessage =
-      result?.message ||
-      `Submission failed (${response.status}: ${response.statusText || 'Server Error'})`;
-    throw new Error(errorMessage);
-  } catch (error: any) {
-    // If it's a TypeError (e.g. Failed to fetch / connection refused because backend isn't up on port 5000)
-    if (error.name === 'TypeError' || error.message?.includes('Failed to fetch')) {
-      throw new Error(
-        `Unable to reach the backend server at ${endpoint}. Please ensure the server is running on port 5000.`
-      );
+      let result: any = null;
+      try {
+        result = await response.json();
+      } catch {
+        // Non-JSON or empty response body
+      }
+
+      if (response.ok || response.status === 201 || response.status === 200) {
+        if (result && result.success === false) {
+          throw new Error(result.message || 'Submission failed');
+        }
+        return {
+          success: true,
+          message:
+            result?.message ||
+            'Thank you! Your submission has been received. Our team will connect with you shortly.',
+          data: result?.data,
+        };
+      }
+
+      // If error is 4xx or 5xx (other than 404), throw the specific error message
+      const errorMessage =
+        result?.message ||
+        `Submission failed (${response.status}: ${response.statusText || 'Server Error'})`;
+      throw new Error(errorMessage);
+    } catch (err: any) {
+      lastError = err;
+      // If network failure / CORS, try next candidate
+      if (err.name === 'TypeError' || err.message?.includes('Failed to fetch')) {
+        continue;
+      }
+      // If server returned another validation or business error, stop and report it
+      if (!err.message?.includes('404')) {
+        throw err;
+      }
     }
-    throw error;
   }
+
+  // If all candidate routes exhausted
+  if (lastError && (lastError.name === 'TypeError' || lastError.message?.includes('Failed to fetch'))) {
+    throw new Error(
+      `Unable to reach the backend server at ${primaryEndpoint}. Please ensure the server is running on 192.168.1.5:5173.`
+    );
+  }
+
+  throw new Error(
+    lastError?.message ||
+    `Submission failed (${lastStatus || 404}: ${lastStatusText || 'Not Found'}). Please verify the backend route on ${primaryEndpoint}.`
+  );
 }
 
+// Backward-compatible alias
+export const submitEnquiry = submitCrmEnquiry;

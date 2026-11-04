@@ -98,9 +98,32 @@
 }
 
 .support-hero-btn-secondary {
-  padding: 0.875rem 1.85rem !important;
-  font-size: 1rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  height: 48px !important;
+  background: #ffffff !important;
+  color: #0c152e !important;
+  border: 1.5px solid #ebdcd5 !important;
+  border-radius: 6px !important;
+  padding: 0 1.65rem !important;
+  font-family: inherit !important;
+  font-size: 0.95rem !important;
   font-weight: 700 !important;
+  cursor: pointer !important;
+  box-shadow: 0 1px 4px rgba(25, 23, 53, 0.04) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+}
+
+.support-hero-btn-secondary:hover {
+  border-color: #802B5B !important;
+  color: #802B5B !important;
+  background: #faedf4 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.1) !important;
 }
 
 .support-hero-trust-row {
@@ -168,7 +191,7 @@
 
 .support-section-title {
   font-size: clamp(1.85rem, 3.2vw, 2.5rem);
-  font-weight: 800;
+  font-weight: 600 !important;
   color: #191735;
   line-height: 1.2;
   margin: 0 0 0.85rem;
@@ -213,10 +236,10 @@
 }
 
 .support-type-card-v2.selected {
-  border-color: #802B5B;
-  background: linear-gradient(180deg, #ffffff 0%, #fdf8fb 100%);
-  box-shadow: 0 12px 32px rgba(128, 43, 91, 0.14);
-  outline: 2px solid #802B5B;
+  border: 1.5px solid #ebdcd5;
+  background: #ffffff;
+  box-shadow: 0 4px 18px rgba(25, 23, 53, 0.04);
+  outline: none !important;
 }
 
 .type-card-media-wrap {

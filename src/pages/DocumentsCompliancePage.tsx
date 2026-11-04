@@ -15,7 +15,7 @@ export function DocumentsCompliancePage() {
 
   // State for interactive elements
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [activeWorkflowCard, setActiveWorkflowCard] = useState<number>(0);
+  const [activeWorkflowCard, setActiveWorkflowCard] = useState<number | null>(null);
   const [activeConnectedCard, setActiveConnectedCard] = useState<number | null>(null);
 
   const handleOpenDemo = () => {
@@ -69,7 +69,7 @@ export function DocumentsCompliancePage() {
       id: "document-storage",
       badge: "01 Document Storage",
       eyebrow: "✦ 01. SECURE DOCUMENT STORAGE ✦",
-      image: "/images/doc-block-storage.jpg",
+      image: "/images/doc-block-storage.jpg?v=2",
       imageAlt: "HR operations specialist organizing digital employee document records on laptop in modern office",
       title: "Secure Document Storage & Unified Employee Records",
       description:
@@ -97,7 +97,7 @@ export function DocumentsCompliancePage() {
       id: "expiry-tracking",
       badge: "02 Expiry Tracking",
       eyebrow: "✦ 02. PROACTIVE EXPIRY TRACKING ✦",
-      image: "/images/doc-block-expiry.jpg",
+      image: "/images/doc-block-expiry.jpg?v=2",
       imageAlt: "HR compliance specialist reviewing document expiration alerts and renewals on tablet with checklist",
       title: "Automated Expiry Tracking & Timely Renewal Follow-Ups",
       description:
@@ -125,7 +125,7 @@ export function DocumentsCompliancePage() {
       id: "compliance-access",
       badge: "03 Checklists & Access",
       eyebrow: "✦ 03. COMPLIANCE & ACCESS CONTROL ✦",
-      image: "/images/doc-block-compliance.jpg",
+      image: "/images/doc-block-compliance.jpg?v=2",
       imageAlt: "Corporate compliance officers in boardroom reviewing audit readiness checklist and security controls",
       title: "Statutory Compliance Checklists & Granular Access Control",
       description:
@@ -445,7 +445,7 @@ export function DocumentsCompliancePage() {
 
                 <div className="doc-hero-showcase-frame">
                   <img
-                    src="/images/doc-hero-showcase.jpg"
+                    src="/images/doc-hero-showcase.jpg?v=2"
                     alt="LattiumHR Documents and Compliance Overview Dashboard showing employee document cards and expiry alerts"
                     className="doc-hero-mockup-img"
                     loading="eager"
@@ -531,45 +531,86 @@ export function DocumentsCompliancePage() {
             <div className="emp-problem-grid">
               {/* Challenge 1 */}
               <div className="emp-problem-card">
-                <div className="emp-problem-icon-wrapper">
-                  <Icon name="document" size={24} />
+                <div className="emp-problem-icon-wrap" aria-hidden="true">
+                  <svg
+                    width="38"
+                    height="38"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="9" y1="15" x2="15" y2="15" />
+                    <line x1="12" y1="12" x2="12" y2="18" />
+                  </svg>
                 </div>
-                <h3 className="emp-problem-card-title">Missing Documents</h3>
-                <p className="emp-problem-card-desc">
-                  Crucial employee onboarding files, bank proofs, and signed agreements go missing right when annual audits or payroll runs arrive.
+                <h3 className="emp-problem-title">
+                  Missing Documents &
+                  <br />
+                  Paperwork Chaos
+                </h3>
+                <p className="emp-problem-desc">
+                  Crucial employee onboarding files, bank proofs, and signed agreements go missing right when annual audits or payroll runs arrive. Physical folders and personal email inboxes create duplicate versions and serious compliance liabilities.
                 </p>
               </div>
 
               {/* Challenge 2 */}
               <div className="emp-problem-card">
-                <div className="emp-problem-icon-wrapper">
-                  <Icon name="search" size={24} />
+                <div className="emp-problem-icon-wrap" aria-hidden="true">
+                  <svg
+                    width="38"
+                    height="38"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                    <path d="M19.5 4.5l-2.5 2.5" />
+                  </svg>
                 </div>
-                <h3 className="emp-problem-card-title">Scattered Records</h3>
-                <p className="emp-problem-card-desc">
-                  Files are stranded across personal email inboxes, disparate Google Drive folders, local desktops, and physical file cabinets.
+                <h3 className="emp-problem-title">
+                  Surprise Expirations &
+                  <br />
+                  Statutory Penalties
+                </h3>
+                <p className="emp-problem-desc">
+                  Passports, work visas, commercial permits, and health certifications expire silently without advance warning. Missing statutory renewal deadlines triggers hefty government penalties, frozen disbursements, and failed regulatory audits.
                 </p>
               </div>
 
               {/* Challenge 3 */}
               <div className="emp-problem-card">
-                <div className="emp-problem-icon-wrapper">
-                  <Icon name="clock" size={24} />
+                <div className="emp-problem-icon-wrap" aria-hidden="true">
+                  <svg
+                    width="38"
+                    height="38"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    <circle cx="12" cy="16" r="1" />
+                  </svg>
                 </div>
-                <h3 className="emp-problem-card-title">Expiry Follow-Ups</h3>
-                <p className="emp-problem-card-desc">
-                  Passports, work visas, commercial permits, and health certifications expire without advance warning, risking statutory penalties.
-                </p>
-              </div>
-
-              {/* Challenge 4 */}
-              <div className="emp-problem-card">
-                <div className="emp-problem-icon-wrapper">
-                  <Icon name="shield" size={24} />
-                </div>
-                <h3 className="emp-problem-card-title">Tracking Required Paperwork</h3>
-                <p className="emp-problem-card-desc">
-                  HR managers waste hours manually maintaining spreadsheets to see which team members have incomplete compliance checklists.
+                <h3 className="emp-problem-title">
+                  Security Risks &
+                  <br />
+                  Audit Trail Gaps
+                </h3>
+                <p className="emp-problem-desc">
+                  Storing sensitive employee identification, salary annexures, and background checks on unencrypted drives exposes private data to leaks. Without immutable timestamped logs and e-signatures, organizations fail external ISO and labor audits.
                 </p>
               </div>
             </div>
@@ -673,7 +714,9 @@ export function DocumentsCompliancePage() {
             <div className="emp-section-header center">
               <span className="emp-eyebrow">✦ WHY LATTIUMHR ✦</span>
               <h2 id="why-choose-title" className="emp-section-title">
-                More Organized Records. Easier Retrieval. Zero Compliance Surprises.
+                More Organized Records. Easier Retrieval.
+                <br />
+                Zero Compliance Surprises.
               </h2>
               <p className="emp-section-subhead">
                 Transform routine administrative paperwork into a streamlined, automated compliance system that grows with your organization.
@@ -800,7 +843,7 @@ export function DocumentsCompliancePage() {
             </div>
 
             {/* 4 Process Cards */}
-            <div className="doc-process-grid-4col">
+            <div className="doc-process-grid-4col" onMouseLeave={() => setActiveWorkflowCard(null)}>
               {workflowSteps.map((step, idx) => {
                 const isActive = activeWorkflowCard === idx;
                 return (

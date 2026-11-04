@@ -71,10 +71,7 @@ interface MilestoneItem {
   desc: string;
   icon: IconName;
   badge: string;
-  screenTitle: string;
-  screenCategory: string;
   stats: { label: string; val: string }[];
-  backdropGradient: string;
 }
 
 const milestonesData: MilestoneItem[] = [
@@ -82,91 +79,71 @@ const milestonesData: MilestoneItem[] = [
     id: "m2017",
     year: "2017",
     tag: "THE INCEPTION",
-    title: "The Starting Spark in Bengaluru",
+    title: "The Starting Spark in Bengaluru to Eliminate Attendance Chaos",
     desc: "LattiumHR was founded in Bengaluru after experiencing the everyday friction of running multi-branch frontline teams on paper logs and broken spreadsheets. We built our v1 foundation solely to eliminate manual attendance chaos.",
     icon: "zap",
     badge: "Founded 2017",
-    screenTitle: "Branch 01 — Shift Rosters & Real-Time Punch",
-    screenCategory: "Operational Foundation",
     stats: [
-      { label: "Headquarters", val: "Bengaluru, India" },
-      { label: "Admin Friction", val: "-85% Chasing" },
-      { label: "Core Focus", val: "Attendance & Rosters" },
+      { label: "Founded City", val: "Bengaluru" },
+      { label: "Admin Chasing Saved", val: "-85%" },
     ],
-    backdropGradient: "linear-gradient(135deg, #fef08a 0%, #fde047 35%, #f59e0b 80%, #d97706 100%)",
   },
   {
     id: "m2020",
     year: "2020",
     tag: "EARLY ADOPTERS",
-    title: "First 25 Enterprise Pilot Partners",
-    desc: "Rolled out our private beta with 25 fast-moving retail chains and tech teams. We perfected geofenced mobile verification, automated shift swap workflows, and instant leave approvals on shop floors.",
+    title: "First 25 Enterprise Pilot Partners & Real-Time Mobile Sync",
+    desc: "Rolled out our private beta with 25 fast-moving retail chains and tech teams. We perfected geofenced mobile verification, automated shift-swap workflows, and instant leave approvals on shop floors.",
     icon: "users",
     badge: "25+ Pilot Teams",
-    screenTitle: "Geofenced Mobile Verification & Shift Swaps",
-    screenCategory: "Field & Retail Operations",
     stats: [
-      { label: "Pilot Teams", val: "25 Companies" },
-      { label: "Punch Accuracy", val: "99.8% GPS" },
-      { label: "Shift Approvals", val: "Instant / Real-time" },
+      { label: "Pilot Enterprises", val: "25+" },
+      { label: "GPS Punch Accuracy", val: "99.8%" },
     ],
-    backdropGradient: "linear-gradient(135deg, #fed7aa 0%, #fb923c 45%, #ea580c 100%)",
   },
   {
     id: "m2022",
     year: "2022",
     tag: "COMPLIANCE ENGINE",
-    title: "100% Automated Statutory Payroll",
+    title: "100% Automated Statutory Payroll with 3-Minute Processing",
     desc: "Engineered a native payroll engine fully compliant with statutory regulations (PF, ESI, TDS, PT, and Bonus Act). Monthly payroll processing dropped from 4 stressful days to 3 error-free minutes with automated salary slips.",
     icon: "finance",
     badge: "100% Compliant",
-    screenTitle: "One-Click Salary Disbursement & Statutory Returns",
-    screenCategory: "Payroll & Compliance Engine",
     stats: [
-      { label: "Payroll Run Time", val: "3 Minutes" },
-      { label: "Discrepancies", val: "Zero Formula Errors" },
-      { label: "Statutory Filing", val: "Automated E-Returns" },
+      { label: "Payroll Run Time", val: "3 Min" },
+      { label: "Statutory Accuracy", val: "100%" },
     ],
-    backdropGradient: "linear-gradient(135deg, #fef08a 0%, #fde047 35%, #f59e0b 80%, #d97706 100%)",
   },
   {
     id: "m2024",
     year: "2024",
     tag: "ENTERPRISE SCALE",
-    title: "Centralized Multi-Branch Governance",
+    title: "Centralized Multi-Branch Governance Across 12+ States",
     desc: "Unveiled centralized multi-location governance. Regional factories, warehouses, and branch showrooms enforce localized state compliance while executive headquarters maintains unified real-time workforce visibility.",
     icon: "building",
     badge: "12+ Regions",
-    screenTitle: "HQ Regional Command Center & Role Hierarchy",
-    screenCategory: "Enterprise Multi-Branch Hub",
     stats: [
       { label: "Active Regions", val: "12+ States" },
-      { label: "Branch Oversight", val: "Single HQ View" },
-      { label: "Audit Readiness", val: "100% Traceable" },
+      { label: "Audit Readiness", val: "100%" },
     ],
-    backdropGradient: "linear-gradient(135deg, #bfdbfe 0%, #60a5fa 45%, #2563eb 90%, #1d4ed8 100%)",
   },
   {
     id: "today",
     year: "Today",
     tag: "TRUSTED AT SCALE",
-    title: "Powering 45,000+ Workers Every Day",
-    desc: "Now trusted across 500+ active enterprise clients and 45,000+ employees daily. We continue to engineer software that removes administrative bureaucracy and puts human potential first.",
+    title: "Powering 45,000+ Workers Every Single Day Across India",
+    desc: "Now trusted across 500+ active enterprise clients and over 45,000 daily workforce members. We continue to engineer software that removes administrative bureaucracy, guarantees zero compliance penalties, and puts human potential first.",
     icon: "sparkle",
     badge: "45,000+ Staff",
-    screenTitle: "Workforce Intelligence & Executive Overview",
-    screenCategory: "Unified HRMS Ecosystem",
     stats: [
-      { label: "Daily Active Staff", val: "45,000+ People" },
-      { label: "Client Retention", val: "99.2% Long-Term" },
-      { label: "Platform Uptime", val: "99.98% High-Availability" },
+      { label: "Daily Active Workers", val: "45k+" },
+      { label: "Client Retention", val: "99.2%" },
     ],
-    backdropGradient: "linear-gradient(135deg, #fef08a 0%, #fde047 35%, #f59e0b 80%, #d97706 100%)",
   },
 ];
 
 export function AboutPage() {
-  const [activeMilestoneId, setActiveMilestoneId] = useState<string>("m2017");
+  const [activeMilestoneId, setActiveMilestoneId] = useState<string>("today");
   const activeMilestone =
     milestonesData.find((m) => m.id === activeMilestoneId) || milestonesData[0];
 
@@ -185,65 +162,93 @@ export function AboutPage() {
 
       {/* 1. Hero: Purpose & Story with Elevated Colored Stage (Centered & Brand Colored) */}
       <section className="about-hero-section">
-        <div className="hero-glow" />
+        <div className="about-hero-ambient" />
         <div className="container">
           <div className="about-hero-center">
-            <span className="hero-badge">
-              <Icon name="sparkle" size={14} />
-              ABOUT LATTIUMHR
+            <span className="about-hero-chip">
+              <Icon name="sparkle" size={13} />
+              ✦ ABOUT LATTIUMHR ✦
             </span>
 
             <h1 className="about-hero-heading">
-              Less paperwork. <em>More time</em> for people.
+              Less Paperwork. <span className="about-hero-accent">More Time for People.</span>
             </h1>
 
             <p className="about-hero-lead">
-              We are a team of HR practitioners, engineers, and customer advocates who experienced the
+              We are a dedicated team of HR practitioners, engineers, and customer advocates who experienced the
               chaos of physical registers and broken spreadsheets. We built LattiumHR to give leaders
               effortless workforce control and their personal time back.
             </p>
 
             {/* Hero Action Buttons */}
-            <div style={{ display: "flex", gap: "12px", margin: "8px 0 24px", justifyContent: "center", flexWrap: "wrap" }}>
-              <Button to="/request-demo">
+            <div className="about-hero-actions">
+              <Button to="/request-demo" className="about-hero-btn-primary">
                 Book a Free Demo <Icon name="arrow" size={15} />
               </Button>
-              <Button to="/careers" secondary>
-                View Open Positions <Icon name="briefcase" size={15} />
+              <Button
+                onClick={() => {
+                  const el = document.getElementById("story");
+                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                secondary
+                className="about-hero-btn-secondary"
+              >
+                Our Story &amp; Journey <Icon name="arrow" size={15} />
               </Button>
             </div>
 
-            {/* Credibility & Trust Highlight Pills */}
-            <div className="about-hero-trust-strip">
-              <div className="about-hero-trust-pill">
-                <span className="pill-icon">
-                  <Icon name="building" size={13} />
-                </span>
-                <span>Founded in Bengaluru, India</span>
-              </div>
-              <div className="about-hero-trust-pill">
-                <span className="pill-icon">
-                  <Icon name="users" size={13} />
-                </span>
-                <span>500+ Multi-Branch Organizations</span>
-              </div>
-              <div className="about-hero-trust-pill">
-                <span className="pill-icon">
-                  <Icon name="check" size={13} />
-                </span>
-                <span>45,000+ Active Workers Daily</span>
-              </div>
-              <div className="about-hero-trust-pill">
-                <span className="pill-icon">
-                  <Icon name="shield" size={13} />
-                </span>
-                <span>100% India Statutory Compliance</span>
-              </div>
-            </div>
+            {/* Authentic Hero Showcase Media Stage with Floating Verified Badges */}
+            <div className="about-hero-media-wrapper">
+              <div className="about-hero-media-card">
+                <img
+                  src="/images/about-team-hero.jpg"
+                  alt="LattiumHR leadership and product engineering team collaborating"
+                  className="about-hero-media-img"
+                  loading="eager"
+                />
+                <div className="about-hero-media-overlay" />
 
-            <div className="about-hero-mission-pill">
-              <span className="trust-dot" />
-              <span>Built for modern leaders who value transparency &amp; people</span>
+                {/* Floating Metric Badges over the team photo */}
+                <div className="about-floating-badge badge-top-left">
+                  <span className="badge-icon-bubble">
+                    <Icon name="building" size={14} />
+                  </span>
+                  <div className="badge-text-group">
+                    <strong>Bengaluru, India</strong>
+                    <span>Founded &amp; Engineered</span>
+                  </div>
+                </div>
+
+                <div className="about-floating-badge badge-top-right">
+                  <span className="badge-icon-bubble">
+                    <Icon name="users" size={14} />
+                  </span>
+                  <div className="badge-text-group">
+                    <strong>500+ Organizations</strong>
+                    <span>Multi-Branch Workforces</span>
+                  </div>
+                </div>
+
+                <div className="about-floating-badge badge-bottom-left">
+                  <span className="badge-icon-bubble">
+                    <Icon name="check" size={14} />
+                  </span>
+                  <div className="badge-text-group">
+                    <strong>45,000+ Daily Punches</strong>
+                    <span>Verified Real-Time Shifts</span>
+                  </div>
+                </div>
+
+                <div className="about-floating-badge badge-bottom-right">
+                  <span className="badge-icon-bubble">
+                    <Icon name="shield" size={14} />
+                  </span>
+                  <div className="badge-text-group">
+                    <strong>100% Statutory Compliant</strong>
+                    <span>PF, ESI, TDS, State PT</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -298,12 +303,13 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* 3. Milestones on our Journey: Tabbed Interactive Showcase */}
-      <section className="about-milestones-section">
+      {/* 3. Milestones on our Journey: Interactive Showcase (Matches Uploaded Reference Design) */}
+      <section className="about-milestones-section" id="story">
         <div className="container">
           <SectionHeading
-            eyebrow="HOW WE GOT HERE"
+            eyebrow="✦ HOW WE GOT HERE ✦"
             title="Milestones on our journey"
+            body="From our founding spark in Bengaluru to powering tens of thousands of workforce operations daily."
             center
           />
 
@@ -329,90 +335,84 @@ export function AboutPage() {
             </div>
           </div>
 
-          {/* Interactive 2-Column Milestone Stage (Text on Left, Image/Mockup on Right) */}
+          {/* 2-Column Showcase Layout matching Reference: Left Photo, Right Story & 2 Stat Cards */}
           <div className="milestone-showcase-stage">
-            {/* Left Column: Text Content */}
-            <div className="milestone-content-col">
-              <div className="milestone-tag-row">
-                <span className="milestone-stage-tag">
-                  <Icon name={activeMilestone.icon} size={15} />
-                  {activeMilestone.tag}
-                </span>
-                <span className="milestone-year-chip">{activeMilestone.year}</span>
-              </div>
-
-              <h3 className="milestone-content-title">{activeMilestone.title}</h3>
-              <p className="milestone-content-desc">{activeMilestone.desc}</p>
-
-              {/* Key Highlights / Metrics */}
-              <div className="milestone-metrics-grid">
-                {activeMilestone.stats.map((stat, i) => (
-                  <div key={i} className="milestone-metric-item">
-                    <span className="metric-val">{stat.val}</span>
-                    <span className="metric-lbl">{stat.label}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="milestone-footer-row">
-                <span className="milestone-badge-pill">
-                  <Icon name="check" size={14} />
-                  {activeMilestone.badge}
-                </span>
-              </div>
+            {/* Left Column: Portrait Team Photo */}
+            <div className="milestone-img-wrapper">
+              <img
+                src="/images/about-milestone-journey.jpg"
+                alt="LattiumHR founders and leadership team collaborating on workforce growth"
+                className="milestone-journey-img"
+                loading="lazy"
+              />
             </div>
 
-            {/* Right Column: Visual Stage with Laptop Mockup */}
-            <div className="milestone-visual-col">
-              <div
-                className="milestone-visual-card"
-                style={{ background: activeMilestone.backdropGradient }}
-              >
-                {/* Ambient glow accent */}
-                <div className="visual-stage-glow" />
+            {/* Right Column: Narrative Story & 2 Stat Cards */}
+            <div className="milestone-info-wrapper">
+              <h3 className="milestone-headline">{activeMilestone.title}</h3>
 
-                {/* Laptop Mockup Device */}
-                <div className="milestone-laptop-mockup">
-                  <div className="laptop-lid">
-                    <div className="laptop-screen-bezel">
-                      <div className="laptop-camera-dot" />
-                      <div className="laptop-display-panel">
-                        {/* Chrome/Browser Header */}
-                        <div className="laptop-browser-chrome">
-                          <div className="browser-dots">
-                            <span className="b-dot red" />
-                            <span className="b-dot yellow" />
-                            <span className="b-dot green" />
-                          </div>
-                          <div className="browser-address-bar">
-                            app.lattiumhr.com/milestone/{activeMilestone.year.toLowerCase()}
-                          </div>
-                        </div>
+              <p className="milestone-paragraph">{activeMilestone.desc}</p>
 
-                        {/* Screen Content: Dashboard Screenshot */}
-                        <div className="laptop-screen-viewport">
-                          <img
-                            src="/images/product-hero-dashboard.jpg"
-                            alt={activeMilestone.screenTitle}
-                            className="laptop-screen-image"
-                          />
+              <Link to="/request-demo" className="milestone-cta-btn">
+                <span>Discover LattiumHR</span>
+                <span className="milestone-btn-arrow" aria-hidden="true">↘</span>
+              </Link>
 
-                          {/* Floating Screen Info Badge HUD */}
-                          <div className="laptop-screen-hud">
-                            <div className="hud-header">
-                              <span className="hud-dot" />
-                              <span className="hud-category">{activeMilestone.screenCategory}</span>
-                            </div>
-                            <div className="hud-title">{activeMilestone.screenTitle}</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              {/* Bottom 2 Pastel Stat Cards */}
+              <div className="milestone-stat-cards">
+                {/* Card 1: Lavender/Plum Pastel with Climber on Steps Flag Icon */}
+                <div className="milestone-stat-card milestone-stat-card--purple">
+                  <div className="milestone-card-icon" aria-hidden="true">
+                    <svg
+                      width="42"
+                      height="42"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      stroke="#802B5B"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M6 38H16V32H26V26H36V38" />
+                      <line x1="4" y1="38" x2="38" y2="38" />
+                      <circle cx="31" cy="12" r="3.5" />
+                      <path d="M31 16V24" />
+                      <path d="M31 24L26 26" />
+                      <path d="M31 24L34 26" />
+                      <path d="M31 18L26 20" />
+                      <path d="M31 18L36 15" />
+                      <line x1="36" y1="9" x2="36" y2="26" />
+                      <path d="M36 9L43 12L36 15Z" fill="rgba(128, 43, 91, 0.18)" />
+                    </svg>
                   </div>
-                  {/* Laptop Base / Deck */}
-                  <div className="laptop-base-deck">
-                    <div className="laptop-deck-notch" />
+                  <span className="milestone-card-num">{activeMilestone.stats[0]?.val}</span>
+                  <span className="milestone-card-label">{activeMilestone.stats[0]?.label}</span>
+                </div>
+
+                {/* Card 2: Mint/Sage Pastel with Presentation Growth Chart Board Icon */}
+                <div className="milestone-stat-card milestone-stat-card--mint">
+                  <div className="milestone-card-icon" aria-hidden="true">
+                    <svg
+                      width="42"
+                      height="42"
+                      viewBox="0 0 48 48"
+                      fill="none"
+                      stroke="#15803d"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="8" y="8" width="32" height="22" rx="2" />
+                      <path d="M13 24L21 17L28 21L35 14" />
+                      <path d="M30 14H35V19" />
+                      <line x1="16" y1="30" x2="11" y2="40" />
+                      <line x1="32" y1="30" x2="37" y2="40" />
+                      <line x1="24" y1="30" x2="24" y2="40" />
+                      <line x1="14" y1="35" x2="34" y2="35" />
+                    </svg>
                   </div>
+                  <span className="milestone-card-num">{activeMilestone.stats[1]?.val}</span>
+                  <span className="milestone-card-label">{activeMilestone.stats[1]?.label}</span>
                 </div>
               </div>
             </div>
@@ -495,7 +495,7 @@ export function AboutPage() {
       <section className="about-mv-section">
         <div className="container">
           <SectionHeading
-            eyebrow="OUR PURPOSE"
+            eyebrow="✦ OUR PURPOSE ✦"
             title="What drives us every day"
             body="Two fundamental commitments that shape every decision we make."
             center
@@ -504,120 +504,81 @@ export function AboutPage() {
           <div className="purpose-showcase-grid">
             {/* Card 1: Mission */}
             <div className="purpose-card purpose-card--mission">
-              <div className="purpose-ambient-glow" />
-              <div className="purpose-card-header">
-                <div className="purpose-icon-pill">
-                  <Icon name="zap" size={20} />
-                  <span>OUR MISSION</span>
-                </div>
-                <span className="purpose-badge">What drives us today</span>
+              <div className="purpose-card-icon" aria-hidden="true">
+                {/* Purposeful Mission Icon: Precision Target & Focused Arrow */}
+                <svg
+                  width="56"
+                  height="56"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="32" cy="32" r="24" stroke="currentColor" strokeWidth="2.4" />
+                  <circle cx="32" cy="32" r="16" stroke="currentColor" strokeWidth="2.2" />
+                  <circle cx="32" cy="32" r="8" stroke="currentColor" strokeWidth="2" />
+                  <circle cx="32" cy="32" r="2.5" fill="currentColor" />
+                  <path d="M49 15L33 31" stroke="currentColor" strokeWidth="2.6" />
+                  <path d="M49 15V24M49 15H40" stroke="currentColor" strokeWidth="2.6" />
+                </svg>
               </div>
 
-              <h3 className="purpose-title">
-                Eliminating administrative friction so modern teams can thrive
-              </h3>
+              <span className="purpose-card-eyebrow">OUR MISSION</span>
+              <h3 className="purpose-card-title">Our Mission</h3>
+              <div className="purpose-card-subtitle">Eliminating Administrative Friction</div>
 
-              <p className="purpose-lead">
-                We build software that removes the fear from statutory compliance and the drudgery from monthly payroll cycles—giving founders, HR managers, and employees hours back every single week.
+              <p className="purpose-card-desc">
+                We engineer dependable, intuitive software that removes statutory anxiety and payroll drudgery—empowering founders, HR leaders, and frontline teams to spend less time on paperwork and more time on people.
               </p>
 
-              <div className="purpose-divider" />
-
-              <div className="purpose-pillars">
-                <div className="purpose-pillar-item">
-                  <span className="purpose-check-icon">
-                    <Icon name="check" size={13} />
-                  </span>
-                  <div>
-                    <strong>Zero Compliance Anxiety</strong>
-                    <p>Automate 100% of statutory PF, ESI, PT, and TDS calculations without manual math.</p>
-                  </div>
-                </div>
-
-                <div className="purpose-pillar-item">
-                  <span className="purpose-check-icon">
-                    <Icon name="check" size={13} />
-                  </span>
-                  <div>
-                    <strong>Frictionless Multi-Branch Operations</strong>
-                    <p>Unified shifts, biometric sync, and branch transfers tailored for distributed workforces.</p>
-                  </div>
-                </div>
-
-                <div className="purpose-pillar-item">
-                  <span className="purpose-check-icon">
-                    <Icon name="check" size={13} />
-                  </span>
-                  <div>
-                    <strong>Dedicated Human-First Support</strong>
-                    <p>Real payroll specialists ready on phone and WhatsApp when your deadline is at stake.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="purpose-footer">
-                <span className="purpose-footer-tag">Our Promise</span>
-                <span className="purpose-footer-text">Built with conviction for modern high-growth workplaces</span>
-              </div>
+              <a href="#story" className="purpose-card-btn">
+                Learn more...
+              </a>
             </div>
 
             {/* Card 2: Vision */}
             <div className="purpose-card purpose-card--vision">
-              <div className="purpose-ambient-glow" />
-              <div className="purpose-card-header">
-                <div className="purpose-icon-pill">
-                  <Icon name="globe" size={20} />
-                  <span>OUR VISION</span>
-                </div>
-                <span className="purpose-badge">Where we are heading</span>
+              <div className="purpose-card-icon" aria-hidden="true">
+                {/* Purposeful Vision Icon: Universal Global Network & Forward Horizon */}
+                <svg
+                  width="56"
+                  height="56"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="32" cy="32" r="20" stroke="currentColor" strokeWidth="2.4" />
+                  <line x1="12" y1="32" x2="52" y2="32" stroke="currentColor" strokeWidth="2" />
+                  <ellipse cx="32" cy="32" rx="9" ry="20" stroke="currentColor" strokeWidth="2" />
+                  <ellipse
+                    cx="32"
+                    cy="32"
+                    rx="28"
+                    ry="11"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    transform="rotate(-26 32 32)"
+                  />
+                  <circle cx="53" cy="22" r="2.5" fill="currentColor" />
+                </svg>
               </div>
 
-              <h3 className="purpose-title">
-                Making world-class, effortless HR universal for every organization
-              </h3>
+              <span className="purpose-card-eyebrow">OUR VISION</span>
+              <h3 className="purpose-card-title">Our Vision</h3>
+              <div className="purpose-card-subtitle">Making World-Class HR Universal</div>
 
-              <p className="purpose-lead">
-                A workplace future where no modern business—from a 10-person startup to a multi-city enterprise—struggles with disjointed spreadsheets or opaque salary deductions.
+              <p className="purpose-card-desc">
+                A connected workplace future where every organization—from a 10-person startup to a multi-city enterprise—operates with transparent pay, instant leave clarity, and zero administrative roadblocks.
               </p>
 
-              <div className="purpose-divider" />
-
-              <div className="purpose-pillars">
-                <div className="purpose-pillar-item">
-                  <span className="purpose-check-icon">
-                    <Icon name="check" size={13} />
-                  </span>
-                  <div>
-                    <strong>Enterprise Power, Consumer Simplicity</strong>
-                    <p>Clean, consumer-grade UX that requires zero user manuals or expensive consultants.</p>
-                  </div>
-                </div>
-
-                <div className="purpose-pillar-item">
-                  <span className="purpose-check-icon">
-                    <Icon name="check" size={13} />
-                  </span>
-                  <div>
-                    <strong>Transparent Pay for Every Worker</strong>
-                    <p>Clear payslips, instant leave visibility, and trust delivered right into employees' hands.</p>
-                  </div>
-                </div>
-
-                <div className="purpose-pillar-item">
-                  <span className="purpose-check-icon">
-                    <Icon name="check" size={13} />
-                  </span>
-                  <div>
-                    <strong>Resilient Infrastructure for Growth</strong>
-                    <p>A high-speed cloud platform designed to scale smoothly from 10 to 10,000+ members.</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="purpose-footer">
-                <span className="purpose-footer-tag">Our Horizon</span>
-                <span className="purpose-footer-text">Empowering India's next generation of enterprises</span>
-              </div>
+              <a href="#values" className="purpose-card-btn">
+                Learn more...
+              </a>
             </div>
           </div>
         </div>

@@ -227,21 +227,20 @@ export function SecurityPage() {
         {/* ==========================================================================
             1. HERO / BANNER (CENTERED, CLEAN, NO FLOW CARD - MATCHING USER DIRECTIVE)
             ========================================================================== */}
-        <section className="guide-detail-hero" aria-labelledby="security-page-title">
+        <section className="security-page-hero" aria-labelledby="security-page-title">
           <div className="guide-detail-container">
             <div className="guide-hero-centered-content">
-              <span className="guide-hero-eyebrow">
-                <Icon name="shield" size={13} /> UPDATED OCTOBER 2026 • ENTERPRISE SECURITY DIRECTIVE
+              <span className="security-page-eyebrow">
+                ✦ ENTERPRISE SECURITY DIRECTIVE ✦
               </span>
 
-              <h1 id="security-page-title" className="guide-hero-title">
+              <h1 id="security-page-title" className="security-page-title">
                 Enterprise Security &amp;{" "}
-                <span className="guide-hero-title-highlight">Continuous Compliance</span>
+                <span className="security-title-glow">Continuous Compliance</span>
               </h1>
 
-              <p className="guide-hero-subtitle">
-                How LattiumHR protects sensitive workforce identity, financial disbursements, and
-                biometric records with multi-tenant isolation, cryptographic safeguards, and strict regulatory adherence.
+              <p className="security-page-subtitle">
+                How LattiumHR protects workforce identity, payroll records, and biometric data with multi-tenant isolation and cryptographic safeguards.
               </p>
 
               {/* Authoritative Security Badges Row (Replaces Playbook Flow Cards on Hero) */}

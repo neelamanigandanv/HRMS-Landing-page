@@ -7,11 +7,13 @@ import Button from "../ui/Button";
 import Icon from "../ui/Icon";
 import { SolutionData } from "../../data/solutionsData";
 import { useCurrency } from "../../context/CurrencyContext";
+import { useDemoModal } from "../../context/DemoModalContext";
 
 export function SolutionTemplate({ solution }: { solution: SolutionData }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const { formatText } = useCurrency();
+  const { openDemoModal } = useDemoModal();
   const breadcrumbs = [
     { label: "Solutions", to: "/solutions" },
     { label: solution.title },
@@ -72,7 +74,25 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
 
             {/* Hero CTAs */}
             <div className="solution-hero-sb-actions">
-              <Button to="/request-demo" className="solution-hero-btn-primary">
+              <Button
+                type="button"
+                onClick={() =>
+                  openDemoModal({
+                    title: isFinanceTeams
+                      ? "Request a Finance & Payroll Demo"
+                      : isHrTeams
+                      ? "Request an HR Operations Demo"
+                      : `Request a ${solution.title} Demo`,
+                    subtitle: solution.subhead,
+                    defaultInterest: isFinanceTeams
+                      ? "Finance & Payroll Solutions"
+                      : isHrTeams
+                      ? "HR Teams Solution"
+                      : solution.title,
+                  })
+                }
+                className="solution-hero-btn-primary"
+              >
                 Request a Demo <Icon name="arrow" size={16} />
               </Button>
               <Button
@@ -471,12 +491,49 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                 <h2 className="solution-mid-cta-title">{solution.midCta.title}</h2>
                 <p className="solution-mid-cta-desc">{solution.midCta.description}</p>
                 <div className="solution-mid-cta-actions">
-                  <Button to={solution.midCta.primaryBtnLink || "/request-demo"} className="solution-mid-btn-primary">
+                  <Button
+                    type="button"
+                    onClick={() =>
+                      openDemoModal({
+                        title: isFinanceTeams
+                          ? "Schedule a Finance & Payroll Walkthrough"
+                          : isHrTeams
+                          ? "Schedule an HR Operations Walkthrough"
+                          : `Schedule a ${solution.title} Walkthrough`,
+                        subtitle: solution.midCta?.description,
+                        defaultInterest: isFinanceTeams
+                          ? "Finance & Payroll Solutions"
+                          : isHrTeams
+                          ? "HR Teams Solution"
+                          : solution.title,
+                      })
+                    }
+                    className="solution-mid-btn-primary"
+                  >
                     <span>{solution.midCta.primaryBtnText || "Schedule Tailored Walkthrough"}</span>
                     <Icon name="arrow" />
                   </Button>
                   {solution.midCta.secondaryBtnText && (
-                    <Button to={solution.midCta.secondaryBtnLink || "/contact"} secondary className="solution-mid-btn-secondary">
+                    <Button
+                      type="button"
+                      onClick={() =>
+                        openDemoModal({
+                          title: isFinanceTeams
+                            ? "Speak with a Payroll Specialist"
+                            : isHrTeams
+                            ? "Speak with an HR Specialist"
+                            : `Speak with a ${solution.title} Specialist`,
+                          subtitle: solution.midCta?.description,
+                          defaultInterest: isFinanceTeams
+                            ? "Finance & Payroll Specialist Consultation"
+                            : isHrTeams
+                            ? "HR Specialist Consultation"
+                            : `${solution.title} Consultation`,
+                        })
+                      }
+                      secondary
+                      className="solution-mid-btn-secondary"
+                    >
                       <span>{solution.midCta.secondaryBtnText}</span>
                     </Button>
                   )}

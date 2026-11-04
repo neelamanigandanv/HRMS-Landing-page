@@ -92,6 +92,8 @@ export function App() {
             {/* Product & Features */}
             <Route path="/product" element={<ProductOverview />} />
             <Route path="/features/employee-management" element={<EmployeeManagementPage />} />
+            <Route path="/employee-management" element={<EmployeeManagementPage />} />
+            <Route path="/solutions/employee-management" element={<EmployeeManagementPage />} />
             <Route path="/features/attendance-management" element={<AttendanceManagementPage />} />
             <Route path="/features/leave-management" element={<LeaveManagementPage />} />
             <Route path="/features/payroll-management" element={<PayrollManagementPage />} />

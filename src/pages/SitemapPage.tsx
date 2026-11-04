@@ -197,27 +197,6 @@ export function SitemapPage() {
                 </div>
               </div>
 
-              {/* Category Quick Filter Pills */}
-              <div className="sitemap-pills-row" role="tablist" aria-label="Sitemap Category Filter">
-                <button
-                  type="button"
-                  className={`sitemap-category-pill ${selectedCategory === "all" ? "active" : ""}`}
-                  onClick={() => setSelectedCategory("all")}
-                >
-                  All Categories ({totalLinksCount})
-                </button>
-                {sitemapSections.map((sec) => (
-                  <button
-                    key={sec.id}
-                    type="button"
-                    className={`sitemap-category-pill ${selectedCategory === sec.id ? "active" : ""}`}
-                    onClick={() => setSelectedCategory(sec.id)}
-                  >
-                    <Icon name={sec.icon} size={13} /> {sec.category.split(" ")[0]} ({sec.links.length})
-                  </button>
-                ))}
-              </div>
-
               {/* Verification & Architecture Stats */}
               <div className="sitemap-stats-row">
                 <span className="sitemap-stat-item">
@@ -242,6 +221,26 @@ export function SitemapPage() {
             ================================================================== */}
         <section className="sitemap-content-section" aria-label="Sitemap Links Directory">
           <div className="sitemap-container">
+            {/* Category Quick Filter Tabs Placed at the Top of Second Section */}
+            <div className="sitemap-pills-row sitemap-section-tabs" role="tablist" aria-label="Sitemap Category Filter">
+              <button
+                type="button"
+                className={`sitemap-category-pill ${selectedCategory === "all" ? "active" : ""}`}
+                onClick={() => setSelectedCategory("all")}
+              >
+                All Categories ({totalLinksCount})
+              </button>
+              {sitemapSections.map((sec) => (
+                <button
+                  key={sec.id}
+                  type="button"
+                  className={`sitemap-category-pill ${selectedCategory === sec.id ? "active" : ""}`}
+                  onClick={() => setSelectedCategory(sec.id)}
+                >
+                  <Icon name={sec.icon} size={14} /> {sec.category.split(" ")[0]} ({sec.links.length})
+                </button>
+              ))}
+            </div>
             {filteredSections.length === 0 ? (
               <div className="sitemap-empty-search">
                 <div className="sitemap-empty-icon">

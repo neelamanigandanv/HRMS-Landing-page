@@ -1,41 +1,95 @@
 /* ==========================================================================
    LATTIUM HR - ENTERPRISE SECURITY DIRECTORY & TRUST CENTER
-   Extends GuideDetailPage styling for the Security Page
    ========================================================================== */
 
-/* Hero Trust Badges Row (replaces the flow cards on hero) */
+/* Security Hero Section */
+.security-page-hero {
+  padding: 5rem 0 4rem;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(128, 43, 91, 0.08) 0%, rgba(250, 248, 250, 0) 70%),
+    linear-gradient(180deg, #fdf9fb 0%, #faf8fa 100%);
+  border-bottom: 1px solid #ebdcd5;
+  text-align: center;
+  position: relative;
+}
+
+.security-page-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #802B5B;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.security-page-title {
+  font-size: clamp(2.35rem, 4vw, 3.4rem);
+  font-weight: 850;
+  color: #191735;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  max-width: 860px;
+  margin: 0 auto 1.25rem;
+  text-wrap: balance;
+}
+
+.security-title-glow {
+  background: linear-gradient(135deg, #802B5B 0%, #5146d8 60%, #b54282 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.security-page-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #555268;
+  max-width: 800px;
+  margin: 0 auto 1.75rem;
+  text-wrap: balance;
+}
+
+/* Badges / Key Points: Clean, Borderless and Transparent as requested */
 .security-hero-badges-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 14px;
+  margin-top: 1.75rem;
 }
 
 .security-hero-badge-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #191735;
-  background: #ffffff;
-  border: 1px solid #ebdbe6;
-  border-radius: 9999px;
-  padding: 8px 18px;
-  box-shadow: 0 4px 14px rgba(123, 41, 88, 0.05);
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  gap: 7px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #555268;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  transition: color 0.2s ease;
 }
 
 .security-hero-badge-pill:hover {
-  border-color: #7b2958;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(123, 41, 88, 0.12);
+  color: #802B5B;
+  transform: none;
+  border: none;
+  box-shadow: none;
 }
 
 .security-hero-badge-pill svg {
-  color: #7b2958;
+  color: #802B5B;
+  flex-shrink: 0;
 }
 
 /* Sidebar Print / Download Card */

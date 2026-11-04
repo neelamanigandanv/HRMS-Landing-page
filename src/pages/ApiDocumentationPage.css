@@ -79,36 +79,42 @@
   margin: 0 auto 20px;
 }
 
-.api-hero-badges-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin: 1.5rem auto 1.75rem;
-  max-width: 800px;
-}
-
-.api-hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 0.8125rem;
-  font-weight: 650;
-  color: #374151;
-  background: #ffffff;
-  border: 1px solid #e7ded9;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  box-shadow: 0 2px 6px rgba(25, 23, 53, 0.03);
-}
-
 .api-hero-actions {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
-  margin-top: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+.api-hero-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+  margin: 1.75rem auto 0;
+  max-width: 860px;
+}
+
+.api-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #555268;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.api-hero-badge svg {
+  color: #802B5B;
+  flex-shrink: 0;
 }
 
 .api-hero-btn-primary {

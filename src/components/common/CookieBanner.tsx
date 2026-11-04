@@ -193,10 +193,12 @@ export function CookieBanner() {
             </div>
 
             <div className="cookie-modal-footer">
-              <Button secondary onClick={() => setShowModal(false)}>
+              <Button secondary className="cookie-modal-btn-cancel" onClick={() => setShowModal(false)}>
                 Cancel
               </Button>
-              <Button onClick={handleSaveCustom}>Save Preferences</Button>
+              <Button className="cookie-modal-btn-save" onClick={handleSaveCustom}>
+                Save Preferences
+              </Button>
             </div>
           </div>
         </div>

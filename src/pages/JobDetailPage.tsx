@@ -1,53 +1,152 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useParams, Link } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
-import CustomSelect from "../components/ui/CustomSelect";
-import { getJobById } from "../data/careersData";
+import CustomSelect, { CustomSelectOption } from "../components/ui/CustomSelect";
+import PhoneInput from "../components/common/PhoneInput";
+import { validatePhoneNumber } from "../utils/phoneUtils";
+import { getJobById, JobOpening } from "../data/careersData";
+import { submitCrmEnquiry } from "../services/enquiryService";
 import "./CareersPage.css";
 
-const NOTICE_PERIOD_OPTIONS = [
-  { value: "Immediate", label: "Immediate (0–15 days)", desc: "Ready to join within two weeks" },
-  { value: "30 days", label: "30 days", desc: "Standard one-month transition" },
-  { value: "60 days", label: "60 days", desc: "Two months notice period" },
-  { value: "90 days", label: "90 days", desc: "Three months notice period" },
+const NOTICE_PERIOD_OPTIONS: CustomSelectOption[] = [
+  { value: "Immediate Joiner (0–15 days)", label: "Immediate Joiner (0–15 days)" },
+  { value: "30 Days", label: "30 Days" },
+  { value: "60 Days", label: "60 Days" },
+  { value: "90 Days", label: "90 Days" },
+];
+
+const EXPERIENCE_OPTIONS: CustomSelectOption[] = [
+  { value: "0–1 years (Entry / Fresher)", label: "0–1 years (Entry / Fresher)" },
+  { value: "1–3 years", label: "1–3 years" },
+  { value: "3–5 years", label: "3–5 years" },
+  { value: "5–8 years", label: "5–8 years" },
+  { value: "8+ years (Senior / Lead)", label: "8+ years (Senior / Lead)" },
 ];
 
 export function JobDetailPage() {
   const { jobId } = useParams<{ jobId: string }>();
   const job = jobId ? getJobById(jobId) : undefined;
+  const [copied, setCopied] = useState(false);
 
-  // On-page form state
-  const [formValues, setFormValues] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    location: "",
-    experience: "",
-    noticePeriod: "Immediate",
-    linkedin: "",
-    resumeLink: "",
-    coverNote: "",
-  });
+  // Form state — strictly applies to the current job (no redundant role selection)
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [currentCompany, setCurrentCompany] = useState("");
+  const [totalExperience, setTotalExperience] = useState("");
+  const [noticePeriod, setNoticePeriod] = useState("");
+  const [expectedCtc, setExpectedCtc] = useState("");
+  const [linkedinUrl, setLinkedinUrl] = useState("");
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
+  const [coverNote, setCoverNote] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [formErrors, setFormErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [applicationRefId, setApplicationRefId] = useState("");
+  const [isDragOver, setIsDragOver] = useState(false);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // File Upload Handling
+  const handleFileChange = (files: FileList | null) => {
+    if (!files || files.length === 0) return;
+    const file = files[0];
+    const validTypes = [
+      "application/pdf",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    ];
+    if (!validTypes.includes(file.type) && !file.name.match(/\.(pdf|doc|docx)$/i)) {
+      setFormErrors((prev) => ({ ...prev, resume: "Please upload a valid PDF, DOC, or DOCX document." }));
+      return;
+    }
+    if (file.size > 5 * 1024 * 1024) {
+      setFormErrors((prev) => ({ ...prev, resume: "File size exceeds the 5 MB limit." }));
+      return;
+    }
+    setResumeFile(file);
+    setFormErrors((prev) => { const copy = { ...prev }; delete copy.resume; return copy; });
+  };
+
+  const removeResumeFile = () => {
+    setResumeFile(null);
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
+
+  // Validation
+  const validateForm = () => {
+    const errors: Record<string, string> = {};
+    if (!fullName.trim()) errors.fullName = "Full name is required.";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.trim()) errors.email = "Email address is required.";
+    else if (!emailRegex.test(email.trim())) errors.email = "Please enter a valid email address.";
+    const phoneErr = validatePhoneNumber(phone);
+    if (phoneErr) errors.phone = phoneErr;
+    if (!resumeFile) errors.resume = "Please upload your resume (PDF, DOC, DOCX up to 5 MB).";
+    if (!totalExperience) errors.totalExperience = "Please select your total work experience.";
+    if (!noticePeriod) errors.noticePeriod = "Please specify your notice period.";
+    if (!consent) errors.consent = "Please consent to the processing of your data.";
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
 
   const scrollToForm = () => {
-    const el = document.getElementById("apply-form");
+    const el = document.getElementById("apply-form") || document.getElementById("application-form");
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => {
+        const input = document.getElementById("app-fullname");
+        input?.focus();
+      }, 450);
     }
   };
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) return;
     setIsSubmitting(true);
-    setTimeout(() => {
+    setSubmitError(null);
+
+    const targetRoleName = job ? `${job.title} (${job.department})` : "Direct Job Application";
+
+    const payload = {
+      full_name: fullName.trim(),
+      name: fullName.trim(),
+      work_email: email.trim(),
+      email: email.trim(),
+      phone: phone.trim(),
+      company_name: currentCompany.trim() ? `Current: ${currentCompany.trim()}` : "Candidate Profile",
+      source_page: `/careers/${job?.id || "direct"}`,
+      nature_of_enquiry: "JOB_APPLICATION",
+      extra_data: {
+        target_role: targetRoleName,
+        total_experience: totalExperience,
+        notice_period: noticePeriod,
+        current_company: currentCompany.trim() || "Not Specified",
+        expected_ctc: expectedCtc.trim() || "Not Specified",
+        linkedin_portfolio_url: linkedinUrl.trim(),
+        resume_url: resumeFile ? resumeFile.name : "",
+        why_lattium_hr: coverNote.trim(),
+      },
+    };
+
+    try {
+      const res = await submitCrmEnquiry(payload);
+      const genId = res?.data?.id
+        ? String(res.data.id)
+        : `APP-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
+      setApplicationRefId(genId);
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 700);
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setSubmitError(err?.message || "Failed to submit application. Please check your connection and try again.");
+    }
   };
 
   if (!job) {
@@ -134,22 +233,15 @@ export function JobDetailPage() {
 
       <div className="job-detail-page">
         {/* ==================================================================
-            1. HERO SECTION (Centered, Clean Eyebrow, Proper Balanced Heading & Subhead)
+            1. HERO SECTION (Elevated SaaS Job Header with Quick Meta)
             ================================================================== */}
         <header className="job-detail-header-section" aria-labelledby="job-title-heading">
           <div className="container">
-            {/* Top Navigation Row */}
-            <div className="job-detail-top-nav">
-              <Link to="/careers" className="job-detail-back-pill">
-                <span className="back-arrow-icon">←</span> Back to All Open Positions
-              </Link>
-            </div>
-
             <div className="job-detail-hero-content">
-              {/* Eyebrow */}
+              {/* Department Eyebrow */}
               <div className="job-detail-clean-eyebrow">
                 <span className="careers-sparkle">✦</span>
-                <span>{job.department.toUpperCase()} • FULL-TIME ROLE</span>
+                <span>{job.department.toUpperCase()} • FULL-TIME POSITION</span>
                 <span className="careers-sparkle">✦</span>
               </div>
 
@@ -162,16 +254,22 @@ export function JobDetailPage() {
                 {job.shortSummary}
               </p>
 
-              {/* Clean Core Meta Pills */}
+              {/* Clean Core Key Points Row */}
               <div className="job-detail-meta-tags">
                 <span className="job-meta-pill">
-                  <Icon name="map-pin" size={14} /> {job.location}
+                  <Icon name="map-pin" size={15} /> {job.location}
                 </span>
                 <span className="job-meta-pill">
-                  <Icon name="clock" size={14} /> {job.type}
+                  <Icon name="briefcase" size={15} /> {job.department}
                 </span>
                 <span className="job-meta-pill">
-                  <Icon name="briefcase" size={14} /> {job.experience}
+                  <Icon name="clock" size={15} /> {job.type}
+                </span>
+                <span className="job-meta-pill">
+                  <Icon name="users" size={15} /> {job.experience}
+                </span>
+                <span className="job-meta-pill highlight">
+                  <Icon name="shield" size={15} /> 48-Hour Review SLA
                 </span>
               </div>
 
@@ -189,12 +287,14 @@ export function JobDetailPage() {
                   onClick={() => {
                     if (navigator.clipboard) {
                       navigator.clipboard.writeText(window.location.href);
-                      alert("Job opening URL copied to clipboard!");
+                      setCopied(true);
+                      setTimeout(() => setCopied(false), 2500);
                     }
                   }}
                   className="job-detail-hero-share-btn"
                 >
-                  <Icon name="document" size={14} /> Copy Job Link
+                  <Icon name={copied ? "check" : "document"} size={14} />
+                  <span>{copied ? "Link Copied to Clipboard!" : "Share / Copy Job Link"}</span>
                 </button>
               </div>
             </div>
@@ -429,220 +529,499 @@ export function JobDetailPage() {
         </main>
 
         {/* ==================================================================
-            3. DEDICATED APPLICATION FORM SECTION (Left Detail, Right Form)
+            3. DEDICATED APPLICATION FORM SECTION (Left Heading & Content, Right Form)
             ================================================================== */}
         <section className="job-apply-form-section" id="apply-form" aria-labelledby="apply-form-title">
+          <div id="application-form" style={{ position: "relative", top: "-40px" }} />
           <div className="container">
             <div className="job-apply-split-grid">
-              {/* Left Column: Heading, Subheading, Details */}
+              {/* Left Column: Heading, Subheading & Content (Styled clean like Request Demo Page) */}
               <div className="job-apply-left-col">
-                <div className="job-apply-clean-eyebrow">
-                  <span className="careers-sparkle">✦</span>
-                  <span>DIRECT APPLICATION</span>
-                  <span className="careers-sparkle">✦</span>
+                <div className="job-apply-left-header">
+                  <div className="demo-eyebrow">
+                    <span className="demo-sparkle">✦</span>
+                    <span>DIRECT APPLICATION • {job.department.toUpperCase()}</span>
+                    <span className="demo-sparkle">✦</span>
+                  </div>
+
+                  {(() => {
+                    // Strictly balanced 2-line formatting across all roles (Customer Support, Marketing, Engineering, Design, Sales)
+                    const t = job.title.trim();
+                    let line1 = "Apply for";
+                    let line2 = t;
+
+                    if (t.toLowerCase().includes("customer support")) {
+                      line1 = "Apply for Customer Support";
+                      line2 = "Specialist (HRMS & Payroll)";
+                    } else if (t.toLowerCase().includes("marketing manager")) {
+                      line1 = "Apply for Product & Growth";
+                      line2 = "Marketing Manager";
+                    } else if (t.toLowerCase().includes("full-stack")) {
+                      line1 = "Apply for Senior Full-Stack";
+                      line2 = "Engineer (React & Node.js)";
+                    } else if (t.toLowerCase().includes("product designer")) {
+                      line1 = "Apply for Lead Product";
+                      line2 = "Designer (UI/UX)";
+                    } else if (t.toLowerCase().includes("account executive")) {
+                      line1 = "Apply for Enterprise Account";
+                      line2 = "Executive (SaaS Sales)";
+                    } else {
+                      const words = t.split(" ");
+                      if (words.length > 2) {
+                        const mid = Math.ceil(words.length / 2);
+                        line1 = `Apply for ${words.slice(0, mid).join(" ")}`;
+                        line2 = words.slice(mid).join(" ");
+                      } else {
+                        line1 = "Apply for";
+                        line2 = t;
+                      }
+                    }
+
+                    return (
+                      <h2 id="apply-form-title" className="job-apply-hero-title">
+                        {line1} <br />
+                        <span className="demo-highlight-plum">{line2}</span>
+                      </h2>
+                    );
+                  })()}
+
+                  <p className="demo-hero-intro">
+                    Join our team building modern enterprise HR software. Submit your credentials below for direct review with guaranteed 48-hour response.
+                  </p>
                 </div>
 
-                <h2 id="apply-form-title" className="job-apply-title">
-                  Ready to Build with Us as <span className="careers-highlight-word">{job.title}</span>?
-                </h2>
+                {/* 4-Step Evaluation Process: Clean Highlights List positioned directly below intro */}
+                <div className="job-apply-steps-container">
+                  <div className="demo-highlights-list">
+                    {/* Step 1 */}
+                    <div className="demo-highlight-item">
+                      <span className="demo-highlight-icon">
+                        <Icon name="check" size={14} />
+                      </span>
+                      <div className="demo-highlight-text">
+                        <strong>Application &amp; Portfolio Review</strong>
+                        <span>Human evaluation by department lead within 48h.</span>
+                      </div>
+                    </div>
 
-                <p className="job-apply-subhead">
-                  Submit your application directly to our talent acquisition team. We personally review every
-                  single submission and respond with next steps within 48 hours. No automated resume black holes.
-                </p>
+                    {/* Step 2 */}
+                    <div className="demo-highlight-item">
+                      <span className="demo-highlight-icon">
+                        <Icon name="check" size={14} />
+                      </span>
+                      <div className="demo-highlight-text">
+                        <strong>Craft &amp; Technical Deep-Dive</strong>
+                        <span>Collaborative discussion on real system architecture.</span>
+                      </div>
+                    </div>
 
-                <div className="job-apply-perks-list">
-                  <div className="job-apply-perk-item">
-                    <span className="job-apply-perk-icon">
-                      <Icon name="clock" size={16} />
-                    </span>
-                    <div>
-                      <strong>Guaranteed 48-Hour Response SLA</strong>
-                      <p>You will receive human feedback and interview dates within 2 business days.</p>
+                    {/* Step 3 */}
+                    <div className="demo-highlight-item">
+                      <span className="demo-highlight-icon">
+                        <Icon name="check" size={14} />
+                      </span>
+                      <div className="demo-highlight-text">
+                        <strong>Leadership &amp; Culture Alignment</strong>
+                        <span>Open conversation on autonomy, growth, and team values.</span>
+                      </div>
+                    </div>
+
+                    {/* Step 4 */}
+                    <div className="demo-highlight-item">
+                      <span className="demo-highlight-icon">
+                        <Icon name="check" size={14} />
+                      </span>
+                      <div className="demo-highlight-text">
+                        <strong>Transparent Offer &amp; Onboarding</strong>
+                        <span>Comprehensive fixed compensation and equity package.</span>
+                      </div>
                     </div>
                   </div>
-
-                  <div className="job-apply-perk-item">
-                    <span className="job-apply-perk-icon">
-                      <Icon name="users" size={16} />
-                    </span>
-                    <div>
-                      <strong>Direct Lead &amp; Peer Interviews</strong>
-                      <p>Meet and converse with the exact engineers and architects you will build with.</p>
-                    </div>
-                  </div>
-
-                  <div className="job-apply-perk-item">
-                    <span className="job-apply-perk-icon">
-                      <Icon name="shield" size={16} />
-                    </span>
-                    <div>
-                      <strong>Transparent Compensation &amp; Freedom</strong>
-                      <p>Competitive benchmarked salary ({job.salaryRange || "Top of market tier"}), comprehensive health cover, and annual learning grants.</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="job-apply-contact-pill">
-                  <span className="apply-contact-label">Have questions before submitting?</span>
-                  <a href="mailto:talent@lattiumhr.com" className="apply-contact-email">
-                    talent@lattiumhr.com <Icon name="arrow" size={14} />
-                  </a>
                 </div>
               </div>
 
-              {/* Right Column: Complete Application Form */}
+              {/* Right Column: Application Form Card */}
               <div className="job-apply-right-col">
                 <div className="job-apply-form-card">
                   {isSubmitted ? (
-                    <div className="job-apply-success-box">
+                    <div className="job-apply-success-box" aria-live="polite">
                       <div className="job-apply-success-icon">
                         <Icon name="check" size={32} />
                       </div>
                       <h3>Application Submitted Successfully!</h3>
                       <p>
-                        Thank you for applying for the <strong>{job.title}</strong> position. Our engineering &amp; talent leadership team has received your details and will contact you via <strong>{formValues.email}</strong> within 48 hours.
+                        Thank you for applying for the <strong>{job.title}</strong> position. Our engineering &amp; talent leadership team has received your details and will contact you via <strong>{email}</strong> within 48 hours.
                       </p>
+                      <div className="careers-thank-you-ref-box" style={{ margin: "0 auto 1.5rem", maxWidth: "360px" }}>
+                        <span className="careers-ref-label">Application Reference ID</span>
+                        <span className="careers-ref-code">{applicationRefId}</span>
+                        <small className="careers-ref-hint">
+                          A confirmation receipt has been recorded for <strong>{email}</strong>
+                        </small>
+                      </div>
                       <button
                         type="button"
                         onClick={() => {
                           setIsSubmitted(false);
-                          setFormValues({
-                            fullName: "",
-                            email: "",
-                            phone: "",
-                            location: "",
-                            experience: "",
-                            noticePeriod: "Immediate",
-                            linkedin: "",
-                            resumeLink: "",
-                            coverNote: "",
-                          });
+                          setFullName("");
+                          setEmail("");
+                          setPhone("");
+                          setCurrentCompany("");
+                          setTotalExperience("");
+                          setNoticePeriod("");
+                          setExpectedCtc("");
+                          setLinkedinUrl("");
+                          setResumeFile(null);
+                          setCoverNote("");
+                          setConsent(false);
+                          setFormErrors({});
                         }}
-                        className="careers-btn-apply-main"
+                        className="job-form-submit-btn"
+                        style={{ margin: "0 auto" }}
                       >
                         Submit Another Application
                       </button>
                     </div>
                   ) : (
-                    <form onSubmit={handleFormSubmit} className="job-apply-form">
-                      <h3 className="job-form-heading">Submit Your Application</h3>
+                    <form onSubmit={handleFormSubmit} noValidate className="job-detail-apply-form">
+                      {/* Form Header matching icon + one line heading + subheading layout */}
+                      <div className="job-form-header-area">
+                        <div className="job-form-header-icon-box">
+                          <Icon name="sparkle" size={22} />
+                        </div>
+                        <div className="job-form-header-text">
+                          <h3 className="job-form-heading">Submit Your Application</h3>
+                          <p className="job-form-subheading">
+                            Direct application for {job.title} • 48h response SLA
+                          </p>
+                        </div>
+                      </div>
 
+                      {/* 2-Column Grid: Exactly 8 inputs in 4 balanced rows — all with identical 48px height and identical width */}
                       <div className="job-form-grid">
+                        {/* 1. Full Name */}
                         <div className="job-form-field">
-                          <label htmlFor="fullName">Full Name *</label>
+                          <label htmlFor="app-fullname">
+                            Full Name <span className="required-star">*</span>
+                          </label>
                           <input
-                            id="fullName"
+                            id="app-fullname"
                             type="text"
+                            value={fullName}
+                            onChange={(e) => setFullName(e.target.value)}
+                            placeholder="e.g. Anandita Sen"
+                            className={formErrors.fullName ? "error" : ""}
                             required
-                            placeholder="e.g. Aditi Sharma"
-                            value={formValues.fullName}
-                            onChange={(e) => setFormValues({ ...formValues, fullName: e.target.value })}
                           />
+                          {formErrors.fullName && (
+                            <span className="careers-form-error">{formErrors.fullName}</span>
+                          )}
                         </div>
 
+                        {/* 2. Work Email */}
                         <div className="job-form-field">
-                          <label htmlFor="email">Email Address *</label>
+                          <label htmlFor="app-email">
+                            Work Email <span className="required-star">*</span>
+                          </label>
                           <input
-                            id="email"
+                            id="app-email"
                             type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="anandita@example.com"
+                            className={formErrors.email ? "error" : ""}
                             required
-                            placeholder="aditi@example.com"
-                            value={formValues.email}
-                            onChange={(e) => setFormValues({ ...formValues, email: e.target.value })}
                           />
+                          {formErrors.email && (
+                            <span className="careers-form-error">{formErrors.email}</span>
+                          )}
                         </div>
 
+                        {/* 3. Phone Number */}
                         <div className="job-form-field">
-                          <label htmlFor="phone">Phone Number *</label>
-                          <input
-                            id="phone"
-                            type="tel"
+                          <label htmlFor="app-phone">
+                            Phone Number <span className="required-star">*</span>
+                          </label>
+                          <PhoneInput
+                            id="app-phone"
+                            name="phone"
+                            value={phone}
+                            onChange={(fullNumber) => {
+                              setPhone(fullNumber);
+                              if (formErrors.phone) {
+                                setFormErrors((prev) => {
+                                  const copy = { ...prev };
+                                  delete copy.phone;
+                                  return copy;
+                                });
+                              }
+                            }}
+                            hasError={Boolean(formErrors.phone)}
                             required
-                            placeholder="+91 98765 43210"
-                            value={formValues.phone}
-                            onChange={(e) => setFormValues({ ...formValues, phone: e.target.value })}
                           />
+                          {formErrors.phone && (
+                            <span className="careers-form-error">{formErrors.phone}</span>
+                          )}
                         </div>
 
+                        {/* 4. Current Company */}
                         <div className="job-form-field">
-                          <label htmlFor="location">Current Location</label>
+                          <label htmlFor="app-company">
+                            Current Company <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
+                          </label>
                           <input
-                            id="location"
+                            id="app-company"
                             type="text"
-                            placeholder="e.g. Bengaluru, India"
-                            value={formValues.location}
-                            onChange={(e) => setFormValues({ ...formValues, location: e.target.value })}
+                            value={currentCompany}
+                            onChange={(e) => setCurrentCompany(e.target.value)}
+                            placeholder="e.g. Current Employer or Self-Employed"
                           />
                         </div>
 
+                        {/* 5. Total Experience */}
                         <div className="job-form-field">
-                          <label htmlFor="experience">Relevant Experience</label>
-                          <input
-                            id="experience"
-                            type="text"
-                            placeholder="e.g. 4+ years"
-                            value={formValues.experience}
-                            onChange={(e) => setFormValues({ ...formValues, experience: e.target.value })}
-                          />
-                        </div>
-
-                        <div className="job-form-field">
-                          <label htmlFor="noticePeriod">Notice Period</label>
+                          <label htmlFor="app-experience">
+                            Total Experience <span className="required-star">*</span>
+                          </label>
                           <CustomSelect
-                            id="noticePeriod"
+                            id="app-experience"
+                            options={EXPERIENCE_OPTIONS}
+                            value={totalExperience}
+                            onChange={(val) => {
+                              setTotalExperience(val);
+                              if (formErrors.totalExperience) {
+                                setFormErrors({ ...formErrors, totalExperience: "" });
+                              }
+                            }}
+                            placeholder="Select experience level"
+                            hasError={!!formErrors.totalExperience}
+                          />
+                          {formErrors.totalExperience && (
+                            <span className="careers-form-error">{formErrors.totalExperience}</span>
+                          )}
+                        </div>
+
+                        {/* 6. Notice Period */}
+                        <div className="job-form-field">
+                          <label htmlFor="app-notice">
+                            Notice Period <span className="required-star">*</span>
+                          </label>
+                          <CustomSelect
+                            id="app-notice"
                             options={NOTICE_PERIOD_OPTIONS}
-                            value={formValues.noticePeriod}
-                            onChange={(val) => setFormValues({ ...formValues, noticePeriod: val })}
+                            value={noticePeriod}
+                            onChange={(val) => {
+                              setNoticePeriod(val);
+                              if (formErrors.noticePeriod) {
+                                setFormErrors({ ...formErrors, noticePeriod: "" });
+                              }
+                            }}
+                            placeholder="Select notice period"
+                            hasError={!!formErrors.noticePeriod}
                           />
+                          {formErrors.noticePeriod && (
+                            <span className="careers-form-error">{formErrors.noticePeriod}</span>
+                          )}
                         </div>
 
-                        <div className="job-form-field full-width">
-                          <label htmlFor="linkedin">LinkedIn or Portfolio URL</label>
+                        {/* 7. Expected CTC */}
+                        <div className="job-form-field">
+                          <label htmlFor="app-ctc">
+                            Expected CTC <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
+                          </label>
                           <input
-                            id="linkedin"
-                            type="url"
-                            placeholder="https://linkedin.com/in/username or github.com/username"
-                            value={formValues.linkedin}
-                            onChange={(e) => setFormValues({ ...formValues, linkedin: e.target.value })}
+                            id="app-ctc"
+                            type="text"
+                            value={expectedCtc}
+                            onChange={(e) => setExpectedCtc(e.target.value)}
+                            placeholder="e.g. ₹16,00,000 / year"
                           />
                         </div>
 
-                        <div className="job-form-field full-width">
-                          <label htmlFor="resumeLink">Resume / CV Link (Google Drive, Dropbox, or PDF URL) *</label>
+                        {/* 8. LinkedIn / Portfolio URL */}
+                        <div className="job-form-field">
+                          <label htmlFor="app-linkedin">
+                            LinkedIn / Portfolio <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
+                          </label>
                           <input
-                            id="resumeLink"
+                            id="app-linkedin"
                             type="url"
-                            required
-                            placeholder="https://drive.google.com/file/... (ensure link sharing is on)"
-                            value={formValues.resumeLink}
-                            onChange={(e) => setFormValues({ ...formValues, resumeLink: e.target.value })}
-                          />
-                        </div>
-
-                        <div className="job-form-field full-width">
-                          <label htmlFor="coverNote">Why are you interested in LattiumHR? (Optional)</label>
-                          <textarea
-                            id="coverNote"
-                            rows={3}
-                            placeholder="Share a brief note on what excites you about this role..."
-                            value={formValues.coverNote}
-                            onChange={(e) => setFormValues({ ...formValues, coverNote: e.target.value })}
+                            value={linkedinUrl}
+                            onChange={(e) => setLinkedinUrl(e.target.value)}
+                            placeholder="https://linkedin.com/in/username"
                           />
                         </div>
                       </div>
 
+                      {/* Resume Upload Dropzone (Exempted from single-input height/width as requested) */}
+                      <div className="job-form-field full-width" style={{ marginTop: "1.2rem" }}>
+                        <label>
+                          Resume / CV <span className="required-star">*</span>
+                        </label>
+                        <div
+                          className={`careers-dropzone ${isDragOver ? "dragover" : ""} ${
+                            formErrors.resume ? "error" : ""
+                          }`}
+                          onDragOver={(e) => {
+                            e.preventDefault();
+                            setIsDragOver(true);
+                          }}
+                          onDragLeave={() => setIsDragOver(false)}
+                          onDrop={(e) => {
+                            e.preventDefault();
+                            setIsDragOver(false);
+                            handleFileChange(e.dataTransfer.files);
+                          }}
+                          onClick={() => fileInputRef.current?.click()}
+                          role="button"
+                          tabIndex={0}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") fileInputRef.current?.click();
+                          }}
+                          aria-label="Upload resume file dropzone"
+                        >
+                          <input
+                            ref={fileInputRef}
+                            type="file"
+                            accept=".pdf,.doc,.docx"
+                            style={{ display: "none" }}
+                            onChange={(e) => handleFileChange(e.target.files)}
+                          />
+                          <div className="careers-dropzone-icon">📄</div>
+                          <div className="careers-dropzone-text">
+                            Drag and drop your resume here, or{" "}
+                            <span className="browse-link">browse files</span>
+                          </div>
+                          <div className="careers-dropzone-hint">
+                            Accepts PDF, DOC, DOCX up to 5 MB
+                          </div>
+                        </div>
+
+                        {/* File Preview */}
+                        {resumeFile && (
+                          <div className="careers-file-preview">
+                            <span className="file-info">
+                              📎 <strong>{resumeFile.name}</strong> (
+                              {(resumeFile.size / 1024).toFixed(0)} KB)
+                            </span>
+                            <button
+                              type="button"
+                              onClick={removeResumeFile}
+                              className="file-remove-btn"
+                              aria-label="Remove uploaded resume"
+                            >
+                              × Remove
+                            </button>
+                          </div>
+                        )}
+                        {formErrors.resume && (
+                          <span className="careers-form-error">{formErrors.resume}</span>
+                        )}
+                      </div>
+
+                      {/* Cover Note */}
+                      <div className="job-form-field full-width" style={{ marginTop: "1.2rem" }}>
+                        <label htmlFor="app-covernote">
+                          Why LattiumHR? / What excites you about this role? <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
+                        </label>
+                        <textarea
+                          id="app-covernote"
+                          rows={3}
+                          value={coverNote}
+                          onChange={(e) => setCoverNote(e.target.value)}
+                          placeholder="Tell us briefly about your craft, past impact, and why you want to join our journey..."
+                        />
+                      </div>
+
+                      {/* Consent Checkbox */}
+                      <div className="job-form-field full-width" style={{ marginTop: "1.1rem" }}>
+                        <label
+                          className="careers-checkbox-label"
+                          style={{
+                            height: "auto",
+                            minHeight: "auto",
+                            maxHeight: "none",
+                            whiteSpace: "normal",
+                            overflow: "visible",
+                            textOverflow: "clip",
+                            display: "flex",
+                            alignItems: "flex-start",
+                            gap: "10px",
+                            lineHeight: "1.55",
+                            cursor: "pointer",
+                          }}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={consent}
+                            onChange={(e) => setConsent(e.target.checked)}
+                            className="careers-checkbox"
+                            style={{
+                              flexShrink: 0,
+                              width: "18px",
+                              height: "18px",
+                              minHeight: "18px",
+                              maxHeight: "18px",
+                              marginTop: "2px",
+                              cursor: "pointer",
+                            }}
+                            required
+                          />
+                          <span
+                            style={{
+                              fontSize: "14px",
+                              fontWeight: 500,
+                              color: "#334155",
+                              lineHeight: "1.55",
+                              whiteSpace: "normal",
+                              overflow: "visible",
+                              textOverflow: "clip",
+                            }}
+                          >
+                            I consent to LattiumHR collecting and processing my application data for recruitment purposes in accordance with the{" "}
+                            <a
+                              href="/privacy"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{ color: "#802B5B", fontWeight: 600, textDecoration: "underline" }}
+                            >
+                              Privacy Policy
+                            </a>
+                            . <span className="required-star" style={{ color: "#dc2626", fontWeight: 800 }}>*</span>
+                          </span>
+                        </label>
+                        {formErrors.consent && (
+                          <span className="careers-form-error" style={{ marginTop: "6px" }}>{formErrors.consent}</span>
+                        )}
+                      </div>
+
+                      {submitError && (
+                        <div className="careers-form-error-banner" style={{ color: "#ef4444", background: "#fef2f2", border: "1px solid #fecaca", padding: "10px 14px", borderRadius: "8px", margin: "16px 0", fontSize: "14px" }}>
+                          <span>{submitError}</span>
+                        </div>
+                      )}
+
+                      {/* Submit Button Row */}
                       <div className="job-form-submit-row">
                         <button
                           type="submit"
                           disabled={isSubmitting}
                           className="job-form-submit-btn"
                         >
-                          {isSubmitting ? "Submitting Application..." : "Submit Application →"}
+                          {isSubmitting ? (
+                            <>
+                              <span className="loading-spinner">⏳</span> Submitting Application...
+                            </>
+                          ) : (
+                            <>
+                              Submit Application <Icon name="arrow" size={16} />
+                            </>
+                          )}
                         </button>
-                        <span className="job-form-privacy-note">
-                          <Icon name="lock" size={13} /> Strict confidentiality observed.
-                        </span>
+                        <div className="job-form-safety-footer">
+                          <Icon name="shield" size={14} />
+                          <span>Your details are safe with us. Strict confidentiality &amp; bilateral NDA observed.</span>
+                        </div>
                       </div>
                     </form>
                   )}

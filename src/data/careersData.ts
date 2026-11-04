@@ -375,45 +375,6 @@ export const JOB_OPENINGS: JobOpening[] = [
     ],
   },
   {
-    id: "people-culture-lead",
-    title: "People & Talent Acquisition Specialist",
-    department: "People & HR",
-    location: "Mumbai HQ, India (Hybrid)",
-    type: "Full-Time",
-    experience: "3–5 years",
-    salaryRange: "₹12,00,000 – ₹18,00,000 / year",
-    postedDate: "2026-10-24",
-    shortSummary:
-      "Scale our engineering, product, and sales teams while creating an empowering, inclusive culture using our very own LattiumHR software.",
-    aboutRole:
-      "As our People & Talent Acquisition Specialist, you will act as a true culture architect. You'll partner with department leaders to attract top-tier tech and sales talent, manage seamless day-one onboarding using our own LattiumHR software, and drive initiatives that make LattiumHR an exceptional workplace for every employee.",
-    responsibilities: [
-      "Manage full-cycle recruitment across technical and business functions from sourcing to offer negotiation.",
-      "Build creative candidate pipelines using LinkedIn Recruiter, GitHub, industry communities, and employee referral campaigns.",
-      "Deliver a warm, transparent, and prompt candidate experience from first contact to final onboarding.",
-      "Facilitate seamless onboarding, orientation workshops, and policy acknowledgments for all new joiners.",
-      "Drive internal employee engagement, quarterly performance review cycles, team offsites, and wellness initiatives.",
-    ],
-    requirements: [
-      "3+ years of full-cycle recruitment and HR operations experience within a fast-scaling tech startup or SaaS company.",
-      "Proven ability to source and close high-caliber software engineers, product designers, and enterprise sales executives.",
-      "Deep understanding of Indian labor practices, statutory norms, offer structuring, and compensation benchmarking.",
-      "High emotional intelligence, empathy, and excellent interpersonal communication skills.",
-      "Familiarity with modern ATS software, HRMS tools, and data-driven recruiting metrics (time-to-hire, offer acceptance rate).",
-    ],
-    niceToHave: [
-      "Experience dogfooding and using HRMS platforms for daily internal employee management.",
-      "Hands-on employer branding experience on LinkedIn and careers communities.",
-    ],
-    benefits: [
-      "Competitive compensation package with annual review",
-      "Hybrid work flexibility (3 days in Mumbai office, 2 days remote)",
-      "Comprehensive medical and wellness insurance",
-      "Wellness & gym membership subsidies",
-      "Budget for team bonding activities and festive offsites",
-    ],
-  },
-  {
     id: "growth-marketing-manager",
     title: "Product & Growth Marketing Manager",
     department: "Marketing",

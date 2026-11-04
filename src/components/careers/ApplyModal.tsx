@@ -2,7 +2,27 @@ import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../ui/Icon";
 import Button from "../ui/Button";
+import CustomSelect, { CustomSelectOption } from "../ui/CustomSelect";
+import PhoneInput from "../common/PhoneInput";
+import { validatePhoneNumber } from "../../utils/phoneUtils";
 import { JobOpening } from "../../data/careersData";
+import { submitCrmEnquiry } from "../../services/enquiryService";
+
+const EXPERIENCE_OPTIONS: CustomSelectOption[] = [
+  { value: "0–1 years (Entry / Fresher)", label: "0–1 years (Entry / Fresher)" },
+  { value: "1–3 years", label: "1–3 years" },
+  { value: "3–5 years", label: "3–5 years" },
+  { value: "5–8 years", label: "5–8 years" },
+  { value: "8+ years (Senior / Lead)", label: "8+ years (Senior / Lead)" },
+];
+
+const NOTICE_PERIOD_OPTIONS: CustomSelectOption[] = [
+  { value: "Immediate Joiner (0 days)", label: "Immediate Joiner (0 days)" },
+  { value: "15 Days", label: "15 Days" },
+  { value: "30 Days", label: "30 Days" },
+  { value: "60 Days", label: "60 Days" },
+  { value: "90 Days", label: "90 Days" },
+];
 
 interface ApplyModalProps {
   isOpen: boolean;
@@ -120,11 +140,9 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
       errors.email = "Please enter a valid email address.";
     }
 
-    const phoneRegex = /^[0-9+\s\-()]{8,18}$/;
-    if (!phone.trim()) {
-      errors.phone = "Phone number is required.";
-    } else if (!phoneRegex.test(phone.trim())) {
-      errors.phone = "Please enter a valid phone number.";
+    const phoneErr = validatePhoneNumber(phone);
+    if (phoneErr) {
+      errors.phone = phoneErr;
     }
 
     if (!resumeFile) {
@@ -158,28 +176,35 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
     setIsSubmitting(true);
 
     try {
-      // Simulate network request latency (700ms)
-      await new Promise((resolve) => setTimeout(resolve, 700));
+      const payload = {
+        name: fullName.trim(),
+        full_name: fullName.trim(),
+        email: email.trim(),
+        work_email: email.trim(),
+        phone: phone.trim(),
+        company_name: currentCompany.trim() ? `Current: ${currentCompany.trim()}` : "Candidate Profile",
+        source_page: "/careers/direct",
+        nature_of_enquiry: "JOB_APPLICATION",
+        extra_data: {
+          target_role: job?.title || "General Application",
+          total_experience: totalExperience,
+          notice_period: noticePeriod,
+          current_company: currentCompany.trim() || "Not Specified",
+          expected_ctc: expectedCtc.trim() || "Not Specified",
+          linkedin_portfolio_url: linkedinUrl.trim(),
+          resume_url: resumeFile ? resumeFile.name : "",
+          why_lattium_hr: coverNote.trim(),
+        },
+      };
 
-      // ======================================================================
-      // TODO: Replace with live recruitment API
-      // e.g.:
-      // const formData = new FormData();
-      // formData.append('jobId', job?.id || 'general');
-      // formData.append('fullName', fullName);
-      // formData.append('email', email);
-      // formData.append('phone', phone);
-      // formData.append('resume', resumeFile);
-      // formData.append('experience', totalExperience);
-      // formData.append('noticePeriod', noticePeriod);
-      // const res = await fetch('/api/careers/apply', { method: 'POST', body: formData });
-      // ======================================================================
-
-      const generatedId = `APP-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
+      const res = await submitCrmEnquiry(payload);
+      const generatedId = res.data?.id
+        ? String(res.data.id)
+        : `APP-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
       setApplicationRefId(generatedId);
       setIsSubmitted(true);
-    } catch {
-      alert("Something went wrong while submitting. Please try again.");
+    } catch (err: any) {
+      alert(err?.message || "Something went wrong while submitting. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -311,18 +336,26 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
                   )}
                 </div>
 
-                {/* Phone */}
+                {/* Phone with Country Selector */}
                 <div className="careers-form-group">
                   <label htmlFor="app-phone" className="careers-form-label">
                     Phone Number <span className="required">*</span>
                   </label>
-                  <input
+                  <PhoneInput
                     id="app-phone"
-                    type="tel"
+                    name="phone"
                     value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+91 98765 43210"
-                    className={`careers-form-input ${formErrors.phone ? "error" : ""}`}
+                    onChange={(fullNumber) => {
+                      setPhone(fullNumber);
+                      if (formErrors.phone) {
+                        setFormErrors((prev) => {
+                          const copy = { ...prev };
+                          delete copy.phone;
+                          return copy;
+                        });
+                      }
+                    }}
+                    hasError={Boolean(formErrors.phone)}
                     required
                   />
                   {formErrors.phone && (
@@ -350,20 +383,19 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
                   <label htmlFor="app-experience" className="careers-form-label">
                     Total Experience <span className="required">*</span>
                   </label>
-                  <select
+                  <CustomSelect
                     id="app-experience"
+                    options={EXPERIENCE_OPTIONS}
                     value={totalExperience}
-                    onChange={(e) => setTotalExperience(e.target.value)}
-                    className={`careers-form-select ${formErrors.totalExperience ? "error" : ""}`}
-                    required
-                  >
-                    <option value="">Select experience level</option>
-                    <option value="0–1 years (Entry / Fresher)">0–1 years (Entry / Fresher)</option>
-                    <option value="1–3 years">1–3 years</option>
-                    <option value="3–5 years">3–5 years</option>
-                    <option value="5–8 years">5–8 years</option>
-                    <option value="8+ years (Senior / Lead)">8+ years (Senior / Lead)</option>
-                  </select>
+                    onChange={(val) => {
+                      setTotalExperience(val);
+                      if (formErrors.totalExperience) {
+                        setFormErrors({ ...formErrors, totalExperience: "" });
+                      }
+                    }}
+                    placeholder="Select experience level"
+                    hasError={!!formErrors.totalExperience}
+                  />
                   {formErrors.totalExperience && (
                     <span className="careers-form-error">{formErrors.totalExperience}</span>
                   )}
@@ -374,20 +406,19 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
                   <label htmlFor="app-notice" className="careers-form-label">
                     Notice Period <span className="required">*</span>
                   </label>
-                  <select
+                  <CustomSelect
                     id="app-notice"
+                    options={NOTICE_PERIOD_OPTIONS}
                     value={noticePeriod}
-                    onChange={(e) => setNoticePeriod(e.target.value)}
-                    className={`careers-form-select ${formErrors.noticePeriod ? "error" : ""}`}
-                    required
-                  >
-                    <option value="">Select notice period</option>
-                    <option value="Immediate Joiner (0 days)">Immediate Joiner (0 days)</option>
-                    <option value="15 Days">15 Days</option>
-                    <option value="30 Days">30 Days</option>
-                    <option value="60 Days">60 Days</option>
-                    <option value="90 Days">90 Days</option>
-                  </select>
+                    onChange={(val) => {
+                      setNoticePeriod(val);
+                      if (formErrors.noticePeriod) {
+                        setFormErrors({ ...formErrors, noticePeriod: "" });
+                      }
+                    }}
+                    placeholder="Select notice period"
+                    hasError={!!formErrors.noticePeriod}
+                  />
                   {formErrors.noticePeriod && (
                     <span className="careers-form-error">{formErrors.noticePeriod}</span>
                   )}

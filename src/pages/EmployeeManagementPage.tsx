@@ -1215,12 +1215,11 @@ export function EmployeeManagementPage() {
             BOTTOM CONVERSION CTA BANNER (Exact Home Page Footer CTA)
             ========================================================================= */}
         <FooterCTA
-          variant="neon-curtain"
+          variant="emp-banner"
           eyebrowBadgeText="Built for Modern Multi-Branch Workforce Operations"
           headlineLine1="Boost Your Workforce"
           headlineLine2="Potential with LattiumHR"
-          subheadlineLine1="Focus on team growth while we take care of workforce operations:"
-          subheadlineLine2="directory, self-service, leave, attendance, document vault, and approvals."
+          subheadlineLine1="Focus on team growth while we handle the rest — employee directory, self-service, leave, attendance, document vault, and approvals."
           primaryButtonText="Book a Live Demo"
           secondaryButtonText="Explore Features"
         />

@@ -291,14 +291,17 @@
   font-weight: 700 !important;
   color: #191735 !important;
   margin: 0 !important;
+  padding: 0 !important;
   cursor: pointer;
-  display: inline-flex !important;
+  display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
   justify-content: flex-start !important;
   text-align: left !important;
+  min-height: 20px !important;
+  line-height: 20px !important;
   gap: 3px !important;
-  width: auto !important;
+  width: 100% !important;
 }
 
 .demo-page-form .required-star,

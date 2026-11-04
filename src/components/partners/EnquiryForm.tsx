@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Icon from "@/components/ui/Icon";
+import PhoneInput from "@/components/common/PhoneInput";
+import { validatePhoneNumber } from "@/utils/phoneUtils";
 import { PartnerCategory } from "@/data/partnersData";
 import { submitEnquiry } from "@/services/enquiryService";
 
@@ -66,10 +68,9 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ initialPartnerType = "
       errs.businessEmail = "Please enter a valid email address.";
     }
 
-    if (!values.phone.trim()) {
-      errs.phone = "Phone number is required.";
-    } else if (values.phone.trim().length < 7) {
-      errs.phone = "Please enter a valid phone number.";
+    const phoneErr = validatePhoneNumber(values.phone);
+    if (phoneErr) {
+      errs.phone = phoneErr;
     }
 
     if (!values.location.trim()) {
@@ -100,14 +101,22 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ initialPartnerType = "
 
     try {
       await submitEnquiry({
-        name: `${values.firstName.trim()} ${values.lastName.trim()}`,
+        first_name: values.firstName.trim(),
+        last_name: values.lastName.trim(),
+        name: `${values.firstName.trim()} ${values.lastName.trim()}`.trim(),
+        company_name: values.company.trim(),
+        business_email: values.businessEmail.trim(),
+        work_email: values.businessEmail.trim(),
         email: values.businessEmail.trim(),
         phone: values.phone.trim(),
-        company_name: values.company.trim(),
-        primary_area_of_interest: `Partner Programme - ${values.partnerType.toUpperCase()}`,
-        nature_of_enquiry: "IMPLEMENTATION_PARTNERSHIP",
-        notes: `Location: ${values.location.trim()} | Track: ${values.partnerType} | Comments: ${values.additionalComments.trim()}`,
         source_page: "/partners",
+        nature_of_enquiry: "PARTNER_APPLICATION",
+        notes: `Location: ${values.location.trim()} | Track: ${values.partnerType} | Operations: ${values.additionalComments.trim()}`,
+        extra_data: {
+          location: values.location.trim(),
+          interested_partner_track: values.partnerType,
+          client_base_and_operations: values.additionalComments.trim(),
+        },
       });
 
       setIsSubmitting(false);
@@ -340,29 +349,27 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ initialPartnerType = "
 
                   {/* Phone Number & Location */}
                   <div className="partner-form-row two-col">
-                    <div className="partner-input-group">
-                      <label htmlFor="partner-phone" className="partner-label">
-                        Phone Number <span className="partner-required">*</span>
-                      </label>
-                      <input
-                        id="partner-phone"
-                        type="tel"
-                        className={`partner-input ${errors.phone ? "has-error" : ""}`}
-                        placeholder="+91 98765 43210"
-                        value={values.phone}
-                        onChange={(e) => {
-                          setValues((prev) => ({ ...prev, phone: e.target.value }));
-                          if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
-                        }}
-                        aria-invalid={!!errors.phone}
-                        aria-describedby={errors.phone ? "phone-error" : undefined}
-                      />
-                      {errors.phone && (
-                        <span id="phone-error" className="partner-field-error" role="alert">
-                          {errors.phone}
-                        </span>
-                      )}
-                    </div>
+                      <div className="partner-input-group">
+                        <label htmlFor="partner-phone" className="partner-label">
+                          Phone Number <span className="partner-required">*</span>
+                        </label>
+                        <PhoneInput
+                          id="partner-phone"
+                          name="phone"
+                          value={values.phone}
+                          onChange={(fullNumber) => {
+                            setValues((prev) => ({ ...prev, phone: fullNumber }));
+                            if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
+                          }}
+                          hasError={Boolean(errors.phone)}
+                          required
+                        />
+                        {errors.phone && (
+                          <span id="phone-error" className="partner-field-error" role="alert">
+                            {errors.phone}
+                          </span>
+                        )}
+                      </div>
 
                     <div className="partner-input-group">
                       <label htmlFor="partner-location" className="partner-label">

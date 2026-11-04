@@ -1003,7 +1003,6 @@ export function RolesPermissionsPage() {
                       {mod.icon}
                     </div>
 
-                    <span className="roles-example-scope-tag" style={{ margin: "0 auto 10px" }}>{mod.role}</span>
                     <h3 className="emp-process-card-title">{mod.title}</h3>
                     <p className="emp-process-card-desc">{mod.description}</p>
                     <span className="emp-connected-explore-pill">

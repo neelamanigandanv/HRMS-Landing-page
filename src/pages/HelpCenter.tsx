@@ -654,7 +654,7 @@ export function HelpCenter() {
               <div className="container">
                 <div className="help-workflow-card-container">
                   <div className="help-workflow-grid">
-                    {/* Left Column: Heading, Subtitle, Explore Guide Button & 3D Isometric Illustration */}
+                    {/* Left Column: Heading, Subtitle & 3D Isometric Illustration */}
                     <div className="help-workflow-left-col">
                       <span className="help-workflow-eyebrow">✦ STEP-BY-STEP GUIDES ✦</span>
                       <h2 id="guides-title" className="help-workflow-title">
@@ -665,14 +665,16 @@ export function HelpCenter() {
                         integrate biometric attendance, and run zero-defect payroll.
                       </p>
 
-                      <div className="help-workflow-action-wrap" style={{ marginTop: "18px", marginBottom: "22px" }}>
-                        <Link to="/guides" className="help-btn-primary" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
-                          Explore All Guides <Icon name="arrow" size={15} />
-                        </Link>
-                      </div>
-
                       <div className="help-workflow-isometric-box">
                         <HelpWorkflowIsometric className="help-workflow-isometric-svg" />
+                      </div>
+
+                      {/* Explore All Guides Action placed below the image in the left side */}
+                      <div className="help-workflow-left-cta">
+                        <Link to="/guides" className="help-workflow-explore-btn">
+                          <span>Explore All Guides</span>
+                          <Icon name="arrow" size={15} />
+                        </Link>
                       </div>
                     </div>
 
@@ -693,8 +695,9 @@ export function HelpCenter() {
                                 {guide.number}. {guide.title}
                               </h3>
                               <p className="help-workflow-step-desc">{guide.desc}</p>
-                              <div style={{ marginTop: "8px", fontSize: "12.5px", fontWeight: 700, color: "#802B5B", display: "inline-flex", alignItems: "center", gap: "4px" }}>
-                                Explore Guide <Icon name="arrow" size={12} />
+                              <div className="help-workflow-step-btn">
+                                <span>Explore Guide</span>
+                                <Icon name="arrow" size={12} />
                               </div>
                             </div>
                           </Link>
@@ -703,6 +706,8 @@ export function HelpCenter() {
                     </div>
                   </div>
                 </div>
+
+
               </div>
             </section>
 

@@ -7,6 +7,7 @@ import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
 import { useDemoModal } from "../context/DemoModalContext";
 import { useCurrency } from "../context/CurrencyContext";
+import "./EmployeeManagementPage.css";
 
 const faqList = [
   {
@@ -659,7 +660,70 @@ export function SolutionsOverview() {
         </section>
 
         {/* =================================================================
-            4. FUNCTIONAL LEADERSHIP SOLUTIONS (EXACT REFERENCE PARITY WITH PRIMARY THEME)
+            4. MIDDLE CTA SECTION (Matches Employee Management Page Mid-CTA)
+            ================================================================= */}
+        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
+          <div className="container">
+            <div className="emp-center-cta-card">
+              {/* Primary Color Accent Block */}
+              <div className="emp-cta-primary-bar" />
+
+              {/* Overlapping Photorealistic Team Collaboration Image */}
+              <div className="emp-cta-img-wrap">
+                <img
+                  src="/images/emp-cta-collaboration.jpg"
+                  alt="HR leadership and management team collaborating on workforce strategy"
+                  className="emp-cta-img"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Right Content Area */}
+              <div className="emp-cta-content">
+                <span className="emp-cta-badge">✦ MULTI-ENTITY WORKFORCE PLATFORM ✦</span>
+                <h2 id="cta-banner-title" className="emp-cta-title">
+                  Ready to Unify Your HR Across Every Branch &amp; Country?
+                </h2>
+                <p className="emp-cta-desc">
+                  Run payroll, attendance, and compliance for all your locations and legal entities from one unified dashboard. Keep every team aligned, compliant, and accessible from day one.
+                </p>
+                <div className="emp-cta-btn-group">
+                  <button
+                    type="button"
+                    className="emp-cta-btn"
+                    onClick={() =>
+                      openDemoModal({
+                        title: "Schedule an Enterprise Solutions Demo",
+                        subtitle:
+                          "Experience centralized multi-entity management, cross-branch workforce directories, and automated compliance.",
+                        defaultInterest: "Enterprise Solutions",
+                      })
+                    }
+                  >
+                    Book a Demo
+                  </button>
+                  <button
+                    type="button"
+                    className="emp-cta-btn-secondary"
+                    onClick={() =>
+                      openDemoModal({
+                        title: "Talk to an HR Solutions Specialist",
+                        subtitle:
+                          "Consult with our product advisors on custom company structures, branch hierarchy, and seamless migration assistance.",
+                        defaultInterest: "Solutions Consultation",
+                      })
+                    }
+                  >
+                    Talk to an HR Expert <Icon name="arrow" size={14} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* =================================================================
+            5. FUNCTIONAL LEADERSHIP SOLUTIONS (EXACT REFERENCE PARITY WITH PRIMARY THEME)
             ================================================================= */}
         <section className="so-fl-section" id="roles">
           <div className="container">
@@ -1101,74 +1165,7 @@ export function SolutionsOverview() {
         </section>
 
         {/* =================================================================
-            4. MIDDLE CTA SECTION (Above Distributed Branch Architecture)
-            ================================================================= */}
-        <section className="so-middle-cta-section">
-          <div className="container">
-            <div className="so-middle-cta-banner">
-              <div className="so-middle-cta-grid">
-                {/* Left Side: Multi-Entity Global Network Architecture Image */}
-                <div className="so-middle-cta-img-wrap">
-                  <img
-                    src="/images/middle-cta-network.jpg"
-                    alt="Multi-Entity Management global data network hub"
-                    className="so-middle-cta-img"
-                    loading="lazy"
-                  />
-                </div>
-
-                {/* Right Side: Text Content and Button */}
-                <div className="so-middle-cta-content">
-                  <span className="so-cta-eyebrow">
-                    <Icon name="globe" size={13} /> MULTI-ENTITY HRMS
-                  </span>
-                  <h2 className="so-middle-cta-title">
-                    One HRMS for Every <br />
-                    Branch <span className="so-cta-title-accent">&amp; Country</span>
-                  </h2>
-                  <p className="so-middle-cta-desc">
-                    Run payroll, attendance and compliance for all your locations from one dashboard. See how it fits your team in a free walkthrough.
-                  </p>
-
-                  <div className="so-middle-cta-actions">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        openDemoModal({
-                          title: "Get Free HRMS Plan",
-                          subtitle: "Run payroll, attendance and compliance for all your locations from one dashboard in a 30-min walkthrough",
-                        })
-                      }
-                      className="so-middle-cta-btn"
-                    >
-                      Get Free HRMS Plan <Icon name="arrow" size={15} />
-                    </button>
-                  </div>
-
-                  <div className="so-cta-points-row">
-                    <span className="so-cta-point">
-                      <Icon name="check" size={13} /> 30-min walkthrough
-                    </span>
-                    <span className="so-cta-point">
-                      <Icon name="check" size={13} /> Custom migration plan
-                    </span>
-                    <span className="so-cta-point">
-                      <Icon name="check" size={13} /> Zero obligation
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ambient bottom-right sparkle */}
-              <div className="so-cta-sparkle" aria-hidden="true">
-                <Icon name="sparkle" size={20} />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* =================================================================
-            5. FAQ SECTION (EXACT REFERENCE PARITY)
+            6. FAQ SECTION (EXACT REFERENCE PARITY)
             ================================================================= */}
         <section className="faq-section" id="faq">
           <div className="container faq-grid">

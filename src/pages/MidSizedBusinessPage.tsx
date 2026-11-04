@@ -284,10 +284,10 @@ export function MidSizedBusinessPage() {
                 className="sb-btn-primary"
                 onClick={handleOpenDemo}
               >
-                Request a Mid-Market Demo <Icon name="arrow" size={16} />
+                Book a Demo <Icon name="arrow" size={16} />
               </button>
-              <a href="#workspace" className="sb-btn-secondary">
-                Explore the Workspace
+              <a href="#the-way-of-working" className="sb-btn-secondary">
+                Explore Features
               </a>
             </div>
 

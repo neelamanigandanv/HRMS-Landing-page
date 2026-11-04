@@ -42,11 +42,6 @@ export default function JobCard({ job, onApply }: JobCardProps) {
           <span className="careers-job-meta-tag">
             <Icon name="briefcase" size={13} /> {job.experience}
           </span>
-          {job.salaryRange && (
-            <span className="careers-job-meta-tag salary">
-              <Icon name="wallet" size={13} /> {job.salaryRange}
-            </span>
-          )}
         </div>
       </div>
 

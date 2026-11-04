@@ -667,7 +667,7 @@ export function PerformanceManagementPage() {
                 return (
                   <div
                     key={step.number}
-                    className={`perf-process-card ${isActive ? "is-active" : ""}`}
+                    className={`perf-process-card emp-process-card ${isActive ? "is-active" : ""}`}
                     onMouseEnter={() => setActiveWorkflowCard(idx)}
                     onClick={() => setActiveWorkflowCard(idx)}
                     role="button"
@@ -890,7 +890,6 @@ export function PerformanceManagementPage() {
                       {mod.icon}
                     </div>
 
-                    <span className="perf-ecosystem-role-tag">{mod.role}</span>
                     <h3 className="emp-process-card-title">{mod.title}</h3>
                     <p className="emp-process-card-desc">{mod.description}</p>
                     <span className="emp-connected-explore-pill">

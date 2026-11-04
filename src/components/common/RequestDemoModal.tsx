@@ -1,6 +1,8 @@
 import { FormEvent, useEffect, useState } from "react";
 import Icon from "../ui/Icon";
 import CustomSelect from "../ui/CustomSelect";
+import PhoneInput from "./PhoneInput";
+import { validatePhoneNumber, FormValidators } from "../../utils/phoneUtils";
 import { submitEnquiry } from "../../services/enquiryService";
 
 const MODAL_TEAM_SIZE_OPTIONS = [
@@ -88,29 +90,17 @@ export function RequestDemoModal({
   }, [isOpen, defaultEmail, defaultInterest]);
 
   const validateField = (field: string, value: string): string => {
-    const trimmed = value.trim();
     switch (field) {
       case "name":
-        if (!trimmed) return "Please enter your full name";
-        if (trimmed.length < 2) return "Enter your full name";
-        if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) return "Letters only";
-        return "";
+        return FormValidators.name(value);
       case "email":
-        if (!trimmed) return "Work email is required";
-        if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(trimmed)) return "Enter a valid work email";
-        return "";
-      case "phone": {
-        const digits = trimmed.replace(/\D/g, "");
-        if (!digits) return "Phone number is required";
-        if (digits.length < 10) return "Min 10 digits required";
-        return "";
-      }
+        return FormValidators.email(value);
+      case "phone":
+        return validatePhoneNumber(value);
       case "company":
-        if (!trimmed) return "Company name is required";
-        return "";
+        return FormValidators.company(value);
       case "employees":
-        if (!value) return "Please select team size";
-        return "";
+        return FormValidators.teamSize(value);
       default:
         return "";
     }
@@ -157,16 +147,22 @@ export function RequestDemoModal({
     setSubmitError(null);
 
     try {
+      const currentPath =
+        typeof window !== "undefined"
+          ? `${window.location.pathname}${window.location.hash || "#demo-popup"}`
+          : "/pricing#demo-popup";
+
       await submitEnquiry({
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        company_name: formData.company,
+        name: formData.name.trim(),
+        work_email: formData.email.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        company_name: formData.company.trim(),
         team_size: formData.employees,
-        primary_area_of_interest: formData.interest || "Platform Suite",
+        primary_area_of_interest: formData.interest || "Attendance & Leave Tracking",
         nature_of_enquiry: "SCHEDULE_LIVE_DEMO",
         notes: `Demo request from modal (${title})`,
-        source_page: typeof window !== "undefined" ? window.location.pathname + window.location.hash : "/demo-modal",
+        source_page: currentPath,
       });
       setIsSubmitting(false);
       setIsSubmitted(true);
@@ -337,19 +333,19 @@ export function RequestDemoModal({
                 )}
               </label>
 
-              {/* Phone */}
+              {/* Phone with Country Selector */}
               <label>
                 <span>
                   Phone Number <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
                 </span>
-                <input
-                  type="tel"
+                <PhoneInput
+                  id="modal-phone"
+                  name="phone"
                   value={formData.phone}
-                  onChange={(e) => handleChange("phone", e.target.value)}
+                  onChange={(fullNumber) => handleChange("phone", fullNumber)}
                   onBlur={() => handleBlur("phone")}
-                  className={errors.phone && touched.phone ? "has-error" : ""}
-                  placeholder="+91 98765 43210"
-                  aria-invalid={Boolean(errors.phone && touched.phone)}
+                  hasError={Boolean(errors.phone && touched.phone)}
+                  required
                 />
                 {errors.phone && touched.phone && (
                   <span className="field-error">
@@ -380,8 +376,8 @@ export function RequestDemoModal({
               </label>
 
               {/* Team Size */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-                <label htmlFor="modal-team-size" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
+              <div className="modal-field-group">
+                <label htmlFor="modal-team-size" className="modal-label-text">
                   Team Size <span className="required-star" style={{ color: "#ef4444", marginLeft: "2px", fontWeight: "700" }}>*</span>
                 </label>
                 <CustomSelect
@@ -401,9 +397,9 @@ export function RequestDemoModal({
               </div>
 
               {/* Module Interest */}
-              <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
-                <label htmlFor="modal-primary-focus" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
-                  Primary Focus
+              <div className="modal-field-group">
+                <label htmlFor="modal-primary-focus" className="modal-label-text">
+                  Primary Area of Interest
                 </label>
                 <CustomSelect
                   id="modal-primary-focus"

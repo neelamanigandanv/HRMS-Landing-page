@@ -226,41 +226,11 @@ export function GuideDetailPage() {
         <section className="guide-detail-hero" aria-labelledby="guide-title">
           <div className="guide-detail-container">
             <div className="guide-hero-centered-content">
-              <div className="guide-hero-eyebrow">
-                <Icon name="sparkle" size={13} />
-                <span>✦ {currentGuide.category.toUpperCase()} MASTERCLASS ✦</span>
-              </div>
-
               <h1 id="guide-title" className="guide-hero-title">
                 {renderDoubleColorTitle(currentGuide.title)}
               </h1>
 
               <p className="guide-hero-subtitle">{currentGuide.subtitle}</p>
-
-              {/* Author & Verification Meta Row */}
-              <div className="guide-hero-meta-row">
-                <div className="guide-meta-author-box">
-                  <div className="author-avatar-circle">{currentGuide.author.avatar}</div>
-                  <div className="author-info">
-                    <span className="author-name">{currentGuide.author.name}</span>
-                    <span className="author-role">{currentGuide.author.role}</span>
-                  </div>
-                </div>
-
-                <div className="guide-meta-divider" />
-
-                <div className="guide-meta-badges">
-                  <span className="guide-meta-pill">
-                    <Icon name="clock" size={13} /> {currentGuide.readTime}
-                  </span>
-                  <span className="guide-meta-pill">
-                    <Icon name="check" size={13} /> {currentGuide.updatedDate}
-                  </span>
-                  <span className="guide-meta-pill highlight">
-                    <Icon name="shield" size={13} /> {currentGuide.badge}
-                  </span>
-                </div>
-              </div>
 
               {/* Action Buttons in Hero */}
               <div className="guide-hero-actions">

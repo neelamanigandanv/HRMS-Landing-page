@@ -3,6 +3,8 @@ import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import CustomSelect from "../components/ui/CustomSelect";
+import PhoneInput from "../components/common/PhoneInput";
+import { validatePhoneNumber, FormValidators } from "../utils/phoneUtils";
 import { submitEnquiry, NatureOfEnquiry } from "../services/enquiryService";
 import "./ContactPage.css";
 
@@ -33,10 +35,51 @@ export function ContactPage() {
     inquiryType: "Sales",
     message: "",
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  const validate = (field: string, value: string): string => {
+    switch (field) {
+      case "name":
+        return FormValidators.name(value);
+      case "email":
+        return FormValidators.email(value);
+      case "phone":
+        return validatePhoneNumber(value);
+      case "company":
+        return FormValidators.company(value, false);
+      default:
+        return "";
+    }
+  };
+
+  const handleBlur = (field: string) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    const err = validate(field, (contactData as any)[field]);
+    setErrors((prev) => ({ ...prev, [field]: err }));
+  };
+
+  const handleChange = (field: string, value: string) => {
+    setContactData((prev) => ({ ...prev, [field]: value }));
+    if (touched[field]) {
+      const err = validate(field, value);
+      setErrors((prev) => ({ ...prev, [field]: err }));
+    }
+  };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    if (!contactData.name || !contactData.email) return;
+    const fields = ["name", "email", "phone"];
+    const newErrors: Record<string, string> = {};
+    fields.forEach((f) => {
+      const err = validate(f, (contactData as any)[f]);
+      if (err) newErrors[f] = err;
+    });
+
+    setTouched({ name: true, email: true, phone: true });
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) return;
 
     setIsSubmitting(true);
     setSubmitError(null);
@@ -50,11 +93,12 @@ export function ContactPage() {
 
     try {
       await submitEnquiry({
-        name: contactData.name,
-        email: contactData.email,
-        phone: contactData.phone,
-        company_name: contactData.company || "Not Specified",
-        team_size: contactData.teamSize,
+        name: contactData.name.trim(),
+        work_email: contactData.email.trim(),
+        email: contactData.email.trim(),
+        phone: contactData.phone.trim(),
+        company_name: contactData.company?.trim() || "Not Specified",
+        team_size: contactData.teamSize || "Not Specified",
         primary_area_of_interest:
           contactData.inquiryType === "Sales"
             ? "Product Walkthrough"
@@ -64,8 +108,12 @@ export function ContactPage() {
             ? "Partner Program"
             : "Platform Suite",
         nature_of_enquiry: natureMap[contactData.inquiryType] || "GENERAL_ENQUIRY",
-        notes: contactData.message,
+        notes: contactData.message.trim(),
         source_page: "/contact",
+        extra_data: {
+          how_can_we_help: contactData.message.trim(),
+          inquiry_type: contactData.inquiryType,
+        },
       });
       setIsSubmitting(false);
       setSubmitted(true);
@@ -215,11 +263,16 @@ export function ContactPage() {
                           required
                           placeholder="e.g. Kavya Sharma"
                           value={contactData.name}
-                          onChange={(e) =>
-                            setContactData((prev) => ({ ...prev, name: e.target.value }))
-                          }
-                          className="contact-text-input"
+                          onChange={(e) => handleChange("name", e.target.value)}
+                          onBlur={() => handleBlur("name")}
+                          className={`contact-text-input ${errors.name && touched.name ? "has-error" : ""}`}
+                          aria-invalid={Boolean(errors.name && touched.name)}
                         />
+                        {errors.name && touched.name && (
+                          <span className="field-error">
+                            <Icon name="x" size={11} /> {errors.name}
+                          </span>
+                        )}
                       </div>
 
                       <div className="contact-input-group">
@@ -231,27 +284,36 @@ export function ContactPage() {
                           required
                           placeholder="kavya@company.com"
                           value={contactData.email}
-                          onChange={(e) =>
-                            setContactData((prev) => ({ ...prev, email: e.target.value }))
-                          }
-                          className="contact-text-input"
+                          onChange={(e) => handleChange("email", e.target.value)}
+                          onBlur={() => handleBlur("email")}
+                          className={`contact-text-input ${errors.email && touched.email ? "has-error" : ""}`}
+                          aria-invalid={Boolean(errors.email && touched.email)}
                         />
+                        {errors.email && touched.email && (
+                          <span className="field-error">
+                            <Icon name="x" size={11} /> {errors.email}
+                          </span>
+                        )}
                       </div>
 
                       <div className="contact-input-group">
                         <label className="contact-label-text">
                           Phone Number <span className="required-star">*</span>
                         </label>
-                        <input
-                          type="tel"
-                          required
-                          placeholder="+91 98765 43210"
+                        <PhoneInput
+                          id="contact-phone"
+                          name="phone"
                           value={contactData.phone}
-                          onChange={(e) =>
-                            setContactData((prev) => ({ ...prev, phone: e.target.value }))
-                          }
-                          className="contact-text-input"
+                          onChange={(fullNumber) => handleChange("phone", fullNumber)}
+                          onBlur={() => handleBlur("phone")}
+                          hasError={Boolean(errors.phone && touched.phone)}
+                          required
                         />
+                        {errors.phone && touched.phone && (
+                          <span className="field-error">
+                            <Icon name="x" size={11} /> {errors.phone}
+                          </span>
+                        )}
                       </div>
 
                       <div className="contact-input-group">
