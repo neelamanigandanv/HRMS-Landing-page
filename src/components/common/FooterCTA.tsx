@@ -142,7 +142,7 @@ export function FooterCTA({
   // Pure white background CTA banner with ambient brand plum glow at bottom-left and top-right
   if (variant === "emp-banner") {
     const empHead1 = headlineLine1 ?? "Boost Your Workforce";
-    const empHead2 = headlineLine2 ?? "Potential with LattiumHR";
+    const empHead2 = headlineLine2 ?? "Potential with Zentilos";
     const empSub = subheadlineLine1 ??
       "Focus on team growth while we handle the rest — employee directory, self-service, leave, attendance, document vault, and approvals.";
     const empBadge = eyebrowBadgeText !== "Built for Modern Multi-Branch Workforce Operations"
@@ -211,7 +211,7 @@ export function FooterCTA({
 
   // Default content based on variant
   const finalHead1 = headlineLine1 ?? (isNeon ? "Boost Your Workforce" : "Driving Innovation to Build the");
-  const finalHead2 = headlineLine2 ?? (isNeon ? "Potential with LattiumHR" : "Future of People Operations");
+  const finalHead2 = headlineLine2 ?? (isNeon ? "Potential with Zentilos" : "Future of People Operations");
   const finalSub1 = subheadlineLine1 ?? (isNeon
     ? "Focus on team growth while we take care of workforce operations:"
     : "We harness modern automation and connected workflows, driving innovation");

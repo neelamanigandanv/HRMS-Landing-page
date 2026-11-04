@@ -31,7 +31,7 @@ export interface RequestDemoModalProps {
 export function RequestDemoModal({
   isOpen,
   onClose,
-  title = "See LattiumHR in Action",
+  title = "See Zentilos in Action",
   subtitle = "Get a personalised 30-min walkthrough with a product specialist",
   defaultInterest = "",
   defaultEmail = "",

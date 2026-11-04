@@ -68,7 +68,7 @@ export function FAQPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState("general");
   const [openItems, setOpenItems] = useState<Record<string, boolean>>({
-    "what-is-lattiumhr": true,
+    "what-is-zentilos": true,
   });
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -223,8 +223,8 @@ export function FAQPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs}>
       <SEO
-        title="Frequently Asked Questions (FAQ) | LattiumHR"
-        description="Find verified answers to common questions about LattiumHR pricing, statutory payroll compliance (PF, ESI, TDS), biometric attendance, setup timelines, and data security."
+        title="Frequently Asked Questions (FAQ) | Zentilos"
+        description="Find verified answers to common questions about Zentilos pricing, statutory payroll compliance (PF, ESI, TDS), biometric attendance, setup timelines, and data security."
         canonicalPath="/faq"
       />
 

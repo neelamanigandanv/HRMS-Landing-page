@@ -113,7 +113,7 @@ export default function SupportEmployeeHelpPage() {
             <div style={{ backgroundColor: '#fafbfc', padding: '16px', borderRadius: '8px', border: '1px solid #f3f4f6' }}>
               <div style={{ fontWeight: 700, fontSize: '14px', color: '#111827', marginBottom: '4px' }}>3. Company HR Portal</div>
               <p style={{ fontSize: '13px', color: '#6b7280', margin: 0 }}>
-                Log in to your company-specific workspace link (e.g. yourcompany.lattiumhr.com) and use internal ticket routing.
+                Log in to your company-specific workspace link (e.g. yourcompany.zentilos.com) and use internal ticket routing.
               </p>
             </div>
           </div>

@@ -57,7 +57,7 @@ export function GlossaryDetailPage() {
     e.preventDefault();
     openDemoModal({
       title: "Unlock Seamless HR Efficiency",
-      subtitle: `See how LattiumHR simplifies ${questionItem?.term || questionItem?.title || "your HR work"}.`,
+      subtitle: `See how Zentilos simplifies ${questionItem?.term || questionItem?.title || "your HR work"}.`,
       defaultEmail: sidebarEmail,
       defaultInterest: questionItem?.term || "HRMS Knowledge Center",
     });
@@ -98,7 +98,7 @@ export function GlossaryDetailPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA={true}>
       <SEO
-        title={`${displayTitle} | HR Glossary | LattiumHR`}
+        title={`${displayTitle} | HR Glossary | Zentilos`}
         description={questionItem.what}
         canonicalPath={`/resources/glossary/${questionItem.slug}`}
       />
@@ -184,7 +184,7 @@ export function GlossaryDetailPage() {
                     </h2>
                     
                     <p className="glossary-primary-cta-desc">
-                      See how LattiumHR unifies attendance, payroll automation, biometric sync, and statutory compliance in one modern platform.
+                      See how Zentilos unifies attendance, payroll automation, biometric sync, and statutory compliance in one modern platform.
                     </p>
 
                     <form onSubmit={handleSidebarDemoSubmit} className="glossary-primary-cta-form">

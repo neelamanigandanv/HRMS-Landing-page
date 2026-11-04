@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LATTIUM HR - MODERN FLOATING FOOTER CTA BANNER
+   ZENTILOS - MODERN FLOATING FOOTER CTA BANNER
    - Floating wide card with high-resolution photographic workplace background
    - Visible, properly illuminated background image
    - Pure white two-line headline with sharp text contrast
@@ -898,7 +898,7 @@
 
 /* ===================================================================
    INSIGHT CARD VARIANT — Two-column: left text, right floating dashboard
-   Styled in LattiumHR Primary Brand Plum (#802B5B) and Rich Deep Hues
+   Styled in Zentilos Primary Brand Plum (#802B5B) and Rich Deep Hues
    =================================================================== */
 
 .insight-card-section {
@@ -1000,7 +1000,7 @@
   box-shadow: 0 16px 40px -6px rgba(128, 43, 91, 0.2);
 }
 
-/* Atmospheric CSS-only background in Rich Lattium Plum */
+/* Atmospheric CSS-only background in Rich Zentilos Plum */
 .insight-card-bg-visual {
   position: absolute;
   inset: 0;

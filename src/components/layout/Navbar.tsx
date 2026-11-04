@@ -134,7 +134,7 @@ export function Navbar() {
               >
                 <div className="mega-menu-header">
                   <div>
-                    <strong>LattiumHR Product Suite</strong>
+                    <strong>Zentilos Product Suite</strong>
                     <p>Modular, connected workforce tools designed for multi-branch companies.</p>
                   </div>
                   <Link to="/product" className="mega-overview-btn">

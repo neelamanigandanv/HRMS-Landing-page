@@ -1,11 +1,11 @@
 /* ==========================================================================
    INDUSTRY SOLUTIONS PAGE STYLESHEET
-   Follows LattiumHR design aesthetic with editorial dark showcase blocks
+   Follows Zentilos design aesthetic with editorial dark showcase blocks
    matching the user's reference image:
    - Deep rich navy/slate card backdrop (#0a1826)
    - Warm golden/tan eyebrow (#e5a872)
    - Crisp white typography with horizontal divider rule
-   - 2-Column split: Key challenges (Icon + 2 items) & Why LattiumHR (3 checkmarks with vertical border)
+   - 2-Column split: Key challenges (Icon + 2 items) & Why Zentilos (3 checkmarks with vertical border)
    - Vibrant sky-blue CTA button (#38bdf8)
    - Dual overlapping visual composition (Background architecture + Foreground people with technology)
    - Alternating Left/Right layout across the 6 industry blocks
@@ -316,7 +316,7 @@
    - Crisp white canvas with soft elevation and border
    - Brand plum eyebrow and badge styling
    - Deep navy/charcoal heading (#191735) + clean subtle divider
-   - 2-Column split: Challenges (brand icon box + points) & Why LattiumHR (custom green checks + vertical border)
+   - 2-Column split: Challenges (brand icon box + points) & Why Zentilos (custom green checks + vertical border)
    - Brand plum primary CTA button
    - Dual overlapping image composition with white elevated frame
    ========================================================================== */
@@ -471,7 +471,7 @@
   max-width: 100%;
 }
 
-/* 2-Column Split: Challenges (Left) vs Why LattiumHR (Right) */
+/* 2-Column Split: Challenges (Left) vs Why Zentilos (Right) */
 .ind-dark-split-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -548,7 +548,7 @@
   margin: 0;
 }
 
-/* Sub-column 2: Why LattiumHR (with clean vertical divider border) */
+/* Sub-column 2: Why Zentilos (with clean vertical divider border) */
 .ind-why-subcol {
   border-left: 1px solid #ebe9f3;
   padding-left: 1.85rem;

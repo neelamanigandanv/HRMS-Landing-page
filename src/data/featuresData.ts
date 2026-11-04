@@ -97,7 +97,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     solutionTitle: "One Unified System of Record for Every Team Member",
     solutionDesc:
-      "LattiumHR provides a comprehensive digital profile for every worker, from their first onboarding invite to final exit clearance. Team members update their own information via self-service, while HR retains administrative review rights.",
+      "Zentilos provides a comprehensive digital profile for every worker, from their first onboarding invite to final exit clearance. Team members update their own information via self-service, while HR retains administrative review rights.",
     solutionPoints: [
       "Dynamic organization chart that automatically redraws as reporting managers change",
       "Employee self-service (ESS) portal for updating personal contact and bank details",
@@ -151,7 +151,7 @@ export const featuresMap: Record<string, FeatureData> = {
         a: "Yes. Employees can initiate an update through the self-service portal. Changes require review and approval by an authorized HR or Finance manager before updating payroll.",
       },
       {
-        q: "How does LattiumHR handle employees who transfer between branches?",
+        q: "How does Zentilos handle employees who transfer between branches?",
         a: "With a single click, an admin can transfer an employee to a new branch. Their shift rules, holiday calendar, and reporting line automatically update from the effective transfer date.",
       },
       {
@@ -315,7 +315,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     solutionTitle: "Frictionless, Multi-Mode Attendance Capture",
     solutionDesc:
-      "LattiumHR provides flexible attendance capture suited to both desk and on-field workforces. Clock-ins are automatically validated against branch geofences and IP whitelists, feeding clean data straight into payroll.",
+      "Zentilos provides flexible attendance capture suited to both desk and on-field workforces. Clock-ins are automatically validated against branch geofences and IP whitelists, feeding clean data straight into payroll.",
     solutionPoints: [
       "GPS geofenced mobile clock-in that verifies the worker is within the office radius",
       "Direct API integration with biometric fingerprint and facial recognition scanners",
@@ -533,7 +533,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     solutionTitle: "Transparent Policies with Instant Approval Routing",
     solutionDesc:
-      "LattiumHR simplifies absence management for both staff and managers. Team members see exact balances before applying, and managers approve requests in seconds with complete calendar visibility.",
+      "Zentilos simplifies absence management for both staff and managers. Team members see exact balances before applying, and managers approve requests in seconds with complete calendar visibility.",
     solutionPoints: [
       "Custom leave types: Casual Leave (CL), Sick Leave (SL), Earned Leave (EL), Maternity, Paternity, and Bereavement",
       "Automated monthly or annual accrual engines with encashment and carry-forward caps",
@@ -588,7 +588,7 @@ export const featuresMap: Record<string, FeatureData> = {
       },
       {
         q: "What happens if a statutory holiday falls in between an employee’s leave dates?",
-        a: "LattiumHR includes an optional 'Sandwich Rule' setting. You can decide whether intervening holidays count as leave days or excluded working days.",
+        a: "Zentilos includes an optional 'Sandwich Rule' setting. You can decide whether intervening holidays count as leave days or excluded working days.",
       },
       {
         q: "Can leave encashment be processed during full-and-final settlement?",
@@ -751,7 +751,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     solutionTitle: "Automated, 4-Step Salary Processing Engine",
     solutionDesc:
-      "LattiumHR links your attendance, approved leaves, reimbursements, and loan deductions directly into payroll. Review calculated gross, statutory deductions, and net payouts in minutes.",
+      "Zentilos links your attendance, approved leaves, reimbursements, and loan deductions directly into payroll. Review calculated gross, statutory deductions, and net payouts in minutes.",
     solutionPoints: [
       "Automatic calculation of Provident Fund (PF), Employee State Insurance (ESI), Professional Tax (PT), and TDS",
       "Support for customizable earnings: Basic, HRA, Special Allowance, Performance Bonus, and LTA",
@@ -801,7 +801,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     faqs: [
       {
-        q: "Does LattiumHR support both New and Old Income Tax Regimes?",
+        q: "Does Zentilos support both New and Old Income Tax Regimes?",
         a: "Yes. Employees can select their preferred tax regime at the beginning of the financial year, and tax projections adjust automatically.",
       },
       {
@@ -810,7 +810,7 @@ export const featuresMap: Record<string, FeatureData> = {
       },
       {
         q: "What reports are available for our chartered accountant?",
-        a: "LattiumHR generates PF ECR text files, ESIC monthly return summaries, PT state-wise challans, TDS 24Q quarterly sheets, and detailed salary registers.",
+        a: "Zentilos generates PF ECR text files, ESIC monthly return summaries, PT state-wise challans, TDS 24Q quarterly sheets, and detailed salary registers.",
       },
     ],
     demoTabs: [
@@ -969,7 +969,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     solutionTitle: "Digital Custody Records for Every Company Asset",
     solutionDesc:
-      "LattiumHR connects IT asset management directly into HR lifecycle workflows. Equipment is assigned during onboarding, acknowledged with digital receipts, and automatically flagged for return during exit clearance.",
+      "Zentilos connects IT asset management directly into HR lifecycle workflows. Equipment is assigned during onboarding, acknowledged with digital receipts, and automatically flagged for return during exit clearance.",
     solutionPoints: [
       "Asset catalog with category grouping: Laptops, Monitors, Mobile Devices, Furniture, and Vehicles",
       "Serial number, purchase date, warranty expiration, and vendor invoice tracking",
@@ -1059,7 +1059,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     solutionTitle: "Collaborative, Fast-Moving Hiring Pipelines",
     solutionDesc:
-      "LattiumHR provides a hiring pipeline that connects hiring managers, interviewers, and HR in one workspace. From job requisition to digital offer acceptance, every step is streamlined.",
+      "Zentilos provides a hiring pipeline that connects hiring managers, interviewers, and HR in one workspace. From job requisition to digital offer acceptance, every step is streamlined.",
     solutionPoints: [
       "Customizable hiring stages: Sourced, Screening, Technical Interview, Culture Fit, Offer, and Hired",
       "Structured candidate scorecards with standardized competency ratings and interviewer comments",
@@ -1110,14 +1110,14 @@ export const featuresMap: Record<string, FeatureData> = {
     faqs: [
       {
         q: "Can interviewers see each other's scorecards before submitting their own?",
-        a: "No. LattiumHR supports blind evaluation mode to ensure interviewers submit unbiased feedback before reviewing colleagues' notes.",
+        a: "No. Zentilos supports blind evaluation mode to ensure interviewers submit unbiased feedback before reviewing colleagues' notes.",
       },
       {
         q: "Can candidates digitally sign their offer letters?",
         a: "Yes. Candidates receive a secure link to review their offer, salary structure, and accept digitally.",
       },
       {
-        q: "Does LattiumHR integrate with external job boards?",
+        q: "Does Zentilos integrate with external job boards?",
         a: "You can generate custom application links for LinkedIn, your careers page, and recruitment agencies to route applicants directly into your pipeline.",
       },
     ],
@@ -1149,7 +1149,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     solutionTitle: "Continuous, Transparent Goal & Review Cycles",
     solutionDesc:
-      "LattiumHR provides a modern performance framework that balances objective metric tracking with qualitative peer insights. Teams track progress all year, making appraisal cycles straightforward and fair.",
+      "Zentilos provides a modern performance framework that balances objective metric tracking with qualitative peer insights. Teams track progress all year, making appraisal cycles straightforward and fair.",
     solutionPoints: [
       "Company, department, and personal OKR cascading with measurable key result progress bars",
       "Flexible review cycles: Quarterly check-ins, Bi-annual reviews, or Annual appraisal cycles",
@@ -1207,7 +1207,7 @@ export const featuresMap: Record<string, FeatureData> = {
         a: "Yes. HR administrators can keep manager ratings confidential until company-wide calibration and executive approval are finalized.",
       },
       {
-        q: "How does LattiumHR help with underperforming team members?",
+        q: "How does Zentilos help with underperforming team members?",
         a: "You can initiate formal Performance Improvement Plans (PIPs) with specific targets, review timelines, and documented milestone reviews.",
       },
     ],
@@ -1239,7 +1239,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     solutionTitle: "Secure, Audit-Ready Document Management",
     solutionDesc:
-      "LattiumHR provides a bank-grade digital document vault for company and employee records. Every document is categorized, encrypted at rest, and monitored for renewal deadlines.",
+      "Zentilos provides a bank-grade digital document vault for company and employee records. Every document is categorized, encrypted at rest, and monitored for renewal deadlines.",
     solutionPoints: [
       "Employee document vaults storing Aadhaar, PAN, passport, academic proofs, and prior experience letters",
       "Company policy acknowledgment engine requiring staff to digitally accept revised HR policies",
@@ -1329,7 +1329,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     solutionTitle: "Executive Visibility Across Every Workforce Metric",
     solutionDesc:
-      "LattiumHR automatically compiles data from attendance punches, payroll runs, leave balances, and hiring pipelines into visual dashboards and custom exportable reports.",
+      "Zentilos automatically compiles data from attendance punches, payroll runs, leave balances, and hiring pipelines into visual dashboards and custom exportable reports.",
     solutionPoints: [
       "Workforce growth & attrition graphs tracking monthly additions, departures, and tenure",
       "Salary expenditure analytics highlighting department-wise gross, benefits, and overtime trends",
@@ -1387,7 +1387,7 @@ export const featuresMap: Record<string, FeatureData> = {
         a: "Yes. Every table and graph can be exported to Excel (.xlsx), CSV, and PDF formats with a single click.",
       },
       {
-        q: "Does LattiumHR calculate statutory gender diversity ratios?",
+        q: "Does Zentilos calculate statutory gender diversity ratios?",
         a: "Yes. Diversity and demographic breakdowns by department and level are available out of the box.",
       },
     ],
@@ -1419,7 +1419,7 @@ export const featuresMap: Record<string, FeatureData> = {
     ],
     solutionTitle: "Precision Role-Based Access Control (RBAC)",
     solutionDesc:
-      "LattiumHR gives you total control over who can view, edit, approve, or export data. Combine permission sets with branch and department filters to create exact access boundaries.",
+      "Zentilos gives you total control over who can view, edit, approve, or export data. Combine permission sets with branch and department filters to create exact access boundaries.",
     solutionPoints: [
       "Standard predefined roles: Super Admin, HR Manager, Branch Manager, Finance Admin, and Employee",
       "Custom role builder allowing granular field-level view and edit rights (e.g., Hide Salary field)",

@@ -160,8 +160,8 @@ export default function ApiDocumentationPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA={true}>
       <SEO
-        title="LattiumHR API Documentation | Developer REST API Reference"
-        description="Explore LattiumHR API endpoints, understand request methods, view schemas, and find code examples to integrate authentication, onboarding, payroll, assets, surveys, and offboarding."
+        title="Zentilos API Documentation | Developer REST API Reference"
+        description="Explore Zentilos API endpoints, understand request methods, view schemas, and find code examples to integrate authentication, onboarding, payroll, assets, surveys, and offboarding."
         canonicalPath="/resources/api-documentation"
       />
 
@@ -181,7 +181,7 @@ export default function ApiDocumentationPage() {
 
               {/* Heading */}
               <h1 id="api-hero-heading" className="api-hero-title">
-                LattiumHR REST API <span className="api-hero-highlight">Reference &amp; Workbench</span>
+                Zentilos REST API <span className="api-hero-highlight">Reference &amp; Workbench</span>
               </h1>
 
               {/* Subheading */}

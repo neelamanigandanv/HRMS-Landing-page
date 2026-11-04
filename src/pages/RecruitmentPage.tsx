@@ -22,7 +22,7 @@ export function RecruitmentPage() {
     openDemoModal({
       title: "Request a Recruitment Demo",
       subtitle:
-        "See how LattiumHR helps teams organize candidate information, track hiring stages, and simplify every hire.",
+        "See how Zentilos helps teams organize candidate information, track hiring stages, and simplify every hire.",
       defaultInterest: "Recruitment Management",
     });
   };
@@ -84,7 +84,7 @@ export function RecruitmentPage() {
       ],
       callout: {
         role: "Head of Talent Acquisition",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "Digital Profiles" },
@@ -112,7 +112,7 @@ export function RecruitmentPage() {
       ],
       callout: {
         role: "Recruiting Operations Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "5", label: "Custom Stages" },
@@ -140,7 +140,7 @@ export function RecruitmentPage() {
       ],
       callout: {
         role: "People & Talent Director",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "4.9/5", label: "Candidate Rating" },
@@ -183,8 +183,8 @@ export function RecruitmentPage() {
       a: "Recruitment management software is a centralized platform designed to organize and streamline the hiring process—from opening job requisitions and tracking candidate applications to coordinating interview panels, collecting feedback, and issuing offer letters.",
     },
     {
-      q: "How does candidate tracking work in LattiumHR?",
-      a: "LattiumHR provides a visual, stage-by-stage candidate pipeline. Recruiters and hiring managers can track applicant records, review attached resumes, update hiring stages (Screening, Technical, Culture Fit, Offer), and add evaluation notes in real time.",
+      q: "How does candidate tracking work in Zentilos?",
+      a: "Zentilos provides a visual, stage-by-stage candidate pipeline. Recruiters and hiring managers can track applicant records, review attached resumes, update hiring stages (Screening, Technical, Culture Fit, Offer), and add evaluation notes in real time.",
     },
     {
       q: "Can multiple interviewers submit feedback and scorecards?",
@@ -200,7 +200,7 @@ export function RecruitmentPage() {
     },
     {
       q: "Can we manage multiple job vacancies across different branches?",
-      a: "Yes. LattiumHR supports multi-branch workforce management. You can open, manage, and track vacancies across regional offices, satellite branches, and headquarters while keeping one unified view for leadership.",
+      a: "Yes. Zentilos supports multi-branch workforce management. You can open, manage, and track vacancies across regional offices, satellite branches, and headquarters while keeping one unified view for leadership.",
     },
   ];
 
@@ -211,8 +211,8 @@ export function RecruitmentPage() {
   return (
     <div className="app-shell inner-page-shell emp-page-wrapper rec-page-wrapper">
       <SEO
-        title="Recruitment Management Software — Candidate Pipeline & Hiring | LattiumHR"
-        description="Organize your hiring activities, manage candidate information, and gain better visibility into your recruitment process with LattiumHR."
+        title="Recruitment Management Software — Candidate Pipeline & Hiring | Zentilos"
+        description="Organize your hiring activities, manage candidate information, and gain better visibility into your recruitment process with Zentilos."
         canonicalPath="/features/recruitment"
       />
 
@@ -225,8 +225,8 @@ export function RecruitmentPage() {
         <section className="emp-hero-rich" aria-labelledby="rec-hero-title">
           <div className="container">
             {/* Top Spotlight Tag */}
-            <div className="emp-hero-spotlight-tag" aria-label="Lattium Recruitment">
-              <span>✦ LATTIUM RECRUITMENT ✦</span>
+            <div className="emp-hero-spotlight-tag" aria-label="Zentilos Recruitment">
+              <span>✦ ZENTILOS RECRUITMENT ✦</span>
             </div>
 
             {/* Title & Subtext */}
@@ -509,7 +509,7 @@ export function RecruitmentPage() {
                 Everything You Need to Organize Your Hiring.
               </h2>
               <p className="emp-section-subhead">
-                From opening a requisition to rolling out offer letters, LattiumHR centralizes candidate profiles, evaluation scorecards, and hiring-stage tracking.
+                From opening a requisition to rolling out offer letters, Zentilos centralizes candidate profiles, evaluation scorecards, and hiring-stage tracking.
               </p>
             </div>
           </div>
@@ -641,13 +641,13 @@ export function RecruitmentPage() {
         </section>
 
         {/* =========================================================================
-            5. WHY LATTIUMHR FOR RECRUITMENT SECTION (Bring More Clarity to Every Hiring Decision)
+            5. WHY ZENTILOS FOR RECRUITMENT SECTION (Bring More Clarity to Every Hiring Decision)
             ========================================================================= */}
         <section className="emp-why-choose-section" aria-labelledby="why-recruitment-heading">
           <div className="container">
             {/* Centered Section Header */}
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ WHY LATTIUMHR FOR RECRUITMENT ✦</span>
+              <span className="emp-eyebrow">✦ WHY ZENTILOS FOR RECRUITMENT ✦</span>
               <h2 id="why-recruitment-heading" className="emp-section-title">
                 Bring More Clarity to Every Hiring Decision.
               </h2>
@@ -696,7 +696,7 @@ export function RecruitmentPage() {
 
                 {/* Bottom Narrative Copy */}
                 <p className="emp-big-card-bottom-text">
-                  Uncoordinated hiring processes cost growing organizations top talent and create operational friction. LattiumHR centralizes candidate information, interviewer scorecards, and hiring progress so business owners and HR teams make confident, informed hiring choices.
+                  Uncoordinated hiring processes cost growing organizations top talent and create operational friction. Zentilos centralizes candidate information, interviewer scorecards, and hiring progress so business owners and HR teams make confident, informed hiring choices.
                 </p>
               </div>
 
@@ -759,7 +759,7 @@ export function RecruitmentPage() {
         </section>
 
         {/* =========================================================================
-            6. MIDDLE CTA SECTION (Immediately after Why LattiumHR section)
+            6. MIDDLE CTA SECTION (Immediately after Why Zentilos section)
             ========================================================================= */}
         <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
           <div className="container">

@@ -253,20 +253,20 @@ export function HelpCenter() {
   // Section 5: Frequently Asked Questions requested by user
   const faqs: HelpFAQ[] = [
     {
-      q: "What is LattiumHR?",
-      a: "LattiumHR is a unified cloud Human Resource Management System (HRMS) built for small teams, mid-sized companies, and multi-entity enterprises. It centralizes employee records, attendance tracking, shift scheduling, configurable leave workflows, multi-state payroll, performance reviews, and audit-ready compliance in one intuitive platform.",
+      q: "What is Zentilos?",
+      a: "Zentilos is a unified cloud Human Resource Management System (HRMS) built for small teams, mid-sized companies, and multi-entity enterprises. It centralizes employee records, attendance tracking, shift scheduling, configurable leave workflows, multi-state payroll, performance reviews, and audit-ready compliance in one intuitive platform.",
     },
     {
       q: "Which HRMS modules are available?",
-      a: "LattiumHR delivers a comprehensive suite of 8 core modules: Employee Directory & Profiles, Attendance & Shift Management, Leave Tracking, Automated Payroll & Statutory Compliance, Recruitment & Applicant Tracking, Digital Documents & Vaults, Reports & BI Analytics, and Role-Based Access Control (RBAC). You can start with what you need and enable more as you scale.",
+      a: "Zentilos delivers a comprehensive suite of 8 core modules: Employee Directory & Profiles, Attendance & Shift Management, Leave Tracking, Automated Payroll & Statutory Compliance, Recruitment & Applicant Tracking, Digital Documents & Vaults, Reports & BI Analytics, and Role-Based Access Control (RBAC). You can start with what you need and enable more as you scale.",
     },
     {
       q: "Can I manage multiple branches?",
-      a: "Yes. LattiumHR supports multi-entity and multi-branch architectures natively. You can manage multiple subsidiaries, regional offices, and factories under a single master organization. Each location can maintain its own holiday calendar, biometric terminals, and state-specific tax rules while central leadership retains consolidated visibility.",
+      a: "Yes. Zentilos supports multi-entity and multi-branch architectures natively. You can manage multiple subsidiaries, regional offices, and factories under a single master organization. Each location can maintain its own holiday calendar, biometric terminals, and state-specific tax rules while central leadership retains consolidated visibility.",
     },
     {
       q: "Can different users have different permissions?",
-      a: "Yes. LattiumHR provides granular Role-Based Access Control (RBAC). You can configure tailored roles with customized view, edit, or approval permissions for Department Heads, Branch HR Managers, Payroll Specialists, and Line Managers. Confidential compensation figures and sensitive audit trails are strictly segregated.",
+      a: "Yes. Zentilos provides granular Role-Based Access Control (RBAC). You can configure tailored roles with customized view, edit, or approval permissions for Department Heads, Branch HR Managers, Payroll Specialists, and Line Managers. Confidential compensation figures and sensitive audit trails are strictly segregated.",
     },
     {
       q: "How can I request a product demo?",
@@ -348,8 +348,8 @@ export function HelpCenter() {
   return (
     <PageLayout breadcrumbs={breadcrumbs}>
       <SEO
-        title="Help Center & Knowledge Base | LattiumHR"
-        description="Find quick answers, step-by-step instructions, and helpful resources to get the most out of LattiumHR."
+        title="Help Center & Knowledge Base | Zentilos"
+        description="Find quick answers, step-by-step instructions, and helpful resources to get the most out of Zentilos."
         canonicalPath="/help"
       />
 

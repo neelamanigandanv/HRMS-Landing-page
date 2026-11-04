@@ -83,7 +83,7 @@ export function SitemapPage() {
       icon: "building",
       description: "Our organizational mission, leadership, careers, partner consulting tracks, and contact desks.",
       links: [
-        { title: "Home Page", path: "/", desc: "LattiumHR homepage, core value propositions, and live software preview", badge: "HOME" },
+        { title: "Home Page", path: "/", desc: "Zentilos homepage, core value propositions, and live software preview", badge: "HOME" },
         { title: "About Us & Vision", path: "/about", desc: "Our founding story, leadership principles, architecture standards, and values", badge: "COMPANY" },
         { title: "Partner Network & VARs", path: "/partners", desc: "Programs for HR consulting firms, system integrators, and software distributors", badge: "ALLIANCES" },
         { title: "Careers & Culture", path: "/careers", desc: "Operating principles, team perks, high autonomy, and current job milestones", badge: "CAREERS" },
@@ -147,8 +147,8 @@ export function SitemapPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA={true}>
       <SEO
-        title="HTML Sitemap & Complete Page Directory | LattiumHR"
-        description="Navigate every published page, feature deep-dive, industry solution, statutory compliance handbook, and legal policy on LattiumHR."
+        title="HTML Sitemap & Complete Page Directory | Zentilos"
+        description="Navigate every published page, feature deep-dive, industry solution, statutory compliance handbook, and legal policy on Zentilos."
         canonicalPath="/sitemap"
       />
 
@@ -169,7 +169,7 @@ export function SitemapPage() {
 
               <p className="sitemap-hero-subtitle">
                 A structured, indexable guide to every public feature module, enterprise solution,
-                statutory compliance handbook, customer resource, and legal policy across the LattiumHR ecosystem.
+                statutory compliance handbook, customer resource, and legal policy across the Zentilos ecosystem.
               </p>
 
               {/* Interactive Search Bar */}

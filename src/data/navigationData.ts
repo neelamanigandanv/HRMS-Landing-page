@@ -88,7 +88,7 @@ export const solutionsNavItems: NavLinkItem[] = [
   // {
   //   title: "Solutions Overview",
   //   href: "/solutions",
-  //   desc: "Explore how LattiumHR adapts to your team size, role, and industry",
+  //   desc: "Explore how Zentilos adapts to your team size, role, and industry",
   //   icon: "branch",
   // },
   {

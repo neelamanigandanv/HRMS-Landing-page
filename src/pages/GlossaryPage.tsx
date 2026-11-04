@@ -138,7 +138,7 @@ export function GlossaryPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs}>
       <SEO
-        title="HRMS & Payroll Glossary | Complete A–Z Knowledge Center | LattiumHR"
+        title="HRMS & Payroll Glossary | Complete A–Z Knowledge Center | Zentilos"
         description="Explore 150+ essential questions and answers across HR, employee lifecycle, biometric attendance, payroll automation, statutory compliance, and workforce analytics."
         canonicalPath="/resources/hrms-glossary"
       />
@@ -152,7 +152,7 @@ export function GlossaryPage() {
             <div className="glossary-hero-content">
               <div className="glossary-eyebrow">
                 <span className="glossary-eyebrow-dot" />
-                <span>LATTIUMHR KNOWLEDGE CENTER</span>
+                <span>ZENTILOS KNOWLEDGE CENTER</span>
               </div>
               <h1 className="glossary-hero-title">
                 HR &amp; Payroll Terms, <span className="glossary-hero-title-accent">Made Simple.</span>

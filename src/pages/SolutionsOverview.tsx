@@ -16,7 +16,7 @@ const faqList = [
       "Most teams go live in 2–4 weeks. Your dedicated implementation specialist handles configuration, data import, and team training.",
   },
   {
-    question: "Can LattiumHR handle multiple branches?",
+    question: "Can Zentilos handle multiple branches?",
     answer:
       "Yes. Create branch-specific policies, holiday calendars, roles, and dashboards while keeping a unified company-wide view.",
   },
@@ -208,8 +208,8 @@ export function SolutionsOverview() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} onOpenDemo={() => openDemoModal()}>
       <SEO
-        title="Solutions Overview | Tailored HRMS for Your Business Stage & Role | LattiumHR"
-        description="Software that adapts to your organization—not the other way around. Explore LattiumHR solutions for small businesses, mid-sized teams, enterprises, HR managers, and multi-location footprints."
+        title="Solutions Overview | Tailored HRMS for Your Business Stage & Role | Zentilos"
+        description="Software that adapts to your organization—not the other way around. Explore Zentilos solutions for small businesses, mid-sized teams, enterprises, HR managers, and multi-location footprints."
         canonicalPath="/solutions"
       />
 
@@ -232,7 +232,7 @@ export function SolutionsOverview() {
               </h1>
               <p className="so-hero-lead">
                 From fast-growing teams to distributed multi-branch enterprises,
-                explore how LattiumHR unifies workforce operations, attendance, and payroll.
+                explore how Zentilos unifies workforce operations, attendance, and payroll.
               </p>
               <div className="so-hero-actions">
                 <Button onClick={() => openDemoModal()}>
@@ -352,7 +352,7 @@ export function SolutionsOverview() {
                     <div className="so-biz-img-frame">
                       <img
                         src="/images/solution-small-business.jpg"
-                        alt="LattiumHR Standard Solution Dashboard"
+                        alt="Zentilos Standard Solution Dashboard"
                         className="so-biz-card-img"
                         loading="lazy"
                       />
@@ -372,7 +372,7 @@ export function SolutionsOverview() {
                     <div className="so-biz-img-frame">
                       <img
                         src="/images/solution-mid-sized.jpg"
-                        alt="LattiumHR Professional Solution Multi-Branch Dashboard"
+                        alt="Zentilos Professional Solution Multi-Branch Dashboard"
                         className="so-biz-card-img"
                         loading="lazy"
                       />
@@ -522,7 +522,7 @@ export function SolutionsOverview() {
                     <div className="so-biz-img-frame">
                       <img
                         src="/images/solution-enterprise.jpg"
-                        alt="LattiumHR Enterprise Global Operations Dashboard"
+                        alt="Zentilos Enterprise Global Operations Dashboard"
                         className="so-biz-card-img"
                         loading="lazy"
                       />
@@ -783,7 +783,7 @@ export function SolutionsOverview() {
                       <div className="so-fl-sidebar">
                         <div className="so-fl-logo">
                           <span className="so-fl-logo-diamond">◆</span>
-                          <span className="so-fl-logo-text">LattiumHR</span>
+                          <span className="so-fl-logo-text">Zentilos</span>
                         </div>
                         <div className="so-fl-nav">
                           <div className="so-fl-nav-item active">
@@ -962,7 +962,7 @@ export function SolutionsOverview() {
                       <div className="so-fl-sidebar">
                         <div className="so-fl-logo">
                           <span className="so-fl-logo-diamond">◆</span>
-                          <span className="so-fl-logo-text">LattiumHR</span>
+                          <span className="so-fl-logo-text">Zentilos</span>
                         </div>
                         <div className="so-fl-nav">
                           <div className="so-fl-nav-item">

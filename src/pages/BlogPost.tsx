@@ -103,7 +103,7 @@ export function BlogPost() {
   if (!post) {
     return (
       <PageLayout onOpenDemo={() => openDemoModal()}>
-        <SEO title="Article Not Found | LattiumHR" description="The requested blog article could not be located." />
+        <SEO title="Article Not Found | Zentilos" description="The requested blog article could not be located." />
         <div className="container not-found-wrapper" style={{ padding: "80px 20px", textAlign: "center" }}>
           <Icon name="search" size={48} className="not-found-icon" />
           <h1>Article Not Found</h1>
@@ -148,7 +148,7 @@ export function BlogPost() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} onOpenDemo={() => openDemoModal()}>
       <SEO
-        title={`${post.title} | LattiumHR Blog`}
+        title={`${post.title} | Zentilos Blog`}
         description={post.excerpt}
         canonicalPath={`/blog/${post.slug}`}
         ogType="article"

@@ -1,5 +1,5 @@
 // ============================================================================
-// LATTIUM HR - SUPPORT HUB & CUSTOMER SERVICE DATA CONFIG
+// ZENTILOS - SUPPORT HUB & CUSTOMER SERVICE DATA CONFIG
 // Central configuration for categories, SLAs, priorities, FAQs, and articles.
 // ============================================================================
 
@@ -51,12 +51,12 @@ export interface ContactChannel {
 // 1. BRAND & CONTACT PLACEHOLDERS (Easily customizable)
 // ----------------------------------------------------------------------------
 export const SUPPORT_CONFIG = {
-  brandName: "LattiumHR",
-  supportEmail: "support@lattiumhr.com", // [support email]
+  brandName: "Zentilos",
+  supportEmail: "support@zentilos.com", // [support email]
   supportPhone: "+91 80001 23456", // [+91 XXXXX XXXXX]
   supportHours: "Mon–Sat, 9:00 AM – 7:00 PM IST", // [Mon–Sat, 9 am–7 pm IST]
-  statusPageUrl: "https://status.lattiumhr.com", // [status page URL]
-  bookingUrl: "https://calendly.com/lattiumhr/onboarding-consultation", // [booking link]
+  statusPageUrl: "https://status.zentilos.com", // [status page URL]
+  bookingUrl: "https://calendly.com/zentilos/onboarding-consultation", // [booking link]
   trustBadges: ["ISO 27001", "SOC 2 Type II", "100% India Data Residency"], // [ISO 27001] [SOC 2] [Data residency]
 };
 
@@ -373,7 +373,7 @@ export const SUPPORT_ARTICLES_DATABASE: SupportArticle[] = [
     readTime: "2 min read",
     popular: true,
     steps: [
-      "Navigate to the LattiumHR admin login screen at app.lattiumhr.com.",
+      "Navigate to the Zentilos admin login screen at app.zentilos.com.",
       "Click the 'Forgot Password' link below the password input field.",
       "Enter your registered corporate work email address.",
       "Check your inbox for a secure one-time reset link valid for 15 minutes.",
@@ -419,10 +419,10 @@ export const SUPPORT_ARTICLES_DATABASE: SupportArticle[] = [
     popular: true,
     steps: [
       "Confirm the physical biometric device is connected to LAN/Wi-Fi and pingable.",
-      "Check that the device time is synchronized with the LattiumHR Cloud NTP server.",
+      "Check that the device time is synchronized with the Zentilos Cloud NTP server.",
       "Open Integrations > Hardware Devices and check the 'Last Heartbeat' timestamp.",
       "Ensure employee biometric enrolled IDs match their employee ID in the system.",
-      "Trigger manual synchronization or restart the local Lattium Biometric Agent service.",
+      "Trigger manual synchronization or restart the local Zentilos Biometric Agent service.",
     ],
   },
   {
@@ -433,7 +433,7 @@ export const SUPPORT_ARTICLES_DATABASE: SupportArticle[] = [
     readTime: "2 min read",
     steps: [
       "Employees receive an automated welcome email with a one-time activation link.",
-      "Download the LattiumHR Mobile App on Android or iOS.",
+      "Download the Zentilos Mobile App on Android or iOS.",
       "Log in with corporate SSO or work email credentials.",
       "Navigate to 'My Payslips' to view monthly salary slips with password encryption.",
     ],

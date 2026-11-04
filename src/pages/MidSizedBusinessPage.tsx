@@ -34,7 +34,7 @@ export function MidSizedBusinessPage() {
       ],
       buttonText: "Request a Demo",
       image: "/images/hero-hr-working-pro.jpg",
-      alt: "HR and People Operations Director managing multi-branch workforce in LattiumHR",
+      alt: "HR and People Operations Director managing multi-branch workforce in Zentilos",
     },
     {
       id: "branch-manager",
@@ -139,7 +139,7 @@ export function MidSizedBusinessPage() {
     openDemoModal({
       title: "Request a Mid-Sized Business Demo",
       subtitle:
-        "See how LattiumHR unifies multi-branch workforce management, statutory payroll, and tiered approvals for 50-500 employees.",
+        "See how Zentilos unifies multi-branch workforce management, statutory payroll, and tiered approvals for 50-500 employees.",
       defaultInterest: "Mid-Sized Business Solution",
     });
   };
@@ -162,24 +162,24 @@ export function MidSizedBusinessPage() {
   // Section 7: FAQs tailored for Mid-Sized Organizations
   const faqs: FAQItem[] = [
     {
-      q: "Is LattiumHR built for mid-sized organizations with 50 to 500 employees?",
-      a: "Yes. LattiumHR is specifically engineered for mid-market organizations that have outgrown basic tools and entry-level HR software, but want to avoid the multi-month implementation cycles, heavy IT overhead, and bloated licensing costs of legacy enterprise suites. It delivers multi-branch governance, statutory multi-state payroll, and multi-tier approval chains out of the box.",
+      q: "Is Zentilos built for mid-sized organizations with 50 to 500 employees?",
+      a: "Yes. Zentilos is specifically engineered for mid-market organizations that have outgrown basic tools and entry-level HR software, but want to avoid the multi-month implementation cycles, heavy IT overhead, and bloated licensing costs of legacy enterprise suites. It delivers multi-branch governance, statutory multi-state payroll, and multi-tier approval chains out of the box.",
     },
     {
-      q: "Can LattiumHR handle multiple branches and regional offices with different policies?",
+      q: "Can Zentilos handle multiple branches and regional offices with different policies?",
       a: "Yes. You can manage multiple legal entities, branch offices, and regional warehouses under a single parent account. Each branch can have its own local holiday calendar, shift patterns, biometric terminals, and state-specific statutory tax rules, while company executives maintain a unified consolidated view.",
     },
     {
       q: "How does attendance syncing work with existing biometric hardware across our branches?",
-      a: "LattiumHR connects seamlessly with leading biometric fingerprint and facial recognition hardware via cloud APIs, alongside mobile GPS geofencing and web punch-in. Punches across all physical locations synchronize in real time to the central attendance roster with automated late mark, grace period, and overtime calculations.",
+      a: "Zentilos connects seamlessly with leading biometric fingerprint and facial recognition hardware via cloud APIs, alongside mobile GPS geofencing and web punch-in. Punches across all physical locations synchronize in real time to the central attendance roster with automated late mark, grace period, and overtime calculations.",
     },
     {
-      q: "How does LattiumHR automate multi-level leave, expense, and shift approvals?",
+      q: "How does Zentilos automate multi-level leave, expense, and shift approvals?",
       a: "You can configure multi-tier sequential approval hierarchies (e.g. Line Manager → Department Head → HR Operations) based on department, leave type, or absence duration. Automatic email notifications, mobile push alerts, and delegation rules during manager leave prevent operational bottlenecks.",
     },
     {
-      q: "How does LattiumHR support multi-state statutory compliance and payroll?",
-      a: "LattiumHR calculates statutory deductions including Provident Fund (PF), Employee State Insurance (ESI), state-specific Professional Tax (PT) slabs across Indian states, and TDS/income tax with 100% compliance. Verified attendance, overtime, and Loss of Pay (LOP) are compiled automatically for 1-click bank transfer export.",
+      q: "How does Zentilos support multi-state statutory compliance and payroll?",
+      a: "Zentilos calculates statutory deductions including Provident Fund (PF), Employee State Insurance (ESI), state-specific Professional Tax (PT) slabs across Indian states, and TDS/income tax with 100% compliance. Verified attendance, overtime, and Loss of Pay (LOP) are compiled automatically for 1-click bank transfer export.",
     },
     {
       q: "How long does onboarding and data migration take for 100–300 employees?",
@@ -187,7 +187,7 @@ export function MidSizedBusinessPage() {
     },
   ];
 
-  // Section 4: Why LattiumHR for Mid-Sized Businesses
+  // Section 4: Why Zentilos for Mid-Sized Businesses
   const whyMidSizedCards = [
     {
       id: "multilocation",
@@ -247,8 +247,8 @@ export function MidSizedBusinessPage() {
   return (
     <div className="app-shell inner-page-shell sb-page-wrapper">
       <SEO
-        title="Mid-Sized Business HRMS Software — Solutions for Growing Teams | LattiumHR"
-        description="Scale people operations for your mid-sized business. Manage multi-branch employee records, biometric attendance, multi-tier approvals, and statutory payroll with LattiumHR."
+        title="Mid-Sized Business HRMS Software — Solutions for Growing Teams | Zentilos"
+        description="Scale people operations for your mid-sized business. Manage multi-branch employee records, biometric attendance, multi-tier approvals, and statutory payroll with Zentilos."
         canonicalPath="/solutions/mid-sized-businesses"
       />
 
@@ -977,19 +977,19 @@ export function MidSizedBusinessPage() {
         </section>
 
         {/* =========================================================================
-            SECTION 4 — WHY LATTIUMHR FOR MID-SIZED BUSINESSES (Interactive Process Cards)
+            SECTION 4 — WHY ZENTILOS FOR MID-SIZED BUSINESSES (Interactive Process Cards)
             Matching Small Business Page Reference Layout with Top Notches & Accent Center Card
             ========================================================================= */}
-        <section className="sb-why-lattium-section" aria-labelledby="why-lattium-heading">
+        <section className="sb-why-zentilos-section" aria-labelledby="why-zentilos-heading">
           {/* Subtle background pattern & atmospheric glow */}
-          <div className="sb-why-lattium-backdrop" aria-hidden="true" />
-          <div className="sb-why-lattium-glow" aria-hidden="true" />
+          <div className="sb-why-zentilos-backdrop" aria-hidden="true" />
+          <div className="sb-why-zentilos-glow" aria-hidden="true" />
 
           <div className="container" style={{ position: "relative", zIndex: 2 }}>
             <div className="sb-why-header">
-              <span className="sb-why-eyebrow">✦ WHY LATTIUMHR IS BEST FOR MID-SIZED BUSINESSES ✦</span>
-              <h2 id="why-lattium-heading" className="sb-why-title">
-                What Makes LattiumHR Right for Mid-Sized Businesses?
+              <span className="sb-why-eyebrow">✦ WHY ZENTILOS IS BEST FOR MID-SIZED BUSINESSES ✦</span>
+              <h2 id="why-zentilos-heading" className="sb-why-title">
+                What Makes Zentilos Right for Mid-Sized Businesses?
               </h2>
               <p className="sb-why-subhead">
                 Give your growing enterprise a unified way to manage multi-branch teams, automate complex approval hierarchies, and keep statutory payroll error-free in one connected workspace.
@@ -997,7 +997,7 @@ export function MidSizedBusinessPage() {
             </div>
 
             {/* Process Cards Grid matching Reference Image */}
-            <div className="sb-why-cards-grid" role="region" aria-label="Why LattiumHR Pillars for Mid-Sized Businesses">
+            <div className="sb-why-cards-grid" role="region" aria-label="Why Zentilos Pillars for Mid-Sized Businesses">
               {whyMidSizedCards.map((card) => (
                 <div
                   key={card.id}
@@ -1042,7 +1042,7 @@ export function MidSizedBusinessPage() {
                   “Between 50 and 500 employees, every process is tested. What worked with 20 people in a single room no longer scales across multiple branches and departments.”
                 </p>
                 <p className="sb-manifesto-text">
-                  You shouldn't have to choose between clunky spreadsheets that invite compliance penalties, or bloated legacy systems that take half a year and millions to deploy. LattiumHR gives you exact multi-branch governance, biometric synchronization, and tiered approvals—live in weeks, not quarters.
+                  You shouldn't have to choose between clunky spreadsheets that invite compliance penalties, or bloated legacy systems that take half a year and millions to deploy. Zentilos gives you exact multi-branch governance, biometric synchronization, and tiered approvals—live in weeks, not quarters.
                 </p>
                 <div className="sb-manifesto-punchline">
                   Your team has outgrown the startup stage. Your HR software should empower the enterprise you are becoming.
@@ -1054,7 +1054,7 @@ export function MidSizedBusinessPage() {
                 <div className="sb-manifesto-action-box">
                   <h3 className="sb-manifesto-action-title">Ready to Upgrade Your Operations?</h3>
                   <p className="sb-manifesto-action-desc">
-                    See how LattiumHR unifies multi-branch workforce management, statutory compliance, and payroll for 50–500 staff.
+                    See how Zentilos unifies multi-branch workforce management, statutory compliance, and payroll for 50–500 staff.
                   </p>
                   <div className="sb-manifesto-checklist">
                     <div className="sb-manifesto-check-item">

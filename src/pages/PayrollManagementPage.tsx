@@ -71,7 +71,7 @@ export function PayrollManagementPage() {
       brand: "stripe",
       headline: "Compressed our monthly salary processing from 5 days to 2 hours",
       quote:
-        "Reconciling spreadsheets, biometric logs, and tax deductions used to consume our entire finance team every month end. Lattium automates statutory withholdings and direct bank files with 100% precision.",
+        "Reconciling spreadsheets, biometric logs, and tax deductions used to consume our entire finance team every month end. Zentilos automates statutory withholdings and direct bank files with 100% precision.",
       name: "Freddy Dean",
       role: "Chief Financial Officer, FinTech Horizon",
       avatar: "/images/testi-avatar-1.jpg",
@@ -81,7 +81,7 @@ export function PayrollManagementPage() {
       brand: "zendesk",
       headline: "Passed our annual statutory audit with zero missing PF or TDS records",
       quote:
-        "Lattium's automatic PF ECR and TDS Form 24Q generators completely eliminated our compliance headaches. Everything is pre-calculated, verified by maker-checker workflows, and audit-ready.",
+        "Zentilos's automatic PF ECR and TDS Form 24Q generators completely eliminated our compliance headaches. Everything is pre-calculated, verified by maker-checker workflows, and audit-ready.",
       name: "Sarah Jenkins",
       role: "Head of Finance & Operations, CloudScale",
       avatar: "/images/testi-avatar-2.jpg",
@@ -91,7 +91,7 @@ export function PayrollManagementPage() {
       brand: "notion",
       headline: "Seamless multi-branch salary disbursement across 12 legal entities",
       quote:
-        "We operate retail branches across 8 states with different Professional Tax rates and holiday calendars. Lattium handles entity-specific salary runs and bank batch files effortlessly.",
+        "We operate retail branches across 8 states with different Professional Tax rates and holiday calendars. Zentilos handles entity-specific salary runs and bank batch files effortlessly.",
       name: "Rohan Mehta",
       role: "VP of Finance & Treasury, Apex Retail",
       avatar: "/images/leader-rohan-mehta.jpg",
@@ -122,7 +122,7 @@ export function PayrollManagementPage() {
       imageAlt: "Corporate finance executives and tax specialists reviewing statutory payroll compliance reports",
       title: "Automated Statutory Compliance & Multi-Tier Tax Engine",
       description:
-        "Never fear a tax audit again. Lattium automatically computes Provident Fund (PF), ESIC, Professional Tax (PT), and TDS under both Old and New Tax Regimes with zero manual math.",
+        "Never fear a tax audit again. Zentilos automatically computes Provident Fund (PF), ESIC, Professional Tax (PT), and TDS under both Old and New Tax Regimes with zero manual math.",
       bullets: [
         "Automated PF, ESIC, Professional Tax (PT), and Labour Welfare Fund (LWF) calculations",
         "Built-in TDS tax computation supporting both Old and New Income Tax regimes",
@@ -133,7 +133,7 @@ export function PayrollManagementPage() {
       ],
       callout: {
         role: "Tax & Compliance Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "Statutory Compliant" },
@@ -161,7 +161,7 @@ export function PayrollManagementPage() {
       ],
       callout: {
         role: "Treasury & Banking Specialist",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "< 2 Mins", label: "Payout Execution" },
@@ -189,7 +189,7 @@ export function PayrollManagementPage() {
       ],
       callout: {
         role: "Employee Compensation Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "Instant", label: "Payslip Delivery" },
@@ -270,31 +270,31 @@ export function PayrollManagementPage() {
   // FAQ data
   const faqs = [
     {
-      q: "Does Lattium support both Old and New Income Tax Regimes?",
-      a: "Yes. Lattium has native dual-tax regime calculators built into the engine. Employees can simulate their net take-home salary under both regimes, submit IT declarations, and switch regimes at the start of the financial year with full compliance.",
+      q: "Does Zentilos support both Old and New Income Tax Regimes?",
+      a: "Yes. Zentilos has native dual-tax regime calculators built into the engine. Employees can simulate their net take-home salary under both regimes, submit IT declarations, and switch regimes at the start of the financial year with full compliance.",
     },
     {
-      q: "Can Lattium handle multiple company entities and branch bank accounts?",
+      q: "Can Zentilos handle multiple company entities and branch bank accounts?",
       a: "Yes. You can manage multiple legal entities, branch-specific Professional Tax (PT) slabs across different Indian states, and multiple corporate bank accounts from a single centralized admin dashboard.",
     },
     {
-      q: "How does Lattium generate bank payout files for salary disbursal?",
-      a: "Lattium supports standard encrypted banking file formats (NEFT, RTGS, IMPS) compatible with all major Indian banks including HDFC, ICICI, SBI, Axis, and Yes Bank, as well as direct open banking API salary rails.",
+      q: "How does Zentilos generate bank payout files for salary disbursal?",
+      a: "Zentilos supports standard encrypted banking file formats (NEFT, RTGS, IMPS) compatible with all major Indian banks including HDFC, ICICI, SBI, Axis, and Yes Bank, as well as direct open banking API salary rails.",
     },
     {
       q: "How are Loss of Pay (LOP) and biometric overtime synchronized?",
-      a: "Attendance punch logs, approved leaves, unpaid days, and overtime hours automatically sync in real time from Lattium Attendance and Leave modules directly into the salary calculation engine with zero manual data entry.",
+      a: "Attendance punch logs, approved leaves, unpaid days, and overtime hours automatically sync in real time from Zentilos Attendance and Leave modules directly into the salary calculation engine with zero manual data entry.",
     },
     {
-      q: "Can Lattium generate statutory returns like PF ECR and TDS Form 24Q?",
-      a: "Yes. Lattium automatically compiles and formats monthly EPFO Electronic Challan cum Return (ECR) text files, ESIC monthly return sheets, Professional Tax statements, and quarterly TDS 24Q text files for seamless government filing.",
+      q: "Can Zentilos generate statutory returns like PF ECR and TDS Form 24Q?",
+      a: "Yes. Zentilos automatically compiles and formats monthly EPFO Electronic Challan cum Return (ECR) text files, ESIC monthly return sheets, Professional Tax statements, and quarterly TDS 24Q text files for seamless government filing.",
     },
   ];
 
   return (
     <div className="app-shell inner-page-shell emp-page-wrapper pay-page-wrapper">
       <SEO
-        title="Payroll Management Software — Automated Statutory Payroll & Direct Bank Disbursal | LattiumHR"
+        title="Payroll Management Software — Automated Statutory Payroll & Direct Bank Disbursal | Zentilos"
         description="Run 100% compliant monthly payroll in 2 clicks. Automate statutory deductions (PF, ESIC, PT, TDS), attendance sync, and instant direct bank salary payouts."
         canonicalPath="/features/payroll-management"
       />
@@ -308,8 +308,8 @@ export function PayrollManagementPage() {
         <section className="emp-hero-rich" aria-labelledby="pay-hero-title">
           <div className="container">
             {/* Top Spotlight Tag */}
-            <div className="emp-hero-spotlight-tag" aria-label="Lattium HR">
-              <span>✦ LATTIUM HR ✦</span>
+            <div className="emp-hero-spotlight-tag" aria-label="Zentilos">
+              <span>✦ ZENTILOS ✦</span>
             </div>
 
             {/* Title & Subtext */}
@@ -319,7 +319,7 @@ export function PayrollManagementPage() {
               Management
             </h1>
             <p className="emp-hero-rich-subhead">
-              Ready to eliminate calculation errors, automate statutory filings, and disburse salaries in two clicks with Lattium HR. Get started by booking a demo or signing up for a free trial today.
+              Ready to eliminate calculation errors, automate statutory filings, and disburse salaries in two clicks with Zentilos. Get started by booking a demo or signing up for a free trial today.
             </p>
 
             {/* Dual Pill Action Buttons */}
@@ -331,7 +331,7 @@ export function PayrollManagementPage() {
                   openDemoModal({
                     title: "Book a Payroll Management Demo",
                     subtitle:
-                      "Experience 1-click salary processing, statutory compliance (PF, ESI, TDS), and direct bank disbursals with Lattium HR.",
+                      "Experience 1-click salary processing, statutory compliance (PF, ESI, TDS), and direct bank disbursals with Zentilos.",
                   })
                 }
               >
@@ -693,13 +693,13 @@ export function PayrollManagementPage() {
         </section>
 
         {/* =========================================================================
-            4. WHY LATTIUM IS BEST FOR PAYROLL MANAGEMENT (01 Big Card + 02-05 Small Cards)
+            4. WHY ZENTILOS IS BEST FOR PAYROLL MANAGEMENT (01 Big Card + 02-05 Small Cards)
             ========================================================================= */}
         <section className="emp-why-choose-section" aria-labelledby="why-choose-title">
           <div className="container">
             {/* Centered Section Header */}
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ WHY LATTIUM PAYROLL ✦</span>
+              <span className="emp-eyebrow">✦ WHY ZENTILOS PAYROLL ✦</span>
               <h2 id="why-choose-title" className="emp-section-title">
                 Payroll Automation That Works the Way Your Business Does
               </h2>
@@ -750,7 +750,7 @@ export function PayrollManagementPage() {
 
                 {/* Bottom Narrative Copy */}
                 <p className="emp-big-card-bottom-text">
-                  Unlike standalone payroll software that forces you to copy-paste spreadsheet data from attendance machines and leave trackers, Lattium unifies your entire employee lifecycle into one tamper-proof financial pipeline.
+                  Unlike standalone payroll software that forces you to copy-paste spreadsheet data from attendance machines and leave trackers, Zentilos unifies your entire employee lifecycle into one tamper-proof financial pipeline.
                 </p>
               </div>
 
@@ -898,7 +898,7 @@ export function PayrollManagementPage() {
                       openDemoModal({
                         title: "Schedule a Payroll Management Demo",
                         subtitle:
-                          "Experience 1-click salary processing, statutory tax calculation, and direct bank disbursals with Lattium.",
+                          "Experience 1-click salary processing, statutory tax calculation, and direct bank disbursals with Zentilos.",
                       })
                     }
                   >
@@ -934,7 +934,7 @@ export function PayrollManagementPage() {
                 Payroll Management Is Just the Beginning
               </h2>
               <p className="emp-section-subhead">
-                Connect payroll calculations with related HR workflows across the Lattium platform.
+                Connect payroll calculations with related HR workflows across the Zentilos platform.
               </p>
             </div>
 

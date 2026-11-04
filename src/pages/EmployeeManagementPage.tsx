@@ -69,9 +69,9 @@ export function EmployeeManagementPage() {
     {
       id: 1,
       brand: "stripe",
-      headline: "Lattium centralized our 600+ employee directory in less than a week",
+      headline: "Zentilos centralized our 600+ employee directory in less than a week",
       quote:
-        "Managing scattered spreadsheets, identity proofs, and branch folders used to consume our entire Monday. With Lattium, our employee directory is live, verified, and seamlessly connected.",
+        "Managing scattered spreadsheets, identity proofs, and branch folders used to consume our entire Monday. With Zentilos, our employee directory is live, verified, and seamlessly connected.",
       name: "Freddy Dean",
       role: "Co-Founder, Modern FinTech",
       avatar: "/images/testi-avatar-1.jpg",
@@ -101,7 +101,7 @@ export function EmployeeManagementPage() {
       brand: "hubspot",
       headline: "Audit-ready employee profiles with instant document verification",
       quote:
-        "Lattium gave our compliance auditors instant access to encrypted, verified employee files. We passed our annual statutory audit with zero missing records or compliance flags.",
+        "Zentilos gave our compliance auditors instant access to encrypted, verified employee files. We passed our annual statutory audit with zero missing records or compliance flags.",
       name: "Ananya Kapoor",
       role: "Head of Talent & Compliance, UrbanBite",
       avatar: "/images/leader-ananya-kapoor.jpg",
@@ -238,11 +238,11 @@ export function EmployeeManagementPage() {
     },
     {
       q: "Can we maintain all employee records in one place?",
-      a: "Yes. Lattium provides a unified single source of truth for personal information, emergency contacts, statutory IDs, banking details, department assignments, and job histories across all branches and satellite offices.",
+      a: "Yes. Zentilos provides a unified single source of truth for personal information, emergency contacts, statutory IDs, banking details, department assignments, and job histories across all branches and satellite offices.",
     },
     {
       q: "Can we import employee data in bulk?",
-      a: "Yes. Lattium supports easy bulk Excel and CSV uploads with automated column mapping, format validation, and duplicate detection, allowing you to onboard entire teams and departments in minutes.",
+      a: "Yes. Zentilos supports easy bulk Excel and CSV uploads with automated column mapping, format validation, and duplicate detection, allowing you to onboard entire teams and departments in minutes.",
     },
     {
       q: "Can employee information be accessed based on user roles?",
@@ -250,7 +250,7 @@ export function EmployeeManagementPage() {
     },
     {
       q: "Can employee records connect with attendance and payroll?",
-      a: "Yes. Employee profiles are natively integrated across the Lattium platform, automatically feeding verified employee records into attendance biometric sync, leave quotas, and automated payroll disbursements.",
+      a: "Yes. Employee profiles are natively integrated across the Zentilos platform, automatically feeding verified employee records into attendance biometric sync, leave quotas, and automated payroll disbursements.",
     },
   ];
 
@@ -277,7 +277,7 @@ export function EmployeeManagementPage() {
       ],
       callout: {
         role: "Talent Operations Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "KYC Verified" },
@@ -305,7 +305,7 @@ export function EmployeeManagementPage() {
       ],
       callout: {
         role: "People Operations Specialist",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "65%", label: "Faster Onboarding" },
@@ -333,7 +333,7 @@ export function EmployeeManagementPage() {
       ],
       callout: {
         role: "Compliance & Security Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "AES-256", label: "Cloud Encryption" },
@@ -420,7 +420,7 @@ export function EmployeeManagementPage() {
     <div className="app-shell inner-page-shell emp-page-wrapper">
       <SEO
         title="Employee Management Software — Centralized Employee Records & Profiles"
-        description="Every Employee. Every Detail. One Connected Platform. Keep employee information organized, simplify HR administration and manage the entire employee lifecycle with Lattium."
+        description="Every Employee. Every Detail. One Connected Platform. Keep employee information organized, simplify HR administration and manage the entire employee lifecycle with Zentilos."
         canonicalPath="/features/employee-management"
       />
 
@@ -433,8 +433,8 @@ export function EmployeeManagementPage() {
         <section className="emp-hero-rich" aria-labelledby="emp-hero-title">
           <div className="container">
             {/* Top Spotlight Tag */}
-            <div className="emp-hero-spotlight-tag" aria-label="Lattium HR">
-              <span>✦ LATTIUM HR ✦</span>
+            <div className="emp-hero-spotlight-tag" aria-label="Zentilos">
+              <span>✦ ZENTILOS ✦</span>
             </div>
 
             {/* Title & Subtext */}
@@ -444,7 +444,7 @@ export function EmployeeManagementPage() {
               Management
             </h1>
             <p className="emp-hero-rich-subhead">
-              Ready to attract, engage, and nurture the best talent, all from one place with Lattium HR. It's simple. Get started by booking a demo or signing up for a free trial today.
+              Ready to attract, engage, and nurture the best talent, all from one place with Zentilos. It's simple. Get started by booking a demo or signing up for a free trial today.
             </p>
 
             {/* Dual Pill Action Buttons */}
@@ -455,7 +455,7 @@ export function EmployeeManagementPage() {
                 onClick={() =>
                   openDemoModal({
                     title: 'Book an Employee Management Demo',
-                    subtitle: 'Experience effortless employee records, hierarchy visualization, and document management with Lattium HR.',
+                    subtitle: 'Experience effortless employee records, hierarchy visualization, and document management with Zentilos.',
                   })
                 }
               >
@@ -545,7 +545,7 @@ export function EmployeeManagementPage() {
               <div className="emp-hero-center-photo-card">
                 <img
                   src="/images/hero-hr-working-pro.jpg"
-                  alt="Lattium HR professional managing workforce directory on laptop in modern office"
+                  alt="Zentilos professional managing workforce directory on laptop in modern office"
                   className="emp-hero-center-img"
                   loading="eager"
                 />
@@ -824,13 +824,13 @@ export function EmployeeManagementPage() {
         </section>
 
         {/* =========================================================================
-            3. WHY LATTIUM IS BEST FOR EMPLOYEE MANAGEMENT (01 Big Card + 02-05 Small Cards)
+            3. WHY ZENTILOS IS BEST FOR EMPLOYEE MANAGEMENT (01 Big Card + 02-05 Small Cards)
             ========================================================================= */}
         <section className="emp-why-choose-section" aria-labelledby="why-choose-title">
           <div className="container">
             {/* Centered Section Header */}
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ WHY LATTIUMHR ✦</span>
+              <span className="emp-eyebrow">✦ WHY ZENTILOS ✦</span>
               <h2 id="why-choose-title" className="emp-section-title">
                 Employee Management That Works the Way Your Business Does
               </h2>
@@ -881,7 +881,7 @@ export function EmployeeManagementPage() {
 
                 {/* Bottom Narrative Copy */}
                 <p className="emp-big-card-bottom-text">
-                  Keep employee profiles, job details, documents, and employment history organized in one secure place. Lattium unifies personal bio-data, statutory IDs, job history, and emergency contacts into one tamper-proof master profile with zero duplicates.
+                  Keep employee profiles, job details, documents, and employment history organized in one secure place. Zentilos unifies personal bio-data, statutory IDs, job history, and emergency contacts into one tamper-proof master profile with zero duplicates.
                 </p>
               </div>
 
@@ -1029,7 +1029,7 @@ export function EmployeeManagementPage() {
                       openDemoModal({
                         title: "Schedule an Employee Management Demo",
                         subtitle:
-                          "Experience centralized employee records, verification workflows, and visual org hierarchies with Lattium.",
+                          "Experience centralized employee records, verification workflows, and visual org hierarchies with Zentilos.",
                       })
                     }
                   >
@@ -1065,7 +1065,7 @@ export function EmployeeManagementPage() {
                 Employee Management Is Just the Beginning
               </h2>
               <p className="emp-section-subhead">
-                Connect employee records with related HR workflows across the Lattium platform.
+                Connect employee records with related HR workflows across the Zentilos platform.
               </p>
             </div>
 
@@ -1127,7 +1127,7 @@ export function EmployeeManagementPage() {
             <div className="emp-section-header center">
               <span className="emp-eyebrow">✦ TESTIMONIALS ✦</span>
               <h2 id="testi-title" className="emp-section-title">
-                What People Say About Lattium
+                What People Say About Zentilos
               </h2>
               <p className="emp-section-subhead">
                 Discover how growing organizations simplify workforce operations, accelerate digital onboarding, and maintain 100% record accuracy.
@@ -1218,7 +1218,7 @@ export function EmployeeManagementPage() {
           variant="emp-banner"
           eyebrowBadgeText="Built for Modern Multi-Branch Workforce Operations"
           headlineLine1="Boost Your Workforce"
-          headlineLine2="Potential with LattiumHR"
+          headlineLine2="Potential with Zentilos"
           subheadlineLine1="Focus on team growth while we handle the rest — employee directory, self-service, leave, attendance, document vault, and approvals."
           primaryButtonText="Book a Live Demo"
           secondaryButtonText="Explore Features"

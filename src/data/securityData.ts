@@ -26,7 +26,7 @@ export const SECURITY_SECTIONS: SecuritySection[] = [
     title: "1. Our Security Approach",
     shortTitle: "1. Security Approach",
     paragraphs: [
-      "At LattiumHR, data security is central to everything we design, develop, and operate. Human resources and workforce management platforms process an organization’s most confidential information. We treat this responsibility with rigorous safeguards across our entire architecture.",
+      "At Zentilos, data security is central to everything we design, develop, and operate. Human resources and workforce management platforms process an organization’s most confidential information. We treat this responsibility with rigorous safeguards across our entire architecture.",
       "Our security program is built to protect sensitive HR and workforce data against unauthorized access, loss, tampering, and service disruption. This includes:",
     ],
     bullets: [
@@ -42,7 +42,7 @@ export const SECURITY_SECTIONS: SecuritySection[] = [
     title: "2. Data Hosting & Infrastructure",
     shortTitle: "2. Data Hosting & Infra",
     paragraphs: [
-      "All customer databases and LattiumHR cloud application workloads are hosted exclusively in ISO 27001-certified Tier-III cloud data centers located geographically within India.",
+      "All customer databases and Zentilos cloud application workloads are hosted exclusively in ISO 27001-certified Tier-III cloud data centers located geographically within India.",
       "Hosting our primary databases and backup facilities within domestic Tier-III cloud infrastructure ensures strict compliance with national data residency regulations and provides resilient physical security, dual-powered equipment, and redundant network uplinks.",
     ],
   },
@@ -69,7 +69,7 @@ export const SECURITY_SECTIONS: SecuritySection[] = [
     ],
     bullets: [
       "Production Infrastructure Access: Administrative access to production clusters requires multi-factor authentication (MFA) and is routed exclusively through encrypted bastion hosts with session auditing.",
-      "Product-Level Access Governance: Inside the LattiumHR application, customer administrators configure granular role-based access control (RBAC) to restrict employee, manager, and HR executive permissions [CONFIRM details: e.g., field-level salary masking, IP address whitelisting, session timeout policies].",
+      "Product-Level Access Governance: Inside the Zentilos application, customer administrators configure granular role-based access control (RBAC) to restrict employee, manager, and HR executive permissions [CONFIRM details: e.g., field-level salary masking, IP address whitelisting, session timeout policies].",
     ],
   },
   {
@@ -109,7 +109,7 @@ export const SECURITY_SECTIONS: SecuritySection[] = [
     ],
     bullets: [
       "Customer Ownership: Customers retain complete, exclusive ownership of all employee personal data, payroll records, and internal files processed through our platform.",
-      "Data Processor Role: LattiumHR acts solely as a data processor, handling records exclusively in accordance with your documented operational instructions and service agreements.",
+      "Data Processor Role: Zentilos acts solely as a data processor, handling records exclusively in accordance with your documented operational instructions and service agreements.",
       "Zero Data Selling: We never sell, rent, or disclose your corporate or employee personal data to third-party advertisers, data aggregators, or brokers under any circumstances.",
     ],
     link: {
@@ -137,10 +137,10 @@ export const SECURITY_SECTIONS: SecuritySection[] = [
     shortTitle: "9. Report Vulnerability",
     paragraphs: [
       "We value the contributions of the independent security research community and encourage responsible disclosure of potential vulnerabilities.",
-      "If you believe you have discovered a security flaw, vulnerability, or exposure within any LattiumHR service or endpoint, please contact our security team at:",
+      "If you believe you have discovered a security flaw, vulnerability, or exposure within any Zentilos service or endpoint, please contact our security team at:",
     ],
     bullets: [
-      "Security Contact: [CONFIRM security email, e.g., security@lattiumhr.com]",
+      "Security Contact: [CONFIRM security email, e.g., security@zentilos.com]",
       "Responsible Disclosure: Please provide detailed reproduction steps, avoid degrading service availability, and allow us reasonable time to investigate and remediate the issue prior to public disclosure.",
     ],
   },

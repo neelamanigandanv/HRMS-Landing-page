@@ -28,7 +28,7 @@ export default function CultureValuesSection({ onContactTalent }: CultureValuesS
           </h2>
           <p className="careers-section-subtitle">
             The shared standards and operating values that guide every architecture review,
-            product feature, and customer interaction at LattiumHR.
+            product feature, and customer interaction at Zentilos.
           </p>
         </div>
 

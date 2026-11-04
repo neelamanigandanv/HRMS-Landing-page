@@ -14,7 +14,7 @@ export function ThankYouPage() {
     <PageLayout breadcrumbs={breadcrumbs} hideCTA>
       <SEO
         title="Thank You | Demo Request Confirmed"
-        description="Your LattiumHR demo request has been received. Our product specialist will be in touch shortly."
+        description="Your Zentilos demo request has been received. Our product specialist will be in touch shortly."
         canonicalPath="/thank-you"
       />
 
@@ -55,7 +55,7 @@ export function ThankYouPage() {
               <>
                 <h1>Demo Consultation Center</h1>
                 <p className="thank-you-intro">
-                  Thank you for your interest in LattiumHR. If you haven’t yet booked your session, you
+                  Thank you for your interest in Zentilos. If you haven’t yet booked your session, you
                   can schedule a walkthrough anytime.
                 </p>
               </>

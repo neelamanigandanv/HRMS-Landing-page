@@ -183,7 +183,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt: "Gross-to-net salary processing, automated tax withholdings, statutory EPF/ESI/PT compliance, and zero-penalty audit workflows.",
     badge: "Essential",
     accentColor: "#f43f5e",
-    author: "LattiumHR Payroll Advisory",
+    author: "Zentilos Payroll Advisory",
   },
   {
     id: "leave-detail",
@@ -194,7 +194,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt: "Eliminate attendance leakages, configure sandwich rules, manage statutory accruals, and automate multi-tier approval chains.",
     badge: "Operations",
     accentColor: "#7b2958",
-    author: "LattiumHR People Team",
+    author: "Zentilos People Team",
   },
   {
     id: "recruitment-detail",
@@ -205,7 +205,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt: "End-to-end talent acquisition from candidate pipelines and scorecard evaluations to multi-state digital offer letter rollouts.",
     badge: "Talent Ops",
     accentColor: "#b43f70",
-    author: "LattiumHR Talent Practice",
+    author: "Zentilos Talent Practice",
   },
   {
     id: "expense-detail",
@@ -216,7 +216,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt: "Corporate expense governance with OCR receipt capture, per-diem rules, mileage tracking, and 1-click payroll reimbursement.",
     badge: "Finance Ops",
     accentColor: "#10b981",
-    author: "LattiumHR Finance Advisory",
+    author: "Zentilos Finance Advisory",
   },
   {
     id: "attendance-detail",
@@ -227,7 +227,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt: "Biometric clock-in sync, 24/7 rotational shifts, GPS geofenced mobile check-ins, and automated overtime and LOP calculations.",
     badge: "Workforce",
     accentColor: "#0284c7",
-    author: "LattiumHR Workforce Operations",
+    author: "Zentilos Workforce Operations",
   },
   {
     id: "statutory-detail",
@@ -238,7 +238,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt: "Master roadmap of federal and state statutory labor regulations, tax deadlines, Gratuity, Bonus Act, and audit prep.",
     badge: "Legal & Audit",
     accentColor: "#ea580c",
-    author: "LattiumHR Legal Compliance",
+    author: "Zentilos Legal Compliance",
   },
   {
     id: "onboarding-detail",
@@ -249,7 +249,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt: "Create an exceptional first 90 days with digital self-onboarding, asset provisioning, KYC vaults, and 30-60-90 day milestone plans.",
     badge: "Culture & HR",
     accentColor: "#8b5cf6",
-    author: "LattiumHR People Operations",
+    author: "Zentilos People Operations",
   },
   {
     id: "performance-detail",
@@ -260,7 +260,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt: "Continuous 360-degree feedback, quarterly OKR tracking, 9-box calibration reviews, and merit compensation linking.",
     badge: "Growth",
     accentColor: "#7b2958",
-    author: "LattiumHR Organizational Design",
+    author: "Zentilos Organizational Design",
   },
   {
     id: "multibranch-detail",
@@ -271,7 +271,7 @@ export const allGuidesList: GuideListItem[] = [
     excerpt: "Centralize HR, shift policies, state PT compliance, and payroll for 10+ branch locations without losing local control.",
     badge: "Governance",
     accentColor: "#0d9488",
-    author: "LattiumHR Multi-Entity Practice",
+    author: "Zentilos Multi-Entity Practice",
   },
 ];
 
@@ -322,7 +322,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     badge: "Statutory Masterclass",
     accentColor: "#7b2958",
     author: {
-      name: "LattiumHR Payroll Advisory",
+      name: "Zentilos Payroll Advisory",
       role: "Reviewed by Certified Statutory Compliance Auditors",
       avatar: "LT",
     },
@@ -458,7 +458,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "6. Maker-Checker Approval Governance",
         paragraphs: [
           "Corporate finance governance demands separation of duties before funds are disbursed. A single individual should never have unilateral authority to both calculate and disburse payroll.",
-          "In LattiumHR, the HR Manager prepares and validates the salary register (Maker), while the Finance Director or CEO performs multi-point variance audits before executing bank transfers (Checker).",
+          "In Zentilos, the HR Manager prepares and validates the salary register (Maker), while the Finance Director or CEO performs multi-point variance audits before executing bank transfers (Checker).",
         ],
         callout: {
           title: "Governance Safety",
@@ -531,7 +531,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
       {
         id: "faq-2",
         q: "How does multi-state Professional Tax differ across regional branches?",
-        a: "Each Indian state enforces distinct salary threshold slabs and filing cycles. For example, Maharashtra levies ₹200/mo (₹300 in Feb), Karnataka levies ₹200/mo above ₹15,000, while Delhi levies no PT at all. LattiumHR auto-applies state slabs based on employee office location.",
+        a: "Each Indian state enforces distinct salary threshold slabs and filing cycles. For example, Maharashtra levies ₹200/mo (₹300 in Feb), Karnataka levies ₹200/mo above ₹15,000, while Delhi levies no PT at all. Zentilos auto-applies state slabs based on employee office location.",
       },
       {
         id: "faq-3",
@@ -556,7 +556,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     badge: "Leakage Prevention",
     accentColor: "#b43f70",
     author: {
-      name: "LattiumHR People Operations Advisory",
+      name: "Zentilos People Operations Advisory",
       role: "Reviewed by Senior Labour Law Compliance Specialists",
       avatar: "LT",
     },
@@ -641,7 +641,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         ],
         callout: {
           title: "Policy Balance",
-          text: "Configuring flexible policy rules inside LattiumHR allows organizations to enforce rigor on core operations while maintaining progressive perks for knowledge workers.",
+          text: "Configuring flexible policy rules inside Zentilos allows organizations to enforce rigor on core operations while maintaining progressive perks for knowledge workers.",
         },
       },
       {
@@ -684,7 +684,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "8. Biometric & Payroll Sync vs Spreadsheets",
         paragraphs: [
           "Manual leave spreadsheets disconnect time-off approvals from physical biometric turnstiles, resulting in duplicate entries and unrecorded absences.",
-          "In LattiumHR, an approved leave immediately updates the biometric attendance roster, marking the day as 'Authorized Paid Absence' and ensuring zero false loss of pay (LOP) deductions during payroll.",
+          "In Zentilos, an approved leave immediately updates the biometric attendance roster, marking the day as 'Authorized Paid Absence' and ensuring zero false loss of pay (LOP) deductions during payroll.",
         ],
         callout: {
           title: "Zero Leakage",
@@ -759,7 +759,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     badge: "Workforce Intelligence",
     accentColor: "#0284c7",
     author: {
-      name: "LattiumHR Workforce Advisory",
+      name: "Zentilos Workforce Advisory",
       role: "Reviewed by Operations & Industrial Relations Experts",
       avatar: "LT",
     },
@@ -826,7 +826,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         },
         callout: {
           title: "Midnight Crossings",
-          text: "LattiumHR automatically detects shifts crossing midnight, attributing total shift hours and night allowances to the initiating shift date without breaking daily timesheets.",
+          text: "Zentilos automatically detects shifts crossing midnight, attributing total shift hours and night allowances to the initiating shift date without breaking daily timesheets.",
         },
       },
       {
@@ -862,7 +862,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         },
         callout: {
           title: "Offline Reliability",
-          text: "LattiumHR biometric hardware devices store up to 100,000 punches locally during internet outages and auto-upload the instant network connectivity is restored.",
+          text: "Zentilos biometric hardware devices store up to 100,000 punches locally during internet outages and auto-upload the instant network connectivity is restored.",
         },
       },
       {
@@ -898,7 +898,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
           "High Administrative Drag: HR personnel spend 3 to 6 working days each month manually cross-referencing punch times with leave slips.",
           "Undetected Overtime Errors: Misplaced formulas accidentally pay overtime at flat rates or omit night shift premiums, exposing the company to employee grievances.",
           "Delayed Payroll Runs: Reconciliation disputes hold up salary disbursements, causing company-wide frustration.",
-          "The LattiumHR Advantage: Real-time clock-in events continuously calculate work hours and LOP deductions, reducing month-end close to a single button click.",
+          "The Zentilos Advantage: Real-time clock-in events continuously calculate work hours and LOP deductions, reducing month-end close to a single button click.",
         ],
         callout: {
           title: "Direct ROI",
@@ -913,7 +913,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         ],
         callout: {
           title: "Need Hardware Integration?",
-          text: "LattiumHR supports plug-and-play API integration with ZKTeco, Essl, Mantra, Matrix, and Hikvision biometric devices.",
+          text: "Zentilos supports plug-and-play API integration with ZKTeco, Essl, Mantra, Matrix, and Hikvision biometric devices.",
         },
       },
     ],
@@ -933,7 +933,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
       {
         id: "faq-0",
         q: "How does biometric machine synchronization work with cloud HRMS?",
-        a: "LattiumHR utilizes lightweight IoT middleware installed on your local network or direct cloud-connected biometric turnstiles. When an employee clocks in, the punch timestamp and employee ID are encrypted and transmitted to the cloud HRMS within 2 seconds.",
+        a: "Zentilos utilizes lightweight IoT middleware installed on your local network or direct cloud-connected biometric turnstiles. When an employee clocks in, the punch timestamp and employee ID are encrypted and transmitted to the cloud HRMS within 2 seconds.",
       },
       {
         id: "faq-1",
@@ -943,12 +943,12 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
       {
         id: "faq-2",
         q: "How does GPS geofencing protect field employee privacy?",
-        a: "LattiumHR geofencing only checks the employee's location coordinate at the exact instant they press 'Clock In' or 'Clock Out'. It does not track continuous GPS location throughout the day, preserving battery life and respecting personal privacy.",
+        a: "Zentilos geofencing only checks the employee's location coordinate at the exact instant they press 'Clock In' or 'Clock Out'. It does not track continuous GPS location throughout the day, preserving battery life and respecting personal privacy.",
       },
       {
         id: "faq-3",
         q: "How are night shift hours credited when a shift crosses midnight?",
-        a: "LattiumHR automatically detects shifts spanning two calendar days (e.g. 10 PM to 6 AM). The entire shift and applicable night premiums are attributed to the originating shift date, preventing timesheet fragmentation.",
+        a: "Zentilos automatically detects shifts spanning two calendar days (e.g. 10 PM to 6 AM). The entire shift and applicable night premiums are attributed to the originating shift date, preventing timesheet fragmentation.",
       },
     ],
     sidebarCTA: {
@@ -968,7 +968,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     badge: "Talent Velocity",
     accentColor: "#b43f70",
     author: {
-      name: "LattiumHR Talent Practice",
+      name: "Zentilos Talent Practice",
       role: "Reviewed by Executive Talent Acquisition Leaders",
       avatar: "LT",
     },
@@ -1073,7 +1073,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "6. Pre-Boarding Engagement & Drop-off Prevention",
         paragraphs: [
           "The 30-to-90 day notice period is the danger zone where candidates receive competing offers. Modern HRMS keeps candidates warmly engaged:",
-          "Through LattiumHR's candidate portal, new hires complete digital KYC verification, choose company laptop specifications, and receive welcome notes from their team buddy before Day 1.",
+          "Through Zentilos's candidate portal, new hires complete digital KYC verification, choose company laptop specifications, and receive welcome notes from their team buddy before Day 1.",
         ],
         callout: {
           title: "Ghosting Shield",
@@ -1096,7 +1096,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "8. Disconnected Job Portals vs Unified ATS",
         paragraphs: [
           "Managing candidate resumes across disjointed inbox folders, WhatsApp messages, and static spreadsheets causes data chaos and compliance risks.",
-          "LattiumHR's unified talent engine links job postings, candidate pipelines, scorecard feedback, offer rollouts, and employee onboarding into one seamless flow.",
+          "Zentilos's unified talent engine links job postings, candidate pipelines, scorecard feedback, offer rollouts, and employee onboarding into one seamless flow.",
         ],
         callout: {
           title: "Single Source of Truth",
@@ -1111,7 +1111,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         ],
         callout: {
           title: "Scale Your Hiring",
-          text: "Schedule a walkthrough to see how LattiumHR ATS streamlines high-velocity hiring for fast-growing mid-market companies.",
+          text: "Schedule a walkthrough to see how Zentilos ATS streamlines high-velocity hiring for fast-growing mid-market companies.",
         },
       },
     ],
@@ -1166,7 +1166,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     badge: "People & Culture",
     accentColor: "#8b5cf6",
     author: {
-      name: "LattiumHR People Operations",
+      name: "Zentilos People Operations",
       role: "Reviewed by Employee Experience Strategists",
       avatar: "LT",
     },
@@ -1273,7 +1273,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         ],
         callout: {
           title: "Goal Alignment",
-          text: "Documenting milestones in LattiumHR gives managers a shared, objective scorecard during the 90-day probation review.",
+          text: "Documenting milestones in Zentilos gives managers a shared, objective scorecard during the 90-day probation review.",
         },
       },
       {
@@ -1281,7 +1281,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "5. Digital KYC Document Vault & IT Assets",
         paragraphs: [
           "Collecting sensitive employee documents through unencrypted email threads creates serious privacy and compliance hazards.",
-          "In LattiumHR, new hires upload documents into an encrypted self-service vault where HR runs automated verification against government databases (NSDL PAN, UIDAI Aadhaar, EPFO UAN).",
+          "In Zentilos, new hires upload documents into an encrypted self-service vault where HR runs automated verification against government databases (NSDL PAN, UIDAI Aadhaar, EPFO UAN).",
         ],
         callout: {
           title: "Asset Handover",
@@ -1293,7 +1293,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "6. Cross-Departmental Onboarding Handoffs",
         paragraphs: [
           "Onboarding is a team sport involving HR, IT, Finance, and direct managers. Automated task dependencies ensure nobody drops the baton:",
-          "When HR marks 'Offer Accepted', LattiumHR automatically triggers an IT ticket to ship equipment, prompts Finance to register bank accounts for payroll, and alerts the manager to designate a buddy.",
+          "When HR marks 'Offer Accepted', Zentilos automatically triggers an IT ticket to ship equipment, prompts Finance to register bank accounts for payroll, and alerts the manager to designate a buddy.",
         ],
         callout: {
           title: "Zero Drops",
@@ -1331,7 +1331,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         ],
         callout: {
           title: "Elevate Your Onboarding",
-          text: "See how LattiumHR can automate new hire workflows for your distributed team.",
+          text: "See how Zentilos can automate new hire workflows for your distributed team.",
         },
       },
     ],
@@ -1386,7 +1386,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     badge: "Finance Ops",
     accentColor: "#10b981",
     author: {
-      name: "LattiumHR Finance Advisory",
+      name: "Zentilos Finance Advisory",
       role: "Reviewed by Corporate Treasurers & Tax Auditors",
       avatar: "LT",
     },
@@ -1461,7 +1461,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "4. Per-Diem, Mileage & Travel Policy Rules",
         paragraphs: [
           "Replacing tedious individual meal receipt tracking with standardized daily per-diem allowances simplifies travel administration:",
-          "LattiumHR automatically adjusts per-diem rates based on city tiers (e.g. Mumbai/Bengaluru vs. tier-3 industrial hubs) without requiring employees to retain minor tea and coffee receipts.",
+          "Zentilos automatically adjusts per-diem rates based on city tiers (e.g. Mumbai/Bengaluru vs. tier-3 industrial hubs) without requiring employees to retain minor tea and coffee receipts.",
         ],
         callout: {
           title: "Fair Allowance",
@@ -1473,7 +1473,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "5. OCR Optical Scanning & Fraud Prevention",
         paragraphs: [
           "Mobile OCR (Optical Character Recognition) extracts merchant names, invoice dates, GST numbers, and total amounts directly from phone camera photos:",
-          "LattiumHR's AI fraud guard automatically detects duplicate receipt uploads, altered invoice totals, and purchases made on non-working days, alerting managers prior to approval.",
+          "Zentilos's AI fraud guard automatically detects duplicate receipt uploads, altered invoice totals, and purchases made on non-working days, alerting managers prior to approval.",
         ],
         callout: {
           title: "Fraud Prevention",
@@ -1523,7 +1523,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         ],
         callout: {
           title: "Take Control of Spending",
-          text: "Discover how LattiumHR unites travel claims, mileage tracking, and payroll disbursements into one clean interface.",
+          text: "Discover how Zentilos unites travel claims, mileage tracking, and payroll disbursements into one clean interface.",
         },
       },
     ],
@@ -1543,12 +1543,12 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
       {
         id: "faq-0",
         q: "Can employee business expense claims be reimbursed directly with monthly payroll?",
-        a: "Yes. LattiumHR integrates expense management directly with the payroll engine. Approved reimbursements appear as non-taxable additions on the monthly payslip and are disbursed in the same bank transfer batch, avoiding separate transaction charges.",
+        a: "Yes. Zentilos integrates expense management directly with the payroll engine. Approved reimbursements appear as non-taxable additions on the monthly payslip and are disbursed in the same bank transfer batch, avoiding separate transaction charges.",
       },
       {
         id: "faq-1",
         q: "How does OCR receipt scanning prevent duplicate or fraudulent claims?",
-        a: "LattiumHR OCR extracts transaction timestamps, merchant names, invoice numbers, and totals from receipt photos. The system performs cryptographic image hashing and checks against historical records to immediately block duplicate submissions.",
+        a: "Zentilos OCR extracts transaction timestamps, merchant names, invoice numbers, and totals from receipt photos. The system performs cryptographic image hashing and checks against historical records to immediately block duplicate submissions.",
       },
       {
         id: "faq-2",
@@ -1578,7 +1578,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     badge: "Audit Protection",
     accentColor: "#ea580c",
     author: {
-      name: "LattiumHR Legal Compliance",
+      name: "Zentilos Legal Compliance",
       role: "Reviewed by Certified Labour Law Advocates",
       avatar: "LT",
     },
@@ -1625,7 +1625,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         ],
         callout: {
           title: "Zero-Penalty Assurance",
-          text: "Automating payroll deductions and statutory file generation inside LattiumHR guarantees a 100% on-time filing track record with zero audit fines.",
+          text: "Automating payroll deductions and statutory file generation inside Zentilos guarantees a 100% on-time filing track record with zero audit fines.",
         },
       },
       {
@@ -1665,7 +1665,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         },
         callout: {
           title: "Calendar Reminder",
-          text: "LattiumHR automatically triggers in-app reminders and pre-generates statutory challans 5 days before statutory deadlines.",
+          text: "Zentilos automatically triggers in-app reminders and pre-generates statutory challans 5 days before statutory deadlines.",
         },
       },
       {
@@ -1684,7 +1684,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         id: "inspection-registers",
         title: "6. Statutory Registers & Inspection Readiness",
         paragraphs: [
-          "Labor enforcement officers routinely inspect formal workplace registers. LattiumHR generates digital, download-ready registers:",
+          "Labor enforcement officers routinely inspect formal workplace registers. Zentilos generates digital, download-ready registers:",
         ],
         bullets: [
           "Form A: Employee Register (Personal records, PAN, UAN, date of joining, designation).",
@@ -1713,11 +1713,11 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "8. Manual Compliance vs Automated HRMS",
         paragraphs: [
           "Calculating multi-state PT slabs and preparing EPFO ECR text files by hand in Excel is an invitation to costly typographical errors.",
-          "LattiumHR automates deduction rules, generates verified ECR text files, and keeps state tax rates continuously updated.",
+          "Zentilos automates deduction rules, generates verified ECR text files, and keeps state tax rates continuously updated.",
         ],
         callout: {
           title: "Peace of Mind",
-          text: "Over 500 organizations rely on LattiumHR's statutory engine to maintain a 100% clean audit compliance record year after year.",
+          text: "Over 500 organizations rely on Zentilos's statutory engine to maintain a 100% clean audit compliance record year after year.",
         },
       },
       {
@@ -1783,7 +1783,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     badge: "Organizational Growth",
     accentColor: "#7b2958",
     author: {
-      name: "LattiumHR Organizational Design",
+      name: "Zentilos Organizational Design",
       role: "Reviewed by Talent Strategy & Compensation Leaders",
       avatar: "LT",
     },
@@ -1912,7 +1912,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "8. Spreadsheet Appraisals vs Integrated HRMS",
         paragraphs: [
           "Circulating appraisal forms as emailed Word documents or shared spreadsheets causes massive privacy breaches and lost review notes.",
-          "LattiumHR provides a secure, role-governed environment where ratings, feedback, and merit increases sync seamlessly into payroll.",
+          "Zentilos provides a secure, role-governed environment where ratings, feedback, and merit increases sync seamlessly into payroll.",
         ],
         callout: {
           title: "End-to-End Synergy",
@@ -1927,7 +1927,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         ],
         callout: {
           title: "Drive High Performance",
-          text: "Learn how LattiumHR empowers high-growth companies with agile OKRs, continuous feedback, and automated merit reviews.",
+          text: "Learn how Zentilos empowers high-growth companies with agile OKRs, continuous feedback, and automated merit reviews.",
         },
       },
     ],
@@ -1982,7 +1982,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     badge: "Enterprise Governance",
     accentColor: "#0d9488",
     author: {
-      name: "LattiumHR Multi-Entity Practice",
+      name: "Zentilos Multi-Entity Practice",
       role: "Reviewed by Enterprise HR Architects",
       avatar: "LT",
     },
@@ -2048,7 +2048,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         },
         callout: {
           title: "Hierarchy Flexibility",
-          text: "LattiumHR supports unlimited subsidiary companies, branches, and cost centers under one single enterprise subscription.",
+          text: "Zentilos supports unlimited subsidiary companies, branches, and cost centers under one single enterprise subscription.",
         },
       },
       {
@@ -2065,7 +2065,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         ],
         callout: {
           title: "Automated Tax Slabs",
-          text: "LattiumHR dynamically updates state PT and minimum wage slabs whenever regional state governments issue gazette revisions.",
+          text: "Zentilos dynamically updates state PT and minimum wage slabs whenever regional state governments issue gazette revisions.",
         },
       },
       {
@@ -2084,7 +2084,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         id: "transfer-workflows",
         title: "6. Inter-Branch Transfers & Centralized Reporting",
         paragraphs: [
-          "When an employee transfers between branches, LattiumHR smoothly transitions their profile:",
+          "When an employee transfers between branches, Zentilos smoothly transitions their profile:",
           "Reporting hierarchies, applicable state Professional Tax slabs, branch holiday calendars, and asset custody transfer automatically on the effective date without requiring record re-creation.",
         ],
         callout: {
@@ -2108,7 +2108,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
         title: "8. Disconnected Branches vs Centralized HRMS",
         paragraphs: [
           "Managing branches through disparate local payroll software or shared Google sheets results in compliance chaos and delayed reporting.",
-          "LattiumHR provides executive leadership with real-time consolidated reports on headcount, overtime spending, and leave trends across all nationwide branches.",
+          "Zentilos provides executive leadership with real-time consolidated reports on headcount, overtime spending, and leave trends across all nationwide branches.",
         ],
         callout: {
           title: "Executive Clarity",
@@ -2143,12 +2143,12 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
       {
         id: "faq-0",
         q: "How do we manage multiple state registrations (Shops & Establishments) in one HRMS?",
-        a: "LattiumHR enables multi-entity architecture where each branch can store its distinct Shops & Establishments registration number, local factory license, and state Professional Tax ID. Reports and payslips automatically display the specific entity credentials corresponding to each employee's branch location.",
+        a: "Zentilos enables multi-entity architecture where each branch can store its distinct Shops & Establishments registration number, local factory license, and state Professional Tax ID. Reports and payslips automatically display the specific entity credentials corresponding to each employee's branch location.",
       },
       {
         id: "faq-1",
         q: "Can different branches have separate holiday calendars and weekend shift rosters?",
-        a: "Yes. LattiumHR allows you to configure customized holiday lists per branch or region. For instance, staff at the Chennai office can observe Pongal while Mumbai staff observe Ganesh Chaturthi, while all branches share the mandatory three national public holidays.",
+        a: "Yes. Zentilos allows you to configure customized holiday lists per branch or region. For instance, staff at the Chennai office can observe Pongal while Mumbai staff observe Ganesh Chaturthi, while all branches share the mandatory three national public holidays.",
       },
       {
         id: "faq-2",
@@ -2158,7 +2158,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
       {
         id: "faq-3",
         q: "How are inter-branch employee transfers and asset relocations tracked?",
-        a: "LattiumHR features an automated transfer workflow. When an employee relocates, their profile updates with the new branch's reporting manager, state PT slab, and holiday calendar on the effective date. Physical hardware asset custody transfers are digitally acknowledged by the receiving branch.",
+        a: "Zentilos features an automated transfer workflow. When an employee relocates, their profile updates with the new branch's reporting manager, state PT slab, and holiday calendar on the effective date. Physical hardware asset custody transfers are digitally acknowledged by the receiving branch.",
       },
     ],
     sidebarCTA: {

@@ -71,7 +71,7 @@ export function LeaveManagementPage() {
       brand: "stripe",
       headline: "Cut leave approval turnaround from 4 days to under 2 hours",
       quote:
-        "Tracking paper leave forms and email approvals across our 500+ employee team was chaotic. With Lattium's mobile app and Slack integration, managers approve requests in seconds while team calendars update automatically.",
+        "Tracking paper leave forms and email approvals across our 500+ employee team was chaotic. With Zentilos's mobile app and Slack integration, managers approve requests in seconds while team calendars update automatically.",
       name: "Freddy Dean",
       role: "Head of People Operations, FinTech Horizon",
       avatar: "/images/testi-avatar-1.jpg",
@@ -81,7 +81,7 @@ export function LeaveManagementPage() {
       brand: "zendesk",
       headline: "Zero payroll calculation errors from unrecorded sick days or LOP",
       quote:
-        "Pre-payroll reconciliation used to take our HR team three full days every month. Lattium's automatic Loss of Pay (LOP) synchronization directly feeds approved time off into salary slips with 100% precision.",
+        "Pre-payroll reconciliation used to take our HR team three full days every month. Zentilos's automatic Loss of Pay (LOP) synchronization directly feeds approved time off into salary slips with 100% precision.",
       name: "Sarah Jenkins",
       role: "VP of HR, CloudScale Systems",
       avatar: "/images/testi-avatar-2.jpg",
@@ -91,7 +91,7 @@ export function LeaveManagementPage() {
       brand: "notion",
       headline: "Collision alerts stopped understaffing across our retail branches",
       quote:
-        "During major festival seasons, multiple department specialists used to take off simultaneously. Lattium's real-time clash detection alerts managers before approvals, protecting our critical customer support coverage.",
+        "During major festival seasons, multiple department specialists used to take off simultaneously. Zentilos's real-time clash detection alerts managers before approvals, protecting our critical customer support coverage.",
       name: "Rohan Mehta",
       role: "Chief Operating Officer, Apex Retail",
       avatar: "/images/leader-rohan-mehta.jpg",
@@ -101,7 +101,7 @@ export function LeaveManagementPage() {
       brand: "hubspot",
       headline: "Custom regional holiday calendars for all 7 of our state offices",
       quote:
-        "Operating across multiple Indian states with different statutory festival lists used to cause massive compliance confusion. Lattium lets us assign branch-specific holiday calendars with zero manual maintenance.",
+        "Operating across multiple Indian states with different statutory festival lists used to cause massive compliance confusion. Zentilos lets us assign branch-specific holiday calendars with zero manual maintenance.",
       name: "Ananya Kapoor",
       role: "Director of People & Culture, UrbanBite",
       avatar: "/images/leader-ananya-kapoor.jpg",
@@ -133,7 +133,7 @@ export function LeaveManagementPage() {
       ],
       callout: {
         role: "Workforce Policy Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "Statutory Compliant" },
@@ -161,7 +161,7 @@ export function LeaveManagementPage() {
       ],
       callout: {
         role: "Employee Experience Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "< 24 hrs", label: "Approval Turnaround" },
@@ -189,7 +189,7 @@ export function LeaveManagementPage() {
       ],
       callout: {
         role: "Payroll & Compliance Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "1-Click", label: "Payroll Integration" },
@@ -272,16 +272,16 @@ export function LeaveManagementPage() {
   // FAQ data
   const faqs = [
     {
-      q: "How does Lattium handle pro-rated leave accruals for new hires?",
-      a: "When a new employee joins mid-month or mid-year, Lattium automatically calculates their pro-rated leave entitlement based on company policy rules and start date, eliminating manual spreadsheet balance tracking.",
+      q: "How does Zentilos handle pro-rated leave accruals for new hires?",
+      a: "When a new employee joins mid-month or mid-year, Zentilos automatically calculates their pro-rated leave entitlement based on company policy rules and start date, eliminating manual spreadsheet balance tracking.",
     },
     {
       q: "Can we configure different leave policies for different branches and entities?",
-      a: "Yes. Lattium supports multi-entity and multi-branch configurations. You can assign branch-specific regional holiday calendars, distinct casual/earned leave quotas, and state-specific statutory policies.",
+      a: "Yes. Zentilos supports multi-entity and multi-branch configurations. You can assign branch-specific regional holiday calendars, distinct casual/earned leave quotas, and state-specific statutory policies.",
     },
     {
       q: "How does team collision and clash detection prevent understaffing?",
-      a: "When an employee submits a leave request, Lattium automatically checks the team's schedule. If approving the request would cause the on-duty headcount to drop below the minimum required threshold, managers receive an immediate conflict warning.",
+      a: "When an employee submits a leave request, Zentilos automatically checks the team's schedule. If approving the request would cause the on-duty headcount to drop below the minimum required threshold, managers receive an immediate conflict warning.",
     },
     {
       q: "Can employees request half-day leaves or compensatory off (Comp-Off)?",
@@ -289,14 +289,14 @@ export function LeaveManagementPage() {
     },
     {
       q: "How does approved leave data feed into monthly payroll calculations?",
-      a: "Approved leaves and unapproved absences sync directly into Lattium Payroll. The engine automatically computes Loss of Pay (LOP) deductions, paid leave credits, and year-end leave encashments without manual data transfers.",
+      a: "Approved leaves and unapproved absences sync directly into Zentilos Payroll. The engine automatically computes Loss of Pay (LOP) deductions, paid leave credits, and year-end leave encashments without manual data transfers.",
     },
   ];
 
   return (
     <div className="app-shell inner-page-shell emp-page-wrapper leave-page-wrapper">
       <SEO
-        title="Leave Management System — Automated Leave Policies & Approvals | LattiumHR"
+        title="Leave Management System — Automated Leave Policies & Approvals | Zentilos"
         description="Streamline employee time-off requests, automate complex leave policies, prevent team coverage collisions, and sync approved leaves with attendance and payroll."
         canonicalPath="/features/leave-management"
       />
@@ -310,8 +310,8 @@ export function LeaveManagementPage() {
         <section className="emp-hero-rich" aria-labelledby="leave-hero-title">
           <div className="container">
             {/* Top Spotlight Tag */}
-            <div className="emp-hero-spotlight-tag" aria-label="Lattium HR">
-              <span>✦ LATTIUM HR ✦</span>
+            <div className="emp-hero-spotlight-tag" aria-label="Zentilos">
+              <span>✦ ZENTILOS ✦</span>
             </div>
 
             {/* Title & Subtext */}
@@ -321,7 +321,7 @@ export function LeaveManagementPage() {
               Management
             </h1>
             <p className="emp-hero-rich-subhead">
-              Ready to eliminate balance disputes, automate multi-tier approvals, and sync time off directly into payroll with Lattium HR. Get started by booking a demo or signing up for a free trial today.
+              Ready to eliminate balance disputes, automate multi-tier approvals, and sync time off directly into payroll with Zentilos. Get started by booking a demo or signing up for a free trial today.
             </p>
 
             {/* Dual Pill Action Buttons */}
@@ -333,7 +333,7 @@ export function LeaveManagementPage() {
                   openDemoModal({
                     title: "Book a Leave Management Demo",
                     subtitle:
-                      "Experience automated accruals, team collision alerts, and 1-click payroll sync with Lattium HR.",
+                      "Experience automated accruals, team collision alerts, and 1-click payroll sync with Zentilos.",
                   })
                 }
               >
@@ -695,13 +695,13 @@ export function LeaveManagementPage() {
         </section>
 
         {/* =========================================================================
-            4. WHY LATTIUM IS BEST FOR LEAVE MANAGEMENT (01 Big Card + 02-05 Small Cards)
+            4. WHY ZENTILOS IS BEST FOR LEAVE MANAGEMENT (01 Big Card + 02-05 Small Cards)
             ========================================================================= */}
         <section className="emp-why-choose-section" aria-labelledby="why-choose-title">
           <div className="container">
             {/* Centered Section Header */}
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ WHY LATTIUM LEAVE ✦</span>
+              <span className="emp-eyebrow">✦ WHY ZENTILOS LEAVE ✦</span>
               <h2 id="why-choose-title" className="emp-section-title">
                 Time Off Management That Works the Way Your Teams Do
               </h2>
@@ -752,7 +752,7 @@ export function LeaveManagementPage() {
 
                 {/* Bottom Narrative Copy */}
                 <p className="emp-big-card-bottom-text">
-                  From multinational branch structures with distinct regional holiday calendars to fast-moving startups with flexible PTO, Lattium automates policies, eliminates spreadsheets, and preserves critical team bandwidth.
+                  From multinational branch structures with distinct regional holiday calendars to fast-moving startups with flexible PTO, Zentilos automates policies, eliminates spreadsheets, and preserves critical team bandwidth.
                 </p>
               </div>
 
@@ -900,7 +900,7 @@ export function LeaveManagementPage() {
                       openDemoModal({
                         title: "Schedule a Leave Management Demo",
                         subtitle:
-                          "Experience automated accruals, team collision alerts, and 1-click payroll sync with Lattium.",
+                          "Experience automated accruals, team collision alerts, and 1-click payroll sync with Zentilos.",
                       })
                     }
                   >
@@ -936,7 +936,7 @@ export function LeaveManagementPage() {
                 Leave Management Is Just the Beginning
               </h2>
               <p className="emp-section-subhead">
-                Connect leave quotas and approved time off with related HR workflows across the Lattium platform.
+                Connect leave quotas and approved time off with related HR workflows across the Zentilos platform.
               </p>
             </div>
 
@@ -998,7 +998,7 @@ export function LeaveManagementPage() {
             <div className="emp-section-header center">
               <span className="emp-eyebrow">✦ TESTIMONIALS ✦</span>
               <h2 id="testi-title" className="emp-section-title">
-                What People Say About Lattium
+                What People Say About Zentilos
               </h2>
               <p className="emp-section-subhead">
                 Discover how leading enterprises eliminate leave disputes, automate accruals, and maintain 100% time-off record accuracy.

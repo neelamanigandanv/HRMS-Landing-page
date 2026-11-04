@@ -194,7 +194,8 @@ export function CareersPage() {
         linkedin_portfolio_url: [linkedinUrl.trim(), portfolioUrl.trim()].filter(Boolean).join(" | "),
         resume_link: resumeLink.trim(),
         resume_url: resumeFile ? resumeFile.name : (resumeLink.trim() || ""),
-        why_are_you_interested_in_lattium_hr: coverNote.trim(),
+        why_are_you_interested_in_zentilos: coverNote.trim(),
+        why_zentilos: coverNote.trim(),
         why_lattium_hr: coverNote.trim(),
       },
     };
@@ -248,7 +249,7 @@ export function CareersPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA>
       <SEO
-        title="Careers at LattiumHR | Build the Future of Workforce Software"
+        title="Careers at Zentilos | Build the Future of Workforce Software"
         description="Join an ambitious, high-trust team building modern workforce and payroll software for thousands of growing businesses."
         canonicalPath="/careers"
       />
@@ -263,7 +264,7 @@ export function CareersPage() {
               {/* Eyebrow */}
               <div className="careers-hero-eyebrow">
                 <span className="careers-sparkle">✦</span>
-                <span>CAREERS AT LATTIUMHR</span>
+                <span>CAREERS AT ZENTILOS</span>
                 <span className="careers-sparkle">✦</span>
               </div>
 
@@ -384,7 +385,7 @@ export function CareersPage() {
         <section className="careers-life-section" id="life-at-company" aria-labelledby="life-heading">
           <div className="container">
             <SectionHeading
-              eyebrow="✦ LIFE AT LATTIUMHR ✦"
+              eyebrow="✦ LIFE AT ZENTILOS ✦"
               title="Where Craft, Empathy, and Ownership Meet"
               body="A glimpse into how we collaborate, celebrate milestones, and build meaningful software every single day."
               center
@@ -394,7 +395,7 @@ export function CareersPage() {
               <div className="careers-gallery-item large">
                 <img
                   src="/images/hero-hr-working-pro.jpg"
-                  alt="LattiumHR cross-functional product design sprint in conference room"
+                  alt="Zentilos cross-functional product design sprint in conference room"
                   className="careers-gallery-img"
                   loading="lazy"
                 />
@@ -434,7 +435,7 @@ export function CareersPage() {
               <div className="careers-gallery-item careers-culture-callout-card">
                 <img
                   src="/images/work-process-team.jpg"
-                  alt="LattiumHR high trust collaborative culture"
+                  alt="Zentilos high trust collaborative culture"
                   className="careers-gallery-img"
                   loading="lazy"
                 />
@@ -467,7 +468,7 @@ export function CareersPage() {
               <div className="careers-gallery-item wide">
                 <img
                   src="/images/hero-employee-directory-team.jpg"
-                  alt="LattiumHR team celebration after shipping a major product release"
+                  alt="Zentilos team celebration after shipping a major product release"
                   className="careers-gallery-img"
                   loading="lazy"
                 />
@@ -487,7 +488,7 @@ export function CareersPage() {
           <div className="container">
             <SectionHeading
               eyebrow="✦ APPLICATION FORM ✦"
-              title="Apply to Join LattiumHR"
+              title="Apply to Join Zentilos"
               body="Submit your details below. We review every profile carefully and respond within 48 business hours."
               center
             />
@@ -538,7 +539,7 @@ export function CareersPage() {
                     <h3 className="careers-thank-you-title">Application Received!</h3>
                     <p className="careers-thank-you-text">
                       Thank you for applying for{" "}
-                      <strong>{selectedJob ? selectedJob.title : "a position at LattiumHR"}</strong>.
+                      <strong>{selectedJob ? selectedJob.title : "a position at Zentilos"}</strong>.
                       Our talent team will review your background and reach out at <strong>{email}</strong> within{" "}
                       <strong>48 business hours</strong>.
                     </p>
@@ -735,10 +736,10 @@ export function CareersPage() {
                       />
                     </div>
 
-                    {/* 8. Why are you interested in LattiumHR? */}
+                    {/* 8. Why are you interested in Zentilos? */}
                     <div className="careers-form-group full-width" style={{ marginTop: "1rem" }}>
                       <label htmlFor="onpage-app-covernote" className="careers-form-label">
-                        Why are you interested in LattiumHR? <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
+                        Why are you interested in Zentilos? <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
                       </label>
                       <textarea
                         id="onpage-app-covernote"
@@ -761,7 +762,7 @@ export function CareersPage() {
                           required
                         />
                         <span>
-                          I consent to LattiumHR collecting and processing my application data for recruitment
+                          I consent to Zentilos collecting and processing my application data for recruitment
                           purposes in accordance with the{" "}
                           <a href="/privacy" target="_blank" rel="noopener noreferrer">
                             Privacy Policy

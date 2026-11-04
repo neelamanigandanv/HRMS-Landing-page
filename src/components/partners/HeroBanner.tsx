@@ -10,15 +10,15 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onBecomePartnerClick }) 
     <section className="partner-hero-rich" aria-labelledby="partner-hero-title">
       <div className="container">
         {/* Top Spotlight Tag */}
-        <div className="partner-hero-spotlight-tag" aria-label="LattiumHR Partner Programme">
-          <span>✦ LATTIUM HR PARTNER PROGRAMME ✦</span>
+        <div className="partner-hero-spotlight-tag" aria-label="Zentilos Partner Programme">
+          <span>✦ ZENTILOS PARTNER PROGRAMME ✦</span>
         </div>
 
         {/* Title & Subtext */}
         <h1 id="partner-hero-title" className="partner-hero-rich-title">
           Accelerate Growth with the
           <br className="partner-hero-br" />
-          <span className="partner-glow-text">LattiumHR Partner Alliance</span>
+          <span className="partner-glow-text">Zentilos Partner Alliance</span>
         </h1>
 
         <p className="partner-hero-rich-subhead">

@@ -71,7 +71,7 @@ export function AssetManagementPage() {
       brand: "stripe",
       headline: "Saved ₹42+ Lakhs in lost hardware and recovered 100% of remote laptops",
       quote:
-        "Before Lattium, laptops vanished whenever remote contractors or regional staff resigned. With automated digital handover slips and exit clearance gates, our missing equipment rate dropped to zero.",
+        "Before Zentilos, laptops vanished whenever remote contractors or regional staff resigned. With automated digital handover slips and exit clearance gates, our missing equipment rate dropped to zero.",
       name: "Freddy Dean",
       role: "VP of IT & Infrastructure, FinScale",
       avatar: "/images/testi-avatar-1.jpg",
@@ -91,7 +91,7 @@ export function AssetManagementPage() {
       brand: "notion",
       headline: "Multi-branch IT inventory reconciled in one afternoon instead of weeks",
       quote:
-        "Managing hardware across 6 regional branches used to mean messy Excel files and ghost assets. With Lattium QR barcode scanning, branch custodians audit our entire device fleet in hours.",
+        "Managing hardware across 6 regional branches used to mean messy Excel files and ghost assets. With Zentilos QR barcode scanning, branch custodians audit our entire device fleet in hours.",
       name: "Rohan Mehta",
       role: "Chief Operating Officer, Apex Labs",
       avatar: "/images/leader-rohan-mehta.jpg",
@@ -133,7 +133,7 @@ export function AssetManagementPage() {
       ],
       callout: {
         role: "IT Asset Manager",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "Serialized Fleet" },
@@ -161,7 +161,7 @@ export function AssetManagementPage() {
       ],
       callout: {
         role: "People Operations & IT Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "3 Mins", label: "Fast Handover" },
@@ -189,7 +189,7 @@ export function AssetManagementPage() {
       ],
       callout: {
         role: "Asset Security & Audit Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "99.9%", label: "Recovery Rate" },
@@ -228,44 +228,44 @@ export function AssetManagementPage() {
   // FAQ data
   const faqs = [
     {
-      q: "What is Lattium Asset Management software?",
-      a: "Lattium Asset Management is an enterprise cloud platform that centralizes the tracking, allocation, maintenance, and recovery of company equipment—including laptops, mobile phones, monitors, peripherals, and software licenses—seamlessly connected to employee HR profiles.",
+      q: "What is Zentilos Asset Management software?",
+      a: "Zentilos Asset Management is an enterprise cloud platform that centralizes the tracking, allocation, maintenance, and recovery of company equipment—including laptops, mobile phones, monitors, peripherals, and software licenses—seamlessly connected to employee HR profiles.",
     },
     {
-      q: "How does Lattium connect assets with employee profiles?",
-      a: "Because Lattium is an all-in-one HRMS, asset records are natively linked to employee master files. When an employee is onboarded, transferred between branches, or offboarded, their assigned hardware automatically updates across IT and HR directories.",
+      q: "How does Zentilos connect assets with employee profiles?",
+      a: "Because Zentilos is an all-in-one HRMS, asset records are natively linked to employee master files. When an employee is onboarded, transferred between branches, or offboarded, their assigned hardware automatically updates across IT and HR directories.",
     },
     {
       q: "Can employees sign digital handover slips on their phones?",
-      a: "Yes. Lattium generates mobile-friendly digital handover agreements with device serial numbers, condition photos, and terms of use. Employees sign electronically on their screen, creating an immutable legal timestamp.",
+      a: "Yes. Zentilos generates mobile-friendly digital handover agreements with device serial numbers, condition photos, and terms of use. Employees sign electronically on their screen, creating an immutable legal timestamp.",
     },
     {
-      q: "How does Lattium prevent laptop loss when an employee resigns?",
-      a: "When an employee submits their resignation or an exit is initiated, Lattium instantly generates an Asset Recovery Checklist. The Full & Final (F&F) payroll settlement is automatically gated until the IT custodian inspects the returned equipment and issues clearance.",
+      q: "How does Zentilos prevent laptop loss when an employee resigns?",
+      a: "When an employee submits their resignation or an exit is initiated, Zentilos instantly generates an Asset Recovery Checklist. The Full & Final (F&F) payroll settlement is automatically gated until the IT custodian inspects the returned equipment and issues clearance.",
     },
     {
-      q: "Does Lattium support barcode and QR code physical audits?",
+      q: "Does Zentilos support barcode and QR code physical audits?",
       a: "Yes. You can generate and print serialized QR labels or use existing manufacturer barcodes. IT teams scan labels directly using any smartphone camera, reconciling physical branch inventories in minutes without specialized barcode scanners.",
     },
     {
       q: "Can we track warranties, AMCs, and service histories?",
-      a: "Yes. Lattium sends proactive 30-day and 60-day alerts before manufacturer warranties or annual maintenance contracts (AMCs) expire. It also logs every repair, vendor invoice, and loaner machine issued during servicing.",
+      a: "Yes. Zentilos sends proactive 30-day and 60-day alerts before manufacturer warranties or annual maintenance contracts (AMCs) expire. It also logs every repair, vendor invoice, and loaner machine issued during servicing.",
     },
     {
       q: "Can we manage hardware spread across multiple branches and cities?",
-      a: "Yes. Lattium supports multi-branch IT warehouses, regional supply closets, and remote team shipping. You can monitor stock levels per location, initiate inter-branch equipment transfers, and assign local IT custodians.",
+      a: "Yes. Zentilos supports multi-branch IT warehouses, regional supply closets, and remote team shipping. You can monitor stock levels per location, initiate inter-branch equipment transfers, and assign local IT custodians.",
     },
     {
-      q: "Is Lattium Asset Management compliant with security audits like ISO 27001?",
-      a: "Yes. Lattium maintains an immutable audit log of every custodian change, repair ticket, physical audit scan, and disposal certificate with AES-256 cloud encryption, ensuring 100% compliance during ISO 27001 and SOC 2 audits.",
+      q: "Is Zentilos Asset Management compliant with security audits like ISO 27001?",
+      a: "Yes. Zentilos maintains an immutable audit log of every custodian change, repair ticket, physical audit scan, and disposal certificate with AES-256 cloud encryption, ensuring 100% compliance during ISO 27001 and SOC 2 audits.",
     },
   ];
 
   return (
     <div className="app-shell inner-page-shell emp-page-wrapper asset-page-wrapper">
       <SEO
-        title="Asset Management Software — IT Hardware, Inventory & Device Lifecycle Tracking | Lattium"
-        description="Track hardware allocations, laptops, peripherals, serial numbers, warranties, and digital asset return handovers across all branches with Lattium HR."
+        title="Asset Management Software — IT Hardware, Inventory & Device Lifecycle Tracking | Zentilos"
+        description="Track hardware allocations, laptops, peripherals, serial numbers, warranties, and digital asset return handovers across all branches with Zentilos."
         canonicalPath="/features/asset-management"
       />
 
@@ -278,8 +278,8 @@ export function AssetManagementPage() {
         <section className="emp-hero-rich" aria-labelledby="asset-hero-title">
           <div className="container">
             {/* Top Spotlight Tag */}
-            <div className="emp-hero-spotlight-tag" aria-label="Lattium Assets">
-              <span>✦ LATTIUM ASSETS ✦</span>
+            <div className="emp-hero-spotlight-tag" aria-label="Zentilos Assets">
+              <span>✦ ZENTILOS ASSETS ✦</span>
             </div>
 
             {/* Title & Subtext - Updated Hero Headline */}
@@ -289,7 +289,7 @@ export function AssetManagementPage() {
               Lifecycle Management
             </h1>
             <p className="emp-hero-rich-subhead">
-              Track, allocate, and recover IT hardware, company laptops, and equipment across all your branches with Lattium HR. Eliminate ghost equipment loss, capture digital e-signatures, and automate exit clearance gates.
+              Track, allocate, and recover IT hardware, company laptops, and equipment across all your branches with Zentilos. Eliminate ghost equipment loss, capture digital e-signatures, and automate exit clearance gates.
             </p>
 
             {/* Dual Pill Action Buttons */}
@@ -301,7 +301,7 @@ export function AssetManagementPage() {
                   openDemoModal({
                     title: "Book an Asset Management Demo",
                     subtitle:
-                      "Experience serialized hardware tracking, mobile digital handovers, and offboarding exit clearance with Lattium HR.",
+                      "Experience serialized hardware tracking, mobile digital handovers, and offboarding exit clearance with Zentilos.",
                   })
                 }
               >
@@ -522,7 +522,7 @@ export function AssetManagementPage() {
                   Offboarding Loss
                 </h3>
                 <p className="emp-problem-desc">
-                  Up to 14% of corporate laptops and equipment vanish when employees resign without automated IT clearance gates. Lattium halts exit settlements until returned equipment is physically verified.
+                  Up to 14% of corporate laptops and equipment vanish when employees resign without automated IT clearance gates. Zentilos halts exit settlements until returned equipment is physically verified.
                 </p>
               </div>
 
@@ -650,18 +650,18 @@ export function AssetManagementPage() {
         </section>
 
         {/* =========================================================================
-            4. WHY LATTIUM ASSETS (1 Big Card with Scenic BG + 4 Small Cards)
+            4. WHY ZENTILOS ASSETS (1 Big Card with Scenic BG + 4 Small Cards)
             ========================================================================= */}
         <section className="emp-why-choose-section" aria-labelledby="why-assets-heading">
           <div className="container">
             {/* Centered Section Header */}
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ WHY LATTIUM ASSETS ✦</span>
+              <span className="emp-eyebrow">✦ WHY ZENTILOS ASSETS ✦</span>
               <h2 id="why-assets-heading" className="emp-section-title">
                 Enterprise Asset Governance with Zero Capital Waste
               </h2>
               <p className="emp-section-subhead">
-                Discover why scaling enterprises trust Lattium to eliminate ghost hardware losses, track warranties, and ensure audit compliance.
+                Discover why scaling enterprises trust Zentilos to eliminate ghost hardware losses, track warranties, and ensure audit compliance.
               </p>
             </div>
 
@@ -705,7 +705,7 @@ export function AssetManagementPage() {
 
                 {/* Bottom Narrative Copy */}
                 <p className="emp-big-card-bottom-text">
-                  Scattered spreadsheets and unverified handovers cause expensive hardware to vanish during offboarding. Lattium unites HR employee profiles with IT device lifecycles to protect your capital investments across all regional offices.
+                  Scattered spreadsheets and unverified handovers cause expensive hardware to vanish during offboarding. Zentilos unites HR employee profiles with IT device lifecycles to protect your capital investments across all regional offices.
                 </p>
               </div>
 
@@ -850,7 +850,7 @@ export function AssetManagementPage() {
                       openDemoModal({
                         title: "Schedule an Asset Management Demo",
                         subtitle:
-                          "Experience serialized equipment tracking, mobile digital handovers, and offboarding exit clearance with Lattium.",
+                          "Experience serialized equipment tracking, mobile digital handovers, and offboarding exit clearance with Zentilos.",
                       })
                     }
                   >
@@ -951,7 +951,7 @@ export function AssetManagementPage() {
                 Proven by Enterprises Managing Distributed Hardware
               </h2>
               <p className="emp-section-subhead">
-                See how growing multi-branch organizations protect equipment, streamline handovers, and pass audits with Lattium.
+                See how growing multi-branch organizations protect equipment, streamline handovers, and pass audits with Zentilos.
               </p>
             </div>
 

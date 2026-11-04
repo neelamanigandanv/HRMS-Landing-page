@@ -214,7 +214,7 @@ export function GuideDetailPage() {
   return (
     <PageLayout hideCTA={true} breadcrumbs={breadcrumbs}>
       <SEO
-        title={`${currentGuide.title} | LattiumHR Practical Handbook`}
+        title={`${currentGuide.title} | Zentilos Practical Handbook`}
         description={currentGuide.subtitle}
         canonicalPath={`/guides/${currentGuide.slug}`}
       />
@@ -663,7 +663,7 @@ export function GuideDetailPage() {
                           Reset Checklist
                         </button>
                         <span style={{ fontSize: "12px", color: "#64748b" }}>
-                          Tip: Automated with continuous verification inside LattiumHR.
+                          Tip: Automated with continuous verification inside Zentilos.
                         </span>
                       </div>
                     </div>

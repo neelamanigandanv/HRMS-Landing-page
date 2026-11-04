@@ -1,5 +1,5 @@
 // ============================================================================
-// LATTIUM HR - COMPREHENSIVE HRMS & PAYROLL GLOSSARY KNOWLEDGE CENTER
+// ZENTILOS - COMPREHENSIVE HRMS & PAYROLL GLOSSARY KNOWLEDGE CENTER
 // Clean Concise 1-3 Word Terms Matching Exact User Reference
 // Total: 182 terms across A through Y
 // ============================================================================
@@ -100,7 +100,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "attrition-rate"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -152,7 +152,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "attrition-rate"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -204,7 +204,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "attrition-rate"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -256,7 +256,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "attrition-rate"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -308,7 +308,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "absenteeism-control"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -360,7 +360,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "absenteeism-control"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -412,7 +412,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "absenteeism-control"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -464,7 +464,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "bonus-accrual"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -516,7 +516,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "bonus-accrual"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -568,7 +568,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "bonus-accrual"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -620,7 +620,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "bonus-accrual"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -672,7 +672,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "basic-salary"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -724,7 +724,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "basic-salary"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -776,7 +776,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "basic-salary"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -828,7 +828,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "calculation-of-gratuity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -880,7 +880,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "calculation-of-gratuity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -932,7 +932,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "calculation-of-gratuity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -984,7 +984,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "calculation-of-gratuity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -1036,7 +1036,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "casual-leave-cl"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -1088,7 +1088,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "casual-leave-cl"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -1140,7 +1140,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "casual-leave-cl"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -1192,7 +1192,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "direct-bank-payout"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -1244,7 +1244,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "direct-bank-payout"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -1296,7 +1296,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "direct-bank-payout"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -1348,7 +1348,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "direct-bank-payout"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -1400,7 +1400,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "digital-payslip"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -1452,7 +1452,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "digital-payslip"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -1504,7 +1504,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "digital-payslip"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -1556,7 +1556,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-self-service-ess"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -1608,7 +1608,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-self-service-ess"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -1660,7 +1660,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-self-service-ess"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -1712,7 +1712,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-self-service-ess"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -1764,7 +1764,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-onboarding"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -1816,7 +1816,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-onboarding"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -1868,7 +1868,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-onboarding"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -1920,7 +1920,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "full-and-final-settlement-fnf"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -1972,7 +1972,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "full-and-final-settlement-fnf"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -2024,7 +2024,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "full-and-final-settlement-fnf"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -2076,7 +2076,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "full-and-final-settlement-fnf"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -2128,7 +2128,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "fringe-benefits"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -2180,7 +2180,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "fringe-benefits"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -2232,7 +2232,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "fringe-benefits"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -2284,7 +2284,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "geofencing-attendance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -2336,7 +2336,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "geofencing-attendance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -2388,7 +2388,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "geofencing-attendance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -2440,7 +2440,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "geofencing-attendance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -2492,7 +2492,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "gender-pay-parity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -2544,7 +2544,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "gender-pay-parity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -2596,7 +2596,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "gender-pay-parity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -2648,7 +2648,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "hrms-platform"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -2700,7 +2700,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "hrms-platform"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -2752,7 +2752,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "hrms-platform"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -2804,7 +2804,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "hrms-platform"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -2856,7 +2856,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "hris-software"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -2908,7 +2908,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "hris-software"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -2960,7 +2960,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "hris-software"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -3012,7 +3012,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "posh-compliance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -3064,7 +3064,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "posh-compliance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -3116,7 +3116,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "posh-compliance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -3168,7 +3168,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "posh-compliance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -3220,7 +3220,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "internal-job-posting-ijp"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -3272,7 +3272,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "internal-job-posting-ijp"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -3324,7 +3324,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "internal-job-posting-ijp"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -3376,7 +3376,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "joining-documentation"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -3428,7 +3428,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "joining-documentation"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -3480,7 +3480,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "joining-documentation"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -3532,7 +3532,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "joining-documentation"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -3584,7 +3584,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "joint-pf-declaration"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -3636,7 +3636,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "joint-pf-declaration"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -3688,7 +3688,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "joint-pf-declaration"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -3740,7 +3740,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "key-person-insurance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -3792,7 +3792,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "key-person-insurance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -3844,7 +3844,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "key-person-insurance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -3896,7 +3896,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "key-person-insurance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -3948,7 +3948,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "hr-knowledge-base"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -4000,7 +4000,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "hr-knowledge-base"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -4052,7 +4052,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "hr-knowledge-base"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -4104,7 +4104,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employment-bonds"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -4156,7 +4156,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employment-bonds"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -4208,7 +4208,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employment-bonds"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -4260,7 +4260,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employment-bonds"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -4312,7 +4312,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "labor-welfare-fund-lwf"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -4364,7 +4364,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "labor-welfare-fund-lwf"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -4416,7 +4416,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "labor-welfare-fund-lwf"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -4468,7 +4468,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "medical-insurance-co-pay"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -4520,7 +4520,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "medical-insurance-co-pay"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -4572,7 +4572,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "medical-insurance-co-pay"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -4624,7 +4624,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "medical-insurance-co-pay"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -4676,7 +4676,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "maternity-benefit"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -4728,7 +4728,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "maternity-benefit"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -4780,7 +4780,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "maternity-benefit"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -4832,7 +4832,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "nda-enforcement"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -4884,7 +4884,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "nda-enforcement"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -4936,7 +4936,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "nda-enforcement"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -4988,7 +4988,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "nda-enforcement"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -5040,7 +5040,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "national-pension-system-nps"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -5092,7 +5092,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "national-pension-system-nps"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -5144,7 +5144,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "national-pension-system-nps"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -5196,7 +5196,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "on-duty-od-travel"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -5248,7 +5248,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "on-duty-od-travel"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -5300,7 +5300,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "on-duty-od-travel"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -5352,7 +5352,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "on-duty-od-travel"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -5404,7 +5404,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "interactive-org-chart"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -5456,7 +5456,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "interactive-org-chart"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -5508,7 +5508,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "interactive-org-chart"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -5560,7 +5560,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "pay-equity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -5612,7 +5612,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "pay-equity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -5664,7 +5664,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "pay-equity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -5716,7 +5716,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "pay-equity"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -5768,7 +5768,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "paternity-leave"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -5820,7 +5820,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "paternity-leave"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -5872,7 +5872,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "paternity-leave"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -5924,7 +5924,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "paternity-leave"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -5976,7 +5976,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "paternity-leave"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -6028,7 +6028,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "paternity-leave"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -6080,7 +6080,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "paternity-leave"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -6132,7 +6132,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "paternity-leave"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -6184,7 +6184,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "paternity-leave"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -6236,7 +6236,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "paternity-leave"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -6288,7 +6288,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "diversity-hiring-analytics"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -6340,7 +6340,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "diversity-hiring-analytics"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -6392,7 +6392,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "diversity-hiring-analytics"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -6444,7 +6444,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "diversity-hiring-analytics"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -6496,7 +6496,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "quick-payroll-runs"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -6548,7 +6548,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "quick-payroll-runs"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -6600,7 +6600,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "quick-payroll-runs"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -6652,7 +6652,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "relieving-letter"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -6704,7 +6704,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "relieving-letter"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -6756,7 +6756,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "relieving-letter"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -6808,7 +6808,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "relieving-letter"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -6860,7 +6860,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "retention-strategy"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -6912,7 +6912,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "retention-strategy"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -6964,7 +6964,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "retention-strategy"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -7016,7 +7016,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-separation"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -7068,7 +7068,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-separation"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -7120,7 +7120,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-separation"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -7172,7 +7172,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employee-separation"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -7224,7 +7224,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "sick-leave-sl"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -7276,7 +7276,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "sick-leave-sl"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -7328,7 +7328,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "sick-leave-sl"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -7380,7 +7380,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "cost-of-turnover"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -7432,7 +7432,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "cost-of-turnover"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -7484,7 +7484,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "cost-of-turnover"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -7536,7 +7536,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "cost-of-turnover"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -7588,7 +7588,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "training-needs-analysis-tna"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -7640,7 +7640,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "training-needs-analysis-tna"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -7692,7 +7692,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "training-needs-analysis-tna"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -7744,7 +7744,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "performance-pip"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -7796,7 +7796,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "performance-pip"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -7848,7 +7848,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "performance-pip"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -7900,7 +7900,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "performance-pip"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -7952,7 +7952,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "unplanned-absenteeism"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -8004,7 +8004,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "unplanned-absenteeism"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -8056,7 +8056,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "unplanned-absenteeism"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -8108,7 +8108,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employment-verification"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -8160,7 +8160,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employment-verification"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -8212,7 +8212,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employment-verification"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -8264,7 +8264,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "employment-verification"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -8316,7 +8316,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "virtual-onboarding"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -8368,7 +8368,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "virtual-onboarding"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -8420,7 +8420,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "virtual-onboarding"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -8472,7 +8472,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "weekend-overtime"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -8524,7 +8524,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "weekend-overtime"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -8576,7 +8576,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "weekend-overtime"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -8628,7 +8628,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "weekend-overtime"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -8680,7 +8680,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "wage-code-reforms"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -8732,7 +8732,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "wage-code-reforms"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -8784,7 +8784,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "wage-code-reforms"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -8836,7 +8836,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "year-end-tax-proofs"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -8888,7 +8888,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "year-end-tax-proofs"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -8940,7 +8940,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "year-end-tax-proofs"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -8992,7 +8992,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "year-end-tax-proofs"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -9044,7 +9044,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "experience-letter-protocol"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -9096,7 +9096,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "experience-letter-protocol"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -9148,7 +9148,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "experience-letter-protocol"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -9200,7 +9200,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "recruitment-yield-ratio"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -9252,7 +9252,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "recruitment-yield-ratio"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Payroll",
+      "label": "Explore Zentilos Payroll",
       "url": "/features/payroll"
     }
   },
@@ -9304,7 +9304,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "recruitment-yield-ratio"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Attendance & Leave",
+      "label": "Explore Zentilos Attendance & Leave",
       "url": "/features/attendance"
     }
   },
@@ -9356,7 +9356,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "recruitment-yield-ratio"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -9408,7 +9408,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "internship-stipend-compliance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   },
@@ -9460,7 +9460,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "internship-stipend-compliance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Performance & Goals",
+      "label": "Explore Zentilos Performance & Goals",
       "url": "/features/performance"
     }
   },
@@ -9512,7 +9512,7 @@ export const glossaryQuestions: GlossaryQuestionItem[] = [
       "internship-stipend-compliance"
     ],
     "productLink": {
-      "label": "Explore LattiumHR Platform",
+      "label": "Explore Zentilos Platform",
       "url": "/product"
     }
   }

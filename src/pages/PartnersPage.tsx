@@ -33,8 +33,8 @@ export function PartnersPage() {
   return (
     <PageLayout hideCTA>
       <SEO
-        title="Partner Programme | Reseller, Referral & Tech Alliances | LattiumHR"
-        description="Join the LattiumHR Partner Programme. Expand your consulting practice, earn recurring subscription revenue share, and collaborate with enterprise HRMS experts."
+        title="Partner Programme | Reseller, Referral & Tech Alliances | Zentilos"
+        description="Join the Zentilos Partner Programme. Expand your consulting practice, earn recurring subscription revenue share, and collaborate with enterprise HRMS experts."
         canonicalPath="/partners"
       />
 

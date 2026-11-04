@@ -70,7 +70,7 @@ export function Footer() {
       </div>
 
       <div className="container-wide footer-bottom">
-        <span>© {new Date().getFullYear()} LattiumHR Technologies Pvt. Ltd. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Zentilos Technologies Pvt. Ltd. All rights reserved.</span>
         <div className="footer-bottom-links">
           <Link to="/privacy-policy">Privacy</Link>
           <Link to="/terms-of-service">Terms</Link>

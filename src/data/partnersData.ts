@@ -109,7 +109,7 @@ export const PARTNER_TYPES: PartnerType[] = [
     id: "reseller",
     title: "Reseller Partners",
     tagline: "Full-Cycle Commercial Distribution",
-    description: "Package, distribute, and implement LattiumHR as an authorized regional or national solution partner.",
+    description: "Package, distribute, and implement Zentilos as an authorized regional or national solution partner.",
     imagePlaceholder: "/images/work-process-team.jpg",
     badge: "Most Popular",
     whoCanJoin: [
@@ -123,7 +123,7 @@ export const PARTNER_TYPES: PartnerType[] = [
     id: "referral",
     title: "Referral Partners",
     tagline: "Zero Implementation Overhead",
-    description: "Introduce qualified prospects and clients to LattiumHR and earn generous referral bonuses on every closed account.",
+    description: "Introduce qualified prospects and clients to Zentilos and earn generous referral bonuses on every closed account.",
     imagePlaceholder: "/images/solutions-consultation-cta.jpg",
     badge: "Quick Start",
     whoCanJoin: [
@@ -137,7 +137,7 @@ export const PARTNER_TYPES: PartnerType[] = [
     id: "technology",
     title: "Technology Partners",
     tagline: "Bi-Directional API Integrations",
-    description: "Build seamless data connectors between LattiumHR and your biometric hardware, ERP, accounting, or banking system.",
+    description: "Build seamless data connectors between Zentilos and your biometric hardware, ERP, accounting, or banking system.",
     imagePlaceholder: "/images/industry-tech.jpg",
     badge: "Ecosystem Integration",
     whoCanJoin: [
@@ -355,18 +355,18 @@ export const PARTNER_LOGOS: PartnerLogo[] = [
 export const PARTNER_FAQS: PartnerFaqItem[] = [
   {
     id: "faq-who-can-join",
-    question: "Who can join the LattiumHR Partner Programme?",
+    question: "Who can join the Zentilos Partner Programme?",
     answer: "Our programme is designed for IT solution providers, system integrators, chartered accountants, HR & payroll consultancies, independent business software resellers, and technology vendors offering biometric hardware, ERP, or fintech integrations.",
   },
   {
     id: "faq-cost",
     question: "What is the cost to join as a partner?",
-    answer: "There are zero sign-up fees or mandatory upfront commitments to join the LattiumHR Partner Programme. We provide partner onboarding, sales collateral, training modules, and sandbox access completely free of charge.",
+    answer: "There are zero sign-up fees or mandatory upfront commitments to join the Zentilos Partner Programme. We provide partner onboarding, sales collateral, training modules, and sandbox access completely free of charge.",
   },
   {
     id: "faq-commission",
     question: "How does the partner commission and revenue share work?",
-    answer: "Referral partners earn an attractive one-time percentage bonus on the initial contract value of closed referrals. Reseller partners enjoy recurring annual subscription margins for as long as their clients remain active on LattiumHR.",
+    answer: "Referral partners earn an attractive one-time percentage bonus on the initial contract value of closed referrals. Reseller partners enjoy recurring annual subscription margins for as long as their clients remain active on Zentilos.",
   },
   {
     id: "faq-training",

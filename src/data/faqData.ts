@@ -34,15 +34,15 @@ export const faqCategories: FAQCategory[] = [
     name: "General",
     eyebrow: "OVERVIEW & ESSENTIALS",
     icon: "help-circle",
-    desc: "Overview of LattiumHR platform, target audience, trials, and live product demos.",
+    desc: "Overview of Zentilos platform, target audience, trials, and live product demos.",
     items: [
       {
-        id: "what-is-lattiumhr",
+        id: "what-is-zentilos",
         category: "General",
         popular: true,
-        question: "What is LattiumHR?",
+        question: "What is Zentilos?",
         answer:
-          "LattiumHR is a modern, enterprise-grade Human Resource Management System (HRMS) built for fast-growing businesses and multi-branch organizations. It unifies attendance, statutory payroll, employee databases, leave management, and role-based workflows into a single intuitive cloud platform.",
+          "Zentilos is a modern, enterprise-grade Human Resource Management System (HRMS) built for fast-growing businesses and multi-branch organizations. It unifies attendance, statutory payroll, employee databases, leave management, and role-based workflows into a single intuitive cloud platform.",
         bullets: [
           "Centralized employee directory and digital document storage",
           "Real-time biometric turnstile and mobile GPS geofenced attendance",
@@ -58,7 +58,7 @@ export const faqCategories: FAQCategory[] = [
         category: "General",
         question: "Who is it built for (company size and industries)?",
         answer:
-          "LattiumHR is built to support organizations ranging from 15 to 10,000+ employees across retail chains, healthcare providers, manufacturing plants, technology startups, and professional financial services. Whether you operate from a single office or 50+ distributed branches, LattiumHR adapts to your operational scale.",
+          "Zentilos is built to support organizations ranging from 15 to 10,000+ employees across retail chains, healthcare providers, manufacturing plants, technology startups, and professional financial services. Whether you operate from a single office or 50+ distributed branches, Zentilos adapts to your operational scale.",
         bullets: [
           "Standard: 15–100 employees needing streamlined HR foundation",
           "Professional: 100–500 employees requiring automated shifts and performance",
@@ -86,7 +86,7 @@ export const faqCategories: FAQCategory[] = [
         popular: true,
         question: "Can I see a demo before buying?",
         answer:
-          "Yes. Our solution architects host personalized 30-minute walkthroughs tailored specifically to your branch structure, employee headcount, and statutory requirements. We simulate your exact company setup so you can see how LattiumHR works before making any commitments.",
+          "Yes. Our solution architects host personalized 30-minute walkthroughs tailored specifically to your branch structure, employee headcount, and statutory requirements. We simulate your exact company setup so you can see how Zentilos works before making any commitments.",
         learnMore: {
           label: "Book a Free 30-Min Demo",
           href: "/request-demo",
@@ -154,7 +154,7 @@ export const faqCategories: FAQCategory[] = [
         popular: true,
         question: "Does it handle PF, ESI, PT, TDS and LWF?",
         answer:
-          "Yes. LattiumHR provides 100% automated calculations for all Indian statutory compliances including Provident Fund (PF), Employee State Insurance (ESI), Professional Tax (PT with all state-specific slabs), TDS salary tax deductions, and Labour Welfare Fund (LWF).",
+          "Yes. Zentilos provides 100% automated calculations for all Indian statutory compliances including Provident Fund (PF), Employee State Insurance (ESI), Professional Tax (PT with all state-specific slabs), TDS salary tax deductions, and Labour Welfare Fund (LWF).",
         bullets: [
           "1-click ECR file generation ready for immediate upload to the EPFO portal",
           "Automated monthly ESI return files and challan reconciliation",
@@ -184,7 +184,7 @@ export const faqCategories: FAQCategory[] = [
         category: "Payroll & Compliance",
         question: "Does it support contract labour compliance (CLRA, Form B)?",
         answer:
-          "Yes. For manufacturing and facility management companies, LattiumHR supports contractor agency registers under the Contract Labour Regulation and Abolition (CLRA) Act, including automated Form B wage registers and attendance audit logs.",
+          "Yes. For manufacturing and facility management companies, Zentilos supports contractor agency registers under the Contract Labour Regulation and Abolition (CLRA) Act, including automated Form B wage registers and attendance audit logs.",
         learnMore: {
           label: "View Manufacturing Workflows",
           href: "/solutions/industries",
@@ -204,7 +204,7 @@ export const faqCategories: FAQCategory[] = [
         category: "Attendance & Leave",
         question: "Which attendance methods are supported (biometric, geo-fence, mobile, web)?",
         answer:
-          "LattiumHR supports all industry-standard check-in methods. Employees can clock in via biometric face recognition turnstiles, fingerprint machines, geofenced mobile selfie check-ins, or IP-restricted desktop web portals.",
+          "Zentilos supports all industry-standard check-in methods. Employees can clock in via biometric face recognition turnstiles, fingerprint machines, geofenced mobile selfie check-ins, or IP-restricted desktop web portals.",
         bullets: [
           "Zero-delay sync with eSSSL, ZKTeco, Matrix, and Realtime biometric machines",
           "Mobile GPS geofencing with radius locking and selfie liveness detection",
@@ -338,7 +338,7 @@ export const faqCategories: FAQCategory[] = [
         category: "Integrations",
         question: "Which biometric devices, accounting tools and banks do you integrate with?",
         answer:
-          "LattiumHR connects seamlessly with leading biometric hardware (eSSSL, ZKTeco, Matrix, Realtime), accounting software (Tally Prime, Zoho Books, QuickBooks, SAP), and corporate banking portals (ICICI, HDFC, RazorpayX) for direct salary payouts [add your detail].",
+          "Zentilos connects seamlessly with leading biometric hardware (eSSSL, ZKTeco, Matrix, Realtime), accounting software (Tally Prime, Zoho Books, QuickBooks, SAP), and corporate banking portals (ICICI, HDFC, RazorpayX) for direct salary payouts [add your detail].",
         bullets: [
           "Pre-built Tally XML and Excel export for 1-click accounting journal entries",
           "Direct corporate bank disbursement file generation in standard NEFT/RTGS formats",
@@ -389,9 +389,9 @@ export const faqCategories: FAQCategory[] = [
         category: "Support & Training",
         question: "How do I contact the team?",
         answer:
-          "You can reach out through our in-app help widget, by emailing [support@lattiumhr.com], or by scheduling a dedicated call with your assigned customer success specialist [add your detail].",
+          "You can reach out through our in-app help widget, by emailing [support@zentilos.com], or by scheduling a dedicated call with your assigned customer success specialist [add your detail].",
         learnMore: {
-          label: "Contact LattiumHR Team",
+          label: "Contact Zentilos Team",
           href: "/contact",
         },
       },

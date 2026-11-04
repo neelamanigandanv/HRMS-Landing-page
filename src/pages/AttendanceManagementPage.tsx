@@ -71,7 +71,7 @@ export function AttendanceManagementPage() {
       brand: "stripe",
       headline: "Eradicated buddy punching across our 18 manufacturing facilities",
       quote:
-        "Managing shift turnstiles across 18 regional factories with USB punch readers used to be an operational nightmare. With Lattium's cloud IoT biometric sync, we have zero proxy punches and real-time floor visibility.",
+        "Managing shift turnstiles across 18 regional factories with USB punch readers used to be an operational nightmare. With Zentilos's cloud IoT biometric sync, we have zero proxy punches and real-time floor visibility.",
       name: "Freddy Dean",
       role: "VP of Plant Operations, Apex Manufacturing",
       avatar: "/images/testi-avatar-1.jpg",
@@ -81,7 +81,7 @@ export function AttendanceManagementPage() {
       brand: "zendesk",
       headline: "Cut monthly attendance reconciliation time from 5 days to 2 hours",
       quote:
-        "Chasing missing punches, paper overtime slips, and cross-checking leave requests used to paralyze our HR team every month. Lattium's automated payroll handshake compressed reconciliation into a single afternoon.",
+        "Chasing missing punches, paper overtime slips, and cross-checking leave requests used to paralyze our HR team every month. Zentilos's automated payroll handshake compressed reconciliation into a single afternoon.",
       name: "Sarah Jenkins",
       role: "Head of People Operations, RetailNext",
       avatar: "/images/testi-avatar-2.jpg",
@@ -101,7 +101,7 @@ export function AttendanceManagementPage() {
       brand: "hubspot",
       headline: "Managing 24/7 rotational night shifts without fatigue or clashes",
       quote:
-        "Lattium's visual shift planner automatically alerts us if an employee is scheduled with insufficient rest between shifts or if a critical ward is understaffed. It has completely modernized our hospital shift management.",
+        "Zentilos's visual shift planner automatically alerts us if an employee is scheduled with insufficient rest between shifts or if a critical ward is understaffed. It has completely modernized our hospital shift management.",
       name: "Ananya Kapoor",
       role: "Director of Workforce Planning, Metro Health",
       avatar: "/images/leader-ananya-kapoor.jpg",
@@ -133,7 +133,7 @@ export function AttendanceManagementPage() {
       ],
       callout: {
         role: "Workforce Systems Architect",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "< 0.8s", label: "Face Scan Speed" },
@@ -161,7 +161,7 @@ export function AttendanceManagementPage() {
       ],
       callout: {
         role: "Operations & Mobility Specialist",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "15m", label: "GPS Precision" },
@@ -178,7 +178,7 @@ export function AttendanceManagementPage() {
       imageAlt: "Operations managers reviewing automated attendance and shift roster schedules on digital screens",
       title: "Automated Overtime Reconciliation & 1-Click Payroll Sync",
       description:
-        "Say goodbye to end-of-month attendance panic. LattiumHR continuously ingests approved punches, leaves, holidays, and overtime rules directly into the payroll engine for zero-error calculations.",
+        "Say goodbye to end-of-month attendance panic. Zentilos continuously ingests approved punches, leaves, holidays, and overtime rules directly into the payroll engine for zero-error calculations.",
       bullets: [
         "Continuous real-time punch ingestion into statutory payroll processing engines",
         "Configurable multi-tier overtime calculations (1.5x, 2.0x, night differential)",
@@ -189,7 +189,7 @@ export function AttendanceManagementPage() {
       ],
       callout: {
         role: "Statutory Payroll Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "0 Days", label: "Pre-Payroll Wait" },
@@ -272,31 +272,31 @@ export function AttendanceManagementPage() {
   // FAQ data
   const faqs = [
     {
-      q: "How does Lattium prevent buddy punching and unauthorized proxy clock-ins?",
-      a: "Lattium combines 3D facial recognition liveness detection, device-locked mobile tokens, and real-time biometric terminal sync. Geofencing ensures mobile check-ins can only happen inside verified office GPS polygons or company Wi-Fi networks.",
+      q: "How does Zentilos prevent buddy punching and unauthorized proxy clock-ins?",
+      a: "Zentilos combines 3D facial recognition liveness detection, device-locked mobile tokens, and real-time biometric terminal sync. Geofencing ensures mobile check-ins can only happen inside verified office GPS polygons or company Wi-Fi networks.",
     },
     {
-      q: "Can Lattium integrate with our existing biometric fingerprint or face scanners?",
-      a: "Yes. Lattium has native cloud IoT connectors for popular enterprise hardware like Suprema, ZKTeco, Matrix, Essl, and Realtime. Devices sync punches to the cloud continuously with zero manual USB downloads or batch CSV scripts.",
+      q: "Can Zentilos integrate with our existing biometric fingerprint or face scanners?",
+      a: "Yes. Zentilos has native cloud IoT connectors for popular enterprise hardware like Suprema, ZKTeco, Matrix, Essl, and Realtime. Devices sync punches to the cloud continuously with zero manual USB downloads or batch CSV scripts.",
     },
     {
       q: "How does mobile geofenced attendance work for field and remote staff?",
-      a: "HR admins define geographic boundaries (geofences) around customer sites, construction locations, or branch offices with customizable radius meters. Employees clock in via the Lattium iOS/Android app only when their GPS coordinates match the designated perimeter.",
+      a: "HR admins define geographic boundaries (geofences) around customer sites, construction locations, or branch offices with customizable radius meters. Employees clock in via the Zentilos iOS/Android app only when their GPS coordinates match the designated perimeter.",
     },
     {
       q: "Can the platform handle flexible shift rotations, night shifts, and split shifts?",
-      a: "Yes. Lattium includes a dynamic shift roster planner supporting morning, evening, rotational night shifts (spanning across midnight), and split shifts with automated clash detection and mandatory rest period alerts.",
+      a: "Yes. Zentilos includes a dynamic shift roster planner supporting morning, evening, rotational night shifts (spanning across midnight), and split shifts with automated clash detection and mandatory rest period alerts.",
     },
     {
       q: "How does attendance data sync with monthly payroll and overtime calculations?",
-      a: "Attendance logs, approved leaves, public holidays, and overtime rules are pre-integrated into Lattium Payroll. Loss of Pay (LOP), late-coming deductions, and overtime multiples are automatically calculated without manual data transfers.",
+      a: "Attendance logs, approved leaves, public holidays, and overtime rules are pre-integrated into Zentilos Payroll. Loss of Pay (LOP), late-coming deductions, and overtime multiples are automatically calculated without manual data transfers.",
     },
   ];
 
   return (
     <div className="app-shell inner-page-shell emp-page-wrapper att-page-wrapper">
       <SEO
-        title="Attendance Management Software — Biometric, Geofencing & Shift Roster System | LattiumHR"
+        title="Attendance Management Software — Biometric, Geofencing & Shift Roster System | Zentilos"
         description="Eliminate time theft, automate shift rosters, and sync biometric punches directly to payroll. Cloud-native attendance tracking for multi-branch organizations."
         canonicalPath="/features/attendance-management"
       />
@@ -310,8 +310,8 @@ export function AttendanceManagementPage() {
         <section className="emp-hero-rich" aria-labelledby="att-hero-title">
           <div className="container">
             {/* Top Spotlight Tag */}
-            <div className="emp-hero-spotlight-tag" aria-label="Lattium HR">
-              <span>✦ LATTIUM HR ✦</span>
+            <div className="emp-hero-spotlight-tag" aria-label="Zentilos">
+              <span>✦ ZENTILOS ✦</span>
             </div>
 
             {/* Title & Subtext */}
@@ -321,7 +321,7 @@ export function AttendanceManagementPage() {
               Management
             </h1>
             <p className="emp-hero-rich-subhead">
-              Ready to eliminate time theft, streamline rotational shift rosters, and connect biometric punches directly into payroll with Lattium HR. Get started by booking a demo or signing up for a free trial today.
+              Ready to eliminate time theft, streamline rotational shift rosters, and connect biometric punches directly into payroll with Zentilos. Get started by booking a demo or signing up for a free trial today.
             </p>
 
             {/* Dual Pill Action Buttons */}
@@ -333,7 +333,7 @@ export function AttendanceManagementPage() {
                   openDemoModal({
                     title: "Book an Attendance Management Demo",
                     subtitle:
-                      "Experience touchless facial recognition, GPS geofencing, and automated payroll sync with Lattium HR.",
+                      "Experience touchless facial recognition, GPS geofencing, and automated payroll sync with Zentilos.",
                   })
                 }
               >
@@ -696,13 +696,13 @@ export function AttendanceManagementPage() {
         </section>
 
         {/* =========================================================================
-            4. WHY LATTIUM IS BEST FOR ATTENDANCE MANAGEMENT (01 Big Card + 02-05 Small Cards)
+            4. WHY ZENTILOS IS BEST FOR ATTENDANCE MANAGEMENT (01 Big Card + 02-05 Small Cards)
             ========================================================================= */}
         <section className="emp-why-choose-section" aria-labelledby="why-choose-title">
           <div className="container">
             {/* Centered Section Header */}
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ WHY LATTIUM ATTENDANCE ✦</span>
+              <span className="emp-eyebrow">✦ WHY ZENTILOS ATTENDANCE ✦</span>
               <h2 id="why-choose-title" className="emp-section-title">
                 Time Tracking That Works the Way Your Workforce Does
               </h2>
@@ -753,7 +753,7 @@ export function AttendanceManagementPage() {
 
                 {/* Bottom Narrative Copy */}
                 <p className="emp-big-card-bottom-text">
-                  Whether your employees work from manufacturing plants, corporate headquarters, or on-field client deployments, Lattium unifies biometric hardware, GPS geofencing, and shift schedules into one real-time cloud stream with zero manual data transfers.
+                  Whether your employees work from manufacturing plants, corporate headquarters, or on-field client deployments, Zentilos unifies biometric hardware, GPS geofencing, and shift schedules into one real-time cloud stream with zero manual data transfers.
                 </p>
               </div>
 
@@ -901,7 +901,7 @@ export function AttendanceManagementPage() {
                       openDemoModal({
                         title: "Schedule an Attendance Management Demo",
                         subtitle:
-                          "Experience touchless biometrics, GPS geofencing, and automated payroll sync with Lattium.",
+                          "Experience touchless biometrics, GPS geofencing, and automated payroll sync with Zentilos.",
                       })
                     }
                   >
@@ -937,7 +937,7 @@ export function AttendanceManagementPage() {
                 Attendance Management Is Just the Beginning
               </h2>
               <p className="emp-section-subhead">
-                Connect attendance logs with related HR workflows across the Lattium platform.
+                Connect attendance logs with related HR workflows across the Zentilos platform.
               </p>
             </div>
 

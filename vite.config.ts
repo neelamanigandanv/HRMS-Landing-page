@@ -93,7 +93,7 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
     return html.replace(`<!-- ${slotName} -->`, content)
   }
 
-  const title = config.title ?? "Figma Make App"
+  const title = config.title
   const description = config.description ?? ''
   const favicon = config.icons?.icon ?? ''
   const socialImage = config.openGraph?.image ?? ''
@@ -105,10 +105,10 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
   const bodyEnd = config.customScripts?.bodyEnd ?? ''
   const robotsTxt = config.robots?.index === false
   ? 'User-agent: *\nDisallow: /\n'
-  : 'User-agent: *\nAllow: /\n';
+  : undefined;
 
- console.log("ROBOTS INDEX:", config.robots?.index);
- console.log("ROBOTS TXT:", robotsTxt);
+
+
   return {
     name: 'figma-site-configuration',
     configureServer(server) {
@@ -133,26 +133,26 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
       handler(html) {
         let result = html
         result = replaceHtmlCommentSlot(result, 'figma:lang', language)
-        result = replaceHtmlCommentSlot(result, 'figma:title', escapeHtmlText(title))
+        result = replaceHtmlCommentSlot(result, 'figma:title', title ? escapeHtmlText(title) : '')
         result = replaceHtmlCommentSlot(result, 'figma:head-start', headStart)
         result = replaceHtmlCommentSlot(result, 'figma:head-end', headEnd)
         result = replaceHtmlCommentSlot(result, 'figma:body-start', bodyStart)
         result = replaceHtmlCommentSlot(result, 'figma:body-end', bodyEnd)
 
         const tags: HtmlTagDescriptor[] = []
-        if (description) {
+        if (description && !html.includes('name="description"')) {
           tags.push({ tag: 'meta', attrs: { name: 'description', content: description }, injectTo: 'head' })
         }
-        if (config.robots?.index === false) {
+        if (config.robots?.index === false && !html.includes('name="robots"')) {
           tags.push({ tag: 'meta', attrs: { name: 'robots', content: 'noindex, nofollow' }, injectTo: 'head' })
         }
         if (favicon) {
           tags.push({ tag: 'link', attrs: { rel: 'icon', href: favicon }, injectTo: 'head' })
         }
-        if (title) {
+        if (title && !html.includes('property="og:title"')) {
           tags.push({ tag: 'meta', attrs: { property: 'og:title', content: title }, injectTo: 'head' })
         }
-        if (description) {
+        if (description && !html.includes('property="og:description"')) {
           tags.push({ tag: 'meta', attrs: { property: 'og:description', content: description }, injectTo: 'head' })
         }
         if (socialImage) {

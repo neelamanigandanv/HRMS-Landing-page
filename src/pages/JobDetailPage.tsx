@@ -131,6 +131,7 @@ export function JobDetailPage() {
         expected_ctc: expectedCtc.trim() || "Not Specified",
         linkedin_portfolio_url: linkedinUrl.trim(),
         resume_url: resumeFile ? resumeFile.name : "",
+        why_zentilos: coverNote.trim(),
         why_lattium_hr: coverNote.trim(),
       },
     };
@@ -153,7 +154,7 @@ export function JobDetailPage() {
     return (
       <PageLayout hideCTA={true}>
         <SEO
-          title="Position Not Found | Careers at LattiumHR"
+          title="Position Not Found | Careers at Zentilos"
           description="The requested job position could not be found or has already been filled."
         />
         <div className="container not-found-wrapper" style={{ padding: "100px 20px", textAlign: "center" }}>
@@ -185,7 +186,7 @@ export function JobDetailPage() {
     description: job.aboutRole,
     identifier: {
       "@type": "PropertyValue",
-      name: "LattiumHR",
+      name: "Zentilos",
       value: job.id,
     },
     datePosted: job.postedDate,
@@ -193,9 +194,9 @@ export function JobDetailPage() {
     employmentType: job.type === "Full-Time" ? "FULL_TIME" : "CONTRACTOR",
     hiringOrganization: {
       "@type": "Organization",
-      name: "LattiumHR",
-      sameAs: "https://lattiumhr.com",
-      logo: "https://lattiumhr.com/favicon.svg",
+      name: "Zentilos",
+      sameAs: "https://zentilos.com",
+      logo: "https://zentilos.com/favicon.svg",
     },
     jobLocation: {
       "@type": "Place",
@@ -220,7 +221,7 @@ export function JobDetailPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA={true}>
       <SEO
-        title={`${job.title} | Careers at LattiumHR`}
+        title={`${job.title} | Careers at Zentilos`}
         description={job.shortSummary}
         canonicalPath={`/careers/${job.id}`}
       />
@@ -478,7 +479,7 @@ export function JobDetailPage() {
                   </div>
                 </div>
 
-                {/* Card 3: The LattiumHR Culture & Perks */}
+                {/* Card 3: The Zentilos Culture & Perks */}
                 <div className="job-sidebar-card">
                   <div className="job-sidebar-card-header">
                     <span className="job-sidebar-badge">CULTURE &amp; PERKS</span>
@@ -513,8 +514,8 @@ export function JobDetailPage() {
                   <p className="job-contact-card-desc">
                     Connect directly with our recruitment team before applying to discuss role expectations or culture fit.
                   </p>
-                  <a href="mailto:talent@lattiumhr.com" className="job-contact-card-link">
-                    <Icon name="mail" size={14} /> talent@lattiumhr.com
+                  <a href="mailto:talent@zentilos.com" className="job-contact-card-link">
+                    <Icon name="mail" size={14} /> talent@zentilos.com
                   </a>
                   <a href="tel:+918041228900" className="job-contact-card-link">
                     <Icon name="phone" size={14} /> +91 (080) 4122-8900
@@ -922,7 +923,7 @@ export function JobDetailPage() {
                       {/* Cover Note */}
                       <div className="job-form-field full-width" style={{ marginTop: "1.2rem" }}>
                         <label htmlFor="app-covernote">
-                          Why LattiumHR? / What do you want to build? <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
+                          Why Zentilos? / What do you want to build? <span className="optional" style={{ color: "#8a8698", fontWeight: 400 }}>(Optional)</span>
                         </label>
                         <textarea
                           id="app-covernote"
@@ -978,7 +979,7 @@ export function JobDetailPage() {
                               textOverflow: "clip",
                             }}
                           >
-                            I consent to LattiumHR collecting and processing my application data for recruitment purposes in accordance with the{" "}
+                            I consent to Zentilos collecting and processing my application data for recruitment purposes in accordance with the{" "}
                             <a
                               href="/privacy"
                               target="_blank"

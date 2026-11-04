@@ -36,8 +36,8 @@ export function GettingStartedPage() {
   return (
     <PageLayout hideCTA={true}>
       <SEO
-        title="Set Up Your Organization - Getting Started Guide | LattiumHR"
-        description="Configure your company details, locations, departments and settings to get started with LattiumHR."
+        title="Set Up Your Organization - Getting Started Guide | Zentilos"
+        description="Configure your company details, locations, departments and settings to get started with Zentilos."
         canonicalPath="/help/getting-started"
       />
 
@@ -96,7 +96,7 @@ export function GettingStartedPage() {
               <h1 className="gs-header-title">Set Up Your Organization</h1>
 
               <p className="gs-header-lead">
-                Configure your company details, locations, departments and settings to get started with LattiumHR.
+                Configure your company details, locations, departments and settings to get started with Zentilos.
               </p>
 
               {/* 3 Quick highlights */}
@@ -245,7 +245,7 @@ export function GettingStartedPage() {
                   <ul className="gs-callout-list">
                     <li>
                       <Icon name="check" size={15} />
-                      <span>You have admin access to your LattiumHR account.</span>
+                      <span>You have admin access to your Zentilos account.</span>
                     </li>
                     <li>
                       <Icon name="check" size={15} />
@@ -555,7 +555,7 @@ export function GettingStartedPage() {
                     <h3>You&apos;re all set!</h3>
                     <p>
                       Your organization is now configured. Next, add your employees
-                      and set up policies to start using LattiumHR.
+                      and set up policies to start using Zentilos.
                     </p>
                   </div>
                 </div>

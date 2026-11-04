@@ -148,7 +148,7 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
             <Icon name="sparkle" size={18} />
           </span>
           <div>
-            <strong>See LattiumHR in action</strong>
+            <strong>See Zentilos in action</strong>
             <small>Get a personalised 30-min walkthrough</small>
           </div>
         </div>
@@ -1268,7 +1268,7 @@ const faqs = [
     "Most teams go live in 2–4 weeks. Your dedicated implementation specialist handles configuration, data import, and team training.",
   ],
   [
-    "Can LattiumHR handle multiple branches?",
+    "Can Zentilos handle multiple branches?",
     "Yes. Create branch-specific policies, holiday calendars, roles, and dashboards while keeping a unified company-wide view.",
   ],
   [
@@ -1387,7 +1387,7 @@ export function Home() {
             <div className="corporate-hero-media">
               <img
                 src="/images/hero-colleagues-clean.png"
-                alt="LattiumHR enterprise HR and payroll leaders collaborating"
+                alt="Zentilos enterprise HR and payroll leaders collaborating"
                 className="corporate-hero-image"
               />
               <div className="corporate-hero-gradient-overlay" />
@@ -1457,7 +1457,7 @@ export function Home() {
             <SectionHeading
               eyebrow="✦ THE DIFFERENCE ✦"
               title="From HR chaos to total clarity"
-              body="See what changes when your people operations, attendance, and payroll run on LattiumHR."
+              body="See what changes when your people operations, attendance, and payroll run on Zentilos."
               center
             />
 
@@ -1523,13 +1523,13 @@ export function Home() {
                 <span>Vs</span>
               </div>
 
-              {/* RIGHT CARD: LATTIUM AUTOMATED PROCESS */}
+              {/* RIGHT CARD: ZENTILOS AUTOMATED PROCESS */}
               <div className="diff-card-automated">
                 {/* Background Executive Working Photo */}
                 <div className="diff-automated-bg-media">
                   <img
                     src="/images/difference-automated-pro.jpg"
-                    alt="LattiumHR automated workforce management"
+                    alt="Zentilos automated workforce management"
                     className="diff-automated-photo"
                   />
                   <div className="diff-automated-gradient-overlay" />
@@ -1540,9 +1540,9 @@ export function Home() {
                   {/* Left Column: Top Header + Bottom 2 Capability Badges */}
                   <div className="diff-auto-col-left">
                     <div className="diff-automated-header">
-                      <span className="diff-automated-tag">LATTIUM</span>
+                      <span className="diff-automated-tag">ZENTILOS</span>
                       <h3 className="diff-automated-title">
-                        Lattium Automated<br />Process
+                        Zentilos Automated<br />Process
                       </h3>
                     </div>
 
@@ -1607,7 +1607,7 @@ export function Home() {
             <SectionHeading
               eyebrow="BUILT AROUND YOUR BUSINESS"
               title="Your organization, your rules"
-              body="Configure LattiumHR to match how your company actually works — not the other way around."
+              body="Configure Zentilos to match how your company actually works — not the other way around."
               center
             />
             <div className="setup-grid">
@@ -1672,7 +1672,7 @@ export function Home() {
                 <strong>
                   <CountUp target={500} suffix="+" />
                 </strong>
-                <span>Businesses trust LattiumHR</span>
+                <span>Businesses trust Zentilos</span>
               </div>
               <div>
                 <strong>
@@ -1702,7 +1702,7 @@ export function Home() {
               <article>
                 <div className="quote-mark">“</div>
                 <p>
-                  LattiumHR brought our five branches onto one system in under three weeks. Payroll
+                  Zentilos brought our five branches onto one system in under three weeks. Payroll
                   that took us four days now takes a few hours.
                 </p>
                 <div>

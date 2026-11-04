@@ -1,5 +1,5 @@
 /**
- * LattiumHR - Centralized CRM Lead & Public Enquiry Service
+ * Zentilos - Centralized CRM Lead & Public Enquiry Service
  *
  * Connects all website forms to the CRM backend endpoint:
  * POST https://[YOUR_BACKEND_DOMAIN]/api/platform/enquiries/public
@@ -95,7 +95,7 @@ export function getEnquiryEndpoint(): string {
 function saveEnquiryLocally(body: Record<string, unknown>) {
   try {
     if (typeof window !== 'undefined' && window.localStorage) {
-      const existingStr = window.localStorage.getItem('lattium_enquiries') || '[]';
+      const existingStr = window.localStorage.getItem('zentilos_enquiries') || '[]';
       let existing: any[] = [];
       try {
         existing = JSON.parse(existingStr);
@@ -111,12 +111,12 @@ function saveEnquiryLocally(body: Record<string, unknown>) {
       };
 
       existing.unshift(newEntry);
-      window.localStorage.setItem('lattium_enquiries', JSON.stringify(existing.slice(0, 100)));
-      window.localStorage.setItem('lattium_last_enquiry', JSON.stringify(newEntry));
-      console.info('[LattiumHR CRM] Demo enquiry recorded successfully:', newEntry);
+      window.localStorage.setItem('zentilos_enquiries', JSON.stringify(existing.slice(0, 100)));
+      window.localStorage.setItem('zentilos_last_enquiry', JSON.stringify(newEntry));
+      console.info('[Zentilos CRM] Demo enquiry recorded successfully:', newEntry);
     }
   } catch (err) {
-    console.warn('[LattiumHR CRM] Could not write enquiry to localStorage:', err);
+    console.warn('[Zentilos CRM] Could not write enquiry to localStorage:', err);
   }
 }
 
@@ -212,7 +212,7 @@ export async function submitCrmEnquiry(payload: CrmEnquiryPayload): Promise<Enqu
         };
       }
     } catch (err: any) {
-      console.warn('[LattiumHR CRM] Live backend ping encountered error, falling back to local confirmation:', err);
+      console.warn('[Zentilos CRM] Live backend ping encountered error, falling back to local confirmation:', err);
     }
   }
 

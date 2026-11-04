@@ -227,7 +227,7 @@ export function ReportsAnalyticsPage() {
       brand: "stripe",
       headline: "Month-end reporting time went from 3 full days to under 15 minutes",
       quote:
-        "Reconciling attendance logs, shift rotations, and loss of pay from 6 distribution warehouses used to take our HR team the entire first weekend of every month. With LattiumHR, reports are instantly generated and reconciled.",
+        "Reconciling attendance logs, shift rotations, and loss of pay from 6 distribution warehouses used to take our HR team the entire first weekend of every month. With Zentilos, reports are instantly generated and reconciled.",
       name: "Freddy Dean",
       role: "VP of People Operations, Modern Logistics",
       avatar: "/images/testi-avatar-1.jpg",
@@ -237,7 +237,7 @@ export function ReportsAnalyticsPage() {
       brand: "zendesk",
       headline: "Spotted a 14% overtime leakage across our manufacturing shifts",
       quote:
-        "The multi-branch attendance comparison report highlighted chronic unplanned overtime in our second shift within two weeks of deployment. The visibility paid for our LattiumHR subscription three times over.",
+        "The multi-branch attendance comparison report highlighted chronic unplanned overtime in our second shift within two weeks of deployment. The visibility paid for our Zentilos subscription three times over.",
       name: "Sarah Jenkins",
       role: "Head of Workforce Analytics, Apex Consumer Goods",
       avatar: "/images/testi-avatar-2.jpg",
@@ -257,7 +257,7 @@ export function ReportsAnalyticsPage() {
       brand: "hubspot",
       headline: "Executive headcount comparisons that the CFO actually reads every Monday",
       quote:
-        "LattiumHR turned messy spreadsheet data into clean, visual metrics that our leadership team actually relies on for strategic headcount budgeting and attrition planning.",
+        "Zentilos turned messy spreadsheet data into clean, visual metrics that our leadership team actually relies on for strategic headcount budgeting and attrition planning.",
       name: "Ananya Kapoor",
       role: "Chief People Officer, ZenHealth Labs",
       avatar: "/images/leader-ananya-kapoor.jpg",
@@ -267,15 +267,15 @@ export function ReportsAnalyticsPage() {
   // FAQs for Reports & Analytics
   const faqs = [
     {
-      q: "What types of workforce reports can I generate in LattiumHR?",
-      a: "LattiumHR provides master Employee Directory rosters, Daily & Monthly Attendance registers, Shift Adherence summaries, Leave Quota & Utilization logs, and Pre-Payroll reconciliation registers with automated Loss of Pay (LOP) calculations.",
+      q: "What types of workforce reports can I generate in Zentilos?",
+      a: "Zentilos provides master Employee Directory rosters, Daily & Monthly Attendance registers, Shift Adherence summaries, Leave Quota & Utilization logs, and Pre-Payroll reconciliation registers with automated Loss of Pay (LOP) calculations.",
     },
     {
       q: "Can I export reports to Excel (.xlsx) and CSV formats?",
       a: "Yes. All reports can be downloaded in standard Excel (.xlsx) and CSV formats formatted cleanly for internal review, payroll software ingestion, or external statutory compliance audits.",
     },
     {
-      q: "How does LattiumHR handle multi-branch or multi-location reports?",
+      q: "How does Zentilos handle multi-branch or multi-location reports?",
       a: "You can filter and compare records by company legal entity, branch location, department, shift rotation, or manager hierarchy. Consolidate company-wide numbers in one click or isolate specific branch registers instantly.",
     },
     {
@@ -283,7 +283,7 @@ export function ReportsAnalyticsPage() {
       a: "Yes. You can schedule daily presence digests or monthly attendance recaps to be emailed automatically to designated managers, business unit leads, or finance teams at fixed times.",
     },
     {
-      q: "How does LattiumHR protect sensitive payroll and employee data in reports?",
+      q: "How does Zentilos protect sensitive payroll and employee data in reports?",
       a: "Role-based permissions ensure department managers only see reports for their direct teams, while sensitive compensation registers, KYC documents, and executive reports remain restricted to authorized HR administrators.",
     },
   ];
@@ -291,7 +291,7 @@ export function ReportsAnalyticsPage() {
   return (
     <div className="app-shell inner-page-shell emp-page-wrapper reports-page-wrapper">
       <SEO
-        title="HR Reports & Workforce Analytics Software — LattiumHR"
+        title="HR Reports & Workforce Analytics Software — Zentilos"
         description="Turn workforce data into clearer decisions. Bring employee records, attendance patterns, leave registers, and payroll summaries together in decision-ready reports."
         canonicalPath="/features/reports-analytics"
       />
@@ -305,8 +305,8 @@ export function ReportsAnalyticsPage() {
         <section className="emp-hero-rich" aria-labelledby="reports-hero-title">
           <div className="container">
             {/* Top Spotlight Tag */}
-            <div className="emp-hero-spotlight-tag" aria-label="Lattium HR">
-              <span>✦ LATTIUM HR ✦</span>
+            <div className="emp-hero-spotlight-tag" aria-label="Zentilos">
+              <span>✦ ZENTILOS ✦</span>
             </div>
 
             {/* Title & Subtext */}
@@ -328,7 +328,7 @@ export function ReportsAnalyticsPage() {
                   openDemoModal({
                     title: "Book a Reports & Analytics Demo",
                     subtitle:
-                      "See how LattiumHR brings employee records, attendance patterns, and payroll summaries into clear, decision-ready reports.",
+                      "See how Zentilos brings employee records, attendance patterns, and payroll summaries into clear, decision-ready reports.",
                     defaultInterest: "Reports & Analytics",
                   })
                 }
@@ -717,13 +717,13 @@ export function ReportsAnalyticsPage() {
         </section>
 
         {/* =========================================================================
-            4. WHY LATTIUM IS BEST FOR REPORTS & ANALYTICS (1 Big Card + 4 Small Cards)
+            4. WHY ZENTILOS IS BEST FOR REPORTS & ANALYTICS (1 Big Card + 4 Small Cards)
             ========================================================================= */}
         <section className="emp-why-choose-section" aria-labelledby="why-choose-title">
           <div className="container">
             {/* Centered Section Header */}
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ WHY LATTIUMHR ✦</span>
+              <span className="emp-eyebrow">✦ WHY ZENTILOS ✦</span>
               <h2 id="why-choose-title" className="emp-section-title">
                 Workforce Analytics That Drive Confident Leadership Decisions
               </h2>
@@ -774,7 +774,7 @@ export function ReportsAnalyticsPage() {
 
                 {/* Bottom Narrative Copy */}
                 <p className="emp-big-card-bottom-text">
-                  Replace days of manual spreadsheet compilation with instant, automated workforce reporting. Lattium unifies attendance punches, leave quotas, and headcount records into live visual dashboards and structured Excel registers ready for leadership and statutory audits.
+                  Replace days of manual spreadsheet compilation with instant, automated workforce reporting. Zentilos unifies attendance punches, leave quotas, and headcount records into live visual dashboards and structured Excel registers ready for leadership and statutory audits.
                 </p>
               </div>
 
@@ -912,7 +912,7 @@ export function ReportsAnalyticsPage() {
                       openDemoModal({
                         title: "Schedule a Reports & Analytics Demo",
                         subtitle:
-                          "Experience automated workforce reporting, attendance analytics, and pre-payroll registers with Lattium.",
+                          "Experience automated workforce reporting, attendance analytics, and pre-payroll registers with Zentilos.",
                         defaultInterest: "Reports & Analytics",
                       })
                     }
@@ -950,7 +950,7 @@ export function ReportsAnalyticsPage() {
                 Workforce Analytics Is Connected to Every HR Workflow
               </h2>
               <p className="emp-section-subhead">
-                Reports seamlessly sync with core modules across the Lattium platform.
+                Reports seamlessly sync with core modules across the Zentilos platform.
               </p>
             </div>
 
@@ -1005,7 +1005,7 @@ export function ReportsAnalyticsPage() {
             <div className="emp-section-header center">
               <span className="emp-eyebrow">✦ TESTIMONIALS ✦</span>
               <h2 id="testi-title" className="emp-section-title">
-                What HR Leaders Say About Lattium Reports
+                What HR Leaders Say About Zentilos Reports
               </h2>
               <p className="emp-section-subhead">
                 Discover how growing organizations eliminate reporting bottlenecks, automate month-end reconciliations, and pass audits effortlessly.
@@ -1095,7 +1095,7 @@ export function ReportsAnalyticsPage() {
         <FooterCTA
           eyebrowBadgeText="Built for Modern Multi-Branch Workforce Intelligence"
           headlineLine1="Transform Workforce Data into"
-          headlineLine2="Confident Decisions with Lattium"
+          headlineLine2="Confident Decisions with Zentilos"
           subheadlineLine1="Focus on strategic leadership while we automate workforce reporting:"
           subheadlineLine2="headcount, attendance trends, leave balances, pre-payroll registers, and audit logs."
           primaryButtonText="Book a Live Demo"

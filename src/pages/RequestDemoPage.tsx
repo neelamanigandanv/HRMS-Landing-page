@@ -118,7 +118,7 @@ export function RequestDemoPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA>
       <SEO
-        title="Request a Live Demo | LattiumHR"
+        title="Request a Live Demo | Zentilos"
         description="Book a personalized 30-minute walkthrough with an HRMS product specialist. See attendance geofencing, statutory payroll, and multi-branch tools tailored to your business."
         canonicalPath="/request-demo"
       />
@@ -135,7 +135,7 @@ export function RequestDemoPage() {
               </div>
 
               <h1>
-                See how LattiumHR <span className="demo-highlight-plum">fits your organization</span>
+                See how Zentilos <span className="demo-highlight-plum">fits your organization</span>
               </h1>
 
               <p className="demo-hero-intro">

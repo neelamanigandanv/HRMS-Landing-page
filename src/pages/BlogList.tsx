@@ -38,7 +38,7 @@ export function BlogList() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} onOpenDemo={() => openDemoModal()}>
       <SEO
-        title="Blog & Playbooks — HRMS, Attendance & Statutory Payroll Guides | LattiumHR"
+        title="Blog & Playbooks — HRMS, Attendance & Statutory Payroll Guides | Zentilos"
         description="Actionable guides, statutory compliance playbooks, and workforce management best practices for growing multi-branch teams."
         canonicalPath="/blog"
       />

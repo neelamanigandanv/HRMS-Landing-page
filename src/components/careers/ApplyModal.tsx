@@ -195,6 +195,7 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
           expected_ctc: expectedCtc.trim() || "Not Specified",
           linkedin_portfolio_url: linkedinUrl.trim(),
           resume_url: resumeFile ? resumeFile.name : "",
+          why_zentilos: coverNote.trim(),
           why_lattium_hr: coverNote.trim(),
         },
       };
@@ -267,7 +268,7 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
 
               <h3 className="careers-thank-you-title">Application Received!</h3>
               <p className="careers-thank-you-text">
-                Thank you for applying for <strong>{roleTitle}</strong> at LattiumHR.
+                Thank you for applying for <strong>{roleTitle}</strong> at Zentilos.
                 Our talent team will review your background and contact you within{" "}
                 <strong>5 working days</strong>.
               </p>
@@ -542,7 +543,7 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
               {/* Cover Note */}
               <div className="careers-form-group full-width">
                 <label htmlFor="app-covernote" className="careers-form-label">
-                  Why LattiumHR? / What do you want to build? <span className="optional">(Optional)</span>
+                  Why Zentilos? / What do you want to build? <span className="optional">(Optional)</span>
                 </label>
                 <textarea
                   id="app-covernote"
@@ -565,7 +566,7 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
                     required
                   />
                   <span>
-                    I consent to LattiumHR collecting and processing my application data for
+                    I consent to Zentilos collecting and processing my application data for
                     recruitment purposes in accordance with the{" "}
                     <Link to="/privacy" target="_blank" rel="noopener noreferrer">
                       Privacy Policy

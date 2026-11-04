@@ -41,7 +41,7 @@ export function SupportHelpCenterPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs}>
       <SEO
-        title={`${currentTopic ? currentTopic.title : "Help Center Knowledge Base"} | LattiumHR`}
+        title={`${currentTopic ? currentTopic.title : "Help Center Knowledge Base"} | Zentilos`}
         description={
           currentTopic
             ? currentTopic.desc

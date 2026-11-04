@@ -169,7 +169,7 @@ export function LegalTemplate({
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA={true}>
       <SEO
-        title={`${title} | LattiumHR`}
+        title={`${title} | Zentilos`}
         description={summary}
         canonicalPath={canonicalPath}
       />
@@ -284,7 +284,7 @@ export function LegalTemplate({
                     <Icon name="download" size={14} /> Print / Save Document PDF
                   </button>
                   <div className="security-direct-lead">
-                    <Icon name="shield" size={12} /> Direct Desk: {ctaCard?.leadEmail || "legal@lattiumhr.com"}
+                    <Icon name="shield" size={12} /> Direct Desk: {ctaCard?.leadEmail || "legal@zentilos.com"}
                   </div>
                 </div>
               </div>

@@ -78,7 +78,7 @@ const RUPEE_TO_DOLLAR_MAP: Record<string, string> = {
  */
 function detectIsIndia(): boolean {
   try {
-    const saved = localStorage.getItem("lattium_currency");
+    const saved = localStorage.getItem("zentilos_currency") || localStorage.getItem("lattium_currency");
     if (saved === "INR") return true;
     if (saved === "USD") return false;
   } catch {
@@ -128,7 +128,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
     setCurrencyState(c);
     setIsIndia(c === "INR");
     try {
-      localStorage.setItem("lattium_currency", c);
+      localStorage.setItem("zentilos_currency", c);
     } catch {
       // ignore
     }
@@ -142,7 +142,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     // Only attempt IP lookup if the user hasn't explicitly set a preference in localStorage
     try {
-      const saved = localStorage.getItem("lattium_currency");
+      const saved = localStorage.getItem("zentilos_currency") || localStorage.getItem("lattium_currency");
       if (saved) return;
     } catch {
       // ignore

@@ -20,7 +20,7 @@ export const BenefitGrid: React.FC = () => {
             </h2>
 
             <p className="partner-why-desc">
-              Partnering with LattiumHR unlocks high-retention enterprise client relationships,
+              Partnering with Zentilos unlocks high-retention enterprise client relationships,
               dependable revenue streams, and dedicated go-to-market enablement.
             </p>
 
@@ -47,7 +47,7 @@ export const BenefitGrid: React.FC = () => {
               <div className="partner-mosaic-item mosaic-1">
                 <img
                   src="/images/skyline-hq.jpg"
-                  alt="LattiumHR Corporate Campus"
+                  alt="Zentilos Corporate Campus"
                   loading="lazy"
                 />
               </div>

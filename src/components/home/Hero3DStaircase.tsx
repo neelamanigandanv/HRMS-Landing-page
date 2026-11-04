@@ -43,7 +43,7 @@ export function Hero3DStaircase() {
   }, []);
 
   return (
-    <div className="hero-3d-visual-container" aria-label="LattiumHR interactive workforce journey from Hire to Growth">
+    <div className="hero-3d-visual-container" aria-label="Zentilos interactive workforce journey from Hire to Growth">
       {/* Background Soft Pink Ambient Glow */}
       <div className="hero-3d-ambient-glow" />
 
@@ -70,7 +70,7 @@ export function Hero3DStaircase() {
         <div className="hero-3d-render-wrap">
           <img
             src="/images/hero-3d-staircase.jpg"
-            alt="LattiumHR 3D Staircase: From Hire to Growth"
+            alt="Zentilos 3D Staircase: From Hire to Growth"
             className="hero-3d-base-img"
             loading="eager"
             fetchPriority="high"

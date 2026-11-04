@@ -16,7 +16,7 @@ export function GuidesPage() {
   return (
     <PageLayout hideCTA={true}>
       <SEO
-        title="Knowledge Guides | LattiumHR Knowledge Hub"
+        title="Knowledge Guides | Zentilos Knowledge Hub"
         description="Comprehensive HR, Payroll, Leave, and Statutory Compliance guides crafted by industry experts to help modern businesses operate with confidence."
         canonicalPath="/guides"
       />

@@ -1,5 +1,5 @@
 // ============================================================================
-// LATTIUM HR - SUPPORT TICKET API SERVICE (MOCK IMPLEMENTATION)
+// ZENTILOS - SUPPORT TICKET API SERVICE (MOCK IMPLEMENTATION)
 // Simulates POST /api/support/tickets with realistic SLA routing,
 // priority flagging, session storage persistence, and tracking lookup.
 // ============================================================================
@@ -31,7 +31,7 @@ export interface TicketRecord extends TicketPayload {
   workEmail: string;
 }
 
-const STORAGE_KEY = "lattium_support_tickets_v1";
+const STORAGE_KEY = "zentilos_support_tickets_v1";
 
 // In-memory fallback
 const inMemoryTickets: Record<string, TicketRecord> = {};
@@ -108,7 +108,7 @@ export async function submitSupportTicket(payload: TicketPayload): Promise<Ticke
   saveTicket(newTicket);
 
   // In production, backend sends customer confirmation email with tracking link
-  // e.g. https://lattiumhr.com/support/track?id=TKT-2026-XXXX
+  // e.g. https://zentilos.com/support/track?id=TKT-2026-XXXX
   console.log(`[Ticket Created] ${ticketId} routed to ${assignedTeam}. Immediate Alert: ${isImmediateAlert}`);
 
   return newTicket;

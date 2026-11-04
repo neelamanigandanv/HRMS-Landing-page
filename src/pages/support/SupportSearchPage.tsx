@@ -48,8 +48,8 @@ export function SupportSearchPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs}>
       <SEO
-        title={`Search Results: ${query || "Help Center"} | LattiumHR Support`}
-        description="Search results for LattiumHR help guides, payroll troubleshooting, and attendance configurations."
+        title={`Search Results: ${query || "Help Center"} | Zentilos Support`}
+        description="Search results for Zentilos help guides, payroll troubleshooting, and attendance configurations."
       />
 
       <div className="support-subpage-wrap py-12">
@@ -150,7 +150,7 @@ export function SupportSearchPage() {
                   Raise a Ticket
                 </Link>
                 <a
-                  href="mailto:support@lattiumhr.com"
+                  href="mailto:support@zentilos.com"
                   className="px-5 py-2.5 bg-white border border-gray-300 text-gray-800 font-bold text-sm rounded-xl hover:border-gray-400 transition"
                 >
                   Email Support

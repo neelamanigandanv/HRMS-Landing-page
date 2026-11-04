@@ -8,7 +8,7 @@ interface CookiePreferences {
   functional: boolean;
 }
 
-const STORAGE_KEY = "lattium_cookie_preferences";
+const STORAGE_KEY = "zentilos_cookie_preferences";
 
 export function CookieBanner() {
   const [isOpen, setIsOpen] = useState(false);
@@ -85,7 +85,7 @@ export function CookieBanner() {
                 <Icon name="shield" size={18} className="cookie-icon" />
               </div>
               <p>
-                We use strictly necessary cookies to ensure LattiumHR functions correctly. With your
+                We use strictly necessary cookies to ensure Zentilos functions correctly. With your
                 consent, we also use optional analytics cookies to measure site performance and enhance your experience. Read our{" "}
                 <a href="/cookie-policy" className="cookie-link">
                   Cookie Policy

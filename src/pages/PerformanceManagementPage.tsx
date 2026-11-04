@@ -21,7 +21,7 @@ export function PerformanceManagementPage() {
     openDemoModal({
       title: "Request a Performance Management Demo",
       subtitle:
-        "See how LattiumHR helps teams set clear goals, conduct fair reviews, and nurture employee development.",
+        "See how Zentilos helps teams set clear goals, conduct fair reviews, and nurture employee development.",
       defaultInterest: "Performance Management",
     });
   };
@@ -100,7 +100,7 @@ export function PerformanceManagementPage() {
       ],
       callout: {
         role: "Head of Talent Development",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "Goal Alignment" },
@@ -128,7 +128,7 @@ export function PerformanceManagementPage() {
       ],
       callout: {
         role: "People Operations Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "98%", label: "On-Time Reviews" },
@@ -156,7 +156,7 @@ export function PerformanceManagementPage() {
       ],
       callout: {
         role: "VP of Human Resources",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "Records Preserved" },
@@ -338,8 +338,8 @@ export function PerformanceManagementPage() {
   return (
     <div className="app-shell inner-page-shell emp-page-wrapper perf-page-wrapper">
       <SEO
-        title="Performance Management Software — Goals, Reviews & Employee Development | LattiumHR"
-        description="Turn Employee Performance Into Progress. Track employee goals, organize performance reviews, and bring more clarity to employee development with LattiumHR."
+        title="Performance Management Software — Goals, Reviews & Employee Development | Zentilos"
+        description="Turn Employee Performance Into Progress. Track employee goals, organize performance reviews, and bring more clarity to employee development with Zentilos."
         canonicalPath="/features/performance-management"
       />
 
@@ -690,12 +690,12 @@ export function PerformanceManagementPage() {
         </section>
 
         {/* =========================================================================
-            5. WHY LATTIUMHR FOR PERFORMANCE MANAGEMENT
+            5. WHY ZENTILOS FOR PERFORMANCE MANAGEMENT
             ========================================================================= */}
         <section className="emp-section emp-why-choose-section" id="why-choose">
           <div className="container">
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ WHY LATTIUMHR ✦</span>
+              <span className="emp-eyebrow">✦ WHY ZENTILOS ✦</span>
               <h2 id="why-choose-title" className="emp-section-title">
                 Make Performance Conversations More Meaningful.
               </h2>

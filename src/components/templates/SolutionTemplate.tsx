@@ -775,7 +775,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
             <SectionHeading
               eyebrow="USE CASES"
               title={solution.useCasesTitle}
-              body="See how organizations in this operational segment deploy LattiumHR to overcome specific hurdles."
+              body="See how organizations in this operational segment deploy Zentilos to overcome specific hurdles."
               center
             />
             <div className="usecases-grid">
@@ -784,7 +784,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                   <div className="usecase-badge">Scenario {idx + 1}</div>
                   <h4>{uc.scenario}</h4>
                   <div className="usecase-block">
-                    <strong>LattiumHR Approach:</strong>
+                    <strong>Zentilos Approach:</strong>
                     <p>{uc.solution}</p>
                   </div>
                   <div className="usecase-block outcome">
@@ -833,7 +833,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
             <SectionHeading
               eyebrow={solution.relatedSolutions.eyebrow || "✦ RELATED SOLUTIONS ✦"}
               title={solution.relatedSolutions.title || "Explore Solutions for Your Business"}
-              body={solution.relatedSolutions.subtitle || "Discover how LattiumHR scales across company sizes and functional departments with specialized workflows."}
+              body={solution.relatedSolutions.subtitle || "Discover how Zentilos scales across company sizes and functional departments with specialized workflows."}
               center
             />
             <div className="solution-related-grid">

@@ -15,8 +15,8 @@ export function SEO({
   ogType = "website",
 }: SEOProps) {
   const location = useLocation();
-  const canonicalUrl = `https://lattiumhr.com${canonicalPath || location.pathname}`;
-  const fullTitle = `${title} | LattiumHR`;
+  const canonicalUrl = `https://zentilos.com${canonicalPath || location.pathname}`;
+  const fullTitle = `${title} | Zentilos`;
 
   useEffect(() => {
     document.title = fullTitle;

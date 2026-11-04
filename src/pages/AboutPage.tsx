@@ -80,7 +80,7 @@ const milestonesData: MilestoneItem[] = [
     year: "2017",
     tag: "THE INCEPTION",
     title: "The Starting Spark in Bengaluru to Eliminate Attendance Chaos",
-    desc: "LattiumHR was founded in Bengaluru after experiencing the everyday friction of running multi-branch frontline teams on paper logs and broken spreadsheets. We built our v1 foundation solely to eliminate manual attendance chaos.",
+    desc: "Zentilos was founded in Bengaluru after experiencing the everyday friction of running multi-branch frontline teams on paper logs and broken spreadsheets. We built our v1 foundation solely to eliminate manual attendance chaos.",
     icon: "zap",
     badge: "Founded 2017",
     stats: [
@@ -155,8 +155,8 @@ export function AboutPage() {
   return (
     <PageLayout hideCTA breadcrumbs={breadcrumbs}>
       <SEO
-        title="About Us | LattiumHR — The People Behind Modern HR"
-        description="Learn about LattiumHR. Founded in 2017 in Bengaluru, India, we build simple, dependable workforce management software so leaders can spend less time on paperwork and more time on people."
+        title="About Us | Zentilos — The People Behind Modern HR"
+        description="Learn about Zentilos. Founded in 2017 in Bengaluru, India, we build simple, dependable workforce management software so leaders can spend less time on paperwork and more time on people."
         canonicalPath="/about"
       />
 
@@ -167,7 +167,7 @@ export function AboutPage() {
           <div className="about-hero-center">
             <span className="about-hero-chip">
               <Icon name="sparkle" size={13} />
-              ✦ ABOUT LATTIUMHR ✦
+              ✦ ABOUT ZENTILOS ✦
             </span>
 
             <h1 className="about-hero-heading">
@@ -176,7 +176,7 @@ export function AboutPage() {
 
             <p className="about-hero-lead">
               We are a dedicated team of HR practitioners, engineers, and customer advocates who experienced the
-              chaos of physical registers and broken spreadsheets. We built LattiumHR to give leaders
+              chaos of physical registers and broken spreadsheets. We built Zentilos to give leaders
               effortless workforce control and their personal time back.
             </p>
 
@@ -202,7 +202,7 @@ export function AboutPage() {
               <div className="about-hero-media-card">
                 <img
                   src="/images/about-team-hero.jpg"
-                  alt="LattiumHR leadership and product engineering team collaborating"
+                  alt="Zentilos leadership and product engineering team collaborating"
                   className="about-hero-media-img"
                   loading="eager"
                 />
@@ -260,7 +260,7 @@ export function AboutPage() {
           <SectionHeading
             eyebrow="OUR BEGINNING"
             title="Built from real workplace frustration"
-            body="How a personal struggle with fragmented tools and chaotic spreadsheets sparked the creation of LattiumHR."
+            body="How a personal struggle with fragmented tools and chaotic spreadsheets sparked the creation of Zentilos."
             center
           />
 
@@ -277,7 +277,7 @@ export function AboutPage() {
               </div>
               <div className="story-founder-details">
                 <h3 className="story-founder-name">Kavya Sundaram</h3>
-                <p className="story-founder-role">Founder & CEO, LattiumHR</p>
+                <p className="story-founder-role">Founder & CEO, Zentilos</p>
                 <div className="story-founder-pill">
                   Founded 2017 · Bengaluru, India
                 </div>
@@ -341,7 +341,7 @@ export function AboutPage() {
             <div className="milestone-img-wrapper">
               <img
                 src="/images/about-milestone-journey.jpg"
-                alt="LattiumHR founders and leadership team collaborating on workforce growth"
+                alt="Zentilos founders and leadership team collaborating on workforce growth"
                 className="milestone-journey-img"
                 loading="lazy"
               />
@@ -354,7 +354,7 @@ export function AboutPage() {
               <p className="milestone-paragraph">{activeMilestone.desc}</p>
 
               <Link to="/request-demo" className="milestone-cta-btn">
-                <span>Discover LattiumHR</span>
+                <span>Discover Zentilos</span>
                 <span className="milestone-btn-arrow" aria-hidden="true">↘</span>
               </Link>
 
@@ -654,7 +654,7 @@ export function AboutPage() {
                     />
                   </svg>
                 </div>
-                <div className="stat-label-text">Businesses trust LattiumHR</div>
+                <div className="stat-label-text">Businesses trust Zentilos</div>
               </div>
 
               <div className="impact-stat-divider" />
@@ -712,12 +712,12 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* 8. Find Out More: Discover Lattium & Our Team (Careers, Case Studies, Resource Hub) */}
+      {/* 8. Find Out More: Discover Zentilos & Our Team (Careers, Case Studies, Resource Hub) */}
       <section className="about-discover-section">
         <div className="container">
           <SectionHeading
-            eyebrow="EXPLORE LATTIUM"
-            title="Find out more about Lattium and our team"
+            eyebrow="EXPLORE ZENTILOS"
+            title="Find out more about Zentilos and our team"
             center
           />
 
@@ -727,7 +727,7 @@ export function AboutPage() {
               <div className="discover-image-box">
                 <img
                   src="/images/team-careers-card.jpg"
-                  alt="LattiumHR Team and Careers"
+                  alt="Zentilos Team and Careers"
                   className="discover-img"
                   loading="lazy"
                 />

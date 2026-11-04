@@ -430,7 +430,7 @@ export function FeatureTemplate({ feature }: { feature: FeatureData }) {
         <div className="container">
           <SectionHeading
             eyebrow="CONNECTED HRMS MODULES"
-            title="Seamless data sync across the LattiumHR ecosystem"
+            title="Seamless data sync across the Zentilos ecosystem"
             body={`See how ${feature.title} automatically coordinates with your other operational HR modules.`}
             center
           />
@@ -538,7 +538,7 @@ export function FeatureTemplate({ feature }: { feature: FeatureData }) {
             <span className="eyebrow">READY TO SIMPLIFY HR?</span>
             <h2>Transform how your team manages {feature.title.toLowerCase()}.</h2>
             <p>
-              Join 500+ growing multi-branch businesses running HR, attendance, and payroll on LattiumHR.
+              Join 500+ growing multi-branch businesses running HR, attendance, and payroll on Zentilos.
             </p>
             <div className="final-actions">
               <Button to="/request-demo">

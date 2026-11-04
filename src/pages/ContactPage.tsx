@@ -130,7 +130,7 @@ export function ContactPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA>
       <SEO
-        title="Contact Us | Connect with LattiumHR Team"
+        title="Contact Us | Connect with Zentilos Team"
         description="Get in touch with our product specialists, request a personalized consultation, or contact our support team directly."
         canonicalPath="/contact"
       />
@@ -160,13 +160,13 @@ export function ContactPage() {
             {/* Three Horizontal Cards */}
             <div className="contact-cards-stack">
               {/* Card 1: Direct Email */}
-              <a href="mailto:sales@lattiumhr.com" className="contact-h-card">
+              <a href="mailto:sales@zentilos.com" className="contact-h-card">
                 <div className="contact-h-icon">
                   <Icon name="mail" size={20} />
                 </div>
                 <div className="contact-h-content">
                   <span className="contact-h-label">SALES &amp; DEMOS</span>
-                  <span className="contact-h-main">sales@lattiumhr.com</span>
+                  <span className="contact-h-main">sales@zentilos.com</span>
                   <span className="contact-h-sub">Guaranteed response within 2 business hours</span>
                 </div>
                 <div className="contact-h-arrow">

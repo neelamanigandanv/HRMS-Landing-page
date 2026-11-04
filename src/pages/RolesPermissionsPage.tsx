@@ -21,7 +21,7 @@ export function RolesPermissionsPage() {
     openDemoModal({
       title: "Request a Roles & Permissions Demo",
       subtitle:
-        "See how LattiumHR provides granular role-based access control to protect sensitive workforce records.",
+        "See how Zentilos provides granular role-based access control to protect sensitive workforce records.",
       defaultInterest: "Roles & Permissions",
     });
   };
@@ -102,7 +102,7 @@ export function RolesPermissionsPage() {
       ],
       callout: {
         role: "Head of IT & Security",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "Tenant Isolation" },
@@ -130,7 +130,7 @@ export function RolesPermissionsPage() {
       ],
       callout: {
         role: "People Operations Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "Team-Scoped" },
@@ -158,7 +158,7 @@ export function RolesPermissionsPage() {
       ],
       callout: {
         role: "Finance & Compliance Controller",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "AES-256", label: "Cloud Encrypted" },
@@ -362,7 +362,7 @@ export function RolesPermissionsPage() {
     },
     {
       q: "Can different users have different access levels?",
-      a: "Yes. LattiumHR supports granular multi-tier permissions. For example, a company admin has full organizational oversight, a manager has scoped access limited to their direct reports, finance handles payroll calculations, and employees only access their own self-service profile.",
+      a: "Yes. Zentilos supports granular multi-tier permissions. For example, a company admin has full organizational oversight, a manager has scoped access limited to their direct reports, finance handles payroll calculations, and employees only access their own self-service profile.",
     },
     {
       q: "How do permissions help protect employee information?",
@@ -373,7 +373,7 @@ export function RolesPermissionsPage() {
   return (
     <div className="app-shell inner-page-shell emp-page-wrapper roles-page-wrapper">
       <SEO
-        title="Roles & Permissions Software — Granular Access Control | LattiumHR"
+        title="Roles & Permissions Software — Granular Access Control | Zentilos"
         description="Control Access. Protect Every HR Operation. Give every user the right level of access with role-based permissions designed to keep your workforce data organized and protected."
         canonicalPath="/features/roles-permissions"
       />
@@ -803,17 +803,17 @@ export function RolesPermissionsPage() {
         </section>
 
         {/* =========================================================================
-            5. WHY LATTIUMHR FOR ROLES & PERMISSIONS
+            5. WHY ZENTILOS FOR ROLES & PERMISSIONS
             ========================================================================= */}
         <section className="emp-section emp-why-choose-section" id="why-choose">
           <div className="container">
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ WHY LATTIUMHR ✦</span>
+              <span className="emp-eyebrow">✦ WHY ZENTILOS ✦</span>
               <h2 id="why-choose-title" className="emp-section-title">
                 Keep Workforce Access Clear and Controlled.
               </h2>
               <p className="emp-section-subhead">
-                LattiumHR ensures every team member accesses only what their role demands, protecting confidential employee records and keeping administrative duties clearly separated.
+                Zentilos ensures every team member accesses only what their role demands, protecting confidential employee records and keeping administrative duties clearly separated.
               </p>
             </div>
 
@@ -858,7 +858,7 @@ export function RolesPermissionsPage() {
                 </div>
 
                 <p className="emp-big-card-bottom-text">
-                  Keep workforce access clear, controlled, and audit-ready across all branches. LattiumHR ensures every team member accesses only what their role demands, protecting confidential employee records and keeping administrative duties clearly separated.
+                  Keep workforce access clear, controlled, and audit-ready across all branches. Zentilos ensures every team member accesses only what their role demands, protecting confidential employee records and keeping administrative duties clearly separated.
                 </p>
               </div>
 

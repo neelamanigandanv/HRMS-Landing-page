@@ -802,8 +802,8 @@ export function ProductOverview() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} onOpenDemo={() => setIsDemoModalOpen(true)}>
       <SEO
-        title="Product Overview | All-In-One HRMS Platform | LattiumHR"
-        description="One platform for every part of HR. Explore all 10 LattiumHR modules: Core HR, attendance, payroll, assets, recruitment, and performance connected on a single employee record."
+        title="Product Overview | All-In-One HRMS Platform | Zentilos"
+        description="One platform for every part of HR. Explore all 10 Zentilos modules: Core HR, attendance, payroll, assets, recruitment, and performance connected on a single employee record."
         canonicalPath="/product"
       />
 
@@ -1450,7 +1450,7 @@ export function ProductOverview() {
       <RequestDemoModal
         isOpen={isDemoModalOpen}
         onClose={() => setIsDemoModalOpen(false)}
-        title="Book Your Free LattiumHR Demo"
+        title="Book Your Free Zentilos Demo"
         subtitle="Experience our 10 unified HR modules with a live product architect."
         defaultInterest="Full Platform"
       />

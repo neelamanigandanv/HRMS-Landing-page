@@ -218,8 +218,8 @@ export function SecurityPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA={true}>
       <SEO
-        title="Enterprise Security & Continuous Compliance | LattiumHR"
-        description="Learn how LattiumHR protects confidential employee identity, payroll records, and biometric data with layered technical and organizational safeguards."
+        title="Enterprise Security & Continuous Compliance | Zentilos"
+        description="Learn how Zentilos protects confidential employee identity, payroll records, and biometric data with layered technical and organizational safeguards."
         canonicalPath="/security"
       />
 
@@ -240,7 +240,7 @@ export function SecurityPage() {
               </h1>
 
               <p className="security-page-subtitle">
-                How LattiumHR protects workforce identity, payroll records, and biometric data with multi-tenant isolation and cryptographic safeguards.
+                How Zentilos protects workforce identity, payroll records, and biometric data with multi-tenant isolation and cryptographic safeguards.
               </p>
 
               {/* Authoritative Security Badges Row (Replaces Playbook Flow Cards on Hero) */}
@@ -335,7 +335,7 @@ export function SecurityPage() {
                     <Icon name="download" size={14} /> Print / Save Security PDF
                   </button>
                   <div className="security-direct-lead">
-                    <Icon name="shield" size={12} /> Direct SLA: security@lattiumhr.com
+                    <Icon name="shield" size={12} /> Direct SLA: security@zentilos.com
                   </div>
                 </div>
               </div>
@@ -347,7 +347,7 @@ export function SecurityPage() {
               <section id="architecture" className="guide-prose-section">
                 <h2>1. Multi-Tier Security Architecture &amp; Tenant Isolation</h2>
                 <p>
-                  At LattiumHR, data security is central to everything we design, develop, and operate.
+                  At Zentilos, data security is central to everything we design, develop, and operate.
                   Human resources, workforce management, and automated payroll platforms process an organization&apos;s
                   most confidential employee identity and financial records. We treat this responsibility with
                   defense-in-depth engineering principles.
@@ -375,7 +375,7 @@ export function SecurityPage() {
               <section id="hosting-residency" className="guide-prose-section">
                 <h2>2. Tier-III Domestic Data Hosting &amp; Residency</h2>
                 <p>
-                  All customer databases, transaction logs, and LattiumHR cloud application workloads are hosted
+                  All customer databases, transaction logs, and Zentilos cloud application workloads are hosted
                   exclusively in <strong>ISO 27001-certified Tier-III cloud data centers located geographically within India</strong>{" "}
                   (AWS Mumbai and Hyderabad dual-region availability zones).
                 </p>
@@ -403,7 +403,7 @@ export function SecurityPage() {
                     <Icon name="sparkle" size={16} /> Domestic Sovereign Guarantee
                   </div>
                   <p>
-                    LattiumHR maintains zero offshore cloud storage dependencies for primary client data.
+                    Zentilos maintains zero offshore cloud storage dependencies for primary client data.
                     All employee records, monthly payroll registers, and biometric event journals remain permanently within Indian territory.
                   </p>
                 </div>
@@ -518,7 +518,7 @@ export function SecurityPage() {
                     <Icon name="sparkle" size={16} /> DevSecOps Standard
                   </div>
                   <p>
-                    LattiumHR maintains a zero-known-critical-vulnerability policy. All software releases pass
+                    Zentilos maintains a zero-known-critical-vulnerability policy. All software releases pass
                     rigorous automated vulnerability checks and regression suites before staging rollout.
                   </p>
                 </div>
@@ -551,7 +551,7 @@ export function SecurityPage() {
                     <Icon name="sparkle" size={16} /> High Availability Commitment
                   </div>
                   <p>
-                    Backed by multi-AZ redundant nodes and automated load rebalancing, LattiumHR commits to a
+                    Backed by multi-AZ redundant nodes and automated load rebalancing, Zentilos commits to a
                     <strong>99.99% operational uptime SLA</strong> with financial service credit guarantees for enterprise customers.
                   </p>
                 </div>
@@ -561,7 +561,7 @@ export function SecurityPage() {
               <section id="compliance-checklist" className="guide-prose-section">
                 <h2>7. Enterprise Security Verification Checklist</h2>
                 <p>
-                  Use this interactive verification checklist to evaluate LattiumHR against your organization&apos;s
+                  Use this interactive verification checklist to evaluate Zentilos against your organization&apos;s
                   internal Information Security (InfoSec) and procurement standards:
                 </p>
 
@@ -647,7 +647,7 @@ export function SecurityPage() {
                     <strong>Forensic Post-Mortem Transparency:</strong> Complete root-cause analysis (RCA) and mitigation reports are published to affected customers following incident resolution.
                   </li>
                   <li>
-                    <strong>Responsible Vulnerability Disclosure Program:</strong> We welcome ethical reports from security researchers. Disclosures to <code>security@lattiumhr.com</code> receive review within 1 business day under safe-harbor terms.
+                    <strong>Responsible Vulnerability Disclosure Program:</strong> We welcome ethical reports from security researchers. Disclosures to <code>security@zentilos.com</code> receive review within 1 business day under safe-harbor terms.
                   </li>
                 </ul>
 
@@ -657,7 +657,7 @@ export function SecurityPage() {
                   </div>
                   <p>
                     For urgent vulnerability disclosures or to exchange PGP encrypted keys, email our security leads
-                    directly at <a href="mailto:security@lattiumhr.com" style={{ color: "#7b2958", fontWeight: 700 }}>security@lattiumhr.com</a>.
+                    directly at <a href="mailto:security@zentilos.com" style={{ color: "#7b2958", fontWeight: 700 }}>security@zentilos.com</a>.
                   </p>
                 </div>
               </section>

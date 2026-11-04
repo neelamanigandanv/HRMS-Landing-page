@@ -1618,11 +1618,11 @@
 
 
 /* ==========================================================================
-   SECTION 3B — WHY LATTIUMHR FOR SMALL BUSINESSES
+   SECTION 3B — WHY ZENTILOS FOR SMALL BUSINESSES
    Matching Reference Image: 3 Process Cards with Top Notches (01, 02, 03)
    Center Card (#02) Highlighted with Solid Accent Box
    ========================================================================== */
-.sb-why-lattium-section {
+.sb-why-zentilos-section {
   padding: 95px 0 105px;
   background: #fbfbfc;
   position: relative;
@@ -1630,11 +1630,11 @@
   border-bottom: 1px solid #f0edf6;
 }
 
-.sb-why-lattium-backdrop {
+.sb-why-zentilos-backdrop {
   display: none;
 }
 
-.sb-why-lattium-glow {
+.sb-why-zentilos-glow {
   display: none;
 }
 

@@ -81,7 +81,7 @@ export const blogPosts: BlogPost[] = [
       "Running payroll for an expanding organization in India is one of the most operationally complex responsibilities for finance and HR leaders. While basic salary calculations may appear simple on the surface, statutory contributions, state-specific levies, and frequent government regulatory updates introduce layers of compliance risks.",
       "Under the Employees' Provident Funds and Miscellaneous Provisions Act, 1952, statutory PF contributions of 12% by both the employer and employee must be remitted by the 15th of the following month. Failing to remit on time incurs penal damages under Section 14B ranging from 5% to 25% per annum.",
       "Employee State Insurance (ESI) requires equally meticulous handling. For employees earning up to ₹21,000 per month, 0.75% is deducted from the employee and 3.25% is contributed by the employer. Maintaining accurate wage definitions and filing monthly contribution returns on the ESIC portal prevents labor inspection notices.",
-      "State-specific levies such as Professional Tax (PT) create compounding headaches for multi-branch organizations. For example, in Maharashtra, PT is ₹200 per month except in February when it increases to ₹300, whereas in Karnataka, PT is ₹200 per month for gross salaries above ₹15,000. LattiumHR’s multi-branch rules engine automatically applies the appropriate state slabs based on employee office assignment.",
+      "State-specific levies such as Professional Tax (PT) create compounding headaches for multi-branch organizations. For example, in Maharashtra, PT is ₹200 per month except in February when it increases to ₹300, whereas in Karnataka, PT is ₹200 per month for gross salaries above ₹15,000. Zentilos’s multi-branch rules engine automatically applies the appropriate state slabs based on employee office assignment.",
     ],
   },
   {
@@ -106,7 +106,7 @@ export const blogPosts: BlogPost[] = [
       "For decades, the physical biometric fingerprint machine was the gold standard of workplace accountability. However, as organizations expand into multi-city branches, remote working, and client-site deployments, hardware devices present significant limitations.",
       "Physical machines are vulnerable to hardware breakdowns, network disconnections, and long queues at 9:00 AM. When an employee forgets their ID card or a scanner fails, HR spends hours manually adjusting time logs. More critically, physical scanners cannot track on-field sales executives or service technicians visiting client premises.",
       "Mobile attendance with GPS geofencing transforms every employee's smartphone into a verified time clock. By configuring virtual boundaries around your office coordinates, employees can only punch in when they are physically inside the premises. GPS tags, timestamp verification, and optional selfie validation prevent proxy attendance entirely.",
-      "For manufacturing facilities and retail stores, a unified approach works best: deploy cloud-connected biometric devices at factory gates while empowering white-collar and field teams with the mobile app. Both streams flow into LattiumHR's centralized attendance engine.",
+      "For manufacturing facilities and retail stores, a unified approach works best: deploy cloud-connected biometric devices at factory gates while empowering white-collar and field teams with the mobile app. Both streams flow into Zentilos's centralized attendance engine.",
     ],
   },
   {
@@ -201,7 +201,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     term: "Applicant Tracking System (ATS)",
     category: "Recruitment & Performance",
     definition: "Software that manages the recruitment pipeline from job posting and candidate sourcing through interview stages, feedback scorecards, and digital offer letter generation.",
-    example: "Moving a candidate from 'Technical Screening' to 'Culture Fit' in LattiumHR's visual kanban board.",
+    example: "Moving a candidate from 'Technical Screening' to 'Culture Fit' in Zentilos's visual kanban board.",
   },
   {
     term: "Objectives & Key Results (OKRs)",
@@ -214,17 +214,17 @@ export const glossaryTerms: GlossaryTerm[] = [
 export const faqList: FAQItem[] = [
   {
     category: "Implementation & Setup",
-    question: "How long does it take to implement LattiumHR?",
+    question: "How long does it take to implement Zentilos?",
     answer: "Most organizations with 50 to 500 employees go live within 2 to 4 weeks. Your assigned implementation specialist assists with historical employee data import, shift configuration, leave rule setup, and manager training.",
   },
   {
     category: "Implementation & Setup",
     question: "Can we import our existing employee records from Excel?",
-    answer: "Yes. LattiumHR provides structured Excel/CSV import templates for employee master data, past leave balances, salary structures, and asset inventories with built-in validation checks.",
+    answer: "Yes. Zentilos provides structured Excel/CSV import templates for employee master data, past leave balances, salary structures, and asset inventories with built-in validation checks.",
   },
   {
     category: "Multi-Branch & Locations",
-    question: "How does LattiumHR handle offices in different states or cities?",
+    question: "How does Zentilos handle offices in different states or cities?",
     answer: "You can create unlimited branch profiles. Each branch can have its own working hours, shift rosters, state holiday calendar, and state-specific Professional Tax rules, while executive leadership maintains centralized visibility.",
   },
   {
@@ -234,17 +234,17 @@ export const faqList: FAQItem[] = [
   },
   {
     category: "Payroll & Statutory Compliance",
-    question: "Is LattiumHR compliant with Indian labor and tax laws?",
+    question: "Is Zentilos compliant with Indian labor and tax laws?",
     answer: "Yes. The platform natively supports Provident Fund (PF), Employee State Insurance (ESIC), state-specific Professional Tax (PT), Labour Welfare Fund (LWF), and Tax Deducted at Source (TDS) under both Old and New Tax Regimes.",
   },
   {
     category: "Payroll & Statutory Compliance",
     question: "How are salary payments disbursed to employees?",
-    answer: "Once payroll is finalized and approved, LattiumHR generates formatted bank disbursement files (NEFT/RTGS) compatible with HDFC, ICICI, SBI, Axis, and other major commercial banks for direct portal upload.",
+    answer: "Once payroll is finalized and approved, Zentilos generates formatted bank disbursement files (NEFT/RTGS) compatible with HDFC, ICICI, SBI, Axis, and other major commercial banks for direct portal upload.",
   },
   {
     category: "Mobile & Employee Access",
-    question: "Can employees use LattiumHR on their mobile devices?",
+    question: "Can employees use Zentilos on their mobile devices?",
     answer: "Yes. Employees can access the platform via iOS and Android apps or any mobile browser to clock in with GPS geofencing, submit leave applications, check payslips, and review announcements.",
   },
   {
@@ -338,7 +338,7 @@ export const gettingStartedSteps: GettingStartedStep[] = [
     step: 2,
     title: "Employee Directory & Document Import",
     timeEstimate: "Days 4 – 7",
-    description: "Migrate your existing workforce records into LattiumHR’s central database.",
+    description: "Migrate your existing workforce records into Zentilos’s central database.",
     tasks: [
       "Download the employee master import template and populate personnel details.",
       "Upload opening leave balances for each team member.",
@@ -380,7 +380,7 @@ export const caseStudies: CaseStudy[] = [
     employees: "320 Employees",
     locations: "8 Locations across Mumbai & Pune",
     headline: "How UrbanBite Reduced Payroll Processing from 4 Days to 2 Hours Across 8 Retail Outlets",
-    quote: "LattiumHR brought our eight branches onto one system in under three weeks. Payroll that took four days of spreadsheets now takes a few hours, and our store managers finally have real-time visibility.",
+    quote: "Zentilos brought our eight branches onto one system in under three weeks. Payroll that took four days of spreadsheets now takes a few hours, and our store managers finally have real-time visibility.",
     author: {
       name: "Neha Srinivasan",
       role: "Head of People, UrbanBite Retail",
@@ -393,7 +393,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "UrbanBite was operating 8 high-volume retail stores across Mumbai and Pune. Each store kept attendance in paper registers, leading to widespread buddy punching, lost overtime logs, and monthly salary processing delays. Store managers spent hours every Monday traveling to headquarters with paper sheets.",
     solution:
-      "UrbanBite deployed LattiumHR's mobile geofencing across all 8 locations. Store employees clock in using their smartphones within a 40-meter radius of each store. Approved shift overtime syncs directly with monthly payroll.",
+      "UrbanBite deployed Zentilos's mobile geofencing across all 8 locations. Store employees clock in using their smartphones within a 40-meter radius of each store. Approved shift overtime syncs directly with monthly payroll.",
     results: [
       "Complete elimination of manual attendance compilation and paper registers across all 8 stores.",
       "Store managers approve leave requests on mobile in minutes, eliminating shift understaffing.",
@@ -420,7 +420,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "Operating across 14 distribution centers in 4 states, Northstar struggled with differing Professional Tax rules, varying regional holiday schedules, and disconnected local biometric devices that frequently failed.",
     solution:
-      "Northstar integrated their biometric gate scanners with LattiumHR's cloud platform while enabling mobile attendance for field drivers. Branch profiles automated state-specific PT slabs and regional holidays.",
+      "Northstar integrated their biometric gate scanners with Zentilos's cloud platform while enabling mobile attendance for field drivers. Branch profiles automated state-specific PT slabs and regional holidays.",
     results: [
       "Real-time central headquarters visibility of daily workforce turnout across all 14 distribution hubs.",
       "Zero late statutory filing penalties over 18 consecutive months.",

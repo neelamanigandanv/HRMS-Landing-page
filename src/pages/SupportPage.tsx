@@ -289,8 +289,8 @@ export default function SupportPage() {
   return (
     <PageLayout hideCTA={true}>
       <SEO
-        title="Customer Support & Help Desk | LattiumHR"
-        description="Connect directly with LattiumHR's technical engineers, HRMS customer success desk, and sales specialists for fast, reliable resolution."
+        title="Customer Support & Help Desk | Zentilos"
+        description="Connect directly with Zentilos's technical engineers, HRMS customer success desk, and sales specialists for fast, reliable resolution."
         canonicalPath="/support"
       />
 
@@ -316,7 +316,7 @@ export default function SupportPage() {
 
               {/* Subheading */}
               <p className="support-hero-subtext">
-                Whether you need help using LattiumHR, configuring biometric sync, or have an urgent technical inquiry, connect with the right specialist team for rapid resolution.
+                Whether you need help using Zentilos, configuring biometric sync, or have an urgent technical inquiry, connect with the right specialist team for rapid resolution.
               </p>
 
               {/* Action Buttons */}
@@ -842,7 +842,7 @@ export default function SupportPage() {
                               />
                               <span className="support-consent-text">
                                 I agree to be contacted regarding this support inquiry and
-                                acknowledge LattiumHR's{" "}
+                                acknowledge Zentilos's{" "}
                                 <Link to="/privacy-policy" target="_blank">
                                   privacy policy
                                 </Link>
@@ -908,8 +908,8 @@ export default function SupportPage() {
                   <Icon name="mail" size={20} />
                   <span className="direct-banner-label">Our Email</span>
                 </div>
-                <a href="mailto:support@lattiumhr.com" className="direct-banner-value">
-                  support@lattiumhr.com
+                <a href="mailto:support@zentilos.com" className="direct-banner-value">
+                  support@zentilos.com
                 </a>
                 <span className="direct-banner-note">Average response: 2 to 4 business hours</span>
               </div>

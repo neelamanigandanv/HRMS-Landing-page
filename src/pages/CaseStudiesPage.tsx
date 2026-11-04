@@ -19,7 +19,7 @@ export function CaseStudiesPage() {
     <PageLayout breadcrumbs={breadcrumbs}>
       <SEO
         title="Customer Case Studies | Real Multi-Branch Transformations"
-        description="See how 500+ businesses running retail stores, distribution centers, and regional branches cut payroll cycles and eliminate compliance penalties with LattiumHR."
+        description="See how 500+ businesses running retail stores, distribution centers, and regional branches cut payroll cycles and eliminate compliance penalties with Zentilos."
         canonicalPath="/resources/case-studies"
       />
 
@@ -32,7 +32,7 @@ export function CaseStudiesPage() {
             <h1>Real operational transformations across multi-branch teams</h1>
             <p>
               Discover how ambitious organizations simplified attendance, accelerated monthly
-              payroll, and unified their branches on LattiumHR.
+              payroll, and unified their branches on Zentilos.
             </p>
             <div className="feature-hero-actions">
               <Button onClick={() => openDemoModal()}>
@@ -87,7 +87,7 @@ export function CaseStudiesPage() {
                     <p>{cs.challenge}</p>
                   </div>
                   <div className="cs-narrative-col">
-                    <h4>The LattiumHR Solution</h4>
+                    <h4>The Zentilos Solution</h4>
                     <p>{cs.solution}</p>
                   </div>
                 </div>

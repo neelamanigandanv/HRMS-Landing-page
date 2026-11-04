@@ -277,7 +277,7 @@ export const solutionsMap: Record<string, SolutionData> = {
     badge: "Scale & Control",
     headline: "Standardize multi-department workflows, branch policies, and approval hierarchies",
     subhead:
-      "When your team grows past 50 people, ad-hoc processes break down. LattiumHR gives mid-market companies the structure, multi-branch policy controls, and automated approval chains needed to scale efficiently.",
+      "When your team grows past 50 people, ad-hoc processes break down. Zentilos gives mid-market companies the structure, multi-branch policy controls, and automated approval chains needed to scale efficiently.",
     challengesTitle: "Growing Pains at Mid-Scale",
     challengesDesc:
       "At 100+ employees, HR teams become overwhelmed by fragmented departmental policies, multiple office locations, and delayed manager approvals.",
@@ -354,7 +354,7 @@ export const solutionsMap: Record<string, SolutionData> = {
     badge: "Security & Governance",
     headline: "Enterprise-grade workforce management, granular RBAC, and dedicated compliance SLAs",
     subhead:
-      "For complex organizations with thousands of employees across nationwide branches. LattiumHR provides high-throughput payroll processing, deep role-based access controls, and custom integration capabilities.",
+      "For complex organizations with thousands of employees across nationwide branches. Zentilos provides high-throughput payroll processing, deep role-based access controls, and custom integration capabilities.",
     challengesTitle: "High-Volume Enterprise HR Challenges",
     challengesDesc:
       "Large-scale enterprises require absolute data segregation, high-availability architecture, and rigorous audit trails that stand up to regulatory scrutiny.",
@@ -560,7 +560,7 @@ export const solutionsMap: Record<string, SolutionData> = {
     ],
     workflowProcess: {
       eyebrow: "✦ WORKFLOW PROCESS ✦",
-      title: "How LattiumHR Powers Your People Operations",
+      title: "How Zentilos Powers Your People Operations",
       subtitle:
         "A proven step-by-step framework that eliminates administrative bottlenecks, accelerates approvals, and keeps your entire workforce connected.",
       image: "/images/hero-hr-working-pro.jpg",
@@ -596,7 +596,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       tag: "✦ INTERACTIVE HR CONSULTATION ✦",
       title: "Wondering how your specific leave, attendance, and shift rules will run?",
       description:
-        "Schedule a 20-minute tailored walkthrough. Our HR solutions team will demonstrate live on screen how LattiumHR configures for your organizational hierarchy, approval matrices, and salary structures.",
+        "Schedule a 20-minute tailored walkthrough. Our HR solutions team will demonstrate live on screen how Zentilos configures for your organizational hierarchy, approval matrices, and salary structures.",
       primaryBtnText: "Schedule Tailored Walkthrough",
       primaryBtnLink: "/request-demo",
       secondaryBtnText: "Speak with an HR Specialist",
@@ -671,7 +671,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       { metric: "15 hrs", title: "Saved Weekly per HR Member", desc: "Reinvest administrative time into employee engagement and training." },
     ],
     hideUseCases: true,
-    useCasesTitle: "Day in the Life with LattiumHR",
+    useCasesTitle: "Day in the Life with Zentilos",
     useCases: [
       {
         scenario: "Managing onboarding for 12 new hires joining across different offices on the same day",
@@ -694,7 +694,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       eyebrow: "✦ RELATED SOLUTIONS ✦",
       title: "Explore Solutions for Your Business",
       subtitle:
-        "Discover how LattiumHR connects workforce management across your organization, from regional branch networks to enterprise payroll governance.",
+        "Discover how Zentilos connects workforce management across your organization, from regional branch networks to enterprise payroll governance.",
       cards: [
         {
           title: "Small Businesses",
@@ -733,7 +733,7 @@ export const solutionsMap: Record<string, SolutionData> = {
     testimonials: [
       {
         quote:
-          "Before LattiumHR, my team spent half our days answering 'How many casual leaves do I have left?' and chasing managers for sign-offs. With self-service and automated workflows, employee inquiries dropped by 85% in month one.",
+          "Before Zentilos, my team spent half our days answering 'How many casual leaves do I have left?' and chasing managers for sign-offs. With self-service and automated workflows, employee inquiries dropped by 85% in month one.",
         author: "Kavya Sundaram",
         role: "VP of People & Culture",
         company: "ZetaScale Technologies",
@@ -749,7 +749,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       },
       {
         quote:
-          "Month-end attendance reconciliation used to mean three days of late nights compiling punches, leave adjustments, and loss-of-pay deductions. LattiumHR syncs biometric punches directly to payroll in seconds.",
+          "Month-end attendance reconciliation used to mean three days of late nights compiling punches, leave adjustments, and loss-of-pay deductions. Zentilos syncs biometric punches directly to payroll in seconds.",
         author: "Ananya Deshmukh",
         role: "Head of Human Resources",
         company: "Credence Global",
@@ -763,26 +763,26 @@ export const solutionsMap: Record<string, SolutionData> = {
       },
       {
         q: "How does digital onboarding work for remote and multi-branch hires?",
-        a: "As soon as an offer is extended, LattiumHR generates a secure digital link. New hires upload government IDs, enter bank details, and digitally sign employment agreements before their first day. HR receives an automated checklist and verified document vault ready for orientation.",
+        a: "As soon as an offer is extended, Zentilos generates a secure digital link. New hires upload government IDs, enter bank details, and digitally sign employment agreements before their first day. HR receives an automated checklist and verified document vault ready for orientation.",
       },
       {
         q: "Can we customize leave rules, approval chains, and attendance shifts?",
-        a: "Yes, completely. LattiumHR supports multi-tier approval chains (Reporting Manager → Department Head → HR), sandwich rule policies, custom probation accruals, comp-off credits, and regional holiday calendars tailored per branch.",
+        a: "Yes, completely. Zentilos supports multi-tier approval chains (Reporting Manager → Department Head → HR), sandwich rule policies, custom probation accruals, comp-off credits, and regional holiday calendars tailored per branch.",
       },
       {
         q: "How long does it take to migrate our existing employee database?",
         a: "Most HR teams go live within 7 to 14 days. Our migration specialists import your employee directory, historical leave balances, and departmental hierarchies via bulk templates or direct API connectors with zero data loss.",
       },
       {
-        q: "Does LattiumHR integrate with our biometric hardware and attendance systems?",
-        a: "Yes. LattiumHR integrates natively with standard biometric fingerprint and facial recognition turnstiles, as well as geofenced mobile check-ins with selfie verification for field and remote staff.",
+        q: "Does Zentilos integrate with our biometric hardware and attendance systems?",
+        a: "Yes. Zentilos integrates natively with standard biometric fingerprint and facial recognition turnstiles, as well as geofenced mobile check-ins with selfie verification for field and remote staff.",
       },
     ],
     footerCta: {
       eyebrow: "READY TO ELEVATE YOUR HR OPERATIONS?",
       title: "Your HR Team Deserves Better than Spreadsheets & Paperwork.",
       description:
-        "Join hundreds of forward-thinking people teams running automated onboarding, self-service leave approvals, and seamless attendance on LattiumHR.",
+        "Join hundreds of forward-thinking people teams running automated onboarding, self-service leave approvals, and seamless attendance on Zentilos.",
       primaryBtnText: "Book a Free Demo",
       primaryBtnLink: "/request-demo",
       secondaryBtnText: "Explore All Features",
@@ -824,7 +824,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       },
     },
     subhead:
-      "Bridge the gap between HR and finance. LattiumHR gives CFOs, accountants, and payroll controllers verified attendance inputs, automated statutory tax deductions, and 1-click corporate bank disbursement files.",
+      "Bridge the gap between HR and finance. Zentilos gives CFOs, accountants, and payroll controllers verified attendance inputs, automated statutory tax deductions, and 1-click corporate bank disbursement files.",
     challengesTitle: "Why Finance Teams Struggle with Month-End Payroll",
     challengesDesc:
       "Finance leaders are legally responsible for payroll accuracy and tax compliance, yet they spend days reconciling manual spreadsheets, chasing unverified attendance, and scrambling before tax deadlines.",
@@ -930,7 +930,7 @@ export const solutionsMap: Record<string, SolutionData> = {
     ],
     workflowProcess: {
       eyebrow: "✦ WORKFLOW PROCESS ✦",
-      title: "How LattiumHR Powers Your Financial Operations",
+      title: "How Zentilos Powers Your Financial Operations",
       subtitle:
         "A structured, verifiable three-stage framework that eliminates calculation errors, ensures strict compliance, and accelerates account reconciliations.",
       image: "/images/industry-finance.jpg",
@@ -966,7 +966,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       tag: "✦ INTERACTIVE PAYROLL & TAX AUDIT ✦",
       title: "Wondering how your specific pay structures, allowances, and tax slabs will compute?",
       description:
-        "Schedule a 20-minute tailored walkthrough. Our payroll specialists will demonstrate live on screen how LattiumHR handles your gross-to-net components, state tax rules, bank disbursement formats, and ERP ledger sync.",
+        "Schedule a 20-minute tailored walkthrough. Our payroll specialists will demonstrate live on screen how Zentilos handles your gross-to-net components, state tax rules, bank disbursement formats, and ERP ledger sync.",
       primaryBtnText: "Schedule Tailored Walkthrough",
       primaryBtnLink: "/request-demo",
       secondaryBtnText: "Speak with a Payroll Specialist",
@@ -1064,7 +1064,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       eyebrow: "✦ RELATED SOLUTIONS ✦",
       title: "Explore Solutions for Your Business",
       subtitle:
-        "Discover how LattiumHR connects workforce management across your organization, from agile startup teams to enterprise payroll governance.",
+        "Discover how Zentilos connects workforce management across your organization, from agile startup teams to enterprise payroll governance.",
       cards: [
         {
           title: "HR Teams",
@@ -1104,7 +1104,7 @@ export const solutionsMap: Record<string, SolutionData> = {
     testimonials: [
       {
         quote:
-          "Payroll used to take our accounting team 5 full days of spreadsheet cross-checking, manual formula recalculations, and late nights right before salary day. With LattiumHR, attendance inputs sync automatically, tax deductions compute in seconds, and our monthly pay run is finalized in under 30 minutes.",
+          "Payroll used to take our accounting team 5 full days of spreadsheet cross-checking, manual formula recalculations, and late nights right before salary day. With Zentilos, attendance inputs sync automatically, tax deductions compute in seconds, and our monthly pay run is finalized in under 30 minutes.",
         author: "Suresh Nambiar",
         role: "Chief Financial Officer",
         company: "Meridian Logistics Group",
@@ -1112,7 +1112,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       },
       {
         quote:
-          "Operating across 6 states meant dealing with 6 different Professional Tax rules, varying minimum wage rates, and separate PF trusts. LattiumHR handles all state statutory rules flawlessly and generates our ECR challans ready for upload.",
+          "Operating across 6 states meant dealing with 6 different Professional Tax rules, varying minimum wage rates, and separate PF trusts. Zentilos handles all state statutory rules flawlessly and generates our ECR challans ready for upload.",
         author: "Pooja Venkataraman",
         role: "Head of Payroll & Compliance",
         company: "Finserve Capital",
@@ -1131,16 +1131,16 @@ export const solutionsMap: Record<string, SolutionData> = {
     faqsSubtitle: "Clear answers to common questions about automated gross-to-net calculations, statutory tax compliance, and corporate bank disbursements.",
     faqs: [
       {
-        q: "How does LattiumHR ensure 100% calculation accuracy for payroll?",
-        a: "LattiumHR utilizes an automated gross-to-net computation engine that directly ingests locked attendance logs, approved leaves, loan installments, and flexible benefit claims. Formulas for PF, ESI, Professional Tax, and TDS are strictly validated and immune to manual formula corruption or spreadsheet copy-paste errors.",
+        q: "How does Zentilos ensure 100% calculation accuracy for payroll?",
+        a: "Zentilos utilizes an automated gross-to-net computation engine that directly ingests locked attendance logs, approved leaves, loan installments, and flexible benefit claims. Formulas for PF, ESI, Professional Tax, and TDS are strictly validated and immune to manual formula corruption or spreadsheet copy-paste errors.",
       },
       {
-        q: "Does LattiumHR support both the Old and New Income Tax Regimes?",
+        q: "Does Zentilos support both the Old and New Income Tax Regimes?",
         a: "Yes. Employees can submit tax investment declarations under either the Old or New Regime directly through self-service. The system automatically computes monthly TDS withholdings based on declared deductions (80C, 80D, HRA, home loan interest) and provides employees with real-time tax projection sheets.",
       },
       {
         q: "Can we generate formatted bank salary transfer files for corporate portals?",
-        a: "Yes. LattiumHR exports pre-formatted, encrypted batch payment files specifically tailored for major corporate banking portals including HDFC Bank, ICICI Bank, State Bank of India (SBI), Axis Bank, and Kotak Mahindra. Simply upload the file to your banking portal for maker-checker authorization.",
+        a: "Yes. Zentilos exports pre-formatted, encrypted batch payment files specifically tailored for major corporate banking portals including HDFC Bank, ICICI Bank, State Bank of India (SBI), Axis Bank, and Kotak Mahindra. Simply upload the file to your banking portal for maker-checker authorization.",
       },
       {
         q: "How does the system handle multi-branch Professional Tax (PT) across different states?",
@@ -1148,14 +1148,14 @@ export const solutionsMap: Record<string, SolutionData> = {
       },
       {
         q: "Can we export ready-to-upload government ECR challan files for PF and ESI?",
-        a: "Yes. With a single click, LattiumHR generates the exact Electronic Challan cum Return (ECR) text files required for EPFO and ESIC portal uploads, complete with UAN mapping, gross wages, and wage ceiling caps.",
+        a: "Yes. With a single click, Zentilos generates the exact Electronic Challan cum Return (ECR) text files required for EPFO and ESIC portal uploads, complete with UAN mapping, gross wages, and wage ceiling caps.",
       },
     ],
     footerCta: {
       eyebrow: "READY TO MODERNIZE FINANCIAL OPERATIONS?",
       title: "Your Finance Team Deserves Better than Spreadsheet Payroll.",
       description:
-        "Join industry leaders running zero-error payroll, automated statutory tax compliance, and seamless bank disbursements on LattiumHR.",
+        "Join industry leaders running zero-error payroll, automated statutory tax compliance, and seamless bank disbursements on Zentilos.",
       primaryBtnText: "Book a Free Demo",
       primaryBtnLink: "/request-demo",
       secondaryBtnText: "Explore Payroll Features",
@@ -1251,7 +1251,7 @@ export const solutionsMap: Record<string, SolutionData> = {
     badge: "Vertical Workflows",
     headline: "Tailored workforce management workflows adapted to your industry’s operational rhythm",
     subhead:
-      "Whether you manage shift workers in manufacturing, distributed field staff in logistics, or tech talent across offices, LattiumHR adapts to your industry’s exact operational demands.",
+      "Whether you manage shift workers in manufacturing, distributed field staff in logistics, or tech talent across offices, Zentilos adapts to your industry’s exact operational demands.",
     challengesTitle: "Industry-Specific People Operations Demands",
     challengesDesc:
       "A generic HRMS fails when it cannot handle manufacturing shift rotations, retail weekend coverage, or IT intellectual property handovers.",
@@ -1296,7 +1296,7 @@ export const solutionsMap: Record<string, SolutionData> = {
     ],
     benefitsTitle: "Tailored Vertical Returns",
     benefitsDesc:
-      "Avoid expensive custom software development by leveraging LattiumHR’s flexible workflow engine.",
+      "Avoid expensive custom software development by leveraging Zentilos’s flexible workflow engine.",
     benefits: [
       { metric: "100%", title: "Workflow Fit", desc: "Configure policies matching your specific operational cadence." },
       { metric: "35%", title: "Lower Attrition", desc: "Clear shift schedules, transparent leaves, and reliable salary payouts." },

@@ -1,5 +1,5 @@
 // ============================================================================
-// LATTIUM HR - CAREERS & JOB OPENINGS MOCK DATA
+// ZENTILOS - CAREERS & JOB OPENINGS MOCK DATA
 // Static data file designed to be easily replaced by a live ATS / recruitment API
 // (e.g. GET /api/careers/jobs or Greenhouse/Lever/Freshteam API connector)
 // ============================================================================
@@ -126,7 +126,7 @@ export const HIRING_STEPS: HiringStep[] = [
     duration: "30 mins",
     icon: "users",
     description:
-      "A friendly discussion about your career journey, what drives you, mutual expectations, and how LattiumHR aligns with your goals.",
+      "A friendly discussion about your career journey, what drives you, mutual expectations, and how Zentilos aligns with your goals.",
   },
   {
     step: 3,
@@ -135,7 +135,7 @@ export const HIRING_STEPS: HiringStep[] = [
     duration: "60–90 mins",
     icon: "briefcase",
     description:
-      "A realistic, non-abstract assessment simulating real everyday challenges you'll solve at LattiumHR alongside your future peers.",
+      "A realistic, non-abstract assessment simulating real everyday challenges you'll solve at Zentilos alongside your future peers.",
   },
   {
     step: 4,
@@ -149,7 +149,7 @@ export const HIRING_STEPS: HiringStep[] = [
   {
     step: 5,
     title: "Formal Offer & Onboarding",
-    subtitle: "Welcome to LattiumHR",
+    subtitle: "Welcome to Zentilos",
     duration: "24–48 hours",
     icon: "award",
     description:
@@ -171,7 +171,7 @@ export const CULTURE_VALUES: CultureValue[] = [
     title: "Zero-Defect Payroll Rigor",
     tagline: "Precision where it matters most",
     description:
-      "Employees rely on LattiumHR for their livelihoods. We treat accuracy, algorithmic correctness, and compliance with obsessive craftsmanship.",
+      "Employees rely on Zentilos for their livelihoods. We treat accuracy, algorithmic correctness, and compliance with obsessive craftsmanship.",
     icon: "shield",
   },
   {
@@ -194,7 +194,7 @@ export const CULTURE_VALUES: CultureValue[] = [
 
 export const CANDIDATE_FAQS: CandidateFaq[] = [
   {
-    question: "What is LattiumHR's working model (Remote vs. Hybrid)?",
+    question: "What is Zentilos's working model (Remote vs. Hybrid)?",
     answer:
       "We operate a hybrid model for our Bengaluru engineering and product hub (typically 2 collaborative days in-office, 3 days remote) while supporting fully remote agreements for senior specialized contributors across India.",
   },
@@ -228,7 +228,7 @@ export const JOB_OPENINGS: JobOpening[] = [
     shortSummary:
       "Architect high-throughput payroll computation engines, low-latency biometric attendance pipelines, and delightful React micro-frontends.",
     aboutRole:
-      "As a Senior Full-Stack Engineer at LattiumHR, you will lead the core architecture of our next-generation HRMS platform. You'll build high-scale gross-to-net payroll engines that process millions of calculations with zero errors, integrate with diverse biometric hardware devices across India, and deliver lightning-fast UI experiences for thousands of daily enterprise users.",
+      "As a Senior Full-Stack Engineer at Zentilos, you will lead the core architecture of our next-generation HRMS platform. You'll build high-scale gross-to-net payroll engines that process millions of calculations with zero errors, integrate with diverse biometric hardware devices across India, and deliver lightning-fast UI experiences for thousands of daily enterprise users.",
     responsibilities: [
       "Design, implement, and maintain scalable microservices in Node.js/TypeScript handling high-concurrency payroll and attendance transactions.",
       "Develop modular, highly responsive frontend components using React 19, TypeScript, and modern state management patterns.",
@@ -271,7 +271,7 @@ export const JOB_OPENINGS: JobOpening[] = [
       "We're looking for a user-obsessed Lead Product Designer to own the end-to-end design system and user experience across our web and mobile applications. You will turn daunting enterprise compliance tasks—such as multi-tier leave approval chains and statutory payroll deductions—into delightful, consumer-grade workflows that HR leaders and employees genuinely love using.",
     responsibilities: [
       "Own the UX/UI lifecycle from initial discovery and user journey mapping through interactive prototyping, user testing, and high-fidelity specifications.",
-      "Maintain and evolve LattiumHR's Figma design system tokens, components, and interaction patterns across web and mobile platforms.",
+      "Maintain and evolve Zentilos's Figma design system tokens, components, and interaction patterns across web and mobile platforms.",
       "Conduct qualitative user interviews with HR managers, CFOs, and frontline employees to uncover workflow friction points.",
       "Partner closely with frontend engineers to ensure design implementation matches pixel-perfect aesthetics and micro-interactions.",
       "Create clear data visualizations and dashboard analytics that make complex workforce trends instantly understandable at a glance.",
@@ -308,7 +308,7 @@ export const JOB_OPENINGS: JobOpening[] = [
     shortSummary:
       "Partner with founders, CFOs, and CHROs of companies with 100–2,500 employees to modernize their people and payroll operations.",
     aboutRole:
-      "As an Enterprise Account Executive, you will drive mid-market and enterprise revenue growth for LattiumHR across Western and Northern India. You will engage with C-level stakeholders (Founders, CFOs, Heads of People) who are struggling with legacy spreadsheet systems, demonstrating how LattiumHR delivers measurable ROI, statutory compliance safety, and operational speed.",
+      "As an Enterprise Account Executive, you will drive mid-market and enterprise revenue growth for Zentilos across Western and Northern India. You will engage with C-level stakeholders (Founders, CFOs, Heads of People) who are struggling with legacy spreadsheet systems, demonstrating how Zentilos delivers measurable ROI, statutory compliance safety, and operational speed.",
     responsibilities: [
       "Manage and close end-to-end enterprise sales cycles from qualifying high-intent inbound leads to commercial contract negotiation.",
       "Conduct consultative, value-driven software demonstrations tailored to each client's specific organizational size and pain points.",
@@ -347,7 +347,7 @@ export const JOB_OPENINGS: JobOpening[] = [
     shortSummary:
       "Be the frontline champion for HR managers and accountants, resolving payroll formulas, attendance hardware sync, and account inquiries.",
     aboutRole:
-      "Our Customer Support Specialists are the trusted backbone of LattiumHR's stellar customer satisfaction score. You will deliver empathetic, prompt, and technically rigorous assistance to HR professionals and payroll administrators across our customer base, ensuring their questions are answered accurately and their month-end pay runs execute without friction.",
+      "Our Customer Support Specialists are the trusted backbone of Zentilos's stellar customer satisfaction score. You will deliver empathetic, prompt, and technically rigorous assistance to HR professionals and payroll administrators across our customer base, ensuring their questions are answered accurately and their month-end pay runs execute without friction.",
     responsibilities: [
       "Troubleshoot and resolve customer tickets across phone, email, and live in-app chat within guaranteed SLA timeframes.",
       "Guide HR administrators through biometric turnstile device connectivity, multi-shift roster setup, and leave policy adjustments.",

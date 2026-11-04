@@ -100,32 +100,32 @@ export function ResourcesOverview() {
   // FAQs exactly from the screenshot
   const faqItems = [
     {
-      q: "How do I add a new branch in LattiumHR?",
+      q: "How do I add a new branch in Zentilos?",
       a: "Navigate to Settings > Branches & Locations. Click 'Add Branch' to set up a new physical entity, define custom working hours, assign regional public holiday calendars, and set GPS geofence coordinates.",
     },
     {
       q: "Can I import employees in bulk?",
-      a: "Yes. LattiumHR provides a pre-formatted Excel/CSV template. Simply download the sheet, populate your employee details, and upload it for automatic validation and bulk ingestion without errors.",
+      a: "Yes. Zentilos provides a pre-formatted Excel/CSV template. Simply download the sheet, populate your employee details, and upload it for automatic validation and bulk ingestion without errors.",
     },
     {
-      q: "Is there a mobile app for LattiumHR?",
-      a: "Yes. The LattiumHR mobile app is available on iOS and Android. Staff can mark touchless geofenced attendance, submit leave requests, and view payslips, while managers can approve requests on the go.",
+      q: "Is there a mobile app for Zentilos?",
+      a: "Yes. The Zentilos mobile app is available on iOS and Android. Staff can mark touchless geofenced attendance, submit leave requests, and view payslips, while managers can approve requests on the go.",
     },
     {
       q: "How do I generate and manage reports?",
       a: "Visit the Reports workspace to export real-time attendance summaries, PF/ESI statutory registers, bank salary payout files, and headcount retention trends in Excel or PDF format.",
     },
     {
-      q: "Can I integrate LattiumHR with third-party systems?",
-      a: "Yes. LattiumHR integrates directly with biometric scanners (eSSL, ZKTeco), corporate banking portals (HDFC, ICICI, SBI) for salary disbursements, and ERP systems via secure REST APIs.",
+      q: "Can I integrate Zentilos with third-party systems?",
+      a: "Yes. Zentilos integrates directly with biometric scanners (eSSL, ZKTeco), corporate banking portals (HDFC, ICICI, SBI) for salary disbursements, and ERP systems via secure REST APIs.",
     },
   ];
 
   return (
     <div className="app-shell inner-page-shell res-hub-exact-page">
       <SEO
-        title="Resources & Knowledge Hub | LattiumHR"
-        description="Explore helpful guides, FAQs, and support resources to simplify HR management and get the most out of Lattium HRMS."
+        title="Resources & Knowledge Hub | Zentilos"
+        description="Explore helpful guides, FAQs, and support resources to simplify HR management and get the most out of ZentilosMS."
         canonicalPath="/resources"
       />
 
@@ -166,7 +166,7 @@ export function ResourcesOverview() {
               </h1>
 
               <p className="res-hero-subhead">
-                Explore helpful guides, FAQs, and support resources to simplify HR management and get the most out of Lattium HRMS.
+                Explore helpful guides, FAQs, and support resources to simplify HR management and get the most out of ZentilosMS.
               </p>
 
               <div className="res-hero-actions">
@@ -666,7 +666,7 @@ export function ResourcesOverview() {
 
                 <h3 className="res-step-title">Go Live</h3>
                 <p className="res-step-desc">
-                  Start using LattiumHR across your locations.
+                  Start using Zentilos across your locations.
                 </p>
 
                 <ul className="res-roadmap-checklist">
@@ -721,7 +721,7 @@ export function ResourcesOverview() {
               </div>
               <h2 className="res-stories-title">Customer Stories</h2>
               <p className="res-stories-subhead">
-                See how businesses like yours are achieving more with LattiumHR.
+                See how businesses like yours are achieving more with Zentilos.
               </p>
             </div>
 
@@ -754,11 +754,11 @@ export function ResourcesOverview() {
 
                   <h3 className="res-story-stat-title">3 Branches</h3>
                   <p className="res-story-stat-sub">
-                    HR operations simplified across locations with LattiumHR.
+                    HR operations simplified across locations with Zentilos.
                   </p>
 
                   <blockquote className="res-story-quote">
-                    "LattiumHR gave us the control and visibility we needed across all our branches. The implementation was smooth and the support team was fantastic."
+                    "Zentilos gave us the control and visibility we needed across all our branches. The implementation was smooth and the support team was fantastic."
                   </blockquote>
 
                   <div className="res-story-featured-foot">
@@ -1242,7 +1242,7 @@ export function ResourcesOverview() {
                     </span>
                   </div>
 
-                  <a href="mailto:support@lattiumhr.com" className="res-help-row-item">
+                  <a href="mailto:support@zentilos.com" className="res-help-row-item">
                     <div className="res-help-row-icon">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="res-row-icon-svg">
                         <rect x="3" y="5" width="18" height="14" rx="2" />

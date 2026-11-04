@@ -72,7 +72,7 @@ export const blogArticles: BlogPostData[] = [
       name: "Arjun Malhotra",
       role: "VP of Workforce Engineering",
       avatar: "AM",
-      bio: "Arjun leads workforce systems architecture at LattiumHR, helping 400+ mid-market organizations modernize their attendance and biometric infrastructure.",
+      bio: "Arjun leads workforce systems architecture at Zentilos, helping 400+ mid-market organizations modernize their attendance and biometric infrastructure.",
     },
     toc: [
       { id: "overview", title: "1. The Shift to Frictionless Attendance" },
@@ -118,7 +118,7 @@ export const blogArticles: BlogPostData[] = [
         id: "geofencing-works",
         heading: "How GPS Geofencing Works",
         paragraphs: [
-          "Geofencing creates an invisible virtual perimeter around your designated office, retail outlet, or job site using GPS coordinates. When an employee opens the LattiumHR mobile app, the system checks their real-time device location against authorized boundary radii.",
+          "Geofencing creates an invisible virtual perimeter around your designated office, retail outlet, or job site using GPS coordinates. When an employee opens the Zentilos mobile app, the system checks their real-time device location against authorized boundary radii.",
           "Clock-in buttons activate only when the employee is physically inside the designated radius (typically 50 to 150 meters). To prevent proxy punching, facial selfie verification and live device tamper detection validate every transaction.",
         ],
       },
@@ -145,7 +145,7 @@ export const blogArticles: BlogPostData[] = [
     },
     dataTable: {
       title: "Operational Impact Metrics (Based on 500+ Deployments)",
-      headers: ["Metric", "Before Modernization", "With LattiumHR Geofencing"],
+      headers: ["Metric", "Before Modernization", "With Zentilos Geofencing"],
       rows: [
         ["Morning Shift Punch Latency", "14 mins average queue", "0 mins (Instant smartphone clock-in)"],
         ["Monthly Attendance Reconciliation", "18 hours / HR manager", "Under 45 mins total"],
@@ -155,7 +155,7 @@ export const blogArticles: BlogPostData[] = [
     faqs: [
       {
         question: "Can employees spoof their GPS location using mock location apps?",
-        answer: "No. LattiumHR detects developer mock location modes, rooted devices, and GPS simulators, immediately blocking unauthorized clock-ins.",
+        answer: "No. Zentilos detects developer mock location modes, rooted devices, and GPS simulators, immediately blocking unauthorized clock-ins.",
       },
       {
         question: "Does the app track employees outside of working hours?",
@@ -227,7 +227,7 @@ export const blogArticles: BlogPostData[] = [
         heading: "State-Specific Professional Tax Slabs",
         paragraphs: [
           "Professional Tax varies dramatically between states. In Maharashtra, PT is ₹200 per month with ₹300 charged in February. In Karnataka, the monthly slab is ₹200 for gross earnings above ₹15,000. In West Bengal and Gujarat, distinct progressive slabs apply.",
-          "When managing multiple branches, calculating PT manually on spreadsheets creates high margin for human error. LattiumHR automatically tags employees to their branch location and applies statutory tax rules automatically.",
+          "When managing multiple branches, calculating PT manually on spreadsheets creates high margin for human error. Zentilos automatically tags employees to their branch location and applies statutory tax rules automatically.",
         ],
       },
     ],
@@ -247,7 +247,7 @@ export const blogArticles: BlogPostData[] = [
         answer: "Yes, if an employee has never been an existing member of EPF and their basic pay on joining is above ₹15,000, they can submit Form 11 to opt out as an excluded employee.",
       },
       {
-        question: "How does LattiumHR handle New vs. Old Income Tax regimes?",
+        question: "How does Zentilos handle New vs. Old Income Tax regimes?",
         answer: "Employees select their preferred regime inside the self-service portal, declare investment proofs, and download automated Form 16 Part A and Part B with zero manual HR calculation.",
       },
     ],
@@ -315,7 +315,7 @@ export const blogArticles: BlogPostData[] = [
     ],
     comparisonTable: {
       title: "Multi-Branch HRMS Evaluation Matrix",
-      headers: ["Capability", "Standard HRMS", "LattiumHR Multi-Branch"],
+      headers: ["Capability", "Standard HRMS", "Zentilos Multi-Branch"],
       rows: [
         ["Branch Hierarchy", "Flat structure only", "Multi-tier Parent/Child subsidiaries"],
         ["Holiday Schedules", "Single global calendar", "State and city-specific dynamic calendars"],
@@ -380,7 +380,7 @@ export const blogArticles: BlogPostData[] = [
         id: "preboarding-framework",
         heading: "The 3-Stage Preboarding Framework",
         paragraphs: [
-          "With LattiumHR's digital onboarding workflow, the entire administrative paperwork process occurs before the employee's first morning.",
+          "With Zentilos's digital onboarding workflow, the entire administrative paperwork process occurs before the employee's first morning.",
           "Step 1: Automated magic link sent upon offer acceptance. Step 2: Digital KYC upload with automatic OCR document verification. Step 3: Automated IT asset provisioning and buddy assignment.",
         ],
       },
@@ -514,7 +514,7 @@ export const blogArticles: BlogPostData[] = [
       name: "Arjun Malhotra",
       role: "VP of Workforce Engineering",
       avatar: "AM",
-      bio: "Arjun leads workforce systems architecture at LattiumHR, helping 400+ mid-market organizations modernize their attendance and biometric infrastructure.",
+      bio: "Arjun leads workforce systems architecture at Zentilos, helping 400+ mid-market organizations modernize their attendance and biometric infrastructure.",
     },
     toc: [
       { id: "shift-fatigue", title: "1. Understanding Shift Worker Burnout" },

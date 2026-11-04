@@ -34,7 +34,7 @@ export function EnterprisePage() {
       ],
       buttonText: "Request Enterprise Demo",
       image: "/images/roles-block-admin.jpg",
-      alt: "Chief Human Resources Officer reviewing global workforce intelligence in LattiumHR",
+      alt: "Chief Human Resources Officer reviewing global workforce intelligence in Zentilos",
     },
     {
       id: "plant-director",
@@ -139,7 +139,7 @@ export function EnterprisePage() {
     openDemoModal({
       title: "Request an Enterprise Walkthrough",
       subtitle:
-        "See how LattiumHR unifies multi-entity workforce management, SAP/ERP integrations, and high-volume statutory payroll for 500+ employees.",
+        "See how Zentilos unifies multi-entity workforce management, SAP/ERP integrations, and high-volume statutory payroll for 500+ employees.",
       defaultInterest: "Enterprise Solution (500+ Staff)",
     });
   };
@@ -162,23 +162,23 @@ export function EnterprisePage() {
   // Section 7: FAQs explicitly tailored for Enterprises (500 to 10,000+ staff)
   const faqs: FAQItem[] = [
     {
-      q: "Can LattiumHR support organizations with 1,000 to 10,000+ employees across multiple corporate entities?",
-      a: "Yes. LattiumHR features a high-performance multi-tenant architecture designed to scale seamlessly across tens of thousands of users. You can operate multiple legal subsidiaries, regional business units, and international entities under a single master organization with strict data segregation and unified executive rollups.",
+      q: "Can Zentilos support organizations with 1,000 to 10,000+ employees across multiple corporate entities?",
+      a: "Yes. Zentilos features a high-performance multi-tenant architecture designed to scale seamlessly across tens of thousands of users. You can operate multiple legal subsidiaries, regional business units, and international entities under a single master organization with strict data segregation and unified executive rollups.",
     },
     {
-      q: "How does LattiumHR integrate with existing ERP platforms (SAP, Oracle, NetSuite) and core banking?",
-      a: "LattiumHR provides bi-directional REST APIs, webhooks, and pre-built connectors for SAP S/4HANA, NetSuite, Oracle Fusion, and Workday. Cost center journal entries, employee master records, and direct host-to-host bank salary transfer files sync automatically with zero manual CSV scripting.",
+      q: "How does Zentilos integrate with existing ERP platforms (SAP, Oracle, NetSuite) and core banking?",
+      a: "Zentilos provides bi-directional REST APIs, webhooks, and pre-built connectors for SAP S/4HANA, NetSuite, Oracle Fusion, and Workday. Cost center journal entries, employee master records, and direct host-to-host bank salary transfer files sync automatically with zero manual CSV scripting.",
     },
     {
       q: "What security standards, certifications, and data residency guarantees do you offer for enterprise clients?",
-      a: "LattiumHR is built on ISO 27001-certified and SOC 2 Type II-attested cloud infrastructure. We enforce bank-grade AES-256 encryption at rest, TLS 1.3 in transit, role-based access control (RBAC), immutable audit logs, SAML 2.0 SSO, and regional data residency compliance with GDPR and Indian DPDP standards.",
+      a: "Zentilos is built on ISO 27001-certified and SOC 2 Type II-attested cloud infrastructure. We enforce bank-grade AES-256 encryption at rest, TLS 1.3 in transit, role-based access control (RBAC), immutable audit logs, SAML 2.0 SSO, and regional data residency compliance with GDPR and Indian DPDP standards.",
     },
     {
-      q: "Can LattiumHR handle high-concurrency biometric turnstiles at manufacturing plants and corporate campuses?",
+      q: "Can Zentilos handle high-concurrency biometric turnstiles at manufacturing plants and corporate campuses?",
       a: "Yes. Our cloud IoT edge connectors interface directly with high-throughput biometric turnstiles and face-recognition terminals (ZKTeco, Suprema, Matrix, Essl). The system effortlessly ingests thousands of punches per minute during industrial shift changeovers with zero server lag or dropped logs.",
     },
     {
-      q: "How does LattiumHR support Single Sign-On (SSO) and automated SCIM identity management?",
+      q: "How does Zentilos support Single Sign-On (SSO) and automated SCIM identity management?",
       a: "We support enterprise SAML 2.0 Single Sign-On with providers including Microsoft Azure AD (Entra ID), Okta, Ping Identity, and Google Workspace. System for Cross-domain Identity Management (SCIM) automates instant user provisioning and de-provisioning based on directory changes.",
     },
     {
@@ -187,7 +187,7 @@ export function EnterprisePage() {
     },
   ];
 
-  // Section 4: Why Enterprises Choose LattiumHR (4 Modern Process Cards)
+  // Section 4: Why Enterprises Choose Zentilos (4 Modern Process Cards)
   const whyEnterpriseCards = [
     {
       id: "globalarch",
@@ -247,7 +247,7 @@ export function EnterprisePage() {
   return (
     <div className="app-shell inner-page-shell sb-page-wrapper">
       <SEO
-        title="Enterprise HRMS Software — Multi-Entity Workforce Solutions | LattiumHR"
+        title="Enterprise HRMS Software — Multi-Entity Workforce Solutions | Zentilos"
         description="Enterprise HRMS engineered for global scale. Multi-entity directory, high-concurrency biometric attendance, SAP/ERP integrations, and statutory payroll for 500+ employees."
         canonicalPath="/solutions/enterprises"
       />
@@ -977,19 +977,19 @@ export function EnterprisePage() {
         </section>
 
         {/* =========================================================================
-            SECTION 4 — WHY ENTERPRISES CHOOSE LATTIUMHR (4 Interactive Process Cards)
+            SECTION 4 — WHY ENTERPRISES CHOOSE ZENTILOS (4 Interactive Process Cards)
             Matching Small Business Page Reference Layout with Top Notches & Accent Center Card
             ========================================================================= */}
-        <section className="sb-why-lattium-section" aria-labelledby="why-lattium-heading">
+        <section className="sb-why-zentilos-section" aria-labelledby="why-zentilos-heading">
           {/* Subtle background pattern & atmospheric glow */}
-          <div className="sb-why-lattium-backdrop" aria-hidden="true" />
-          <div className="sb-why-lattium-glow" aria-hidden="true" />
+          <div className="sb-why-zentilos-backdrop" aria-hidden="true" />
+          <div className="sb-why-zentilos-glow" aria-hidden="true" />
 
           <div className="container" style={{ position: "relative", zIndex: 2 }}>
             <div className="sb-why-header">
-              <span className="sb-why-eyebrow">✦ WHY ENTERPRISES CHOOSE LATTIUMHR ✦</span>
-              <h2 id="why-lattium-heading" className="sb-why-title">
-                What Makes LattiumHR Right for Large Enterprises?
+              <span className="sb-why-eyebrow">✦ WHY ENTERPRISES CHOOSE ZENTILOS ✦</span>
+              <h2 id="why-zentilos-heading" className="sb-why-title">
+                What Makes Zentilos Right for Large Enterprises?
               </h2>
               <p className="sb-why-subhead">
                 Built from the ground up for high-availability performance, strict data isolation, and deep interoperability with existing enterprise IT ecosystems.
@@ -997,7 +997,7 @@ export function EnterprisePage() {
             </div>
 
             {/* Process Cards Grid matching Reference Image */}
-            <div className="sb-why-cards-grid" role="region" aria-label="Why LattiumHR Pillars for Enterprises">
+            <div className="sb-why-cards-grid" role="region" aria-label="Why Zentilos Pillars for Enterprises">
               {whyEnterpriseCards.map((card) => (
                 <div
                   key={card.id}
@@ -1042,7 +1042,7 @@ export function EnterprisePage() {
                   “For decades, large enterprises have tolerated clunky legacy HR software that requires months of consultant training, millions in licensing fees, and constant IT firefighting.”
                 </p>
                 <p className="sb-manifesto-text">
-                  Your workforce deserves modern, responsive technology that employees actually enjoy using. LattiumHR proves you can have robust enterprise compliance, multi-entity segregation, and complex shift management—without the soul-crushing friction of 2000s legacy platforms.
+                  Your workforce deserves modern, responsive technology that employees actually enjoy using. Zentilos proves you can have robust enterprise compliance, multi-entity segregation, and complex shift management—without the soul-crushing friction of 2000s legacy platforms.
                 </p>
                 <div className="sb-manifesto-punchline">
                   Scale is no longer an excuse for terrible software. Welcome to enterprise HR reimagined.
@@ -1054,7 +1054,7 @@ export function EnterprisePage() {
                 <div className="sb-manifesto-action-box">
                   <h3 className="sb-manifesto-action-title">Ready for Your Digital Transformation?</h3>
                   <p className="sb-manifesto-action-desc">
-                    See how LattiumHR unifies multi-entity workforce management, SAP/ERP connectors, and high-volume statutory payroll.
+                    See how Zentilos unifies multi-entity workforce management, SAP/ERP connectors, and high-volume statutory payroll.
                   </p>
                   <div className="sb-manifesto-checklist">
                     <div className="sb-manifesto-check-item">

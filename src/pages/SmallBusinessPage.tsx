@@ -26,7 +26,7 @@ export function SmallBusinessPage() {
       number: "01",
       verticalTitle: "Business Owners",
       title: "Business Owners",
-      desc: "At LattiumHR, we're dedicated to more than just tracking hours. We're committed to empowering small business owners with total operational clarity, automated records, and stress-free payroll readiness.",
+      desc: "At Zentilos, we're dedicated to more than just tracking hours. We're committed to empowering small business owners with total operational clarity, automated records, and stress-free payroll readiness.",
       points: [
         { title: "Complete Team Visibility", desc: "Real-time attendance, present staff, and branch headcount in one view." },
         { title: "Zero Manual Spreadsheets", desc: "Replace scattered Excel files with one organized employee directory." },
@@ -35,7 +35,7 @@ export function SmallBusinessPage() {
       ],
       buttonText: "Request a Demo",
       image: "/images/sb-owner-workspace.jpg",
-      alt: "Small business owner workspace overview in LattiumHR",
+      alt: "Small business owner workspace overview in Zentilos",
     },
     {
       id: "manager",
@@ -67,7 +67,7 @@ export function SmallBusinessPage() {
       ],
       buttonText: "Request a Demo",
       image: "/images/sb-employee-workspace.jpg",
-      alt: "Employee accessing LattiumHR self-service on smartphone",
+      alt: "Employee accessing Zentilos self-service on smartphone",
     },
   ];
 
@@ -144,7 +144,7 @@ export function SmallBusinessPage() {
     openDemoModal({
       title: "Request a Small Business Demo",
       subtitle:
-        "See how LattiumHR makes employee records, attendance, leave, and everyday HR simpler for small teams.",
+        "See how Zentilos makes employee records, attendance, leave, and everyday HR simpler for small teams.",
       defaultInterest: "Small Business Solution",
     });
   };
@@ -167,8 +167,8 @@ export function SmallBusinessPage() {
   // Section 7: FAQs explicitly required
   const faqs: FAQItem[] = [
     {
-      q: "Is LattiumHR suitable for a small business?",
-      a: "Yes. LattiumHR is designed specifically to help small teams (from 5 to 50 employees) transition from spreadsheets, paper forms, and email chains to a clean, intuitive cloud workspace without enterprise complexity or heavy IT overhead.",
+      q: "Is Zentilos suitable for a small business?",
+      a: "Yes. Zentilos is designed specifically to help small teams (from 5 to 50 employees) transition from spreadsheets, paper forms, and email chains to a clean, intuitive cloud workspace without enterprise complexity or heavy IT overhead.",
     },
     {
       q: "Can we manage employee information in one place?",
@@ -183,12 +183,12 @@ export function SmallBusinessPage() {
       a: "Yes. Employees can mark attendance with one click on web or mobile, while managers review daily punches, approve or decline leave requests, and track team coverage to prevent understaffing.",
     },
     {
-      q: "How does LattiumHR support payroll-related workflows?",
-      a: "LattiumHR automatically compiles verified attendance records, approved leaves, and unpaid days (Loss of Pay) into clean pre-payroll summaries, making monthly salary processing straightforward and error-free.",
+      q: "How does Zentilos support payroll-related workflows?",
+      a: "Zentilos automatically compiles verified attendance records, approved leaves, and unpaid days (Loss of Pay) into clean pre-payroll summaries, making monthly salary processing straightforward and error-free.",
     },
     {
-      q: "Can we continue using LattiumHR as our team grows?",
-      a: "Absolutely. As your business expands from 10 to 50 and beyond, LattiumHR grows with you by supporting department structures, custom leave policies, multiple office locations, and role-based permissions without switching systems.",
+      q: "Can we continue using Zentilos as our team grows?",
+      a: "Absolutely. As your business expands from 10 to 50 and beyond, Zentilos grows with you by supporting department structures, custom leave policies, multiple office locations, and role-based permissions without switching systems.",
     },
   ];
 
@@ -288,7 +288,7 @@ export function SmallBusinessPage() {
     },
   ];
 
-  // Section 3B: Why LattiumHR for Small Businesses (Matching Reference Image Process Cards)
+  // Section 3B: Why Zentilos for Small Businesses (Matching Reference Image Process Cards)
   const whySmallBusinessCards = [
     {
       id: "simplicity",
@@ -349,8 +349,8 @@ export function SmallBusinessPage() {
   return (
     <div className="app-shell inner-page-shell sb-page-wrapper">
       <SEO
-        title="Small Business HRMS Software — Solutions for Growing Teams | LattiumHR"
-        description="Make HR simpler for your small business. Manage employee information, attendance, leave, and everyday HR in one organized workspace with LattiumHR."
+        title="Small Business HRMS Software — Solutions for Growing Teams | Zentilos"
+        description="Make HR simpler for your small business. Manage employee information, attendance, leave, and everyday HR in one organized workspace with Zentilos."
         canonicalPath="/solutions/small-businesses"
       />
 
@@ -1137,19 +1137,19 @@ export function SmallBusinessPage() {
         </section>
 
         {/* =========================================================================
-            SECTION 3B — WHY LATTIUMHR FOR SMALL BUSINESSES (Interactive 3D Flip Cards)
+            SECTION 3B — WHY ZENTILOS FOR SMALL BUSINESSES (Interactive 3D Flip Cards)
             Matching Reference Image: Cyan Front / White Hover-Turn Detail Card with Pill Button
             ========================================================================= */}
-        <section className="sb-why-lattium-section" aria-labelledby="why-lattium-heading">
+        <section className="sb-why-zentilos-section" aria-labelledby="why-zentilos-heading">
           {/* Subtle background pattern & atmospheric glow matching reference */}
-          <div className="sb-why-lattium-backdrop" aria-hidden="true" />
-          <div className="sb-why-lattium-glow" aria-hidden="true" />
+          <div className="sb-why-zentilos-backdrop" aria-hidden="true" />
+          <div className="sb-why-zentilos-glow" aria-hidden="true" />
 
           <div className="container" style={{ position: "relative", zIndex: 2 }}>
             <div className="sb-why-header">
-              <span className="sb-why-eyebrow">✦ WHY LATTIUMHR IS BEST FOR SMALL BUSINESSES ✦</span>
-              <h2 id="why-lattium-heading" className="sb-why-title">
-                What Makes LattiumHR Right for Small Businesses?
+              <span className="sb-why-eyebrow">✦ WHY ZENTILOS IS BEST FOR SMALL BUSINESSES ✦</span>
+              <h2 id="why-zentilos-heading" className="sb-why-title">
+                What Makes Zentilos Right for Small Businesses?
               </h2>
               <p className="sb-why-subhead">
                 Give your growing business a simpler way to manage people, organize everyday HR tasks, and keep your workforce information in one connected place.
@@ -1157,7 +1157,7 @@ export function SmallBusinessPage() {
             </div>
 
             {/* Process Cards Grid matching Reference Image */}
-            <div className="sb-why-cards-grid" role="region" aria-label="Why LattiumHR Pillars">
+            <div className="sb-why-cards-grid" role="region" aria-label="Why Zentilos Pillars">
               {whySmallBusinessCards.map((card) => (
                 <div
                   key={card.id}
@@ -1216,7 +1216,7 @@ export function SmallBusinessPage() {
                 <div className="sb-manifesto-action-box">
                   <h3 className="sb-manifesto-action-title">Ready for Your Next Chapter?</h3>
                   <p className="sb-manifesto-action-desc">
-                    See how LattiumHR organizes employee records, attendance, and pre-payroll for growing small teams.
+                    See how Zentilos organizes employee records, attendance, and pre-payroll for growing small teams.
                   </p>
                   <div className="sb-manifesto-checklist">
                     <div className="sb-manifesto-check-item">
@@ -1372,7 +1372,7 @@ export function SmallBusinessPage() {
                 <span className="eyebrow">QUESTIONS, ANSWERED</span>
                 <h2 id="faq-heading">Small Business HR, Answered.</h2>
                 <p>
-                  Everything you need to know about setting up, running, and scaling with LattiumHR for small teams.
+                  Everything you need to know about setting up, running, and scaling with Zentilos for small teams.
                 </p>
               </div>
               <Link className="text-link" to="/faq">

@@ -191,8 +191,8 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ initialPartnerType = "
             {/* Direct Contact Pill */}
             <div className="partner-form-direct-contact">
               <span className="direct-label">Questions about partnership tiers?</span>
-              <a href="mailto:alliances@lattiumhr.com" className="direct-email">
-                alliances@lattiumhr.com <Icon name="arrow" size={14} />
+              <a href="mailto:alliances@zentilos.com" className="direct-email">
+                alliances@zentilos.com <Icon name="arrow" size={14} />
               </a>
             </div>
 
@@ -460,7 +460,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ initialPartnerType = "
                           aria-invalid={!!errors.consent}
                         />
                         <span className="partner-checkbox-text">
-                          I agree to be contacted by LattiumHR alliance directors regarding partnership
+                          I agree to be contacted by Zentilos alliance directors regarding partnership
                           onboarding and evaluate commercial terms.
                         </span>
                       </label>

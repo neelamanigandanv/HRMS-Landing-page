@@ -52,7 +52,7 @@ export function IndustrySolutionsPage() {
       eyebrow: "Information Technology & Software Engineering",
       title: "Sprint Cycles, Flexible Bands, and Global Engineering Teams.",
       description:
-        "Modern IT and software organizations need agile operations that balance engineer autonomy with transparent time accounting. LattiumHR supports sprint cycles, global developer workbands, and automated comp-offs with zero friction.",
+        "Modern IT and software organizations need agile operations that balance engineer autonomy with transparent time accounting. Zentilos supports sprint cycles, global developer workbands, and automated comp-offs with zero friction.",
       iconType: "tech",
       challenges: [
         {
@@ -64,7 +64,7 @@ export function IndustrySolutionsPage() {
           desc: "Balancing weekend production incident rotations and compensatory rest.",
         },
       ],
-      whyChooseTitle: "How LattiumHR Helps Technology Teams",
+      whyChooseTitle: "How Zentilos Helps Technology Teams",
       solutions: [
         "Trust-based web and mobile timer with optional IP-bound rules",
         "Automated on-call allowances, night shift differentials, and comp-offs",
@@ -82,7 +82,7 @@ export function IndustrySolutionsPage() {
       eyebrow: "Creative, Marketing & Digital Client Agencies",
       title: "Client Retainers, Billable Time, and Dynamic Project Staffing.",
       description:
-        "Digital agencies juggle fast-moving client campaigns, multi-account retainers, and cross-functional teams of designers, strategists, and freelance specialists. LattiumHR connects project hours to payroll seamlessly.",
+        "Digital agencies juggle fast-moving client campaigns, multi-account retainers, and cross-functional teams of designers, strategists, and freelance specialists. Zentilos connects project hours to payroll seamlessly.",
       iconType: "agency",
       challenges: [
         {
@@ -94,7 +94,7 @@ export function IndustrySolutionsPage() {
           desc: "Scattered variable day-rates, manual invoice collation, and onboarding lag.",
         },
       ],
-      whyChooseTitle: "How LattiumHR Helps Agencies",
+      whyChooseTitle: "How Zentilos Helps Agencies",
       solutions: [
         "Project-tagged attendance providing real-time client billability visibility",
         "Automated contractor day-rate payouts and rapid digital NDA onboarding",
@@ -112,7 +112,7 @@ export function IndustrySolutionsPage() {
       eyebrow: "Industrial Manufacturing & Machine Bays",
       title: "Shopfloor Shifts, Biometric Gates, and Overtime Precision.",
       description:
-        "Manufacturing plants run on multi-tier shifts, contractor labor pools, and strict statutory overtime rules. LattiumHR links biometric turnstiles directly to master payroll rolls without monthly collation delays.",
+        "Manufacturing plants run on multi-tier shifts, contractor labor pools, and strict statutory overtime rules. Zentilos links biometric turnstiles directly to master payroll rolls without monthly collation delays.",
       iconType: "factory",
       challenges: [
         {
@@ -124,7 +124,7 @@ export function IndustrySolutionsPage() {
           desc: "Manual punch reconciliation causing disputes and payroll lag.",
         },
       ],
-      whyChooseTitle: "How LattiumHR Helps Manufacturing",
+      whyChooseTitle: "How Zentilos Helps Manufacturing",
       solutions: [
         "Real-time biometric face and RFID sync directly from gates",
         "Automated overtime calculation with rule-based OT rates",
@@ -142,7 +142,7 @@ export function IndustrySolutionsPage() {
       eyebrow: "24/7 Healthcare, Clinics & Emergency Wards",
       title: "Rotational Shifts, Ward Coverage, and Zero Compliance Gaps.",
       description:
-        "Healthcare demands round-the-clock staffing where a single scheduling gap compromises patient care. LattiumHR protects critical ward ratios with automated conflict alerts, mandatory rest locks, and instant vacancy broadcasting.",
+        "Healthcare demands round-the-clock staffing where a single scheduling gap compromises patient care. Zentilos protects critical ward ratios with automated conflict alerts, mandatory rest locks, and instant vacancy broadcasting.",
       iconType: "health",
       challenges: [
         {
@@ -154,7 +154,7 @@ export function IndustrySolutionsPage() {
           desc: "Patient-to-nurse ratio risks when emergency absences strike.",
         },
       ],
-      whyChooseTitle: "How LattiumHR Helps Healthcare",
+      whyChooseTitle: "How Zentilos Helps Healthcare",
       solutions: [
         "Smart clinical ward rota with automated conflict alerts",
         "Emergency vacancy broadcast to fill empty shifts in minutes",
@@ -172,7 +172,7 @@ export function IndustrySolutionsPage() {
       eyebrow: "Hotels, Banquet Venues & Restaurants",
       title: "Split Shifts, Banquet Spikes, and Frontline Crew Coordination.",
       description:
-        "Hospitality operations navigate split lunch and dinner rosters, variable banquet spikes, and tip point distributions. LattiumHR coordinates dining rooms, kitchens, and seasonal banquet crews with zero confusion.",
+        "Hospitality operations navigate split lunch and dinner rosters, variable banquet spikes, and tip point distributions. Zentilos coordinates dining rooms, kitchens, and seasonal banquet crews with zero confusion.",
       iconType: "hospitality",
       challenges: [
         {
@@ -184,7 +184,7 @@ export function IndustrySolutionsPage() {
           desc: "Managing service charge pools and hourly pay on spreadsheets.",
         },
       ],
-      whyChooseTitle: "How LattiumHR Helps Hospitality",
+      whyChooseTitle: "How Zentilos Helps Hospitality",
       solutions: [
         "Native split-shift management with dual-punch clock-in tracking",
         "Flexible payroll components for tip pools and late kitchen pay",
@@ -202,7 +202,7 @@ export function IndustrySolutionsPage() {
       eyebrow: "Universities, Colleges & Academic Institutes",
       title: "Academic Terms, Faculty Hours, and Multi-Staff Rules.",
       description:
-        "Educational institutions operate on semester cycles, lecture timetables, and distinct employment terms for teaching professors versus administrative staff. LattiumHR unifies academic operations seamlessly.",
+        "Educational institutions operate on semester cycles, lecture timetables, and distinct employment terms for teaching professors versus administrative staff. Zentilos unifies academic operations seamlessly.",
       iconType: "education",
       challenges: [
         {
@@ -214,7 +214,7 @@ export function IndustrySolutionsPage() {
           desc: "Calculating hourly lecture payouts across departments manually.",
         },
       ],
-      whyChooseTitle: "How LattiumHR Helps Education",
+      whyChooseTitle: "How Zentilos Helps Education",
       solutions: [
         "Semester-aligned academic calendars with custom break lists",
         "Differentiated leave accruals for vacation faculty vs admin staff",
@@ -232,7 +232,7 @@ export function IndustrySolutionsPage() {
       eyebrow: "Multi-Store Retail & Hourly Workforces",
       title: "Peak Hours, Store Rosters, and Seasonal Staff Made Effortless.",
       description:
-        "Retail store chains operate on dynamic footfall peaks, weekend rushes, and rapid employee turnover. LattiumHR unifies multi-outlet scheduling, smartphone check-ins, and automated payroll readiness under one platform.",
+        "Retail store chains operate on dynamic footfall peaks, weekend rushes, and rapid employee turnover. Zentilos unifies multi-outlet scheduling, smartphone check-ins, and automated payroll readiness under one platform.",
       iconType: "chart",
       challenges: [
         {
@@ -244,7 +244,7 @@ export function IndustrySolutionsPage() {
           desc: "Repetitive onboarding paperwork and rapid exit clearances.",
         },
       ],
-      whyChooseTitle: "How LattiumHR Helps Retail",
+      whyChooseTitle: "How Zentilos Helps Retail",
       solutions: [
         "Visual shift planner with drag-and-drop rosters & peer swaps",
         "10-minute digital smartphone onboarding for store staff",
@@ -420,7 +420,7 @@ export function IndustrySolutionsPage() {
   const testimonials = [
     {
       quote:
-        "Managing 18 retail outlets used to mean 18 different WhatsApp groups and endless roster disputes every Friday. LattiumHR unified our store shifts, digital onboarding, and geofenced punches in under two weeks.",
+        "Managing 18 retail outlets used to mean 18 different WhatsApp groups and endless roster disputes every Friday. Zentilos unified our store shifts, digital onboarding, and geofenced punches in under two weeks.",
       author: "Priya Raman",
       role: "Operations Head",
       company: "Vesta Apparel & Retail",
@@ -448,19 +448,19 @@ export function IndustrySolutionsPage() {
   const faqs: FAQItem[] = [
     {
       q: "Can I set up custom shifts?",
-      a: "Yes, absolutely. LattiumHR supports virtually any shift configuration imaginable. You can create 24/7 rotating night and day rosters, split shifts (such as separate lunch and dinner service shifts in restaurants), flexi-hours with mandatory core hours, and define custom grace periods, break intervals, and minimum rest hours between consecutive shifts.",
+      a: "Yes, absolutely. Zentilos supports virtually any shift configuration imaginable. You can create 24/7 rotating night and day rosters, split shifts (such as separate lunch and dinner service shifts in restaurants), flexi-hours with mandatory core hours, and define custom grace periods, break intervals, and minimum rest hours between consecutive shifts.",
     },
     {
       q: "My industry isn’t listed, will it work?",
-      a: "Yes! While we highlight six common sectors on this page, LattiumHR is built on a highly modular engine. Organizations in logistics, construction, facility management, security services, non-profits, and consulting run daily on LattiumHR. If your team tracks hours, takes leaves, receives payroll, and requires role-based access, LattiumHR can be configured to fit your exact workflow.",
+      a: "Yes! While we highlight six common sectors on this page, Zentilos is built on a highly modular engine. Organizations in logistics, construction, facility management, security services, non-profits, and consulting run daily on Zentilos. If your team tracks hours, takes leaves, receives payroll, and requires role-based access, Zentilos can be configured to fit your exact workflow.",
     },
     {
       q: "Can I manage multiple locations?",
-      a: "Yes. LattiumHR is architected specifically for multi-location businesses. You can manage multiple retail stores, clinic branches, manufacturing plants, or regional offices under a single unified company account. Each branch can have its own local geofencing radius, shift schedules, holiday lists, and branch managers, while headquarters retains instant aggregate visibility.",
+      a: "Yes. Zentilos is architected specifically for multi-location businesses. You can manage multiple retail stores, clinic branches, manufacturing plants, or regional offices under a single unified company account. Each branch can have its own local geofencing radius, shift schedules, holiday lists, and branch managers, while headquarters retains instant aggregate visibility.",
     },
     {
       q: "Can we connect our existing biometric or RFID plant machines?",
-      a: "Yes. LattiumHR integrates smoothly with standard biometric fingerprint readers, facial recognition terminals, and RFID turnstile barriers. Punches sync directly to the cloud in real-time, eliminating manual pen-and-paper registers and the headache of downloading CSV files at month-end.",
+      a: "Yes. Zentilos integrates smoothly with standard biometric fingerprint readers, facial recognition terminals, and RFID turnstile barriers. Punches sync directly to the cloud in real-time, eliminating manual pen-and-paper registers and the headache of downloading CSV files at month-end.",
     },
     {
       q: "How long does industry-specific setup take?",
@@ -509,8 +509,8 @@ export function IndustrySolutionsPage() {
   return (
     <div className="industry-solutions-page">
       <SEO
-        title="Industry HRMS Solutions | Tailored Workforce Operations | LattiumHR"
-        description="Shifts, rotations, seasonal teams, or office hours — LattiumHR adapts to how your industry works. Explore tailored workflows for Retail, Healthcare, Manufacturing, Hospitality, IT, and Education."
+        title="Industry HRMS Solutions | Tailored Workforce Operations | Zentilos"
+        description="Shifts, rotations, seasonal teams, or office hours — Zentilos adapts to how your industry works. Explore tailored workflows for Retail, Healthcare, Manufacturing, Hospitality, IT, and Education."
       />
       <Navbar />
 
@@ -530,7 +530,7 @@ export function IndustrySolutionsPage() {
           </h1>
 
           <p className="ind-hero-subline">
-            Shifts, rotations, seasonal teams, or office hours, LattiumHR adapts to how your industry works.
+            Shifts, rotations, seasonal teams, or office hours, Zentilos adapts to how your industry works.
           </p>
 
           <div className="ind-hero-ctas">
@@ -583,7 +583,7 @@ export function IndustrySolutionsPage() {
           - Warm golden eyebrow
           - Bold white heading + thin horizontal line
           - Context description
-          - 2-Column split: Challenges (Icon + 2 items) & Why LattiumHR (3 checkmarks) with vertical line
+          - 2-Column split: Challenges (Icon + 2 items) & Why Zentilos (3 checkmarks) with vertical line
           - Vibrant solid button
           - Right-side dual overlapping image composition (Background architecture + Foreground people)
           - Alternates Left/Right layout
@@ -630,7 +630,7 @@ export function IndustrySolutionsPage() {
                     <div className="ind-dark-divider"></div>
                     <p className="ind-dark-description">{ind.description}</p>
 
-                    {/* 2-Column Split: Challenges (Left) vs Why LattiumHR (Right) */}
+                    {/* 2-Column Split: Challenges (Left) vs Why Zentilos (Right) */}
                     <div className="ind-dark-split-grid">
                       {/* Sub-column 1: Common Challenges (Left) */}
                       <div className="ind-dark-subcol ind-challenges-subcol">
@@ -651,7 +651,7 @@ export function IndustrySolutionsPage() {
                           </div>
                         </div>
 
-                        {/* CTA Button placed in left sub-column, horizontally straight to the 3rd LattiumHR help point */}
+                        {/* CTA Button placed in left sub-column, horizontally straight to the 3rd Zentilos help point */}
                         <div className="ind-dark-actions">
                           <button
                             onClick={() =>
@@ -668,7 +668,7 @@ export function IndustrySolutionsPage() {
                         </div>
                       </div>
 
-                      {/* Sub-column 2: Why Choose LattiumHR (with vertical divider line) */}
+                      {/* Sub-column 2: Why Choose Zentilos (with vertical divider line) */}
                       <div className="ind-dark-subcol ind-why-subcol">
                         <h3 className="ind-why-heading">{ind.whyChooseTitle}</h3>
                         <ul className="ind-why-list">
@@ -723,7 +723,7 @@ export function IndustrySolutionsPage() {
             <div className="ind-eyebrow-chip">✦ UNIFIED FOUNDATION ✦</div>
             <h2 className="ind-section-title">One Platform, Every Industry.</h2>
             <p className="ind-section-subtitle">
-              Not a patchwork of separate, disconnected products. LattiumHR gives you one rock-solid core
+              Not a patchwork of separate, disconnected products. Zentilos gives you one rock-solid core
               platform with flexible rules that match your industry’s day-to-day operations.
             </p>
           </div>
@@ -758,7 +758,7 @@ export function IndustrySolutionsPage() {
               </h2>
               <p className="ind-mid-desc">
                 Schedule a 20-minute tailored walkthrough. Our workforce specialists will show you exactly
-                how LattiumHR configures for your industry’s shifts, attendance hardware, and pay structures.
+                how Zentilos configures for your industry’s shifts, attendance hardware, and pay structures.
               </p>
               <div className="ind-mid-actions">
                 <button onClick={() => openDemoModal()} className="ind-btn-primary" id="mid-cta-demo-btn">

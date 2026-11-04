@@ -22,7 +22,7 @@ export function DocumentsCompliancePage() {
     openDemoModal({
       title: "Request a Documents & Compliance Demo",
       subtitle:
-        "See how LattiumHR helps teams organize employee records, track document expirations, and stay audit-ready.",
+        "See how Zentilos helps teams organize employee records, track document expirations, and stay audit-ready.",
       defaultInterest: "Documents & Compliance",
     });
   };
@@ -84,7 +84,7 @@ export function DocumentsCompliancePage() {
       ],
       callout: {
         role: "Head of People Operations",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "Digital Records" },
@@ -101,7 +101,7 @@ export function DocumentsCompliancePage() {
       imageAlt: "HR compliance specialist reviewing document expiration alerts and renewals on tablet with checklist",
       title: "Automated Expiry Tracking & Timely Renewal Follow-Ups",
       description:
-        "Stay ahead of critical deadlines without manual spreadsheet tracking. LattiumHR automatically monitors expiry dates across passports, work visas, commercial licenses, statutory permits, and employment agreements with timely renewal notifications.",
+        "Stay ahead of critical deadlines without manual spreadsheet tracking. Zentilos automatically monitors expiry dates across passports, work visas, commercial licenses, statutory permits, and employment agreements with timely renewal notifications.",
       bullets: [
         "Configurable multi-tier advance alerts at 90, 60, 30, and 7 days before expiry",
         "Centralized visual expiry calendar giving HR and managers complete visibility",
@@ -112,7 +112,7 @@ export function DocumentsCompliancePage() {
       ],
       callout: {
         role: "Compliance & Audit Lead",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "30-Day", label: "Advance Warning" },
@@ -140,7 +140,7 @@ export function DocumentsCompliancePage() {
       ],
       callout: {
         role: "Chief Information Security Officer",
-        phone: "+91 800-LATTIUM",
+        phone: "+91 800-ZENTILOS",
       },
       stats: [
         { value: "100%", label: "Audit Readiness" },
@@ -223,7 +223,7 @@ export function DocumentsCompliancePage() {
       brand: "stripe",
       headline: "Passed our annual statutory audit with zero missing document flags",
       quote:
-        "Before LattiumHR, our document records were scattered across Google Drive, desktop folders, and physical filing cabinets. Now, every employee has an encrypted profile with complete Aadhaar, PAN, and contract verification.",
+        "Before Zentilos, our document records were scattered across Google Drive, desktop folders, and physical filing cabinets. Now, every employee has an encrypted profile with complete Aadhaar, PAN, and contract verification.",
       name: "Ananya Kapoor",
       role: "Head of Talent & Compliance, UrbanBite",
       avatar: "/images/leader-ananya-kapoor.jpg",
@@ -263,8 +263,8 @@ export function DocumentsCompliancePage() {
   // FAQ covering the exact requested topics: Document types, document access, expiry tracking, compliance records
   const faqs = [
     {
-      q: "What types of employee documents can be stored in LattiumHR?",
-      a: "LattiumHR supports all standard employee paperwork including government identity proofs (Aadhaar, PAN, Passport, Voter ID), signed employment contracts, appointment & increment letters, educational degrees, professional certifications, driving & equipment licenses, tax declarations, and custom company policy forms in PDF, DOCX, and high-resolution image formats.",
+      q: "What types of employee documents can be stored in Zentilos?",
+      a: "Zentilos supports all standard employee paperwork including government identity proofs (Aadhaar, PAN, Passport, Voter ID), signed employment contracts, appointment & increment letters, educational degrees, professional certifications, driving & equipment licenses, tax declarations, and custom company policy forms in PDF, DOCX, and high-resolution image formats.",
     },
     {
       q: "Who has access to view, upload, and download employee documents?",
@@ -272,15 +272,15 @@ export function DocumentsCompliancePage() {
     },
     {
       q: "How does automated document expiry tracking and notification work?",
-      a: "When a document with a validity date (such as a passport, work visa, commercial driving permit, or regulatory license) is uploaded, LattiumHR logs the expiration timeline. The system automatically triggers configurable notifications at 90, 60, 30, and 7 days before expiry to both the employee and HR lead, ensuring timely renewals without manual follow-up.",
+      a: "When a document with a validity date (such as a passport, work visa, commercial driving permit, or regulatory license) is uploaded, Zentilos logs the expiration timeline. The system automatically triggers configurable notifications at 90, 60, 30, and 7 days before expiry to both the employee and HR lead, ensuring timely renewals without manual follow-up.",
     },
     {
-      q: "How does LattiumHR help with statutory compliance and labor audits?",
-      a: "LattiumHR provides pre-configured compliance checklists tailored to statutory labor guidelines. HR teams can monitor missing mandatory records across departments in real time and generate one-click, audit-ready compliance dossiers whenever labor inspectors or statutory auditors request records.",
+      q: "How does Zentilos help with statutory compliance and labor audits?",
+      a: "Zentilos provides pre-configured compliance checklists tailored to statutory labor guidelines. HR teams can monitor missing mandatory records across departments in real time and generate one-click, audit-ready compliance dossiers whenever labor inspectors or statutory auditors request records.",
     },
     {
       q: "How are confidential employee documents protected and encrypted?",
-      a: "All documents uploaded to LattiumHR are secured with bank-grade AES-256 cloud encryption at rest and TLS 1.3 protocol encryption during transit. Data is stored in certified, enterprise-tier cloud environments with daily automated backups and zero unauthorized third-party sharing.",
+      a: "All documents uploaded to Zentilos are secured with bank-grade AES-256 cloud encryption at rest and TLS 1.3 protocol encryption during transit. Data is stored in certified, enterprise-tier cloud environments with daily automated backups and zero unauthorized third-party sharing.",
     },
   ];
 
@@ -291,8 +291,8 @@ export function DocumentsCompliancePage() {
   return (
     <div className="app-shell inner-page-shell emp-page-wrapper doc-page-wrapper">
       <SEO
-        title="Documents & Compliance Management Software — Centralized Employee Records | LattiumHR"
-        description="Keep employee documents organized. Stay compliance-ready. Secure cloud storage, automated expiry tracking, compliance checklists, and role-based access control with LattiumHR."
+        title="Documents & Compliance Management Software — Centralized Employee Records | Zentilos"
+        description="Keep employee documents organized. Stay compliance-ready. Secure cloud storage, automated expiry tracking, compliance checklists, and role-based access control with Zentilos."
         canonicalPath="/features/documents-compliance"
       />
 
@@ -436,7 +436,7 @@ export function DocumentsCompliancePage() {
                   </div>
                   <div className="emp-browser-url-pill">
                     <Icon name="shield" size={11} />
-                    <span>lattium.app/features/documents-compliance</span>
+                    <span>zentilos.app/features/documents-compliance</span>
                   </div>
                   <span className="emp-browser-live-badge">
                     <span className="doc-live-pulse-dot" /> Audit-Ready
@@ -446,7 +446,7 @@ export function DocumentsCompliancePage() {
                 <div className="doc-hero-showcase-frame">
                   <img
                     src="/images/doc-hero-showcase.jpg?v=2"
-                    alt="LattiumHR Documents and Compliance Overview Dashboard showing employee document cards and expiry alerts"
+                    alt="Zentilos Documents and Compliance Overview Dashboard showing employee document cards and expiry alerts"
                     className="doc-hero-mockup-img"
                     loading="eager"
                   />
@@ -707,12 +707,12 @@ export function DocumentsCompliancePage() {
         </section>
 
         {/* =========================================================================
-            4. WHY LATTIUMHR FOR DOCUMENTS & COMPLIANCE (1 Big Card + 4 Small Cards)
+            4. WHY ZENTILOS FOR DOCUMENTS & COMPLIANCE (1 Big Card + 4 Small Cards)
             ========================================================================= */}
         <section className="emp-why-choose-section" aria-labelledby="why-choose-title">
           <div className="container">
             <div className="emp-section-header center">
-              <span className="emp-eyebrow">✦ WHY LATTIUMHR ✦</span>
+              <span className="emp-eyebrow">✦ WHY ZENTILOS ✦</span>
               <h2 id="why-choose-title" className="emp-section-title">
                 More Organized Records. Easier Retrieval.
                 <br />
@@ -765,7 +765,7 @@ export function DocumentsCompliancePage() {
 
                 {/* Bottom Narrative Copy */}
                 <p className="emp-big-card-bottom-text">
-                  Keep employee contracts, statutory proofs, increment letters, and certifications organized in one secure vault. LattiumHR unifies identity records, policy acknowledgments, and expiration timelines into one tamper-proof archive with zero missing paperwork.
+                  Keep employee contracts, statutory proofs, increment letters, and certifications organized in one secure vault. Zentilos unifies identity records, policy acknowledgments, and expiration timelines into one tamper-proof archive with zero missing paperwork.
                 </p>
               </div>
 
@@ -989,7 +989,7 @@ export function DocumentsCompliancePage() {
             <div className="emp-section-header center">
               <span className="emp-eyebrow">✦ TESTIMONIALS ✦</span>
               <h2 id="testi-title" className="emp-section-title">
-                What People Say About LattiumHR
+                What People Say About Zentilos
               </h2>
               <p className="emp-section-subhead">
                 Discover how organizations simplify document collection, eliminate expiry penalties, and maintain 100% statutory compliance.
