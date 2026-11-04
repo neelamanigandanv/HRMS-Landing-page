@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import SolutionTemplate from "../components/templates/SolutionTemplate";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
@@ -7,8 +7,22 @@ import Icon from "../components/ui/Icon";
 import { solutionsMap } from "../data/solutionsData";
 
 export function SolutionPage() {
-  const { slug } = useParams<{ slug: string }>();
-  const solution = slug ? solutionsMap[slug] : null;
+  const { slug } = useParams<{ slug?: string }>();
+  const location = useLocation();
+
+  // If slug is undefined (e.g. from explicit routes like /solutions/finance-teams), extract from pathname
+  const pathParts = location.pathname.split("/").filter(Boolean);
+  const pathSlug = pathParts[0] === "solutions" ? pathParts[1] : undefined;
+  const rawSlug = slug || pathSlug;
+
+  const normalizedSlug =
+    rawSlug === "finance" || rawSlug === "finance-team"
+      ? "finance-teams"
+      : rawSlug === "hr" || rawSlug === "hr-team"
+      ? "hr-teams"
+      : rawSlug;
+
+  const solution = normalizedSlug ? solutionsMap[normalizedSlug] : null;
 
   if (!solution) {
     return (

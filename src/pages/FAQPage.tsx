@@ -4,6 +4,7 @@ import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
+import { useDemoModal } from "../context/DemoModalContext";
 import { faqCategories, FAQItem } from "../data/faqData";
 import "./FAQPage.css";
 
@@ -61,6 +62,7 @@ const helpfulResources = [
 ];
 
 export function FAQPage() {
+  const { openDemoModal } = useDemoModal();
   const location = useLocation();
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -274,7 +276,7 @@ export function FAQPage() {
 
             {/* Hero Quick Action Buttons */}
             <div className="faq-hero-actions">
-              <Button to="/request-demo" className="faq-hero-btn faq-hero-btn--primary">
+              <Button onClick={() => openDemoModal()} className="faq-hero-btn faq-hero-btn--primary">
                 Book a Live Demo <Icon name="arrow" size={14} />
               </Button>
               <Button to="/contact" secondary className="faq-hero-btn faq-hero-btn--secondary">

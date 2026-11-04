@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -760,25 +761,48 @@ export function RecruitmentPage() {
         {/* =========================================================================
             6. MIDDLE CTA SECTION (Immediately after Why LattiumHR section)
             ========================================================================= */}
-        <section className="rec-middle-cta-section" aria-labelledby="mid-cta-heading">
+        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
           <div className="container">
-            <div className="rec-middle-cta-card">
-              <div className="rec-middle-cta-glow" aria-hidden="true" />
-              <div className="rec-middle-cta-content">
-                <span className="rec-cta-eyebrow-pill">✦ TAKE THE NEXT STEP ✦</span>
-                <h2 id="mid-cta-heading" className="rec-middle-cta-title">
-                  Make Your Hiring Process More Organized.
+            <div className="emp-center-cta-card">
+              {/* Primary Color Accent Block */}
+              <div className="emp-cta-primary-bar" />
+
+              {/* Overlapping Photorealistic Team Collaboration Image */}
+              <div className="emp-cta-img-wrap">
+                <img
+                  src="/images/recruitment-cta-hiring.jpg"
+                  alt="Talent acquisition team reviewing candidate pipeline"
+                  className="emp-cta-img"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Right Content Area */}
+              <div className="emp-cta-content">
+                <span className="emp-cta-badge">✦ STRUCTURED TALENT PIPELINE ✦</span>
+                <h2 id="cta-banner-title" className="emp-cta-title">
+                  Ready to Modernize Your Hiring Process?
                 </h2>
-                <p className="rec-middle-cta-subhead">
-                  Discover how LattiumHR can help your team bring more structure and clarity to recruitment.
+                <p className="emp-cta-desc">
+                  Replace slow, disconnected hiring workflows and messy spreadsheets with one structured applicant tracking system. Screen, interview, and onboard top talent faster.
                 </p>
-                <div className="rec-middle-cta-actions">
+                <div className="emp-cta-btn-group">
                   <button
                     type="button"
-                    className="rec-btn-cta-white"
+                    className="emp-cta-btn"
                     onClick={handleOpenDemo}
                   >
-                    Request a Demo <Icon name="arrow" size={15} />
+                    <span>Request Walkthrough</span>
+                    <Icon name="arrow" size={16} />
+                  </button>
+
+                  <button
+                    type="button"
+                    className="emp-cta-btn-secondary"
+                    onClick={handleOpenDemo}
+                  >
+                    <span>Talk to an Expert</span>
+                    <Icon name="arrow" size={16} />
                   </button>
                 </div>
               </div>
@@ -888,36 +912,7 @@ export function RecruitmentPage() {
         {/* =========================================================================
             9. FINAL CTA SECTION (Ready to Improve Your Hiring Process?)
             ========================================================================= */}
-        <section className="final-cta" aria-labelledby="final-cta-heading">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">✦ READY TO HIRE SMARTER? ✦</span>
-              <h2 id="final-cta-heading">Ready to Improve Your Hiring Process?</h2>
-              <p>
-                Discover a more organized way to manage your recruitment activities.
-              </p>
-              <div className="final-actions">
-                <Button onClick={handleOpenDemo}>
-                  Request a Demo <Icon name="arrow" />
-                </Button>
-                <Button to="/contact" secondary>
-                  Contact Our Team
-                </Button>
-              </div>
-              <div className="final-points">
-                <span>
-                  <Icon name="check" /> Free personalized 30-min walkthrough
-                </span>
-                <span>
-                  <Icon name="check" /> No credit card required
-                </span>
-                <span>
-                  <Icon name="check" /> Ready to go live in 2 weeks
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </main>
 
       {/* Website's Existing Footer */}

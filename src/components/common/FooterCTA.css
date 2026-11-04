@@ -1,0 +1,1390 @@
+/* ==========================================================================
+   LATTIUM HR - MODERN FLOATING FOOTER CTA BANNER
+   - Floating wide card with high-resolution photographic workplace background
+   - Visible, properly illuminated background image
+   - Pure white two-line headline with sharp text contrast
+   - Off-white two-line subheadline
+   - Action buttons: "Book a Demo" & "Estimate Price"
+   - Border radius: exactly 6px (matching Home Page Hero section buttons)
+   - Smooth bottom overlap with the dark footer
+   ========================================================================== */
+
+.footer-cta-wrapper {
+  position: relative;
+  z-index: 10;
+  padding: 48px 0 48px 0;
+  margin-bottom: 0; /* Fully inside container, bottom border and rounded corners never clipped */
+  /* Two-tone background: top half is transparent/page bg, bottom half is dark footer #17152e */
+  background: linear-gradient(to bottom, transparent 0%, transparent 50%, #17152e 50%, #17152e 100%);
+}
+
+/* Wide Container holding the card */
+.footer-cta-wrapper .container-wide {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* The Floating Hero Card */
+.footer-cta-card {
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  padding: 84px 32px 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(10, 8, 16, 0.35), 0 4px 16px rgba(0, 0, 0, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  background-color: #1a1523;
+  /* Lightened gradient overlay so the workforce photo is clearly and properly visible */
+  background-image:
+    linear-gradient(180deg, rgba(14, 10, 22, 0.32) 0%, rgba(14, 10, 22, 0.44) 100%),
+    url('/images/footer-cta-workforce-bg.jpg');
+  background-size: cover;
+  background-position: center 32%;
+  background-repeat: no-repeat;
+}
+
+/* Subtle background vignette for edge feathering while leaving center background photo vivid */
+.footer-cta-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(0, 0, 0, 0.05) 0%, rgba(10, 8, 16, 0.32) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Content Container */
+.footer-cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Two-Line Pure White Headline */
+.footer-cta-headline {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 850;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px 0;
+  text-wrap: balance;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.8), 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.footer-cta-headline span {
+  display: inline;
+}
+
+/* Two-Line Subheadline */
+.footer-cta-subheadline {
+  font-size: clamp(14px, 1.35vw, 15.5px);
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 660px;
+  margin: 0 auto 34px auto;
+  text-wrap: balance;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.6);
+  font-weight: 450;
+}
+
+/* Responsive Line Breaks for Desktop */
+@media (min-width: 769px) {
+  .footer-cta-br {
+    display: inline;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-cta-br {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   ACTION BUTTONS ROW (Matching Home Page Hero Section Button Border Radius)
+   ========================================================================== */
+.footer-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Primary Button: Book a Demo
+   Exact 6px border radius matching Home Page Hero section button */
+.footer-cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  height: 46px;
+  background: #802B5B;
+  color: #ffffff;
+  border: 1px solid #802B5B;
+  border-radius: 6px; /* Exactly like home page hero section button border radius */
+  padding: 0 0.35rem 0 1.25rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(128, 43, 91, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.footer-cta-btn-primary:hover {
+  background: #661e47;
+  border-color: #661e47;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 4px 14px rgba(128, 43, 91, 0.5);
+}
+
+.footer-cta-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* White inner arrow box - 4px radius matching the home page hero */
+.footer-cta-arrow-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 4px; /* Exactly matching home page hero arrow box */
+  background: #ffffff;
+  color: #802B5B;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: transform 0.18s ease;
+}
+
+.footer-cta-btn-primary:hover .footer-cta-arrow-box {
+  transform: translateX(2px);
+}
+
+/* Secondary Button: Estimate Price
+   Exact 6px border radius matching Home Page Hero section button */
+.footer-cta-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 46px;
+  background: #ffffff;
+  color: #0c152e;
+  border: 1.5px solid #ffffff;
+  border-radius: 6px; /* Exactly like home page hero section button border radius */
+  padding: 0 1.35rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.footer-cta-btn-secondary:hover {
+  background: #faedf4;
+  border-color: #ffffff;
+  color: #802B5B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.footer-cta-btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 992px) {
+  .footer-cta-wrapper {
+    margin-bottom: 0;
+    padding: 36px 0 36px 0;
+  }
+
+  .footer-cta-card {
+    padding: 64px 24px 70px;
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-cta-wrapper {
+    margin-bottom: 0;
+    padding: 28px 0 28px 0;
+  }
+
+  .footer-cta-wrapper .container-wide {
+    width: calc(100% - 24px);
+  }
+
+  .footer-cta-card {
+    padding: 48px 18px 54px;
+    border-radius: 20px;
+  }
+
+  .footer-cta-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .footer-cta-btn-primary,
+  .footer-cta-btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .footer-cta-btn-primary {
+    justify-content: space-between;
+  }
+}
+
+/* ==========================================================================
+   FULL-WIDTH NEON CURTAIN VARIANT (Exact match to reference media_1793365887111_dc3535e9.png)
+   100% full-width, edge-to-edge section with photorealistic neon fluted ribbed glass curtain
+   ========================================================================== */
+
+/* Shimmer animation for the curtain glow */
+@keyframes neon-shimmer {
+  0%   { opacity: 1;    transform: scaleX(1); }
+  40%  { opacity: 0.88; transform: scaleX(1.012); }
+  70%  { opacity: 0.96; transform: scaleX(0.996); }
+  100% { opacity: 1;    transform: scaleX(1); }
+}
+
+/* Slow ambient glow pulse on the right side */
+@keyframes neon-glow-pulse {
+  0%   { opacity: 0.22; }
+  50%  { opacity: 0.42; }
+  100% { opacity: 0.22; }
+}
+
+.footer-cta-neon-fullwidth {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  /* Pristine, luminous luxury pearl-to-soft-rose gradient (no muddy grey stops) */
+  background: linear-gradient(
+    105deg,
+    #ffffff 0%,
+    #fef8fc 20%,
+    #faf0f6 42%,
+    #f6e1f0 68%,
+    #edd0e6 88%,
+    #e7c0dd 100%
+  );
+  padding: 92px 24px 92px 24px;
+  overflow: hidden;
+  border-top: 1px solid rgba(128, 43, 91, 0.12);
+  border-bottom: 1px solid rgba(128, 43, 91, 0.14);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95), 0 10px 35px rgba(128, 43, 91, 0.05);
+  z-index: 10;
+}
+
+/* Ambient left-side radial glow for depth and clean text backdrop */
+.footer-cta-neon-fullwidth::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 55% 80% at 15% 50%,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.45) 45%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Right-Side Authentic Slender Neon Light Rays Backdrop Layer */
+.neon-curtain-bg-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('/images/cta-slender-neon-lines.png?v=9');
+  background-size: auto 100%;
+  background-position: right top;
+  background-repeat: no-repeat;
+  z-index: 1;
+  opacity: 0.92;
+  animation: neon-shimmer 6s ease-in-out infinite;
+  transform-origin: right center;
+}
+
+/* Extra ambient soft rose shade overlay on the right side */
+.footer-cta-neon-fullwidth::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(
+    ellipse 70% 60% at 86% 42%,
+    rgba(244, 63, 142, 0.12) 0%,
+    rgba(219, 39, 119, 0.06) 42%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 3;
+  animation: neon-glow-pulse 4s ease-in-out infinite;
+}
+
+.footer-cta-neon-fullwidth .neon-curtain-container,
+.footer-cta-card.neon-curtain-card .footer-cta-content {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+
+/* Elegant Pill Badge (Clean, No Yellow Icon) */
+.neon-curtain-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  background: rgba(128, 43, 91, 0.07);
+  border: 1px solid rgba(128, 43, 91, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #7b2958;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 8px rgba(128, 43, 91, 0.06);
+}
+
+/* Two-Line Rich Dark Plum Headline on Half-White Background */
+.neon-curtain-headline,
+.emp-page-wrapper .footer-cta-neon-fullwidth h2.neon-curtain-headline {
+  font-size: clamp(34px, 4.6vw, 56px) !important;
+  font-weight: 850 !important;
+  color: #1a101f !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  margin: 0 0 16px 0 !important;
+  text-shadow: none !important;
+}
+
+/* Two-Line Subheadline with Crisp Readability */
+.neon-curtain-subheadline,
+.emp-page-wrapper .footer-cta-neon-fullwidth p.neon-curtain-subheadline {
+  font-size: clamp(14px, 1.3vw, 15.5px) !important;
+  line-height: 1.62 !important;
+  color: #554a54 !important;
+  max-width: 720px !important;
+  margin: 0 auto 34px auto !important;
+  text-shadow: none !important;
+  font-weight: 450 !important;
+}
+
+.neon-curtain-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Primary Button: Exactly matching Navbar "Request Demo" Button */
+.neon-curtain-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  height: 46px;
+  min-height: 46px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #ad3e6c, #8f3057);
+  color: #ffffff !important;
+  border: 1px solid #842b50;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 5px 14px rgba(143, 48, 87, 0.28);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.neon-curtain-btn-primary svg {
+  stroke-width: 2.2;
+  color: #ffffff;
+}
+
+.neon-curtain-btn-primary:hover {
+  background: linear-gradient(135deg, #9f3662, #7f294d);
+  border-color: #792447;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(143, 48, 87, 0.36);
+}
+
+.neon-curtain-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary Button: Premium Card on Half-White Background */
+.neon-curtain-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 46px;
+  min-height: 46px;
+  padding: 0 24px;
+  background: #ffffff;
+  border: 1.5px solid rgba(128, 43, 91, 0.22);
+  color: #6d244b;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(128, 43, 91, 0.05);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.neon-curtain-btn-secondary:hover {
+  background: rgba(128, 43, 91, 0.06);
+  border-color: #802B5B;
+  color: #57163c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.12);
+}
+
+.neon-curtain-btn-secondary:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+  .neon-curtain-bg-layer {
+    opacity: 0.95;
+  }
+}
+
+@media (max-width: 640px) {
+  .neon-curtain-bg-layer {
+    opacity: 0.35;
+    background-size: auto 90%;
+    background-position: right top;
+  }
+  .footer-cta-neon-fullwidth {
+    padding: 72px 18px 80px 18px;
+  }
+  .neon-curtain-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .neon-curtain-btn-primary,
+  .neon-curtain-btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   MATRIX GLOW CTA BANNER VARIANT (Matches media_1793607831999_35c463a8.png)
+   - Deep midnight plum card with radial gradient and rich primary color tones
+   - Intense backlit glowing edge flares on left & right
+   - Tech dot matrix grid radiating from top center
+   - Glassy squircle app badge with white calendar/leave icon
+   - High-contrast pure white headline and clean subheadline
+   - Glassy pill primary button with top highlight and glow
+   ========================================================================== */
+
+.footer-cta-matrix-glow-section {
+  position: relative;
+  width: 100%;
+  padding: 0; /* No padding — card fills section edge-to-edge including top/bottom */
+  background: transparent;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* Outer Container — full width, flares anchored to section edges */
+.matrix-glow-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glowing Backlit Side Flares (Left & Right) — anchored to section edges */
+.matrix-glow-flare {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  height: 480px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.matrix-glow-flare-left {
+  left: -60px;
+  background: radial-gradient(
+    ellipse at 30% 50%,
+    rgba(240, 110, 166, 0.95) 0%,
+    rgba(180, 43, 122, 0.65) 35%,
+    rgba(128, 43, 91, 0.28) 65%,
+    transparent 100%
+  );
+  filter: blur(60px);
+  -webkit-filter: blur(60px);
+}
+
+.matrix-glow-flare-right {
+  right: -60px;
+  background: radial-gradient(
+    ellipse at 70% 50%,
+    rgba(240, 110, 166, 0.95) 0%,
+    rgba(180, 43, 122, 0.65) 35%,
+    rgba(128, 43, 91, 0.28) 65%,
+    transparent 100%
+  );
+  filter: blur(60px);
+  -webkit-filter: blur(60px);
+}
+
+/* Full-Width Edge-to-Edge Hero Card */
+.matrix-glow-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0;
+  padding: 70px 40px 64px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  /* Deep primary plum gradient with luminous top highlight */
+  background: radial-gradient(
+    ellipse 95% 75% at 50% 0%,
+    #3f1331 0%,
+    #23091b 52%,
+    #0f030d 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.44);
+  box-shadow:
+    0 26px 68px rgba(0, 0, 0, 0.65),
+    0 0 50px rgba(128, 43, 91, 0.22),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.38),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Top Center Ambient Spotlight behind the Badge */
+.matrix-glow-spotlight {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 540px;
+  height: 290px;
+  background: radial-gradient(
+    ellipse at 50% 15%,
+    rgba(240, 110, 166, 0.34) 0%,
+    rgba(128, 43, 91, 0.14) 50%,
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dotted Tech Matrix Grid Pattern */
+.matrix-glow-dots-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.24) 1.25px,
+    transparent 1.25px
+  );
+  background-size: 16px 16px;
+  background-position: center top;
+  mask-image: radial-gradient(
+    ellipse 85% 62% at 50% 22%,
+    black 25%,
+    transparent 82%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 85% 62% at 50% 22%,
+    black 25%,
+    transparent 82%
+  );
+}
+
+/* Small Eyebrow Badge Pill (Replaces Center Icon) */
+.matrix-glow-eyebrow {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #f9a8d4;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+}
+
+.matrix-glow-card:hover .matrix-glow-eyebrow {
+  transform: translateY(-1px);
+  border-color: rgba(240, 110, 166, 0.45);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), 0 0 20px rgba(240, 110, 166, 0.25);
+}
+
+/* Glassy Squircle App Badge (Retained for backwards compatibility) */
+.matrix-glow-badge {
+  position: relative;
+  z-index: 2;
+  width: 70px;
+  height: 70px;
+  border-radius: 22px;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.04) 100%
+    ),
+    #1d0716;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.65);
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.52),
+    0 0 28px rgba(128, 43, 91, 0.55),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.5);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+  color: #ffffff;
+  transition: transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.matrix-glow-card:hover .matrix-glow-badge {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.55),
+    0 0 36px rgba(157, 51, 110, 0.7),
+    inset 0 1px 1.5px rgba(255, 255, 255, 0.6);
+}
+
+/* Pure White Bold Headline */
+.matrix-glow-headline {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(28px, 3.8vw, 45px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px 0;
+  text-wrap: balance;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.75);
+}
+
+/* Clean, Muted Subheadline */
+.matrix-glow-subheadline {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(14px, 1.25vw, 15.5px);
+  line-height: 1.62;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 600px;
+  margin: 0 auto 34px auto;
+  text-wrap: balance;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+  font-weight: 450;
+}
+
+/* Action Buttons Row */
+.matrix-glow-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Primary Action Button (Matches Home Page Hero Section Primary Button Exactly) */
+.matrix-glow-btn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  height: 46px;
+  background: #802B5B;
+  color: #ffffff;
+  border: 1px solid #802B5B;
+  border-radius: 6px;
+  padding: 0 0.35rem 0 1.25rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(128, 43, 91, 0.22);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  outline: none;
+}
+
+.matrix-glow-btn:hover {
+  background: #661e47;
+  border-color: #661e47;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.32);
+}
+
+.matrix-glow-btn:active {
+  transform: translateY(0);
+}
+
+/* White inner arrow box - 4px radius matching home page hero button */
+.matrix-btn-arrow-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #802B5B;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.18s ease;
+}
+
+.matrix-glow-btn:hover .matrix-btn-arrow-box {
+  transform: translateX(2px);
+}
+
+/* Glassy Secondary Action Button */
+.matrix-glow-btn-secondary {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 0 1.35rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.18);
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  outline: none;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.matrix-glow-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+.matrix-glow-btn-secondary:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+  .matrix-glow-flare {
+    width: 220px;
+    height: 340px;
+    filter: blur(48px);
+    -webkit-filter: blur(48px);
+  }
+  .matrix-glow-flare-left {
+    left: -40px;
+  }
+  .matrix-glow-flare-right {
+    right: -40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-cta-matrix-glow-section {
+    padding: 0;
+  }
+  .matrix-glow-card {
+    padding: 48px 20px 44px;
+    border-radius: 0;
+  }
+  .matrix-glow-flare {
+    width: 160px;
+    height: 280px;
+    filter: blur(40px);
+    -webkit-filter: blur(40px);
+  }
+  .matrix-glow-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .matrix-glow-btn,
+  .matrix-glow-btn-secondary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+
+/* ===================================================================
+   INSIGHT CARD VARIANT — Two-column: left text, right floating dashboard
+   Styled in LattiumHR Primary Brand Plum (#802B5B) and Rich Deep Hues
+   =================================================================== */
+
+.insight-card-section {
+  padding: 72px 0 80px;
+  background: #fdfafd;
+}
+
+.insight-card-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.18fr;
+  gap: 48px;
+  align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 52px 56px;
+  border-radius: 24px;
+  background: #fbf5f9;
+  border: 1.5px solid #ebdbe6;
+  box-shadow: 0 16px 44px -8px rgba(128, 43, 91, 0.08);
+}
+
+/* ---- Left Column: Text ---- */
+.insight-card-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.insight-card-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #802B5B;
+  background: rgba(128, 43, 91, 0.08);
+  border: 1px solid rgba(128, 43, 91, 0.2);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+  align-self: flex-start;
+}
+
+.insight-card-headline {
+  font-size: clamp(24px, 2.8vw, 32px);
+  font-weight: 850;
+  color: #191735;
+  line-height: 1.24;
+  letter-spacing: -0.025em;
+  margin: 0 0 18px 0;
+}
+
+.insight-card-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin: 0 0 30px 0;
+  max-width: 440px;
+}
+
+.insight-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  height: 48px;
+  padding: 0 32px;
+  border: none;
+  border-radius: 24px;
+  background: #802B5B;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 750;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(128, 43, 91, 0.32);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insight-card-btn:hover {
+  background: #9d336e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(128, 43, 91, 0.42);
+}
+
+.insight-card-btn:active {
+  transform: translateY(0);
+}
+
+/* ---- Right Column: Image + Dashboard Card ---- */
+.insight-card-right {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px -6px rgba(128, 43, 91, 0.2);
+}
+
+/* Atmospheric CSS-only background in Rich Lattium Plum */
+.insight-card-bg-visual {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 82% 22%, rgba(157, 51, 110, 0.55) 0%, transparent 52%),
+    radial-gradient(circle at 18% 85%, rgba(128, 43, 91, 0.6) 0%, transparent 55%),
+    linear-gradient(145deg, #28091c 0%, #3f102c 38%, #5a183d 68%, #2d091e 100%);
+}
+
+.insight-card-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.6) 1px, transparent 0);
+  background-size: 26px 26px;
+}
+
+/* Floating Dashboard Card */
+.insight-card-dashboard {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 74%;
+  max-width: 340px;
+  padding: 24px 26px 22px;
+  border-radius: 16px;
+  background: rgba(42, 12, 29, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(224, 107, 169, 0.28);
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45),
+    0 0 28px rgba(128, 43, 91, 0.3);
+}
+
+.insight-dash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.insight-dash-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.insight-dash-badge {
+  font-size: 12px;
+  font-weight: 700;
+  color: #f472b6;
+  background: rgba(244, 114, 182, 0.16);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(244, 114, 182, 0.32);
+}
+
+.insight-dash-stat {
+  display: block;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 850;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+  line-height: 1.15;
+}
+
+.insight-dash-categories {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.insight-dash-cat-label {
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.insight-dash-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 6px;
+  overflow: hidden;
+  gap: 3px;
+}
+
+.insight-dash-bar-seg {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 960px) {
+  .insight-card-wrapper {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 40px 32px;
+  }
+
+  .insight-card-right {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .insight-card-section {
+    padding: 40px 0 48px;
+  }
+
+  .insight-card-wrapper {
+    padding: 28px 20px;
+    border-radius: 16px;
+    margin: 0 16px;
+  }
+
+  .insight-card-dashboard {
+    width: 85%;
+  }
+}
+
+/* ==========================================================================
+   EMP BANNER VARIANT — Pure White Footer CTA Banner
+   - Pure white background (replaces the old blue/dark gradient)
+   - Ambient primary brand plum (#802B5B) radial glow visible on bottom-left
+   - Ambient primary brand plum (#802B5B) radial glow visible on top-right
+   - Dark readable text, soft plum badge, high contrast buttons
+   ========================================================================== */
+
+.footer-cta-emp-banner {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  background-color: #F5EEF4 !important;
+  background: radial-gradient(110% 85% at 50% 50%, #ffffff 0%, #FAF2F8 38%, #F5EEF4 72%, #eddce9 100%) !important;
+  border-top: 1px solid rgba(128, 43, 91, 0.12);
+  border-bottom: 1px solid rgba(128, 43, 91, 0.12);
+  padding: 100px 24px 108px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Minimal Light Grid Lines across Full Background (Vertical & Horizontal) ── */
+.emp-banner-grid-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  background-size: 16px 16px;
+  background-position: center center;
+  background-image:
+    linear-gradient(to right, rgba(128, 43, 91, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 43, 91, 0.04) 1px, transparent 1px);
+}
+
+/* ── Ambient Primary Brand Plum Radial Glows ── */
+.emp-banner-blob {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(72px);
+  -webkit-filter: blur(72px);
+  z-index: 1;
+}
+
+/* Primary color visible on left side below */
+.emp-banner-blob-bottom-left {
+  width: 500px;
+  height: 440px;
+  bottom: -90px;
+  left: -80px;
+  background: radial-gradient(circle, rgba(128, 43, 91, 0.32) 0%, rgba(200, 80, 140, 0.14) 45%, transparent 70%);
+  opacity: 0.95;
+  animation: empBlobFloat 9s ease-in-out infinite alternate;
+}
+
+/* Primary color visible on right side top */
+.emp-banner-blob-top-right {
+  width: 500px;
+  height: 440px;
+  top: -90px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(128, 43, 91, 0.32) 0%, rgba(200, 80, 140, 0.14) 45%, transparent 70%);
+  opacity: 0.95;
+  animation: empBlobFloat 9s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes empBlobFloat {
+  0% { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(-16px) scale(1.05); }
+}
+
+/* ── Container ── */
+.emp-banner-container {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ── Eyebrow Badge (No border, no background) ── */
+.emp-banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 22px;
+}
+
+.emp-banner-badge span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #802B5B;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+/* ── Headline ── */
+.emp-banner-headline {
+  font-size: clamp(34px, 4.6vw, 56px);
+  font-weight: 850;
+  color: #191735;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin: 0 0 20px 0;
+  text-wrap: balance;
+}
+
+.emp-banner-headline-accent {
+  color: #802B5B;
+}
+
+/* ── Subtitle ── */
+.emp-banner-subtitle {
+  font-size: clamp(14.5px, 1.35vw, 16.5px);
+  line-height: 1.65;
+  color: #555268;
+  max-width: 680px;
+  margin: 0 auto 38px auto;
+  font-weight: 400;
+  text-wrap: balance;
+}
+
+/* ── Action Row ── */
+.emp-banner-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── Primary Button ── */
+.emp-banner-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  height: 48px;
+  padding: 0 6px 0 24px;
+  background: #802B5B;
+  border: 1px solid #802B5B;
+  border-radius: 8px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(128, 43, 91, 0.35);
+  white-space: nowrap;
+}
+
+.emp-banner-btn-primary span:first-child {
+  margin-right: 12px;
+}
+
+.emp-banner-btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  color: #ffffff;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.emp-banner-btn-primary:hover {
+  background: #6e2250;
+  border-color: #6e2250;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.45);
+}
+
+.emp-banner-btn-primary:hover .emp-banner-btn-arrow {
+  transform: translateX(2px);
+}
+
+.emp-banner-btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ── Secondary Button ── */
+.emp-banner-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 0 26px;
+  background: #ffffff;
+  border: 1.5px solid #ebdcd5;
+  border-radius: 8px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #191735;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(25, 23, 53, 0.04);
+  white-space: nowrap;
+}
+
+.emp-banner-btn-secondary:hover {
+  background: #faf6f8;
+  border-color: rgba(128, 43, 91, 0.35);
+  color: #802B5B;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(128, 43, 91, 0.08);
+}
+
+.emp-banner-btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .footer-cta-emp-banner {
+    padding: 72px 18px 80px 18px;
+  }
+
+  .emp-banner-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .emp-banner-btn-primary,
+  .emp-banner-btn-secondary {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .emp-banner-blob-bottom-left {
+    width: 280px;
+    height: 240px;
+    bottom: -60px;
+    left: -60px;
+  }
+
+  .emp-banner-blob-top-right {
+    width: 280px;
+    height: 240px;
+    top: -60px;
+    right: -60px;
+  }
+}

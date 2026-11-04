@@ -1,5 +1,23 @@
 import { FormEvent, useEffect, useState } from "react";
 import Icon from "../ui/Icon";
+import CustomSelect from "../ui/CustomSelect";
+import PhoneInput from "./PhoneInput";
+import { validatePhoneNumber, FormValidators } from "../../utils/phoneUtils";
+import { submitEnquiry } from "../../services/enquiryService";
+
+const MODAL_TEAM_SIZE_OPTIONS = [
+  { value: "1-50", label: "1 – 50 employees" },
+  { value: "51-200", label: "51 – 200 employees" },
+  { value: "201-500", label: "201 – 500 employees" },
+  { value: "500+", label: "500+ employees" },
+];
+
+const MODAL_INTEREST_OPTIONS = [
+  { value: "Full Platform", label: "All-In-One Platform" },
+  { value: "Attendance & Geofencing", label: "Attendance & Geofencing" },
+  { value: "Statutory Payroll", label: "Statutory Payroll Management" },
+  { value: "Multi-Branch Governance", label: "Multi-Branch Governance" },
+];
 
 export interface RequestDemoModalProps {
   isOpen: boolean;
@@ -7,6 +25,7 @@ export interface RequestDemoModalProps {
   title?: string;
   subtitle?: string;
   defaultInterest?: string;
+  defaultEmail?: string;
 }
 
 export function RequestDemoModal({
@@ -15,10 +34,11 @@ export function RequestDemoModal({
   title = "See LattiumHR in Action",
   subtitle = "Get a personalised 30-min walkthrough with a product specialist",
   defaultInterest = "",
+  defaultEmail = "",
 }: RequestDemoModalProps) {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    email: defaultEmail || "",
     phone: "",
     company: "",
     employees: "",
@@ -26,9 +46,10 @@ export function RequestDemoModal({
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [touched, setTouched] = useState<Record<string, boolean>>({});
+  const [submitAttempted, setSubmitAttempted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Close on Escape & Lock body scroll
   useEffect(() => {
@@ -55,35 +76,31 @@ export function RequestDemoModal({
     if (isOpen) {
       setIsSubmitted(false);
       setIsSubmitting(false);
+      setSubmitError(null);
       setErrors({});
-      setTouched({});
+      setSubmitAttempted(false);
+      if (defaultEmail || defaultInterest) {
+        setFormData((prev) => ({
+          ...prev,
+          email: defaultEmail || prev.email,
+          interest: defaultInterest || prev.interest,
+        }));
+      }
     }
-  }, [isOpen]);
+  }, [isOpen, defaultEmail, defaultInterest]);
 
   const validateField = (field: string, value: string): string => {
-    const trimmed = value.trim();
     switch (field) {
       case "name":
-        if (!trimmed) return "Please enter your full name";
-        if (trimmed.length < 2) return "Enter your full name";
-        if (!/^[a-zA-Z\s.'-]+$/.test(trimmed)) return "Letters only";
-        return "";
+        return FormValidators.name(value);
       case "email":
-        if (!trimmed) return "Work email is required";
-        if (!/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(trimmed)) return "Enter a valid work email";
-        return "";
-      case "phone": {
-        const digits = trimmed.replace(/\D/g, "");
-        if (!digits) return "Phone number is required";
-        if (digits.length < 10) return "Min 10 digits required";
-        return "";
-      }
+        return FormValidators.email(value);
+      case "phone":
+        return validatePhoneNumber(value);
       case "company":
-        if (!trimmed) return "Company name is required";
-        return "";
+        return FormValidators.company(value);
       case "employees":
-        if (!value) return "Please select team size";
-        return "";
+        return FormValidators.teamSize(value);
       default:
         return "";
     }
@@ -91,20 +108,25 @@ export function RequestDemoModal({
 
   const handleChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    if (touched[field]) {
+    // Only re-validate dynamically if user has already tried to submit
+    if (submitAttempted) {
       const err = validateField(field, value);
       setErrors((prev) => ({ ...prev, [field]: err }));
     }
   };
 
   const handleBlur = (field: string) => {
-    setTouched((prev) => ({ ...prev, [field]: true }));
-    const err = validateField(field, (formData as Record<string, string>)[field] || "");
-    setErrors((prev) => ({ ...prev, [field]: err }));
+    // Only validate on blur if user has already attempted to submit
+    if (submitAttempted) {
+      const err = validateField(field, (formData as Record<string, string>)[field] || "");
+      setErrors((prev) => ({ ...prev, [field]: err }));
+    }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitAttempted(true);
+
     const fieldsToValidate = ["name", "email", "phone", "company", "employees"];
     const newErrors: Record<string, string> = {};
 
@@ -113,37 +135,61 @@ export function RequestDemoModal({
       if (err) newErrors[field] = err;
     });
 
-    setTouched({
-      name: true,
-      email: true,
-      phone: true,
-      company: true,
-      employees: true,
-    });
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
+      // Focus first error field for clean accessible UX
+      const firstError = fieldsToValidate.find((f) => newErrors[f]);
+      if (firstError) {
+        const el = document.getElementById(`modal-${firstError}`);
+        if (el) el.focus();
+      }
       return;
     }
 
     setIsSubmitting(true);
-    setTimeout(() => {
+    setSubmitError(null);
+
+    try {
+      const currentPath =
+        typeof window !== "undefined"
+          ? `${window.location.pathname}${window.location.hash || "#demo-popup"}`
+          : "/pricing#demo-popup";
+
+      await submitEnquiry({
+        name: formData.name.trim(),
+        work_email: formData.email.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        company_name: formData.company.trim(),
+        team_size: formData.employees,
+        primary_area_of_interest: formData.interest || "Attendance & Leave Tracking",
+        nature_of_enquiry: "SCHEDULE_LIVE_DEMO",
+        notes: `Demo request from modal (${title})`,
+        source_page: currentPath,
+      });
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 450);
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setSubmitError(
+        err?.message || "Failed to submit demo request. Please check your connection and try again."
+      );
+    }
   };
 
   const handleReset = () => {
     setFormData({
       name: "",
-      email: "",
+      email: defaultEmail || "",
       phone: "",
       company: "",
       employees: "",
       interest: defaultInterest || "",
     });
     setErrors({});
-    setTouched({});
+    setSubmitAttempted(false);
+    setSubmitError(null);
     setIsSubmitted(false);
   };
 
@@ -249,125 +295,159 @@ export function RequestDemoModal({
 
             <div className="form-grid">
               {/* Full Name */}
-              <label>
-                <span>Full Name *</span>
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-name" className="demo-field-label">
+                  <span>Full Name</span>
+                  <span className="required-star">*</span>
+                </label>
                 <input
+                  id="modal-name"
+                  name="name"
                   type="text"
                   value={formData.name}
                   onChange={(e) => handleChange("name", e.target.value)}
                   onBlur={() => handleBlur("name")}
-                  className={errors.name && touched.name ? "has-error" : ""}
+                  className={submitAttempted && errors.name ? "has-error" : ""}
                   placeholder="e.g. Rahul Sharma"
-                  aria-invalid={Boolean(errors.name && touched.name)}
+                  aria-invalid={Boolean(submitAttempted && errors.name)}
                   autoFocus
                 />
-                {errors.name && touched.name && (
+                {submitAttempted && errors.name && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.name}
                   </span>
                 )}
-              </label>
+              </div>
 
               {/* Work Email */}
-              <label>
-                <span>Work Email *</span>
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-email" className="demo-field-label">
+                  <span>Work Email</span>
+                  <span className="required-star">*</span>
+                </label>
                 <input
+                  id="modal-email"
+                  name="email"
                   type="email"
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
                   onBlur={() => handleBlur("email")}
-                  className={errors.email && touched.email ? "has-error" : ""}
+                  className={submitAttempted && errors.email ? "has-error" : ""}
                   placeholder="rahul@company.com"
-                  aria-invalid={Boolean(errors.email && touched.email)}
+                  aria-invalid={Boolean(submitAttempted && errors.email)}
                 />
-                {errors.email && touched.email && (
+                {submitAttempted && errors.email && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.email}
                   </span>
                 )}
-              </label>
+              </div>
 
-              {/* Phone */}
-              <label>
-                <span>Phone Number *</span>
-                <input
-                  type="tel"
+              {/* Phone with Country Selector */}
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-phone" className="demo-field-label">
+                  <span>Phone Number</span>
+                  <span className="required-star">*</span>
+                </label>
+                <PhoneInput
+                  id="modal-phone"
+                  name="phone"
                   value={formData.phone}
-                  onChange={(e) => handleChange("phone", e.target.value)}
+                  onChange={(fullNumber) => handleChange("phone", fullNumber)}
                   onBlur={() => handleBlur("phone")}
-                  className={errors.phone && touched.phone ? "has-error" : ""}
-                  placeholder="+91 98765 43210"
-                  aria-invalid={Boolean(errors.phone && touched.phone)}
+                  hasError={Boolean(submitAttempted && errors.phone)}
+                  required
                 />
-                {errors.phone && touched.phone && (
+                {submitAttempted && errors.phone && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.phone}
                   </span>
                 )}
-              </label>
+              </div>
 
               {/* Company */}
-              <label>
-                <span>Company Name *</span>
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-company" className="demo-field-label">
+                  <span>Company Name</span>
+                  <span className="required-star">*</span>
+                </label>
                 <input
+                  id="modal-company"
+                  name="company"
                   type="text"
                   value={formData.company}
                   onChange={(e) => handleChange("company", e.target.value)}
                   onBlur={() => handleBlur("company")}
-                  className={errors.company && touched.company ? "has-error" : ""}
+                  className={submitAttempted && errors.company ? "has-error" : ""}
                   placeholder="Acme Technologies"
-                  aria-invalid={Boolean(errors.company && touched.company)}
+                  aria-invalid={Boolean(submitAttempted && errors.company)}
                 />
-                {errors.company && touched.company && (
+                {submitAttempted && errors.company && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.company}
                   </span>
                 )}
-              </label>
+              </div>
 
               {/* Team Size */}
-              <label>
-                <span>Team Size *</span>
-                <select
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-team-size" className="demo-field-label">
+                  <span>Team Size</span>
+                  <span className="required-star">*</span>
+                </label>
+                <CustomSelect
+                  id="modal-team-size"
+                  options={MODAL_TEAM_SIZE_OPTIONS}
                   value={formData.employees}
-                  onChange={(e) => handleChange("employees", e.target.value)}
+                  placeholder="Select team size"
+                  onChange={(val) => handleChange("employees", val)}
                   onBlur={() => handleBlur("employees")}
-                  className={errors.employees && touched.employees ? "has-error" : ""}
-                  aria-invalid={Boolean(errors.employees && touched.employees)}
-                >
-                  <option value="" disabled>
-                    Select team size
-                  </option>
-                  <option value="1-50">1 – 50 employees</option>
-                  <option value="51-200">51 – 200 employees</option>
-                  <option value="201-500">201 – 500 employees</option>
-                  <option value="500+">500+ employees</option>
-                </select>
-                {errors.employees && touched.employees && (
+                  hasError={Boolean(submitAttempted && errors.employees)}
+                />
+                {submitAttempted && errors.employees && (
                   <span className="field-error">
                     <Icon name="x" size={11} /> {errors.employees}
                   </span>
                 )}
-              </label>
+              </div>
 
               {/* Module Interest */}
-              <label>
-                <span>Primary Focus</span>
-                <select
+              <div className="demo-field-wrap">
+                <label htmlFor="modal-primary-focus" className="demo-field-label">
+                  <span>Primary Area of Interest</span>
+                </label>
+                <CustomSelect
+                  id="modal-primary-focus"
+                  options={MODAL_INTEREST_OPTIONS}
                   value={formData.interest}
-                  onChange={(e) => handleChange("interest", e.target.value)}
-                >
-                  <option value="" disabled>
-                    Select primary focus
-                  </option>
-                  <option value="Full Platform">All Modules (Full Suite)</option>
-                  <option value="Attendance & Geofencing">Attendance & Geofencing</option>
-                  <option value="Payroll & Compliance">Payroll & Compliance</option>
-                  <option value="Core HR & Onboarding">Core HR & Directory</option>
-                  <option value="Multi-Branch Operations">Multi-Branch Operations</option>
-                </select>
-              </label>
+                  placeholder="Select primary focus"
+                  onChange={(val) => handleChange("interest", val)}
+                />
+              </div>
             </div>
+
+            {submitError && (
+              <div
+                style={{
+                  backgroundColor: "#fef2f2",
+                  border: "1px solid #fecaca",
+                  borderRadius: "8px",
+                  padding: "10px 14px",
+                  color: "#991b1b",
+                  fontSize: "13px",
+                  lineHeight: "1.5",
+                  marginTop: "12px",
+                  marginBottom: "4px",
+                  display: "flex",
+                  alignItems: "flex-start",
+                  gap: "8px",
+                }}
+                role="alert"
+              >
+                <span style={{ fontWeight: "bold", fontSize: "14px", lineHeight: "1" }}>!</span>
+                <span>{submitError}</span>
+              </div>
+            )}
 
             <button type="submit" className="btn form-submit" disabled={isSubmitting}>
               {isSubmitting ? (

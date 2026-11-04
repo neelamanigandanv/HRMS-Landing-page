@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -1082,48 +1083,7 @@ export function PayrollManagementPage() {
         {/* =========================================================================
             BOTTOM CONVERSION CTA BANNER
             ========================================================================= */}
-        <section className="final-cta">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">READY TO SIMPLIFY PAYROLL?</span>
-              <h2>Your team deserves accurate, on-time paydays.</h2>
-              <p>
-                Join 500+ growing businesses worldwide running HR, attendance, and payroll on
-                LattiumHR.
-              </p>
-              <div className="final-actions">
-                <Button
-                  onClick={() =>
-                    openDemoModal({
-                      title: "Book a Payroll Management Demo",
-                      subtitle:
-                        "Experience 1-click salary processing, statutory compliance (PF, ESI, TDS), and direct bank disbursals with Lattium HR.",
-                    })
-                  }
-                >
-                  Book a Free Demo <Icon name="arrow" />
-                </Button>
-                <Button to="/contact-sales" secondary>
-                  Estimate Your Price
-                </Button>
-              </div>
-              <div className="final-points">
-                <span>
-                  <Icon name="check" />
-                  Free personalised demo
-                </span>
-                <span>
-                  <Icon name="check" />
-                  No credit card required
-                </span>
-                <span>
-                  <Icon name="check" />
-                  Go live in 2–4 weeks
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </main>
 
       <Footer />

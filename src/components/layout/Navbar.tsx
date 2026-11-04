@@ -295,8 +295,8 @@ export function Navbar() {
 
         {/* CTA Actions */}
         <div className="nav-actions">
-          <Button to="/contact" className="nav-primary-cta">
-            Contact Us <Icon name="arrow" size={16} />
+          <Button to="/request-demo" className="nav-primary-cta">
+            Request a Demo <Icon name="arrow" size={16} />
           </Button>
 
           {/* Mobile Menu Toggle Button */}
@@ -406,11 +406,13 @@ export function Navbar() {
 
             <div className="mobile-drawer-cta">
               <Button
-                to="/contact"
-                onClick={() => setMobileOpen(false)}
+                to="/request-demo"
+                onClick={() => {
+                  setMobileOpen(false);
+                }}
                 className="btn-full"
               >
-                Contact Us <Icon name="arrow" size={16} />
+                Request a Demo <Icon name="arrow" size={16} />
               </Button>
             </div>
           </div>

@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Deep obsidian pitch-black base gradient -->
+    <linearGradient id="bgBase" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#020004" />
+      <stop offset="40%" stop-color="#040107" />
+      <stop offset="65%" stop-color="#120216" />
+      <stop offset="100%" stop-color="#1e0322" />
+    </linearGradient>
+
+    <!-- Cylindrical lighting for fluted curtain pleats -->
+    <linearGradient id="fluteGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#140114" stop-opacity="0.85" />
+      <stop offset="25%" stop-color="#9d174d" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#ff75ba" stop-opacity="1" />
+      <stop offset="75%" stop-color="#db2777" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0e000f" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="fluteGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#100012" stop-opacity="0.8" />
+      <stop offset="22%" stop-color="#be185d" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#ff66ab" stop-opacity="1" />
+      <stop offset="78%" stop-color="#e11d74" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#160118" stop-opacity="0.8" />
+    </linearGradient>
+
+    <linearGradient id="fluteGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#150118" stop-opacity="0.85" />
+      <stop offset="28%" stop-color="#f43f8e" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#ff8ac5" stop-opacity="1" />
+      <stop offset="72%" stop-color="#db2777" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#120014" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Flute spine highlight (bright vertical line down each bar) -->
+    <linearGradient id="spineGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff8ac5" stop-opacity="0.4" />
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.85" />
+      <stop offset="65%" stop-color="#ff8ac5" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#e11d74" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Massive Neon Bloom radiating behind the curtain -->
+    <radialGradient id="neonBloom" cx="84%" cy="50%" r="56%">
+      <stop offset="0%" stop-color="#ff3399" stop-opacity="0.9" />
+      <stop offset="26%" stop-color="#e11d74" stop-opacity="0.65" />
+      <stop offset="55%" stop-color="#831843" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#020004" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Warm edge glow -->
+    <radialGradient id="edgeGlow" cx="96%" cy="50%" r="35%">
+      <stop offset="0%" stop-color="#ff85c0" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#f43f8e" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#1a021a" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Diffuse blur filter for radiant ambient lighting -->
+    <filter id="curtainGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="34" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Smooth mask to fade curtain bars into left pitch-black area -->
+    <linearGradient id="fadeMask" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" />
+      <stop offset="39%" stop-color="#000000" />
+      <stop offset="52%" stop-color="#666666" />
+      <stop offset="66%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+    <mask id="curtainFade">
+      <rect width="1600" height="650" fill="url(#fadeMask)" />
+    </mask>
+
+    <!-- Top & bottom vignette -->
+    <linearGradient id="topBottomVignette" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020004" stop-opacity="0.55" />
+      <stop offset="14%" stop-color="#020004" stop-opacity="0" />
+      <stop offset="86%" stop-color="#020004" stop-opacity="0" />
+      <stop offset="100%" stop-color="#020004" stop-opacity="0.65" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Obsidian Pitch Black Base -->
+  <rect width="1600" height="650" fill="url(#bgBase)" />
+
+  <!-- 2. Radiant Neon Backlight -->
+  <rect width="1600" height="650" fill="url(#neonBloom)" />
+  <rect width="1600" height="650" fill="url(#edgeGlow)" />
+
+  <!-- 3. Left subtle accent flute matching reference -->
+  <rect x="52" y="0" width="3" height="650" fill="#1d0422" opacity="0.35" />
+  <rect x="55" y="0" width="2" height="650" fill="#3a0842" opacity="0.25" />
+
+  <!-- 4. Vertical 3D Fluted Curtains -->
+  <g mask="url(#curtainFade)">
+    <!-- Base glowing pleats -->
+    <g filter="url(#curtainGlow)" opacity="0.8">
+      <rect x="660" y="0" width="56" height="650" fill="url(#fluteGrad1)" />
+      <rect x="716" y="0" width="56" height="650" fill="url(#fluteGrad2)" />
+      <rect x="772" y="0" width="56" height="650" fill="url(#fluteGrad3)" />
+      <rect x="828" y="0" width="56" height="650" fill="url(#fluteGrad2)" />
+      <rect x="884" y="0" width="56" height="650" fill="url(#fluteGrad1)" />
+      <rect x="940" y="0" width="56" height="650" fill="url(#fluteGrad2)" />
+      <rect x="996" y="0" width="56" height="650" fill="url(#fluteGrad3)" />
+      <rect x="1052" y="0" width="56" height="650" fill="url(#fluteGrad2)" />
+      <rect x="1108" y="0" width="56" height="650" fill="url(#fluteGrad1)" />
+      <rect x="1164" y="0" width="56" height="650" fill="url(#fluteGrad2)" />
+      <rect x="1220" y="0" width="56" height="650" fill="url(#fluteGrad3)" />
+      <rect x="1276" y="0" width="56" height="650" fill="url(#fluteGrad2)" />
+      <rect x="1332" y="0" width="56" height="650" fill="url(#fluteGrad1)" />
+      <rect x="1388" y="0" width="56" height="650" fill="url(#fluteGrad2)" />
+      <rect x="1444" y="0" width="56" height="650" fill="url(#fluteGrad3)" />
+      <rect x="1500" y="0" width="56" height="650" fill="url(#fluteGrad2)" />
+      <rect x="1556" y="0" width="56" height="650" fill="url(#fluteGrad1)" />
+      <rect x="1612" y="0" width="56" height="650" fill="url(#fluteGrad2)" />
+    </g>
+    <!-- Crisp pleats on top with spine highlights -->
+    <g opacity="0.95">
+      <g>
+        <rect x="660" y="0" width="56" height="650" fill="url(#fluteGrad1)" opacity="0.9" />
+        <rect x="684" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="714" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="716" y="0" width="56" height="650" fill="url(#fluteGrad2)" opacity="0.9" />
+        <rect x="740" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="770" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="772" y="0" width="56" height="650" fill="url(#fluteGrad3)" opacity="0.9" />
+        <rect x="796" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="826" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="828" y="0" width="56" height="650" fill="url(#fluteGrad2)" opacity="0.9" />
+        <rect x="852" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="882" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="884" y="0" width="56" height="650" fill="url(#fluteGrad1)" opacity="0.9" />
+        <rect x="908" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="938" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="940" y="0" width="56" height="650" fill="url(#fluteGrad2)" opacity="0.9" />
+        <rect x="964" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="994" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="996" y="0" width="56" height="650" fill="url(#fluteGrad3)" opacity="0.9" />
+        <rect x="1020" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1050" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1052" y="0" width="56" height="650" fill="url(#fluteGrad2)" opacity="0.9" />
+        <rect x="1076" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1106" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1108" y="0" width="56" height="650" fill="url(#fluteGrad1)" opacity="0.9" />
+        <rect x="1132" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1162" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1164" y="0" width="56" height="650" fill="url(#fluteGrad2)" opacity="0.9" />
+        <rect x="1188" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1218" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1220" y="0" width="56" height="650" fill="url(#fluteGrad3)" opacity="0.9" />
+        <rect x="1244" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1274" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1276" y="0" width="56" height="650" fill="url(#fluteGrad2)" opacity="0.9" />
+        <rect x="1300" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1330" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1332" y="0" width="56" height="650" fill="url(#fluteGrad1)" opacity="0.9" />
+        <rect x="1356" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1386" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1388" y="0" width="56" height="650" fill="url(#fluteGrad2)" opacity="0.9" />
+        <rect x="1412" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1442" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1444" y="0" width="56" height="650" fill="url(#fluteGrad3)" opacity="0.9" />
+        <rect x="1468" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1498" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1500" y="0" width="56" height="650" fill="url(#fluteGrad2)" opacity="0.9" />
+        <rect x="1524" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1554" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1556" y="0" width="56" height="650" fill="url(#fluteGrad1)" opacity="0.9" />
+        <rect x="1580" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1610" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+      <g>
+        <rect x="1612" y="0" width="56" height="650" fill="url(#fluteGrad2)" opacity="0.9" />
+        <rect x="1636" y="0" width="3" height="650" fill="url(#spineGlow)" opacity="0.75" />
+        <rect x="1666" y="0" width="2" height="650" fill="#08000a" opacity="0.65" />
+      </g>
+    </g>
+  </g>
+
+  <!-- 5. Top and bottom edge vignettes -->
+  <rect width="1600" height="650" fill="url(#topBottomVignette)" />
+</svg>

@@ -57,7 +57,9 @@ export function GlossaryDetailPage() {
     e.preventDefault();
     openDemoModal({
       title: "Unlock Seamless HR Efficiency",
-      subtitle: `See how LattiumHR simplifies ${questionItem?.term || questionItem?.title || "your HR work"}.`
+      subtitle: `See how LattiumHR simplifies ${questionItem?.term || questionItem?.title || "your HR work"}.`,
+      defaultEmail: sidebarEmail,
+      defaultInterest: questionItem?.term || "HRMS Knowledge Center",
     });
   };
 

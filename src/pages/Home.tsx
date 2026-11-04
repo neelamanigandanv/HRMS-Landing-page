@@ -7,12 +7,16 @@ import Logo from "../components/ui/Logo";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import Icon, { IconName } from "../components/ui/Icon";
+import CustomSelect from "../components/ui/CustomSelect";
 import { useDemoModal } from "../context/DemoModalContext";
 import { useCurrency } from "../context/CurrencyContext";
-import Hero3DStaircase from "../components/home/Hero3DStaircase";
+import { submitEnquiry } from "../services/enquiryService";
+import FooterCTA from "../components/common/FooterCTA";
+import "../components/home/CorporateHero.css";
 
 export function DemoForm({ compact = false }: { compact?: boolean }) {
   const [sent, setSent] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,7 +24,7 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
     employees: "",
   });
   const [errors, setErrors] = useState<{ [K in keyof typeof formData]?: string }>({});
-  const [touched, setTouched] = useState<{ [K in keyof typeof formData]?: boolean }>({});
+  const [submitAttempted, setSubmitAttempted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const validateField = (field: keyof typeof formData, value: string): string => {
@@ -51,27 +55,29 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
 
   const handleChange = (field: keyof typeof formData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
-    if (touched[field]) {
+    if (submitAttempted) {
       const err = validateField(field, value);
       setErrors((prev) => ({ ...prev, [field]: err }));
     }
   };
 
   const handleBlur = (field: keyof typeof formData) => {
-    setTouched((prev) => ({ ...prev, [field]: true }));
-    const err = validateField(field, formData[field]);
-    setErrors((prev) => ({ ...prev, [field]: err }));
+    if (submitAttempted) {
+      const err = validateField(field, formData[field]);
+      setErrors((prev) => ({ ...prev, [field]: err }));
+    }
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+    setSubmitAttempted(true);
+
     const newErrors: { [K in keyof typeof formData]?: string } = {};
     (Object.keys(formData) as (keyof typeof formData)[]).forEach((field) => {
       const err = validateField(field, formData[field]);
       if (err) newErrors[field] = err;
     });
 
-    setTouched({ name: true, email: true, phone: true, employees: true });
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length > 0) {
@@ -79,16 +85,34 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
     }
 
     setIsSubmitting(true);
-    setTimeout(() => {
+    setSubmitError(null);
+
+    try {
+      await submitEnquiry({
+        name: formData.name.trim(),
+        work_email: formData.email.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        company_name: "Prospect Company",
+        team_size: formData.employees,
+        primary_area_of_interest: "Full Platform Walkthrough",
+        nature_of_enquiry: "SCHEDULE_LIVE_DEMO",
+        notes: "Demo requested via Home inline form",
+        source_page: "/",
+      });
       setIsSubmitting(false);
       setSent(true);
-    }, 400);
+    } catch (err: any) {
+      setIsSubmitting(false);
+      setSubmitError(err?.message || "Failed to submit demo request.");
+    }
   };
 
   const handleReset = () => {
     setFormData({ name: "", email: "", phone: "", employees: "" });
     setErrors({});
-    setTouched({});
+    setSubmitAttempted(false);
+    setSubmitError(null);
     setSent(false);
   };
 
@@ -137,11 +161,11 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
             value={formData.name}
             onChange={(e) => handleChange("name", e.target.value)}
             onBlur={() => handleBlur("name")}
-            className={errors.name && touched.name ? "has-error" : ""}
+            className={submitAttempted && errors.name ? "has-error" : ""}
             placeholder="Your full name"
-            aria-invalid={Boolean(errors.name && touched.name)}
+            aria-invalid={Boolean(submitAttempted && errors.name)}
           />
-          {errors.name && touched.name && (
+          {submitAttempted && errors.name && (
             <span className="field-error">
               <Icon name="x" size={11} /> {errors.name}
             </span>
@@ -154,11 +178,11 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
             value={formData.email}
             onChange={(e) => handleChange("email", e.target.value)}
             onBlur={() => handleBlur("email")}
-            className={errors.email && touched.email ? "has-error" : ""}
+            className={submitAttempted && errors.email ? "has-error" : ""}
             placeholder="you@company.com"
-            aria-invalid={Boolean(errors.email && touched.email)}
+            aria-invalid={Boolean(submitAttempted && errors.email)}
           />
-          {errors.email && touched.email && (
+          {submitAttempted && errors.email && (
             <span className="field-error">
               <Icon name="x" size={11} /> {errors.email}
             </span>
@@ -171,40 +195,46 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
             value={formData.phone}
             onChange={(e) => handleChange("phone", e.target.value)}
             onBlur={() => handleBlur("phone")}
-            className={errors.phone && touched.phone ? "has-error" : ""}
+            className={submitAttempted && errors.phone ? "has-error" : ""}
             placeholder="+91 98765 43210"
-            aria-invalid={Boolean(errors.phone && touched.phone)}
+            aria-invalid={Boolean(submitAttempted && errors.phone)}
           />
-          {errors.phone && touched.phone && (
+          {submitAttempted && errors.phone && (
             <span className="field-error">
               <Icon name="x" size={11} /> {errors.phone}
             </span>
           )}
         </label>
-        <label>
-          <span>Employees</span>
-          <select
+        <div style={{ display: "flex", flexDirection: "column", gap: "7px" }}>
+          <label htmlFor="home-hero-employees" style={{ fontSize: "11px", fontWeight: "700", color: "#4b495b", margin: 0 }}>
+            Employees *
+          </label>
+          <CustomSelect
+            id="home-hero-employees"
+            options={[
+              { value: "1-50", label: "1 – 50", desc: "Startups & agile teams" },
+              { value: "51-200", label: "51 – 200", desc: "Growing companies" },
+              { value: "201-500", label: "201 – 500", desc: "Medium enterprises" },
+              { value: "500+", label: "500+", desc: "Large enterprises" },
+            ]}
             value={formData.employees}
-            onChange={(e) => handleChange("employees", e.target.value)}
+            placeholder="Select team size"
+            onChange={(val) => handleChange("employees", val)}
             onBlur={() => handleBlur("employees")}
-            className={errors.employees && touched.employees ? "has-error" : ""}
-            aria-invalid={Boolean(errors.employees && touched.employees)}
-          >
-            <option value="" disabled>
-              Select team size
-            </option>
-            <option value="1-50">1 – 50</option>
-            <option value="51-200">51 – 200</option>
-            <option value="201-500">201 – 500</option>
-            <option value="500+">500+</option>
-          </select>
-          {errors.employees && touched.employees && (
+            hasError={Boolean(submitAttempted && errors.employees)}
+          />
+          {submitAttempted && errors.employees && (
             <span className="field-error">
               <Icon name="x" size={11} /> {errors.employees}
             </span>
           )}
-        </label>
+        </div>
       </div>
+      {submitError && (
+        <div style={{ color: "#ef4444", fontSize: "12px", marginBottom: "8px" }} role="alert">
+          {submitError}
+        </div>
+      )}
       <button type="submit" className="btn form-submit" disabled={isSubmitting}>
         {isSubmitting ? "Submitting..." : "Book a Demo"}
       </button>
@@ -578,6 +608,7 @@ const roleSections = [
       "Documents & asset tracking",
     ],
     mock: <PeopleMockup />,
+    link: "/solutions/hr-teams",
   },
   {
     role: "FOR EMPLOYEES",
@@ -590,6 +621,7 @@ const roleSections = [
       "Submit reimbursements",
     ],
     mock: <LeaveMockup />,
+    link: "/features/employee-management",
   },
   {
     role: "FOR MANAGERS",
@@ -602,6 +634,7 @@ const roleSections = [
       "Team calendars & insights",
     ],
     mock: <ManagerMockup />,
+    link: "/solutions/mid-sized-businesses",
   },
   {
     role: "FOR FINANCE",
@@ -614,6 +647,7 @@ const roleSections = [
       "One-click digital payslips",
     ],
     mock: <PayrollMockup />,
+    link: "/solutions/finance-teams",
   },
   {
     role: "FOR FOUNDERS & EXECUTIVES",
@@ -626,6 +660,7 @@ const roleSections = [
       "Decision-ready reports",
     ],
     mock: <CEOMockup />,
+    link: "/solutions/enterprises",
   },
 ];
 
@@ -671,7 +706,7 @@ function RoleSection({
               </li>
             ))}
           </ul>
-          <Link to="/request-demo" className="text-link">
+          <Link to={item.link} className="text-link">
             Explore this workspace <Icon name="arrow" size={17} />
           </Link>
         </div>
@@ -1087,6 +1122,7 @@ function ModuleCarousel3D() {
 }
 
 function PriceEstimator() {
+  const { openDemoModal } = useDemoModal();
   const { isIndia, currencySymbol, formatSetup } = useCurrency();
   const [plan, setPlan] = useState<"standard" | "professional" | "enterprise">("standard");
   const [users, setUsers] = useState(75);
@@ -1122,7 +1158,7 @@ function PriceEstimator() {
             className={plan === id ? "active" : ""}
             onClick={() => setPlan(id)}
           >
-            <span>{plan === id && <Icon name="check" size={13} />}</span>
+            <span>{plan === id && <Icon name="check" size={14} />}</span>
             <strong>
               {name}
               {id === "professional" && <em>POPULAR</em>}
@@ -1139,7 +1175,15 @@ function PriceEstimator() {
             </span>
             <h3>Built around your business</h3>
             <p>Let’s create a plan for your scale, structure, and security needs.</p>
-            <Button to="/contact">
+            <Button
+              onClick={() =>
+                openDemoModal({
+                  title: "Talk to Sales",
+                  subtitle: "Connect with our workforce solution experts for a tailored enterprise consultation.",
+                  defaultInterest: "Enterprise Solution",
+                })
+              }
+            >
               Talk to Sales <Icon name="arrow" />
             </Button>
           </div>
@@ -1186,12 +1230,12 @@ function PriceEstimator() {
                 </span>
               </div>
               <p>
-                <Icon name="check" size={14} /> Minimum plan covers up to 50 users
+                <Icon name="check" size={16} /> Minimum plan covers up to 50 users
               </p>
             </div>
             <div className="setup-price">
               <span>
-                <Icon name="setup" />
+                <Icon name="setup" size={20} />
               </span>
               <div>
                 <small>ONE-TIME SETUP</small>
@@ -1199,7 +1243,16 @@ function PriceEstimator() {
               </div>
               <em>Includes migration, configuration & training</em>
             </div>
-            <Button to="/request-demo" className="estimate-cta">
+            <Button
+              className="estimate-cta"
+              onClick={() =>
+                openDemoModal({
+                  title: "Get an Exact Quote",
+                  subtitle: `Personalized quote estimate for ${users} employees on the ${plan.charAt(0).toUpperCase() + plan.slice(1)} plan.`,
+                  defaultInterest: `${plan.charAt(0).toUpperCase() + plan.slice(1)} Plan - ${users} Employees`,
+                })
+              }
+            >
               Get an exact quote <Icon name="arrow" />
             </Button>
           </>
@@ -1328,63 +1381,63 @@ export function Home() {
       <Navbar />
 
       <main>
-        <section className="hero" id="demo">
-          <div className="hero-glow" />
-          <div className="container hero-grid">
-            <div className="hero-copy">
-              <span className="hero-badge">
-                <i>
-                  <Icon name="sparkle" size={14} />
-                </i>
-                Built for ambitious businesses worldwide
-              </span>
-              <h1>
-                <span>HR, Payroll & Attendance</span>
-                <span>
-                  for <em>Every Branch,</em>
-                </span>
-                <span>in One System</span>
-              </h1>
-              <p>
-                Replace spreadsheets and scattered tools with one simple HRMS your entire team will
-                love — from first clock-in to final payslip.
-              </p>
-              <div className="hero-actions">
-                <Button to="/request-demo">
-                  Book a Demo <Icon name="arrow" />
-                </Button>
-                <Button href="#pricing" secondary>
-                  Estimate Price
-                </Button>
+        <section className="corporate-hero-section" id="demo">
+          {/* Right-aligned photo with seamless gradient fade to white */}
+          <div className="corporate-hero-bg-wrapper" aria-hidden="true">
+            <div className="corporate-hero-media">
+              <img
+                src="/images/hero-colleagues-clean.png"
+                alt="LattiumHR enterprise HR and payroll leaders collaborating"
+                className="corporate-hero-image"
+              />
+              <div className="corporate-hero-gradient-overlay" />
+            </div>
+          </div>
+
+          <div className="container corporate-hero-container">
+            <div className="corporate-hero-content">
+              {/* Eyebrow in signature Plum #802B5B replacing the green from reference */}
+              <div className="corporate-hero-eyebrow">
+                INNOVATE. CONNECT. GROW.
               </div>
-              <div className="hero-benefits">
-                <div className="hero-benefit-item">
-                  <strong className="benefit-num benefit-num-2x">2×</strong>
-                  <p>
-                    <b>Faster</b>
-                    <small>Employee onboarding</small>
-                  </p>
-                </div>
-                <div className="hero-benefit-item">
-                  <strong className="benefit-num benefit-num-pct">99%</strong>
-                  <p>
-                    <b>Faster</b>
-                    <small>HR processes</small>
-                  </p>
-                </div>
-                <div className="hero-benefit-item">
-                  <strong className="benefit-num benefit-num-247">24/7</strong>
-                  <p>
-                    <b>Workforce</b>
-                    <small>Anywhere, any time</small>
-                  </p>
-                </div>
+
+              {/* Bold, commanding, clean corporate headline */}
+              <h1 className="corporate-hero-title">
+                <span className="hero-title-line">HR, Payroll &amp; Attendance</span>
+                <span className="hero-title-line">
+                  for <span className="hero-highlight-plum">Every Branch,</span>
+                </span>
+                <span className="hero-title-line">in One System</span>
+              </h1>
+
+              {/* Clean descriptive paragraph */}
+              <p className="corporate-hero-description">
+                From automated attendance to statutory payroll, we provide innovative workforce
+                solutions that keep your entire business connected, efficient, and compliant.
+              </p>
+
+              {/* Two Action Buttons matching the reference image styling */}
+              <div className="corporate-hero-actions">
+                <button
+                  type="button"
+                  className="corporate-hero-btn-primary"
+                  onClick={() => openDemoModal()}
+                >
+                  <span>Book a Demo</span>
+                  <span className="corporate-btn-arrow-box" aria-hidden="true">
+                    <Icon name="arrow" size={14} />
+                  </span>
+                </button>
+
+                <a href="#pricing" className="corporate-hero-btn-secondary">
+                  <span>Estimate Price</span>
+                  <Icon name="arrow" size={14} />
+                </a>
               </div>
             </div>
-
-            {/* Hero Right Visual: Premium 3D Staircase Looping Animation */}
-            <Hero3DStaircase />
           </div>
+
+          {/* Social Proof Companies Strip */}
           <div className="container company-strip">
             <span>POWERING PEOPLE AT</span>
             <div>
@@ -1399,71 +1452,151 @@ export function Home() {
           </div>
         </section>
 
-        <section className="before-after" id="platform">
+        <section className="difference-showcase-section" id="platform">
           <div className="container">
             <SectionHeading
-              eyebrow="THE DIFFERENCE"
+              eyebrow="✦ THE DIFFERENCE ✦"
               title="From HR chaos to total clarity"
-              body="See what changes when your people operations finally work together."
+              body="See what changes when your people operations, attendance, and payroll run on LattiumHR."
               center
             />
-            <div className="compare-grid">
-              <div className="compare-card before">
-                <div className="compare-title">
-                  <span>
-                    <Icon name="x" />
+
+            {/* Main Side-by-Side Comparison Container */}
+            <div className="diff-showcase-wrapper">
+              {/* LEFT CARD: MANUAL / TRADITIONAL PROCESS */}
+              <div className="diff-card-manual">
+                <div className="diff-manual-header">
+                  <span className="diff-manual-tag">
+                    <Icon name="clock" size={14} />
+                    <span>Manual / Traditional Process</span>
                   </span>
-                  <div>
-                    <small>BEFORE LATTIUMHR</small>
-                    <strong>Scattered & manual</strong>
+                  <h3 className="diff-manual-title">
+                    Manual / Traditional Process
+                  </h3>
+                </div>
+
+                <div className="diff-manual-list">
+                  <div className="diff-manual-item">
+                    <span className="diff-manual-point-icon" aria-hidden="true">
+                      <Icon name="phone" size={18} />
+                    </span>
+                    <div className="diff-manual-text">
+                      <strong className="diff-manual-item-title">HR calls employees manually</strong>
+                      <p className="diff-manual-item-desc">Time-consuming follow-ups every day</p>
+                    </div>
+                  </div>
+
+                  <div className="diff-manual-item">
+                    <span className="diff-manual-point-icon" aria-hidden="true">
+                      <Icon name="clock" size={18} />
+                    </span>
+                    <div className="diff-manual-text">
+                      <strong className="diff-manual-item-title">Attendance manually verified</strong>
+                      <p className="diff-manual-item-desc">High chance of errors and proxy entries</p>
+                    </div>
+                  </div>
+
+                  <div className="diff-manual-item">
+                    <span className="diff-manual-point-icon" aria-hidden="true">
+                      <Icon name="calendar" size={18} />
+                    </span>
+                    <div className="diff-manual-text">
+                      <strong className="diff-manual-item-title">Missing entries every day</strong>
+                      <p className="diff-manual-item-desc">Incomplete data leads to payroll delays</p>
+                    </div>
+                  </div>
+
+                  <div className="diff-manual-item">
+                    <span className="diff-manual-point-icon" aria-hidden="true">
+                      <Icon name="payroll" size={18} />
+                    </span>
+                    <div className="diff-manual-text">
+                      <strong className="diff-manual-item-title">Payroll corrections every month</strong>
+                      <p className="diff-manual-item-desc">Rework, disputes and loss of productivity</p>
+                    </div>
                   </div>
                 </div>
-                {[
-                  ["leave", "Leave on WhatsApp"],
-                  ["attendance", "Attendance in registers"],
-                  ["payroll", "Payroll in spreadsheets"],
-                  ["document", "Documents in email"],
-                  ["asset", "Assets… somewhere"],
-                ].map((x) => (
-                  <div className="compare-row" key={x[1]}>
-                    <span>
-                      <Icon name={x[0] as IconName} />
-                    </span>
-                    <p>{x[1]}</p>
-                    <em>!</em>
+              </div>
+
+              {/* FLOATING CENTRAL "Vs" BADGE */}
+              <div className="diff-vs-badge" aria-hidden="true">
+                <span>Vs</span>
+              </div>
+
+              {/* RIGHT CARD: LATTIUM AUTOMATED PROCESS */}
+              <div className="diff-card-automated">
+                {/* Background Executive Working Photo */}
+                <div className="diff-automated-bg-media">
+                  <img
+                    src="/images/difference-automated-pro.jpg"
+                    alt="LattiumHR automated workforce management"
+                    className="diff-automated-photo"
+                  />
+                  <div className="diff-automated-gradient-overlay" />
+                </div>
+
+                {/* Content Overlay with Balanced 2-Column Structure */}
+                <div className="diff-automated-content">
+                  {/* Left Column: Top Header + Bottom 2 Capability Badges */}
+                  <div className="diff-auto-col-left">
+                    <div className="diff-automated-header">
+                      <span className="diff-automated-tag">LATTIUM</span>
+                      <h3 className="diff-automated-title">
+                        Lattium Automated<br />Process
+                      </h3>
+                    </div>
+
+                    <div className="diff-auto-badges-left">
+                      {/* Floating Card 1: GPS + Selfie Verified */}
+                      <div className="diff-floating-pill-card">
+                        <span className="diff-pill-card-icon">
+                          <Icon name="map-pin" size={16} />
+                        </span>
+                        <span className="diff-pill-card-label">GPS + Selfie Verified Instantly</span>
+                        <span className="diff-pill-card-check">✓</span>
+                      </div>
+
+                      {/* Floating Card 2: Automated Workflow */}
+                      <div className="diff-floating-pill-card">
+                        <span className="diff-pill-card-icon">
+                          <Icon name="zap" size={16} />
+                        </span>
+                        <span className="diff-pill-card-label">Automated Workflow End to End</span>
+                        <span className="diff-pill-card-check">✓</span>
+                      </div>
+                    </div>
                   </div>
-                ))}
-              </div>
-              <div className="switch-arrow">
-                <Icon name="arrow" />
-              </div>
-              <div className="compare-card after">
-                <div className="compare-title">
-                  <span>
-                    <Icon name="check" />
-                  </span>
-                  <div>
-                    <small>WITH LATTIUMHR</small>
-                    <strong>Connected & automatic</strong>
+
+                  {/* Right Column: 3 Capability Badges Evenly Stacked */}
+                  <div className="diff-auto-col-right">
+                    {/* Floating Card 3: WhatsApp Reminder */}
+                    <div className="diff-floating-pill-card">
+                      <span className="diff-pill-card-icon">
+                        <Icon name="whatsapp" size={16} />
+                      </span>
+                      <span className="diff-pill-card-label">WhatsApp Reminder Automatically Sent</span>
+                      <span className="diff-pill-card-check">✓</span>
+                    </div>
+
+                    {/* Floating Card 4: No Missing Entries */}
+                    <div className="diff-floating-pill-card">
+                      <span className="diff-pill-card-icon">
+                        <Icon name="calendar" size={16} />
+                      </span>
+                      <span className="diff-pill-card-label">No Missing Entries Any Day</span>
+                      <span className="diff-pill-card-check">✓</span>
+                    </div>
+
+                    {/* Floating Card 5: Payroll Ready */}
+                    <div className="diff-floating-pill-card">
+                      <span className="diff-pill-card-icon">
+                        <Icon name="payroll" size={16} />
+                      </span>
+                      <span className="diff-pill-card-label">Payroll-Ready Every Day</span>
+                      <span className="diff-pill-card-check">✓</span>
+                    </div>
                   </div>
                 </div>
-                {[
-                  ["leave", "Leave tracked & approved"],
-                  ["attendance", "Attendance in real time"],
-                  ["payroll", "Payroll auto-calculated"],
-                  ["document", "Documents in one place"],
-                  ["asset", "Assets assigned & visible"],
-                ].map((x) => (
-                  <div className="compare-row" key={x[1]}>
-                    <span>
-                      <Icon name={x[0] as IconName} />
-                    </span>
-                    <p>{x[1]}</p>
-                    <em>
-                      <Icon name="check" size={14} />
-                    </em>
-                  </div>
-                ))}
               </div>
             </div>
           </div>
@@ -1630,42 +1763,9 @@ export function Home() {
             <FAQ />
           </div>
         </section>
-
-        <section className="final-cta">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">READY TO SIMPLIFY HR?</span>
-              <h2>Your people deserve better than spreadsheets.</h2>
-              <p>
-                Join 500+ growing businesses worldwide running HR, attendance, and payroll on
-                LattiumHR.
-              </p>
-              <div className="final-actions">
-                <Button onClick={() => openDemoModal()}>
-                  Book a Free Demo <Icon name="arrow" />
-                </Button>
-                <Button href="#pricing" secondary>
-                  Estimate Your Price
-                </Button>
-              </div>
-              <div className="final-points">
-                <span>
-                  <Icon name="check" />
-                  Free personalised demo
-                </span>
-                <span>
-                  <Icon name="check" />
-                  No credit card required
-                </span>
-                <span>
-                  <Icon name="check" />
-                  Go live in 2–4 weeks
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
+
+      <FooterCTA />
 
       <Footer />
 

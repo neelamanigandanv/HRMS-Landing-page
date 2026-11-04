@@ -1643,6 +1643,9 @@
   letter-spacing: 0.08em;
   color: #802B5B;
   margin-bottom: 0.75rem;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
 }
 
 .emp-cta-title {
@@ -2889,6 +2892,8 @@
 .emp-page-wrapper .emp-process-title,
 .emp-page-wrapper .emp-process-card-title,
 .emp-page-wrapper .emp-cta-title,
+.solutions-overview-page .emp-cta-title,
+.emp-cta-title,
 .emp-page-wrapper .emp-why-choose-section .emp-section-title {
   font-weight: 600 !important;
 }

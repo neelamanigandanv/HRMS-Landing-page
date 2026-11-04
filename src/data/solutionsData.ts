@@ -185,7 +185,10 @@ export interface SolutionData {
   recommendedModules?: { name: string; desc: string; link: string }[];
   relatedSolutions?: SolutionRelatedSolutions;
   testimonialsStats?: { value: string; label: string }[];
+  testimonialsTitle?: string;
   testimonials?: SolutionTestimonial[];
+  faqsTitle?: string;
+  faqsSubtitle?: string;
   faqs?: SolutionFaq[];
   footerCta?: SolutionFooterCta;
 }
@@ -795,94 +798,249 @@ export const solutionsMap: Record<string, SolutionData> = {
   "finance-teams": {
     slug: "finance-teams",
     title: "Solutions for Finance & Payroll Teams",
-    badge: "Financial Control",
+    badge: "Financial Precision & Payroll Control",
     headline: "Zero-error payroll processing, automated statutory compliance, and audit-ready books",
+    heroHeadlineAccent: "Audit-Ready Books.",
+    heroTrustPoints: [
+      "100% Statutory Tax & PF Compliance",
+      "Zero Payroll Discrepancies",
+      "1-Click Direct Bank NEFT",
+    ],
+    heroVisual: {
+      image: "/images/roles-block-finance.jpg",
+      imageAlt: "CFO and financial controller reviewing salary disbursement registers and audit logs",
+      badgeLive: "Verified Pay Run · ₹2.48 Cr Disbursed",
+      widgetLeft: {
+        icon: "finance",
+        title: "Statutory Deductions",
+        subtitle: "100% Compliant PF, PT & TDS",
+        value: "₹38.4L Handled",
+      },
+      widgetRight: {
+        icon: "shield",
+        title: "Direct Bank NEFT",
+        subtitle: "Zero Reconcile Errors",
+        value: "1-Click Payout",
+      },
+    },
     subhead:
-      "Bridge the gap between HR and finance. LattiumHR gives CFOs, accountants, and payroll managers verified attendance inputs, automated statutory deductions, and clean bank disbursement sheets.",
-    challengesTitle: "Payroll Headaches for Finance Professionals",
+      "Bridge the gap between HR and finance. LattiumHR gives CFOs, accountants, and payroll controllers verified attendance inputs, automated statutory tax deductions, and 1-click corporate bank disbursement files.",
+    challengesTitle: "Why Finance Teams Struggle with Month-End Payroll",
     challengesDesc:
-      "Finance leaders are responsible for payroll accuracy and tax compliance, yet they often receive unverified, delayed attendance data from disparate operational teams.",
+      "Finance leaders are legally responsible for payroll accuracy and tax compliance, yet they spend days reconciling manual spreadsheets, chasing unverified attendance, and scrambling before tax deadlines.",
     challenges: [
       {
-        problem: "Garbage-In, Garbage-Out Payroll Inputs",
-        consequence: "Late attendance adjustments, unrecorded unpaid leaves, and unverified expense claims distort payouts.",
+        problem: "Unverified Attendance Inputs Distorting Payouts",
+        consequence:
+          "Late attendance regularizations, unapproved leaves, and untracked loss-of-pay (LOP) days force accountants into manual spreadsheet reconciliations and salary recalculations right before disbursement.",
       },
       {
-        problem: "Complex, Changing Statutory Regulations",
-        consequence: "PF wage caps, state-specific PT rules, and TDS projections require constant manual adjustments.",
+        problem: "Complex & Changing Multi-State Statutory Tax Rules",
+        consequence:
+          "PF wage caps, state-specific Professional Tax (PT) slabs across multiple branches, and income tax regime changes (New vs Old) create high risk of calculation errors, penalties, and audit notices.",
       },
       {
-        problem: "Lengthy Audit & Reconciliation Cycles",
-        consequence: "External auditors take weeks to verify salary registers, gratuity provisions, and statutory returns.",
+        problem: "Time-Consuming Manual Bank Files & Audit Prep",
+        consequence:
+          "Manually formatting salary payout CSV files for individual banking portals (HDFC, ICICI, SBI) takes hours, while external auditors demand historical challans and proof of deductions that take weeks to compile.",
       },
     ],
-    capabilitiesTitle: "Financial Precision & Regulatory Compliance",
+    capabilitiesTitle: "Tools Designed for the Modern Finance & Payroll Team",
     capabilitiesDesc:
-      "Ensure every rupee disbursed is backed by verified attendance records, approved claims, and statutory compliance.",
+      "Everything your finance department needs to ensure 100% calculation precision, automatic tax compliance, and instant bank disbursements.",
     capabilities: [
       {
         title: "Automated Statutory Deductions",
-        desc: "Built-in calculation of PF (12%), ESI, state PT slabs, and income tax projections under both regimes.",
+        desc: "Automatic deduction of PF (12%), ESI, state-specific PT slabs, and income tax TDS projections with zero manual math.",
         icon: "shield",
       },
       {
-        title: "Direct Bank Disbursement Files",
-        desc: "Export formatted payment files compatible with HDFC, ICICI, SBI, and Axis Bank corporate portals.",
+        title: "1-Click Corporate Bank Disbursals",
+        desc: "Generate encrypted payment files formatted specifically for HDFC, ICICI, SBI, Axis, and Kotak corporate banking portals.",
         icon: "download",
       },
       {
-        title: "Loan & Advance Recovery",
-        desc: "Automate monthly installment deductions for employee salary advances with zero manual tracking.",
+        title: "Automated Loans & Advance Recovery",
+        desc: "Track salary advances and EMI deductions automatically across monthly payroll runs without offline paper ledgers.",
         icon: "loan",
       },
       {
-        title: "Statutory Filing Exports",
-        desc: "Generate ECR text files, ESIC returns, and TDS Form 24Q data ready for government portals.",
+        title: "Audit-Ready Compliance Vaults",
+        desc: "1-click generation of government ECR files, ESIC return summaries, and Form 24Q TDS quarterly statements.",
         icon: "reports",
+      },
+    ],
+    interactiveSlides: [
+      {
+        eyebrow: "✦ ZERO-ERROR GROSS-TO-NET PAYROLL ✦",
+        title: "Automate complex gross-to-net calculations in one unified run.",
+        description:
+          "Eliminate manual formulas and spreadsheet errors. The calculation engine processes base pay, HRA, variable allowances, attendance loss-of-pay (LOP), and overtime bonuses automatically across all employees in seconds.",
+        checkmarks: [
+          "Automated Loss-of-Pay (LOP) & Overtime Sync",
+          "Multi-Component Salary Breakdown & CTC Splitting",
+        ],
+        buttonText: "EXPLORE PAYROLL ENGINE →",
+        buttonLink: "/features/payroll-management",
+        image: "/images/reports-block-payroll.jpg",
+        imageAlt: "Financial controller reviewing gross-to-net payroll computation and salary register",
+      },
+      {
+        eyebrow: "✦ MULTI-STATE STATUTORY TAX ENGINE ✦",
+        title: "Ensure 100% statutory compliance across state tax boundaries.",
+        description:
+          "Effortlessly navigate varying state Professional Tax (PT) rules, Provident Fund (PF) wage limits, and ESI thresholds. Automatic TDS computation under both Old and New Tax Regimes protects your organization from statutory penalties.",
+        checkmarks: [
+          "State-Specific PT Slabs (MH, KA, DL, TN, etc.)",
+          "Automated PF Trust & ESI Contribution Rules",
+        ],
+        buttonText: "EXPLORE COMPLIANCE SUITE →",
+        buttonLink: "/features/documents-compliance",
+        image: "/images/branch-payroll.jpg",
+        imageAlt: "Finance team analyzing multi-branch tax compliance and state statutory reports",
+      },
+      {
+        eyebrow: "✦ 1-CLICK DIRECT BANK DISBURSEMENTS ✦",
+        title: "Generate bank-ready salary transfer files in seconds.",
+        description:
+          "Say goodbye to manual re-keying into corporate net banking portals. Export encrypted, pre-formatted disbursement batches compatible with HDFC, ICICI, SBI, and Axis Bank with maker-checker security protocols.",
+        checkmarks: [
+          "Pre-Formatted Corporate Bank NEFT/RTGS Files",
+          "Encrypted Password-Protected Payslips Delivery",
+        ],
+        buttonText: "EXPLORE DISBURSEMENTS →",
+        buttonLink: "/features/payroll-management",
+        image: "/images/roles-block-finance.jpg",
+        imageAlt: "Payroll manager verifying direct corporate bank transfer files and payout authorization",
+      },
+      {
+        eyebrow: "✦ GENERAL LEDGER & AUDIT READINESS ✦",
+        title: "Seamless General Ledger syncing and audit-ready journals.",
+        description:
+          "Map salary expenditures to cost centers, business units, and projects with ease. Export journal vouchers ready for SAP, Tally, Zoho Books, or Oracle NetSuite to reconcile financial books in record time.",
+        checkmarks: [
+          "Cost Center Salary Ledger Allocations",
+          "Instant Government ECR Challan & Form 24Q Exports",
+        ],
+        buttonText: "EXPLORE FINANCIAL REPORTS →",
+        buttonLink: "/features/reports-analytics",
+        image: "/images/reports-hero-showcase.jpg",
+        imageAlt: "CFO analyzing financial salary ledgers, cost-center variance, and audit trails",
       },
     ],
     workflowProcess: {
       eyebrow: "✦ WORKFLOW PROCESS ✦",
-      title: "The Zero-Error Payroll & Compliance Framework",
+      title: "How LattiumHR Powers Your Financial Operations",
       subtitle:
-        "From automated attendance collation to direct corporate bank disbursements and statutory filings — a seamless, verifiable financial flow.",
+        "A structured, verifiable three-stage framework that eliminates calculation errors, ensures strict compliance, and accelerates account reconciliations.",
       image: "/images/industry-finance.jpg",
-      imageAlt: "Finance and payroll specialists verifying monthly salary payout registers and statutory sheets",
+      imageAlt: "Finance leadership and accountants collaborating on payroll processing and statutory tax reconciliation",
       badge: {
         icon: "finance",
-        title: "Payroll Precision",
+        title: "Financial Precision",
         subtitle: "99.9% Calculation Accuracy",
-        color: "#0f766e",
+        color: "#802B5B",
       },
       steps: [
         {
           number: 1,
-          title: "Input Collation & Rule Verification",
+          title: "Input Verification & Attendance Locking",
           description:
-            "Automatically gather verified punch records, approved leaves, overtime hours, and loan deductions without manual spreadsheet copy-pasting.",
+            "Lock verified monthly punch logs, review shift allowances, and validate approved leave adjustments with full departmental sign-offs.",
         },
         {
           number: 2,
-          title: "Automated Gross-to-Net Calculations",
+          title: "Tax Computation & Deductions Processing",
           description:
-            "The calculation engine computes statutory PF, ESI, professional tax, and income tax TDS slabs across multiple branches and states in one run.",
+            "The automated engine computes employee income tax TDS, state PT, and statutory provident funds under the latest government rules.",
         },
         {
           number: 3,
-          title: "1-Click Disbursement & Compliance Filing",
+          title: "Corporate Disbursement & GL Reconciliation",
           description:
-            "Generate encrypted corporate bank payment files (HDFC, ICICI, SBI) and export ready-to-upload government ECR challan registers.",
+            "Authorize direct bank payout files, disburse password-protected payslips, and push journal entries directly to your accounting ledger.",
         },
       ],
     },
-    benefitsTitle: "Measurable Impact for Finance",
+    midCta: {
+      tag: "✦ INTERACTIVE PAYROLL & TAX AUDIT ✦",
+      title: "Wondering how your specific pay structures, allowances, and tax slabs will compute?",
+      description:
+        "Schedule a 20-minute tailored walkthrough. Our payroll specialists will demonstrate live on screen how LattiumHR handles your gross-to-net components, state tax rules, bank disbursement formats, and ERP ledger sync.",
+      primaryBtnText: "Schedule Tailored Walkthrough",
+      primaryBtnLink: "/request-demo",
+      secondaryBtnText: "Speak with a Payroll Specialist",
+      secondaryBtnLink: "/contact",
+      checklist: [
+        "Live interactive screen simulation of your salary structures",
+        "Free white-glove salary master & tax slab data migration",
+        "Statutory compliance audit review & guaranteed 14-day go-live",
+      ],
+    },
+    impactBento: {
+      eyebrow: "✦ STRATEGIC FINANCIAL IMPACT ✦",
+      title: "Measurable Impact for Finance & Payroll Operations",
+      subtitle:
+        "Eliminate costly salary calculation errors, avoid statutory non-compliance penalties, and reconcile accounts in record time.",
+      cardDark: {
+        title: "Multi-Entity General Ledger Reconciliation",
+        description:
+          "Consolidate salary liabilities, statutory remittances, and department cost centers across all legal subsidiaries with zero ledger discrepancies.",
+        buttonLink: "/features/payroll-management",
+        globeAvatars: [
+          { name: "Vikram S.", avatar: "/images/leader-ananya-kapoor.jpg", role: "Chief Financial Officer", top: "25%", left: "26%" },
+          { name: "Meera R.", avatar: "/images/leader-kavya-sundaram.jpg", role: "Head of Payroll", top: "52%", left: "58%" },
+          { name: "Suresh P.", avatar: "/images/leader-rohan-mehta.jpg", role: "Tax Controller", top: "72%", left: "34%" },
+          { name: "Anil K.", avatar: "/images/testi-avatar-1.jpg", role: "Statutory Auditor", top: "24%", left: "80%" },
+          { name: "Pooja M.", avatar: "/images/testi-avatar-2.jpg", role: "Accounts Lead", top: "82%", left: "74%" },
+        ],
+      },
+      cardTopMiddle: {
+        title: "Statutory Audit Compliance",
+        description:
+          "Automated PF, ESI, and state PT rules ensure zero non-compliance notices, late filing penalties, or interest damages.",
+        metricValue: "100%",
+        metricLabel: "On-Time Statutory Remittance",
+      },
+      cardTopRight: {
+        statValue: "99.9%",
+        statTrend: "↗",
+        statLabel: "Payroll Calculation Accuracy",
+        avatars: [
+          "/images/leader-ananya-kapoor.jpg",
+          "/images/leader-kavya-sundaram.jpg",
+          "/images/testi-avatar-1.jpg",
+          "/images/testi-avatar-2.jpg",
+        ],
+        gaugePercent: 98,
+        gaugeLabel: "Annual Salary Reconciliation Score",
+      },
+      cardBottomWide: {
+        title: "Monthly Finance Hours Saved on Pre-Payroll Collation",
+        subtitle: "Consolidated hours saved across attendance verification, manual formula checks, and bank file reformatting.",
+        statValue: "180 hrs",
+        statTrend: "↗",
+        yAxisLabels: ["200h", "150h", "100h", "0h"],
+        chartBars: [
+          { label: "Jan", height: 45, value: "80 hrs" },
+          { label: "Feb", height: 58, value: "110 hrs" },
+          { label: "Mar", height: 70, value: "135 hrs" },
+          { label: "Apr", height: 82, value: "155 hrs" },
+          { label: "May", height: 88, value: "165 hrs" },
+          { label: "Jun", height: 95, value: "175 hrs" },
+          { label: "Jul", height: 98, value: "180 hrs" },
+        ],
+      },
+    },
+    benefitsTitle: "Measurable Impact for Finance & Payroll Operations",
     benefitsDesc:
       "Eliminate payroll calculation errors, avoid compliance penalties, and reconcile accounts in record time.",
     benefits: [
-      { metric: "100%", title: "Calculation Accuracy", desc: "Automated formula engine prevents costly payroll overpayments." },
-      { metric: "0", title: "Statutory Non-Compliance Penalties", desc: "Always up-to-date with the latest PF, ESI, and tax changes." },
-      { metric: "1-Click", title: "Bank File Generation", desc: "Zero manual data re-entry into corporate banking portals." },
+      { metric: "99.9%", title: "Calculation Accuracy", desc: "Automated gross-to-net formula engine eliminates costly payroll errors." },
+      { metric: "₹0", title: "Statutory Penalties", desc: "Always up to date with the latest PF, ESI, state PT, and TDS tax slabs." },
+      { metric: "180 hrs", title: "Saved Monthly on Collation", desc: "Replace late-night spreadsheet tracking with 1-click verified disbursements." },
     ],
+    hideUseCases: true,
     useCasesTitle: "Financial Accuracy in Action",
     useCases: [
       {
@@ -896,11 +1054,118 @@ export const solutionsMap: Record<string, SolutionData> = {
         outcome: "Auditors receive complete, verifiable records with zero manual document assembly.",
       },
     ],
+    hideRecommendedModules: true,
     recommendedModules: [
       { name: "Payroll Management", desc: "Automated salary runs and statutory reports", link: "/features/payroll-management" },
       { name: "Reports & Analytics", desc: "Salary expenditure and cost-center insights", link: "/features/reports-analytics" },
       { name: "Roles & Permissions", desc: "Restricted finance access for sensitive salary data", link: "/features/roles-permissions" },
     ],
+    relatedSolutions: {
+      eyebrow: "✦ RELATED SOLUTIONS ✦",
+      title: "Explore Solutions for Your Business",
+      subtitle:
+        "Discover how LattiumHR connects workforce management across your organization, from agile startup teams to enterprise payroll governance.",
+      cards: [
+        {
+          title: "HR Teams",
+          description:
+            "Automate onboarding paperwork, digital employee files, 1-tap mobile attendance, and leave approval workflows.",
+          link: "/solutions/hr-teams",
+          linkText: "Learn more →",
+          icon: "users",
+        },
+        {
+          title: "Small Businesses",
+          description:
+            "Zero-setup HR, geofenced mobile clock-in, and automated payroll tailored for agile startups and teams under 50.",
+          link: "/solutions/small-businesses",
+          linkText: "Learn more →",
+          icon: "zap",
+        },
+        {
+          title: "Mid-Sized Businesses",
+          description:
+            "Standardize multi-department workflows, regional branch policies, and automated approval hierarchies as your team scales.",
+          link: "/solutions/mid-sized-businesses",
+          linkText: "Learn more →",
+          icon: "chart",
+        },
+        {
+          title: "Enterprises",
+          description:
+            "Enterprise-grade role hierarchies, custom approval matrices, audit logging, and deep ERP integrations for large workforces.",
+          link: "/solutions/enterprises",
+          linkText: "Learn more →",
+          icon: "shield",
+        },
+      ],
+    },
+    testimonialsTitle: "Loved by CFOs & Finance Leaders",
+    testimonials: [
+      {
+        quote:
+          "Payroll used to take our accounting team 5 full days of spreadsheet cross-checking, manual formula recalculations, and late nights right before salary day. With LattiumHR, attendance inputs sync automatically, tax deductions compute in seconds, and our monthly pay run is finalized in under 30 minutes.",
+        author: "Suresh Nambiar",
+        role: "Chief Financial Officer",
+        company: "Meridian Logistics Group",
+        avatar: "SN",
+      },
+      {
+        quote:
+          "Operating across 6 states meant dealing with 6 different Professional Tax rules, varying minimum wage rates, and separate PF trusts. LattiumHR handles all state statutory rules flawlessly and generates our ECR challans ready for upload.",
+        author: "Pooja Venkataraman",
+        role: "Head of Payroll & Compliance",
+        company: "Finserve Capital",
+        avatar: "PV",
+      },
+      {
+        quote:
+          "The 1-click corporate bank disbursement files changed our entire month-end workflow. We generate the encrypted HDFC and ICICI batch files, upload them with maker-checker security, and 850 employees receive their salaries and encrypted payslips simultaneously.",
+        author: "Arun Krishnamurthy",
+        role: "Financial Controller",
+        company: "Synthesys Technologies",
+        avatar: "AK",
+      },
+    ],
+    faqsTitle: "Finance & Payroll FAQs",
+    faqsSubtitle: "Clear answers to common questions about automated gross-to-net calculations, statutory tax compliance, and corporate bank disbursements.",
+    faqs: [
+      {
+        q: "How does LattiumHR ensure 100% calculation accuracy for payroll?",
+        a: "LattiumHR utilizes an automated gross-to-net computation engine that directly ingests locked attendance logs, approved leaves, loan installments, and flexible benefit claims. Formulas for PF, ESI, Professional Tax, and TDS are strictly validated and immune to manual formula corruption or spreadsheet copy-paste errors.",
+      },
+      {
+        q: "Does LattiumHR support both the Old and New Income Tax Regimes?",
+        a: "Yes. Employees can submit tax investment declarations under either the Old or New Regime directly through self-service. The system automatically computes monthly TDS withholdings based on declared deductions (80C, 80D, HRA, home loan interest) and provides employees with real-time tax projection sheets.",
+      },
+      {
+        q: "Can we generate formatted bank salary transfer files for corporate portals?",
+        a: "Yes. LattiumHR exports pre-formatted, encrypted batch payment files specifically tailored for major corporate banking portals including HDFC Bank, ICICI Bank, State Bank of India (SBI), Axis Bank, and Kotak Mahindra. Simply upload the file to your banking portal for maker-checker authorization.",
+      },
+      {
+        q: "How does the system handle multi-branch Professional Tax (PT) across different states?",
+        a: "Each branch office is mapped to its respective state jurisdiction (e.g. Maharashtra, Karnataka, Tamil Nadu, Delhi, Telangana). The engine automatically applies the state-specific PT slab rates and half-yearly deduction logic based on the employee's assigned work location.",
+      },
+      {
+        q: "Can we export ready-to-upload government ECR challan files for PF and ESI?",
+        a: "Yes. With a single click, LattiumHR generates the exact Electronic Challan cum Return (ECR) text files required for EPFO and ESIC portal uploads, complete with UAN mapping, gross wages, and wage ceiling caps.",
+      },
+    ],
+    footerCta: {
+      eyebrow: "READY TO MODERNIZE FINANCIAL OPERATIONS?",
+      title: "Your Finance Team Deserves Better than Spreadsheet Payroll.",
+      description:
+        "Join industry leaders running zero-error payroll, automated statutory tax compliance, and seamless bank disbursements on LattiumHR.",
+      primaryBtnText: "Book a Free Demo",
+      primaryBtnLink: "/request-demo",
+      secondaryBtnText: "Explore Payroll Features",
+      secondaryBtnLink: "/features/payroll-management",
+      points: [
+        "Free personalized finance walkthrough",
+        "100% statutory compliance guarantee",
+        "Go live in 7–14 days with zero downtime",
+      ],
+    },
   },
 
   "multi-location": {
@@ -1057,3 +1322,7 @@ export const solutionsMap: Record<string, SolutionData> = {
     ],
   },
 };
+
+// Route aliases for Finance Teams
+solutionsMap["finance"] = solutionsMap["finance-teams"];
+solutionsMap["finance-team"] = solutionsMap["finance-teams"];

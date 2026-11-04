@@ -78,7 +78,7 @@ export const ALL_GUIDES: GuideCardItem[] = [
   },
   {
     id: "expense-management-guide",
-    slug: "informative-expense-management-guide",
+    slug: "expense-management-guide",
     title: "Expense Management",
     category: "Operations & Compliance",
     readTime: "9 min read",
@@ -92,7 +92,7 @@ export const ALL_GUIDES: GuideCardItem[] = [
   },
   {
     id: "attendance-shift-guide",
-    slug: "leave-management-guide",
+    slug: "attendance-management-guide",
     title: "Attendance & Shifts",
     category: "Workforce & Leave",
     readTime: "10 min read",
@@ -120,7 +120,7 @@ export const ALL_GUIDES: GuideCardItem[] = [
   },
   {
     id: "employee-onboarding-guide",
-    slug: "recruitment-management-guide",
+    slug: "employee-onboarding-guide",
     title: "Employee Onboarding",
     category: "Hiring & Culture",
     readTime: "12 min read",
@@ -148,7 +148,7 @@ export const ALL_GUIDES: GuideCardItem[] = [
   },
   {
     id: "multibranch-hr-setup-guide",
-    slug: "payroll-management-guide",
+    slug: "multibranch-hr-setup-guide",
     title: "Multi-branch Operations",
     category: "Operations & Compliance",
     readTime: "14 min read",

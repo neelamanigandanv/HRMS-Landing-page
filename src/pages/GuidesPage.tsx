@@ -1,12 +1,15 @@
+import FooterCTA from "../components/common/FooterCTA";
 import { useState } from "react";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
+import { useDemoModal } from "../context/DemoModalContext";
 import AllGuidesSection from "../components/guides/AllGuidesSection";
 import "./GuidesPage.css";
 
 export function GuidesPage() {
+  const { openDemoModal } = useDemoModal();
   // Search query state for elevated search box
   const [searchQuery, setSearchQuery] = useState<string>("");
 
@@ -108,43 +111,7 @@ export function GuidesPage() {
         {/* ==========================================================================
             3. FINAL CONVERSION CTA (MATCHING HOME PAGE THEME & STYLING)
             ========================================================================== */}
-        <section className="guides-final-cta-section">
-          <div className="guides-container">
-            <div className="guides-final-cta-content">
-              <span className="guides-final-eyebrow">READY TO SIMPLIFY HR?</span>
-              <h2 className="guides-final-title">
-                Your people deserve better than spreadsheets.
-              </h2>
-              <p className="guides-final-desc">
-                Join 500+ growing businesses worldwide running HR, attendance, and payroll on LattiumHR with zero calculation errors.
-              </p>
-
-              <div className="guides-final-actions">
-                <Button to="/request-demo" className="guides-final-btn-primary">
-                  Book a Free Demo <Icon name="arrow" size={16} />
-                </Button>
-                <Button to="/contact" className="guides-final-btn-secondary">
-                  Talk to a Specialist <Icon name="phone" size={16} />
-                </Button>
-              </div>
-
-              <div className="guides-final-badges">
-                <div className="guides-final-badge-item">
-                  <Icon name="check" size={16} />
-                  <span>Free personalised demo</span>
-                </div>
-                <div className="guides-final-badge-item">
-                  <Icon name="check" size={16} />
-                  <span>No credit card required</span>
-                </div>
-                <div className="guides-final-badge-item">
-                  <Icon name="check" size={16} />
-                  <span>Go live in 2–4 weeks</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA />
       </div>
     </PageLayout>
   );

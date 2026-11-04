@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
+import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -1084,48 +1085,15 @@ export function LeaveManagementPage() {
         {/* =========================================================================
             BOTTOM CONVERSION CTA BANNER
             ========================================================================= */}
-        <section className="final-cta">
-          <div className="container final-grid">
-            <div>
-              <span className="eyebrow">READY TO SIMPLIFY TIME OFF?</span>
-              <h2>Your team deserves better than email leave chains.</h2>
-              <p>
-                Join 500+ growing businesses worldwide running HR, attendance, and payroll on
-                LattiumHR.
-              </p>
-              <div className="final-actions">
-                <Button
-                  onClick={() =>
-                    openDemoModal({
-                      title: "Book a Leave Management Demo",
-                      subtitle:
-                        "Experience automated accruals, team collision alerts, and 1-click payroll sync with Lattium HR.",
-                    })
-                  }
-                >
-                  Book a Free Demo <Icon name="arrow" />
-                </Button>
-                <Button to="/contact-sales" secondary>
-                  Estimate Your Price
-                </Button>
-              </div>
-              <div className="final-points">
-                <span>
-                  <Icon name="check" />
-                  Free personalised demo
-                </span>
-                <span>
-                  <Icon name="check" />
-                  No credit card required
-                </span>
-                <span>
-                  <Icon name="check" />
-                  Go live in 2–4 weeks
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
+        <FooterCTA
+          variant="matrix-glow"
+          eyebrowBadgeText="Automated Leave & Absence Platform"
+          headlineLine1="Ready to streamline leave &"
+          headlineLine2="absence management?"
+          subheadlineLine1="Get enterprise-grade leave tracking and automated multi-tier approvals"
+          subheadlineLine2="in just minutes — zero payroll delays and zero compliance disruptions."
+          primaryButtonText="Book a demo"
+        />
       </main>
 
       <Footer />

@@ -196,6 +196,34 @@
   transform: translateY(-6px);
 }
 
+/* Hover & Active: Semicircle Number Notch turns solid primary plum */
+.perf-process-card:hover .emp-process-notch,
+.perf-process-card.is-active .emp-process-notch {
+  background: #802B5B !important;
+  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.35) !important;
+}
+
+.perf-process-card:hover .emp-process-notch .emp-process-notch-num,
+.perf-process-card.is-active .emp-process-notch .emp-process-notch-num {
+  color: #ffffff !important;
+}
+
+/* Hover & Active: Icon Box turns solid primary plum with white icon */
+.perf-process-card:hover .emp-process-icon-box,
+.perf-process-card.is-active .emp-process-icon-box {
+  background: #802B5B !important;
+  border-color: #802B5B !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px -4px rgba(128, 43, 91, 0.4) !important;
+  transform: scale(1.04);
+}
+
+.perf-process-card:hover .emp-process-icon-box svg,
+.perf-process-card.is-active .emp-process-icon-box svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
 .perf-process-card .emp-process-card-title {
   font-size: 1.15rem !important;
   font-weight: 700 !important;

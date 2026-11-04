@@ -7,39 +7,64 @@ import Button from "../ui/Button";
 import Icon from "../ui/Icon";
 import { SolutionData } from "../../data/solutionsData";
 import { useCurrency } from "../../context/CurrencyContext";
+import { useDemoModal } from "../../context/DemoModalContext";
 
 export function SolutionTemplate({ solution }: { solution: SolutionData }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const { formatText } = useCurrency();
+  const { openDemoModal } = useDemoModal();
   const breadcrumbs = [
     { label: "Solutions", to: "/solutions" },
     { label: solution.title },
   ];
 
+  const isHrTeams = solution.slug === "hr-teams";
+  const isFinanceTeams =
+    solution.slug === "finance-teams" ||
+    solution.slug === "finance" ||
+    solution.slug === "finance-team";
+  const isHrOrFinance = isHrTeams || isFinanceTeams;
+
+  const SectionDivider = () => (
+    <div className="container solution-divider-container" aria-hidden="true">
+      <div className="solution-horizontal-divider" />
+    </div>
+  );
+
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA={Boolean(solution.footerCta)}>
+      <div className={isHrOrFinance ? "solution-hr-teams" : ""}>
       <SEO
         title={solution.title}
         description={solution.subhead}
         canonicalPath={`/solutions/${solution.slug}`}
       />
 
-      {/* Solution Hero: Centered Small-Business Style Hero for HR Teams */}
-      {solution.slug === "hr-teams" ? (
-        <section className="solution-hero-sb-style" aria-labelledby="hr-hero-heading">
+      {/* Solution Hero: Centered Small-Business Style Hero for HR & Finance Teams */}
+      {isHrOrFinance ? (
+        <section className="solution-hero-sb-style" aria-labelledby="solution-hero-heading">
           <div className="container">
             {/* Eyebrow */}
             <div className="solution-hero-sb-eyebrow">
               <span className="solution-hero-sb-sparkle">✦</span>
-              <span>SOLUTIONS FOR HR TEAMS</span>
+              <span>{isFinanceTeams ? "SOLUTIONS FOR FINANCE & PAYROLL TEAMS" : "SOLUTIONS FOR HR TEAMS"}</span>
               <span className="solution-hero-sb-sparkle">✦</span>
             </div>
 
             {/* Headline with glow accent */}
-            <h1 id="hr-hero-heading" className="solution-hero-sb-title">
-              Eliminate Repetitive Paperwork.{" "}
-              <span className="solution-hero-glow">Elevate Employee Experience.</span>
+            <h1 id="solution-hero-heading" className="solution-hero-sb-title">
+              {isFinanceTeams ? (
+                <>
+                  Zero-Error Payroll Processing.{" "}
+                  <span className="solution-hero-glow">Audit-Ready Books.</span>
+                </>
+              ) : (
+                <>
+                  Eliminate Repetitive Paperwork.{" "}
+                  <span className="solution-hero-glow">Elevate Employee Experience.</span>
+                </>
+              )}
             </h1>
 
             {/* Subheadline */}
@@ -49,7 +74,25 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
 
             {/* Hero CTAs */}
             <div className="solution-hero-sb-actions">
-              <Button to="/request-demo" className="solution-hero-btn-primary">
+              <Button
+                type="button"
+                onClick={() =>
+                  openDemoModal({
+                    title: isFinanceTeams
+                      ? "Request a Finance & Payroll Demo"
+                      : isHrTeams
+                      ? "Request an HR Operations Demo"
+                      : `Request a ${solution.title} Demo`,
+                    subtitle: solution.subhead,
+                    defaultInterest: isFinanceTeams
+                      ? "Finance & Payroll Solutions"
+                      : isHrTeams
+                      ? "HR Teams Solution"
+                      : solution.title,
+                  })
+                }
+                className="solution-hero-btn-primary"
+              >
                 Request a Demo <Icon name="arrow" size={16} />
               </Button>
               <Button
@@ -60,7 +103,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                 secondary
                 className="solution-hero-btn-secondary"
               >
-                Explore HR Features ↓
+                {isFinanceTeams ? "Explore Payroll Features ↓" : "Explore HR Features ↓"}
               </Button>
             </div>
 
@@ -196,6 +239,8 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
         </section>
       )}
 
+      {isHrOrFinance && <SectionDivider />}
+
       {/* Specific Challenges */}
       <section className="solution-challenges-section">
         <div className="container">
@@ -247,6 +292,8 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
           </div>
         </div>
       </section>
+
+      {isHrOrFinance && <SectionDivider />}
 
       {/* Solution Capabilities / Interactive 4-Slide Showcase */}
       {solution.interactiveSlides && solution.interactiveSlides.length > 0 ? (
@@ -342,6 +389,8 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
         </section>
       )}
 
+      {isHrOrFinance && <SectionDivider />}
+
       {/* Horizontal 3-Step Process Bar (Directly below the Solution Section matching Reference Image 2) */}
       {solution.horizontalSteps && solution.horizontalSteps.length > 0 && (
         <section className="solution-horizontal-steps-section">
@@ -362,6 +411,8 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
           </div>
         </section>
       )}
+
+      {isHrOrFinance && <SectionDivider />}
 
       {/* Workflow Process Section (Directly Above MEASURABLE ADVANTAGE) */}
       {solution.workflowProcess && (
@@ -428,6 +479,8 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
         </section>
       )}
 
+      {isHrOrFinance && <SectionDivider />}
+
       {/* Mid-CTA Section (Directly Below Workflow Process) */}
       {solution.midCta && (
         <section className="solution-mid-cta-section" id="mid-cta-section">
@@ -438,12 +491,49 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                 <h2 className="solution-mid-cta-title">{solution.midCta.title}</h2>
                 <p className="solution-mid-cta-desc">{solution.midCta.description}</p>
                 <div className="solution-mid-cta-actions">
-                  <Button to={solution.midCta.primaryBtnLink || "/request-demo"} className="solution-mid-btn-primary">
+                  <Button
+                    type="button"
+                    onClick={() =>
+                      openDemoModal({
+                        title: isFinanceTeams
+                          ? "Schedule a Finance & Payroll Walkthrough"
+                          : isHrTeams
+                          ? "Schedule an HR Operations Walkthrough"
+                          : `Schedule a ${solution.title} Walkthrough`,
+                        subtitle: solution.midCta?.description,
+                        defaultInterest: isFinanceTeams
+                          ? "Finance & Payroll Solutions"
+                          : isHrTeams
+                          ? "HR Teams Solution"
+                          : solution.title,
+                      })
+                    }
+                    className="solution-mid-btn-primary"
+                  >
                     <span>{solution.midCta.primaryBtnText || "Schedule Tailored Walkthrough"}</span>
                     <Icon name="arrow" />
                   </Button>
                   {solution.midCta.secondaryBtnText && (
-                    <Button to={solution.midCta.secondaryBtnLink || "/contact"} secondary className="solution-mid-btn-secondary">
+                    <Button
+                      type="button"
+                      onClick={() =>
+                        openDemoModal({
+                          title: isFinanceTeams
+                            ? "Speak with a Payroll Specialist"
+                            : isHrTeams
+                            ? "Speak with an HR Specialist"
+                            : `Speak with a ${solution.title} Specialist`,
+                          subtitle: solution.midCta?.description,
+                          defaultInterest: isFinanceTeams
+                            ? "Finance & Payroll Specialist Consultation"
+                            : isHrTeams
+                            ? "HR Specialist Consultation"
+                            : `${solution.title} Consultation`,
+                        })
+                      }
+                      secondary
+                      className="solution-mid-btn-secondary"
+                    >
                       <span>{solution.midCta.secondaryBtnText}</span>
                     </Button>
                   )}
@@ -465,6 +555,8 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
           </div>
         </section>
       )}
+
+      {isHrOrFinance && <SectionDivider />}
 
       {/* Strategic Workforce Impact / Bento Grid Section */}
       {solution.impactBento ? (
@@ -532,7 +624,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                 <Link
                   to={solution.impactBento.cardDark.buttonLink || "/request-demo"}
                   className="impact-dark-btn"
-                  aria-label="Explore Unified Workforce Intelligence"
+                  aria-label={isFinanceTeams ? "Explore Financial Ledger Synchronization" : "Explore Unified Workforce Intelligence"}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7" />
@@ -574,7 +666,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                 {/* Half-Donut Semi-Circular Gauge Arc */}
                 <div className="impact-gauge-body">
                   <div className="impact-gauge-meter">
-                    <svg viewBox="0 0 220 125" className="impact-gauge-svg">
+                    <svg viewBox="0 0 220 120" className="impact-gauge-svg">
                       <defs>
                         <linearGradient id="gaugeVioletGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                           <stop offset="0%" stopColor="#802B5B" />
@@ -584,28 +676,28 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                       </defs>
                       {/* Background Inactive Arc */}
                       <path
-                        d="M 25 110 A 85 85 0 0 1 195 110"
+                        d="M 28 106 A 82 82 0 0 1 192 106"
                         fill="none"
                         stroke="#f1f2f8"
                         strokeWidth="16"
                         strokeLinecap="round"
                       />
-                      {/* Active Progress Arc (approx 98% of 267px path) */}
+                      {/* Active Progress Arc (approx 98% of 258px path) */}
                       <path
-                        d="M 25 110 A 85 85 0 0 1 195 110"
+                        d="M 28 106 A 82 82 0 0 1 192 106"
                         fill="none"
                         stroke="url(#gaugeVioletGrad)"
                         strokeWidth="16"
                         strokeLinecap="round"
-                        strokeDasharray="267"
+                        strokeDasharray="258"
                         strokeDashoffset="6"
                       />
                     </svg>
                     <div className="impact-gauge-center-text">
                       <div className="impact-gauge-pct">{solution.impactBento.cardTopRight.gaugePercent}%</div>
-                      <div className="impact-gauge-sub">{solution.impactBento.cardTopRight.gaugeLabel}</div>
                     </div>
                   </div>
+                  <div className="impact-gauge-sub">{solution.impactBento.cardTopRight.gaugeLabel}</div>
                 </div>
               </div>
 
@@ -732,6 +824,8 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
         </section>
       )}
 
+      {isHrOrFinance && <SectionDivider />}
+
       {/* Explore Solutions for Your Business / Related Solutions (Directly above Testimonials) */}
       {solution.relatedSolutions && (
         <section className="solution-related-section" id="related-solutions">
@@ -762,6 +856,8 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
         </section>
       )}
 
+      {isHrOrFinance && <SectionDivider />}
+
       {/* Customer Testimonials Section (Matching Home Page Structure) */}
       {solution.testimonials && solution.testimonials.length > 0 && (
         <section className="proof-section" id="customers">
@@ -778,7 +874,10 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
             )}
             <SectionHeading
               eyebrow="CUSTOMER STORIES"
-              title="Loved by People Operations & HR Leaders"
+              title={
+                solution.testimonialsTitle ||
+                (isFinanceTeams ? "Loved by CFOs & Finance Leaders" : "Loved by People Operations & HR Leaders")
+              }
               center
             />
             <div className="testimonials">
@@ -809,6 +908,8 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
         </section>
       )}
 
+      {isHrOrFinance && <SectionDivider />}
+
       {/* FAQ Section (Matching Home Page Structure) */}
       {solution.faqs && solution.faqs.length > 0 && (
         <section className="faq-section" id="faqs">
@@ -816,8 +917,20 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
             <div>
               <SectionHeading
                 eyebrow="QUESTIONS, ANSWERED"
-                title={`${solution.title} FAQs`}
-                body="Clear answers to common questions about employee self-service, onboarding compliance, and approval workflows."
+                title={
+                  solution.faqsTitle ||
+                  (isFinanceTeams
+                    ? "Finance & Payroll FAQs"
+                    : isHrTeams
+                    ? "HR Teams FAQs"
+                    : `${solution.title} FAQs`)
+                }
+                body={
+                  solution.faqsSubtitle ||
+                  (isFinanceTeams
+                    ? "Clear answers to common questions about automated gross-to-net calculations, statutory tax compliance, and corporate bank disbursements."
+                    : "Clear answers to common questions about employee self-service, onboarding compliance, and approval workflows.")
+                }
               />
               <Link className="text-link" to="/faq">
                 View all FAQs <Icon name="arrow" size={17} />
@@ -837,6 +950,8 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
           </div>
         </section>
       )}
+
+      {isHrOrFinance && <SectionDivider />}
 
       {/* Final Footer CTA (Matching Home Page Structure) */}
       {solution.footerCta && (
@@ -870,6 +985,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
           </div>
         </section>
       )}
+      </div>
     </PageLayout>
   );
 }

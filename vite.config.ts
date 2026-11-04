@@ -34,6 +34,13 @@ export default defineConfig(({ mode }) => {
       host: process.env.FIGMA_DEV_SERVER_HOST || '0.0.0.0',
       port: parseInt(process.env.PORT || '8443'),
       strictPort: false,
+      proxy: {
+        '/neuverve': {
+          target: 'http://192.168.1.5:5173',
+          changeOrigin: true,
+          secure: false,
+        },
+      },
       watch: {
         ignored: [
           '**/.figma/**',
@@ -96,8 +103,12 @@ function figmaSiteConfiguration(config: FigmaSiteConfiguration): Plugin {
   const headEnd = config.customScripts?.headEnd ?? ''
   const bodyStart = config.customScripts?.bodyStart ?? ''
   const bodyEnd = config.customScripts?.bodyEnd ?? ''
-  const robotsTxt = config.robots?.index === false ? 'User-agent: *\nDisallow: /\n' : ''
+  const robotsTxt = config.robots?.index === false
+  ? 'User-agent: *\nDisallow: /\n'
+  : 'User-agent: *\nAllow: /\n';
 
+ console.log("ROBOTS INDEX:", config.robots?.index);
+ console.log("ROBOTS TXT:", robotsTxt);
   return {
     name: 'figma-site-configuration',
     configureServer(server) {
