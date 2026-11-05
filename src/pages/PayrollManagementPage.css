@@ -128,7 +128,7 @@
    ========================================================================== */
 .pay-page-wrapper .emp-why-big-card,
 .pay-page-wrapper .emp-why-choose-section .emp-why-big-card {
-  background-image: url('/images/skyline-hq.jpg') !important;
+  background-image: url('/images/skyline-hq.webp') !important;
   background-size: cover !important;
   background-position: center !important;
 }

@@ -75,7 +75,7 @@ export function AssetManagementPage() {
         "Before Zentilos, laptops vanished whenever remote contractors or regional staff resigned. With automated digital handover slips and exit clearance gates, our missing equipment rate dropped to zero.",
       name: "Freddy Dean",
       role: "VP of IT & Infrastructure, FinScale",
-      avatar: "/images/testi-avatar-1.jpg",
+      avatar: "/images/testi-avatar-1.webp",
     },
     {
       id: 2,
@@ -85,7 +85,7 @@ export function AssetManagementPage() {
         "New employees sign their digital equipment handover slips right from their phones on their first morning. High-res photo attachments and serial barcode scans eliminated all allocation disputes.",
       name: "Sarah Jenkins",
       role: "Head of People Operations, CloudScale",
-      avatar: "/images/testi-avatar-2.jpg",
+      avatar: "/images/testi-avatar-2.webp",
     },
     {
       id: 3,
@@ -95,7 +95,7 @@ export function AssetManagementPage() {
         "Managing hardware across 6 regional branches used to mean messy Excel files and ghost assets. With Zentilos QR barcode scanning, branch custodians audit our entire device fleet in hours.",
       name: "Rohan Mehta",
       role: "Chief Operating Officer, Apex Labs",
-      avatar: "/images/leader-rohan-mehta.jpg",
+      avatar: "/images/leader-rohan-mehta.webp",
     },
     {
       id: 4,
@@ -105,7 +105,7 @@ export function AssetManagementPage() {
         "Auditors were blown away by our tamper-proof device history trail. We exported serialized ownership records, purchase invoices, and disposal certificates with a single click.",
       name: "Ananya Kapoor",
       role: "Chief Information Security Officer, UrbanBite",
-      avatar: "/images/leader-ananya-kapoor.jpg",
+      avatar: "/images/leader-ananya-kapoor.webp",
     },
   ];
 
@@ -119,7 +119,7 @@ export function AssetManagementPage() {
       id: "hardware-inventory",
       badge: "01 Centralized Inventory",
       eyebrow: "✦ 01. HARDWARE INVENTORY ✦",
-      image: "/images/asset-block-hardware.jpg",
+      image: "/images/asset-block-hardware.webp",
       imageAlt: "IT professional inspecting hardware inventory and scanning QR codes on corporate devices",
       title: "Centralized Equipment Directory & Multi-Branch Tracking",
       description:
@@ -147,7 +147,7 @@ export function AssetManagementPage() {
       id: "digital-handovers",
       badge: "02 Digital Allocations",
       eyebrow: "✦ 02. DIGITAL HANDOVERS ✦",
-      image: "/images/asset-block-handover.jpg?v=2",
+      image: "/images/asset-block-handover.webp?v=2",
       imageAlt: "Employee signing digital asset handover form on mobile tablet during first-day onboarding",
       title: "Frictionless Equipment Allocation & E-Signatures",
       description:
@@ -175,7 +175,7 @@ export function AssetManagementPage() {
       id: "lifecycle-recovery",
       badge: "03 Recovery & Compliance",
       eyebrow: "✦ 03. LIFECYCLE RECOVERY ✦",
-      image: "/images/asset-block-lifecycle.jpg",
+      image: "/images/asset-block-lifecycle.webp",
       imageAlt: "IT security manager reviewing hardware warranty logs and offboarding recovery checklists",
       title: "Warranty Tracking, Maintenance & Offboarding Recovery",
       description:
@@ -428,7 +428,7 @@ export function AssetManagementPage() {
               {/* Center Main Card: Real IT Asset Management Dashboard Showcase */}
               <div className="emp-hero-center-photo-card">
                 <img
-                  src="/images/asset-hero-showcase.jpg"
+                  src="/images/asset-hero-showcase.webp"
                   alt="IT asset manager cataloging serialized corporate laptops and reviewing digital handover receipts"
                   className="emp-hero-center-img"
                   loading="eager"
@@ -837,7 +837,7 @@ export function AssetManagementPage() {
               {/* Overlapping Photorealistic Image */}
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/asset-process-inventory.jpg"
+                  src="/images/asset-process-inventory.webp"
                   alt="IT asset management team conducting serialized hardware inventory audits"
                   className="emp-cta-img"
                   loading="lazy"

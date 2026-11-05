@@ -40,7 +40,7 @@
   /* Lightened gradient overlay so the workforce photo is clearly and properly visible */
   background-image:
     linear-gradient(180deg, rgba(14, 10, 22, 0.32) 0%, rgba(14, 10, 22, 0.44) 100%),
-    url('/images/footer-cta-workforce-bg.jpg');
+    url('/images/footer-cta-workforce-bg.webp');
   background-size: cover;
   background-position: center 32%;
   background-repeat: no-repeat;
@@ -319,7 +319,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: url('/images/cta-slender-neon-lines.png?v=9');
+  background-image: url('/images/cta-slender-neon-lines.webp?v=9');
   background-size: auto 100%;
   background-position: right top;
   background-repeat: no-repeat;

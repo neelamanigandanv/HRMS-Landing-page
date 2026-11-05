@@ -75,7 +75,7 @@ export function EmployeeManagementPage() {
         "Managing scattered spreadsheets, identity proofs, and branch folders used to consume our entire Monday. With Zentilos, our employee directory is live, verified, and seamlessly connected.",
       name: "Freddy Dean",
       role: "Co-Founder, Modern FinTech",
-      avatar: "/images/testi-avatar-1.jpg",
+      avatar: "/images/testi-avatar-1.webp",
     },
     {
       id: 2,
@@ -85,7 +85,7 @@ export function EmployeeManagementPage() {
         "Self-service profile updates with maker-checker approvals solved our data drift problem completely. New employees upload their bank and statutory proofs directly from day one.",
       name: "Sarah Jenkins",
       role: "VP of People Operations, CloudScale",
-      avatar: "/images/testi-avatar-2.jpg",
+      avatar: "/images/testi-avatar-2.webp",
     },
     {
       id: 3,
@@ -95,7 +95,7 @@ export function EmployeeManagementPage() {
         "Whenever managers change or teams reorganize across our 4 regional offices, the visual org chart updates instantly without manual diagramming or outdated intranet slides.",
       name: "Rohan Mehta",
       role: "Chief Operating Officer, Apex Labs",
-      avatar: "/images/leader-rohan-mehta.jpg",
+      avatar: "/images/leader-rohan-mehta.webp",
     },
     {
       id: 4,
@@ -105,7 +105,7 @@ export function EmployeeManagementPage() {
         "Zentilos gave our compliance auditors instant access to encrypted, verified employee files. We passed our annual statutory audit with zero missing records or compliance flags.",
       name: "Ananya Kapoor",
       role: "Head of Talent & Compliance, UrbanBite",
-      avatar: "/images/leader-ananya-kapoor.jpg",
+      avatar: "/images/leader-ananya-kapoor.webp",
     },
   ];
 
@@ -130,7 +130,7 @@ export function EmployeeManagementPage() {
         "Real-time reporting manager mapping and department tags",
         "Role-based access permissions ensuring strict personal data privacy",
       ],
-      image: "/images/feat-central-profiles.jpg",
+      image: "/images/feat-central-profiles.webp",
       imageAlt: "Centralized Employee Profile UI showing Sarah Jenkins Senior Product Designer profile with KYC Verified badge",
       stat: "99.8% Profile Accuracy",
     },
@@ -149,7 +149,7 @@ export function EmployeeManagementPage() {
         "Pre-configured IT asset allocation and welcome kit workflows",
         "Seamless profile conversion from candidate offer to active employee",
       ],
-      image: "/images/feat-digital-onboarding.jpg",
+      image: "/images/feat-digital-onboarding.webp",
       imageAlt: "Employee Onboarding Checklist UI showing 80% progress and completed personal details and bank upload",
       stat: "65% Faster Onboarding",
     },
@@ -168,7 +168,7 @@ export function EmployeeManagementPage() {
         "Duplicate record detection protecting your directory integrity",
         "One-click mass profile updates across branches and designations",
       ],
-      image: "/images/feat-bulk-import.jpg",
+      image: "/images/feat-bulk-import.webp",
       imageAlt: "Bulk Import UI showing CSV column mapping and 248 records validated with zero errors",
       stat: "248 Records / min",
     },
@@ -187,7 +187,7 @@ export function EmployeeManagementPage() {
         "Proactive alerts for expiring documents, visas, and certifications",
         "100% digital audit trails ensuring strict regulatory compliance",
       ],
-      image: "/images/feat-doc-vault.jpg",
+      image: "/images/feat-doc-vault.webp",
       imageAlt: "Document Vault UI showing KYC & Government IDs with AES-256 cloud encryption badge",
       stat: "AES-256 Cloud Encrypted",
     },
@@ -206,7 +206,7 @@ export function EmployeeManagementPage() {
         "Digital asset return checklists and departmental clearances",
         "Full-and-final settlement handoff integrated directly with payroll",
       ],
-      image: "/images/feat-lifecycle-tracking.jpg",
+      image: "/images/feat-lifecycle-tracking.webp",
       imageAlt: "Employee Lifecycle Timeline UI showing career journey milestones from onboarding to Senior Manager",
       stat: "100% Milestones Tracked",
     },
@@ -225,7 +225,7 @@ export function EmployeeManagementPage() {
         "Quick-contact cards with click-to-email and click-to-call actions",
         "Exportable directory rosters for internal reporting and compliance",
       ],
-      image: "/images/feat-org-directory.jpg",
+      image: "/images/feat-org-directory.webp",
       imageAlt: "Company Directory UI with search bar, branch filter, and grid of active employee contact cards",
       stat: "< 50ms Real-Time Search",
     },
@@ -263,7 +263,7 @@ export function EmployeeManagementPage() {
       id: "profiles-directory",
       badge: "01 Centralized Profiles",
       eyebrow: "✦ 01. CENTRALIZED PROFILES ✦",
-      image: "/images/emp-block-profile.jpg",
+      image: "/images/emp-block-profile.webp",
       imageAlt: "Executive reviewing digital employee directory on tablet in front of modern skyscraper",
       title: "Centralized Employee Profiles & Statutory Directory",
       description:
@@ -291,7 +291,7 @@ export function EmployeeManagementPage() {
       id: "onboarding-assets",
       badge: "02 Digital Onboarding",
       eyebrow: "✦ 02. DIGITAL ONBOARDING ✦",
-      image: "/images/emp-block-onboarding.jpg",
+      image: "/images/emp-block-onboarding.webp",
       imageAlt: "HR professional welcoming new employee with digital onboarding checklist in modern campus",
       title: "Seamless Paperless Onboarding & Asset Allocation",
       description:
@@ -319,7 +319,7 @@ export function EmployeeManagementPage() {
       id: "lifecycle-compliance",
       badge: "03 Lifecycle & Vault",
       eyebrow: "✦ 03. LIFECYCLE & COMPLIANCE ✦",
-      image: "/images/emp-block-compliance.jpg",
+      image: "/images/emp-block-compliance.webp",
       imageAlt: "Corporate executives reviewing compliance and encrypted document vault in modern boardroom",
       title: "Lifecycle Milestone Tracking & Encrypted Vault",
       description:
@@ -555,7 +555,7 @@ export function EmployeeManagementPage() {
               {/* Center Main Card: Real HR Partner Working */}
               <div className="emp-hero-center-photo-card">
                 <img
-                  src="/images/hero-hr-working-pro.jpg"
+                  src="/images/hero-hr-working-pro.webp"
                   alt="Zentilos professional managing workforce directory on laptop in modern office"
                   className="emp-hero-center-img"
                   loading="eager"
@@ -1016,7 +1016,7 @@ export function EmployeeManagementPage() {
               {/* Overlapping Photorealistic Team Collaboration Image */}
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/emp-cta-collaboration.jpg"
+                  src="/images/emp-cta-collaboration.webp"
                   alt="HR management team collaborating on workforce directory"
                   className="emp-cta-img"
                   loading="lazy"

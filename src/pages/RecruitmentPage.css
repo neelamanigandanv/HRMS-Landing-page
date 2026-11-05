@@ -150,7 +150,7 @@
    ========================================================================== */
 .rec-page-wrapper .rec-why-big-card,
 .rec-page-wrapper .emp-why-big-card {
-  background-image: url('/images/why-choose-scenic-bg.jpg') !important;
+  background-image: url('/images/why-choose-scenic-bg.webp') !important;
   background-size: cover !important;
   background-position: center !important;
   position: relative;

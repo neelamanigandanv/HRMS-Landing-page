@@ -437,7 +437,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       "14-Day Rapid Deployment",
     ],
     heroVisual: {
-      image: "/images/hero-employee-directory-team.jpg",
+      image: "/images/hero-employee-directory-team.webp",
       imageAlt: "HR operations team managing workforce directory and leave approvals",
       badgeLive: "Active Directory · 1,450 Staff",
       widgetLeft: {
@@ -512,7 +512,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         ],
         buttonText: "EXPLORE ONBOARDING →",
         buttonLink: "/features/employee-management",
-        image: "/images/emp-block-onboarding.jpg",
+        image: "/images/emp-block-onboarding.webp",
         imageAlt: "HR team welcoming new employee with digital welcome kit and laptop",
       },
       {
@@ -526,7 +526,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         ],
         buttonText: "EXPLORE SELF-SERVICE →",
         buttonLink: "/features/attendance-management",
-        image: "/images/sb-employee-workspace.jpg",
+        image: "/images/sb-employee-workspace.webp",
         imageAlt: "Employee comfortably checking self-service mobile app on smartphone in office",
       },
       {
@@ -540,7 +540,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         ],
         buttonText: "EXPLORE LEAVE SUITE →",
         buttonLink: "/features/leave-management",
-        image: "/images/sb-manager-workspace.jpg",
+        image: "/images/sb-manager-workspace.webp",
         imageAlt: "HR manager and team collaborating around conference table discussing leave and shift planning",
       },
       {
@@ -554,7 +554,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         ],
         buttonText: "EXPLORE PEOPLE ANALYTICS →",
         buttonLink: "/features/reports-analytics",
-        image: "/images/solutions-consultation-cta.jpg",
+        image: "/images/solutions-consultation-cta.webp",
         imageAlt: "HR leadership analyzing workforce intelligence and retention reports on digital tablet",
       },
     ],
@@ -563,7 +563,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       title: "How Zentilos Powers Your People Operations",
       subtitle:
         "A proven step-by-step framework that eliminates administrative bottlenecks, accelerates approvals, and keeps your entire workforce connected.",
-      image: "/images/hero-hr-working-pro.jpg",
+      image: "/images/hero-hr-working-pro.webp",
       imageAlt: "HR operations team collaborating on employee onboarding and leave management workflows",
       badge: {
         icon: "chart",
@@ -618,11 +618,11 @@ export const solutionsMap: Record<string, SolutionData> = {
           "Unify employee profiles, statutory compliance, and departmental reporting lines across every branch and remote hub with zero data silos.",
         buttonLink: "/features/employee-management",
         globeAvatars: [
-          { name: "Ananya K.", avatar: "/images/leader-ananya-kapoor.jpg", role: "Head of People", top: "25%", left: "26%" },
-          { name: "Kavya S.", avatar: "/images/leader-kavya-sundaram.jpg", role: "HRBP Lead", top: "52%", left: "58%" },
-          { name: "Rohan M.", avatar: "/images/leader-rohan-mehta.jpg", role: "Talent Ops", top: "72%", left: "34%" },
-          { name: "David C.", avatar: "/images/testi-avatar-1.jpg", role: "Staffing Lead", top: "24%", left: "80%" },
-          { name: "Priya N.", avatar: "/images/testi-avatar-2.jpg", role: "Payroll Specialist", top: "82%", left: "74%" },
+          { name: "Ananya K.", avatar: "/images/leader-ananya-kapoor.webp", role: "Head of People", top: "25%", left: "26%" },
+          { name: "Kavya S.", avatar: "/images/leader-kavya-sundaram.webp", role: "HRBP Lead", top: "52%", left: "58%" },
+          { name: "Rohan M.", avatar: "/images/leader-rohan-mehta.webp", role: "Talent Ops", top: "72%", left: "34%" },
+          { name: "David C.", avatar: "/images/testi-avatar-1.webp", role: "Staffing Lead", top: "24%", left: "80%" },
+          { name: "Priya N.", avatar: "/images/testi-avatar-2.webp", role: "Payroll Specialist", top: "82%", left: "74%" },
         ],
       },
       cardTopMiddle: {
@@ -637,10 +637,10 @@ export const solutionsMap: Record<string, SolutionData> = {
         statTrend: "↗",
         statLabel: "Onboarding Completion",
         avatars: [
-          "/images/leader-ananya-kapoor.jpg",
-          "/images/leader-kavya-sundaram.jpg",
-          "/images/testi-avatar-1.jpg",
-          "/images/testi-avatar-2.jpg",
+          "/images/leader-ananya-kapoor.webp",
+          "/images/leader-kavya-sundaram.webp",
+          "/images/testi-avatar-1.webp",
+          "/images/testi-avatar-2.webp",
         ],
         gaugePercent: 96,
         gaugeLabel: "Annual Staff Retention Score",
@@ -807,7 +807,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       "1-Click Direct Bank NEFT",
     ],
     heroVisual: {
-      image: "/images/roles-block-finance.jpg",
+      image: "/images/roles-block-finance.webp",
       imageAlt: "CFO and financial controller reviewing salary disbursement registers and audit logs",
       badgeLive: "Verified Pay Run · ₹2.48 Cr Disbursed",
       widgetLeft: {
@@ -882,7 +882,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         ],
         buttonText: "EXPLORE PAYROLL ENGINE →",
         buttonLink: "/features/payroll-management",
-        image: "/images/reports-block-payroll.jpg",
+        image: "/images/reports-block-payroll.webp",
         imageAlt: "Financial controller reviewing gross-to-net payroll computation and salary register",
       },
       {
@@ -896,7 +896,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         ],
         buttonText: "EXPLORE COMPLIANCE SUITE →",
         buttonLink: "/features/documents-compliance",
-        image: "/images/branch-payroll.jpg",
+        image: "/images/branch-payroll.webp",
         imageAlt: "Finance team analyzing multi-branch tax compliance and state statutory reports",
       },
       {
@@ -910,7 +910,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         ],
         buttonText: "EXPLORE DISBURSEMENTS →",
         buttonLink: "/features/payroll-management",
-        image: "/images/roles-block-finance.jpg",
+        image: "/images/roles-block-finance.webp",
         imageAlt: "Payroll manager verifying direct corporate bank transfer files and payout authorization",
       },
       {
@@ -924,7 +924,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         ],
         buttonText: "EXPLORE FINANCIAL REPORTS →",
         buttonLink: "/features/reports-analytics",
-        image: "/images/reports-hero-showcase.jpg",
+        image: "/images/reports-hero-showcase.webp",
         imageAlt: "CFO analyzing financial salary ledgers, cost-center variance, and audit trails",
       },
     ],
@@ -933,7 +933,7 @@ export const solutionsMap: Record<string, SolutionData> = {
       title: "How Zentilos Powers Your Financial Operations",
       subtitle:
         "A structured, verifiable three-stage framework that eliminates calculation errors, ensures strict compliance, and accelerates account reconciliations.",
-      image: "/images/industry-finance.jpg",
+      image: "/images/industry-finance.webp",
       imageAlt: "Finance leadership and accountants collaborating on payroll processing and statutory tax reconciliation",
       badge: {
         icon: "finance",
@@ -988,11 +988,11 @@ export const solutionsMap: Record<string, SolutionData> = {
           "Consolidate salary liabilities, statutory remittances, and department cost centers across all legal subsidiaries with zero ledger discrepancies.",
         buttonLink: "/features/payroll-management",
         globeAvatars: [
-          { name: "Vikram S.", avatar: "/images/leader-ananya-kapoor.jpg", role: "Chief Financial Officer", top: "25%", left: "26%" },
-          { name: "Meera R.", avatar: "/images/leader-kavya-sundaram.jpg", role: "Head of Payroll", top: "52%", left: "58%" },
-          { name: "Suresh P.", avatar: "/images/leader-rohan-mehta.jpg", role: "Tax Controller", top: "72%", left: "34%" },
-          { name: "Anil K.", avatar: "/images/testi-avatar-1.jpg", role: "Statutory Auditor", top: "24%", left: "80%" },
-          { name: "Pooja M.", avatar: "/images/testi-avatar-2.jpg", role: "Accounts Lead", top: "82%", left: "74%" },
+          { name: "Vikram S.", avatar: "/images/leader-ananya-kapoor.webp", role: "Chief Financial Officer", top: "25%", left: "26%" },
+          { name: "Meera R.", avatar: "/images/leader-kavya-sundaram.webp", role: "Head of Payroll", top: "52%", left: "58%" },
+          { name: "Suresh P.", avatar: "/images/leader-rohan-mehta.webp", role: "Tax Controller", top: "72%", left: "34%" },
+          { name: "Anil K.", avatar: "/images/testi-avatar-1.webp", role: "Statutory Auditor", top: "24%", left: "80%" },
+          { name: "Pooja M.", avatar: "/images/testi-avatar-2.webp", role: "Accounts Lead", top: "82%", left: "74%" },
         ],
       },
       cardTopMiddle: {
@@ -1007,10 +1007,10 @@ export const solutionsMap: Record<string, SolutionData> = {
         statTrend: "↗",
         statLabel: "Payroll Calculation Accuracy",
         avatars: [
-          "/images/leader-ananya-kapoor.jpg",
-          "/images/leader-kavya-sundaram.jpg",
-          "/images/testi-avatar-1.jpg",
-          "/images/testi-avatar-2.jpg",
+          "/images/leader-ananya-kapoor.webp",
+          "/images/leader-kavya-sundaram.webp",
+          "/images/testi-avatar-1.webp",
+          "/images/testi-avatar-2.webp",
         ],
         gaugePercent: 98,
         gaugeLabel: "Annual Salary Reconciliation Score",

@@ -229,7 +229,7 @@ export function FooterCTA({
         <div
           className="neon-curtain-bg-layer"
           style={{
-            backgroundImage: "url('/images/cta-slender-neon-lines.png?v=9')",
+            backgroundImage: "url('/images/cta-slender-neon-lines.webp?v=9')",
             backgroundSize: "auto 100%",
             backgroundPosition: "right top",
             backgroundRepeat: "no-repeat",

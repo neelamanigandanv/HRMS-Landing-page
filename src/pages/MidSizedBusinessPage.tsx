@@ -34,7 +34,7 @@ export function MidSizedBusinessPage() {
         { title: "Smooth 2-Week Migration", desc: "Dedicated onboarding specialist to migrate historical spreadsheets and biometric devices seamlessly." },
       ],
       buttonText: "Request a Demo",
-      image: "/images/hero-hr-working-pro.jpg",
+      image: "/images/hero-hr-working-pro.webp",
       alt: "HR and People Operations Director managing multi-branch workforce in Zentilos",
     },
     {
@@ -50,7 +50,7 @@ export function MidSizedBusinessPage() {
         { title: "Fast Turnaround SLA", desc: "Resolve routine time-off, shift swaps, and attendance regularizations in under 2 hours." },
       ],
       buttonText: "Request a Demo",
-      image: "/images/work-process-team.jpg",
+      image: "/images/work-process-team.webp",
       alt: "Department manager coordinating team schedules and multi-branch approvals",
     },
     {
@@ -66,7 +66,7 @@ export function MidSizedBusinessPage() {
         { title: "Direct Request Workflows", desc: "Submit leave applications, shift swaps, and punch regularizations with real-time status tracking." },
       ],
       buttonText: "Request a Demo",
-      image: "/images/emp-cta-collaboration.jpg",
+      image: "/images/emp-cta-collaboration.webp",
       alt: "Mid-sized company employee accessing mobile HR self-service on smartphone",
     },
   ];

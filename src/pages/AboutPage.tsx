@@ -201,7 +201,7 @@ export function AboutPage() {
             <div className="about-hero-media-wrapper">
               <div className="about-hero-media-card">
                 <img
-                  src="/images/about-team-hero.jpg"
+                  src="/images/about-team-hero.webp"
                   alt="Zentilos leadership and product engineering team collaborating"
                   className="about-hero-media-img"
                   loading="eager"
@@ -269,7 +269,7 @@ export function AboutPage() {
             <div className="story-founder-card">
               <div className="story-founder-photo-box">
                 <img
-                  src="/images/leader-kavya-sundaram.jpg"
+                  src="/images/leader-kavya-sundaram.webp"
                   alt="Kavya Sundaram, Founder & CEO"
                   className="story-founder-img"
                   loading="lazy"
@@ -340,7 +340,7 @@ export function AboutPage() {
             {/* Left Column: Portrait Team Photo */}
             <div className="milestone-img-wrapper">
               <img
-                src="/images/about-milestone-journey.jpg"
+                src="/images/about-milestone-journey.webp"
                 alt="Zentilos founders and leadership team collaborating on workforce growth"
                 className="milestone-journey-img"
                 loading="lazy"
@@ -434,7 +434,7 @@ export function AboutPage() {
             <div className="leader-card">
               <div className="leader-avatar-box">
                 <img
-                  src="/images/leader-kavya-sundaram.jpg"
+                  src="/images/leader-kavya-sundaram.webp"
                   alt="Kavya Sundaram, Founder & CEO"
                   className="leader-photo"
                   loading="lazy"
@@ -453,7 +453,7 @@ export function AboutPage() {
             <div className="leader-card">
               <div className="leader-avatar-box">
                 <img
-                  src="/images/leader-rohan-mehta.jpg"
+                  src="/images/leader-rohan-mehta.webp"
                   alt="Rohan Mehta, Co-Founder & CTO"
                   className="leader-photo"
                   loading="lazy"
@@ -472,7 +472,7 @@ export function AboutPage() {
             <div className="leader-card">
               <div className="leader-avatar-box">
                 <img
-                  src="/images/leader-ananya-kapoor.jpg"
+                  src="/images/leader-ananya-kapoor.webp"
                   alt="Ananya Kapoor, Head of Product & Customer Success"
                   className="leader-photo"
                   loading="lazy"
@@ -726,7 +726,7 @@ export function AboutPage() {
             <div className="discover-card">
               <div className="discover-image-box">
                 <img
-                  src="/images/team-careers-card.jpg"
+                  src="/images/team-careers-card.webp"
                   alt="Zentilos Team and Careers"
                   className="discover-img"
                   loading="lazy"
@@ -747,7 +747,7 @@ export function AboutPage() {
             <div className="discover-card">
               <div className="discover-image-box">
                 <img
-                  src="/images/case-studies-card.jpg"
+                  src="/images/case-studies-card.webp"
                   alt="Customer Success and Case Studies"
                   className="discover-img"
                   loading="lazy"
@@ -768,7 +768,7 @@ export function AboutPage() {
             <div className="discover-card">
               <div className="discover-image-box">
                 <img
-                  src="/images/resource-hub-card.jpg"
+                  src="/images/resource-hub-card.webp"
                   alt="Resource Hub and Guides"
                   className="discover-img"
                   loading="lazy"

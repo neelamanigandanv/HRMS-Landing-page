@@ -15,9 +15,9 @@ export interface OgImageConfig {
 }
 
 export const DEFAULT_OG_IMAGE: OgImageConfig = {
-  path: "/images/hero-plum-dashboard-showcase.jpg",
-  width: "1376",
-  height: "768",
+  path: "/og/hero-plum-dashboard-showcase.jpg",
+  width: "1200",
+  height: "670",
   alt: "Zentilos HR, Payroll and Attendance Management Platform",
 };
 

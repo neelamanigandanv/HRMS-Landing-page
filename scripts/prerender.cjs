@@ -21,21 +21,35 @@ const DIST_DIR = path.resolve(__dirname, '../dist');
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 
 // 1. Detect Chrome / Chromium executable
+function sanitizeSiteUrl(raw) {
+  if (!raw || typeof raw !== 'string') return '';
+  return raw.trim().replace(/^['"]|['"]$/g, '').trim().replace(/\/+$/, '');
+}
+
 function resolveSiteUrl() {
-  if (process.env.VITE_SITE_URL) return process.env.VITE_SITE_URL;
+  if (process.env.VITE_SITE_URL) {
+    const cleaned = sanitizeSiteUrl(process.env.VITE_SITE_URL);
+    if (cleaned) return cleaned;
+  }
   // Try loading from .env.production
   const prodEnvPath = path.join(PROJECT_ROOT, '.env.production');
   if (fs.existsSync(prodEnvPath)) {
     const content = fs.readFileSync(prodEnvPath, 'utf8');
     const match = content.match(/^VITE_SITE_URL\s*=\s*(.*)$/m);
-    if (match && match[1].trim()) return match[1].trim().replace(/^['"]|['"]$/g, '');
+    if (match) {
+      const cleaned = sanitizeSiteUrl(match[1]);
+      if (cleaned) return cleaned;
+    }
   }
   // Try loading from .env
   const devEnvPath = path.join(PROJECT_ROOT, '.env');
   if (fs.existsSync(devEnvPath)) {
     const content = fs.readFileSync(devEnvPath, 'utf8');
     const match = content.match(/^VITE_SITE_URL\s*=\s*(.*)$/m);
-    if (match && match[1].trim()) return match[1].trim().replace(/^['"]|['"]$/g, '');
+    if (match) {
+      const cleaned = sanitizeSiteUrl(match[1]);
+      if (cleaned) return cleaned;
+    }
   }
   return 'http://localhost:5173';
 }
@@ -330,7 +344,6 @@ async function main() {
       '--disable-background-timer-throttling',
       '--disable-backgrounding-occluded-windows',
       '--disable-renderer-backgrounding',
-      `--user-data-dir=${tempUserDataDir}`,
     ],
   });
 

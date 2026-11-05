@@ -148,7 +148,7 @@ export function ReportsAnalyticsPage() {
       id: "workforce-demographics",
       badge: "01 Employee Records & Directory",
       eyebrow: "✦ WORKFORCE DIRECTORIES & HEADCOUNT ✦",
-      image: "/images/reports-block-workforce.jpg",
+      image: "/images/reports-block-workforce.webp",
       imageAlt:
         "HR leadership team reviewing workforce demographic reports and employee headcount summaries on digital dashboard",
       title: "Centralized Employee Records & Workforce Demographics",
@@ -173,7 +173,7 @@ export function ReportsAnalyticsPage() {
       id: "attendance-leave-patterns",
       badge: "02 Attendance & Leave Trends",
       eyebrow: "✦ ATTENDANCE PATTERNS & TIME-OFF ✦",
-      image: "/images/reports-block-attendance.jpg",
+      image: "/images/reports-block-attendance.webp",
       imageAlt:
         "Operations specialist and HR manager analyzing attendance trends and leave utilization on modern monitors",
       title: "Attendance Patterns & Recorded Workdays",
@@ -198,7 +198,7 @@ export function ReportsAnalyticsPage() {
       id: "payroll-exportable",
       badge: "03 Payroll Preparation & Exports",
       eyebrow: "✦ PRE-PAYROLL RECONCILIATION & AUDIT ✦",
-      image: "/images/reports-block-payroll.jpg",
+      image: "/images/reports-block-payroll.webp",
       imageAlt:
         "Finance controller and HR director reviewing monthly salary summaries, payroll cost graphs, and exportable data tables",
       title: "Pre-Payroll Reconciliation & Audit-Ready Registers",
@@ -231,7 +231,7 @@ export function ReportsAnalyticsPage() {
         "Reconciling attendance logs, shift rotations, and loss of pay from 6 distribution warehouses used to take our HR team the entire first weekend of every month. With Zentilos, reports are instantly generated and reconciled.",
       name: "Freddy Dean",
       role: "VP of People Operations, Modern Logistics",
-      avatar: "/images/testi-avatar-1.jpg",
+      avatar: "/images/testi-avatar-1.webp",
     },
     {
       id: 2,
@@ -241,7 +241,7 @@ export function ReportsAnalyticsPage() {
         "The multi-branch attendance comparison report highlighted chronic unplanned overtime in our second shift within two weeks of deployment. The visibility paid for our Zentilos subscription three times over.",
       name: "Sarah Jenkins",
       role: "Head of Workforce Analytics, Apex Consumer Goods",
-      avatar: "/images/testi-avatar-2.jpg",
+      avatar: "/images/testi-avatar-2.webp",
     },
     {
       id: 3,
@@ -251,7 +251,7 @@ export function ReportsAnalyticsPage() {
         "When state labor auditors requested historical leave registers and attendance records for 400 employees, we exported verified Excel reports with full timestamp logs in two clicks.",
       name: "Rohan Mehta",
       role: "Director of HR & Operations, FinPulse Tech",
-      avatar: "/images/leader-rohan-mehta.jpg",
+      avatar: "/images/leader-rohan-mehta.webp",
     },
     {
       id: 4,
@@ -261,7 +261,7 @@ export function ReportsAnalyticsPage() {
         "Zentilos turned messy spreadsheet data into clean, visual metrics that our leadership team actually relies on for strategic headcount budgeting and attrition planning.",
       name: "Ananya Kapoor",
       role: "Chief People Officer, ZenHealth Labs",
-      avatar: "/images/leader-ananya-kapoor.jpg",
+      avatar: "/images/leader-ananya-kapoor.webp",
     },
   ];
 
@@ -454,7 +454,7 @@ export function ReportsAnalyticsPage() {
               {/* Center Main Card: Real HR Analytics Leader Working */}
               <div className="emp-hero-center-photo-card">
                 <img
-                  src="/images/reports-hero-showcase.jpg"
+                  src="/images/reports-hero-showcase.webp"
                   alt="Modern HR analytics dashboard with clean charts, attendance trend curves, and workforce summary metrics"
                   className="emp-hero-center-img"
                   loading="eager"
@@ -900,7 +900,7 @@ export function ReportsAnalyticsPage() {
 
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/reports-cta-analytics.jpg"
+                  src="/images/reports-cta-analytics.webp"
                   alt="HR leaders and management reviewing report summaries in a collaborative meeting"
                   className="emp-cta-img"
                   loading="lazy"

@@ -178,7 +178,7 @@ export function BlogPost() {
         description={post.excerpt}
         canonicalPath={`/blog/${post.slug}`}
         ogType="article"
-        ogImage={post.coverImage}
+        ogImage={post.ogImage || post.coverImage}
         ogImageAlt={post.title}
         breadcrumbs={[
           { name: "Blog", path: "/blog" },

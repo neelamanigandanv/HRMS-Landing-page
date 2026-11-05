@@ -1,0 +1,146 @@
+{
+  "webpResults": [
+    {
+      "file": "industry-tech.webp",
+      "origKB": "932.0",
+      "webpKB": "172.5",
+      "savings": "81.5%"
+    },
+    {
+      "file": "resource-hub-card.webp",
+      "origKB": "904.5",
+      "webpKB": "152.5",
+      "savings": "83.1%"
+    },
+    {
+      "file": "branch-biometric.webp",
+      "origKB": "832.3",
+      "webpKB": "111.5",
+      "savings": "86.6%"
+    },
+    {
+      "file": "article-multibranch.webp",
+      "origKB": "826.2",
+      "webpKB": "125.7",
+      "savings": "84.8%"
+    },
+    {
+      "file": "article-payroll.webp",
+      "origKB": "776.8",
+      "webpKB": "114.5",
+      "savings": "85.3%"
+    },
+    {
+      "file": "article-onboarding.webp",
+      "origKB": "694.7",
+      "webpKB": "73.7",
+      "savings": "89.4%"
+    },
+    {
+      "file": "solution-enterprise.webp",
+      "origKB": "642.0",
+      "webpKB": "91.4",
+      "savings": "85.8%"
+    },
+    {
+      "file": "solution-mid-sized.webp",
+      "origKB": "546.7",
+      "webpKB": "62.6",
+      "savings": "88.5%"
+    },
+    {
+      "file": "solution-small-business.webp",
+      "origKB": "536.9",
+      "webpKB": "64.3",
+      "savings": "88.0%"
+    },
+    {
+      "file": "hero-plum-dashboard-showcase.webp",
+      "origKB": "524.1",
+      "webpKB": "44.8",
+      "savings": "91.5%"
+    }
+  ],
+  "ogResults": [
+    {
+      "file": "industry-tech.jpg",
+      "width": 1200,
+      "height": 670,
+      "origKB": "932.0",
+      "ogKB": "165.2",
+      "savings": "82.3%"
+    },
+    {
+      "file": "resource-hub-card.jpg",
+      "width": 1200,
+      "height": 896,
+      "origKB": "904.5",
+      "ogKB": "190.4",
+      "savings": "79.0%"
+    },
+    {
+      "file": "branch-biometric.jpg",
+      "width": 896,
+      "height": 1200,
+      "origKB": "832.3",
+      "ogKB": "166.5",
+      "savings": "80.0%"
+    },
+    {
+      "file": "article-multibranch.jpg",
+      "width": 1200,
+      "height": 805,
+      "origKB": "826.2",
+      "ogKB": "161.7",
+      "savings": "80.4%"
+    },
+    {
+      "file": "article-payroll.jpg",
+      "width": 1200,
+      "height": 805,
+      "origKB": "776.8",
+      "ogKB": "144.5",
+      "savings": "81.4%"
+    },
+    {
+      "file": "article-onboarding.jpg",
+      "width": 1200,
+      "height": 805,
+      "origKB": "694.7",
+      "ogKB": "111.4",
+      "savings": "84.0%"
+    },
+    {
+      "file": "solution-enterprise.jpg",
+      "width": 1200,
+      "height": 896,
+      "origKB": "642.0",
+      "ogKB": "141.7",
+      "savings": "77.9%"
+    },
+    {
+      "file": "solution-mid-sized.jpg",
+      "width": 1200,
+      "height": 896,
+      "origKB": "546.7",
+      "ogKB": "115.4",
+      "savings": "78.9%"
+    },
+    {
+      "file": "solution-small-business.jpg",
+      "width": 1200,
+      "height": 896,
+      "origKB": "536.9",
+      "ogKB": "107.3",
+      "savings": "80.0%"
+    },
+    {
+      "file": "hero-plum-dashboard-showcase.jpg",
+      "width": 1200,
+      "height": 670,
+      "origKB": "524.1",
+      "ogKB": "66.0",
+      "savings": "87.4%"
+    }
+  ]
+}

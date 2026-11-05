@@ -18,7 +18,7 @@ export function Logo({ light = false, className = "", height }: LogoProps) {
     }
   };
 
-  const logoSrc = light ? "/images/logo-white.png" : "/images/logo.png";
+  const logoSrc = light ? "/images/logo-white.webp" : "/images/logo.webp";
 
   return (
     <Link

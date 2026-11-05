@@ -397,7 +397,7 @@ export function CareersPage() {
             <div className="careers-gallery-grid">
               <div className="careers-gallery-item large">
                 <img
-                  src="/images/hero-hr-working-pro.jpg"
+                  src="/images/hero-hr-working-pro.webp"
                   alt="Zentilos cross-functional product design sprint in conference room"
                   className="careers-gallery-img"
                   loading="lazy"
@@ -410,7 +410,7 @@ export function CareersPage() {
 
               <div className="careers-gallery-item">
                 <img
-                  src="/images/sb-manager-workspace.jpg"
+                  src="/images/sb-manager-workspace.webp"
                   alt="HR operations team reviewing system architecture"
                   className="careers-gallery-img"
                   loading="lazy"
@@ -423,7 +423,7 @@ export function CareersPage() {
 
               <div className="careers-gallery-item">
                 <img
-                  src="/images/sb-employee-workspace.jpg"
+                  src="/images/sb-employee-workspace.webp"
                   alt="Team member comfortably working on product interface"
                   className="careers-gallery-img"
                   loading="lazy"
@@ -437,7 +437,7 @@ export function CareersPage() {
               {/* Rich Culture & Operating Ethic Content Box with Image & Glassmorphic Overlay */}
               <div className="careers-gallery-item careers-culture-callout-card">
                 <img
-                  src="/images/work-process-team.jpg"
+                  src="/images/work-process-team.webp"
                   alt="Zentilos high trust collaborative culture"
                   className="careers-gallery-img"
                   loading="lazy"
@@ -470,7 +470,7 @@ export function CareersPage() {
 
               <div className="careers-gallery-item wide">
                 <img
-                  src="/images/hero-employee-directory-team.jpg"
+                  src="/images/hero-employee-directory-team.webp"
                   alt="Zentilos team celebration after shipping a major product release"
                   className="careers-gallery-img"
                   loading="lazy"

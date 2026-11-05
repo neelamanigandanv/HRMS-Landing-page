@@ -1395,7 +1395,7 @@ export function Home() {
           <div className="corporate-hero-bg-wrapper" aria-hidden="true">
             <div className="corporate-hero-media">
               <img
-                src="/images/hero-colleagues-clean.png"
+                src="/images/hero-colleagues-clean.webp"
                 alt="Zentilos enterprise HR and payroll leaders collaborating"
                 className="corporate-hero-image"
               />
@@ -1537,7 +1537,7 @@ export function Home() {
                 {/* Background Executive Working Photo */}
                 <div className="diff-automated-bg-media">
                   <img
-                    src="/images/difference-automated-pro.jpg"
+                    src="/images/difference-automated-pro.webp"
                     alt="Zentilos automated workforce management"
                     className="diff-automated-photo"
                   />

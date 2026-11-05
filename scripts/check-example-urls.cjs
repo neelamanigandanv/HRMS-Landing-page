@@ -24,6 +24,21 @@ function checkFile(filePath) {
     }
   }
 
+  // Check 4: URL hardening check - no URLs containing whitespace (e.g. "https://example.com ")
+  // Checks canonical, og:url, og:image, twitter:image, sitemap <loc>, and JSON-LD url/id fields
+  const whitespaceUrlMatches = content.match(/https?:\/\/[^\s"'<>]+\s+[^\s"'<>]+/g);
+  if (whitespaceUrlMatches) {
+    errors.push(`Found URL with embedded whitespace: ${JSON.stringify(whitespaceUrlMatches)}`);
+  }
+  const trailingWhitespaceInAttr = content.match(/(?:href|content|url|src)=["'](https?:\/\/[^"']*\s+)["']/gi);
+  if (trailingWhitespaceInAttr) {
+    errors.push(`Found attribute URL with trailing whitespace: ${JSON.stringify(trailingWhitespaceInAttr)}`);
+  }
+  const locWhitespaceMatches = content.match(/<loc>\s*(https?:\/\/[^<]*\s+[^<]*)\s*<\/loc>/gi);
+  if (locWhitespaceMatches) {
+    errors.push(`Found sitemap <loc> with whitespace: ${JSON.stringify(locWhitespaceMatches)}`);
+  }
+
   return errors;
 }
 

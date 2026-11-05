@@ -88,7 +88,7 @@ export function RolesPermissionsPage() {
       id: "admin-governance",
       badge: "01 Platform & Company Admin",
       eyebrow: "✦ 01. PLATFORM & COMPANY ADMIN ✦",
-      image: "/images/roles-block-admin.jpg",
+      image: "/images/roles-block-admin.webp",
       imageAlt: "IT security administrator configuring global tenant policies, user role hierarchies, and system security privileges",
       title: "Global Tenant Configuration & Enterprise Governance",
       description:
@@ -116,7 +116,7 @@ export function RolesPermissionsPage() {
       id: "hr-manager-scoping",
       badge: "02 HR & Manager Scoping",
       eyebrow: "✦ 02. HR & MANAGER SCOPING ✦",
-      image: "/images/roles-block-manager.jpg",
+      image: "/images/roles-block-manager.webp",
       imageAlt: "HR lead and department manager reviewing team attendance, leave approval requests, and employee records with scoped access",
       title: "Scoped Workforce Operations & Team Approvals",
       description:
@@ -144,7 +144,7 @@ export function RolesPermissionsPage() {
       id: "finance-self-service",
       badge: "03 Finance & Self-Service",
       eyebrow: "✦ 03. FINANCE & SELF-SERVICE ✦",
-      image: "/images/roles-block-finance.jpg",
+      image: "/images/roles-block-finance.webp",
       imageAlt: "Finance controller and payroll specialist reviewing confidential salary registers and financial disbursement permissions",
       title: "Confidential Payroll Disbursals & Employee Self-Service",
       description:
@@ -503,7 +503,7 @@ export function RolesPermissionsPage() {
               {/* Center Main Card: Real Security Administrator Dashboard */}
               <div className="emp-hero-center-photo-card roles-hero-showcase-frame">
                 <img
-                  src="/images/roles-hero-showcase.jpg"
+                  src="/images/roles-hero-showcase.webp"
                   alt="Security administrator and HR manager reviewing role-based access control and permission matrix in modern office"
                   className="emp-hero-center-img roles-hero-mockup-img"
                   loading="eager"
@@ -937,7 +937,7 @@ export function RolesPermissionsPage() {
 
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/emp-cta-collaboration.jpg"
+                  src="/images/emp-cta-collaboration.webp"
                   alt="Enterprise security team reviewing roles and permissions policies"
                   className="emp-cta-img"
                   loading="lazy"

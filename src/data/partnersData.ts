@@ -110,7 +110,7 @@ export const PARTNER_TYPES: PartnerType[] = [
     title: "Reseller Partners",
     tagline: "Full-Cycle Commercial Distribution",
     description: "Package, distribute, and implement Zentilos as an authorized regional or national solution partner.",
-    imagePlaceholder: "/images/work-process-team.jpg",
+    imagePlaceholder: "/images/work-process-team.webp",
     badge: "Most Popular",
     whoCanJoin: [
       "IT solution providers and systems integrators",
@@ -124,7 +124,7 @@ export const PARTNER_TYPES: PartnerType[] = [
     title: "Referral Partners",
     tagline: "Zero Implementation Overhead",
     description: "Introduce qualified prospects and clients to Zentilos and earn generous referral bonuses on every closed account.",
-    imagePlaceholder: "/images/solutions-consultation-cta.jpg",
+    imagePlaceholder: "/images/solutions-consultation-cta.webp",
     badge: "Quick Start",
     whoCanJoin: [
       "Chartered accountants & corporate tax consultants",
@@ -138,7 +138,7 @@ export const PARTNER_TYPES: PartnerType[] = [
     title: "Technology Partners",
     tagline: "Bi-Directional API Integrations",
     description: "Build seamless data connectors between Zentilos and your biometric hardware, ERP, accounting, or banking system.",
-    imagePlaceholder: "/images/industry-tech.jpg",
+    imagePlaceholder: "/images/industry-tech.webp",
     badge: "Ecosystem Integration",
     whoCanJoin: [
       "Biometric attendance & access control manufacturers",

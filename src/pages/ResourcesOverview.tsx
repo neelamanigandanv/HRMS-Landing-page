@@ -235,7 +235,7 @@ export function ResourcesOverview() {
               <div className="res-exact-card-featured">
                 <div className="res-card-featured-img-wrap">
                   <img
-                    src="/images/article-multibranch.jpg"
+                    src="/images/article-multibranch.webp"
                     alt="How to Manage Multiple Branches in One HRMS Platform"
                     className="res-exact-img"
                     loading="lazy"
@@ -286,7 +286,7 @@ export function ResourcesOverview() {
                 <div className="res-exact-card-medium">
                   <div className="res-card-medium-img-wrap">
                     <img
-                      src="/images/article-payroll.jpg"
+                      src="/images/article-payroll.webp"
                       alt="Automating Payroll for Multi-Location Teams"
                       className="res-exact-img"
                       loading="lazy"
@@ -326,7 +326,7 @@ export function ResourcesOverview() {
                 <div className="res-exact-card-medium">
                   <div className="res-card-medium-img-wrap">
                     <img
-                      src="/images/article-onboarding.jpg"
+                      src="/images/article-onboarding.webp"
                       alt="Building a Better Employee Onboarding Process"
                       className="res-exact-img"
                       loading="lazy"
@@ -739,7 +739,7 @@ export function ResourcesOverview() {
               <div className="res-story-featured-card">
                 <div className="res-story-featured-img-wrap">
                   <img
-                    src="/images/skyline-hq.jpg"
+                    src="/images/skyline-hq.webp"
                     alt="Skyline Group Headquarters"
                     className="res-story-featured-img"
                     loading="lazy"
@@ -831,7 +831,7 @@ export function ResourcesOverview() {
                   <div className="res-story-side-right">
                     <div className="res-story-thumb-wrap">
                       <img
-                        src="/images/brightpath-thumb.jpg"
+                        src="/images/brightpath-thumb.webp"
                         alt="BrightPath Solutions Workspace"
                         className="res-story-side-thumb"
                         loading="lazy"
@@ -889,7 +889,7 @@ export function ResourcesOverview() {
                   <div className="res-story-side-right">
                     <div className="res-story-thumb-wrap">
                       <img
-                        src="/images/greenleaf-thumb.jpg"
+                        src="/images/greenleaf-thumb.webp"
                         alt="GreenLeaf Retail Frontline Team"
                         className="res-story-side-thumb"
                         loading="lazy"
