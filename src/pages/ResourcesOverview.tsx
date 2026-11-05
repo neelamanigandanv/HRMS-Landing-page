@@ -990,7 +990,8 @@ export function ResourcesOverview() {
                   <p className="res-glossary-card-desc">{card.desc}</p>
 
                   <div className="res-glossary-card-foot">
-                    <Link to={card.link} className="res-glossary-learn-link">
+                    <Link to={card.link} className="res-glossary-learn-link" aria-label={`Learn more about ${card.title}`}>
+
                       Learn more <Icon name="arrow" size={13} />
                     </Link>
                   </div>

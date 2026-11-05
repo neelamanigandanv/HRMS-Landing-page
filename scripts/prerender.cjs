@@ -173,7 +173,10 @@ const STATIC_NOINDEX_ROUTES = [
 
 // 4. Lightweight static HTTP server serving the pristine SPA shell in memory
 function startStaticServer(port = 0) {
-  const SPA_TEMPLATE = fs.readFileSync(path.join(DIST_DIR, 'index.html'), 'utf8');
+  let rawTemplate = fs.readFileSync(path.join(DIST_DIR, 'index.html'), 'utf8');
+  const SPA_TEMPLATE = rawTemplate
+    .replace(/\s+data-prerender-ready="true"/g, '')
+    .replace(/(<div id="root">)[\s\S]*?(<\/div>)/, '$1$2');
 
   const mimeTypes = {
     '.html': 'text/html; charset=utf-8',
@@ -363,6 +366,10 @@ async function main() {
 
       // Wait for the React Seo effect to complete and mark data-prerender-ready="true"
       await page.waitForSelector('html[data-prerender-ready="true"]', { timeout: 30000 });
+      await page.waitForFunction(() => {
+        const root = document.getElementById('root');
+        return root && root.children.length > 0 && root.textContent.trim().length > 20;
+      }, { timeout: 30000 });
 
       // Extract metadata for validation (Condition 3)
       const meta = await page.evaluate(() => {
@@ -485,9 +492,11 @@ async function main() {
 
   // Commit all rendered HTML files to disk
   console.log(`💾 [Zentilos Prerender] Writing ${renderedOutputs.length} static HTML files to dist/...`);
+  const localOriginRegex = new RegExp(`http://(127\\.0\\.0\\.1|localhost):${port}`, 'g');
   for (const item of renderedOutputs) {
     fs.mkdirSync(path.dirname(item.targetFile), { recursive: true });
-    fs.writeFileSync(item.targetFile, item.html, 'utf8');
+    const cleanHtml = item.html.replace(localOriginRegex, '');
+    fs.writeFileSync(item.targetFile, cleanHtml, 'utf8');
   }
 
   // Generate sitemap.xml (Condition 4)

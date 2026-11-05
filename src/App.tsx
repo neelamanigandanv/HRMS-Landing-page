@@ -1,61 +1,64 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ScrollToTop from "./components/common/ScrollToTop";
 import CookieBanner from "./components/common/CookieBanner";
 import { DemoModalProvider } from "./context/DemoModalContext";
 import { CurrencyProvider } from "./context/CurrencyContext";
-import Home from "./pages/Home";
-import ProductOverview from "./pages/ProductOverview";
-import FeaturePage from "./pages/FeaturePage";
-import EmployeeManagementPage from "./pages/EmployeeManagementPage";
-import AttendanceManagementPage from "./pages/AttendanceManagementPage";
-import LeaveManagementPage from "./pages/LeaveManagementPage";
-import PayrollManagementPage from "./pages/PayrollManagementPage";
-import AssetManagementPage from "./pages/AssetManagementPage";
-import RecruitmentPage from "./pages/RecruitmentPage";
-import DocumentsCompliancePage from "./pages/DocumentsCompliancePage";
-import PerformanceManagementPage from "./pages/PerformanceManagementPage";
-import RolesPermissionsPage from "./pages/RolesPermissionsPage";
-import ReportsAnalyticsPage from "./pages/ReportsAnalyticsPage";
-import SolutionsOverview from "./pages/SolutionsOverview";
-import SolutionPage from "./pages/SolutionPage";
-import SmallBusinessPage from "./pages/SmallBusinessPage";
-import MidSizedBusinessPage from "./pages/MidSizedBusinessPage";
-import EnterprisePage from "./pages/EnterprisePage";
-import IndustrySolutionsPage from "./pages/IndustrySolutionsPage";
-import ResourcesOverview from "./pages/ResourcesOverview";
-import BlogList from "./pages/BlogList";
-import BlogPost from "./pages/BlogPost";
-import GlossaryPage from "./pages/GlossaryPage";
-import GlossaryDetailPage from "./pages/GlossaryDetailPage";
-import FAQPage from "./pages/FAQPage";
-import HelpCenter from "./pages/HelpCenter";
-import GettingStartedPage from "./pages/GettingStartedPage";
-import SupportPage from "./pages/SupportPage";
-import SupportSearchPage from "./pages/support/SupportSearchPage";
-import SupportHelpCenterPage from "./pages/support/SupportHelpCenterPage";
-import SupportArticlePage from "./pages/support/SupportArticlePage";
-import SupportTicketConfirmationPage from "./pages/support/SupportTicketConfirmationPage";
-import SupportTrackPage from "./pages/support/SupportTrackPage";
-import SupportEmployeeHelpPage from "./pages/support/SupportEmployeeHelpPage";
-import ContactSalesPage from "./pages/support/ContactSalesPage";
-import CaseStudiesPage from "./pages/CaseStudiesPage";
-import ApiDocumentationPage from "./pages/ApiDocumentationPage";
-import GuidesPage from "./pages/GuidesPage";
-import GuideDetailPage from "./pages/GuideDetailPage";
-import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
-import PartnersPage from "./pages/PartnersPage";
-import CareersPage from "./pages/CareersPage";
-import JobDetailPage from "./pages/JobDetailPage";
-import SecurityPage from "./pages/SecurityPage";
-import RequestDemoPage from "./pages/RequestDemoPage";
-import ThankYouPage from "./pages/ThankYouPage";
-import LegalPage from "./pages/LegalPage";
-import SitemapPage from "./pages/SitemapPage";
 import PageLayout from "./components/layout/PageLayout";
 import SEO from "./components/layout/SEO";
 import Button from "./components/ui/Button";
 import Icon from "./components/ui/Icon";
+
+// Route-level code splitting via React.lazy for instant initial page loads and optimal CWV
+const Home = lazy(() => import("./pages/Home"));
+const ProductOverview = lazy(() => import("./pages/ProductOverview"));
+const FeaturePage = lazy(() => import("./pages/FeaturePage"));
+const EmployeeManagementPage = lazy(() => import("./pages/EmployeeManagementPage"));
+const AttendanceManagementPage = lazy(() => import("./pages/AttendanceManagementPage"));
+const LeaveManagementPage = lazy(() => import("./pages/LeaveManagementPage"));
+const PayrollManagementPage = lazy(() => import("./pages/PayrollManagementPage"));
+const AssetManagementPage = lazy(() => import("./pages/AssetManagementPage"));
+const RecruitmentPage = lazy(() => import("./pages/RecruitmentPage"));
+const DocumentsCompliancePage = lazy(() => import("./pages/DocumentsCompliancePage"));
+const PerformanceManagementPage = lazy(() => import("./pages/PerformanceManagementPage"));
+const RolesPermissionsPage = lazy(() => import("./pages/RolesPermissionsPage"));
+const ReportsAnalyticsPage = lazy(() => import("./pages/ReportsAnalyticsPage"));
+const SolutionsOverview = lazy(() => import("./pages/SolutionsOverview"));
+const SolutionPage = lazy(() => import("./pages/SolutionPage"));
+const SmallBusinessPage = lazy(() => import("./pages/SmallBusinessPage"));
+const MidSizedBusinessPage = lazy(() => import("./pages/MidSizedBusinessPage"));
+const EnterprisePage = lazy(() => import("./pages/EnterprisePage"));
+const IndustrySolutionsPage = lazy(() => import("./pages/IndustrySolutionsPage"));
+const ResourcesOverview = lazy(() => import("./pages/ResourcesOverview"));
+const BlogList = lazy(() => import("./pages/BlogList"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const GlossaryPage = lazy(() => import("./pages/GlossaryPage"));
+const GlossaryDetailPage = lazy(() => import("./pages/GlossaryDetailPage"));
+const FAQPage = lazy(() => import("./pages/FAQPage"));
+const HelpCenter = lazy(() => import("./pages/HelpCenter"));
+const GettingStartedPage = lazy(() => import("./pages/GettingStartedPage"));
+const SupportPage = lazy(() => import("./pages/SupportPage"));
+const SupportSearchPage = lazy(() => import("./pages/support/SupportSearchPage"));
+const SupportHelpCenterPage = lazy(() => import("./pages/support/SupportHelpCenterPage"));
+const SupportArticlePage = lazy(() => import("./pages/support/SupportArticlePage"));
+const SupportTicketConfirmationPage = lazy(() => import("./pages/support/SupportTicketConfirmationPage"));
+const SupportTrackPage = lazy(() => import("./pages/support/SupportTrackPage"));
+const SupportEmployeeHelpPage = lazy(() => import("./pages/support/SupportEmployeeHelpPage"));
+const ContactSalesPage = lazy(() => import("./pages/support/ContactSalesPage"));
+const CaseStudiesPage = lazy(() => import("./pages/CaseStudiesPage"));
+const ApiDocumentationPage = lazy(() => import("./pages/ApiDocumentationPage"));
+const GuidesPage = lazy(() => import("./pages/GuidesPage"));
+const GuideDetailPage = lazy(() => import("./pages/GuideDetailPage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const PartnersPage = lazy(() => import("./pages/PartnersPage"));
+const CareersPage = lazy(() => import("./pages/CareersPage"));
+const JobDetailPage = lazy(() => import("./pages/JobDetailPage"));
+const SecurityPage = lazy(() => import("./pages/SecurityPage"));
+const RequestDemoPage = lazy(() => import("./pages/RequestDemoPage"));
+const ThankYouPage = lazy(() => import("./pages/ThankYouPage"));
+const LegalPage = lazy(() => import("./pages/LegalPage"));
+const SitemapPage = lazy(() => import("./pages/SitemapPage"));
 
 function NotFoundPage() {
   return (
@@ -85,6 +88,7 @@ export function App() {
       <CookieBanner />
       <CurrencyProvider>
         <DemoModalProvider>
+          <Suspense fallback={null}>
           <Routes>
             {/* Core & Homepage */}
             <Route path="/" element={<Home />} />
@@ -195,6 +199,7 @@ export function App() {
             {/* Fallback 404 */}
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
+          </Suspense>
         </DemoModalProvider>
       </CurrencyProvider>
     </BrowserRouter>

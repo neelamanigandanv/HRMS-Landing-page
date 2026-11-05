@@ -1055,7 +1055,8 @@ export function ProductOverview() {
                             <h3 className="rippling-card-title">{prod.title}</h3>
                             <p className="rippling-card-desc">{prod.desc}</p>
                           </div>
-                          <Link to={prod.href} className="rippling-card-link">
+                          <Link to={prod.href} className="rippling-card-link" aria-label={`Learn more about ${prod.title}`}>
+
                             Learn more <span aria-hidden="true">→</span>
                           </Link>
                         </div>

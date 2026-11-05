@@ -533,7 +533,7 @@ export function AboutPage() {
                 We engineer dependable, intuitive software that removes statutory anxiety and payroll drudgery—empowering founders, HR leaders, and frontline teams to spend less time on paperwork and more time on people.
               </p>
 
-              <a href="#story" className="purpose-card-btn">
+              <a href="#story" className="purpose-card-btn" aria-label="Learn more about our mission and story">
                 Learn more...
               </a>
             </div>
@@ -576,7 +576,7 @@ export function AboutPage() {
                 A connected workplace future where every organization—from a 10-person startup to a multi-city enterprise—operates with transparent pay, instant leave clarity, and zero administrative roadblocks.
               </p>
 
-              <a href="#values" className="purpose-card-btn">
+              <a href="#values" className="purpose-card-btn" aria-label="Learn more about our core values">
                 Learn more...
               </a>
             </div>
@@ -737,7 +737,7 @@ export function AboutPage() {
                 <h3 className="discover-title">
                   Join us, and build the future of modern work
                 </h3>
-                <Link to="/careers" className="discover-btn">
+                <Link to="/careers" className="discover-btn" aria-label="Learn more about careers at Zentilos">
                   Learn more <Icon name="arrow" size={14} />
                 </Link>
               </div>
@@ -758,7 +758,7 @@ export function AboutPage() {
                 <h3 className="discover-title">
                   Real impact, proven ROI, and customer stories
                 </h3>
-                <Link to="/resources/case-studies" className="discover-btn">
+                <Link to="/resources/case-studies" className="discover-btn" aria-label="Learn more about customer case studies">
                   Learn more <Icon name="arrow" size={14} />
                 </Link>
               </div>
@@ -779,7 +779,7 @@ export function AboutPage() {
                 <h3 className="discover-title">
                   Helpful articles, guides, templates, tools and more
                 </h3>
-                <Link to="/resources" className="discover-btn">
+                <Link to="/resources" className="discover-btn" aria-label="Learn more about Zentilos resources and guides">
                   Learn more <Icon name="arrow" size={14} />
                 </Link>
               </div>
