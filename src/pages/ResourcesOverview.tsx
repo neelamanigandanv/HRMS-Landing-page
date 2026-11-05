@@ -7,6 +7,7 @@ import SEO from "../components/layout/SEO";
 import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./ResourcesOverview.css";
 
 export function ResourcesOverview() {
@@ -127,6 +128,13 @@ export function ResourcesOverview() {
         title="Resources & Knowledge Hub | Zentilos"
         description="Explore helpful guides, FAQs, and support resources to simplify HR management and get the most out of ZentilosMS."
         canonicalPath="/resources"
+        breadcrumbs={[{ name: "Resources", path: "/resources" }]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqItems.map((f) => ({ question: f.q, answer: f.a })),
+            "/resources"
+          ),
+        ]}
       />
 
       <Navbar />

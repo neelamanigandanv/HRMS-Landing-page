@@ -211,6 +211,7 @@ export function SolutionsOverview() {
         title="Solutions Overview | Tailored HRMS for Your Business Stage & Role | Zentilos"
         description="Software that adapts to your organization—not the other way around. Explore Zentilos solutions for small businesses, mid-sized teams, enterprises, HR managers, and multi-location footprints."
         canonicalPath="/solutions"
+        breadcrumbs={[{ name: "Solutions", path: "/solutions" }]}
       />
 
       <div className="solutions-overview-page">

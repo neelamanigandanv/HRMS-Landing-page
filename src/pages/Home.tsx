@@ -11,6 +11,7 @@ import CustomSelect from "../components/ui/CustomSelect";
 import { useDemoModal } from "../context/DemoModalContext";
 import { useCurrency } from "../context/CurrencyContext";
 import { submitEnquiry } from "../services/enquiryService";
+import { buildFAQSchema } from "../lib/schema";
 import FooterCTA from "../components/common/FooterCTA";
 import "../components/home/CorporateHero.css";
 
@@ -1370,12 +1371,20 @@ export function Home() {
     return () => observer.disconnect();
   }, []);
 
+  // Exclude "How long does setup take?" from Home FAQPage schema per canonical assignment (kept on /faq)
+  const homeSchemaFaqs = useMemo(() => {
+    return faqs
+      .filter((f) => f[0] !== "How long does setup take?")
+      .map((f) => ({ question: f[0], answer: f[1] }));
+  }, []);
+
   return (
     <div className="app-shell">
       <SEO
         title="HR, Payroll & Attendance For Multi-Branch Teams"
         description="Replace spreadsheets with one HR, payroll and attendance system for every branch. Run payroll in minutes and approve faster. Request a demo."
         canonicalPath="/"
+        additionalSchemas={[buildFAQSchema(homeSchemaFaqs, "/")]}
       />
 
       <Navbar />

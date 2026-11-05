@@ -7,6 +7,7 @@ import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./SmallBusinessPage.css";
 
 interface FAQItem {
@@ -352,6 +353,16 @@ export function SmallBusinessPage() {
         title="Small Business HRMS Software — Solutions for Growing Teams | Zentilos"
         description="Make HR simpler for your small business. Manage employee information, attendance, leave, and everyday HR in one organized workspace with Zentilos."
         canonicalPath="/solutions/small-businesses"
+        breadcrumbs={[
+          { name: "Solutions", path: "/solutions" },
+          { name: "Small Businesses", path: "/solutions/small-businesses" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/solutions/small-businesses"
+          ),
+        ]}
       />
 
       <Navbar />

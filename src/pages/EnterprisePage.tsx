@@ -6,6 +6,7 @@ import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./EnterprisePage.css";
 
 interface FAQItem {
@@ -250,6 +251,16 @@ export function EnterprisePage() {
         title="Enterprise HRMS Software — Multi-Entity Workforce Solutions | Zentilos"
         description="Enterprise HRMS engineered for global scale. Multi-entity directory, high-concurrency biometric attendance, SAP/ERP integrations, and statutory payroll for 500+ employees."
         canonicalPath="/solutions/enterprises"
+        breadcrumbs={[
+          { name: "Solutions", path: "/solutions" },
+          { name: "Enterprises", path: "/solutions/enterprises" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/solutions/enterprises"
+          ),
+        ]}
       />
 
       <Navbar />

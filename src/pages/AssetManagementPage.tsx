@@ -8,6 +8,7 @@ import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./AssetManagementPage.css";
 
 export function AssetManagementPage() {
@@ -267,6 +268,16 @@ export function AssetManagementPage() {
         title="Asset Management Software — IT Hardware, Inventory & Device Lifecycle Tracking | Zentilos"
         description="Track hardware allocations, laptops, peripherals, serial numbers, warranties, and digital asset return handovers across all branches with Zentilos."
         canonicalPath="/features/asset-management"
+        breadcrumbs={[
+          { name: "Features", path: "/product" },
+          { name: "Asset Management", path: "/features/asset-management" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/features/asset-management"
+          ),
+        ]}
       />
 
       <Navbar />

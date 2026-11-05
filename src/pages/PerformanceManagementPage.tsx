@@ -7,6 +7,7 @@ import SEO from "../components/layout/SEO";
 import Icon, { IconName } from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./PerformanceManagementPage.css";
 
 export function PerformanceManagementPage() {
@@ -341,6 +342,16 @@ export function PerformanceManagementPage() {
         title="Performance Management Software — Goals, Reviews & Employee Development | Zentilos"
         description="Turn Employee Performance Into Progress. Track employee goals, organize performance reviews, and bring more clarity to employee development with Zentilos."
         canonicalPath="/features/performance-management"
+        breadcrumbs={[
+          { name: "Features", path: "/product" },
+          { name: "Performance Management", path: "/features/performance-management" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/features/performance-management"
+          ),
+        ]}
       />
 
       <Navbar />

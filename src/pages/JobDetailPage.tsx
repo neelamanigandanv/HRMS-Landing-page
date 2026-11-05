@@ -8,6 +8,7 @@ import CustomSelect, { CustomSelectOption } from "../components/ui/CustomSelect"
 import PhoneInput from "../components/common/PhoneInput";
 import { validatePhoneNumber } from "../utils/phoneUtils";
 import { getJobById, JobOpening } from "../data/careersData";
+import { buildJobPostingSchema } from "../lib/schema";
 import { submitCrmEnquiry } from "../services/enquiryService";
 import "./CareersPage.css";
 
@@ -178,58 +179,18 @@ export function JobDetailPage() {
     { label: job.title },
   ];
 
-  // JobPosting Schema (JSON-LD) for SEO
-  const jobPostingSchema = {
-    "@context": "https://schema.org/",
-    "@type": "JobPosting",
-    title: job.title,
-    description: job.aboutRole,
-    identifier: {
-      "@type": "PropertyValue",
-      name: "Zentilos",
-      value: job.id,
-    },
-    datePosted: job.postedDate,
-    validThrough: "2027-12-31",
-    employmentType: job.type === "Full-Time" ? "FULL_TIME" : "CONTRACTOR",
-    hiringOrganization: {
-      "@type": "Organization",
-      name: "Zentilos",
-      sameAs: "https://zentilos.com",
-      logo: "https://zentilos.com/favicon.svg",
-    },
-    jobLocation: {
-      "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: job.location,
-        addressCountry: "IN",
-      },
-    },
-    baseSalary: job.salaryRange
-      ? {
-          "@type": "MonetaryAmount",
-          currency: "INR",
-          value: {
-            "@type": "QuantitativeValue",
-            unitText: "YEAR",
-          },
-        }
-      : undefined,
-  };
-
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA={true}>
       <SEO
         title={`${job.title} | Careers at Zentilos`}
         description={job.shortSummary}
         canonicalPath={`/careers/${job.id}`}
-      />
-
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
+        robots="noindex, follow"
+        breadcrumbs={[
+          { name: "Careers", path: "/careers" },
+          { name: job.title, path: `/careers/${job.id}` },
+        ]}
+        // TODO: Re-enable JobPosting schema when live ATS job openings are confirmed
       />
 
       <div className="job-detail-page">

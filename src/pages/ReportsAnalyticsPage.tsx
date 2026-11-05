@@ -7,6 +7,7 @@ import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./EmployeeManagementPage.css";
 import "./ReportsAnalyticsPage.css";
 
@@ -294,6 +295,16 @@ export function ReportsAnalyticsPage() {
         title="HR Reports & Workforce Analytics Software — Zentilos"
         description="Turn workforce data into clearer decisions. Bring employee records, attendance patterns, leave registers, and payroll summaries together in decision-ready reports."
         canonicalPath="/features/reports-analytics"
+        breadcrumbs={[
+          { name: "Features", path: "/product" },
+          { name: "Reports & Analytics", path: "/features/reports-analytics" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/features/reports-analytics"
+          ),
+        ]}
       />
 
       <Navbar />

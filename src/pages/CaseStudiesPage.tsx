@@ -18,9 +18,10 @@ export function CaseStudiesPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs}>
       <SEO
-        title="Customer Case Studies | Real Multi-Branch Transformations"
-        description="See how 500+ businesses running retail stores, distribution centers, and regional branches cut payroll cycles and eliminate compliance penalties with Zentilos."
+        title="Customer Stories & Case Studies | Zentilos"
+        description="Read how growing multi-branch businesses cut payroll processing time and automate attendance across locations with Zentilos."
         canonicalPath="/resources/case-studies"
+        robots="noindex, follow"
       />
 
       <section className="case-studies-hero">

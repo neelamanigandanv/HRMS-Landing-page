@@ -13,9 +13,10 @@ export function ThankYouPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA>
       <SEO
-        title="Thank You | Demo Request Confirmed"
-        description="Your Zentilos demo request has been received. Our product specialist will be in touch shortly."
+        title="Thank You | Demo Request Confirmed | Zentilos"
+        description="Thank you for requesting a Zentilos demo. Our product specialist will contact you shortly to schedule your personalized walkthrough."
         canonicalPath="/thank-you"
+        robots="noindex, follow"
       />
 
       <section className="thank-you-section">

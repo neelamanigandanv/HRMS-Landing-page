@@ -19,6 +19,8 @@ export interface BlogTOCItem {
 export interface BlogPostData {
   slug: string;
   title: string;
+  /** Custom SEO title (max 44 chars before " | Zentilos Blog" suffix, or full title <= 60 chars) */
+  seoTitle?: string;
   category: "Attendance" | "Payroll" | "HR Software" | "Engagement" | "Performance";
   readTime: string;
   skimTime: string;
@@ -60,6 +62,7 @@ export const blogArticles: BlogPostData[] = [
   {
     slug: "biometrics-vs-geofenced-mobile-tracking",
     title: "Biometric Scanners vs. Geofenced Mobile Tracking: The Complete Guide",
+    seoTitle: "Biometrics vs Geofenced Mobile Tracking",
     category: "Attendance",
     readTime: "6 min read",
     skimTime: "3",
@@ -174,6 +177,7 @@ export const blogArticles: BlogPostData[] = [
   {
     slug: "statutory-payroll-compliance-guide-2025",
     title: "The 2025 Indian Statutory Payroll Compliance Handbook",
+    seoTitle: "Statutory Payroll Compliance Guide 2025",
     category: "Payroll",
     readTime: "8 min read",
     skimTime: "4",
@@ -259,6 +263,7 @@ export const blogArticles: BlogPostData[] = [
   {
     slug: "evaluating-hrms-for-multi-branch-businesses",
     title: "How to Evaluate and Select an HRMS for Multi-Branch Businesses",
+    seoTitle: "Evaluating HRMS for Multi-Branch Teams",
     category: "HR Software",
     readTime: "7 min read",
     skimTime: "3",
@@ -338,6 +343,7 @@ export const blogArticles: BlogPostData[] = [
   {
     slug: "streamlined-onboarding-cuts-new-hire-turnover",
     title: "Streamlined Digital Onboarding: Cutting 90-Day Turnover by 40%",
+    seoTitle: "Onboarding That Cuts Turnover by 40%",
     category: "Engagement",
     readTime: "5 min read",
     skimTime: "2",
@@ -393,6 +399,7 @@ export const blogArticles: BlogPostData[] = [
   {
     slug: "continuous-feedback-vs-annual-reviews",
     title: "Continuous Feedback vs. Annual Reviews: Modernizing Performance Appraisals",
+    seoTitle: "Continuous Feedback vs Annual Reviews",
     category: "Performance",
     readTime: "6 min read",
     skimTime: "3",
@@ -448,6 +455,7 @@ export const blogArticles: BlogPostData[] = [
   {
     slug: "why-spreadsheet-payroll-fails-scaling-startups",
     title: "Why Spreadsheet Payroll Fails Scaling Startups (And How to Automate It)",
+    seoTitle: "Why Spreadsheet Payroll Fails Startups",
     category: "Payroll",
     readTime: "5 min read",
     skimTime: "2",
@@ -502,6 +510,7 @@ export const blogArticles: BlogPostData[] = [
   {
     slug: "rotational-roster-management-guide",
     title: "Solving Shift Fatigue: Best Practices for 24/7 Rotational Roster Management",
+    seoTitle: "24/7 Rotational Roster Management",
     category: "Attendance",
     readTime: "7 min read",
     skimTime: "3",
@@ -549,6 +558,7 @@ export const blogArticles: BlogPostData[] = [
   {
     slug: "hidden-costs-of-legacy-hr-software",
     title: "The 7 Hidden Costs of Legacy HR Software and How Cloud HR Fixes Them",
+    seoTitle: "7 Hidden Costs of Legacy HR Software",
     category: "HR Software",
     readTime: "6 min read",
     skimTime: "3",
@@ -595,6 +605,7 @@ export const blogArticles: BlogPostData[] = [
   {
     slug: "building-trust-with-employee-self-service",
     title: "Building Workplace Trust Through Transparent Employee Self-Service",
+    seoTitle: "Trust via Employee Self-Service (ESS)",
     category: "Engagement",
     readTime: "5 min read",
     skimTime: "2",

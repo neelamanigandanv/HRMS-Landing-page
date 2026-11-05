@@ -8,6 +8,7 @@ import Icon, { IconName } from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./EmployeeManagementPage.css";
 
 export function EmployeeManagementPage() {
@@ -422,6 +423,16 @@ export function EmployeeManagementPage() {
         title="Employee Management Software — Centralized Employee Records & Profiles"
         description="Every Employee. Every Detail. One Connected Platform. Keep employee information organized, simplify HR administration and manage the entire employee lifecycle with Zentilos."
         canonicalPath="/features/employee-management"
+        breadcrumbs={[
+          { name: "Features", path: "/product" },
+          { name: "Employee Management", path: "/features/employee-management" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/features/employee-management"
+          ),
+        ]}
       />
 
       <Navbar />

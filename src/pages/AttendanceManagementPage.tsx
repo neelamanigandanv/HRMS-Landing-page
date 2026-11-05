@@ -8,6 +8,7 @@ import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./AttendanceManagementPage.css";
 
 export function AttendanceManagementPage() {
@@ -299,6 +300,16 @@ export function AttendanceManagementPage() {
         title="Attendance Management Software — Biometric, Geofencing & Shift Roster System | Zentilos"
         description="Eliminate time theft, automate shift rosters, and sync biometric punches directly to payroll. Cloud-native attendance tracking for multi-branch organizations."
         canonicalPath="/features/attendance-management"
+        breadcrumbs={[
+          { name: "Features", path: "/product" },
+          { name: "Attendance Management", path: "/features/attendance-management" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/features/attendance-management"
+          ),
+        ]}
       />
 
       <Navbar />

@@ -6,6 +6,7 @@ import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
 import { useDemoModal } from "../context/DemoModalContext";
 import { faqCategories, FAQItem } from "../data/faqData";
+import { buildFAQSchema } from "../lib/schema";
 import "./FAQPage.css";
 
 // Helper function to safely highlight search matches
@@ -220,12 +221,23 @@ export function FAQPage() {
 
   const breadcrumbs = [{ label: "FAQ" }];
 
+  const allFaqs = useMemo(() => {
+    return faqCategories.flatMap((cat) =>
+      cat.items.map((item) => ({
+        question: item.question,
+        answer: item.answer,
+      }))
+    );
+  }, []);
+
   return (
     <PageLayout breadcrumbs={breadcrumbs}>
       <SEO
         title="Frequently Asked Questions (FAQ) | Zentilos"
         description="Find verified answers to common questions about Zentilos pricing, statutory payroll compliance (PF, ESI, TDS), biometric attendance, setup timelines, and data security."
         canonicalPath="/faq"
+        breadcrumbs={[{ name: "FAQ", path: "/faq" }]}
+        additionalSchemas={[buildFAQSchema(allFaqs, "/faq")]}
       />
 
       <div className="faq-page-wrapper">

@@ -48,8 +48,10 @@ export function SupportSearchPage() {
   return (
     <PageLayout breadcrumbs={breadcrumbs}>
       <SEO
-        title={`Search Results: ${query || "Help Center"} | Zentilos Support`}
-        description="Search results for Zentilos help guides, payroll troubleshooting, and attendance configurations."
+        title="Search Support Knowledge Base | Zentilos"
+        description="Search troubleshooting articles, setup instructions and how-to guides for Zentilos HRMS, payroll calculations and attendance devices."
+        canonicalPath="/support/search"
+        robots="noindex, follow"
       />
 
       <div className="support-subpage-wrap py-12">

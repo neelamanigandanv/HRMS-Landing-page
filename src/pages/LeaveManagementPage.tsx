@@ -8,6 +8,7 @@ import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./LeaveManagementPage.css";
 
 export function LeaveManagementPage() {
@@ -299,6 +300,16 @@ export function LeaveManagementPage() {
         title="Leave Management System — Automated Leave Policies & Approvals | Zentilos"
         description="Streamline employee time-off requests, automate complex leave policies, prevent team coverage collisions, and sync approved leaves with attendance and payroll."
         canonicalPath="/features/leave-management"
+        breadcrumbs={[
+          { name: "Features", path: "/product" },
+          { name: "Leave Management", path: "/features/leave-management" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/features/leave-management"
+          ),
+        ]}
       />
 
       <Navbar />

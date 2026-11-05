@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import PageLayout from '@/components/layout/PageLayout';
 import Icon from '@/components/ui/Icon';
 import SEO from '@/components/layout/SEO';
+import { buildFAQSchema } from '@/lib/schema';
 import { SUPPORT_CONTACT_CONFIG } from '@/data/supportData';
 
 export default function SupportEmployeeHelpPage() {
@@ -30,6 +31,16 @@ export default function SupportEmployeeHelpPage() {
       <SEO
         title={`Employee Help & HR Admin Contact | ${SUPPORT_CONTACT_CONFIG.brandName} Support`}
         description="Are you an employee using HRMS? Learn how to reach your company's internal HR team for payslips, leave, and login requests."
+        breadcrumbs={[
+          { name: "Support", path: "/support" },
+          { name: "Employee Help", path: "/support/employee-help" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            employeeFaqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/support/employee-help"
+          ),
+        ]}
       />
       <div style={{ backgroundColor: '#fcfafc', borderBottom: '1px solid #ebdbe6', padding: '36px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>

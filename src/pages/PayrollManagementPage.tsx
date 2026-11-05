@@ -8,6 +8,7 @@ import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./PayrollManagementPage.css";
 
 export function PayrollManagementPage() {
@@ -297,6 +298,16 @@ export function PayrollManagementPage() {
         title="Payroll Management Software — Automated Statutory Payroll & Direct Bank Disbursal | Zentilos"
         description="Run 100% compliant monthly payroll in 2 clicks. Automate statutory deductions (PF, ESIC, PT, TDS), attendance sync, and instant direct bank salary payouts."
         canonicalPath="/features/payroll-management"
+        breadcrumbs={[
+          { name: "Features", path: "/product" },
+          { name: "Payroll Management", path: "/features/payroll-management" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/features/payroll-management"
+          ),
+        ]}
       />
 
       <Navbar />

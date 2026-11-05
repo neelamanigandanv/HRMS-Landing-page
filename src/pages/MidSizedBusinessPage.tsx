@@ -6,6 +6,7 @@ import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./MidSizedBusinessPage.css";
 
 interface FAQItem {
@@ -250,6 +251,16 @@ export function MidSizedBusinessPage() {
         title="Mid-Sized Business HRMS Software — Solutions for Growing Teams | Zentilos"
         description="Scale people operations for your mid-sized business. Manage multi-branch employee records, biometric attendance, multi-tier approvals, and statutory payroll with Zentilos."
         canonicalPath="/solutions/mid-sized-businesses"
+        breadcrumbs={[
+          { name: "Solutions", path: "/solutions" },
+          { name: "Mid-Sized Businesses", path: "/solutions/mid-sized-businesses" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/solutions/mid-sized-businesses"
+          ),
+        ]}
       />
 
       <Navbar />

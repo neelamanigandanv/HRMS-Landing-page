@@ -8,6 +8,7 @@ import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
 import { useCurrency } from "../context/CurrencyContext";
 import { GUIDE_DETAILS_MAP, GuideDetailModel } from "../data/guidesData";
+import { buildFAQSchema } from "../lib/schema";
 import "./Blog.css";
 import "./GuideDetailPage.css";
 
@@ -211,12 +212,41 @@ export function GuideDetailPage() {
     { label: currentGuide.title },
   ];
 
+  const additionalSchemas = useMemo(() => {
+    if (currentGuide && currentGuide.faqs && currentGuide.faqs.length > 0) {
+      return [
+        buildFAQSchema(
+          currentGuide.faqs.map((f) => ({ question: f.q, answer: f.a })),
+          `/guides/${currentGuide.slug}`
+        ),
+      ];
+    }
+    return undefined;
+  }, [currentGuide]);
+
+  const guideBrand = " | Zentilos Guides";
+  const seoTitle = currentGuide.seoTitle
+    ? (currentGuide.seoTitle.includes("Zentilos") ? currentGuide.seoTitle : `${currentGuide.seoTitle}${guideBrand}`)
+    : (function () {
+        const maxBaseLen = 60 - guideBrand.length;
+        if (currentGuide.title.length <= maxBaseLen) return `${currentGuide.title}${guideBrand}`;
+        const sliced = currentGuide.title.slice(0, maxBaseLen);
+        const lastSpace = sliced.lastIndexOf(" ");
+        const clean = (lastSpace > 0 ? sliced.slice(0, lastSpace) : sliced).replace(/[\s,:;\-\/]+$/, "");
+        return `${clean}${guideBrand}`;
+      })();
+
   return (
     <PageLayout hideCTA={true} breadcrumbs={breadcrumbs}>
       <SEO
-        title={`${currentGuide.title} | Zentilos Practical Handbook`}
+        title={seoTitle}
         description={currentGuide.subtitle}
         canonicalPath={`/guides/${currentGuide.slug}`}
+        breadcrumbs={[
+          { name: "Guides", path: "/guides" },
+          { name: currentGuide.title, path: `/guides/${currentGuide.slug}` },
+        ]}
+        additionalSchemas={additionalSchemas}
       />
 
       <div className="guide-detail-page">

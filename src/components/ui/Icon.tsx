@@ -46,7 +46,12 @@ export type IconName =
   | "twitter"
   | "instagram"
   | "facebook"
-  | "linkedin";
+  | "linkedin"
+  | "link"
+  | "target"
+  | "chat"
+  | "growth"
+  | "credit-card";
 
 export const iconPaths: Record<IconName, ReactNode> = {
   arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
@@ -282,20 +287,51 @@ export const iconPaths: Record<IconName, ReactNode> = {
       <circle cx="4" cy="4" r="2" />
     </>
   ),
+  link: (
+    <>
+      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+    </>
+  ),
+  target: (
+    <>
+      <circle cx="12" cy="12" r="10" />
+      <circle cx="12" cy="12" r="6" />
+      <circle cx="12" cy="12" r="2" />
+    </>
+  ),
+  chat: (
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+  ),
+  growth: (
+    <>
+      <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+      <polyline points="17 6 23 6 23 12" />
+    </>
+  ),
+  "credit-card": (
+    <>
+      <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+      <line x1="1" y1="10" x2="23" y2="10" />
+    </>
+  ),
 };
 
 export function Icon({
   name,
   size = 20,
   className = "",
+  style,
 }: {
   name: IconName;
   size?: number;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   return (
     <svg
       className={className}
+      style={style}
       width={size}
       height={size}
       viewBox="0 0 24 24"

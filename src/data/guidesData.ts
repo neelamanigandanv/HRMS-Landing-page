@@ -4,6 +4,7 @@ export interface GuideHandbook {
   id: string;
   slug: string;
   title: string;
+  seoTitle?: string;
   subtitle: string;
   category: string;
   readTime: string;
@@ -83,6 +84,7 @@ export interface GuideChecklistItem {
 export interface GuideDetailModel {
   slug: string;
   title: string;
+  seoTitle?: string;
   subtitle: string;
   category: string;
   readTime: string;
@@ -315,6 +317,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
   "payroll-management-guide": {
     slug: "payroll-management-guide",
     title: "Payroll Management Guide",
+    seoTitle: "Payroll Management Guide",
     subtitle: "Salary structures, gross-to-net calculations, statutory compliance rules, and automated payroll runs.",
     category: "Payroll & Tax",
     readTime: "15 min read",
@@ -549,6 +552,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
   "leave-management-guide": {
     slug: "leave-management-guide",
     title: "Leave Management Guide",
+    seoTitle: "Leave Management Guide",
     subtitle: "Statutory leave rules, accrual formulas, sandwich rule policies, and automated biometric payroll sync.",
     category: "Workforce & Leave",
     readTime: "10 min read",
@@ -752,6 +756,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
   "attendance-management-guide": {
     slug: "attendance-management-guide",
     title: "Attendance & Shifts Master Guide",
+    seoTitle: "Attendance & Shifts Guide",
     subtitle: "Biometric clock-in sync, 24/7 rotational shifts, GPS geofencing, and automated overtime calculations.",
     category: "Workforce & Leave",
     readTime: "10 min read",
@@ -961,6 +966,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
   "recruitment-management-guide": {
     slug: "recruitment-management-guide",
     title: "Recruitment & Hiring Operations Guide",
+    seoTitle: "Recruitment & Hiring Guide",
     subtitle: "Structured hiring funnels, scorecard evaluations, digital offer rollouts, and 94%+ joining conversion.",
     category: "Hiring & Culture",
     readTime: "11 min read",
@@ -1159,6 +1165,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
   "employee-onboarding-guide": {
     slug: "employee-onboarding-guide",
     title: "Employee Onboarding & Lifecycle Guide",
+    seoTitle: "Employee Onboarding Guide",
     subtitle: "Digital KYC document vaults, IT asset provisioning, 30-60-90 ramp plans, and buddy systems.",
     category: "Hiring & Culture",
     readTime: "12 min read",
@@ -1379,6 +1386,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
   "expense-management-guide": {
     slug: "expense-management-guide",
     title: "Expense Management & Corporate Reimbursements Guide",
+    seoTitle: "Expense Management Guide",
     subtitle: "OCR receipt scanning, per-diem travel policies, mileage logs, and 1-click payroll payouts.",
     category: "Operations & Compliance",
     readTime: "9 min read",
@@ -1571,6 +1579,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
   "statutory-compliance-guide": {
     slug: "statutory-compliance-guide",
     title: "Statutory Compliance & Labor Laws Guide",
+    seoTitle: "Statutory Compliance Guide",
     subtitle: "EPF Act, ESIC compliance, Payment of Gratuity, Bonus Act, and state Shops & Establishments rules.",
     category: "Payroll & Tax",
     readTime: "13 min read",
@@ -1776,6 +1785,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
   "performance-appraisal-guide": {
     slug: "performance-appraisal-guide",
     title: "Performance Appraisal & OKRs Guide",
+    seoTitle: "Performance & OKRs Guide",
     subtitle: "Continuous 360-degree feedback, quarterly OKR tracking, 9-box calibration reviews, and merit compensation linking.",
     category: "Hiring & Culture",
     readTime: "12 min read",
@@ -1975,6 +1985,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
   "multibranch-hr-setup-guide": {
     slug: "multibranch-hr-setup-guide",
     title: "Multi-Branch HR Operations & Governance Guide",
+    seoTitle: "Multi-Branch HR Setup Guide",
     subtitle: "Multi-entity company hierarchy, state-wise minimum wages, centralized policy control, and localized shifts.",
     category: "Operations & Compliance",
     readTime: "14 min read",

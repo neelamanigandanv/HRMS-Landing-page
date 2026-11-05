@@ -2,9 +2,10 @@ import { useState, useMemo, useRef, FormEvent } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
-import Icon from "../components/ui/Icon";
+import Icon, { IconName } from "../components/ui/Icon";
 import { SUPPORT_ARTICLES_DATABASE } from "../data/supportData";
 import { ALL_GUIDE_QUESTIONS } from "../data/guidesData";
+import { buildFAQSchema } from "../lib/schema";
 import { HelpTopicIllustration } from "../components/help/HelpTopicIllustration";
 import { HelpWorkflowIsometric } from "../components/help/HelpWorkflowIsometric";
 import "./HelpCenter.css";
@@ -13,7 +14,7 @@ interface HelpCategoryItem {
   id: string;
   title: string;
   desc: string;
-  icon: string;
+  icon: IconName;
   link: string;
   articlesCount: number;
 }
@@ -24,6 +25,7 @@ interface StepGuideItem {
   desc: string;
   link: string;
   tag: string;
+  icon: IconName;
 }
 
 interface HelpFAQ {
@@ -207,7 +209,7 @@ export function HelpCenter() {
   ];
 
   // Section 4: Step-by-Step Guides for New Customer Setup (Matching Reference Architecture)
-  const stepGuides = [
+  const stepGuides: StepGuideItem[] = [
     {
       number: "1",
       title: "Quick Organization Setup",
@@ -345,12 +347,21 @@ export function HelpCenter() {
 
   const isSearchActive = searchQuery.trim().length > 0;
 
+  // Omit duplicate "What is Zentilos?" from schema per canonical assignment (kept on /faq)
+  const helpSchemaFaqs = useMemo(() => {
+    return faqs
+      .filter((f) => f.q !== "What is Zentilos?")
+      .map((f) => ({ question: f.q, answer: f.a }));
+  }, [faqs]);
+
   return (
     <PageLayout breadcrumbs={breadcrumbs}>
       <SEO
         title="Help Center & Knowledge Base | Zentilos"
         description="Find quick answers, step-by-step instructions, and helpful resources to get the most out of Zentilos."
         canonicalPath="/help"
+        breadcrumbs={[{ name: "Help Center", path: "/help" }]}
+        additionalSchemas={[buildFAQSchema(helpSchemaFaqs, "/help")]}
       />
 
       <div className="help-center-page">

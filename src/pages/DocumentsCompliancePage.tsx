@@ -8,6 +8,7 @@ import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./DocumentsCompliancePage.css";
 
 export function DocumentsCompliancePage() {
@@ -294,6 +295,16 @@ export function DocumentsCompliancePage() {
         title="Documents & Compliance Management Software — Centralized Employee Records | Zentilos"
         description="Keep employee documents organized. Stay compliance-ready. Secure cloud storage, automated expiry tracking, compliance checklists, and role-based access control with Zentilos."
         canonicalPath="/features/documents-compliance"
+        breadcrumbs={[
+          { name: "Features", path: "/product" },
+          { name: "Documents & Compliance", path: "/features/documents-compliance" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/features/documents-compliance"
+          ),
+        ]}
       />
 
       <Navbar />

@@ -87,8 +87,10 @@ export default function SupportTrackPage() {
   return (
     <PageLayout>
       <SEO
-        title={`Track Ticket Status | ${SUPPORT_CONTACT_CONFIG.brandName} Support`}
-        description="Check real-time status and engineer response updates for your existing HRMS support ticket."
+        title="Track Support Ticket Status | Zentilos"
+        description="Check the current status, engineer notes and resolution progress for your open customer support ticket with the Zentilos support team."
+        canonicalPath="/support/track"
+        robots="noindex, follow"
       />
       <div style={{ backgroundColor: '#fcfafc', borderBottom: '1px solid #ebdbe6', padding: '32px 24px' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>

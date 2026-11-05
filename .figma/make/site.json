@@ -2,5 +2,8 @@
   "accessibility": {
     "addBypassLinks": false,
     "ignoreReducedMotion": false
+  },
+  "robots": {
+    "index": true
   }
 }

@@ -7,6 +7,7 @@ import SEO from "../components/layout/SEO";
 import Icon, { IconName } from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./RolesPermissionsPage.css";
 
 export function RolesPermissionsPage() {
@@ -376,6 +377,16 @@ export function RolesPermissionsPage() {
         title="Roles & Permissions Software — Granular Access Control | Zentilos"
         description="Control Access. Protect Every HR Operation. Give every user the right level of access with role-based permissions designed to keep your workforce data organized and protected."
         canonicalPath="/features/roles-permissions"
+        breadcrumbs={[
+          { name: "Features", path: "/product" },
+          { name: "Roles & Permissions", path: "/features/roles-permissions" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/features/roles-permissions"
+          ),
+        ]}
       />
 
       <Navbar />

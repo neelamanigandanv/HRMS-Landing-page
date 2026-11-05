@@ -8,6 +8,7 @@ import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./IndustrySolutionsPage.css";
 
 interface FAQItem {
@@ -511,6 +512,17 @@ export function IndustrySolutionsPage() {
       <SEO
         title="Industry HRMS Solutions | Tailored Workforce Operations | Zentilos"
         description="Shifts, rotations, seasonal teams, or office hours — Zentilos adapts to how your industry works. Explore tailored workflows for Retail, Healthcare, Manufacturing, Hospitality, IT, and Education."
+        canonicalPath="/solutions/industries"
+        breadcrumbs={[
+          { name: "Solutions", path: "/solutions" },
+          { name: "Industry Solutions", path: "/solutions/industries" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/solutions/industries"
+          ),
+        ]}
       />
       <Navbar />
 

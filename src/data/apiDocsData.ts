@@ -63,9 +63,10 @@ export interface ApiModule {
   id: string;
   name: string;
   shortName: string;
-  description: string;
+  description?: string;
   apiCount: number;
-  apiNumbers: number[];
+  apiNumbers?: number[];
+  apiIds?: number[];
 }
 
 export const API_MODULES: ApiModule[] = [

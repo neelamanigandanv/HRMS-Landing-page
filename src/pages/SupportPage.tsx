@@ -292,6 +292,7 @@ export default function SupportPage() {
         title="Customer Support & Help Desk | Zentilos"
         description="Connect directly with Zentilos's technical engineers, HRMS customer success desk, and sales specialists for fast, reliable resolution."
         canonicalPath="/support"
+        breadcrumbs={[{ name: "Support", path: "/support" }]}
       />
 
       <div className="support-hub-page">

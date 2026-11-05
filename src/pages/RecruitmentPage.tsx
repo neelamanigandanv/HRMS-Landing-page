@@ -8,6 +8,7 @@ import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
+import { buildFAQSchema } from "../lib/schema";
 import "./RecruitmentPage.css";
 
 export function RecruitmentPage() {
@@ -214,6 +215,16 @@ export function RecruitmentPage() {
         title="Recruitment Management Software — Candidate Pipeline & Hiring | Zentilos"
         description="Organize your hiring activities, manage candidate information, and gain better visibility into your recruitment process with Zentilos."
         canonicalPath="/features/recruitment"
+        breadcrumbs={[
+          { name: "Features", path: "/product" },
+          { name: "Recruitment", path: "/features/recruitment" },
+        ]}
+        additionalSchemas={[
+          buildFAQSchema(
+            faqs.map((f) => ({ question: f.q, answer: f.a })),
+            "/features/recruitment"
+          ),
+        ]}
       />
 
       <Navbar />

@@ -7,6 +7,8 @@ import Icon from "../components/ui/Icon";
 import { useDemoModal } from "../context/DemoModalContext";
 import { useCurrency } from "../context/CurrencyContext";
 import { blogArticles, BlogPostData } from "../data/blogData";
+import { buildFAQSchema } from "../lib/schema";
+import { getAbsoluteUrl } from "../config/site";
 import "./Blog.css";
 
 export function BlogPost() {
@@ -142,16 +144,47 @@ export function BlogPost() {
     { label: post.title },
   ];
 
-  const shareUrl = encodeURIComponent(window.location.href);
+  const shareUrl = encodeURIComponent(getAbsoluteUrl(`/blog/${post.slug}`));
   const shareTitle = encodeURIComponent(post.title);
+
+  const additionalSchemas = useMemo(() => {
+    if (post && post.faqs && post.faqs.length > 0) {
+      return [
+        buildFAQSchema(
+          post.faqs.map((f) => ({ question: f.question, answer: f.answer })),
+          `/blog/${post.slug}`
+        ),
+      ];
+    }
+    return undefined;
+  }, [post]);
+
+  const blogBrand = " | Zentilos Blog";
+  const seoTitle = post.seoTitle
+    ? (post.seoTitle.includes("Zentilos") ? post.seoTitle : `${post.seoTitle}${blogBrand}`)
+    : (function () {
+        const maxBaseLen = 60 - blogBrand.length;
+        if (post.title.length <= maxBaseLen) return `${post.title}${blogBrand}`;
+        const sliced = post.title.slice(0, maxBaseLen);
+        const lastSpace = sliced.lastIndexOf(" ");
+        const clean = (lastSpace > 0 ? sliced.slice(0, lastSpace) : sliced).replace(/[\s,:;\-\/]+$/, "");
+        return `${clean}${blogBrand}`;
+      })();
 
   return (
     <PageLayout breadcrumbs={breadcrumbs} onOpenDemo={() => openDemoModal()}>
       <SEO
-        title={`${post.title} | Zentilos Blog`}
+        title={seoTitle}
         description={post.excerpt}
         canonicalPath={`/blog/${post.slug}`}
         ogType="article"
+        ogImage={post.coverImage}
+        ogImageAlt={post.title}
+        breadcrumbs={[
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]}
+        additionalSchemas={additionalSchemas}
       />
 
       <div className="article-page">

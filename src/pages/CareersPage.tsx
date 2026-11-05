@@ -1,4 +1,5 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useMemo } from "react";
+import { buildJobPostingSchema } from "../lib/schema";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import SectionHeading from "../components/ui/SectionHeading";
@@ -168,9 +169,9 @@ export function CareersPage() {
 
     const targetRoleName = selectedJob
       ? `${selectedJob.title} (${selectedJob.department})`
-      : selectedRoleId === "general"
-      ? "General Application"
-      : ROLE_OPTIONS.find((r) => r.value === selectedRoleId)?.label || "General Application";
+      : "General Application";
+
+
 
     const payload = {
       full_name: fullName.trim(),
@@ -246,12 +247,14 @@ export function CareersPage() {
     { label: "Careers" },
   ];
 
+  // Job openings are mock/placeholder data; JobPosting Schema.org markup is omitted per instructions
   return (
     <PageLayout breadcrumbs={breadcrumbs} hideCTA>
       <SEO
         title="Careers at Zentilos | Build the Future of Workforce Software"
         description="Join an ambitious, high-trust team building modern workforce and payroll software for thousands of growing businesses."
         canonicalPath="/careers"
+        breadcrumbs={[{ name: "Careers", path: "/careers" }]}
       />
 
       <div className="careers-page-container">

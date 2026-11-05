@@ -1,4 +1,25 @@
+# Zentilos robots.txt
+
 User-agent: *
 Allow: /
 
-Sitemap: https://zentilos.com/sitemap.xml
+# Dedicated AI & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: /sitemap.xml
