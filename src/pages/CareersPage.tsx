@@ -16,7 +16,7 @@ import ApplyModal from "../components/careers/ApplyModal";
 import CustomSelect, { CustomSelectOption } from "../components/ui/CustomSelect";
 import PhoneInput from "../components/common/PhoneInput";
 import { validatePhoneNumber } from "../utils/phoneUtils";
-import { submitCrmEnquiry } from "../services/enquiryService";
+import { submitCareerApplication, uploadResumeFile } from "../services/careersService";
 import "./CareersPage.css";
 
 const GENERAL_ROLE_OPTION: CustomSelectOption = {
@@ -167,44 +167,50 @@ export function CareersPage() {
     setIsSubmitting(true);
     setSubmitError(null);
 
-    const targetRoleName = selectedJob
-      ? `${selectedJob.title} (${selectedJob.department})`
-      : "General Application";
-
-
-
-    const payload = {
-      full_name: fullName.trim(),
-      name: fullName.trim(),
-      work_email: email.trim(),
-      email: email.trim(),
-      phone: phone.trim(),
-      location: currentLocation.trim(),
-      company_name: currentCompany.trim() ? `Current: ${currentCompany.trim()}` : "Direct Candidate",
-      source_page: "/careers/direct",
-      nature_of_enquiry: "JOB_APPLICATION",
-      notes: `Location: ${currentLocation.trim()} | Exp: ${totalExperience} | Notice: ${noticePeriod} | Why: ${coverNote.trim()}`,
-      extra_data: {
-        target_role: targetRoleName,
-        current_location: currentLocation.trim(),
-        relevant_experience: totalExperience,
-        total_experience: totalExperience,
-        notice_period: noticePeriod,
-        current_company: currentCompany.trim() || "Not Specified",
-        expected_ctc: expectedCtc.trim() || "Not Specified",
-        linkedin_portfolio_url: [linkedinUrl.trim(), portfolioUrl.trim()].filter(Boolean).join(" | "),
-        resume_link: resumeLink.trim(),
-        resume_url: resumeFile ? resumeFile.name : (resumeLink.trim() || ""),
-        why_are_you_interested_in_zentilos: coverNote.trim(),
-        why_zentilos: coverNote.trim(),
-        why_lattium_hr: coverNote.trim(),
-      },
-    };
-
     try {
-      const res = await submitCrmEnquiry(payload);
-      const genId = res.data?.id
-        ? String(res.data.id)
+      // 1. Upload resume to POST /recruitment/applications/upload-resume
+      let uploadedResumeUrl = resumeLink.trim();
+      if (resumeFile) {
+        try {
+          uploadedResumeUrl = await uploadResumeFile(resumeFile);
+        } catch (uploadErr: any) {
+          throw new Error(uploadErr?.message || "Resume upload failed. Please ensure file is under 5 MB.");
+        }
+      }
+
+      // 2. Submit career application to POST /recruitment/applications
+      const isSpecificJob = Boolean(selectedJob && selectedJob.title);
+      const isNumericJobId = selectedJob && typeof (selectedJob as any).id === "number" && !isNaN(Number((selectedJob as any).id));
+
+      const res = await submitCareerApplication({
+        application_type: isSpecificJob ? "APPLY_TO_JOIN" : "DIRECT_APPLICATION",
+        ...(isSpecificJob && isNumericJobId ? { job_id: Number(selectedJob!.id) } : {}),
+        ...(isSpecificJob ? { target_role: selectedJob!.title } : { current_location: currentLocation.trim() || "Bengaluru, India" }),
+        full_name: fullName.trim(),
+        name: fullName.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        phone_number: phone.trim(),
+        experience: totalExperience,
+        total_experience: totalExperience,
+        current_location: currentLocation.trim() || "Bengaluru, India",
+        location: currentLocation.trim() || "Bengaluru, India",
+        resume_url: uploadedResumeUrl,
+        policies_accepted: true,
+        answers: {
+          notice_period: noticePeriod,
+          why_lattium_hr: coverNote.trim(),
+          why_zentilos: coverNote.trim(),
+          what_do_you_want_to_build: coverNote.trim(),
+          why_you_are_interested: coverNote.trim(),
+          expected_ctc: expectedCtc.trim(),
+          current_company: currentCompany.trim(),
+          linkedin_portfolio_url: [linkedinUrl.trim(), portfolioUrl.trim()].filter(Boolean).join(" | "),
+        },
+      });
+
+      const genId = res.data?.application_id
+        ? `APP-${res.data.application_id}`
         : `APP-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
       setApplicationRefId(genId);
       setIsSubmitting(false);

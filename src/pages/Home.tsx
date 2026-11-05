@@ -90,13 +90,16 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
 
     try {
       await submitEnquiry({
+        form_type: "request_demo",
         name: formData.name.trim(),
         work_email: formData.email.trim(),
         email: formData.email.trim(),
+        phone_number: formData.phone.trim(),
         phone: formData.phone.trim(),
         company_name: "Prospect Company",
         team_size: formData.employees,
         primary_area_of_interest: "Full Platform Walkthrough",
+        additional_notes: "Demo requested via Home inline form",
         nature_of_enquiry: "SCHEDULE_LIVE_DEMO",
         notes: "Demo requested via Home inline form",
         source_page: "/",

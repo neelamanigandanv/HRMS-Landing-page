@@ -93,12 +93,16 @@ export function ContactPage() {
 
     try {
       await submitEnquiry({
+        form_type: "contact_us",
         name: contactData.name.trim(),
         work_email: contactData.email.trim(),
         email: contactData.email.trim(),
+        phone_number: contactData.phone.trim(),
         phone: contactData.phone.trim(),
         company_name: contactData.company?.trim() || "Not Specified",
         team_size: contactData.teamSize || "Not Specified",
+        nature_of_inquiry: contactData.inquiryType || "General",
+        how_can_we_help_your_team: contactData.message.trim(),
         primary_area_of_interest:
           contactData.inquiryType === "Sales"
             ? "Product Walkthrough"
@@ -110,10 +114,6 @@ export function ContactPage() {
         nature_of_enquiry: natureMap[contactData.inquiryType] || "GENERAL_ENQUIRY",
         notes: contactData.message.trim(),
         source_page: "/contact",
-        extra_data: {
-          how_can_we_help: contactData.message.trim(),
-          inquiry_type: contactData.inquiryType,
-        },
       });
       setIsSubmitting(false);
       setSubmitted(true);

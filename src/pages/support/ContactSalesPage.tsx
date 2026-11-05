@@ -48,10 +48,15 @@ export default function ContactSalesPage() {
 
     try {
       await submitEnquiry({
+        form_type: "contact_us",
         name: formData.fullName,
+        work_email: formData.workEmail,
         email: formData.workEmail,
+        phone_number: "",
         company_name: formData.companyName,
         team_size: formData.teamSize,
+        nature_of_inquiry: formData.modules.join(', ') || 'Enterprise HR Suite',
+        how_can_we_help_your_team: formData.message || 'Custom plan & pricing inquiry',
         primary_area_of_interest:
           formData.modules.length > 0
             ? formData.modules.join(', ')

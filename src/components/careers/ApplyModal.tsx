@@ -6,7 +6,7 @@ import CustomSelect, { CustomSelectOption } from "../ui/CustomSelect";
 import PhoneInput from "../common/PhoneInput";
 import { validatePhoneNumber } from "../../utils/phoneUtils";
 import { JobOpening } from "../../data/careersData";
-import { submitCrmEnquiry } from "../../services/enquiryService";
+import { submitCareerApplication, uploadResumeFile } from "../../services/careersService";
 
 const EXPERIENCE_OPTIONS: CustomSelectOption[] = [
   { value: "0–1 years (Entry / Fresher)", label: "0–1 years (Entry / Fresher)" },
@@ -50,6 +50,7 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [applicationRefId, setApplicationRefId] = useState("");
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [isDragOver, setIsDragOver] = useState(false);
 
   // Refs
@@ -176,38 +177,57 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
     }
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
     try {
-      const payload = {
-        name: fullName.trim(),
-        full_name: fullName.trim(),
-        email: email.trim(),
-        work_email: email.trim(),
-        phone: phone.trim(),
-        company_name: currentCompany.trim() ? `Current: ${currentCompany.trim()}` : "Candidate Profile",
-        source_page: "/careers/direct",
-        nature_of_enquiry: "JOB_APPLICATION",
-        extra_data: {
-          target_role: job?.title || "General Application",
-          total_experience: totalExperience,
-          notice_period: noticePeriod,
-          current_company: currentCompany.trim() || "Not Specified",
-          expected_ctc: expectedCtc.trim() || "Not Specified",
-          linkedin_portfolio_url: linkedinUrl.trim(),
-          resume_url: resumeFile ? resumeFile.name : "",
-          why_zentilos: coverNote.trim(),
-          why_lattium_hr: coverNote.trim(),
-        },
-      };
+      // 1. Upload resume to POST /recruitment/applications/upload-resume
+      let uploadedResumeUrl = "";
+      if (resumeFile) {
+        try {
+          uploadedResumeUrl = await uploadResumeFile(resumeFile);
+        } catch (uploadErr: any) {
+          throw new Error(uploadErr?.message || "Resume upload failed. Please ensure file is under 5 MB.");
+        }
+      }
 
-      const res = await submitCrmEnquiry(payload);
-      const generatedId = res.data?.id
-        ? String(res.data.id)
+      // 2. Submit career application to POST /recruitment/applications
+      const isSpecificJob = Boolean(job && job.title);
+      const isNumericJobId = job && typeof (job as any).id === "number" && !isNaN(Number((job as any).id));
+
+      const res = await submitCareerApplication({
+        application_type: isSpecificJob ? "APPLY_TO_JOIN" : "DIRECT_APPLICATION",
+        ...(isSpecificJob && isNumericJobId ? { job_id: Number(job!.id) } : {}),
+        ...(isSpecificJob ? { target_role: job!.title } : { current_location: currentCompany.trim() || "Bengaluru, India" }),
+        full_name: fullName.trim(),
+        name: fullName.trim(),
+        email: email.trim(),
+        phone: phone.trim(),
+        phone_number: phone.trim(),
+        experience: totalExperience,
+        total_experience: totalExperience,
+        current_location: currentCompany.trim() || "Bengaluru, India",
+        location: currentCompany.trim() || "Bengaluru, India",
+        resume_url: uploadedResumeUrl,
+        policies_accepted: true,
+        answers: {
+          notice_period: noticePeriod,
+          why_lattium_hr: coverNote.trim(),
+          why_zentilos: coverNote.trim(),
+          what_do_you_want_to_build: coverNote.trim(),
+          why_you_are_interested: coverNote.trim(),
+          expected_ctc: expectedCtc.trim(),
+          current_company: currentCompany.trim(),
+          linkedin_portfolio_url: linkedinUrl.trim(),
+        },
+      });
+
+      const generatedId = res.data?.application_id
+        ? `APP-${res.data.application_id}`
         : `APP-${new Date().getFullYear()}-${Math.floor(10000 + Math.random() * 90000)}`;
       setApplicationRefId(generatedId);
       setIsSubmitted(true);
     } catch (err: any) {
-      alert(err?.message || "Something went wrong while submitting. Please try again.");
+      setSubmitError(err?.message || "Something went wrong while submitting. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -578,6 +598,12 @@ export default function ApplyModal({ isOpen, onClose, job }: ApplyModalProps) {
                   <span className="careers-form-error">{formErrors.consent}</span>
                 )}
               </div>
+
+              {submitError && (
+                <div className="careers-form-error-banner" role="alert" style={{ marginBottom: "16px", padding: "10px 14px", background: "#fef2f2", border: "1px solid #fecaca", borderRadius: "8px", color: "#b91c1c", fontSize: "14px" }}>
+                  <span>{submitError}</span>
+                </div>
+              )}
 
               {/* Submit Button */}
               <div className="careers-form-submit-row">

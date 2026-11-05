@@ -1,55 +1,103 @@
 /**
- * Zentilos - Centralized CRM Lead & Public Enquiry Service
+ * Zentilos & Neuverve - Public Enquiry & Lead Management Service
  *
- * Connects all website forms to the CRM backend endpoint:
- * POST https://[YOUR_BACKEND_DOMAIN]/api/platform/enquiries/public
- * (Local dev: http://localhost:5000/api/platform/enquiries/public)
+ * Implements frontend integration for:
+ * - Request Demo (form_type: "request_demo")
+ * - Contact Us (form_type: "contact_us")
+ * - Demo Popup (form_type: "demo_popup")
+ * - Partner Application (form_type: "partner_application")
+ * - Customer Support (form_type: "customer_support")
+ * - File Upload (POST /upload)
  */
 
-export type NatureOfEnquiry =
-  | 'SCHEDULE_LIVE_DEMO'
-  | 'GENERAL_ENQUIRY'
-  | 'JOB_APPLICATION'
-  | 'PARTNER_APPLICATION'
-  | 'SUPPORT_REQUEST'
-  | 'CUSTOM_PRICE'
-  | 'IMPLEMENTATION_PARTNERSHIP'
-  | string;
+import { apiRequest } from "./apiClient";
 
-export interface CrmEnquiryPayload {
-  // Common identity fields
-  name?: string;
-  full_name?: string;
-  first_name?: string;
-  last_name?: string;
-  work_email?: string;
-  email?: string;
-  business_email?: string;
-  phone?: string;
-  company_name?: string;
-  team_size?: string;
+export type EnquiryFormType =
+  | "request_demo"
+  | "contact_us"
+  | "demo_popup"
+  | "partner_application"
+  | "customer_support";
 
-  // Intent & Categorization
+export interface RequestDemoPayload {
+  form_type?: "request_demo";
+  name: string;
+  work_email: string;
+  phone_number: string;
+  company_name: string;
+  team_size: string;
   primary_area_of_interest?: string;
-  nature_of_enquiry: NatureOfEnquiry;
-  notes?: string;
-  source_page: string;
-
-  // Extended payload structure (rendered in CRM Lead Dossier)
-  extra_data?: Record<string, unknown>;
-
-  // Allow custom/form-specific root fields as specified in API documentation
+  additional_notes?: string;
+  source_page?: string;
   [key: string]: unknown;
 }
 
-// Backward-compatible alias
-export type EnquiryPayload = CrmEnquiryPayload;
+export interface ContactUsPayload {
+  form_type?: "contact_us";
+  name: string;
+  work_email: string;
+  phone_number: string;
+  company_name: string;
+  team_size: string;
+  nature_of_inquiry?: string;
+  how_can_we_help_your_team: string;
+  source_page?: string;
+  [key: string]: unknown;
+}
+
+export interface DemoPopupPayload {
+  form_type?: "demo_popup";
+  name: string;
+  work_email: string;
+  phone_number: string;
+  company_name: string;
+  team_size: string;
+  primary_area_of_interest?: string;
+  source_page?: string;
+  [key: string]: unknown;
+}
+
+export interface PartnerApplicationPayload {
+  form_type?: "partner_application";
+  first_name: string;
+  last_name: string;
+  company_name: string;
+  business_email: string;
+  phone_number: string;
+  location: string;
+  interested_partner_track: string;
+  tell_us_about_your_client_base_and_operations: string;
+  source_page?: string;
+  [key: string]: unknown;
+}
+
+export interface CustomerSupportPayload {
+  form_type?: "customer_support";
+  name: string;
+  work_email: string;
+  company_name: string;
+  issue_category: string;
+  subject: string;
+  issue_description: string;
+  attachment?: string;
+  source_page?: string;
+  [key: string]: unknown;
+}
+
+export type AnyEnquiryPayload =
+  | RequestDemoPayload
+  | ContactUsPayload
+  | DemoPopupPayload
+  | PartnerApplicationPayload
+  | CustomerSupportPayload
+  | Record<string, unknown>;
 
 export interface EnquiryResponseData {
   id?: number | string;
   name?: string;
   email?: string;
-  work_email?: string;
+  phone?: string;
+  company_name?: string;
   status?: string;
   created_at?: string;
   [key: string]: unknown;
@@ -62,172 +110,93 @@ export interface EnquiryResponse {
 }
 
 /**
- * Resolves the target CRM / backend API endpoint for all website form submissions:
- * 1. VITE_CRM_API_URL or VITE_ENQUIRY_API_URL (exact full URL if provided)
- * 2. VITE_API_BASE_URL (appends /platform/enquiries if pointing to neuverve)
- * 3. Default: http://143.110.191.151:9001/neuverve/platform/enquiries
+ * Uploads support attachments (screenshots/docs) to POST /upload
+ * Supported file types: PDF, PNG, JPG, JPEG (max 5 MB).
+ * Field name: 'file'
+ * Returns the uploaded file URL (e.g. '/upload/file-1234567.png')
  */
-export function getEnquiryEndpoint(): string {
-  const customUrl = import.meta.env.VITE_CRM_API_URL || import.meta.env.VITE_ENQUIRY_API_URL;
-  if (customUrl && typeof customUrl === 'string' && customUrl.trim()) {
-    return customUrl.trim();
+export async function uploadSupportAttachment(file: File): Promise<string> {
+  const maxBytes = 5 * 1024 * 1024;
+  if (file.size > maxBytes) {
+    throw new Error(`File "${file.name}" exceeds the maximum allowed size of 5 MB.`);
   }
 
-  const rawUrl = import.meta.env.VITE_API_BASE_URL;
-  if (rawUrl && typeof rawUrl === 'string' && rawUrl.trim()) {
-    const trimmed = rawUrl.trim().replace(/\/+$/, '');
-    if (trimmed.endsWith('/platform/enquiries') || trimmed.endsWith('/public/enquiry') || trimmed.endsWith('/api/platform/enquiries/public')) {
-      return trimmed;
-    }
-    if (trimmed.endsWith('/neuverve')) {
-      return `${trimmed}/platform/enquiries`;
-    }
-    return `${trimmed}/neuverve/platform/enquiries`;
+  const validExtensions = /\.(pdf|png|jpe?g)$/i;
+  if (!validExtensions.test(file.name)) {
+    throw new Error("Invalid attachment format. Only PDF, PNG, JPG, and JPEG files are supported.");
   }
 
-  return 'http://143.110.191.151:9001/neuverve/platform/enquiries';
+  const formData = new FormData();
+  formData.append("file", file);
+
+  const res = await apiRequest<{ url: string }>("/upload", {
+    method: "POST",
+    body: formData,
+  });
+
+  if (res.url) return res.url;
+  if ((res.data as any)?.url) return (res.data as any).url;
+
+  throw new Error(res.message || "File upload failed. No file URL returned.");
 }
 
 /**
- * Safely persists demo requests & enquiries to browser storage so no lead is lost,
- * even when offline or during development without an active backend server.
+ * Submits any public enquiry to POST {API_BASE_URL}/public/enquiry
  */
-function saveEnquiryLocally(body: Record<string, unknown>) {
-  try {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const existingStr = window.localStorage.getItem('zentilos_enquiries') || '[]';
-      let existing: any[] = [];
-      try {
-        existing = JSON.parse(existingStr);
-        if (!Array.isArray(existing)) existing = [];
-      } catch {
-        existing = [];
-      }
-
-      const newEntry = {
-        id: `lead_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
-        submitted_at: new Date().toISOString(),
-        ...body,
-      };
-
-      existing.unshift(newEntry);
-      window.localStorage.setItem('zentilos_enquiries', JSON.stringify(existing.slice(0, 100)));
-      window.localStorage.setItem('zentilos_last_enquiry', JSON.stringify(newEntry));
-      console.info('[Zentilos CRM] Demo enquiry recorded successfully:', newEntry);
-    }
-  } catch (err) {
-    console.warn('[Zentilos CRM] Could not write enquiry to localStorage:', err);
-  }
-}
-
-/**
- * Submits enquiry payload into the CRM / Lead Management backend.
- * Features:
- * - Immediate local lead capture (zero data loss)
- * - Strict 3.5s fetch timeout (prevents browser hanging / freeze)
- * - Seamless fallback to success screen if backend is unreachable
- */
-export async function submitCrmEnquiry(payload: CrmEnquiryPayload): Promise<EnquiryResponse> {
-  const primaryEndpoint = getEnquiryEndpoint();
-
-  const currentSourcePage =
-    typeof window !== 'undefined'
-      ? window.location.pathname + window.location.hash
-      : '/';
-
-  // Normalize common identity fields for maximum CRM backend compatibility
-  const resolvedEmail = (payload.work_email || payload.business_email || payload.email || '').trim();
-  const resolvedName = (
-    payload.name ||
-    payload.full_name ||
-    [payload.first_name, payload.last_name].filter(Boolean).join(' ') ||
-    ''
+export async function submitPublicEnquiry(
+  payload: AnyEnquiryPayload
+): Promise<EnquiryResponse> {
+  // Normalize identity and email fields for seamless backend ingestion
+  const email = (
+    (payload as any).work_email ||
+    (payload as any).business_email ||
+    (payload as any).email ||
+    ""
   ).trim();
 
+  const phone = (
+    (payload as any).phone_number ||
+    (payload as any).phone ||
+    ""
+  ).trim();
+
+  const name = (
+    (payload as any).name ||
+    (payload as any).full_name ||
+    [ (payload as any).first_name, (payload as any).last_name ].filter(Boolean).join(" ") ||
+    ""
+  ).trim();
+
+  const currentSourcePage =
+    typeof window !== "undefined"
+      ? window.location.pathname + window.location.hash
+      : "/";
+
+  // Build the clean API body
   const body: Record<string, unknown> = {
     ...payload,
-    name: resolvedName,
-    full_name: resolvedName,
-    work_email: resolvedEmail,
-    email: resolvedEmail,
-    business_email: resolvedEmail,
-    company_name: (payload.company_name || 'Not Specified').toString().trim(),
-    team_size: payload.team_size || 'Not Specified',
-    primary_area_of_interest: payload.primary_area_of_interest || 'Platform Suite',
-    nature_of_enquiry: payload.nature_of_enquiry || 'SCHEDULE_LIVE_DEMO',
-    source_page: payload.source_page || currentSourcePage,
-    created_at: new Date().toISOString(),
+    name: name || undefined,
+    work_email: email || undefined,
+    email: email || undefined,
+    phone_number: phone || undefined,
+    phone: phone || undefined,
+    source_page: (payload as any).source_page || currentSourcePage,
   };
 
-  if (payload.first_name) body.first_name = payload.first_name.trim();
-  if (payload.last_name) body.last_name = payload.last_name.trim();
-  if (payload.phone) body.phone = payload.phone.trim();
-
-  if (payload.extra_data && typeof payload.extra_data === 'object') {
-    body.extra_data = payload.extra_data;
-  }
-
-  // 1. Immediately store lead in browser localStorage so it is never lost
-  saveEnquiryLocally(body);
-
-  // 2. If a valid external or live backend URL is configured, attempt transmission with timeout
-  const isDummyLan =
-    !primaryEndpoint ||
-    primaryEndpoint.includes('192.168.1.5') ||
-    primaryEndpoint.includes('localhost:5173');
-
-  if (!isDummyLan && primaryEndpoint.startsWith('http')) {
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 3500);
-
-      const response = await fetch(primaryEndpoint, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(body),
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-
-      let result: any = null;
-      try {
-        result = await response.json();
-      } catch {
-        // Response body might be empty or non-JSON
-      }
-
-      if (response.ok || response.status === 201 || response.status === 200) {
-        if (result && result.success === false) {
-          throw new Error(result.message || 'Submission failed');
-        }
-        return {
-          success: true,
-          message:
-            result?.message ||
-            'Thank you! Your submission has been received. Our team will connect with you shortly.',
-          data: result?.data || body,
-        };
-      }
-    } catch (err: any) {
-      console.warn('[Zentilos CRM] Live backend ping encountered error, falling back to local confirmation:', err);
-    }
-  }
-
-  // 3. Smooth feedback delay for optimal user experience (350ms)
-  await new Promise((resolve) => setTimeout(resolve, 350));
+  const response = await apiRequest<EnquiryResponseData>("/public/enquiry", {
+    method: "POST",
+    body: JSON.stringify(body),
+  });
 
   return {
-    success: true,
-    message: 'Thank you! Your demo request has been received. Our product specialist will call you shortly.',
-    data: {
-      id: Date.now(),
-      ...body,
-    },
+    success: response.success ?? true,
+    message:
+      response.message ||
+      "Thank you for reaching out! Our team will connect with you shortly.",
+    data: response.data,
   };
 }
 
-// Backward-compatible alias
-export const submitEnquiry = submitCrmEnquiry;
+// Backward-compatible aliases
+export const submitEnquiry = submitPublicEnquiry;
+export const submitCrmEnquiry = submitPublicEnquiry;

@@ -92,13 +92,16 @@ export function RequestDemoPage() {
 
     try {
       await submitEnquiry({
+        form_type: "request_demo",
         name: formData.name.trim(),
         work_email: formData.email.trim(),
         email: formData.email.trim(),
+        phone_number: formData.phone.trim(),
         phone: formData.phone.trim(),
         company_name: formData.company.trim(),
         team_size: formData.employees,
         primary_area_of_interest: formData.interest || "Payroll & HRMS",
+        additional_notes: formData.notes || "",
         nature_of_enquiry: "SCHEDULE_LIVE_DEMO",
         notes: formData.notes || "",
         source_page: "/request-demo",

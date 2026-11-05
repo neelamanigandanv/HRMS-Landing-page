@@ -157,9 +157,11 @@ export function RequestDemoModal({
           : "/pricing#demo-popup";
 
       await submitEnquiry({
+        form_type: "demo_popup",
         name: formData.name.trim(),
         work_email: formData.email.trim(),
         email: formData.email.trim(),
+        phone_number: formData.phone.trim(),
         phone: formData.phone.trim(),
         company_name: formData.company.trim(),
         team_size: formData.employees,
