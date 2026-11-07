@@ -1,0 +1,542 @@
+/* ==========================================================================
+   HOME PAGE TEAL THEME - ZENTILOS
+   Strictly scoped to .home-teal-theme so only the Home page uses this palette.
+   Other pages remain in their designated theme.
+   
+   Palette Tokens:
+   - Primary Teal:       #004B49 (Deep Pine Teal)
+   - Primary Hover:      #003836
+   - Primary Dark:       #00201F
+   - Accent Lime:        #C6F36B
+   - Accent Hover:       #B5E955
+   - Surface Alt:        #F6F8F8
+   - Border:             #E5EAEA
+   - Text Heading:       #0B1514
+   - Text Body:          #4B5857
+   - Text Muted:         #7C8886
+   ========================================================================== */
+
+.home-teal-theme {
+  --color-primary: #004B49;
+  --color-primary-hover: #003836;
+  --color-primary-dark: #00201F;
+  --color-accent: #C6F36B;
+  --color-accent-hover: #B5E955;
+  --color-background: #FFFFFF;
+  --color-surface-alt: #F6F8F8;
+  --color-border: #E5EAEA;
+  --color-text-heading: #0B1514;
+  --color-text-body: #4B5857;
+  --color-text-muted: #7C8886;
+
+  /* Legacy variable routing */
+  --indigo: #004B49;
+  --indigo-dark: #003836;
+  --indigo-light: #F6F8F8;
+  --orange: #004B49;
+  --orange-dark: #003836;
+  --ink: #0B1514;
+  --muted: #7C8886;
+  --line: #E5EAEA;
+  --soft: #F6F8F8;
+  --green: #004B49;
+}
+
+/* Global Section Headings on Home */
+.home-teal-theme .section-heading .eyebrow {
+  color: #004B49 !important;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+/* Buttons in Home scope */
+.home-teal-theme .btn:not(.btn-secondary):not(.corporate-hero-btn-secondary):not(.footer-cta-btn-secondary) {
+  background: #004B49;
+  border-color: #004B49;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.22);
+}
+
+.home-teal-theme .btn:not(.btn-secondary):not(.corporate-hero-btn-secondary):not(.footer-cta-btn-secondary):hover {
+  background: #003836;
+  border-color: #003836;
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.32);
+}
+
+.home-teal-theme .btn-secondary:hover {
+  background: #F6F8F8;
+  border-color: #004B49;
+  color: #004B49;
+}
+
+/* ==========================================================================
+   1. NAVBAR CTA & ACTIVE LINKS (HOME ONLY)
+   ========================================================================== */
+.home-teal-theme .nav-primary-cta {
+  background: #004B49 !important;
+  color: #ffffff !important;
+  border: 1px solid #004B49 !important;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.22) !important;
+}
+
+.home-teal-theme .nav-primary-cta:hover {
+  background: #003836 !important;
+  border-color: #003836 !important;
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.32) !important;
+}
+
+.home-teal-theme .currency-nav-badge {
+  background: rgba(0, 75, 73, 0.06);
+  border-color: rgba(0, 75, 73, 0.18);
+  color: #004B49;
+}
+
+.home-teal-theme .currency-nav-badge:hover {
+  background: rgba(0, 75, 73, 0.13);
+  border-color: #004B49;
+}
+
+.home-teal-theme .nav-link-item.active,
+.home-teal-theme .nav-link-item:hover {
+  color: #004B49;
+}
+
+.home-teal-theme .mega-item:hover .mega-icon {
+  background: #e8f5f3;
+  color: #004B49;
+}
+
+/* ==========================================================================
+   2. CORPORATE HERO SECTION
+   ========================================================================== */
+.home-teal-theme .corporate-hero-section {
+  border-bottom: 1px solid rgba(0, 75, 73, 0.08);
+}
+
+.home-teal-theme .corporate-hero-eyebrow {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .hero-highlight-plum {
+  color: #004B49 !important;
+  background: linear-gradient(135deg, #004B49 0%, #007A76 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.home-teal-theme .corporate-hero-btn-primary {
+  background: #004B49 !important;
+  border-color: #004B49 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.25) !important;
+}
+
+.home-teal-theme .corporate-hero-btn-primary:hover {
+  background: #003836 !important;
+  border-color: #003836 !important;
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.35) !important;
+}
+
+.home-teal-theme .corporate-btn-arrow-box {
+  color: #004B49 !important;
+  background: #ffffff !important;
+}
+
+.home-teal-theme .corporate-hero-btn-secondary {
+  border: 1.5px solid #E5EAEA !important;
+}
+
+.home-teal-theme .corporate-hero-btn-secondary:hover {
+  border-color: #004B49 !important;
+  color: #004B49 !important;
+  background: #F6F8F8 !important;
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.1) !important;
+}
+
+.home-teal-theme .corporate-hero-section .company-strip {
+  border-top: 1px solid rgba(0, 75, 73, 0.08) !important;
+}
+
+/* ==========================================================================
+   3. THE DIFFERENCE SHOWCASE SECTION
+   ========================================================================== */
+.home-teal-theme .diff-manual-tag {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .diff-manual-tag svg {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .diff-manual-item:hover {
+  border-color: rgba(0, 75, 73, 0.25) !important;
+  box-shadow: 0 8px 22px rgba(0, 75, 73, 0.08) !important;
+}
+
+.home-teal-theme .diff-manual-item:hover .diff-manual-point-icon {
+  background: #004B49 !important;
+  box-shadow: 0 8px 18px rgba(0, 75, 73, 0.25) !important;
+}
+
+.home-teal-theme .diff-card-automated:hover {
+  border-color: rgba(0, 75, 73, 0.45) !important;
+  box-shadow: 0 20px 48px rgba(0, 75, 73, 0.2) !important;
+}
+
+.home-teal-theme .diff-automated-tag {
+  background: #004B49 !important;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.4) !important;
+}
+
+.home-teal-theme .diff-floating-pill-card {
+  background: linear-gradient(135deg, #004B49 0%, #002826 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28) !important;
+  box-shadow: 0 10px 24px rgba(0, 32, 31, 0.38), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
+}
+
+.home-teal-theme .diff-floating-pill-card:hover {
+  border-color: rgba(198, 243, 107, 0.6) !important;
+  box-shadow: 0 14px 32px rgba(0, 32, 31, 0.5) !important;
+}
+
+.home-teal-theme .diff-pill-card-check {
+  background: #003836 !important;
+  border: 1.5px solid #C6F36B !important;
+  color: #C6F36B !important;
+}
+
+/* ==========================================================================
+   4. BUILT AROUND YOUR BUSINESS (SETUP SECTION)
+   ========================================================================== */
+.home-teal-theme .setup-section {
+  background: #F6F8F8;
+}
+
+.home-teal-theme .setup-card {
+  border-color: #E5EAEA;
+}
+
+.home-teal-theme .setup-card:hover {
+  border-color: #004B49 !important;
+  box-shadow: 0 18px 35px rgba(0, 75, 73, 0.12) !important;
+}
+
+.home-teal-theme .setup-icon {
+  background: #00201F !important;
+  color: #F6F8F8 !important;
+}
+
+.home-teal-theme .setup-card:hover .setup-icon {
+  background: #004B49 !important;
+}
+
+.home-teal-theme .setup-art i {
+  background: #E5EAEA !important;
+}
+
+/* ==========================================================================
+   5. ROLE SECTIONS (SOLUTIONS WALKTHROUGH)
+   ========================================================================== */
+.home-teal-theme .role-label {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .role-label > span {
+  background: #F6F8F8 !important;
+  color: #004B49 !important;
+}
+
+.home-teal-theme .role-copy li span {
+  background: #e8f5f3 !important;
+  color: #004B49 !important;
+}
+
+.home-teal-theme .role-copy .text-link {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .mockup {
+  border-color: #E5EAEA !important;
+  box-shadow: 0 25px 65px rgba(0, 32, 31, 0.08) !important;
+}
+
+.home-teal-theme .mockup:hover {
+  box-shadow: 0 34px 80px rgba(0, 32, 31, 0.14) !important;
+}
+
+.home-teal-theme .stat-icon.purple,
+.home-teal-theme .stat-icon.orange,
+.home-teal-theme .stat-icon.green {
+  color: #004B49 !important;
+  background: #e8f5f3 !important;
+}
+
+.home-teal-theme .mock-stats em {
+  color: #004B49 !important;
+}
+
+/* ==========================================================================
+   6. MODULES 3D CAROUSEL SECTION
+   ========================================================================== */
+.home-teal-theme .modules-section {
+  background: linear-gradient(180deg, #F6F8F8 0%, #FFFFFF 50%, #F6F8F8 100%) !important;
+}
+
+.home-teal-theme .modules-section:before {
+  background: radial-gradient(ellipse at center, rgba(0, 75, 73, 0.08) 0%, rgba(198, 243, 107, 0.04) 50%, transparent 75%) !important;
+}
+
+.home-teal-theme .carousel-ambient-glow {
+  background: radial-gradient(circle, rgba(0, 75, 73, 0.09) 0%, rgba(198, 243, 107, 0.04) 50%, transparent 70%) !important;
+}
+
+.home-teal-theme .card-3d-inner {
+  border-color: #E5EAEA;
+}
+
+.home-teal-theme .card-3d-item:hover .card-3d-inner {
+  border-color: #004B49 !important;
+  box-shadow: 0 18px 36px rgba(0, 75, 73, 0.12) !important;
+}
+
+.home-teal-theme .card-3d-item.is-center .card-3d-inner {
+  border-color: #004B49 !important;
+  box-shadow: 0 16px 36px rgba(0, 75, 73, 0.15), 0 0 0 1px rgba(0, 75, 73, 0.08) !important;
+}
+
+.home-teal-theme .card-3d-item.is-center:hover .card-3d-inner {
+  border-color: #003836 !important;
+  box-shadow: 0 22px 48px rgba(0, 75, 73, 0.22), 0 0 0 1.5px rgba(0, 75, 73, 0.14) !important;
+}
+
+.home-teal-theme .card-module-icon {
+  background: #F6F8F8 !important;
+  color: #004B49 !important;
+}
+
+.home-teal-theme .card-3d-item.is-center:hover .card-module-icon {
+  background: #004B49 !important;
+  color: #ffffff !important;
+}
+
+.home-teal-theme .card-explore-link {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .card-tag {
+  background: #F6F8F8 !important;
+  color: #0B1514 !important;
+}
+
+.home-teal-theme .card-tag svg {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .carousel-dot.active {
+  background: #004B49 !important;
+}
+
+.home-teal-theme .counter-current {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .carousel-nav-btn:hover {
+  background: #004B49 !important;
+  color: #ffffff !important;
+  border-color: #004B49 !important;
+}
+
+/* ==========================================================================
+   7. SIMPLE, TRANSPARENT PRICING ESTIMATOR
+   ========================================================================== */
+.home-teal-theme .pricing-section {
+  background: linear-gradient(180deg, #F6F8F8 0%, #FFFFFF 100%) !important;
+}
+
+.home-teal-theme .estimator {
+  border-color: #E5EAEA !important;
+  box-shadow: 0 20px 55px rgba(0, 32, 31, 0.08) !important;
+}
+
+.home-teal-theme .plan-options button.active {
+  border-color: #004B49 !important;
+  box-shadow: 0 0 0 2px rgba(0, 75, 73, 0.14) !important;
+}
+
+.home-teal-theme .plan-options button.active > span {
+  background: #004B49 !important;
+  border-color: #004B49 !important;
+  color: #ffffff !important;
+}
+
+.home-teal-theme .plan-options strong em {
+  background: #004B49 !important;
+  color: #ffffff !important;
+}
+
+.home-teal-theme .range {
+  background: linear-gradient(90deg, #004B49 0 10%, #E5EAEA 10%) !important;
+  accent-color: #004B49 !important;
+}
+
+.home-teal-theme .range::-webkit-slider-thumb {
+  border: 5px solid #004B49 !important;
+}
+
+.home-teal-theme .estimate-result {
+  background: #F6F8F8 !important;
+  border: 1px solid rgba(0, 75, 73, 0.18) !important;
+}
+
+.home-teal-theme .estimate-result > small {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .estimate-result strong {
+  color: #0B1514 !important;
+}
+
+.home-teal-theme .estimate-cta {
+  background: #004B49 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.22) !important;
+}
+
+.home-teal-theme .estimate-cta:hover {
+  background: #003836 !important;
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.32) !important;
+}
+
+/* ==========================================================================
+   8. PROOF & TESTIMONIALS SECTION
+   ========================================================================== */
+.home-teal-theme .stats-row strong {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .testimonials .quote-mark {
+  color: rgba(0, 75, 73, 0.18) !important;
+}
+
+.home-teal-theme .testimonials em {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .customer-avatar {
+  background: #e8f5f3 !important;
+  color: #004B49 !important;
+  border: 1px solid rgba(0, 75, 73, 0.15) !important;
+}
+
+/* ==========================================================================
+   9. FAQ SECTION
+   ========================================================================== */
+.home-teal-theme .faq-item.open {
+  border-color: #004B49 !important;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.06) !important;
+}
+
+.home-teal-theme .faq-item button i {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .faq-section .text-link {
+  color: #004B49 !important;
+}
+
+/* ==========================================================================
+   10. FOOTER CTA SECTION (HOME ONLY)
+   ========================================================================== */
+.home-teal-theme .footer-cta-btn-primary {
+  background: #004B49 !important;
+  border-color: #004B49 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.35) !important;
+}
+
+.home-teal-theme .footer-cta-btn-primary:hover {
+  background: #003836 !important;
+  border-color: #003836 !important;
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.45) !important;
+}
+
+.home-teal-theme .footer-cta-arrow-box {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .footer-cta-btn-secondary:hover {
+  border-color: #004B49 !important;
+  background: #F6F8F8 !important;
+  color: #004B49 !important;
+}
+
+/* ==========================================================================
+   11. MOBILE STICKY CTA
+   ========================================================================== */
+.home-teal-theme .mobile-sticky button {
+  background: #004B49 !important;
+  box-shadow: 0 6px 18px rgba(0, 75, 73, 0.35) !important;
+}
+
+.home-teal-theme .mobile-sticky button:hover {
+  background: #003836 !important;
+}
+
+/* ==========================================================================
+   12. DEMO FORM (INLINE & MODAL TRIGGER ON HOME)
+   ========================================================================== */
+.home-teal-theme .demo-form input:focus,
+.home-teal-theme .demo-form select:focus {
+  border-color: #004B49 !important;
+  box-shadow: 0 0 0 3px rgba(0, 75, 73, 0.15) !important;
+}
+
+.home-teal-theme .demo-form .btn {
+  background: #004B49 !important;
+  box-shadow: 0 6px 16px rgba(0, 75, 73, 0.25) !important;
+}
+
+.home-teal-theme .demo-form .btn:hover {
+  background: #003836 !important;
+}
+
+.home-teal-theme .demo-form .form-title span {
+  background: #e8f5f3 !important;
+  color: #004B49 !important;
+}
+
+.home-teal-theme .demo-success-icon {
+  background: #004B49 !important;
+  color: #ffffff !important;
+}
+
+.home-teal-theme .demo-success-reset {
+  color: #004B49 !important;
+  border-color: #004B49 !important;
+}
+
+/* Custom Select in Demo Form */
+.home-teal-theme .custom-select-trigger:focus,
+.home-teal-theme .custom-select-trigger.is-open {
+  border-color: #004B49 !important;
+  box-shadow: 0 0 0 3px rgba(0, 75, 73, 0.12) !important;
+}
+
+.home-teal-theme .custom-select-trigger.is-open .custom-select-chevron {
+  color: #004B49 !important;
+}
+
+.home-teal-theme .custom-select-option.is-selected {
+  background-color: #e8f5f3 !important;
+  color: #004B49 !important;
+}
+
+.home-teal-theme .custom-select-option:hover:not(.is-selected) {
+  background-color: #F6F8F8 !important;
+  color: #004B49 !important;
+}
+
+.home-teal-theme .custom-select-check {
+  color: #004B49 !important;
+}
+

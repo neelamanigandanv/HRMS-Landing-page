@@ -6,6 +6,7 @@ import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
 import RequestDemoModal from "../components/common/RequestDemoModal";
+import "./EmployeeManagementPage.css";
 
 interface FlowStep {
   stepNum: string;
@@ -46,377 +47,401 @@ function ProductIcon({ item }: { item: ProductCardItem }) {
   return <Icon name={item.iconName || "check"} size={20} />;
 }
 
-interface ArchitectureHubNode {
-  pos: "tl" | "tr" | "bc";
-  icon: React.ReactNode;
-  title: string;
-  subtitle: string;
+interface MetricBar {
+  label: string;
+  count: number | string;
+  widthPercent: number;
 }
 
-interface ArchitectureHubConfig {
+interface DonutSegment {
+  percent: number;
+  color: string;
+}
+
+interface LegendItem {
+  label: string;
+  color: string;
+}
+
+interface CategoryWidgetData {
   id: string;
-  title: string;
-  themeColor: string;
-  bgTint: string;
-  borderColor: string;
-  iconBg: string;
-  hubGradient: string;
-  centerIcon: React.ReactNode;
-  nodes: ArchitectureHubNode[];
+  mainCard: {
+    title: string;
+    subtitle: string;
+    status: string;
+    metricLabel: string;
+    metricValue: string;
+    metricSub: string;
+    bars: MetricBar[];
+    footerLabel: string;
+    buttonText: string;
+  };
+  sidePill: {
+    text: string;
+  };
+  donutCard: {
+    title: string;
+    segments: DonutSegment[];
+    legend: LegendItem[];
+  };
+  detailCard: {
+    title: string;
+    badgeText: string;
+    badgeClass: string;
+    row1Label: string;
+    row1Val: string;
+    row2Label: string;
+    row2Val: string;
+    netLabel: string;
+    netVal: string;
+  };
 }
 
-const architectureHubConfigs: Record<string, ArchitectureHubConfig> = {
+const CATEGORY_WIDGET_CONFIGS: Record<string, CategoryWidgetData> = {
   "core-hr": {
     id: "core-hr",
-    title: "Core HR",
-    themeColor: "#852952",
-    bgTint: "#fbf8fa",
-    borderColor: "#ede4ec",
-    iconBg: "#f7ebf3",
-    hubGradient: "linear-gradient(145deg, #7b1d47 0%, #8b2c58 100%)",
-    centerIcon: (
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="10" cy="7" r="3.2" />
-        <path d="M4.5 19a5.5 5.5 0 0 1 11 0" />
-        <path d="M15.5 13l2.2 2.2 4.3-4.3" strokeWidth="2.4" />
-      </svg>
-    ),
-    nodes: [
-      {
-        pos: "tl",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-            <polyline points="14 2 14 8 20 8" />
-            <line x1="16" y1="13" x2="8" y2="13" />
-            <line x1="16" y1="17" x2="8" y2="17" />
-          </svg>
-        ),
-        title: "Digital KYC",
-        subtitle: "Aadhaar, PAN & vault",
-      },
-      {
-        pos: "tr",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-          </svg>
-        ),
-        title: "Org Hierarchy",
-        subtitle: "Reporting tier & access",
-      },
-      {
-        pos: "bc",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" />
-            <line x1="8" y1="21" x2="16" y2="21" />
-            <line x1="12" y1="17" x2="12" y2="21" />
-          </svg>
-        ),
-        title: "Employee Directory",
-        subtitle: "Unified records & ledger",
-      },
-    ],
+    mainCard: {
+      title: "Workforce Directory • Live",
+      subtitle: "All entities • 248 staff",
+      status: "Active",
+      metricLabel: "Total Headcount",
+      metricValue: "248 Staff",
+      metricSub: "▲ 100% KYC verified",
+      bars: [
+        { label: "Engineering", count: 112, widthPercent: 88 },
+        { label: "Operations", count: 84, widthPercent: 66 },
+        { label: "Corporate", count: 52, widthPercent: 41 },
+      ],
+      footerLabel: "Sync: 2m ago",
+      buttonText: "Manage directory →",
+    },
+    sidePill: {
+      text: "Aadhaar & PAN Vault",
+    },
+    donutCard: {
+      title: "DOCUMENTS",
+      segments: [
+        { percent: 64, color: "#802B5B" },
+        { percent: 24, color: "#b34d85" },
+        { percent: 12, color: "#e29bc1" },
+      ],
+      legend: [
+        { label: "Verified", color: "#802B5B" },
+        { label: "In Review", color: "#b34d85" },
+        { label: "Archived", color: "#e29bc1" },
+      ],
+    },
+    detailCard: {
+      title: "Employee File",
+      badgeText: "KYC",
+      badgeClass: "po-ui-badge-tag--green",
+      row1Label: "Rahul Sharma",
+      row1Val: "Sr. Eng",
+      row2Label: "Department",
+      row2Val: "Platform",
+      netLabel: "Status",
+      netVal: "Joined • 100%",
+    },
   },
   "attendance": {
     id: "attendance",
-    title: "Time & Attendance",
-    themeColor: "#852952",
-    bgTint: "#fbf8fa",
-    borderColor: "#ede4ec",
-    iconBg: "#f7ebf3",
-    hubGradient: "linear-gradient(145deg, #7b1d47 0%, #8b2c58 100%)",
-    centerIcon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="9" />
-        <polyline points="12 6 12 12 16 14" />
-      </svg>
-    ),
-    nodes: [
-      {
-        pos: "tl",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
-            <path d="M12 12L2.5 7.5" />
-          </svg>
-        ),
-        title: "Biometric Sync",
-        subtitle: "Real-time terminal push",
-      },
-      {
-        pos: "tr",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-        ),
-        title: "GPS Geofencing",
-        subtitle: "Touchless mobile clock-in",
-      },
-      {
-        pos: "bc",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-            <line x1="16" y1="2" x2="16" y2="6" />
-            <line x1="8" y1="2" x2="8" y2="6" />
-            <line x1="3" y1="10" x2="21" y2="10" />
-          </svg>
-        ),
-        title: "Shifts & Leave",
-        subtitle: "Auto-balances & overtime",
-      },
-    ],
+    mainCard: {
+      title: "Daily Attendance • Real-Time",
+      subtitle: "3 shifts • 236 present",
+      status: "On Track",
+      metricLabel: "Present Today",
+      metricValue: "96.4% Present",
+      metricSub: "▲ 0 proxy alerts",
+      bars: [
+        { label: "Mobile GPS", count: 142, widthPercent: 86 },
+        { label: "Biometric", count: 68, widthPercent: 52 },
+        { label: "Field Punch", count: 26, widthPercent: 28 },
+      ],
+      footerLabel: "Roster: Shift A",
+      buttonText: "View shift roster →",
+    },
+    sidePill: {
+      text: "Shift Roster Linked",
+    },
+    donutCard: {
+      title: "PUNCH MODES",
+      segments: [
+        { percent: 58, color: "#802B5B" },
+        { percent: 28, color: "#b34d85" },
+        { percent: 14, color: "#e29bc1" },
+      ],
+      legend: [
+        { label: "GPS Mobile", color: "#802B5B" },
+        { label: "Biometric", color: "#b34d85" },
+        { label: "Web Portal", color: "#e29bc1" },
+      ],
+    },
+    detailCard: {
+      title: "Clock-In Event",
+      badgeText: "LIVE",
+      badgeClass: "po-ui-badge-tag--plum",
+      row1Label: "Priya Verma",
+      row1Val: "09:02 AM",
+      row2Label: "Verification",
+      row2Val: "Geofence OK",
+      netLabel: "Status",
+      netVal: "On-Time Punch",
+    },
   },
   "payroll": {
     id: "payroll",
-    title: "Payroll",
-    themeColor: "#852952",
-    bgTint: "#fbf8fa",
-    borderColor: "#ede4ec",
-    iconBg: "#f7ebf3",
-    hubGradient: "linear-gradient(145deg, #7b1d47 0%, #8b2c58 100%)",
-    centerIcon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="4" width="20" height="16" rx="2" />
-        <line x1="2" y1="10" x2="22" y2="10" />
-        <circle cx="12" cy="15" r="2" />
-      </svg>
-    ),
-    nodes: [
-      {
-        pos: "tl",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M20 12V8H6a2 2 0 0 1-2-2c0-1.1.9-2 2-2h12v4" />
-            <path d="M4 6v12a2 2 0 0 0 2 2h14v-4" />
-            <circle cx="18" cy="12" r="2" />
-          </svg>
-        ),
-        title: "1-Click Payroll",
-        subtitle: "Gross-to-net execution",
-      },
-      {
-        pos: "tr",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            <polyline points="9 12 11 14 15 10" />
-          </svg>
-        ),
-        title: "Statutory Filing",
-        subtitle: "PF, ESI, PT & TDS rules",
-      },
-      {
-        pos: "bc",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="12" y1="1" x2="12" y2="23" />
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-          </svg>
-        ),
-        title: "Direct Bank Payouts",
-        subtitle: "Batch transfer & payslips",
-      },
-    ],
+    mainCard: {
+      title: "Payroll run • October",
+      subtitle: "4 branches • 128 employees",
+      status: "Ready",
+      metricLabel: "Net payout",
+      metricValue: "₹ 38,42,610",
+      metricSub: "▲ 0 errors",
+      bars: [
+        { label: "Bengaluru", count: 48, widthPercent: 82 },
+        { label: "Mumbai", count: 36, widthPercent: 62 },
+        { label: "Delhi NCR", count: 29, widthPercent: 50 },
+      ],
+      footerLabel: "Sample data",
+      buttonText: "Disburse to bank →",
+    },
+    sidePill: {
+      text: "Bank file ready",
+    },
+    donutCard: {
+      title: "STATUTORY",
+      segments: [
+        { percent: 52, color: "#802B5B" },
+        { percent: 28, color: "#b34d85" },
+        { percent: 20, color: "#e29bc1" },
+      ],
+      legend: [
+        { label: "PF", color: "#802B5B" },
+        { label: "ESI", color: "#b34d85" },
+        { label: "PT • TDS", color: "#e29bc1" },
+      ],
+    },
+    detailCard: {
+      title: "Payslip",
+      badgeText: "PDF",
+      badgeClass: "po-ui-badge-tag--red",
+      row1Label: "Earnings",
+      row1Val: "₹ 46,000",
+      row2Label: "Deductions",
+      row2Val: "₹ 5,500",
+      netLabel: "Net pay",
+      netVal: "₹ 40,500",
+    },
   },
   "talent-assets": {
     id: "talent-assets",
-    title: "Talent & Operations",
-    themeColor: "#852952",
-    bgTint: "#fbf8fa",
-    borderColor: "#ede4ec",
-    iconBg: "#f7ebf3",
-    hubGradient: "linear-gradient(145deg, #7b1d47 0%, #8b2c58 100%)",
-    centerIcon: (
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="10" cy="7" r="3.2" />
-        <path d="M4.5 19a5.5 5.5 0 0 1 11 0" />
-        <path d="M15.5 13l2.2 2.2 4.3-4.3" strokeWidth="2.4" />
-      </svg>
-    ),
-    nodes: [
-      {
-        pos: "tl",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-            <circle cx="9" cy="7" r="4" />
-            <line x1="19" y1="8" x2="19" y2="14" />
-            <line x1="22" y1="11" x2="16" y2="11" />
-          </svg>
-        ),
-        title: "Recruitment",
-        subtitle: "Pipeline & e-offers",
-      },
-      {
-        pos: "tr",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="12" cy="12" r="9" />
-            <circle cx="12" cy="12" r="5" />
-            <circle cx="12" cy="12" r="2" fill="currentColor" />
-          </svg>
-        ),
-        title: "Performance",
-        subtitle: "OKRs & reviews",
-      },
-      {
-        pos: "bc",
-        icon: (
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="2" y="3" width="20" height="14" rx="2" />
-            <line x1="8" y1="21" x2="16" y2="21" />
-            <line x1="12" y1="17" x2="12" y2="21" />
-          </svg>
-        ),
-        title: "Assets",
-        subtitle: "Custody & exit clearance",
-      },
-    ],
+    mainCard: {
+      title: "Talent & Operations • Q4",
+      subtitle: "Hiring, OKRs & Devices",
+      status: "Synced",
+      metricLabel: "Hiring & Asset Health",
+      metricValue: "94.2% Health",
+      metricSub: "▲ 18 e-offers signed",
+      bars: [
+        { label: "Open Roles", count: 14, widthPercent: 45 },
+        { label: "OKRs Tracked", count: 42, widthPercent: 78 },
+        { label: "Laptops Active", count: 186, widthPercent: 92 },
+      ],
+      footerLabel: "Cycle: Active",
+      buttonText: "Review pipeline →",
+    },
+    sidePill: {
+      text: "100% Asset Clearance",
+    },
+    donutCard: {
+      title: "PERFORMANCE",
+      segments: [
+        { percent: 55, color: "#802B5B" },
+        { percent: 32, color: "#b34d85" },
+        { percent: 13, color: "#e29bc1" },
+      ],
+      legend: [
+        { label: "Exceeding", color: "#802B5B" },
+        { label: "On Target", color: "#b34d85" },
+        { label: "In Review", color: "#e29bc1" },
+      ],
+    },
+    detailCard: {
+      title: "Asset Custody",
+      badgeText: "HW",
+      badgeClass: "po-ui-badge-tag--plum",
+      row1Label: "MacBook Pro M3",
+      row1Val: "ZNT-LT-0482",
+      row2Label: "Custody",
+      row2Val: "Rahul S. • OK",
+      netLabel: "Coverage",
+      netVal: "Active Custody",
+    },
   },
 };
 
-function CategoryShowcaseVisualWidget({ categoryId }: { categoryId: string }) {
-  const config = architectureHubConfigs[categoryId] || architectureHubConfigs["core-hr"];
+const DONUT_CIRCUMFERENCE = 75.398;
+
+function DonutChart({ segments }: { segments: DonutSegment[] }) {
+  let accumulatedPercent = 0;
+  return (
+    <svg className="po-ui-donut" width="36" height="36" viewBox="0 0 34 34" aria-hidden="true">
+      {segments.map((seg, i) => {
+        const strokeLength = (seg.percent / 100) * DONUT_CIRCUMFERENCE;
+        const gapLength = DONUT_CIRCUMFERENCE - strokeLength;
+        const offset = -(accumulatedPercent / 100) * DONUT_CIRCUMFERENCE;
+        accumulatedPercent += seg.percent;
+        return (
+          <circle
+            key={i}
+            cx="17"
+            cy="17"
+            r="12"
+            fill="none"
+            stroke={seg.color}
+            strokeWidth="5"
+            strokeDasharray={`${strokeLength.toFixed(1)} ${gapLength.toFixed(1)}`}
+            strokeDashoffset={offset.toFixed(1)}
+            transform="rotate(-90 17 17)"
+          />
+        );
+      })}
+    </svg>
+  );
+}
+
+function CategoryShowcaseVisualWidget({
+  categoryId,
+  onAction,
+}: {
+  categoryId: string;
+  onAction?: () => void;
+}) {
+  const data = CATEGORY_WIDGET_CONFIGS[categoryId] || CATEGORY_WIDGET_CONFIGS["payroll"];
 
   return (
-    <div
-      className="po-talent-hub-card"
-      style={{
-        background: config.bgTint,
-        borderColor: config.borderColor,
-        // @ts-ignore
-        "--hub-stroke": config.themeColor,
-      }}
-      aria-label={`${config.title} interconnected architecture`}
-    >
-      {/* SVG Canvas for Background Dot Matrix, Concentric Rings & Connecting Moving Dotted Rays */}
-      <svg className="po-talent-hub-svg" viewBox="0 0 460 290" fill="none" preserveAspectRatio="xMidYMid meet">
-        <defs>
-          <pattern id={`poHubDots_${config.id}`} x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
-            <circle cx="9" cy="9" r="1.15" fill={config.themeColor} opacity="0.14" />
-          </pattern>
-          <filter id={`poHubGlow_${config.id}`} x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="2.2" result="blur" />
-            <feMerge>
-              <feMergeNode in="blur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-        </defs>
-        <rect width="100%" height="100%" fill={`url(#poHubDots_${config.id})`} />
+    <div className="po-ui-dashboard-container" aria-label={`${data.mainCard.title} preview dashboard`}>
+      {/* Left Main Card */}
+      <div className="po-ui-main-card">
+        <div>
+          {/* Header */}
+          <div className="po-ui-card-header">
+            <div>
+              <h4 className="po-ui-main-title">{data.mainCard.title}</h4>
+              <p className="po-ui-main-sub">{data.mainCard.subtitle}</p>
+            </div>
+            <span className="po-ui-status-badge">
+              <span
+                style={{
+                  display: "inline-block",
+                  width: 5,
+                  height: 5,
+                  borderRadius: "50%",
+                  background: "#059669",
+                  marginRight: 4,
+                  verticalAlign: "middle",
+                }}
+              />
+              {data.mainCard.status}
+            </span>
+          </div>
 
-        {/* Concentric rings centered at (230, 138) */}
-        <circle cx="230" cy="138" r="54" stroke={config.themeColor} strokeWidth="1" strokeOpacity="0.18" />
+          {/* Metric */}
+          <div className="po-ui-metric-section">
+            <p className="po-ui-metric-label">{data.mainCard.metricLabel}</p>
+            <div className="po-ui-metric-row">
+              <h3 className="po-ui-metric-value">{data.mainCard.metricValue}</h3>
+              <span className="po-ui-metric-sub">{data.mainCard.metricSub}</span>
+            </div>
+          </div>
 
-        {/* Big Circle 1: Solid Full Round Thin Line + Smooth CLOCKWISE Running Arc */}
-        <circle cx="230" cy="138" r="92" stroke={config.themeColor} strokeWidth="1.2" strokeOpacity="0.20" fill="none" />
-        <circle
-          cx="230"
-          cy="138"
-          r="92"
-          stroke={config.themeColor}
-          strokeWidth="1.6"
-          strokeOpacity="0.75"
-          strokeLinecap="round"
-          strokeDasharray="130 448"
-          fill="none"
-        >
-          <animateTransform
-            attributeName="transform"
-            type="rotate"
-            from="0 230 138"
-            to="360 230 138"
-            dur="6s"
-            repeatCount="indefinite"
-          />
-        </circle>
+          {/* Progress Bars */}
+          <div className="po-ui-bars-list">
+            {data.mainCard.bars.map((bar, i) => (
+              <div key={i} className="po-ui-bar-row">
+                <span className="po-ui-bar-label" title={bar.label}>
+                  {bar.label}
+                </span>
+                <div className="po-ui-bar-track">
+                  <div className="po-ui-bar-fill" style={{ width: `${bar.widthPercent}%` }} />
+                </div>
+                <span className="po-ui-bar-count">{bar.count}</span>
+              </div>
+            ))}
+          </div>
+        </div>
 
-        {/* Big Circle 2: Solid Full Round Thin Line + Smooth ANTICLOCKWISE Running Arc */}
-        <circle cx="230" cy="138" r="132" stroke={config.themeColor} strokeWidth="1.2" strokeOpacity="0.15" fill="none" />
-        <circle
-          cx="230"
-          cy="138"
-          r="132"
-          stroke={config.themeColor}
-          strokeWidth="1.6"
-          strokeOpacity="0.65"
-          strokeLinecap="round"
-          strokeDasharray="180 649"
-          fill="none"
-        >
-          <animateTransform
-            attributeName="transform"
-            type="rotate"
-            from="360 230 138"
-            to="0 230 138"
-            dur="9s"
-            repeatCount="indefinite"
-          />
-        </circle>
-
-        {/* Top vertical axis tick mark */}
-        <path d="M 230 138 L 230 45" stroke={config.themeColor} strokeOpacity="0.16" strokeWidth="2.2" strokeLinecap="round" strokeDasharray="0.1 9" />
-        <path d="M 230 138 L 230 45" stroke={config.themeColor} strokeWidth="2.8" strokeLinecap="round" strokeDasharray="0.1 9" strokeOpacity="0.9" className="po-talent-ray">
-          <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1s" repeatCount="indefinite" />
-        </path>
-
-        {/* 1. Ray to Top-Left Node (Only animated dotted ray, traveling round circle removed) */}
-        <path d="M 230 138 L 140 68" stroke={config.themeColor} strokeOpacity="0.16" strokeWidth="2.2" strokeLinecap="round" strokeDasharray="0.1 9" />
-        <path d="M 230 138 L 140 68" stroke={config.themeColor} strokeWidth="2.8" strokeLinecap="round" strokeDasharray="0.1 9" strokeOpacity="0.9" className="po-talent-ray po-talent-ray-tl">
-          <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1s" repeatCount="indefinite" />
-        </path>
-
-        {/* 2. Ray to Top-Right Node (Only animated dotted ray, traveling round circle removed) */}
-        <path d="M 230 138 L 320 68" stroke={config.themeColor} strokeOpacity="0.16" strokeWidth="2.2" strokeLinecap="round" strokeDasharray="0.1 9" />
-        <path d="M 230 138 L 320 68" stroke={config.themeColor} strokeWidth="2.8" strokeLinecap="round" strokeDasharray="0.1 9" strokeOpacity="0.9" className="po-talent-ray po-talent-ray-tr">
-          <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1s" repeatCount="indefinite" />
-        </path>
-
-        {/* 3. Ray to Bottom-Center Node (Only animated dotted ray, traveling round circle removed) */}
-        <path d="M 230 138 L 230 214" stroke={config.themeColor} strokeOpacity="0.16" strokeWidth="2.2" strokeLinecap="round" strokeDasharray="0.1 9" />
-        <path d="M 230 138 L 230 214" stroke={config.themeColor} strokeWidth="2.8" strokeLinecap="round" strokeDasharray="0.1 9" strokeOpacity="0.9" className="po-talent-ray po-talent-ray-bc">
-          <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1s" repeatCount="indefinite" />
-        </path>
-      </svg>
-
-      {/* Floating Center Hub Circle */}
-      <div className="po-talent-center-hub">
-        <div
-          className="po-talent-center-inner"
-          style={{
-            background: config.hubGradient,
-            boxShadow: `0 0 0 8px ${config.themeColor}14, 0 0 0 18px ${config.themeColor}0a, 0 10px 28px ${config.themeColor}40`,
-          }}
-        >
-          {config.centerIcon}
+        {/* Footer */}
+        <div className="po-ui-card-footer">
+          <span className="po-ui-footer-label">{data.mainCard.footerLabel}</span>
+          <button
+            type="button"
+            className="po-ui-btn-action"
+            onClick={onAction}
+            aria-label={`${data.mainCard.buttonText} for ${data.mainCard.title}`}
+          >
+            {data.mainCard.buttonText}
+          </button>
         </div>
       </div>
 
-      {/* 3 Connected Node Cards */}
-      {config.nodes.map((node) => (
-        <div key={node.pos} className={`po-talent-node-card po-talent-node-${node.pos}`}>
-          <div
-            className="po-talent-icon-box"
-            style={{
-              background: config.iconBg,
-              color: config.themeColor,
-            }}
+      {/* Right Column */}
+      <div className="po-ui-side-col">
+        {/* Top Pill */}
+        <div className="po-ui-side-pill">
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#15803d"
+            strokeWidth="2.8"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
           >
-            {node.icon}
-          </div>
-          <div className="po-talent-node-text">
-            <h4 className="po-talent-node-title">{node.title}</h4>
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          <span>{data.sidePill.text}</span>
+        </div>
+
+        {/* Middle Donut Card */}
+        <div className="po-ui-side-card">
+          <div className="po-ui-side-card-title">{data.donutCard.title}</div>
+          <div className="po-ui-donut-wrap">
+            <DonutChart segments={data.donutCard.segments} />
+            <div className="po-ui-legend-list">
+              {data.donutCard.legend.map((item, i) => (
+                <div key={i} className="po-ui-legend-item">
+                  <span className="po-ui-legend-dot" style={{ backgroundColor: item.color }} />
+                  <span>{item.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      ))}
+
+        {/* Bottom Detail Card */}
+        <div className="po-ui-side-card">
+          <div className="po-ui-detail-card-head">
+            <span className="po-ui-detail-title">{data.detailCard.title}</span>
+            <span className={`po-ui-badge-tag ${data.detailCard.badgeClass}`}>{data.detailCard.badgeText}</span>
+          </div>
+          <div className="po-ui-detail-row">
+            <span>{data.detailCard.row1Label}</span>
+            <span style={{ fontWeight: 600, color: "#111827" }}>{data.detailCard.row1Val}</span>
+          </div>
+          <div className="po-ui-detail-row">
+            <span>{data.detailCard.row2Label}</span>
+            <span style={{ fontWeight: 500 }}>{data.detailCard.row2Val}</span>
+          </div>
+          <div className="po-ui-detail-divider" />
+          <div className="po-ui-detail-net">
+            <span>{data.detailCard.netLabel}</span>
+            <span>{data.detailCard.netVal}</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -868,135 +893,51 @@ export function ProductOverview() {
           <div className="po-showcase-container">
             {categoryShowcases.map((cat, idx) => {
               const isReversed = idx % 2 === 1;
-              const hubConfig = architectureHubConfigs[cat.id] || architectureHubConfigs["core-hr"];
+              const themeColor = "#802B5B";
+              const iconBg = "#f7ebf3";
+              const borderColor = "#ede4ec";
               return (
                 <Fragment key={cat.id}>
-                  {/* High-Converting Mid-Page CTA Section Above Payroll - Exact Match to Screenshot */}
+                  {/* High-Converting Mid-Page CTA Section Above Payroll - Matches Employee Management Page Mid-CTA */}
                   {cat.id === "payroll" && (
-                    <div className="po-impact-cta-banner po-connected-banner" id="product-payroll-cta">
-                      {/* Atmospheric Glowing Orbs */}
-                      <div className="po-impact-ambient-orb po-impact-orb-warm" aria-hidden="true" />
-                      <div className="po-impact-ambient-orb po-impact-orb-plum" aria-hidden="true" />
+                    <div className="emp-center-cta-card po-mid-center-cta-card" style={{ marginBottom: "48px", marginTop: "16px" }}>
+                      {/* Primary Color Accent Block */}
+                      <div className="emp-cta-primary-bar" />
 
-                      <div className="po-impact-cta-grid">
-                        {/* Left Column: Eyebrow, Heading, Subtitle, Action Buttons, Trust Points */}
-                        <div className="po-impact-left">
-                          <div className="po-impact-eyebrow">
-                            <span className="po-impact-eyebrow-icon">✦</span>
-                            <span>BUILT FOR GROWING TEAMS</span>
-                          </div>
+                      {/* Overlapping Product Platform Dashboard Image */}
+                      <div className="emp-cta-img-wrap">
+                        <img
+                          src="/images/product-hero-dashboard.webp"
+                          alt="Zentilos all-in-one unified HRMS platform dashboard"
+                          className="emp-cta-img"
+                          loading="lazy"
+                        />
+                      </div>
 
-                          <h2 className="po-impact-heading">
-                            Your people deserve better than busywork.
-                          </h2>
-
-                          <p className="po-impact-subtext">
-                            Give your HR team hours back every week and create the employee experience your best people expect.
-                          </p>
-
-                          <div className="po-impact-btn-row">
-                            <button
-                              type="button"
-                              className="po-impact-btn-primary"
-                              onClick={() => setIsDemoModalOpen(true)}
-                              style={{ cursor: "pointer", fontFamily: "inherit", border: "none" }}
-                            >
-                              Book your free demo <span className="po-impact-btn-arrow">→</span>
-                            </button>
-
-                            <a href="#how-it-connects" className="po-impact-btn-secondary">
-                              <Icon name="sparkle" size={14} />
-                              <span>See how it connects</span>
-                            </a>
-                          </div>
-
-                          <div className="po-impact-trust-list">
-                            <span className="po-impact-trust-item">
-                              <span className="po-impact-check-circle">✓</span>
-                              <span>14-day free trial</span>
-                            </span>
-                            <span className="po-impact-trust-item">
-                              <span className="po-impact-check-circle">✓</span>
-                              <span>No credit card required</span>
-                            </span>
-                            <span className="po-impact-trust-item">
-                              <span className="po-impact-check-circle">✓</span>
-                              <span>Setup support included</span>
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Right Column: The White Customer Impact Card */}
-                        <div className="po-impact-card-wrapper">
-                          <div className="po-impact-card">
-                            {/* Card Header */}
-                            <div className="po-impact-card-header">
-                              <span className="po-impact-card-eyebrow">
-                                <span className="po-impact-card-sparkle">✦</span> CUSTOMER IMPACT
-                              </span>
-                              <span className="po-impact-card-badge">First 90 days</span>
-                            </div>
-
-                            {/* Stat Row */}
-                            <div className="po-impact-stat-row">
-                              <span className="po-impact-stat-big">10+</span>
-                              <div className="po-impact-stat-meta">
-                                <h3 className="po-impact-stat-title">hours saved</h3>
-                                <p className="po-impact-stat-sub">every week for your HR team</p>
-                              </div>
-                            </div>
-
-                            {/* 6 Impact Vertical Bars */}
-                            <div className="po-impact-bars-row">
-                              <div className="po-impact-bar-track">
-                                <div className="po-impact-bar-fill" style={{ height: "34%" }} />
-                              </div>
-                              <div className="po-impact-bar-track">
-                                <div className="po-impact-bar-fill" style={{ height: "46%" }} />
-                              </div>
-                              <div className="po-impact-bar-track">
-                                <div className="po-impact-bar-fill" style={{ height: "54%" }} />
-                              </div>
-                              <div className="po-impact-bar-track">
-                                <div className="po-impact-bar-fill" style={{ height: "68%" }} />
-                              </div>
-                              <div className="po-impact-bar-track">
-                                <div className="po-impact-bar-fill" style={{ height: "84%" }} />
-                              </div>
-                              <div className="po-impact-bar-track">
-                                <div className="po-impact-bar-fill" style={{ height: "100%" }} />
-                              </div>
-                            </div>
-
-                            {/* 2 Metric Boxes */}
-                            <div className="po-impact-metrics-row">
-                              <div className="po-impact-metric-box">
-                                <span className="po-impact-metric-val">42%</span>
-                                <span className="po-impact-metric-label">faster onboarding</span>
-                              </div>
-                              <div className="po-impact-metric-box">
-                                <span className="po-impact-metric-val">96%</span>
-                                <span className="po-impact-metric-label">less manual admin</span>
-                              </div>
-                            </div>
-
-                            {/* Dark Testimonial Box */}
-                            <div className="po-impact-testimonial-box">
-                              <div className="po-impact-quote-line">
-                                <span className="po-impact-quote-mark">“</span>
-                                <p className="po-impact-quote-text">
-                                  Peoplely gave our HR team time back to focus on what matters most—our people.
-                                </p>
-                              </div>
-                              <div className="po-impact-author-row">
-                                <div className="po-impact-author-avatar">SK</div>
-                                <div className="po-impact-author-meta">
-                                  <span className="po-impact-author-name">Sarah Kim</span>
-                                  <span className="po-impact-author-title">Head of People, Northstar</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                      {/* Right Content Area */}
+                      <div className="emp-cta-content">
+                        <span className="emp-cta-badge">✦ ALL-IN-ONE HRMS PLATFORM ✦</span>
+                        <h2 id="cta-banner-title" className="emp-cta-title">
+                          Ready to Unify Your Entire Workforce Operations?
+                        </h2>
+                        <p className="emp-cta-desc">
+                          Connect employee records, biometric &amp; mobile attendance, statutory payroll, leave approvals, and branch compliance in one platform. Eliminate tool fragmentation and run every team with complete clarity.
+                        </p>
+                        <div className="emp-cta-btn-group">
+                          <button
+                            type="button"
+                            className="emp-cta-btn"
+                            onClick={() => setIsDemoModalOpen(true)}
+                          >
+                            Book a Demo
+                          </button>
+                          <button
+                            type="button"
+                            className="emp-cta-btn-secondary"
+                            onClick={() => setIsDemoModalOpen(true)}
+                          >
+                            Talk to an HR Expert <Icon name="arrow" size={14} />
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -1007,15 +948,15 @@ export function ProductOverview() {
                     className={`po-category-showcase po-category-bento-card po-block-${cat.id}`}
                     style={{
                       // @ts-ignore
-                      "--cat-theme": hubConfig.themeColor,
+                      "--cat-theme": themeColor,
                       // @ts-ignore
-                      "--cat-icon-bg": hubConfig.iconBg,
+                      "--cat-icon-bg": iconBg,
                       // @ts-ignore
-                      "--cat-border": hubConfig.borderColor,
+                      "--cat-border": borderColor,
                     }}
                   >
-                    {/* Bento Top Header: Alternating right / left layout */}
-                    <div className={`po-category-bento-top ${isReversed ? "po-category-bento-top--reverse" : ""}`}>
+                    {/* Bento Top Header: Consistently Left Info + Top-Right Flow Visual (Matching Screenshot) */}
+                    <div className="po-category-bento-top">
                       <div className="po-category-header-info">
                         <span className="eyebrow po-category-eyebrow">
                           <span className="po-category-eyebrow-icon">
@@ -1040,7 +981,7 @@ export function ProductOverview() {
                       </div>
 
                       <div className="po-category-header-visual">
-                        <CategoryShowcaseVisualWidget categoryId={cat.id} />
+                        <CategoryShowcaseVisualWidget categoryId={cat.id} onAction={() => setIsDemoModalOpen(true)} />
                       </div>
                     </div>
 

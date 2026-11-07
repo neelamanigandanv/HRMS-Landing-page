@@ -31,6 +31,9 @@ export function Logo({ light = false, className = "", height }: LogoProps) {
         src={logoSrc}
         alt="zentilos"
         className="logo-img"
+        width={1024}
+        height={269}
+        decoding="async"
         style={height ? { height: `${height}px` } : undefined}
       />
     </Link>

@@ -1098,19 +1098,13 @@ export function AttendanceManagementPage() {
             BOTTOM CONVERSION CTA BANNER
             ========================================================================= */}
         <FooterCTA
-          variant="insight-card"
-          eyebrowBadgeText="ATTENDANCE INSIGHTS"
-          headlineLine1="Real-time attendance overview & insights"
+          variant="emp-banner"
+          eyebrowBadgeText="ATTENDANCE & ROSTER PLATFORM"
+          headlineLine1="Real-Time Attendance Overview &"
+          headlineLine2="Workforce Insights"
           subheadlineLine1="Stay on top of your workforce attendance with real-time dashboards, automated exception alerts, and clear shift analytics — giving managers complete visibility."
-          primaryButtonText="Get Started"
-          insightCardTitle="Overview"
-          insightCardStat="23 insights"
-          insightCardBadge="+4 new"
-          insightCategories={[
-            { label: "On-Time", value: "16", color: "#10b981" },
-            { label: "Late Arrivals", value: "5", color: "#f59e0b" },
-            { label: "Absent", value: "2", color: "#e0629b" },
-          ]}
+          primaryButtonText="Book a Live Demo"
+          secondaryButtonText="Explore Features"
         />
       </main>
 

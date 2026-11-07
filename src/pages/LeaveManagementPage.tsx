@@ -1097,13 +1097,13 @@ export function LeaveManagementPage() {
             BOTTOM CONVERSION CTA BANNER
             ========================================================================= */}
         <FooterCTA
-          variant="matrix-glow"
+          variant="emp-banner"
           eyebrowBadgeText="Automated Leave & Absence Platform"
-          headlineLine1="Ready to streamline leave &"
-          headlineLine2="absence management?"
-          subheadlineLine1="Get enterprise-grade leave tracking and automated multi-tier approvals"
-          subheadlineLine2="in just minutes — zero payroll delays and zero compliance disruptions."
-          primaryButtonText="Book a demo"
+          headlineLine1="Ready to Streamline Leave &"
+          headlineLine2="Absence Management?"
+          subheadlineLine1="Get enterprise-grade leave tracking and automated multi-tier approvals in just minutes — zero payroll delays and zero compliance disruptions."
+          primaryButtonText="Book a Live Demo"
+          secondaryButtonText="Explore Features"
         />
       </main>
 

@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 
 :root {
@@ -1439,7 +1437,7 @@ section {
   height: 40px;
   display: grid;
   place-items: center;
-  border-radius: 10px;
+  border-radius: 50%;
   margin-bottom: 17px;
   background: #302878;
   color: #f1f0ff;
@@ -2446,7 +2444,10 @@ section {
 
 .run-payroll {
   height: 36px;
-  width: 100%;
+  width: fit-content;
+  max-width: 220px;
+  padding: 0 20px;
+  margin: 0 auto;
   border: 0;
   border-radius: 7px;
   background: var(--indigo);
@@ -4874,6 +4875,7 @@ body {
 .setup-icon.i1,
 .setup-icon.i2,
 .setup-icon.i3 {
+  border-radius: 50%;
   background: #314f49;
   color: #f1f6f3;
   box-shadow: 0 7px 16px rgba(49, 79, 73, .16);
@@ -5339,6 +5341,10 @@ footer {
   background: linear-gradient(135deg, #754363, #55314c);
   box-shadow: 0 7px 16px rgba(85, 49, 76, .18);
   transition: transform .3s, box-shadow .3s;
+  width: fit-content;
+  max-width: 220px;
+  padding: 0 20px;
+  margin: 0 auto;
 }
 
 .run-payroll:hover {
@@ -6483,6 +6489,175 @@ footer {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   animation: modalFade .26s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+
+/* ─── LUXURY PLUM / WINE DEMO SUCCESS CONFIRMATION MODAL ─── */
+.demo-success-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(27, 18, 24, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: modalEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Top Luxury Plum/Wine Ribbon Bar */
+.demo-success-top-ribbon {
+  height: 12px;
+  width: 100%;
+  background: linear-gradient(90deg, #42112d 0%, #802B5B 50%, #9c326e 100%);
+}
+
+.demo-success-content {
+  padding: 30px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.demo-success-illustration-wrap {
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+}
+
+.demo-success-illustration {
+  display: block;
+  overflow: visible;
+}
+
+.demo-success-title {
+  font-size: clamp(22px, 2.4vw, 25px);
+  font-weight: 800;
+  color: #171336;
+  margin: 10px 0 8px;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.demo-success-desc {
+  font-size: 14px;
+  line-height: 1.62;
+  color: #494569;
+  margin: 0 0 8px;
+  max-width: 440px;
+}
+
+.demo-success-desc strong {
+  color: #171336;
+  font-weight: 700;
+}
+
+.demo-success-contact-note {
+  font-size: 13px;
+  line-height: 1.58;
+  color: #64748b;
+  margin: 0 0 16px;
+  max-width: 440px;
+}
+
+.demo-success-contact-note strong {
+  color: #171336;
+  font-weight: 600;
+}
+
+/* 3 Walkthrough Perks Box */
+.demo-success-perks-box {
+  background: #fdf8fb;
+  border: 1px solid rgba(128, 43, 91, 0.14);
+  border-radius: 14px;
+  padding: 13px 18px;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 0 16px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.demo-success-perk-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1f1b3d;
+}
+
+.demo-success-perk-item .perk-check-icon {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(128, 43, 91, 0.1);
+  color: #802B5B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.demo-success-closing {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+  margin: 0 0 20px;
+}
+
+/* Action Buttons */
+.demo-success-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  max-width: 440px;
+}
+
+.demo-success-btn-done {
+  flex: 1;
+  height: 44px;
+  background: linear-gradient(135deg, #802B5B 0%, #681f49 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(128, 43, 91, 0.28);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-success-btn-done:hover {
+  background: linear-gradient(135deg, #6c1f4b 0%, #54173a 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.38);
+}
+
+.demo-success-btn-reset {
+  height: 44px;
+  padding: 0 20px;
+  background: #ffffff;
+  color: #802B5B;
+  border: 1px solid rgba(128, 43, 91, 0.28);
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.demo-success-btn-reset:hover {
+  background: #fdf5f9;
+  border-color: #802B5B;
+  transform: translateY(-1px);
 }
 
 .demo-modal-card {
@@ -13492,6 +13667,310 @@ footer {
   color: #191735;
   margin: 0;
   line-height: 1.2;
+}
+
+/* ==========================================================================
+   Product Overview: Category Showcase SaaS UI Dashboard Mockups
+   Matching user uploaded reference image
+   ========================================================================== */
+.po-ui-dashboard-container {
+  width: 100%;
+  max-width: 530px;
+  background-color: #faf6f8;
+  background-image: radial-gradient(rgba(128, 43, 91, 0.14) 1px, transparent 1px);
+  background-size: 14px 14px;
+  border: 1px solid #ede4ec;
+  border-radius: 18px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 1.42fr 1fr;
+  gap: 10px;
+  box-shadow: 0 4px 20px rgba(28, 24, 64, 0.03);
+  box-sizing: border-box;
+}
+
+@media (max-width: 580px) {
+  .po-ui-dashboard-container {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
+
+.po-ui-main-card {
+  background: #ffffff;
+  border: 1px solid rgba(128, 43, 91, 0.08);
+  border-radius: 13px;
+  padding: 13px 14px 11px;
+  box-shadow: 0 3px 12px rgba(28, 24, 64, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.po-ui-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 7px;
+}
+
+.po-ui-main-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.po-ui-main-sub {
+  font-size: 10px;
+  color: #6b7280;
+  margin: 2px 0 0;
+}
+
+.po-ui-status-badge {
+  background: #ecfdf5;
+  color: #047857;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  border: 1px solid #d1fae5;
+  white-space: nowrap;
+}
+
+.po-ui-metric-section {
+  margin-bottom: 7px;
+}
+
+.po-ui-metric-label {
+  font-size: 10px;
+  color: #9ca3af;
+  margin: 0 0 1px;
+}
+
+.po-ui-metric-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.po-ui-metric-value {
+  font-size: 19px;
+  font-weight: 800;
+  color: #111827;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.po-ui-metric-sub {
+  font-size: 10px;
+  color: #059669;
+  font-weight: 600;
+  margin: 0;
+}
+
+.po-ui-bars-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 9px;
+}
+
+.po-ui-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.po-ui-bar-label {
+  font-size: 10px;
+  color: #4b5563;
+  width: 65px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.po-ui-bar-track {
+  flex: 1;
+  height: 5px;
+  background: #f3f4f6;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.po-ui-bar-fill {
+  background: #802B5B;
+  height: 100%;
+  border-radius: 3px;
+}
+
+.po-ui-bar-count {
+  font-size: 10px;
+  font-weight: 600;
+  color: #111827;
+  width: 20px;
+  text-align: right;
+}
+
+.po-ui-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.po-ui-footer-label {
+  font-size: 9.5px;
+  color: #9ca3af;
+}
+
+.po-ui-btn-action {
+  background: #802B5B;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.po-ui-btn-action:hover {
+  background: #6a214a;
+  transform: translateY(-1px);
+}
+
+/* Right Mini Cards Column */
+.po-ui-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.po-ui-side-pill {
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  border-radius: 9px;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #15803d;
+}
+
+.po-ui-side-card {
+  background: #ffffff;
+  border: 1px solid rgba(128, 43, 91, 0.08);
+  border-radius: 9px;
+  padding: 7px 10px;
+  box-shadow: 0 2px 8px rgba(28, 24, 64, 0.03);
+}
+
+.po-ui-side-card-title {
+  font-size: 8.5px;
+  font-weight: 700;
+  color: #9ca3af;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 5px;
+}
+
+.po-ui-donut-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.po-ui-donut {
+  flex-shrink: 0;
+}
+
+.po-ui-legend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.po-ui-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 8.5px;
+  color: #4b5563;
+}
+
+.po-ui-legend-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.po-ui-detail-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.po-ui-detail-title {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.po-ui-badge-tag {
+  font-size: 8px;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.po-ui-badge-tag--red {
+  background: #ffe4e6;
+  color: #e11d48;
+}
+
+.po-ui-badge-tag--green {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.po-ui-badge-tag--plum {
+  background: #f7ebf3;
+  color: #802b5b;
+}
+
+.po-ui-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9px;
+  color: #6b7280;
+  margin-bottom: 2px;
+}
+
+.po-ui-detail-divider {
+  border-top: 1px dashed #e5e7eb;
+  margin: 3px 0;
+}
+
+.po-ui-detail-net {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  color: #111827;
 }
 
 .po-talent-node-sub {

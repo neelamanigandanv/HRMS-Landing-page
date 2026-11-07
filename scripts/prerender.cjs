@@ -174,9 +174,18 @@ const STATIC_NOINDEX_ROUTES = [
 // 4. Lightweight static HTTP server serving the pristine SPA shell in memory
 function startStaticServer(port = 0) {
   let rawTemplate = fs.readFileSync(path.join(DIST_DIR, 'index.html'), 'utf8');
-  const SPA_TEMPLATE = rawTemplate
-    .replace(/\s+data-prerender-ready="true"/g, '')
-    .replace(/(<div id="root">)[\s\S]*?(<\/div>)/, '$1$2');
+  let SPA_TEMPLATE = rawTemplate.replace(/\s+data-prerender-ready="true"/g, '');
+  const rootIndex = SPA_TEMPLATE.indexOf('<div id="root">');
+  if (rootIndex !== -1) {
+    const afterRoot = rootIndex + '<div id="root">'.length;
+    const scriptIndex = SPA_TEMPLATE.indexOf('<script', afterRoot);
+    if (scriptIndex !== -1) {
+      const lastDiv = SPA_TEMPLATE.lastIndexOf('</div>', scriptIndex);
+      if (lastDiv >= afterRoot) {
+        SPA_TEMPLATE = SPA_TEMPLATE.slice(0, afterRoot) + SPA_TEMPLATE.slice(lastDiv);
+      }
+    }
+  }
 
   const mimeTypes = {
     '.html': 'text/html; charset=utf-8',

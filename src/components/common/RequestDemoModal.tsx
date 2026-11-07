@@ -51,13 +51,50 @@ export function RequestDemoModal({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
+  // Full clean reset when modal opens
+  useEffect(() => {
+    if (isOpen) {
+      setIsSubmitted(false);
+      setIsSubmitting(false);
+      setSubmitError(null);
+      setErrors({});
+      setSubmitAttempted(false);
+      setFormData({
+        name: "",
+        email: defaultEmail || "",
+        phone: "",
+        company: "",
+        employees: "",
+        interest: defaultInterest || "",
+      });
+    }
+  }, [isOpen, defaultEmail, defaultInterest]);
+
+  // Clean close handler that wipes stale input state
+  const handleClose = () => {
+    setIsSubmitted(false);
+    setIsSubmitting(false);
+    setSubmitError(null);
+    setErrors({});
+    setSubmitAttempted(false);
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      employees: "",
+      interest: "",
+    });
+    onClose();
+  };
+
   // Close on Escape & Lock body scroll
   useEffect(() => {
     if (!isOpen) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        onClose();
+        handleClose();
       }
     };
 
@@ -70,24 +107,6 @@ export function RequestDemoModal({
       document.body.style.overflow = originalOverflow;
     };
   }, [isOpen, onClose]);
-
-  // Reset when re-opened
-  useEffect(() => {
-    if (isOpen) {
-      setIsSubmitted(false);
-      setIsSubmitting(false);
-      setSubmitError(null);
-      setErrors({});
-      setSubmitAttempted(false);
-      if (defaultEmail || defaultInterest) {
-        setFormData((prev) => ({
-          ...prev,
-          email: defaultEmail || prev.email,
-          interest: defaultInterest || prev.interest,
-        }));
-      }
-    }
-  }, [isOpen, defaultEmail, defaultInterest]);
 
   const validateField = (field: string, value: string): string => {
     switch (field) {
@@ -172,6 +191,17 @@ export function RequestDemoModal({
       });
       setIsSubmitting(false);
       setIsSubmitted(true);
+      setSubmitAttempted(false);
+      setErrors({});
+      // Clear data immediately after successful submit so subsequent modal opens start completely fresh
+      setFormData({
+        name: "",
+        email: defaultEmail || "",
+        phone: "",
+        company: "",
+        employees: "",
+        interest: defaultInterest || "",
+      });
     } catch (err: any) {
       setIsSubmitting(false);
       setSubmitError(
@@ -202,7 +232,7 @@ export function RequestDemoModal({
       className="demo-modal"
       onClick={(e) => {
         if (e.target === e.currentTarget) {
-          onClose();
+          handleClose();
         }
       }}
       role="dialog"
@@ -214,76 +244,163 @@ export function RequestDemoModal({
         <button
           type="button"
           className="modal-close"
-          onClick={onClose}
+          onClick={handleClose}
           aria-label="Close demo form modal"
         >
           <Icon name="x" size={16} />
         </button>
 
         {isSubmitted ? (
-          <div className="demo-form compact">
-            <div className="demo-success-panel" style={{ padding: "36px 20px" }}>
-              <div className="demo-success-icon" style={{ width: "60px", height: "60px" }}>
-                <Icon name="check" size={28} />
+          <div className="demo-success-card">
+            {/* Top Luxury Plum/Wine Ribbon Bar */}
+            <div className="demo-success-top-ribbon" />
+
+            <div className="demo-success-content">
+              {/* Confetti & Clipboard Illustration matching reference image */}
+              <div className="demo-success-illustration-wrap">
+                <svg
+                  width="130"
+                  height="115"
+                  viewBox="0 0 140 125"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="demo-success-illustration"
+                  aria-hidden="true"
+                >
+                  {/* Confetti circles */}
+                  <circle cx="24" cy="38" r="3" fill="#e879a9" opacity="0.85" />
+                  <circle cx="116" cy="32" r="3.5" stroke="#802B5B" strokeWidth="1.5" fill="none" opacity="0.7" />
+                  <circle cx="92" cy="16" r="2.5" fill="#0d9488" opacity="0.75" />
+                  <circle cx="48" cy="18" r="2" fill="#802B5B" opacity="0.6" />
+                  <circle cx="28" cy="76" r="2.5" fill="#0d9488" opacity="0.7" />
+                  <circle cx="122" cy="68" r="3" fill="#e879a9" opacity="0.85" />
+
+                  {/* Confetti rectangular ribbons */}
+                  <rect x="24" y="22" width="7" height="3" rx="1.5" transform="rotate(-30 24 22)" fill="#0d9488" opacity="0.8" />
+                  <rect x="110" y="20" width="8" height="3.5" rx="1.5" transform="rotate(25 110 20)" fill="#802B5B" opacity="0.7" />
+                  <rect x="18" y="52" width="6" height="3" rx="1.5" transform="rotate(40 18 52)" fill="#e879a9" opacity="0.85" />
+                  <rect x="118" y="48" width="7" height="3" rx="1.5" transform="rotate(-35 118 48)" fill="#0d9488" opacity="0.75" />
+                  <rect x="36" y="92" width="7" height="3" rx="1.5" transform="rotate(15 36 92)" fill="#802B5B" opacity="0.6" />
+
+                  {/* Starbursts */}
+                  <path d="M70 6V12M67 9H73" stroke="#e879a9" strokeWidth="1.5" strokeLinecap="round" opacity="0.85" />
+                  <path d="M104 84V88M102 86H106" stroke="#802B5B" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
+
+                  {/* Clipboard soft drop shadow */}
+                  <rect x="38" y="30" width="60" height="74" rx="8" fill="rgba(128, 43, 91, 0.08)" />
+
+                  {/* Clipboard Base with Luxury Plum Outline */}
+                  <rect x="36" y="26" width="60" height="74" rx="7" fill="#ffffff" stroke="#5c183e" strokeWidth="3" />
+
+                  {/* Top Clip Clamp */}
+                  <rect x="52" y="20" width="28" height="12" rx="4" fill="#802B5B" stroke="#5c183e" strokeWidth="2.5" />
+                  <circle cx="66" cy="25" r="2.5" fill="#ffffff" />
+
+                  {/* Checkmark inside clipboard */}
+                  <path
+                    d="M48 62L58 72L82 48"
+                    stroke="#0d9488"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+
+                  {/* Shield with Checkmark (Bottom-Right Overlap) */}
+                  <g filter="url(#shieldShadow)">
+                    <path
+                      d="M90 62C90 62 99 59 108 62C108 77 99 87 90 92C81 87 72 77 72 62C81 59 90 62 90 62Z"
+                      fill="url(#shieldGrad)"
+                      stroke="#ffffff"
+                      strokeWidth="2.5"
+                    />
+                    <path
+                      d="M84 76L88 80L96 71"
+                      stroke="#ffffff"
+                      strokeWidth="2.8"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </g>
+
+                  {/* Gradients & Filters */}
+                  <defs>
+                    <linearGradient id="shieldGrad" x1="72" y1="62" x2="108" y2="92" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#0d9488" />
+                      <stop offset="100%" stopColor="#065f46" />
+                    </linearGradient>
+                    <filter id="shieldShadow" x="68" y="60" width="44" height="40" filterUnits="userSpaceOnUse">
+                      <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#065f46" floodOpacity="0.3" />
+                    </filter>
+                  </defs>
+                </svg>
               </div>
-              <h3 style={{ fontSize: "22px", marginTop: "6px" }}>Demo Request Received!</h3>
-              <p style={{ fontSize: "14px", lineHeight: "1.65" }}>
-                Thank you, <strong>{formData.name}</strong>. Our product specialist will call you at{" "}
-                <strong>{formData.phone}</strong> (or email at <strong>{formData.email}</strong>) within 2 business hours for your personalised walkthrough.
+
+              {/* Title from Reference Image */}
+              <h3 className="demo-success-title">Thank You for Your Interest!</h3>
+
+              {/* Lead Paragraph */}
+              <p className="demo-success-desc">
+                We&apos;ve received your request for <strong>{formData.company ? `${formData.company} (Zentilos HRMS)` : "Zentilos HRMS"}</strong>.
+                Our team is already on it and will get back to you within <strong>2 business hours</strong> to schedule your demo.
               </p>
 
-              <div
-                style={{
-                  background: "#f8f8fb",
-                  border: "1px solid #e9e8ef",
-                  borderRadius: "12px",
-                  padding: "14px 18px",
-                  width: "100%",
-                  marginTop: "8px",
-                  textAlign: "left",
-                  fontSize: "12px",
-                  color: "#475569",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "6px",
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: "7px", fontWeight: "600", color: "#191735" }}>
-                  <Icon name="check" size={14} /> 30-minute tailored walkthrough
+              {/* Contact Specifics */}
+              <p className="demo-success-contact-note">
+                Our product specialist will call <strong>{formData.name}</strong> at{" "}
+                <strong>{formData.phone}</strong> (or email at <strong>{formData.email}</strong>) for your personalised walkthrough.
+              </p>
+
+              {/* 3 Walkthrough Perks Box */}
+              <div className="demo-success-perks-box">
+                <div className="demo-success-perk-item">
+                  <span className="perk-check-icon">
+                    <Icon name="check" size={13} />
+                  </span>
+                  <span>30-minute tailored walkthrough</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "7px", fontWeight: "600", color: "#191735" }}>
-                  <Icon name="check" size={14} /> Multi-branch & compliance walkthrough
+                <div className="demo-success-perk-item">
+                  <span className="perk-check-icon">
+                    <Icon name="check" size={13} />
+                  </span>
+                  <span>Multi-branch &amp; compliance walkthrough</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: "7px", fontWeight: "600", color: "#191735" }}>
-                  <Icon name="check" size={14} /> No credit card required • 100% free
+                <div className="demo-success-perk-item">
+                  <span className="perk-check-icon">
+                    <Icon name="check" size={13} />
+                  </span>
+                  <span>No credit card required • 100% free</span>
                 </div>
               </div>
 
-              <div style={{ display: "flex", gap: "10px", marginTop: "14px", width: "100%" }}>
+              {/* Friendly Closing Note */}
+              <p className="demo-success-closing">
+                We look forward to connecting with you soon.
+              </p>
+
+              {/* Actions: Done & Book Another */}
+              <div className="demo-success-actions">
                 <button
                   type="button"
-                  className="btn form-submit"
-                  onClick={onClose}
-                  style={{ flex: 1, margin: 0, height: "44px" }}
+                  className="demo-success-btn-done"
+                  onClick={handleClose}
                 >
                   Done
                 </button>
                 <button
                   type="button"
-                  className="demo-success-reset"
+                  className="demo-success-btn-reset"
                   onClick={handleReset}
-                  style={{ margin: 0, padding: "0 18px", height: "44px" }}
                 >
                   Book another
                 </button>
               </div>
             </div>
-          </div>
-        ) : (
+          </div>) : (
           <form
             className={`demo-form ${isSubmitting ? "form-submitting" : ""}`}
             onSubmit={handleSubmit}
             noValidate
+            autoComplete="off"
           >
             <div className="form-title" style={{ marginBottom: "18px" }}>
               <span>
@@ -306,6 +423,7 @@ export function RequestDemoModal({
                   id="modal-name"
                   name="name"
                   type="text"
+                  autoComplete="off"
                   value={formData.name}
                   onChange={(e) => handleChange("name", e.target.value)}
                   onBlur={() => handleBlur("name")}
@@ -331,6 +449,7 @@ export function RequestDemoModal({
                   id="modal-email"
                   name="email"
                   type="email"
+                  autoComplete="off"
                   value={formData.email}
                   onChange={(e) => handleChange("email", e.target.value)}
                   onBlur={() => handleBlur("email")}
@@ -354,6 +473,7 @@ export function RequestDemoModal({
                 <PhoneInput
                   id="modal-phone"
                   name="phone"
+                  autoComplete="off"
                   value={formData.phone}
                   onChange={(fullNumber) => handleChange("phone", fullNumber)}
                   onBlur={() => handleBlur("phone")}
@@ -377,6 +497,7 @@ export function RequestDemoModal({
                   id="modal-company"
                   name="company"
                   type="text"
+                  autoComplete="off"
                   value={formData.company}
                   onChange={(e) => handleChange("company", e.target.value)}
                   onBlur={() => handleBlur("company")}

@@ -5,6 +5,7 @@ import SEO from "../components/layout/SEO";
 import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
+import "./AboutPage.css";
 
 function CountUpNumber({
   target,
@@ -71,6 +72,7 @@ interface MilestoneItem {
   desc: string;
   icon: IconName;
   badge: string;
+  image?: string;
   stats: { label: string; val: string }[];
 }
 
@@ -83,6 +85,7 @@ const milestonesData: MilestoneItem[] = [
     desc: "Zentilos was founded in Bengaluru after experiencing the everyday friction of running multi-branch frontline teams on paper logs and broken spreadsheets. We built our v1 foundation solely to eliminate manual attendance chaos.",
     icon: "zap",
     badge: "Founded 2017",
+    image: "/images/work-process-team.webp",
     stats: [
       { label: "Founded City", val: "Bengaluru" },
       { label: "Admin Chasing Saved", val: "-85%" },
@@ -96,6 +99,7 @@ const milestonesData: MilestoneItem[] = [
     desc: "Rolled out our private beta with 25 fast-moving retail chains and tech teams. We perfected geofenced mobile verification, automated shift-swap workflows, and instant leave approvals on shop floors.",
     icon: "users",
     badge: "25+ Pilot Teams",
+    image: "/images/team-careers-card.webp",
     stats: [
       { label: "Pilot Enterprises", val: "25+" },
       { label: "GPS Punch Accuracy", val: "99.8%" },
@@ -109,6 +113,7 @@ const milestonesData: MilestoneItem[] = [
     desc: "Engineered a native payroll engine fully compliant with statutory regulations (PF, ESI, TDS, PT, and Bonus Act). Monthly payroll processing dropped from 4 stressful days to 3 error-free minutes with automated salary slips.",
     icon: "finance",
     badge: "100% Compliant",
+    image: "/images/sb-manager-workspace.webp",
     stats: [
       { label: "Payroll Run Time", val: "3 Min" },
       { label: "Statutory Accuracy", val: "100%" },
@@ -122,6 +127,7 @@ const milestonesData: MilestoneItem[] = [
     desc: "Unveiled centralized multi-location governance. Regional factories, warehouses, and branch showrooms enforce localized state compliance while executive headquarters maintains unified real-time workforce visibility.",
     icon: "building",
     badge: "12+ Regions",
+    image: "/images/about-team-hero.webp",
     stats: [
       { label: "Active Regions", val: "12+ States" },
       { label: "Audit Readiness", val: "100%" },
@@ -131,13 +137,14 @@ const milestonesData: MilestoneItem[] = [
     id: "today",
     year: "Today",
     tag: "TRUSTED AT SCALE",
-    title: "Powering 45,000+ Workers Every Single Day Across India",
-    desc: "Now trusted across 500+ active enterprise clients and over 45,000 daily workforce members. We continue to engineer software that removes administrative bureaucracy, guarantees zero compliance penalties, and puts human potential first.",
+    title: "We know all the hiring requirements of clients – Including business type, job roles, qualifications & skills.",
+    desc: "Zentilos unifies every layer of workforce operations. From frontline hiring pipelines and automated document verification to multi-branch attendance and 100% compliant statutory payroll, we empower modern enterprises to scale with zero administrative friction.",
     icon: "sparkle",
-    badge: "45,000+ Staff",
+    badge: "40,000+ Staff",
+    image: "/images/about-milestone-reference.webp",
     stats: [
-      { label: "Daily Active Workers", val: "45k+" },
-      { label: "Client Retention", val: "99.2%" },
+      { label: "Jobs Placement", val: "40k" },
+      { label: "Growth This Year", val: "6.1%" },
     ],
   },
 ];
@@ -196,60 +203,6 @@ export function AboutPage() {
                 Our Story &amp; Journey <Icon name="arrow" size={15} />
               </Button>
             </div>
-
-            {/* Authentic Hero Showcase Media Stage with Floating Verified Badges */}
-            <div className="about-hero-media-wrapper">
-              <div className="about-hero-media-card">
-                <img
-                  src="/images/about-team-hero.webp"
-                  alt="Zentilos leadership and product engineering team collaborating"
-                  className="about-hero-media-img"
-                  loading="eager"
-                />
-                <div className="about-hero-media-overlay" />
-
-                {/* Floating Metric Badges over the team photo */}
-                <div className="about-floating-badge badge-top-left">
-                  <span className="badge-icon-bubble">
-                    <Icon name="building" size={14} />
-                  </span>
-                  <div className="badge-text-group">
-                    <strong>Bengaluru, India</strong>
-                    <span>Founded &amp; Engineered</span>
-                  </div>
-                </div>
-
-                <div className="about-floating-badge badge-top-right">
-                  <span className="badge-icon-bubble">
-                    <Icon name="users" size={14} />
-                  </span>
-                  <div className="badge-text-group">
-                    <strong>500+ Organizations</strong>
-                    <span>Multi-Branch Workforces</span>
-                  </div>
-                </div>
-
-                <div className="about-floating-badge badge-bottom-left">
-                  <span className="badge-icon-bubble">
-                    <Icon name="check" size={14} />
-                  </span>
-                  <div className="badge-text-group">
-                    <strong>45,000+ Daily Punches</strong>
-                    <span>Verified Real-Time Shifts</span>
-                  </div>
-                </div>
-
-                <div className="about-floating-badge badge-bottom-right">
-                  <span className="badge-icon-bubble">
-                    <Icon name="shield" size={14} />
-                  </span>
-                  <div className="badge-text-group">
-                    <strong>100% Statutory Compliant</strong>
-                    <span>PF, ESI, TDS, State PT</span>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -273,6 +226,7 @@ export function AboutPage() {
                   alt="Kavya Sundaram, Founder & CEO"
                   className="story-founder-img"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="story-founder-details">
@@ -340,10 +294,11 @@ export function AboutPage() {
             {/* Left Column: Portrait Team Photo */}
             <div className="milestone-img-wrapper">
               <img
-                src="/images/about-milestone-journey.webp"
+                src={activeMilestone.image || "/images/about-milestone-reference.webp"}
                 alt="Zentilos founders and leadership team collaborating on workforce growth"
                 className="milestone-journey-img"
                 loading="lazy"
+                decoding="async"
               />
             </div>
 
@@ -354,7 +309,7 @@ export function AboutPage() {
               <p className="milestone-paragraph">{activeMilestone.desc}</p>
 
               <Link to="/request-demo" className="milestone-cta-btn">
-                <span>Discover Zentilos</span>
+                <span>About Us</span>
                 <span className="milestone-btn-arrow" aria-hidden="true">↘</span>
               </Link>
 
@@ -368,7 +323,7 @@ export function AboutPage() {
                       height="42"
                       viewBox="0 0 48 48"
                       fill="none"
-                      stroke="#802B5B"
+                      stroke="#18181b"
                       strokeWidth="2.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -382,7 +337,7 @@ export function AboutPage() {
                       <path d="M31 18L26 20" />
                       <path d="M31 18L36 15" />
                       <line x1="36" y1="9" x2="36" y2="26" />
-                      <path d="M36 9L43 12L36 15Z" fill="rgba(128, 43, 91, 0.18)" />
+                      <path d="M36 9L43 12L36 15Z" fill="none" />
                     </svg>
                   </div>
                   <span className="milestone-card-num">{activeMilestone.stats[0]?.val}</span>
@@ -397,7 +352,7 @@ export function AboutPage() {
                       height="42"
                       viewBox="0 0 48 48"
                       fill="none"
-                      stroke="#15803d"
+                      stroke="#18181b"
                       strokeWidth="2.2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -438,6 +393,7 @@ export function AboutPage() {
                   alt="Kavya Sundaram, Founder & CEO"
                   className="leader-photo"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="leader-info">
@@ -457,6 +413,7 @@ export function AboutPage() {
                   alt="Rohan Mehta, Co-Founder & CTO"
                   className="leader-photo"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="leader-info">
@@ -476,6 +433,7 @@ export function AboutPage() {
                   alt="Ananya Kapoor, Head of Product & Customer Success"
                   className="leader-photo"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="leader-info">
@@ -532,10 +490,6 @@ export function AboutPage() {
               <p className="purpose-card-desc">
                 We engineer dependable, intuitive software that removes statutory anxiety and payroll drudgery—empowering founders, HR leaders, and frontline teams to spend less time on paperwork and more time on people.
               </p>
-
-              <a href="#story" className="purpose-card-btn" aria-label="Learn more about our mission and story">
-                Learn more...
-              </a>
             </div>
 
             {/* Card 2: Vision */}
@@ -575,10 +529,6 @@ export function AboutPage() {
               <p className="purpose-card-desc">
                 A connected workplace future where every organization—from a 10-person startup to a multi-city enterprise—operates with transparent pay, instant leave clarity, and zero administrative roadblocks.
               </p>
-
-              <a href="#values" className="purpose-card-btn" aria-label="Learn more about our core values">
-                Learn more...
-              </a>
             </div>
           </div>
         </div>
@@ -730,6 +680,7 @@ export function AboutPage() {
                   alt="Zentilos Team and Careers"
                   className="discover-img"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="discover-card-body">
@@ -743,43 +694,45 @@ export function AboutPage() {
               </div>
             </div>
 
-            {/* Card 2: Case Studies */}
+            {/* Card 2: Security & Compliance */}
             <div className="discover-card">
               <div className="discover-image-box">
                 <img
-                  src="/images/case-studies-card.webp"
-                  alt="Customer Success and Case Studies"
+                  src="/images/doc-block-compliance.webp"
+                  alt="Enterprise Security and Compliance Standards"
                   className="discover-img"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="discover-card-body">
-                <span className="discover-tag">CASE STUDIES</span>
+                <span className="discover-tag">SECURITY &amp; COMPLIANCE</span>
                 <h3 className="discover-title">
-                  Real impact, proven ROI, and customer stories
+                  Enterprise-grade encryption, data privacy, and statutory compliance
                 </h3>
-                <Link to="/resources/case-studies" className="discover-btn" aria-label="Learn more about customer case studies">
+                <Link to="/security" className="discover-btn" aria-label="Learn more about enterprise security at Zentilos">
                   Learn more <Icon name="arrow" size={14} />
                 </Link>
               </div>
             </div>
 
-            {/* Card 3: Resource Hub */}
+            {/* Card 3: Partner Ecosystem */}
             <div className="discover-card">
               <div className="discover-image-box">
                 <img
-                  src="/images/resource-hub-card.webp"
-                  alt="Resource Hub and Guides"
+                  src="/images/work-process-team.webp"
+                  alt="Zentilos Partner Network and Certified Consultants"
                   className="discover-img"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div className="discover-card-body">
-                <span className="discover-tag">RESOURCE HUB</span>
+                <span className="discover-tag">PARTNER ECOSYSTEM</span>
                 <h3 className="discover-title">
-                  Helpful articles, guides, templates, tools and more
+                  Grow with our ecosystem of consultants, accountants &amp; ERP leaders
                 </h3>
-                <Link to="/resources" className="discover-btn" aria-label="Learn more about Zentilos resources and guides">
+                <Link to="/partners" className="discover-btn" aria-label="Learn more about the Zentilos partner program">
                   Learn more <Icon name="arrow" size={14} />
                 </Link>
               </div>

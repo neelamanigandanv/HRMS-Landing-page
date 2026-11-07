@@ -1,0 +1,641 @@
+/* ==========================================================================
+   AboutPage.css — Styles for the About Us page
+   - Hero Section: Clean typography, centered layout, no image under
+   - Milestones Journey: 2-column showcase matching reference image, proper text alignment & padding
+   - Purpose Section: Two luxury plum/wine glassmorphic cards
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero Section (Clean & Focused without image underneath)
+   -------------------------------------------------------------------------- */
+.about-hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: 96px 0 84px;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(128, 43, 91, 0.09) 0%, transparent 65%),
+    radial-gradient(circle at 10% 45%, rgba(181, 66, 130, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 90% 45%, rgba(128, 43, 91, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #fdf8fa 0%, #fbf5f8 45%, #ffffff 100%);
+  border-bottom: 1px solid #ebdcd5;
+}
+
+.about-hero-ambient {
+  position: absolute;
+  width: 720px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(128, 43, 91, 0.12) 0%, rgba(181, 66, 130, 0.04) 50%, transparent 70%);
+  filter: blur(80px);
+  left: 50%;
+  top: 18%;
+  transform: translate(-50%, -20%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about-hero-center {
+  position: relative;
+  z-index: 2;
+  max-width: 920px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(128, 43, 91, 0.07);
+  border: 1px solid rgba(128, 43, 91, 0.18);
+  color: #802B5B;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 8px rgba(128, 43, 91, 0.06);
+  transition: all 0.25s ease;
+}
+
+.about-hero-chip:hover {
+  background: rgba(128, 43, 91, 0.12);
+  transform: translateY(-1px);
+}
+
+.about-hero-heading {
+  font-size: clamp(38px, 4.8vw, 56px);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #171336;
+  margin: 0 0 22px;
+  font-weight: 800;
+  max-width: 860px;
+}
+
+.about-hero-accent {
+  background: linear-gradient(135deg, #802B5B 0%, #b54282 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+.about-hero-lead {
+  font-size: clamp(16px, 1.25vw, 18.5px);
+  line-height: 1.7;
+  color: #494569;
+  margin: 0 auto 34px;
+  max-width: 740px;
+}
+
+.about-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.about-hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.about-hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff !important;
+  color: #171336 !important;
+  border: 1.5px solid #d7d5e0 !important;
+  border-radius: 10px;
+  padding: 0 24px;
+  min-height: 48px;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.25s ease;
+}
+
+.about-hero-btn-secondary:hover {
+  background: #fdf8fa !important;
+  border-color: #802B5B !important;
+  color: #802B5B !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(128, 43, 91, 0.12) !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Milestones on our Journey Section (Exact Alignment & Proper Spacing)
+   -------------------------------------------------------------------------- */
+.about-milestones-section {
+  padding: 88px 0 96px;
+  background: #ffffff;
+  border-top: 1px solid #ebdcd5;
+  border-bottom: 1px solid #ebdcd5;
+  position: relative;
+}
+
+.milestones-tabs-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  margin-bottom: 44px;
+}
+
+.milestones-pill-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.milestone-pill-tab {
+  border: none;
+  background: transparent;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  user-select: none;
+  box-shadow: none;
+}
+
+.milestone-pill-tab:hover {
+  color: #802B5B;
+  background: rgba(128, 43, 91, 0.06);
+}
+
+.milestone-pill-tab.active {
+  background: rgba(128, 43, 91, 0.1);
+  color: #802B5B;
+  font-weight: 700;
+  box-shadow: none;
+  border: none;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+  animation: liveDotPulse 2s ease-in-out infinite;
+}
+
+@keyframes liveDotPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.08);
+  }
+}
+
+/* 2-Column Showcase Layout with Clean Top Alignment */
+.milestone-showcase-stage {
+  display: grid;
+  grid-template-columns: minmax(360px, 440px) 1fr;
+  gap: 52px;
+  align-items: flex-start; /* Aligns photo top and headline top cleanly */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Left Column: Portrait Photo */
+.milestone-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.milestone-journey-img {
+  width: 100%;
+  max-width: 440px;
+  height: 530px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 26px;
+  box-shadow:
+    0 20px 48px -12px rgba(27, 23, 57, 0.12),
+    0 4px 16px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.milestone-journey-img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 24px 56px -12px rgba(27, 23, 57, 0.16);
+}
+
+/* Right Column: Story, Yellow Button & Metrics with Proper Padding */
+.milestone-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 4px; /* Perfectly levels headline baseline with photo top edge */
+}
+
+.milestone-headline {
+  font-size: clamp(26px, 2.5vw, 34px);
+  font-weight: 700;
+  line-height: 1.28;
+  color: #18181b;
+  margin: 0 0 18px;
+  letter-spacing: -0.025em;
+  max-width: 580px;
+}
+
+.milestone-paragraph {
+  font-size: 15.5px;
+  line-height: 1.72;
+  color: #52525b;
+  margin: 0 0 26px;
+  max-width: 540px;
+}
+
+/* Yellow Action Button matching reference */
+.milestone-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #facc15;
+  color: #18181b;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 36px;
+  box-shadow: 0 4px 14px rgba(250, 204, 21, 0.35);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.milestone-cta-btn:hover {
+  background: #eab308;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(234, 179, 8, 0.45);
+  color: #18181b;
+}
+
+.milestone-btn-arrow {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.milestone-cta-btn:hover .milestone-btn-arrow {
+  transform: translate(2px, 2px);
+}
+
+/* Two Pastel Stat Cards */
+.milestone-stat-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.milestone-stat-card {
+  border-radius: 22px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  min-height: 180px;
+  justify-content: space-between;
+}
+
+.milestone-stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.08);
+}
+
+.milestone-stat-card--purple {
+  background: #f4effa;
+  border: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+.milestone-stat-card--mint {
+  background: #eaf6ec;
+  border: 1px solid rgba(34, 197, 94, 0.12);
+}
+
+.milestone-card-icon {
+  margin-bottom: 14px;
+  color: #18181b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.milestone-card-num {
+  font-size: clamp(38px, 3.6vw, 46px);
+  font-weight: 800;
+  color: #18181b;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+
+.milestone-card-label {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #52525b;
+  line-height: 1.35;
+}
+
+/* --------------------------------------------------------------------------
+   3. Purpose Section: Two Luxury Plum/Wine Cards
+   -------------------------------------------------------------------------- */
+.about-mv-section {
+  padding: 96px 0 104px;
+  background: #ffffff;
+  position: relative;
+}
+
+.purpose-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.purpose-card {
+  position: relative;
+  border-radius: 26px;
+  padding: 46px 40px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Card 1: Mission — Deep Regal Wine/Plum */
+.purpose-card--mission {
+  background: linear-gradient(145deg, #3d0e28 0%, #541639 50%, #6e1e4b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 20px 48px -10px rgba(50, 12, 34, 0.38),
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.22);
+}
+
+/* Card 2: Vision — Rich Imperial Plum/Wine */
+.purpose-card--vision {
+  background: linear-gradient(145deg, #44122e 0%, #5c183e 50%, #782252 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 20px 48px -10px rgba(50, 12, 34, 0.38),
+    0 4px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 1px rgba(255, 255, 255, 0.22);
+}
+
+.purpose-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 28px 60px -10px rgba(50, 12, 34, 0.5),
+    0 8px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.32);
+}
+
+/* Inner radiant ambient glow for luxury depth */
+.purpose-card::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 214, 236, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(35px);
+}
+
+.purpose-card-icon {
+  margin-bottom: 20px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.purpose-card-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffd6ec;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+
+.purpose-card-title {
+  font-size: clamp(28px, 2.7vw, 34px);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0 0 8px;
+}
+
+.purpose-card-subtitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f8c0db;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.purpose-card-desc {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.94);
+  margin: 0;
+}
+
+.purpose-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 10px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.purpose-card-btn:hover {
+  background: #ffffff;
+  color: #541639;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.purpose-btn-arrow {
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.purpose-card-btn:hover .purpose-btn-arrow {
+  transform: translate(2px, 2px);
+}
+
+/* --------------------------------------------------------------------------
+   4. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .about-hero-section {
+    padding: 72px 0;
+  }
+
+  /* Milestones */
+  .milestone-showcase-stage {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .milestone-img-wrapper {
+    order: 1;
+  }
+
+  .milestone-journey-img {
+    max-width: 100%;
+    height: 420px;
+  }
+
+  .milestone-info-wrapper {
+    order: 2;
+    align-items: center;
+    text-align: center;
+    padding-top: 0;
+  }
+
+  .milestone-headline,
+  .milestone-paragraph {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .milestone-stat-cards {
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  /* Purpose Grid */
+  .purpose-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .purpose-card {
+    padding: 34px 28px;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .about-hero-actions a,
+  .about-hero-actions button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Milestones */
+  .milestones-pill-nav {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .milestone-pill-tab {
+    padding: 8px 16px;
+    font-size: 13.5px;
+    white-space: nowrap;
+  }
+
+  .milestone-journey-img {
+    height: 320px;
+    border-radius: 20px;
+  }
+
+  .milestone-stat-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .milestone-stat-card {
+    padding: 20px 18px;
+    border-radius: 18px;
+    min-height: auto;
+  }
+
+  /* Purpose Cards on Mobile */
+  .purpose-card {
+    padding: 28px 22px;
+  }
+
+  .purpose-card-title {
+    font-size: 24px;
+  }
+}
