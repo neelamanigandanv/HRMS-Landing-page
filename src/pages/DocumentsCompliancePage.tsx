@@ -380,11 +380,11 @@ export function DocumentsCompliancePage() {
 
                 <div className="emp-donut-chart-wrap">
                   <svg width="120" height="120" viewBox="0 0 180 180" className="emp-donut-svg">
-                    <circle cx="90" cy="90" r="68" stroke="#f4edf3" strokeWidth="18" fill="none" />
-                    {/* KYC Verified 72% (#802B5B) */}
+                    <circle cx="90" cy="90" r="68" stroke="#F6F8F8" strokeWidth="18" fill="none" />
+                    {/* KYC Verified 72% (#004B49) */}
                     <circle
                       cx="90" cy="90" r="68"
-                      stroke="#802B5B" strokeWidth="18" fill="none"
+                      stroke="#004B49" strokeWidth="18" fill="none"
                       strokeDasharray="427" strokeDashoffset="120"
                       strokeLinecap="round"
                       transform="rotate(-90 90 90)"
@@ -415,7 +415,7 @@ export function DocumentsCompliancePage() {
                 <div style={{ marginTop: "12px" }}>
                   <div className="doc-widget-metric-row">
                     <span className="doc-widget-metric-label">
-                      <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#802B5B" }} />
+                      <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#004B49" }} />
                       KYC & Identity Proofs
                     </span>
                     <strong className="doc-widget-metric-val">100% Verified</strong>
@@ -456,7 +456,7 @@ export function DocumentsCompliancePage() {
 
                 <div className="doc-hero-showcase-frame">
                   <img
-                    src="/images/doc-hero-showcase.webp?v=2"
+                    src="/images/doc-hero-showcase.webp?v=3"
                     alt="Zentilos Documents and Compliance Overview Dashboard showing employee document cards and expiry alerts"
                     className="doc-hero-mockup-img"
                     loading="eager"
@@ -1086,7 +1086,14 @@ export function DocumentsCompliancePage() {
         {/* =========================================================================
             10. BOTTOM CONVERSION CTA BANNER
             ========================================================================= */}
-        <FooterCTA />
+        <FooterCTA
+          eyebrowBadgeText="Encrypted Digital Vault & Statutory Compliance"
+          headlineLine1="Secure All Employee Documents &"
+          headlineLine2="Stay 100% Audit-Ready"
+          subheadlineLine1="Centralize KYC, offer letters, NDA agreements, and statutory forms in an encrypted digital repository with automated expiry alerts and granular access locks."
+          primaryButtonText="Book a Compliance Demo"
+          secondaryButtonText="Explore Document Vault"
+        />
       </main>
 
       <Footer />

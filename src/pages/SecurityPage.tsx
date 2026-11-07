@@ -657,7 +657,7 @@ export function SecurityPage() {
                   </div>
                   <p>
                     For urgent vulnerability disclosures or to exchange PGP encrypted keys, email our security leads
-                    directly at <a href="mailto:security@zentilos.com" style={{ color: "#7b2958", fontWeight: 700 }}>security@zentilos.com</a>.
+                    directly at <a href="mailto:security@zentilos.com" style={{ color: "#004B49", fontWeight: 700 }}>security@zentilos.com</a>.
                   </p>
                 </div>
               </section>

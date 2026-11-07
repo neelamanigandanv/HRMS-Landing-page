@@ -909,7 +909,7 @@ export default function SupportPage() {
               </p>
             </div>
 
-            {/* Direct Channels Banner matching Image 3 with eyebrow color (#802B5B) and 3 channels */}
+            {/* Direct Channels Banner matching Image 3 with eyebrow color (#004B49) and 3 channels */}
             <div className="support-direct-banner">
               {/* Channel 1: Email */}
               <div className="direct-banner-item">

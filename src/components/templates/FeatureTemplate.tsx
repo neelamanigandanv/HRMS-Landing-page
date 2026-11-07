@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "../layout/PageLayout";
 import SEO from "../layout/SEO";
+import FooterCTA from "../common/FooterCTA";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 import Icon, { IconName } from "../ui/Icon";
@@ -529,39 +530,17 @@ export function FeatureTemplate({ feature }: { feature: FeatureData }) {
       )}
 
       {/* =========================================================================
-          SECTION 9: FINAL REQUEST A DEMO CTA
-          Final conversion section matching Home page visual design (.final-cta)
+          SECTION 9: FINAL REQUEST A DEMO CTA (Matching Home Page Flagship Footer CTA)
           ========================================================================= */}
-      <section className="final-cta product-final-cta">
-        <div className="container final-grid">
-          <div>
-            <span className="eyebrow">READY TO SIMPLIFY HR?</span>
-            <h2>Transform how your team manages {feature.title.toLowerCase()}.</h2>
-            <p>
-              Join 500+ growing multi-branch businesses running HR, attendance, and payroll on Zentilos.
-            </p>
-            <div className="final-actions">
-              <Button to="/request-demo">
-                Book a Free Demo <Icon name="arrow" />
-              </Button>
-              <Button to="/product" secondary>
-                Explore All Modules
-              </Button>
-            </div>
-            <div className="final-points">
-              <span>
-                <Icon name="check" /> Free personalized 30-min walkthrough
-              </span>
-              <span>
-                <Icon name="check" /> Dedicated onboarding specialist
-              </span>
-              <span>
-                <Icon name="check" /> Go live in 2–4 weeks
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FooterCTA
+        eyebrowBadgeText={`✦ TRANSFORM YOUR ${feature.title.toUpperCase()} ✦`}
+        headlineLine1="Transform How Your Team Manages"
+        headlineLine2={`${feature.title} with Zentilos`}
+        subheadlineLine1={`Join 500+ growing multi-branch businesses running HR, attendance, and payroll on Zentilos with complete statutory compliance.`}
+        primaryButtonText="Book a Free Demo"
+        secondaryButtonText="Explore All Modules"
+        secondaryButtonLink="/product"
+      />
     </PageLayout>
   );
 }

@@ -13,10 +13,10 @@
   overflow: hidden;
   padding: 96px 0 84px;
   background:
-    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(128, 43, 91, 0.09) 0%, transparent 65%),
-    radial-gradient(circle at 10% 45%, rgba(181, 66, 130, 0.05) 0%, transparent 45%),
-    radial-gradient(circle at 90% 45%, rgba(128, 43, 91, 0.06) 0%, transparent 50%),
-    linear-gradient(180deg, #fdf8fa 0%, #fbf5f8 45%, #ffffff 100%);
+    radial-gradient(ellipse 70% 50% at 50% -10%, rgba(0, 75, 73, 0.09) 0%, transparent 65%),
+    radial-gradient(circle at 10% 45%, rgba(0, 75, 73, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 90% 45%, rgba(0, 75, 73, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #F6F8F8 0%, #F6F8F8 45%, #ffffff 100%);
   border-bottom: 1px solid #ebdcd5;
 }
 
@@ -25,7 +25,7 @@
   width: 720px;
   height: 440px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(128, 43, 91, 0.12) 0%, rgba(181, 66, 130, 0.04) 50%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 75, 73, 0.12) 0%, rgba(0, 75, 73, 0.04) 50%, transparent 70%);
   filter: blur(80px);
   left: 50%;
   top: 18%;
@@ -51,19 +51,19 @@
   gap: 8px;
   padding: 8px 18px;
   border-radius: 999px;
-  background: rgba(128, 43, 91, 0.07);
-  border: 1px solid rgba(128, 43, 91, 0.18);
-  color: #802B5B;
+  background: rgba(0, 75, 73, 0.07);
+  border: 1px solid rgba(0, 75, 73, 0.18);
+  color: #004B49;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   margin-bottom: 22px;
-  box-shadow: 0 2px 8px rgba(128, 43, 91, 0.06);
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.06);
   transition: all 0.25s ease;
 }
 
 .about-hero-chip:hover {
-  background: rgba(128, 43, 91, 0.12);
+  background: rgba(0, 75, 73, 0.12);
   transform: translateY(-1px);
 }
 
@@ -78,7 +78,7 @@
 }
 
 .about-hero-accent {
-  background: linear-gradient(135deg, #802B5B 0%, #b54282 100%);
+  background: linear-gradient(135deg, #004B49 0%, #003836 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -125,11 +125,11 @@
 }
 
 .about-hero-btn-secondary:hover {
-  background: #fdf8fa !important;
-  border-color: #802B5B !important;
-  color: #802B5B !important;
+  background: #F6F8F8 !important;
+  border-color: #004B49 !important;
+  color: #004B49 !important;
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(128, 43, 91, 0.12) !important;
+  box-shadow: 0 6px 16px rgba(0, 75, 73, 0.12) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -179,13 +179,13 @@
 }
 
 .milestone-pill-tab:hover {
-  color: #802B5B;
-  background: rgba(128, 43, 91, 0.06);
+  color: #004B49;
+  background: rgba(0, 75, 73, 0.06);
 }
 
 .milestone-pill-tab.active {
-  background: rgba(128, 43, 91, 0.1);
-  color: #802B5B;
+  background: rgba(0, 75, 73, 0.1);
+  color: #004B49;
   font-weight: 700;
   box-shadow: none;
   border: none;
@@ -335,8 +335,8 @@
 }
 
 .milestone-stat-card--purple {
-  background: #f4effa;
-  border: 1px solid rgba(168, 85, 247, 0.12);
+  background: #F6F8F8;
+  border: 1px solid rgba(0, 75, 73, 0.12);
 }
 
 .milestone-stat-card--mint {
@@ -404,20 +404,20 @@
 
 /* Card 1: Mission — Deep Regal Wine/Plum */
 .purpose-card--mission {
-  background: linear-gradient(145deg, #3d0e28 0%, #541639 50%, #6e1e4b 100%);
+  background: linear-gradient(145deg, #00201F 0%, #00201F 50%, #00201F 100%);
   border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow:
-    0 20px 48px -10px rgba(50, 12, 34, 0.38),
+    0 20px 48px -10px rgba(0, 32, 31, 0.38),
     0 4px 16px rgba(0, 0, 0, 0.15),
     inset 0 1px 1px rgba(255, 255, 255, 0.22);
 }
 
 /* Card 2: Vision — Rich Imperial Plum/Wine */
 .purpose-card--vision {
-  background: linear-gradient(145deg, #44122e 0%, #5c183e 50%, #782252 100%);
+  background: linear-gradient(145deg, #00201F 0%, #004B49 50%, #003836 100%);
   border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow:
-    0 20px 48px -10px rgba(50, 12, 34, 0.38),
+    0 20px 48px -10px rgba(0, 32, 31, 0.38),
     0 4px 16px rgba(0, 0, 0, 0.15),
     inset 0 1px 1px rgba(255, 255, 255, 0.22);
 }
@@ -425,7 +425,7 @@
 .purpose-card:hover {
   transform: translateY(-6px);
   box-shadow:
-    0 28px 60px -10px rgba(50, 12, 34, 0.5),
+    0 28px 60px -10px rgba(0, 32, 31, 0.5),
     0 8px 24px rgba(0, 0, 0, 0.2),
     inset 0 1px 1px rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.32);
@@ -440,7 +440,7 @@
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 214, 236, 0.18) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 75, 73, 0.18) 0%, transparent 70%);
   pointer-events: none;
   filter: blur(35px);
 }
@@ -469,7 +469,7 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #ffd6ec;
+  color: #E5EAEA;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 5px 14px;
@@ -489,7 +489,7 @@
 .purpose-card-subtitle {
   font-size: 16px;
   font-weight: 600;
-  color: #f8c0db;
+  color: #E5EAEA;
   line-height: 1.4;
   margin-bottom: 16px;
 }
@@ -518,7 +518,7 @@
 
 .purpose-card-btn:hover {
   background: #ffffff;
-  color: #541639;
+  color: #00201F;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }

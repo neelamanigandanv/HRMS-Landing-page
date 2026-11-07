@@ -651,7 +651,7 @@ export function GuideDetailPage() {
                         <h3>
                           <Icon name="check" size={20} /> Verification Progress
                         </h3>
-                        <span style={{ fontWeight: 700, color: "#7b2958", fontSize: "14px" }}>
+                        <span style={{ fontWeight: 700, color: "#004B49", fontSize: "14px" }}>
                           {completedCount} of {checklist.length} Completed ({progressPercent}%)
                         </span>
                       </div>
@@ -809,7 +809,14 @@ export function GuideDetailPage() {
         {/* ==========================================================================
             4. FINAL CONVERSION CTA (FULL WIDTH)
             ========================================================================== */}
-        <FooterCTA />
+        <FooterCTA
+          eyebrowBadgeText="Continuous Compliance & Operational Excellence"
+          headlineLine1="Turn These Operational Insights into"
+          headlineLine2="Automated Results with Zentilos"
+          subheadlineLine1="Experience the power of connected attendance, payroll accuracy, and compliance safeguards built for fast-moving multi-branch teams."
+          primaryButtonText="Book a Live Demo"
+          secondaryButtonText="Explore Features"
+        />
       </div>
     </PageLayout>
   );

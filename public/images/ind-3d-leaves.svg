@@ -14,10 +14,10 @@
       <stop offset="100%" stop-color="#d9e6de" />
     </linearGradient>
 
-    <!-- Calendar Top Bar (Vibrant Plum/Rose) -->
+    <!-- Calendar Top Bar (Vibrant Deep Teal) -->
     <linearGradient id="calHeader" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e11d48" />
-      <stop offset="100%" stop-color="#802B5B" />
+      <stop offset="0%" stop-color="#006966" />
+      <stop offset="100%" stop-color="#004B49" />
     </linearGradient>
 
     <!-- 3D Gold Palm / Sun Gradient -->
@@ -82,7 +82,7 @@
     <rect x="112" y="58" width="16" height="14" rx="4" fill="#e2e8f0" />
 
     <rect x="22" y="80" width="22" height="14" rx="4" fill="#e2e8f0" />
-    <rect x="52" y="80" width="44" height="14" rx="4" fill="#fbcfe8" />
+    <rect x="52" y="80" width="44" height="14" rx="4" fill="#E5EAEA" />
     <rect x="104" y="80" width="24" height="14" rx="4" fill="#e2e8f0" />
 
     <!-- Highlighted Approved Vacation Day (Green Check Pill) -->

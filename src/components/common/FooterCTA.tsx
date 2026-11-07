@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useDemoModal } from "../../context/DemoModalContext";
 import Icon from "../ui/Icon";
 import "./FooterCTA.css";
@@ -18,6 +19,8 @@ export interface FooterCTAProps {
   subheadlineLine2?: string;
   primaryButtonText?: string;
   secondaryButtonText?: string;
+  primaryButtonLink?: string;
+  secondaryButtonLink?: string;
   className?: string;
   /** insight-card variant props */
   insightBgImage?: string;
@@ -36,6 +39,8 @@ export function FooterCTA({
   subheadlineLine2,
   primaryButtonText,
   secondaryButtonText,
+  primaryButtonLink,
+  secondaryButtonLink,
   className = "",
   insightBgImage,
   insightCardTitle,
@@ -149,6 +154,9 @@ export function FooterCTA({
     const empBadge = eyebrowBadgeText || "Built for Modern Multi-Branch Workforce Operations";
     const empPrimary = primaryButtonText ?? "Book a Live Demo";
     const empSecondary = secondaryButtonText ?? "Explore Features";
+    const finalEmpSecondaryLink = secondaryButtonLink || (
+      empSecondary.toLowerCase().includes("pric") ? "/#pricing" : "/product"
+    );
 
     return (
       <section className={`footer-cta-emp-banner ${className}`} aria-label="Workforce Call to Action">
@@ -164,8 +172,8 @@ export function FooterCTA({
           {/* Badge Pill */}
           <div className="emp-banner-badge">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <circle cx="7" cy="7" r="7" fill="#802B5B" opacity="0.16" />
-              <path d="M4 7l2 2 4-4" stroke="#802B5B" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+              <circle cx="7" cy="7" r="7" fill="#004B49" opacity="0.16" />
+              <path d="M4 7l2 2 4-4" stroke="#004B49" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             <span>{empBadge}</span>
           </div>
@@ -186,26 +194,54 @@ export function FooterCTA({
 
           {/* Action Buttons */}
           <div className="emp-banner-actions">
-            <button
-              type="button"
-              className="emp-banner-btn-primary"
-              onClick={() => openDemoModal()}
-            >
-              <span>{empPrimary}</span>
-              <span className="emp-banner-btn-arrow" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-            </button>
+            {primaryButtonLink ? (
+              primaryButtonLink.startsWith("/") ? (
+                <Link to={primaryButtonLink} className="emp-banner-btn-primary">
+                  <span>{empPrimary}</span>
+                  <span className="emp-banner-btn-arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                </Link>
+              ) : (
+                <a href={primaryButtonLink} className="emp-banner-btn-primary">
+                  <span>{empPrimary}</span>
+                  <span className="emp-banner-btn-arrow" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                </a>
+              )
+            ) : (
+              <button
+                type="button"
+                className="emp-banner-btn-primary"
+                onClick={() => openDemoModal()}
+              >
+                <span>{empPrimary}</span>
+                <span className="emp-banner-btn-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+              </button>
+            )}
 
-            <a
-              href="/pricing"
-              className="emp-banner-btn-secondary"
-              onClick={handleEstimatePrice}
-            >
-              <span>{empSecondary}</span>
-            </a>
+            {finalEmpSecondaryLink.startsWith("/") && !finalEmpSecondaryLink.startsWith("/#") ? (
+              <Link to={finalEmpSecondaryLink} className="emp-banner-btn-secondary">
+                <span>{empSecondary}</span>
+              </Link>
+            ) : (
+              <a
+                href={finalEmpSecondaryLink}
+                className="emp-banner-btn-secondary"
+                onClick={finalEmpSecondaryLink.includes("#pricing") ? handleEstimatePrice : undefined}
+              >
+                <span>{empSecondary}</span>
+              </a>
+            )}
           </div>
         </div>
       </section>
@@ -223,6 +259,9 @@ export function FooterCTA({
     : "to enhance efficiency, compliance, and growth for teams worldwide.");
   const finalPrimaryText = primaryButtonText ?? (isNeon ? "Book a Live Demo" : "Book a Demo");
   const finalSecondaryText = secondaryButtonText ?? (isNeon ? "Explore Features" : "Estimate Price");
+  const finalSecondaryLink = secondaryButtonLink || (
+    finalSecondaryText.toLowerCase().includes("pric") ? "/#pricing" : "/product"
+  );
 
   // FULL WIDTH NEON CURTAIN VARIANT (Matches media_1793362590960_6e750997.png edge-to-edge)
   if (isNeon) {
@@ -270,13 +309,19 @@ export function FooterCTA({
               <span>{finalPrimaryText}</span>
             </button>
 
-            <a
-              href="/#pricing"
-              onClick={handleEstimatePrice}
-              className="neon-curtain-btn-secondary"
-            >
-              <span>{finalSecondaryText}</span>
-            </a>
+            {finalSecondaryLink.startsWith("/") && !finalSecondaryLink.startsWith("/#") ? (
+              <Link to={finalSecondaryLink} className="neon-curtain-btn-secondary">
+                <span>{finalSecondaryText}</span>
+              </Link>
+            ) : (
+              <a
+                href={finalSecondaryLink}
+                onClick={finalSecondaryLink.includes("#pricing") ? handleEstimatePrice : undefined}
+                className="neon-curtain-btn-secondary"
+              >
+                <span>{finalSecondaryText}</span>
+              </a>
+            )}
           </div>
         </div>
       </section>
@@ -358,13 +403,19 @@ export function FooterCTA({
                 </span>
               </button>
 
+            {finalSecondaryLink.startsWith("/") && !finalSecondaryLink.startsWith("/#") ? (
+              <Link to={finalSecondaryLink} className="matrix-glow-btn-secondary">
+                <span>{matrixSecondaryText}</span>
+              </Link>
+            ) : (
               <a
-                href="/#pricing"
-                onClick={handleEstimatePrice}
+                href={finalSecondaryLink}
+                onClick={finalSecondaryLink.includes("#pricing") ? handleEstimatePrice : undefined}
                 className="matrix-glow-btn-secondary"
               >
                 <span>{matrixSecondaryText}</span>
               </a>
+            )}
             </div>
           </div>
         </div>
@@ -403,14 +454,21 @@ export function FooterCTA({
                 </span>
               </button>
 
-              <a
-                href="/#pricing"
-                onClick={handleEstimatePrice}
-                className="footer-cta-btn-secondary"
-              >
-                <span>{finalSecondaryText}</span>
-                <Icon name="arrow" size={14} />
-              </a>
+              {finalSecondaryLink.startsWith("/") && !finalSecondaryLink.startsWith("/#") ? (
+                <Link to={finalSecondaryLink} className="footer-cta-btn-secondary">
+                  <span>{finalSecondaryText}</span>
+                  <Icon name="arrow" size={14} />
+                </Link>
+              ) : (
+                <a
+                  href={finalSecondaryLink}
+                  onClick={finalSecondaryLink.includes("#pricing") ? handleEstimatePrice : undefined}
+                  className="footer-cta-btn-secondary"
+                >
+                  <span>{finalSecondaryText}</span>
+                  <Icon name="arrow" size={14} />
+                </a>
+              )}
             </div>
           </div>
         </div>

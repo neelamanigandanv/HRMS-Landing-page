@@ -189,12 +189,13 @@
 }
 
 .home-teal-theme .diff-floating-pill-card {
-  background: linear-gradient(135deg, #004B49 0%, #002826 100%) !important;
+  background: #004B49 !important;
   border: 1px solid rgba(255, 255, 255, 0.28) !important;
   box-shadow: 0 10px 24px rgba(0, 32, 31, 0.38), 0 2px 6px rgba(0, 0, 0, 0.15) !important;
 }
 
 .home-teal-theme .diff-floating-pill-card:hover {
+  background: #003836 !important;
   border-color: rgba(198, 243, 107, 0.6) !important;
   box-shadow: 0 14px 32px rgba(0, 32, 31, 0.5) !important;
 }
@@ -538,5 +539,18 @@
 
 .home-teal-theme .custom-select-check {
   color: #004B49 !important;
+}
+
+/* Review & Run Payroll Button in Hero Payroll Mockup */
+.home-teal-theme .run-payroll {
+  background: #004B49 !important;
+  color: #ffffff !important;
+  box-shadow: 0 7px 16px rgba(0, 75, 73, 0.22) !important;
+}
+
+.home-teal-theme .run-payroll:hover {
+  background: #003836 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 22px rgba(0, 75, 73, 0.32) !important;
 }
 

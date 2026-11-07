@@ -1250,7 +1250,14 @@ export function MidSizedBusinessPage() {
         {/* =========================================================================
             SECTION 8 — FINAL CTA (Deep Purple Gradient Banner with Trust Checklist)
             ========================================================================= */}
-        <FooterCTA />
+        <FooterCTA
+          eyebrowBadgeText="Scalable HR Architecture for Growing Headcount"
+          headlineLine1="Scale Multi-Branch Operations"
+          headlineLine2="with Total Clarity & Control"
+          subheadlineLine1="Unify regional policies, standardize payroll across legal entities, and empower local branch managers with centralized executive oversight."
+          primaryButtonText="Book a Mid-Market Demo"
+          secondaryButtonText="Explore Multi-Branch Features"
+        />
       </main>
 
       <Footer />

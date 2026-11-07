@@ -3,7 +3,7 @@ import { PARTNER_CHECKLIST, ChecklistItem } from "@/data/partnersData";
 
 /* Precise SVG Icons matching reference layout with primary plum/wine palette */
 const renderResourceIcon = (id: string, isFeatured?: boolean) => {
-  const strokeColor = isFeatured ? "#FFFFFF" : "#802B5B";
+  const strokeColor = isFeatured ? "#FFFFFF" : "#004B49";
   switch (id) {
     case "item-welcome-kit":
       return (

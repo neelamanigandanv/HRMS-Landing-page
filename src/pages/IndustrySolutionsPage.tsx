@@ -322,7 +322,7 @@ export function IndustrySolutionsPage() {
       title: "Attendance",
       summary: "Biometric, Geofence & Flexible Punch",
       desc: "Face scanners, RFID plant gates, GPS mobile boundaries, and web timers feed one real-time attendance ledger.",
-      iconColor: "#802B5B",
+      iconColor: "#004B49",
     },
     {
       icon: "leave",
@@ -350,7 +350,7 @@ export function IndustrySolutionsPage() {
       title: "Reports",
       summary: "Headcount, Shift Variance & Cost Exports",
       desc: "Decision-grade operational dashboards detailing shift attendance, department OT costs, and workforce trends.",
-      iconColor: "#7c3aed",
+      iconColor: "#004B49",
     },
     {
       icon: "users",
@@ -938,7 +938,14 @@ export function IndustrySolutionsPage() {
       {/* ======================================================================
           09 · FINAL CTA (Matching Home Page Final CTA Layout)
           ====================================================================== */}
-      <FooterCTA />
+      <FooterCTA
+        eyebrowBadgeText="Engineered for Your Specific Industry"
+        headlineLine1="Tailored Workforce Workflows for"
+        headlineLine2="Every Industry Vertical"
+        subheadlineLine1="Pre-configured statutory compliance, rotational rosters, contractor pools, and specialized pay rules for healthcare, retail, manufacturing, and tech."
+        primaryButtonText="Book an Industry Demo"
+        secondaryButtonText="Explore All Industries"
+      />
 
       <Footer />
     </div>

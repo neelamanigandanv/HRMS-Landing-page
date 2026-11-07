@@ -1,12 +1,12 @@
 /* ==========================================================================
    ZENTILOS - GUIDE DETAIL & READING PAGE STYLING
-   Brand Aesthetic: Deep Violet / Warm Berry (#7b2958, #b43f70, #fae8f2, #f2d0e3)
+   Brand Aesthetic: Deep Violet / Warm Berry (#004B49, #004B49, #F6F8F8, #E5EAEA)
    (Centered Hero, No Left Card, No Breadcrumbs, 3 Related Cards, Exact Home CTA)
    ========================================================================== */
 
 .guide-detail-page {
   background-color: #ffffff;
-  color: #1e131d;
+  color: #00201F;
   min-height: 100vh;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -21,8 +21,8 @@
    1. HERO BANNER (CENTERED, PROPER ALIGNMENT - NO CARD, NO BREADCRUMBS)
    ========================================================================== */
 .guide-detail-hero {
-  background: radial-gradient(ellipse at 50% 12%, #fcf0f7 0%, #ffffff 82%);
-  border-bottom: 1px solid #f2d0e3;
+  background: radial-gradient(ellipse at 50% 12%, #F6F8F8 0%, #ffffff 82%);
+  border-bottom: 1px solid #E5EAEA;
   padding: 104px 0 96px 0;
   min-height: 480px;
   display: flex;
@@ -51,7 +51,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
   padding: 0;
   margin-bottom: 18px;
@@ -61,7 +61,7 @@
 }
 
 .guide-hero-eyebrow svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .guide-hero-title {
@@ -76,7 +76,7 @@
 }
 
 .guide-hero-title-highlight {
-  background: linear-gradient(135deg, #7b2958 0%, #b43f70 55%, #9c276a 100%);
+  background: linear-gradient(135deg, #004B49 0%, #004B49 55%, #004B49 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -102,11 +102,11 @@
   justify-content: center;
   gap: 16px;
   background: rgba(255, 255, 255, 0.95);
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   border-radius: 9999px;
   padding: 8px 24px 8px 10px;
   margin: 0 auto 26px auto;
-  box-shadow: 0 4px 20px rgba(123, 41, 88, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 75, 73, 0.05);
   flex-wrap: wrap;
   max-width: 95%;
 }
@@ -121,7 +121,7 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #7b2958 0%, #b43f70 100%);
+  background: #004B49;
   color: #ffffff;
   display: inline-flex;
   align-items: center;
@@ -130,7 +130,7 @@
   font-size: 13px;
   letter-spacing: 0.04em;
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(123, 41, 88, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.25);
 }
 
 .author-info {
@@ -156,7 +156,7 @@
 .guide-meta-divider {
   width: 1px;
   height: 24px;
-  background: #ebdbe6;
+  background: #E5EAEA;
   flex-shrink: 0;
 }
 
@@ -174,21 +174,21 @@
   font-size: 12px;
   font-weight: 650;
   color: #475569;
-  background: #fbf7fa;
-  border: 1px solid #ebdbe6;
+  background: #F6F8F8;
+  border: 1px solid #E5EAEA;
   border-radius: 9999px;
   padding: 4px 12px;
   white-space: nowrap;
 }
 
 .guide-meta-pill svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .guide-meta-pill.highlight {
-  background: #fcf0f7;
-  border-color: #f3c8df;
-  color: #7b2958;
+  background: #F6F8F8;
+  border-color: #E5EAEA;
+  color: #004B49;
   font-weight: 700;
 }
 
@@ -212,25 +212,25 @@
   gap: 9px;
   height: 46px;
   padding: 0 24px;
-  background: #7b2958;
+  background: #004B49;
   color: #ffffff;
-  border: 1px solid #7b2958;
+  border: 1px solid #004B49;
   border-radius: 8px;
   font-family: inherit;
   font-size: 14px;
   font-weight: 750;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(123, 41, 88, 0.28);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.28);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   white-space: nowrap;
 }
 
 .guide-hero-btn-primary:hover {
-  background: #621c44;
-  border-color: #621c44;
+  background: #00201F;
+  border-color: #00201F;
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(123, 41, 88, 0.38);
+  box-shadow: 0 8px 22px rgba(0, 75, 73, 0.38);
 }
 
 .guide-hero-btn-primary:active {
@@ -246,7 +246,7 @@
   padding: 0 22px;
   background: #ffffff;
   color: #0f172a;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   border-radius: 8px;
   font-family: inherit;
   font-size: 14px;
@@ -259,11 +259,11 @@
 }
 
 .guide-hero-btn-secondary:hover {
-  background: #fcf0f7;
-  border-color: #7b2958;
-  color: #7b2958;
+  background: #F6F8F8;
+  border-color: #004B49;
+  color: #004B49;
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(123, 41, 88, 0.12);
+  box-shadow: 0 6px 16px rgba(0, 75, 73, 0.12);
 }
 
 .guide-hero-btn-secondary:active {
@@ -280,10 +280,10 @@
   background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   border-radius: 20px;
   padding: 24px 28px;
-  box-shadow: 0 12px 36px rgba(123, 41, 88, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 12px 36px rgba(0, 75, 73, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02);
   box-sizing: border-box;
 }
 
@@ -306,12 +306,12 @@
 .guide-flow-card {
   flex: 1;
   background: #ffffff;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   border-radius: 14px;
   padding: 20px 20px;
   text-align: left;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 8px rgba(123, 41, 88, 0.03);
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.03);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -320,9 +320,9 @@
 
 .guide-flow-card:hover {
   transform: translateY(-3px);
-  border-color: #b43f70;
-  box-shadow: 0 10px 24px rgba(123, 41, 88, 0.12);
-  background: #fffbfe;
+  border-color: #004B49;
+  box-shadow: 0 10px 24px rgba(0, 75, 73, 0.12);
+  background: #F6F8F8;
 }
 
 .guide-flow-badge-row {
@@ -337,9 +337,9 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #7b2958;
-  background: #fae8f2;
-  border: 1px solid #f2d0e3;
+  color: #004B49;
+  background: #F6F8F8;
+  border: 1px solid #E5EAEA;
   padding: 3px 10px;
   border-radius: 6px;
   display: inline-block;
@@ -372,12 +372,12 @@
   height: 26px;
   border-radius: 50%;
   background: #ffffff;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7b2958;
-  box-shadow: 0 2px 8px rgba(123, 41, 88, 0.14);
+  color: #004B49;
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.14);
   pointer-events: none;
 }
 
@@ -419,7 +419,7 @@
   max-height: calc(100vh - 110px);
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #ebdbe6 transparent;
+  scrollbar-color: #E5EAEA transparent;
   padding-right: 4px;
 }
 
@@ -432,17 +432,17 @@
 }
 
 .guide-sidebar-sticky::-webkit-scrollbar-thumb {
-  background-color: #ebdbe6;
+  background-color: #E5EAEA;
   border-radius: 4px;
 }
 
 /* 1. TOPICS CARD (ENHANCED HEIGHT & LUXURIOUS TOPIC SPACING) */
 .guide-topics-card {
   background: #ffffff;
-  border: 1.5px solid #f2d0e3;
+  border: 1.5px solid #E5EAEA;
   border-radius: 20px;
   padding: 24px 18px;
-  box-shadow: 0 4px 22px rgba(123, 41, 88, 0.05);
+  box-shadow: 0 4px 22px rgba(0, 75, 73, 0.05);
 }
 
 .guide-topics-header {
@@ -453,14 +453,14 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #7b2958;
+  color: #004B49;
   padding-bottom: 14px;
-  border-bottom: 1px solid #ebdbe6;
+  border-bottom: 1px solid #E5EAEA;
   margin-bottom: 14px;
 }
 
 .guide-topics-header svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .guide-topics-nav {
@@ -489,17 +489,17 @@
 }
 
 .guide-topic-nav-item:hover {
-  background: #fdf6fa;
-  color: #7b2958;
+  background: #F6F8F8;
+  color: #004B49;
 }
 
 .guide-topic-nav-item.active {
-  background: #fcf0f7;
-  color: #7b2958;
+  background: #F6F8F8;
+  color: #004B49;
   font-weight: 750;
-  border-color: #f7dbe9;
-  border-left: 3.5px solid #7b2958;
-  box-shadow: 0 4px 14px rgba(123, 41, 88, 0.08);
+  border-color: #E5EAEA;
+  border-left: 3.5px solid #004B49;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.08);
 }
 
 .topic-num {
@@ -519,9 +519,9 @@
 }
 
 .guide-topic-nav-item.active .topic-num {
-  background: linear-gradient(135deg, #7b2958 0%, #b43f70 100%);
+  background: #004B49;
   color: #ffffff;
-  box-shadow: 0 2px 8px rgba(123, 41, 88, 0.32);
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.32);
 }
 
 .topic-text {
@@ -530,11 +530,11 @@
 
 /* 2. SMALL ACTION CTA CARD BELOW TOPICS (EXPANDED BREATHING ROOM) */
 .guide-sidebar-cta-card {
-  background: linear-gradient(145deg, #fdfafc 0%, #fcf0f7 100%);
-  border: 1.5px solid #f2d0e3;
+  background: linear-gradient(145deg, #F6F8F8 0%, #F6F8F8 100%);
+  border: 1.5px solid #E5EAEA;
   border-radius: 20px;
   padding: 26px 22px;
-  box-shadow: 0 8px 26px rgba(123, 41, 88, 0.06);
+  box-shadow: 0 8px 26px rgba(0, 75, 73, 0.06);
 }
 
 .sidebar-cta-badge {
@@ -545,8 +545,8 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #7b2958;
-  background: #fae8f2;
+  color: #004B49;
+  background: #F6F8F8;
   padding: 4px 10px;
   border-radius: 9999px;
   margin-bottom: 12px;
@@ -574,7 +574,7 @@
   gap: 7px;
   width: 100%;
   padding: 11px 18px;
-  background: #7b2958;
+  background: #004B49;
   color: #ffffff !important;
   font-size: 13px;
   font-weight: 700;
@@ -583,13 +583,13 @@
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 14px rgba(123, 41, 88, 0.22);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.22);
 }
 
 .sidebar-cta-btn:hover {
-  background: #5c1840;
+  background: #00201F;
   transform: translateY(-1px);
-  box-shadow: 0 6px 16px rgba(123, 41, 88, 0.3);
+  box-shadow: 0 6px 16px rgba(0, 75, 73, 0.3);
 }
 
 .sidebar-cta-guarantee {
@@ -618,7 +618,7 @@
 .guide-prose-section {
   padding: 0 0 32px 0 !important;
   margin: 0 0 36px 0 !important;
-  border-bottom: 1px solid #f8eaf2;
+  border-bottom: 1px solid #F6F8F8;
   scroll-margin-top: 96px;
 }
 
@@ -670,16 +670,16 @@
 
 /* Callout Highlight Box */
 .guide-callout-box {
-  background: #fcf0f7;
-  border-left: 4px solid #7b2958;
+  background: #F6F8F8;
+  border-left: 4px solid #004B49;
   border-radius: 0 12px 12px 0;
   padding: 13px 18px;
   margin: 16px 0 0 0;
 }
 
 .guide-callout-box.purple {
-  background: #fdfafc;
-  border-left-color: #b43f70;
+  background: #F6F8F8;
+  border-left-color: #004B49;
 }
 
 .guide-callout-title {
@@ -693,7 +693,7 @@
 }
 
 .guide-callout-title svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .guide-callout-box p {
@@ -710,10 +710,10 @@
 .interactive-calc-card,
 .guide-calculator-card {
   background: #ffffff !important;
-  border: 1.5px solid #ebdbe6 !important;
+  border: 1.5px solid #E5EAEA !important;
   border-radius: 20px !important;
   padding: 32px 34px !important;
-  box-shadow: 0 8px 32px rgba(123, 41, 88, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+  box-shadow: 0 8px 32px rgba(0, 75, 73, 0.06), 0 2px 6px rgba(0, 0, 0, 0.02) !important;
   margin: 28px 0 !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   box-sizing: border-box !important;
@@ -727,7 +727,7 @@
   gap: 16px !important;
   margin-bottom: 26px !important;
   padding-bottom: 20px !important;
-  border-bottom: 1.5px solid #ebdbe6 !important;
+  border-bottom: 1.5px solid #E5EAEA !important;
   flex-wrap: wrap !important;
 }
 
@@ -746,18 +746,18 @@
 
 .calc-card-header h3 svg,
 .calc-header h3 svg {
-  color: #7b2958 !important;
+  color: #004B49 !important;
   flex-shrink: 0 !important;
 }
 
 .calc-currency-badge {
   font-size: 12.5px !important;
   font-weight: 750 !important;
-  background: #fae8f2 !important;
-  color: #7b2958 !important;
+  background: #F6F8F8 !important;
+  color: #004B49 !important;
   padding: 6px 16px !important;
   border-radius: 9999px !important;
-  border: 1px solid #f2d0e3 !important;
+  border: 1px solid #E5EAEA !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   letter-spacing: 0.01em !important;
   display: inline-flex !important;
@@ -803,9 +803,9 @@
   width: 100% !important;
   height: 48px !important;
   padding: 0 16px !important;
-  border: 1.5px solid #ebdbe6 !important;
+  border: 1.5px solid #E5EAEA !important;
   border-radius: 9px !important;
-  background: #faf8fa !important;
+  background: #F6F8F8 !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   font-size: 15px !important;
   font-weight: 600 !important;
@@ -817,13 +817,13 @@
 
 .calc-input:hover {
   background: #ffffff !important;
-  border-color: #c99bb4 !important;
+  border-color: #004B49 !important;
 }
 
 .calc-input:focus {
   background: #ffffff !important;
-  border-color: #7b2958 !important;
-  box-shadow: 0 0 0 3.5px rgba(123, 41, 88, 0.12) !important;
+  border-color: #004B49 !important;
+  box-shadow: 0 0 0 3.5px rgba(0, 75, 73, 0.12) !important;
 }
 
 .calc-toggles-row {
@@ -832,8 +832,8 @@
   gap: 12px !important;
   margin-top: 6px !important;
   padding: 18px 20px !important;
-  background: #fdfafc !important;
-  border: 1.5px solid #f2d0e3 !important;
+  background: #F6F8F8 !important;
+  border: 1.5px solid #E5EAEA !important;
   border-radius: 14px !important;
 }
 
@@ -851,14 +851,14 @@
 }
 
 .calc-checkbox-label:hover {
-  color: #7b2958 !important;
+  color: #004B49 !important;
 }
 
 .calc-checkbox-label input[type="checkbox"],
 .calc-toggle-checkbox {
   width: 19px !important;
   height: 19px !important;
-  accent-color: #7b2958 !important;
+  accent-color: #004B49 !important;
   cursor: pointer !important;
   margin: 0 !important;
   flex-shrink: 0 !important;
@@ -873,12 +873,12 @@
 
 .calc-result-summary-box,
 .calc-output-box {
-  background: linear-gradient(135deg, #fdf4f9 0%, #faedf5 100%) !important;
-  border: 1.5px solid #ebdbe6 !important;
+  background: #F6F8F8 !important;
+  border: 1.5px solid #E5EAEA !important;
   border-radius: 16px !important;
   padding: 24px 22px !important;
   text-align: center !important;
-  box-shadow: 0 4px 16px rgba(123, 41, 88, 0.05) !important;
+  box-shadow: 0 4px 16px rgba(0, 75, 73, 0.05) !important;
   box-sizing: border-box !important;
 }
 
@@ -889,7 +889,7 @@
   font-weight: 800 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.09em !important;
-  color: #7b2958 !important;
+  color: #004B49 !important;
   margin-bottom: 8px !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 }
@@ -898,7 +898,7 @@
 .calc-inhand-amount {
   font-size: 38px !important;
   font-weight: 900 !important;
-  color: #1e131d !important;
+  color: #00201F !important;
   line-height: 1.15 !important;
   margin: 0 0 10px 0 !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
@@ -916,12 +916,12 @@
   background: rgba(255, 255, 255, 0.85) !important;
   padding: 5px 14px !important;
   border-radius: 9999px !important;
-  border: 1px solid #ebdbe6 !important;
+  border: 1px solid #E5EAEA !important;
 }
 
 .calc-breakdown-table {
   background: #ffffff !important;
-  border: 1.5px solid #ebdbe6 !important;
+  border: 1.5px solid #E5EAEA !important;
   border-radius: 14px !important;
   padding: 8px 20px !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
@@ -934,7 +934,7 @@
   align-items: center !important;
   justify-content: space-between !important;
   padding: 13px 0 !important;
-  border-bottom: 1px dashed #ebdbe6 !important;
+  border-bottom: 1px dashed #E5EAEA !important;
   font-size: 13.5px !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   gap: 14px !important;
@@ -952,7 +952,7 @@
 
 .calc-table-row span:last-child {
   font-weight: 750 !important;
-  color: #7b2958 !important;
+  color: #004B49 !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   font-variant-numeric: tabular-nums !important;
 }
@@ -970,17 +970,17 @@
    ========================================================================== */
 .salary-components-interactive {
   margin: 24px 0 0 0;
-  border: 1.5px solid #f2d0e3;
+  border: 1.5px solid #E5EAEA;
   border-radius: 18px;
   overflow: hidden;
   background: #ffffff;
-  box-shadow: 0 4px 18px rgba(123, 41, 88, 0.04);
+  box-shadow: 0 4px 18px rgba(0, 75, 73, 0.04);
 }
 
 .salary-tabs-header {
   display: flex;
-  background: #fdfafc;
-  border-bottom: 1.5px solid #f2d0e3;
+  background: #F6F8F8;
+  border-bottom: 1.5px solid #E5EAEA;
   overflow-x: auto;
 }
 
@@ -1000,14 +1000,14 @@
 }
 
 .salary-tab-btn:hover {
-  color: #7b2958;
+  color: #004B49;
   background: rgba(250, 232, 242, 0.4);
 }
 
 .salary-tab-btn.active {
   background: #ffffff;
-  color: #7b2958;
-  border-bottom: 3px solid #7b2958;
+  color: #004B49;
+  border-bottom: 3px solid #004B49;
   font-weight: 800;
 }
 
@@ -1031,8 +1031,8 @@
 }
 
 .component-item-card {
-  background: #fdfafc;
-  border: 1.5px solid #ebdbe6;
+  background: #F6F8F8;
+  border: 1.5px solid #E5EAEA;
   border-radius: 12px;
   padding: 18px;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1041,9 +1041,9 @@
 }
 
 .component-item-card:hover {
-  border-color: #7b2958;
+  border-color: #004B49;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(123, 41, 88, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 75, 73, 0.08);
   background: #ffffff;
 }
 
@@ -1065,9 +1065,9 @@
 .comp-share-badge {
   font-size: 11.5px;
   font-weight: 750;
-  color: #7b2958;
-  background: #fae8f2;
-  border: 1px solid #f2d0e3;
+  color: #004B49;
+  background: #F6F8F8;
+  border: 1px solid #E5EAEA;
   padding: 3px 8px;
   border-radius: 6px;
   white-space: nowrap;
@@ -1085,8 +1085,8 @@
    5. INTERACTIVE FEATURE 3: STATUTORY COMPLIANCE & STATE PT TABS
    ========================================================================== */
 .statutory-interactive-widget {
-  background: #fdfafc;
-  border: 1.5px solid #f2d0e3;
+  background: #F6F8F8;
+  border: 1.5px solid #E5EAEA;
   border-radius: 18px;
   padding: 22px;
   margin: 20px 0 0 0;
@@ -1102,7 +1102,7 @@
 .statutory-pill-btn {
   padding: 9px 18px;
   border-radius: 9999px;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   background: #ffffff;
   color: #475569;
   font-size: 13px;
@@ -1113,22 +1113,22 @@
 }
 
 .statutory-pill-btn:hover {
-  border-color: #7b2958;
-  color: #7b2958;
+  border-color: #004B49;
+  color: #004B49;
 }
 
 .statutory-pill-btn.active {
-  background: #7b2958;
+  background: #004B49;
   color: #ffffff;
-  border-color: #7b2958;
-  box-shadow: 0 4px 12px rgba(123, 41, 88, 0.2);
+  border-color: #004B49;
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.2);
 }
 
 .statutory-detail-box {
   background: #ffffff;
   border-radius: 14px;
   padding: 24px;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
 }
 
 .statutory-detail-box h4 {
@@ -1143,10 +1143,10 @@
 .pt-state-table-wrap {
   width: 100%;
   overflow-x: auto;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   border-radius: 14px;
   margin-top: 20px;
-  box-shadow: 0 2px 8px rgba(123, 41, 88, 0.03);
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.03);
 }
 
 .pt-state-table {
@@ -1157,20 +1157,20 @@
 }
 
 .pt-state-table th {
-  background: #fcf4f9;
+  background: #F6F8F8;
   font-size: 13px;
   font-weight: 750;
   color: #0f172a;
   padding: 14px 18px;
   text-align: left;
-  border-bottom: 1.5px solid #ebdbe6;
+  border-bottom: 1.5px solid #E5EAEA;
 }
 
 .pt-state-table td {
   padding: 13px 18px;
   font-size: 13.5px;
   color: #475569;
-  border-bottom: 1px solid #ebdbe6;
+  border-bottom: 1px solid #E5EAEA;
   line-height: 1.5;
 }
 
@@ -1199,11 +1199,11 @@
    ========================================================================== */
 .interactive-checklist-box {
   background: #ffffff;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   border-radius: 20px;
   padding: 28px 30px;
   margin: 28px 0;
-  box-shadow: 0 8px 32px rgba(123, 41, 88, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 75, 73, 0.06);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -1227,7 +1227,7 @@
 }
 
 .checklist-header h3 svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .checklist-progress-bar-wrap {
@@ -1241,7 +1241,7 @@
 
 .checklist-progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, #7b2958 0%, #b43f70 100%);
+  background: #004B49;
   border-radius: 9999px;
   transition: width 0.3s ease;
 }
@@ -1258,15 +1258,15 @@
   gap: 14px;
   padding: 12px 16px;
   border-radius: 12px;
-  background: #fdfafc;
-  border: 1px solid #ebdbe6;
+  background: #F6F8F8;
+  border: 1px solid #E5EAEA;
   cursor: pointer;
   transition: all 0.18s ease;
 }
 
 .checklist-item-row:hover {
-  background: #fcf0f7;
-  border-color: #f2d0e3;
+  background: #F6F8F8;
+  border-color: #E5EAEA;
 }
 
 .checklist-item-row.done {
@@ -1278,7 +1278,7 @@
   width: 18px;
   height: 18px;
   margin-top: 2px;
-  accent-color: #7b2958;
+  accent-color: #004B49;
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -1287,9 +1287,9 @@
   font-size: 11px;
   font-weight: 750;
   text-transform: uppercase;
-  color: #7b2958;
-  background: #fae8f2;
-  border: 1px solid #f2d0e3;
+  color: #004B49;
+  background: #F6F8F8;
+  border: 1px solid #E5EAEA;
   padding: 2px 7px;
   border-radius: 4px;
   display: inline-block;
@@ -1331,8 +1331,8 @@
 }
 
 .checklist-reset-btn:hover {
-  border-color: #7b2958;
-  color: #7b2958;
+  border-color: #004B49;
+  color: #004B49;
 }
 
 /* ==========================================================================
@@ -1340,8 +1340,8 @@
    ========================================================================== */
 .article-related-section {
   padding: 60px 0 68px 0;
-  background: #fdfafc;
-  border-top: 1px solid #f2d0e3;
+  background: #F6F8F8;
+  border-top: 1px solid #E5EAEA;
 }
 
 .article-related-header {
@@ -1358,7 +1358,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
   border: none;
   padding: 0;
@@ -1366,7 +1366,7 @@
 }
 
 .article-related-eyebrow svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .article-related-title {
@@ -1394,7 +1394,7 @@
 .handbook-card {
   background: #ffffff;
   border-radius: 20px;
-  border: 1.5px solid #f2e8ef;
+  border: 1.5px solid #F6F8F8;
   padding: 30px 24px;
   min-height: 290px;
   display: flex;
@@ -1415,7 +1415,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #7b2958, #b43f70);
+  background: #004B49;
   opacity: 0;
   transition: opacity 0.25s ease;
   z-index: 2;
@@ -1423,8 +1423,8 @@
 
 .handbook-card:hover {
   transform: translateY(-6px);
-  border-color: #f2d0e3;
-  box-shadow: 0 20px 40px rgba(123, 41, 88, 0.09);
+  border-color: #E5EAEA;
+  box-shadow: 0 20px 40px rgba(0, 75, 73, 0.09);
 }
 
 .handbook-card:hover::before {
@@ -1443,7 +1443,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
   border: none;
   padding: 0;
@@ -1453,17 +1453,17 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  background: #fcf0f7;
-  color: #7b2958;
+  background: #F6F8F8;
+  color: #004B49;
   font-size: 11px;
   font-weight: 750;
   padding: 3px 9px;
   border-radius: 9999px;
-  border: 1px solid #f2d0e3;
+  border: 1px solid #E5EAEA;
 }
 
 .handbook-stat-badge svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .playbook-content {
@@ -1483,7 +1483,7 @@
 }
 
 .handbook-card:hover .playbook-card-title {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .playbook-card-desc {
@@ -1501,7 +1501,7 @@
 .playbook-card-footer {
   margin-top: auto;
   padding-top: 14px;
-  border-top: 1px solid #f2e8ef;
+  border-top: 1px solid #F6F8F8;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1516,12 +1516,12 @@
 }
 
 .playbook-read-time svg {
-  color: #7b2958;
+  color: #004B49;
 }
 
 .playbook-open-btn {
   font-weight: 750;
-  color: #7b2958;
+  color: #004B49;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -1530,7 +1530,7 @@
 
 .handbook-card:hover .playbook-open-btn {
   gap: 8px;
-  color: #5c1840;
+  color: #00201F;
 }
 
 /* ==========================================================================
@@ -1648,7 +1648,7 @@
 
 .guide-faq-card {
   background: #ffffff;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   border-radius: 16px;
   padding: 22px 26px;
   cursor: pointer;
@@ -1657,14 +1657,14 @@
 }
 
 .guide-faq-card:hover {
-  border-color: #7b2958;
-  box-shadow: 0 6px 20px rgba(123, 41, 88, 0.08);
+  border-color: #004B49;
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.08);
 }
 
 .guide-faq-card.open {
-  border-color: #7b2958;
-  background: #fdfafc;
-  box-shadow: 0 8px 24px rgba(123, 41, 88, 0.07);
+  border-color: #004B49;
+  background: #F6F8F8;
+  box-shadow: 0 8px 24px rgba(0, 75, 73, 0.07);
 }
 
 .guide-faq-header {
@@ -1677,9 +1677,9 @@
 .guide-faq-num-badge {
   font-size: 12px;
   font-weight: 800;
-  color: #7b2958;
-  background: #fae8f2;
-  border: 1px solid #f2d0e3;
+  color: #004B49;
+  background: #F6F8F8;
+  border: 1px solid #E5EAEA;
   padding: 3px 9px;
   border-radius: 6px;
   flex-shrink: 0;
@@ -1698,8 +1698,8 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #f8eff4;
-  color: #7b2958;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1709,14 +1709,14 @@
 
 .guide-faq-card.open .guide-faq-toggle-icon {
   transform: rotate(180deg);
-  background: #7b2958;
+  background: #004B49;
   color: #ffffff;
 }
 
 .guide-faq-answer-block {
   margin-top: 16px;
   padding-top: 16px;
-  border-top: 1px solid #ebdbe6;
+  border-top: 1px solid #E5EAEA;
 }
 
 .guide-faq-answer {
@@ -1724,9 +1724,9 @@
   line-height: 1.7;
   color: #334155;
   margin: 0 0 12px 0;
-  border-left: 3px solid #7b2958;
+  border-left: 3px solid #004B49;
   padding-left: 14px;
-  background: #fdf6fa;
+  background: #F6F8F8;
   padding-top: 10px;
   padding-bottom: 10px;
   border-radius: 0 8px 8px 0;
@@ -1743,9 +1743,9 @@
   gap: 5px;
   font-size: 12px;
   font-weight: 600;
-  color: #7b2958;
+  color: #004B49;
   background: transparent;
-  border: 1px solid #ebdbe6;
+  border: 1px solid #E5EAEA;
   border-radius: 6px;
   padding: 4px 10px;
   cursor: pointer;
@@ -1753,22 +1753,22 @@
 }
 
 .guide-faq-share-btn:hover {
-  background: #fae8f2;
-  border-color: #7b2958;
+  background: #F6F8F8;
+  border-color: #004B49;
 }
 
 .guide-faq-highlight {
   animation: pulse-guide-highlight 2.5s ease-out;
-  border-color: #7b2958 !important;
-  background: #fdf7fa !important;
+  border-color: #004B49 !important;
+  background: #F6F8F8 !important;
 }
 
 @keyframes pulse-guide-highlight {
   0% {
-    box-shadow: 0 0 0 0 rgba(123, 41, 88, 0.6);
+    box-shadow: 0 0 0 0 rgba(0, 75, 73, 0.6);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(123, 41, 88, 0.2);
+    box-shadow: 0 0 0 8px rgba(0, 75, 73, 0.2);
   }
   100% {
     box-shadow: none;

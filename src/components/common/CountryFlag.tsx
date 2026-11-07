@@ -111,9 +111,9 @@ export const CountryFlag: React.FC<CountryFlagProps> = ({
             <g clipPath="url(#gb-clip)">
               <path fill="#012169" d="M0 0h640v480H0z" />
               <path stroke="#fff" strokeWidth="80" d="m0 0 640 480M640 0 0 480" />
-              <path stroke="#c8102e" strokeWidth="48" d="m0 0 640 480M640 0 0 480" />
+              <path stroke="#004B49" strokeWidth="48" d="m0 0 640 480M640 0 0 480" />
               <path stroke="#fff" strokeWidth="120" d="M320 0v480M0 240h640" />
-              <path stroke="#c8102e" strokeWidth="72" d="M320 0v480M0 240h640" />
+              <path stroke="#004B49" strokeWidth="72" d="M320 0v480M0 240h640" />
             </g>
           </svg>
         );
@@ -152,9 +152,9 @@ export const CountryFlag: React.FC<CountryFlagProps> = ({
             <g transform="scale(0.5)">
               <path fill="#012169" d="M0 0h640v480H0z" />
               <path stroke="#fff" strokeWidth="80" d="m0 0 640 480M640 0 0 480" />
-              <path stroke="#c8102e" strokeWidth="48" d="m0 0 640 480M640 0 0 480" />
+              <path stroke="#004B49" strokeWidth="48" d="m0 0 640 480M640 0 0 480" />
               <path stroke="#fff" strokeWidth="120" d="M320 0v480M0 240h640" />
-              <path stroke="#c8102e" strokeWidth="72" d="M320 0v480M0 240h640" />
+              <path stroke="#004B49" strokeWidth="72" d="M320 0v480M0 240h640" />
             </g>
             {/* Southern Cross stars */}
             <circle cx="160" cy="360" r="18" fill="#fff" />
@@ -207,7 +207,7 @@ export const CountryFlag: React.FC<CountryFlagProps> = ({
         return (
           <svg viewBox="0 0 640 480" width={width} height={height} className={className}>
             <rect width="640" height="480" fill="#fff" />
-            <circle cx="320" cy="240" r="120" fill="#bc002d" />
+            <circle cx="320" cy="240" r="120" fill="#004B49" />
           </svg>
         );
 
@@ -216,7 +216,7 @@ export const CountryFlag: React.FC<CountryFlagProps> = ({
         return (
           <svg viewBox="0 0 640 480" width={width} height={height} className={className}>
             <path fill="#0038a8" d="M0 0h640v240H0z" />
-            <path fill="#ce1126" d="M0 240h640v240H0z" />
+            <path fill="#004B49" d="M0 240h640v240H0z" />
             <polygon points="0,0 280,240 0,480" fill="#fff" />
             <circle cx="95" cy="240" r="28" fill="#fcd116" />
           </svg>

@@ -569,7 +569,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         icon: "chart",
         title: "Team Efficiency",
         subtitle: "85% Less Manual Inquiries",
-        color: "#802B5B",
+        color: "#004B49",
       },
       steps: [
         {
@@ -939,7 +939,7 @@ export const solutionsMap: Record<string, SolutionData> = {
         icon: "finance",
         title: "Financial Precision",
         subtitle: "99.9% Calculation Accuracy",
-        color: "#802B5B",
+        color: "#004B49",
       },
       steps: [
         {

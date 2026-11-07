@@ -53,7 +53,7 @@ export function SupportHelpCenterPage() {
         <div className="container" style={{ maxWidth: "1080px" }}>
           {/* Header */}
           <div className="mb-8 text-center max-w-2xl mx-auto">
-            <span className="text-xs font-bold uppercase tracking-wider text-[#7b2958] bg-[#faedf4] px-3 py-1 rounded-full inline-block mb-3">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#004B49] bg-[#F6F8F8] px-3 py-1 rounded-full inline-block mb-3">
               KNOWLEDGE BASE & GUIDES
             </span>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">
@@ -68,8 +68,8 @@ export function SupportHelpCenterPage() {
 
           {/* Search Bar */}
           <div className="max-w-xl mx-auto mb-8">
-            <div className="relative flex items-center bg-white border-2 border-gray-200 rounded-xl px-4 py-2.5 shadow-sm focus-within:border-[#7b2958] transition">
-              <Icon name="search" size={18} className="text-[#7b2958] mr-3 flex-shrink-0" />
+            <div className="relative flex items-center bg-white border-2 border-gray-200 rounded-xl px-4 py-2.5 shadow-sm focus-within:border-[#004B49] transition">
+              <Icon name="search" size={18} className="text-[#004B49] mr-3 flex-shrink-0" />
               <input
                 type="text"
                 className="w-full text-sm outline-none text-gray-900 placeholder-gray-400"
@@ -97,7 +97,7 @@ export function SupportHelpCenterPage() {
               to="/support/help-center"
               className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
                 !slug
-                  ? "bg-[#7b2958] text-white"
+                  ? "bg-[#004B49] text-white"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -111,7 +111,7 @@ export function SupportHelpCenterPage() {
                   to={`/support/help-center/${topic.slug}`}
                   className={`px-4 py-1.5 rounded-full text-xs font-bold transition ${
                     slug === topic.slug
-                      ? "bg-[#7b2958] text-white"
+                      ? "bg-[#004B49] text-white"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`}
                 >
@@ -130,7 +130,7 @@ export function SupportHelpCenterPage() {
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="text-xs font-bold text-[#7b2958] hover:underline"
+                className="text-xs font-bold text-[#004B49] hover:underline"
               >
                 Clear filter
               </button>
@@ -144,23 +144,23 @@ export function SupportHelpCenterPage() {
                 <Link
                   key={article.slug}
                   to={`/support/article/${article.slug}`}
-                  className="p-6 rounded-2xl border border-gray-200 bg-white hover:border-[#7b2958] hover:shadow-lg transition group flex flex-col justify-between"
+                  className="p-6 rounded-2xl border border-gray-200 bg-white hover:border-[#004B49] hover:shadow-lg transition group flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between text-xs text-gray-500 mb-3">
-                      <span className="font-semibold text-[#7b2958] uppercase">
+                      <span className="font-semibold text-[#004B49] uppercase">
                         {article.topicSlug.replace("-", " ")}
                       </span>
                       <span>{article.readTime}</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#7b2958] transition leading-snug mb-2">
+                    <h3 className="text-lg font-bold text-gray-900 group-hover:text-[#004B49] transition leading-snug mb-2">
                       {article.title}
                     </h3>
                     <p className="text-sm text-gray-600 leading-relaxed mb-4">
                       {article.summary}
                     </p>
                   </div>
-                  <span className="text-sm font-bold text-[#7b2958] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  <span className="text-sm font-bold text-[#004B49] inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Read Guide &rarr;
                   </span>
                 </Link>
@@ -168,7 +168,7 @@ export function SupportHelpCenterPage() {
             </div>
           ) : (
             <div className="text-center py-16 bg-white rounded-2xl border border-gray-200 mb-14 max-w-lg mx-auto">
-              <div className="w-12 h-12 rounded-full bg-[#faedf4] text-[#7b2958] flex items-center justify-center mx-auto mb-3">
+              <div className="w-12 h-12 rounded-full bg-[#F6F8F8] text-[#004B49] flex items-center justify-center mx-auto mb-3">
                 <Icon name="search" size={20} />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-1">No articles found</h3>
@@ -178,7 +178,7 @@ export function SupportHelpCenterPage() {
               <button
                 type="button"
                 onClick={() => setSearchQuery("")}
-                className="px-4 py-2 rounded-lg bg-[#7b2958] text-white text-xs font-bold hover:bg-[#5d1e41] transition"
+                className="px-4 py-2 rounded-lg bg-[#004B49] text-white text-xs font-bold hover:bg-[#00201F] transition"
               >
                 Clear Search & View All
               </button>
@@ -186,7 +186,7 @@ export function SupportHelpCenterPage() {
           )}
 
           {/* Bottom Help Callout */}
-          <div className="p-8 rounded-2xl bg-gradient-to-r from-[#fdf6fa] to-[#fcf0f7] border border-[#f2d0e3] text-center max-w-xl mx-auto">
+          <div className="p-8 rounded-2xl bg-gradient-to-r from-[#F6F8F8] to-[#F6F8F8] border border-[#E5EAEA] text-center max-w-xl mx-auto">
             <h3 className="text-xl font-bold text-gray-900 mb-2">
               Can&apos;t find what you need?
             </h3>
@@ -196,7 +196,7 @@ export function SupportHelpCenterPage() {
             <div className="flex justify-center gap-3">
               <Link
                 to="/support"
-                className="px-5 py-2.5 rounded-xl bg-[#7b2958] text-white font-bold text-sm shadow hover:bg-[#5d1e41] transition"
+                className="px-5 py-2.5 rounded-xl bg-[#004B49] text-white font-bold text-sm shadow hover:bg-[#00201F] transition"
               >
                 Contact Support
               </Link>

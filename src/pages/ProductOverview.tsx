@@ -121,14 +121,14 @@ const CATEGORY_WIDGET_CONFIGS: Record<string, CategoryWidgetData> = {
     donutCard: {
       title: "DOCUMENTS",
       segments: [
-        { percent: 64, color: "#802B5B" },
-        { percent: 24, color: "#b34d85" },
-        { percent: 12, color: "#e29bc1" },
+        { percent: 64, color: "#004B49" },
+        { percent: 24, color: "#004B49" },
+        { percent: 12, color: "#C6F36B" },
       ],
       legend: [
-        { label: "Verified", color: "#802B5B" },
-        { label: "In Review", color: "#b34d85" },
-        { label: "Archived", color: "#e29bc1" },
+        { label: "Verified", color: "#004B49" },
+        { label: "In Review", color: "#004B49" },
+        { label: "Archived", color: "#C6F36B" },
       ],
     },
     detailCard: {
@@ -166,14 +166,14 @@ const CATEGORY_WIDGET_CONFIGS: Record<string, CategoryWidgetData> = {
     donutCard: {
       title: "PUNCH MODES",
       segments: [
-        { percent: 58, color: "#802B5B" },
-        { percent: 28, color: "#b34d85" },
-        { percent: 14, color: "#e29bc1" },
+        { percent: 58, color: "#004B49" },
+        { percent: 28, color: "#004B49" },
+        { percent: 14, color: "#C6F36B" },
       ],
       legend: [
-        { label: "GPS Mobile", color: "#802B5B" },
-        { label: "Biometric", color: "#b34d85" },
-        { label: "Web Portal", color: "#e29bc1" },
+        { label: "GPS Mobile", color: "#004B49" },
+        { label: "Biometric", color: "#004B49" },
+        { label: "Web Portal", color: "#C6F36B" },
       ],
     },
     detailCard: {
@@ -211,14 +211,14 @@ const CATEGORY_WIDGET_CONFIGS: Record<string, CategoryWidgetData> = {
     donutCard: {
       title: "STATUTORY",
       segments: [
-        { percent: 52, color: "#802B5B" },
-        { percent: 28, color: "#b34d85" },
-        { percent: 20, color: "#e29bc1" },
+        { percent: 52, color: "#004B49" },
+        { percent: 28, color: "#004B49" },
+        { percent: 20, color: "#C6F36B" },
       ],
       legend: [
-        { label: "PF", color: "#802B5B" },
-        { label: "ESI", color: "#b34d85" },
-        { label: "PT • TDS", color: "#e29bc1" },
+        { label: "PF", color: "#004B49" },
+        { label: "ESI", color: "#004B49" },
+        { label: "PT • TDS", color: "#C6F36B" },
       ],
     },
     detailCard: {
@@ -256,14 +256,14 @@ const CATEGORY_WIDGET_CONFIGS: Record<string, CategoryWidgetData> = {
     donutCard: {
       title: "PERFORMANCE",
       segments: [
-        { percent: 55, color: "#802B5B" },
-        { percent: 32, color: "#b34d85" },
-        { percent: 13, color: "#e29bc1" },
+        { percent: 55, color: "#004B49" },
+        { percent: 32, color: "#004B49" },
+        { percent: 13, color: "#C6F36B" },
       ],
       legend: [
-        { label: "Exceeding", color: "#802B5B" },
-        { label: "On Target", color: "#b34d85" },
-        { label: "In Review", color: "#e29bc1" },
+        { label: "Exceeding", color: "#004B49" },
+        { label: "On Target", color: "#004B49" },
+        { label: "In Review", color: "#C6F36B" },
       ],
     },
     detailCard: {
@@ -825,7 +825,19 @@ export function ProductOverview() {
   }, [isConnectPaused]);
 
   return (
-    <PageLayout breadcrumbs={breadcrumbs} onOpenDemo={() => setIsDemoModalOpen(true)}>
+    <PageLayout
+      breadcrumbs={breadcrumbs}
+      onOpenDemo={() => setIsDemoModalOpen(true)}
+      footerCtaProps={{
+        eyebrowBadgeText: "Unified Workforce Operating System",
+        headlineLine1: "Connect Attendance, Payroll & HR",
+        headlineLine2: "Into One Seamless Platform",
+        subheadlineLine1: "Eliminate disconnected spreadsheets and fragmented tools with Zentilos's all-in-one multi-branch workforce platform.",
+        primaryButtonText: "Book a Live Product Tour",
+        secondaryButtonText: "Explore All Modules",
+        secondaryButtonLink: "#modules",
+      }}
+    >
       <SEO
         title="Product Overview | All-In-One HRMS Platform | Zentilos"
         description="One platform for every part of HR. Explore all 10 Zentilos modules: Core HR, attendance, payroll, assets, recruitment, and performance connected on a single employee record."
@@ -893,9 +905,9 @@ export function ProductOverview() {
           <div className="po-showcase-container">
             {categoryShowcases.map((cat, idx) => {
               const isReversed = idx % 2 === 1;
-              const themeColor = "#802B5B";
-              const iconBg = "#f7ebf3";
-              const borderColor = "#ede4ec";
+              const themeColor = "#004B49";
+              const iconBg = "#F6F8F8";
+              const borderColor = "#E5EAEA";
               return (
                 <Fragment key={cat.id}>
                   {/* High-Converting Mid-Page CTA Section Above Payroll - Matches Employee Management Page Mid-CTA */}
@@ -1170,7 +1182,7 @@ export function ProductOverview() {
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                   />
-                  <circle r="3.5" fill="#f472b6" opacity="0.95" filter="drop-shadow(0 0 5px rgba(244, 114, 182, 0.85))">
+                  <circle r="3.5" fill="#C6F36B" opacity="0.95" filter="drop-shadow(0 0 5px rgba(0, 75, 73, 0.85))">
                     <animateMotion dur="2.2s" repeatCount="indefinite" path="M 105 0 C 105 48, 270 38, 270 68" />
                   </circle>
 
@@ -1180,7 +1192,7 @@ export function ProductOverview() {
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                   />
-                  <circle r="3.5" fill="#ec4899" opacity="0.95" filter="drop-shadow(0 0 5px rgba(236, 72, 153, 0.85))">
+                  <circle r="3.5" fill="#C6F36B" opacity="0.95" filter="drop-shadow(0 0 5px rgba(198, 243, 107, 0.85))">
                     <animateMotion dur="2.0s" repeatCount="indefinite" path="M 270 0 L 270 68" />
                   </circle>
 
@@ -1190,7 +1202,7 @@ export function ProductOverview() {
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                   />
-                  <circle r="3.5" fill="#f472b6" opacity="0.95" filter="drop-shadow(0 0 5px rgba(244, 114, 182, 0.85))">
+                  <circle r="3.5" fill="#C6F36B" opacity="0.95" filter="drop-shadow(0 0 5px rgba(0, 75, 73, 0.85))">
                     <animateMotion dur="2.4s" repeatCount="indefinite" path="M 435 0 C 435 48, 270 38, 270 68" />
                   </circle>
 
@@ -1209,10 +1221,10 @@ export function ProductOverview() {
                         {/* Animated moving dot travelling through the wave line */}
                         {isActive ? (
                           <g>
-                            <circle r="5.5" fill="rgba(244, 114, 182, 0.35)">
+                            <circle r="5.5" fill="rgba(0, 75, 73, 0.35)">
                               <animateMotion dur="1.4s" repeatCount="indefinite" path={p} />
                             </circle>
-                            <circle r="3.5" fill="#ffffff" filter="drop-shadow(0 0 6px #ec4899)">
+                            <circle r="3.5" fill="#ffffff" filter="drop-shadow(0 0 6px #C6F36B)">
                               <animateMotion dur="1.4s" repeatCount="indefinite" path={p} />
                             </circle>
                           </g>
@@ -1228,7 +1240,7 @@ export function ProductOverview() {
                   {/* Center Hub (Avatar + checkmark) */}
                   <g className="po-cc-center-hub">
                     <circle cx="270" cy="92" r="30" fill="rgba(255, 255, 255, 0.08)" stroke="rgba(255, 255, 255, 0.25)" strokeWidth="1.5" />
-                    <circle cx="270" cy="92" r="22" fill="#852952" stroke="#ffffff" strokeWidth="2" filter="drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35))" />
+                    <circle cx="270" cy="92" r="22" fill="#004B49" stroke="#ffffff" strokeWidth="2" filter="drop-shadow(0 4px 10px rgba(0, 0, 0, 0.35))" />
                     <foreignObject x="257" y="79" width="26" height="26" className="pointer-events-none">
                       <div className="po-cc-hub-icon-wrap">
                         <Icon name="check" size={16} />
@@ -1263,7 +1275,7 @@ export function ProductOverview() {
                           cy={pos.y}
                           r="20"
                           fill={isActive ? "#ffffff" : "rgba(255, 255, 255, 0.08)"}
-                          stroke={isActive ? "#852952" : "rgba(255, 255, 255, 0.22)"}
+                          stroke={isActive ? "#004B49" : "rgba(255, 255, 255, 0.22)"}
                           strokeWidth={isActive ? "2.5" : "1.5"}
                           filter={isActive ? "drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3))" : undefined}
                         />
@@ -1274,7 +1286,7 @@ export function ProductOverview() {
                               placeItems: "center",
                               width: "100%",
                               height: "100%",
-                              color: isActive ? "#852952" : "#cbd5e1",
+                              color: isActive ? "#004B49" : "#cbd5e1",
                             }}
                           >
                             <Icon name={step.iconName} size={15} />

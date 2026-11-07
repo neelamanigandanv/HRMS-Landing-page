@@ -36,7 +36,19 @@ export function BlogList() {
   ];
 
   return (
-    <PageLayout breadcrumbs={breadcrumbs} onOpenDemo={() => openDemoModal()}>
+    <PageLayout
+      breadcrumbs={breadcrumbs}
+      onOpenDemo={() => openDemoModal()}
+      footerCtaProps={{
+        eyebrowBadgeText: "Actionable HR Playbooks & Industry Insights",
+        headlineLine1: "Turn Modern HR Insights into",
+        headlineLine2: "Automated Daily Workflows",
+        subheadlineLine1: "Discover how thousands of employees across retail, tech, and manufacturing rely on Zentilos every single day.",
+        primaryButtonText: "Book a Live Walkthrough",
+        secondaryButtonText: "Explore Platform",
+        secondaryButtonLink: "/product",
+      }}
+    >
       <SEO
         title="Blog & Playbooks — HRMS, Attendance & Statutory Payroll Guides | Zentilos"
         description="Actionable guides, statutory compliance playbooks, and workforce management best practices for growing multi-branch teams."

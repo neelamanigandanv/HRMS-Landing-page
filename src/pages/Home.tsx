@@ -135,14 +135,14 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
               className="demo-success-illustration"
               aria-hidden="true"
             >
-              <circle cx="24" cy="38" r="3" fill="#e879a9" opacity="0.85" />
-              <circle cx="116" cy="32" r="3.5" stroke="#802B5B" strokeWidth="1.5" fill="none" opacity="0.7" />
+              <circle cx="24" cy="38" r="3" fill="#C6F36B" opacity="0.85" />
+              <circle cx="116" cy="32" r="3.5" stroke="#004B49" strokeWidth="1.5" fill="none" opacity="0.7" />
               <circle cx="92" cy="16" r="2.5" fill="#0d9488" opacity="0.75" />
               <rect x="24" y="22" width="7" height="3" rx="1.5" transform="rotate(-30 24 22)" fill="#0d9488" opacity="0.8" />
-              <rect x="110" y="20" width="8" height="3.5" rx="1.5" transform="rotate(25 110 20)" fill="#802B5B" opacity="0.7" />
-              <rect x="38" y="30" width="60" height="74" rx="8" fill="rgba(128, 43, 91, 0.08)" />
-              <rect x="36" y="26" width="60" height="74" rx="7" fill="#ffffff" stroke="#5c183e" strokeWidth="3" />
-              <rect x="52" y="20" width="28" height="12" rx="4" fill="#802B5B" stroke="#5c183e" strokeWidth="2.5" />
+              <rect x="110" y="20" width="8" height="3.5" rx="1.5" transform="rotate(25 110 20)" fill="#004B49" opacity="0.7" />
+              <rect x="38" y="30" width="60" height="74" rx="8" fill="rgba(0, 75, 73, 0.08)" />
+              <rect x="36" y="26" width="60" height="74" rx="7" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
+              <rect x="52" y="20" width="28" height="12" rx="4" fill="#004B49" stroke="#004B49" strokeWidth="2.5" />
               <circle cx="66" cy="25" r="2.5" fill="#ffffff" />
               <path d="M48 62L58 72L82 48" stroke="#0d9488" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
               <g filter="url(#shieldShadowHome)">
@@ -1466,7 +1466,7 @@ export function Home() {
 
           <div className="container corporate-hero-container">
             <div className="corporate-hero-content">
-              {/* Eyebrow in signature Plum #802B5B replacing the green from reference */}
+              {/* Eyebrow in signature Plum #004B49 replacing the green from reference */}
               <div className="corporate-hero-eyebrow">
                 INNOVATE. CONNECT. GROW.
               </div>
@@ -1499,8 +1499,18 @@ export function Home() {
                   </span>
                 </button>
 
-                <a href="#pricing" className="corporate-hero-btn-secondary">
-                  <span>Estimate Price</span>
+                <a
+                  href="#built-around-your-business"
+                  className="corporate-hero-btn-secondary"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const el = document.getElementById("built-around-your-business");
+                    if (el) {
+                      el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                  }}
+                >
+                  <span>Explore Features</span>
                   <Icon name="arrow" size={14} />
                 </a>
               </div>
@@ -1676,7 +1686,7 @@ export function Home() {
           </div>
         </section>
 
-        <section className="setup-section">
+        <section className="setup-section" id="built-around-your-business">
           <div className="container">
             <SectionHeading
               eyebrow="BUILT AROUND YOUR BUSINESS"
@@ -1839,7 +1849,7 @@ export function Home() {
         </section>
       </main>
 
-      <FooterCTA />
+      <FooterCTA secondaryButtonLink="/product" />
 
       <Footer />
 

@@ -1,11 +1,11 @@
 /* ==========================================================================
    CUSTOMER SUPPORT PAGE - ZENTILOS DESIGN SYSTEM
    Modern, accessible support hub styling matching brand theme:
-   Primary: #802B5B (Plum), #191735 (Dark Ink), #f6f1ed (Warm Linen), #faedf4 (Soft Tint)
+   Primary: #004B49 (Plum), #191735 (Dark Ink), #f6f1ed (Warm Linen), #F6F8F8 (Soft Tint)
    ========================================================================== */
 
 .support-hub-page {
-  background-color: #faf9fb;
+  background-color: #F6F8F8;
   color: #191735;
   min-height: 100vh;
   position: relative;
@@ -22,9 +22,9 @@
 .support-hero-section {
   padding: 5rem 0 4.5rem;
   background:
-    radial-gradient(circle at 50% 0%, rgba(128, 43, 91, 0.08) 0%, rgba(250, 249, 251, 0) 70%),
-    linear-gradient(180deg, #fdf8fa 0%, #faf9fb 100%);
-  border-bottom: 1px solid rgba(128, 43, 91, 0.08);
+    radial-gradient(circle at 50% 0%, rgba(0, 75, 73, 0.08) 0%, rgba(250, 249, 251, 0) 70%),
+    linear-gradient(180deg, #F6F8F8 0%, #F6F8F8 100%);
+  border-bottom: 1px solid rgba(0, 75, 73, 0.08);
   text-align: center;
   position: relative;
 }
@@ -42,7 +42,7 @@
   border-radius: 0;
   background: transparent;
   border: none;
-  color: #802B5B;
+  color: #004B49;
   font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -52,7 +52,7 @@
 }
 
 .support-hero-sparkle {
-  color: #802B5B;
+  color: #004B49;
   font-size: 0.75rem;
 }
 
@@ -69,7 +69,7 @@
 
 .support-hero-glow {
   display: inline-block;
-  background: linear-gradient(135deg, #802B5B 0%, #5146d8 60%, #b54282 100%);
+  background: linear-gradient(135deg, #004B49 0%, #003836 60%, #00201F 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -119,11 +119,11 @@
 }
 
 .support-hero-btn-secondary:hover {
-  border-color: #802B5B !important;
-  color: #802B5B !important;
-  background: #faedf4 !important;
+  border-color: #004B49 !important;
+  color: #004B49 !important;
+  background: #F6F8F8 !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.1) !important;
 }
 
 .support-hero-trust-row {
@@ -133,7 +133,7 @@
   gap: 2rem;
   flex-wrap: wrap;
   padding-top: 1.25rem;
-  border-top: 1px solid rgba(128, 43, 91, 0.08);
+  border-top: 1px solid rgba(0, 75, 73, 0.08);
   font-size: 0.875rem;
   font-weight: 600;
   color: #64748b;
@@ -169,7 +169,7 @@
   width: min(1200px, calc(100% - 40px));
   margin: 0 auto;
   height: 1px;
-  background: rgba(87, 61, 77, 0.12);
+  background: rgba(0, 75, 73, 0.12);
   border: none;
 }
 
@@ -185,7 +185,7 @@
   font-weight: 750;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 0.65rem;
 }
 
@@ -231,8 +231,8 @@
 
 .support-type-card-v2:hover {
   transform: translateY(-4px);
-  border-color: #802B5B;
-  box-shadow: 0 16px 36px rgba(128, 43, 91, 0.12);
+  border-color: #004B49;
+  box-shadow: 0 16px 36px rgba(0, 75, 73, 0.12);
 }
 
 .support-type-card-v2.selected {
@@ -247,7 +247,7 @@
   width: 100%;
   height: 190px;
   overflow: hidden;
-  background: #f1e9ee;
+  background: #F6F8F8;
 }
 
 .type-card-image {
@@ -266,7 +266,7 @@
   position: absolute;
   bottom: 12px;
   left: 16px;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   font-size: 0.7rem;
   font-weight: 800;
@@ -301,7 +301,7 @@
 }
 
 .type-card-meta-item svg {
-  color: #802B5B;
+  color: #004B49;
 }
 
 .type-card-meta-dot {
@@ -334,7 +334,7 @@
 .type-card-tag {
   font-size: 0.725rem;
   font-weight: 650;
-  background: #fbf7fa;
+  background: #F6F8F8;
   border: 1px solid #ebdcd5;
   color: #475569;
   padding: 0.25rem 0.6rem;
@@ -347,15 +347,15 @@
   align-items: center;
   justify-content: space-between;
   padding-top: 1rem;
-  border-top: 1px solid #f8f3f6;
+  border-top: 1px solid #F6F8F8;
   font-size: 0.925rem;
   font-weight: 750;
-  color: #802B5B;
+  color: #004B49;
   transition: all 0.2s ease;
 }
 
 .support-type-card-v2:hover .type-card-action-row {
-  color: #571b3e;
+  color: #00201F;
 }
 
 .support-type-card-v2:hover .type-card-action-row svg {
@@ -383,7 +383,7 @@
   gap: 0.45rem;
   font-size: 0.85rem;
   font-weight: 800;
-  color: #802B5B;
+  color: #004B49;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.65rem;
@@ -421,15 +421,15 @@
   justify-content: space-between;
   margin-bottom: 0.85rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #f1e6ed;
+  border-bottom: 1px solid #F6F8F8;
 }
 
 .assigned-desk-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: #faedf4;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   padding: 3px 8px;
   border-radius: 6px;
   font-size: 0.725rem;
@@ -491,8 +491,8 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #faedf4;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -536,7 +536,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  color: #802B5B;
+  color: #004B49;
   font-weight: 750;
   text-decoration: none;
 }
@@ -558,7 +558,7 @@
 
 .support-form-type-tabs {
   display: flex;
-  background: #f4f2f6;
+  background: #F6F8F8;
   border-radius: 14px;
   padding: 0.35rem;
   margin-bottom: 2.25rem;
@@ -584,7 +584,7 @@
 
 .support-form-type-tab.active {
   background: #ffffff;
-  color: #802B5B;
+  color: #004B49;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
@@ -637,8 +637,8 @@
 .support-select:focus,
 .support-textarea:focus {
   background: #ffffff;
-  border-color: #802B5B;
-  box-shadow: 0 0 0 3px rgba(128, 43, 91, 0.12);
+  border-color: #004B49;
+  box-shadow: 0 0 0 3px rgba(0, 75, 73, 0.12);
 }
 
 .support-input.error,
@@ -677,14 +677,14 @@
 
 .support-dropzone:hover,
 .support-dropzone.dragover {
-  border-color: #802B5B;
-  background: #fdf8fb;
+  border-color: #004B49;
+  background: #FFFFFF;
 }
 
 .support-dropzone-icon {
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
-  color: #802B5B;
+  color: #004B49;
 }
 
 .support-dropzone-text {
@@ -694,7 +694,7 @@
 }
 
 .support-dropzone-browse {
-  color: #802B5B;
+  color: #004B49;
   font-weight: 700;
 }
 
@@ -749,7 +749,7 @@
   margin-top: 0.25rem;
   width: 17px;
   height: 17px;
-  accent-color: #802B5B;
+  accent-color: #004B49;
   cursor: pointer;
 }
 
@@ -760,7 +760,7 @@
 }
 
 .support-consent-text a {
-  color: #802B5B;
+  color: #004B49;
   text-decoration: underline;
   font-weight: 600;
 }
@@ -771,7 +771,7 @@
   font-size: 1rem;
   font-weight: 750;
   border-radius: 12px;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   border: none;
   cursor: pointer;
@@ -783,8 +783,8 @@
 }
 
 .support-submit-btn:hover:not(:disabled) {
-  background: #571b3e;
-  box-shadow: 0 8px 20px rgba(128, 43, 91, 0.25);
+  background: #00201F;
+  box-shadow: 0 8px 20px rgba(0, 75, 73, 0.25);
 }
 
 .support-submit-btn:disabled {
@@ -826,8 +826,8 @@
 }
 
 .support-ref-badge-box {
-  background: #fdf8fb;
-  border: 1.5px solid rgba(128, 43, 91, 0.18);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(0, 75, 73, 0.18);
   border-radius: 16px;
   padding: 1.5rem 2rem;
   display: inline-flex;
@@ -842,7 +842,7 @@
   font-weight: 750;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
 }
 
 .support-ref-value-row {
@@ -860,9 +860,9 @@
 }
 
 .support-ref-copy-btn {
-  background: #faedf4;
-  color: #802B5B;
-  border: 1px solid rgba(128, 43, 91, 0.2);
+  background: #F6F8F8;
+  color: #004B49;
+  border: 1px solid rgba(0, 75, 73, 0.2);
   border-radius: 8px;
   padding: 0.4rem 0.75rem;
   font-size: 0.8125rem;
@@ -872,7 +872,7 @@
 }
 
 .support-ref-copy-btn:hover {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
 }
 
@@ -910,10 +910,10 @@
 }
 
 /* ----------------------------------------------------------------------------
-   4. OTHER WAYS TO REACH US (Capsule Banner matching Image 3 with #802B5B)
+   4. OTHER WAYS TO REACH US (Capsule Banner matching Image 3 with #004B49)
    ---------------------------------------------------------------------------- */
 .support-direct-banner {
-  background: #802B5B;
+  background: #004B49;
   border-radius: 20px;
   padding: 2.75rem 2.5rem;
   display: flex;
@@ -921,7 +921,7 @@
   justify-content: space-between;
   gap: 1.5rem;
   color: #ffffff;
-  box-shadow: 0 14px 36px rgba(128, 43, 91, 0.22);
+  box-shadow: 0 14px 36px rgba(0, 75, 73, 0.22);
   position: relative;
 }
 
@@ -1029,16 +1029,16 @@
 
 .support-quick-card-v2:hover {
   transform: translateY(-4px);
-  border-color: #802B5B;
-  box-shadow: 0 16px 36px rgba(128, 43, 91, 0.1);
+  border-color: #004B49;
+  box-shadow: 0 16px 36px rgba(0, 75, 73, 0.1);
 }
 
 .quick-card-top-icon {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: #faedf4;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1048,7 +1048,7 @@
 }
 
 .support-quick-card-v2:hover .quick-card-top-icon {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
 }
 
@@ -1088,14 +1088,14 @@
 }
 
 .support-quick-card-v2:hover .quick-card-action-text {
-  color: #802B5B;
+  color: #004B49;
 }
 
 .quick-card-circle-arrow {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -1103,13 +1103,13 @@
   transition: all 0.2s ease;
   font-size: 14px;
   font-weight: 800;
-  box-shadow: 0 2px 8px rgba(128, 43, 91, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.25);
 }
 
 .support-quick-card-v2:hover .quick-card-circle-arrow {
-  background: #571b3e;
+  background: #00201F;
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.35);
 }
 
 .arrow-diag {

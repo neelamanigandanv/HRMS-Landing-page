@@ -6,8 +6,8 @@
 .security-page-hero {
   padding: 5rem 0 4rem;
   background:
-    radial-gradient(circle at 50% 0%, rgba(128, 43, 91, 0.08) 0%, rgba(250, 248, 250, 0) 70%),
-    linear-gradient(180deg, #fdf9fb 0%, #faf8fa 100%);
+    radial-gradient(circle at 50% 0%, rgba(0, 75, 73, 0.08) 0%, rgba(250, 248, 250, 0) 70%),
+    linear-gradient(180deg, #F6F8F8 0%, #F6F8F8 100%);
   border-bottom: 1px solid #ebdcd5;
   text-align: center;
   position: relative;
@@ -17,7 +17,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #802B5B;
+  color: #004B49;
   font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -40,7 +40,7 @@
 }
 
 .security-title-glow {
-  background: linear-gradient(135deg, #802B5B 0%, #5146d8 60%, #b54282 100%);
+  background: linear-gradient(135deg, #004B49 0%, #003836 60%, #00201F 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -81,27 +81,27 @@
 }
 
 .security-hero-badge-pill:hover {
-  color: #802B5B;
+  color: #004B49;
   transform: none;
   border: none;
   box-shadow: none;
 }
 
 .security-hero-badge-pill svg {
-  color: #802B5B;
+  color: #004B49;
   flex-shrink: 0;
 }
 
 /* Sidebar Print / Download Card */
 .security-download-card {
   background: #ffffff;
-  border: 1.5px solid #ebdbe6;
+  border: 1.5px solid #E5EAEA;
   border-radius: 18px;
   padding: 18px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  box-shadow: 0 4px 16px rgba(123, 41, 88, 0.04);
+  box-shadow: 0 4px 16px rgba(0, 75, 73, 0.04);
 }
 
 .security-download-btn {
@@ -111,10 +111,10 @@
   gap: 8px;
   width: 100%;
   padding: 10px 16px;
-  background: #fbf7fa;
-  border: 1px solid #ebdbe6;
+  background: #F6F8F8;
+  border: 1px solid #E5EAEA;
   border-radius: 10px;
-  color: #7b2958;
+  color: #004B49;
   font-size: 12.5px;
   font-weight: 700;
   cursor: pointer;
@@ -122,9 +122,9 @@
 }
 
 .security-download-btn:hover {
-  background: #fcf0f7;
-  border-color: #7b2958;
-  color: #5c1840;
+  background: #F6F8F8;
+  border-color: #004B49;
+  color: #00201F;
 }
 
 /* Security hotline guarantee */

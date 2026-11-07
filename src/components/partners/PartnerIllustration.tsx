@@ -19,12 +19,12 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
         >
           <defs>
             <linearGradient id="phone-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#f472b6" />
-              <stop offset="100%" stopColor="#db2777" />
+              <stop offset="0%" stopColor="#C6F36B" />
+              <stop offset="100%" stopColor="#004B49" />
             </linearGradient>
             <linearGradient id="screen-grad" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stopColor="#ffffff" />
-              <stop offset="100%" stopColor="#fdf2f8" />
+              <stop offset="100%" stopColor="#F6F8F8" />
             </linearGradient>
             <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#6366f1" />
@@ -60,13 +60,13 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
             {/* Phone Screen */}
             <rect x="66" y="28" width="48" height="92" rx="8" fill="url(#screen-grad)" />
             {/* Speaker Notch */}
-            <rect x="83" y="32" width="14" height="2.5" rx="1.25" fill="#f43f5e" opacity="0.4" />
+            <rect x="83" y="32" width="14" height="2.5" rx="1.25" fill="#C6F36B" opacity="0.4" />
             {/* Screen Content UI */}
-            <rect x="72" y="40" width="36" height="5" rx="2.5" fill="#fbcfe8" />
-            <rect x="72" y="49" width="22" height="4" rx="2" fill="#fce7f3" />
+            <rect x="72" y="40" width="36" height="5" rx="2.5" fill="#E5EAEA" />
+            <rect x="72" y="49" width="22" height="4" rx="2" fill="#C6F36B" />
             <circle cx="75" cy="112" r="3" fill="#cbd5e1" />
             <circle cx="83" cy="112" r="3" fill="#cbd5e1" />
-            <circle cx="91" cy="112" r="3" fill="#a855f7" />
+            <circle cx="91" cy="112" r="3" fill="#004B49" />
             <circle cx="99" cy="112" r="3" fill="#cbd5e1" />
           </g>
 
@@ -76,7 +76,7 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
             {/* Magnetic strip / chip */}
             <rect x="81" y="52" width="10" height="8" rx="2" fill="#fde047" opacity="0.9" />
             <rect x="81" y="65" width="24" height="3" rx="1.5" fill="#c7d2fe" opacity="0.8" />
-            <circle cx="118" cy="67" r="5" fill="#ec4899" opacity="0.75" />
+            <circle cx="118" cy="67" r="5" fill="#C6F36B" opacity="0.75" />
             <circle cx="122" cy="67" r="5" fill="#f59e0b" opacity="0.75" />
           </g>
 
@@ -126,8 +126,8 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
               <stop offset="100%" stopColor="#eab308" />
             </linearGradient>
             <linearGradient id="sweater-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#fb7185" />
-              <stop offset="100%" stopColor="#e11d48" />
+              <stop offset="0%" stopColor="#E5EAEA" />
+              <stop offset="100%" stopColor="#004B49" />
             </linearGradient>
             <linearGradient id="pants-grad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#334155" />
@@ -204,7 +204,7 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
             strokeLinecap="round"
           />
           {/* Shoe / Sneaker (Red/Coral like image) */}
-          <ellipse cx="132" cy="94" rx="5" ry="3.5" fill="#f43f5e" transform="rotate(-15 132 94)" />
+          <ellipse cx="132" cy="94" rx="5" ry="3.5" fill="#C6F36B" transform="rotate(-15 132 94)" />
 
           {/* Leg 2 slightly bent */}
           <path
@@ -216,8 +216,8 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
           />
 
           {/* Subtle lavender selection ring indicator like Image 2 */}
-          <circle cx="138" cy="112" r="5" fill="#ffffff" stroke="#802B5B" strokeWidth="2" />
-          <circle cx="138" cy="112" r="2" fill="#802B5B" />
+          <circle cx="138" cy="112" r="5" fill="#ffffff" stroke="#004B49" strokeWidth="2" />
+          <circle cx="138" cy="112" r="2" fill="#004B49" />
         </svg>
       );
 
@@ -253,7 +253,7 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
 
             {/* Checklist Lines & Ticks */}
             {/* Item 1 */}
-            <rect x="76" y="38" width="6" height="6" rx="1" fill="#ec4899" />
+            <rect x="76" y="38" width="6" height="6" rx="1" fill="#C6F36B" />
             <path d="M77.5 41L79 42.5L81 39.5" stroke="#ffffff" strokeWidth="1" strokeLinecap="round" />
             <rect x="85" y="39.5" width="28" height="3" rx="1.5" fill="#cbd5e1" />
 
@@ -289,7 +289,7 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
             <circle cx="58" cy="54" r="5.5" fill="#fed7aa" />
             <path d="M54 50C56 46 62 46 64 50C64 52 62 54 60 54Z" fill="#1e293b" />
             {/* Torso (Pink) */}
-            <path d="M54 61C54 60 62 60 62 61L64 82L52 82Z" fill="#ec4899" />
+            <path d="M54 61C54 60 62 60 62 61L64 82L52 82Z" fill="#C6F36B" />
             {/* Legs (Dark) */}
             <path d="M54 82L53 118" stroke="#1e293b" strokeWidth="3" strokeLinecap="round" />
             <path d="M62 82L63 118" stroke="#1e293b" strokeWidth="3" strokeLinecap="round" />
@@ -368,14 +368,14 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
 
             {/* Left Nav in UI */}
             <rect x="45" y="64" width="16" height="34" rx="3" fill="#f1f5f9" />
-            <rect x="48" y="68" width="10" height="2" rx="1" fill="#802B5B" />
+            <rect x="48" y="68" width="10" height="2" rx="1" fill="#004B49" />
             <rect x="48" y="73" width="10" height="2" rx="1" fill="#cbd5e1" />
             <rect x="48" y="78" width="10" height="2" rx="1" fill="#cbd5e1" />
 
             {/* Metric Card 1 */}
-            <rect x="66" y="64" width="31" height="18" rx="3" fill="#fdf2f8" stroke="#fbcfe8" strokeWidth="0.8" />
-            <rect x="70" y="68" width="14" height="2" rx="1" fill="#db2777" />
-            <text x="70" y="77" fill="#802B5B" fontSize="7" fontWeight="bold" fontFamily="sans-serif">
+            <rect x="66" y="64" width="31" height="18" rx="3" fill="#F6F8F8" stroke="#E5EAEA" strokeWidth="0.8" />
+            <rect x="70" y="68" width="14" height="2" rx="1" fill="#004B49" />
+            <text x="70" y="77" fill="#004B49" fontSize="7" fontWeight="bold" fontFamily="sans-serif">
               99.9%
             </text>
 
@@ -415,7 +415,7 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
             </linearGradient>
             <linearGradient id="doc-grad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#ffffff" />
-              <stop offset="100%" stopColor="#fdf4ff" />
+              <stop offset="100%" stopColor="#F6F8F8" />
             </linearGradient>
             <filter id="soft-shadow5" x="-10%" y="-10%" width="120%" height="120%">
               <feDropShadow dx="0" dy="4" stdDeviation="4" floodOpacity="0.12" />
@@ -426,7 +426,7 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
           <g transform="rotate(-12 75 70)" filter="url(#soft-shadow5)">
             <rect x="42" y="34" width="54" height="74" rx="6" fill="url(#doc-grad)" stroke="#ebdcd5" strokeWidth="1" />
             {/* Header banner on doc */}
-            <rect x="46" y="38" width="46" height="14" rx="3" fill="#802B5B" />
+            <rect x="46" y="38" width="46" height="14" rx="3" fill="#004B49" />
             <rect x="50" y="44" width="22" height="3" rx="1.5" fill="#ffffff" />
             {/* Content lines */}
             <rect x="46" y="58" width="38" height="3" rx="1.5" fill="#cbd5e1" />
@@ -434,7 +434,7 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
             <rect x="46" y="72" width="24" height="3" rx="1.5" fill="#cbd5e1" />
             {/* Chart illustration on brochure */}
             <rect x="46" y="82" width="46" height="20" rx="3" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="0.8" />
-            <path d="M50 96L58 90L66 93L76 86L86 89" stroke="#db2777" strokeWidth="2" strokeLinecap="round" />
+            <path d="M50 96L58 90L66 93L76 86L86 89" stroke="#004B49" strokeWidth="2" strokeLinecap="round" />
           </g>
 
           {/* Vibrant Megaphone */}
@@ -452,7 +452,7 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
 
           {/* Sound waves & confetti emitting */}
           <path d="M145 62C150 66 150 82 145 86" stroke="#f59e0b" strokeWidth="3" strokeLinecap="round" />
-          <path d="M154 54C162 62 162 86 154 94" stroke="#802B5B" strokeWidth="3" strokeLinecap="round" />
+          <path d="M154 54C162 62 162 86 154 94" stroke="#004B49" strokeWidth="3" strokeLinecap="round" />
 
           {/* Floating confetti shapes */}
           <polygon points="152,42 155,47 160,45 156,50 158,55 153,52 149,56 150,50 146,47 151,46" fill="#facc15" />
@@ -473,12 +473,12 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
         >
           <defs>
             <linearGradient id="manager-circle" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#fdf2f8" />
-              <stop offset="100%" stopColor="#fce7f3" />
+              <stop offset="0%" stopColor="#F6F8F8" />
+              <stop offset="100%" stopColor="#C6F36B" />
             </linearGradient>
             <linearGradient id="suit-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#802B5B" />
-              <stop offset="100%" stopColor="#5d1e41" />
+              <stop offset="0%" stopColor="#004B49" />
+              <stop offset="100%" stopColor="#00201F" />
             </linearGradient>
             <filter id="soft-shadow6" x="-10%" y="-10%" width="120%" height="120%">
               <feDropShadow dx="0" dy="4" stdDeviation="4" floodOpacity="0.12" />
@@ -486,7 +486,7 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
           </defs>
 
           {/* Background Portal Circle */}
-          <circle cx="90" cy="74" r="54" fill="url(#manager-circle)" stroke="rgba(128,43,91,0.15)" strokeWidth="1.5" />
+          <circle cx="90" cy="74" r="54" fill="url(#manager-circle)" stroke="rgba(0, 75, 73,0.15)" strokeWidth="1.5" />
 
           {/* Manager Avatar */}
           <g filter="url(#soft-shadow6)">
@@ -522,7 +522,7 @@ export const PartnerIllustration: React.FC<IllustrationProps> = ({ type, classNa
             <rect x="71" y="57" width="5" height="12" rx="2.5" fill="#334155" />
             {/* Mic boom */}
             <path d="M74 67L84 74" stroke="#64748b" strokeWidth="2" strokeLinecap="round" />
-            <circle cx="85" cy="74.5" r="2.5" fill="#f43f5e" />
+            <circle cx="85" cy="74.5" r="2.5" fill="#C6F36B" />
           </g>
 
           {/* Floating Badge / 24-7 Response Beacon */}

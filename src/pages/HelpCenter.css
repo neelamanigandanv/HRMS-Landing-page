@@ -1,6 +1,6 @@
 /* ==========================================================================
    ZENTILOS HELP CENTER & KNOWLEDGE BASE STYLESHEET
-   Follows exact brand themes: #802B5B (Brand Plum), #191735 (Dark Navy), #f6f1ed (Warm Linen)
+   Follows exact brand themes: #004B49 (Brand Plum), #191735 (Dark Navy), #f6f1ed (Warm Linen)
    ========================================================================== */
 
 .help-center-page {
@@ -15,7 +15,7 @@
 .help-hero-section {
   padding: 85px 0 65px;
   background: linear-gradient(180deg, #faf7f4 0%, #ffffff 100%);
-  border-bottom: 1px solid rgba(87, 61, 77, 0.08);
+  border-bottom: 1px solid rgba(0, 75, 73, 0.08);
   position: relative;
   text-align: center;
 }
@@ -34,7 +34,7 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   background: transparent;
   padding: 0;
   border-radius: 0;
@@ -56,7 +56,7 @@
 
 .help-hero-highlight {
   display: inline-block;
-  background: linear-gradient(135deg, #802B5B 0%, #b54282 100%);
+  background: linear-gradient(135deg, #004B49 0%, #003836 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -89,13 +89,13 @@
 }
 
 .help-search-input-box:focus-within {
-  border-color: #802B5B;
-  box-shadow: 0 12px 36px rgba(128, 43, 91, 0.12), 0 0 0 4px rgba(128, 43, 91, 0.08);
+  border-color: #004B49;
+  box-shadow: 0 12px 36px rgba(0, 75, 73, 0.12), 0 0 0 4px rgba(0, 75, 73, 0.08);
   transform: translateY(-1px);
 }
 
 .help-search-icon {
-  color: #802B5B;
+  color: #004B49;
   flex-shrink: 0;
   margin-right: 12px;
 }
@@ -137,7 +137,7 @@
 }
 
 .help-search-submit-btn {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   border: none;
   border-radius: 10px;
@@ -154,9 +154,9 @@
 }
 
 .help-search-submit-btn:hover {
-  background: #5d1e41;
+  background: #00201F;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.25);
 }
 
 /* Suggested Searches */
@@ -190,15 +190,15 @@
 }
 
 .help-suggested-chip:hover {
-  background: #fdf2f7;
-  border-color: #802B5B;
-  color: #802B5B;
+  background: #F6F8F8;
+  border-color: #004B49;
+  color: #004B49;
   transform: translateY(-1px);
 }
 
 .help-suggested-chip.active {
-  background: #802B5B;
-  border-color: #802B5B;
+  background: #004B49;
+  border-color: #004B49;
   color: #ffffff;
 }
 
@@ -226,7 +226,7 @@
 }
 
 .help-instant-result-item:hover {
-  background: #fdf2f7;
+  background: #F6F8F8;
 }
 
 .help-instant-item-left {
@@ -249,8 +249,8 @@
 .help-instant-item-tag {
   font-size: 11.5px;
   font-weight: 600;
-  color: #802B5B;
-  background: #faedf4;
+  color: #004B49;
+  background: #F6F8F8;
   padding: 2px 8px;
   border-radius: 12px;
   flex-shrink: 0;
@@ -262,9 +262,9 @@
   text-align: center;
   padding: 10px 14px;
   margin-top: 8px;
-  background: #fdf2f7;
-  color: #802B5B;
-  border: 1px solid rgba(128, 43, 91, 0.18);
+  background: #F6F8F8;
+  color: #004B49;
+  border: 1px solid rgba(0, 75, 73, 0.18);
   border-radius: 8px;
   font-size: 13px;
   font-weight: 700;
@@ -273,7 +273,7 @@
 }
 
 .help-instant-footer-btn:hover {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
 }
 
@@ -310,8 +310,8 @@
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #802B5B;
-  background: #faedf4;
+  color: #004B49;
+  background: #F6F8F8;
   padding: 4px 12px;
   border-radius: 9999px;
   width: fit-content;
@@ -349,9 +349,9 @@
 }
 
 .help-search-clear-action-btn:hover {
-  background: #faedf4;
-  color: #802B5B;
-  border-color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
+  border-color: #004B49;
 }
 
 /* Category filter tabs inside search results */
@@ -377,9 +377,9 @@
 
 .help-search-filter-pill.active,
 .help-search-filter-pill:hover {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
-  border-color: #802B5B;
+  border-color: #004B49;
 }
 
 /* Results Cards Grid */
@@ -405,8 +405,8 @@
 
 .help-search-card:hover {
   transform: translateY(-3px);
-  border-color: #802B5B;
-  box-shadow: 0 14px 34px rgba(128, 43, 91, 0.09);
+  border-color: #004B49;
+  box-shadow: 0 14px 34px rgba(0, 75, 73, 0.09);
 }
 
 .help-search-card-meta {
@@ -422,8 +422,8 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #802B5B;
-  background: #faedf4;
+  color: #004B49;
+  background: #F6F8F8;
   padding: 3px 10px;
   border-radius: 6px;
 }
@@ -444,7 +444,7 @@
 }
 
 .help-search-card:hover .help-search-card-title {
-  color: #802B5B;
+  color: #004B49;
 }
 
 .help-search-card-desc {
@@ -461,7 +461,7 @@
   gap: 6px;
   font-size: 13.5px;
   font-weight: 700;
-  color: #802B5B;
+  color: #004B49;
   transition: gap 0.15s ease;
 }
 
@@ -505,8 +505,8 @@
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  background: #faedf4;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -549,9 +549,9 @@
 }
 
 .help-search-empty-chip:hover {
-  background: #faedf4;
-  border-color: #802B5B;
-  color: #802B5B;
+  background: #F6F8F8;
+  border-color: #004B49;
+  color: #004B49;
   transform: translateY(-1px);
 }
 
@@ -586,7 +586,7 @@
   font-weight: 800;
   letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 12px;
 }
 
@@ -631,8 +631,8 @@
 
 .help-topic-nft-card:hover,
 .help-topic-nft-card.is-featured {
-  border-color: #802B5B;
-  box-shadow: 0 14px 36px rgba(128, 43, 91, 0.12);
+  border-color: #004B49;
+  box-shadow: 0 14px 36px rgba(0, 75, 73, 0.12);
   transform: translateY(-4px);
 }
 
@@ -681,7 +681,7 @@
   gap: 6px;
   font-size: 0.875rem;
   font-weight: 750;
-  color: #802B5B;
+  color: #004B49;
   margin-top: auto;
   transition: gap 0.2s ease;
 }
@@ -701,21 +701,21 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 750;
   padding: 0.85rem 2rem;
   border-radius: 9999px;
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(128, 43, 91, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 75, 73, 0.2);
   transition: all 0.2s ease;
 }
 
 .help-view-all-guides-btn:hover {
-  background: #671f48;
+  background: #00201F;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.28);
 }
 
 .help-categories-grid {
@@ -739,17 +739,17 @@
 
 .help-category-card:hover {
   transform: translateY(-5px);
-  border-color: #802B5B;
-  box-shadow: 0 16px 36px rgba(128, 43, 91, 0.09);
+  border-color: #004B49;
+  box-shadow: 0 16px 36px rgba(0, 75, 73, 0.09);
 }
 
 .help-cat-icon-wrap {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: #fdf2f7;
-  color: #802B5B;
-  border: 1px solid rgba(128, 43, 91, 0.12);
+  background: #F6F8F8;
+  color: #004B49;
+  border: 1px solid rgba(0, 75, 73, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -758,7 +758,7 @@
 }
 
 .help-category-card:hover .help-cat-icon-wrap {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   transform: scale(1.05);
 }
@@ -785,7 +785,7 @@
   gap: 6px;
   font-size: 13px;
   font-weight: 700;
-  color: #802B5B;
+  color: #004B49;
   margin-top: auto;
 }
 
@@ -827,8 +827,8 @@
 
 .help-article-card:hover {
   transform: translateX(4px);
-  border-color: #802B5B;
-  box-shadow: 0 10px 28px rgba(128, 43, 91, 0.08);
+  border-color: #004B49;
+  box-shadow: 0 10px 28px rgba(0, 75, 73, 0.08);
 }
 
 .help-article-card-main {
@@ -847,11 +847,11 @@
 .help-article-topic-badge {
   font-size: 11.5px;
   font-weight: 700;
-  color: #802B5B;
-  background: #fdf2f7;
+  color: #004B49;
+  background: #F6F8F8;
   padding: 3px 9px;
   border-radius: 12px;
-  border: 1px solid rgba(128, 43, 91, 0.12);
+  border: 1px solid rgba(0, 75, 73, 0.12);
 }
 
 .help-article-read-time {
@@ -870,7 +870,7 @@
 }
 
 .help-article-card:hover .help-article-card-title {
-  color: #802B5B;
+  color: #004B49;
 }
 
 .help-article-card-summary {
@@ -894,9 +894,9 @@
 }
 
 .help-article-card:hover .help-article-card-arrow {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
-  border-color: #802B5B;
+  border-color: #004B49;
   transform: translateX(3px);
 }
 
@@ -936,7 +936,7 @@
   font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.1em;
-  color: #802B5B;
+  color: #004B49;
   text-transform: uppercase;
   margin-bottom: 0.85rem;
 }
@@ -972,43 +972,43 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff !important;
   font-size: 0.9375rem;
   font-weight: 750;
   padding: 12px 24px;
   border-radius: 8px;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.3);
   transition: all 0.22s ease;
 }
 
 .help-workflow-explore-btn:hover {
-  background: #99336d;
+  background: #004B49;
   color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(128, 43, 91, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 75, 73, 0.4);
 }
 
 .help-workflow-step-btn {
   margin-top: 10px;
   font-size: 12.5px;
   font-weight: 700;
-  color: #802B5B;
+  color: #004B49;
   display: inline-flex;
   align-items: center;
   gap: 5px;
   padding: 4px 12px;
-  background: #fbf0f6;
-  border: 1px solid rgba(128, 43, 91, 0.18);
+  background: #F6F8F8;
+  border: 1px solid rgba(0, 75, 73, 0.18);
   border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .help-workflow-step-card:hover .help-workflow-step-btn {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
-  border-color: #802B5B;
+  border-color: #004B49;
 }
 
 .help-workflow-isometric-box {
@@ -1025,7 +1025,7 @@
   max-width: 530px;
   height: auto;
   display: block;
-  filter: drop-shadow(0 14px 32px rgba(128, 43, 91, 0.08));
+  filter: drop-shadow(0 14px 32px rgba(0, 75, 73, 0.08));
 }
 
 .help-workflow-right-col {
@@ -1053,17 +1053,17 @@
 
 .help-workflow-step-card:hover {
   background: #ffffff;
-  border-color: #802B5B;
+  border-color: #004B49;
   transform: translateX(6px);
-  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.08);
+  box-shadow: 0 8px 24px rgba(0, 75, 73, 0.08);
 }
 
 .help-workflow-step-icon-bubble {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: #fbf0f6;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1072,7 +1072,7 @@
 }
 
 .help-workflow-step-card:hover .help-workflow-step-icon-bubble {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
 }
 
@@ -1123,7 +1123,7 @@
   margin-bottom: 13px !important;
   text-transform: uppercase !important;
   text-align: left !important;
-  color: #802B5B !important;
+  color: #004B49 !important;
 }
 
 .help-faq-section .section-heading h2 {
@@ -1151,7 +1151,7 @@
   align-items: center;
   gap: 6px;
   font-weight: 700;
-  color: #802B5B;
+  color: #004B49;
   text-decoration: none;
   font-size: 15px;
   transition: color 0.15s ease;
@@ -1159,7 +1159,7 @@
 
 .help-faq-section .text-link:hover {
   text-decoration: underline;
-  color: #672047;
+  color: #00201F;
 }
 
 .help-faq-section .faq-list {
@@ -1187,7 +1187,7 @@
 }
 
 .help-faq-section .faq-item button:hover {
-  color: #802B5B;
+  color: #004B49;
 }
 
 .help-faq-section .faq-item button i {
@@ -1225,7 +1225,7 @@
 }
 
 .help-cta-box {
-  background: linear-gradient(135deg, #191735 0%, #2f1d2c 50%, #4a1936 100%);
+  background: linear-gradient(135deg, #191735 0%, #00201F 50%, #00201F 100%);
   border-radius: 24px;
   padding: 60px 50px;
   color: #ffffff;
@@ -1242,7 +1242,7 @@
   right: -20%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(128, 43, 91, 0.4) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 75, 73, 0.4) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1252,7 +1252,7 @@
   font-weight: 800;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #f7b2d5;
+  color: #E5EAEA;
   margin-bottom: 14px;
 }
 
@@ -1285,21 +1285,21 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   font-size: 15px;
   font-weight: 750;
   padding: 14px 28px;
   border-radius: 10px;
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(128, 43, 91, 0.35);
+  box-shadow: 0 4px 16px rgba(0, 75, 73, 0.35);
   transition: all 0.25s ease;
 }
 
 .help-btn-primary:hover {
-  background: #99336d;
+  background: #004B49;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(128, 43, 91, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 75, 73, 0.45);
   color: #ffffff;
 }
 

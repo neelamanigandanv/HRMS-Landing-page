@@ -245,7 +245,7 @@ export const PARTNER_LOGOS: PartnerLogo[] = [
     type: "reseller",
     websiteUrl: "https://example.com/partners/apexcloud",
     categoryLabel: "National IT Integrator",
-    accentColor: "#802B5B",
+    accentColor: "#004B49",
     initials: "AC",
   },
   {
@@ -281,7 +281,7 @@ export const PARTNER_LOGOS: PartnerLogo[] = [
     type: "reseller",
     websiteUrl: "https://example.com/partners/beacon",
     categoryLabel: "SME Software Distributor",
-    accentColor: "#7c3aed",
+    accentColor: "#004B49",
     initials: "BE",
   },
   {
@@ -328,7 +328,7 @@ export const PARTNER_LOGOS: PartnerLogo[] = [
     type: "technology",
     websiteUrl: "https://example.com/partners/finpulse",
     categoryLabel: "Disbursement Gateway",
-    accentColor: "#9333ea",
+    accentColor: "#004B49",
     initials: "FP",
   },
   {

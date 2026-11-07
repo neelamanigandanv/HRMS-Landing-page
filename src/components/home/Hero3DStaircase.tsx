@@ -43,7 +43,7 @@ export function Hero3DStaircase() {
   }, []);
 
   return (
-    <div className="hero-3d-visual-container" aria-label="Zentilos interactive workforce journey from Hire to Growth">
+    <div className="hero-3d-visual-container" aria-label="LattiumHR interactive workforce journey from Hire to Growth">
       {/* Background Soft Pink Ambient Glow */}
       <div className="hero-3d-ambient-glow" />
 
@@ -55,12 +55,12 @@ export function Hero3DStaircase() {
       </div>
       <div className="hero-3d-sparkle sparkle-2" aria-hidden="true">
         <svg viewBox="0 0 20 20" width="14" height="14">
-          <path d="M10,0 L12,8 L20,10 L12,12 L10,20 L8,12 L0,10 L8,8 Z" fill="#B8487C" />
+          <path d="M10,0 L12,8 L20,10 L12,12 L10,20 L8,12 L0,10 L8,8 Z" fill="#004B49" />
         </svg>
       </div>
       <div className="hero-3d-sparkle sparkle-3" aria-hidden="true">
         <svg viewBox="0 0 20 20" width="18" height="18">
-          <path d="M10,0 L12,8 L20,10 L12,12 L10,20 L8,12 L0,10 L8,8 Z" fill="#8C2B66" />
+          <path d="M10,0 L12,8 L20,10 L12,12 L10,20 L8,12 L0,10 L8,8 Z" fill="#003836" />
         </svg>
       </div>
 
@@ -69,8 +69,8 @@ export function Hero3DStaircase() {
         {/* The Studio 3D Scene Base Render */}
         <div className="hero-3d-render-wrap">
           <img
-            src="/images/hero-3d-staircase.webp"
-            alt="Zentilos 3D Staircase: From Hire to Growth"
+            src="/images/hero-3d-staircase.jpg"
+            alt="LattiumHR 3D Staircase: From Hire to Growth"
             className="hero-3d-base-img"
             loading="eager"
             fetchPriority="high"

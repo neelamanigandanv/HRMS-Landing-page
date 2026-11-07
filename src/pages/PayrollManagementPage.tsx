@@ -383,7 +383,7 @@ export function PayrollManagementPage() {
 
                 <div className="emp-donut-chart-wrap">
                   <svg width="120" height="120" viewBox="0 0 180 180" className="emp-donut-svg">
-                    <circle cx="90" cy="90" r="68" stroke="#f4edf3" strokeWidth="18" fill="none" />
+                    <circle cx="90" cy="90" r="68" stroke="#F6F8F8" strokeWidth="18" fill="none" />
                     {/* Net Salary 72% (Emerald #10b981) */}
                     <circle
                       cx="90" cy="90" r="68"
@@ -392,18 +392,18 @@ export function PayrollManagementPage() {
                       strokeLinecap="round"
                       transform="rotate(-90 90 90)"
                     />
-                    {/* Statutory PF & Taxes 18% (Plum #7b2958) */}
+                    {/* Statutory PF & Taxes 18% (Plum #004B49) */}
                     <circle
                       cx="90" cy="90" r="68"
-                      stroke="#7b2958" strokeWidth="18" fill="none"
+                      stroke="#004B49" strokeWidth="18" fill="none"
                       strokeDasharray="427" strokeDashoffset="350"
                       strokeLinecap="round"
                       transform="rotate(169 90 90)"
                     />
-                    {/* Benefits & Claims 10% (Violet #8b5cf6) */}
+                    {/* Benefits & Claims 10% (Teal #004B49) */}
                     <circle
                       cx="90" cy="90" r="68"
-                      stroke="#8b5cf6" strokeWidth="18" fill="none"
+                      stroke="#004B49" strokeWidth="18" fill="none"
                       strokeDasharray="427" strokeDashoffset="384"
                       strokeLinecap="round"
                       transform="rotate(234 90 90)"
@@ -1094,7 +1094,14 @@ export function PayrollManagementPage() {
         {/* =========================================================================
             BOTTOM CONVERSION CTA BANNER
             ========================================================================= */}
-        <FooterCTA />
+        <FooterCTA
+          eyebrowBadgeText="100% Compliant Statutory Payroll Engine"
+          headlineLine1="Run Zero-Error Payroll in"
+          headlineLine2="Under 15 Minutes with Zentilos"
+          subheadlineLine1="Automate salary calculations, deductions, PF, ESI, PT, and tax TDS across all branches with one-click direct bank disbursements and instant digital payslips."
+          primaryButtonText="Book a Payroll Demo"
+          secondaryButtonText="Explore Payroll Features"
+        />
       </main>
 
       <Footer />

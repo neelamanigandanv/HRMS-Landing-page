@@ -231,7 +231,18 @@ export function FAQPage() {
   }, []);
 
   return (
-    <PageLayout breadcrumbs={breadcrumbs}>
+    <PageLayout
+      breadcrumbs={breadcrumbs}
+      footerCtaProps={{
+        eyebrowBadgeText: "Still Have Questions About Zentilos?",
+        headlineLine1: "Talk Directly with an HR",
+        headlineLine2: "Solutions Specialist Today",
+        subheadlineLine1: "Get direct answers about pricing, biometric integrations, multi-branch payroll, or migration from your current system.",
+        primaryButtonText: "Schedule a Live Q&A",
+        secondaryButtonText: "Contact Sales",
+        secondaryButtonLink: "/contact",
+      }}
+    >
       <SEO
         title="Frequently Asked Questions (FAQ) | Zentilos"
         description="Find verified answers to common questions about Zentilos pricing, statutory payroll compliance (PF, ESI, TDS), biometric attendance, setup timelines, and data security."

@@ -1,15 +1,15 @@
 /* ==========================================================================
    REQUEST DEMO PAGE - ZENTILOS DESIGN SYSTEM
    Modern, balanced 2-column layout matching brand aesthetics:
-   Primary: #802B5B (Plum), #191735 (Dark Ink), #ebdcd5 (Border), #faedf4 (Soft Tint)
+   Primary: #004B49 (Plum), #191735 (Dark Ink), #ebdcd5 (Border), #F6F8F8 (Soft Tint)
    ========================================================================== */
 
 .demo-page-hero {
   padding: 3.5rem 0 4.5rem;
   background:
-    radial-gradient(circle at 15% 15%, rgba(128, 43, 91, 0.05) 0%, rgba(250, 248, 247, 0.6) 60%, #ffffff 100%),
+    radial-gradient(circle at 15% 15%, rgba(0, 75, 73, 0.05) 0%, rgba(250, 248, 247, 0.6) 60%, #ffffff 100%),
     linear-gradient(180deg, #fdfbfa 0%, #ffffff 100%);
-  border-bottom: 1px solid rgba(87, 61, 77, 0.06);
+  border-bottom: 1px solid rgba(0, 75, 73, 0.06);
   min-height: calc(100vh - 80px);
 }
 
@@ -46,12 +46,12 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 0.85rem;
 }
 
 .demo-sparkle {
-  color: #802B5B;
+  color: #004B49;
   font-size: 0.75rem;
 }
 
@@ -68,7 +68,7 @@
 
 .demo-highlight-plum {
   display: inline-block;
-  background: linear-gradient(135deg, #802B5B 0%, #b54282 100%);
+  background: linear-gradient(135deg, #004B49 0%, #003836 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -102,17 +102,17 @@
 }
 
 .demo-highlight-item:hover {
-  border-color: #802B5B;
+  border-color: #004B49;
   transform: translateX(3px);
-  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.06);
 }
 
 .demo-highlight-icon {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #faedf4;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,7 +167,7 @@
 .demo-stat-pill strong {
   font-size: 1.25rem;
   font-weight: 850;
-  color: #802B5B;
+  color: #004B49;
   line-height: 1;
 }
 
@@ -204,12 +204,12 @@
 }
 
 .demo-side-guarantee-left svg {
-  color: #802B5B;
+  color: #004B49;
   flex-shrink: 0;
 }
 
 .demo-side-phone-link {
-  color: #802B5B;
+  color: #004B49;
   font-weight: 750;
   text-decoration: none;
   display: inline-flex;
@@ -369,8 +369,8 @@
 .demo-page-form input:focus,
 .demo-page-form select:focus,
 .demo-page-form textarea:focus {
-  border-color: #802B5B;
-  box-shadow: 0 0 0 3px rgba(128, 43, 91, 0.1);
+  border-color: #004B49;
+  box-shadow: 0 0 0 3px rgba(0, 75, 73, 0.1);
 }
 
 .demo-page-form input.has-error,
@@ -394,16 +394,16 @@
   font-size: 1rem;
   font-weight: 750;
   border-radius: 12px;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.25);
   transition: all 0.2s ease;
 }
 
 .form-submit:hover:not(:disabled) {
-  background: #661e47;
+  background: #003836;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(128, 43, 91, 0.32);
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.32);
 }
 
 .form-safety-footer {
@@ -417,7 +417,7 @@
 }
 
 .form-safety-footer svg {
-  color: #802B5B;
+  color: #004B49;
   flex-shrink: 0;
 }
 

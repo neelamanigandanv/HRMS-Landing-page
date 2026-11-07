@@ -41,6 +41,8 @@ const verticalIndustries = [
   {
     id: "tech-startups",
     name: "Tech & Startups",
+    image: "/images/industry-tech.webp",
+    imageAlt: "Tech & Startups hybrid workforce and sprint leave management",
     bestFor: "Best for: product companies, SaaS, IT services and hybrid teams",
     desc: "Run hybrid attendance, sprint-aligned leaves and confidential ESOP workflows without spreadsheets.",
     features: [
@@ -69,13 +71,15 @@ const verticalIndustries = [
         desc: "Claims, wellness and learning budgets with approvals.",
       },
     ],
-    stat: "Up to [XX]% less payroll processing time",
+    stat: "Up to 85% less payroll processing time",
     compliance: ["PF", "ESI", "PT", "TDS", "LWF"],
-        link: "/solutions/industries",
+    link: "/solutions/industries",
   },
   {
     id: "healthcare-retail",
     name: "Healthcare & Retail",
+    image: "/images/industry-retail-health.webp",
+    imageAlt: "Healthcare & Retail rotational rosters and branch attendance locks",
     desc: "Manage rotational rosters, overtime calculations and location-locked shifts without attendance gaps.",
     features: [
       {
@@ -105,11 +109,13 @@ const verticalIndustries = [
     ],
     stat: "Up to 99.4% shift coverage accuracy across branches",
     compliance: ["PF", "ESI", "Shop & Est", "Minimum Wages", "Gratuity"],
-        link: "/solutions/industries",
+    link: "/solutions/industries",
   },
   {
     id: "manufacturing",
     name: "Manufacturing",
+    image: "/images/industry-manufacturing.webp",
+    imageAlt: "Manufacturing plant floor contractor management and biometric turnstiles",
     desc: "Handle contractor pools, overtime compliances and shop-floor shift rotations at enterprise scale.",
     features: [
       {
@@ -139,11 +145,13 @@ const verticalIndustries = [
     ],
     stat: "Zero compliance penalties across 12+ statutory audit cycles",
     compliance: ["Factories Act", "PF", "ESI", "Bonus Act", "Contract Labor Act"],
-        link: "/solutions/industries",
+    link: "/solutions/industries",
   },
   {
     id: "financial-services",
     name: "Financial Services",
+    image: "/images/industry-finance.webp",
+    imageAlt: "Financial Services audit-ready payroll and multi-entity timesheets",
     desc: "Billable timesheets synced to payroll with multi-entity runs and strict audit trails.",
     features: [
       {
@@ -173,7 +181,7 @@ const verticalIndustries = [
     ],
     stat: "100% audit-ready statutory reports in under 5 minutes",
     compliance: ["PF", "TDS Form 16", "PT", "ESI", "ROC Filings"],
-        link: "/solutions/industries",
+    link: "/solutions/industries",
   },
 ];
 
@@ -206,7 +214,19 @@ export function SolutionsOverview() {
   }, []);
 
   return (
-    <PageLayout breadcrumbs={breadcrumbs} onOpenDemo={() => openDemoModal()}>
+    <PageLayout
+      breadcrumbs={breadcrumbs}
+      onOpenDemo={() => openDemoModal()}
+      footerCtaProps={{
+        eyebrowBadgeText: "Tailored Solutions for Every Growth Stage",
+        headlineLine1: "Ready to Streamline Your",
+        headlineLine2: "Workforce Operations with Zentilos?",
+        subheadlineLine1: "From startup agility to enterprise compliance, configure the exact HRMS modules your business needs today.",
+        primaryButtonText: "Book a Custom Walkthrough",
+        secondaryButtonText: "Explore All Solutions",
+        secondaryButtonLink: "/solutions",
+      }}
+    >
       <SEO
         title="Solutions Overview | Tailored HRMS for Your Business Stage & Role | Zentilos"
         description="Software that adapts to your organization—not the other way around. Explore Zentilos solutions for small businesses, mid-sized teams, enterprises, HR managers, and multi-location footprints."
@@ -602,25 +622,16 @@ export function SolutionsOverview() {
                     {/* Right Column */}
                     <div className="so-vertical-right-col">
                       <div className="so-vertical-art-banner">
-                        <svg viewBox="0 0 340 180" fill="none" xmlns="http://www.w3.org/2000/svg" className="so-vertical-art-svg">
-                          {/* Left Monitor / Card */}
-                          <g transform="translate(35, 20)">
-                            <circle cx="50" cy="20" r="14" fill="#f472b6" />
-                            <rect x="0" y="44" width="100" height="72" rx="8" fill="#150822" stroke="#3b174e" strokeWidth="1.5" />
-                            <rect x="16" y="66" width="68" height="6.5" rx="3.25" fill="#fce7f3" />
-                            <rect x="16" y="82" width="46" height="5.5" rx="2.75" fill="#f472b6" opacity="0.85" />
-                          </g>
-
-                          {/* Right Monitor / Card */}
-                          <g transform="translate(185, 20)">
-                            <circle cx="50" cy="20" r="14" fill="#f472b6" />
-                            <rect x="0" y="44" width="100" height="72" rx="8" fill="#150822" stroke="#3b174e" strokeWidth="1.5" />
-                            <rect x="18" y="82" width="8" height="20" rx="2" fill="#a855f7" />
-                            <rect x="33" y="66" width="8" height="36" rx="2" fill="#34d399" />
-                            <rect x="48" y="56" width="8" height="46" rx="2" fill="#f472b6" />
-                            <rect x="63" y="74" width="8" height="28" rx="2" fill="#38bdf8" />
-                          </g>
-                        </svg>
+                        <img
+                          src={currentIndustry.image}
+                          alt={currentIndustry.imageAlt}
+                          className="so-vertical-banner-img"
+                          width={1376}
+                          height={768}
+                          loading="lazy"
+                        />
+                        <div className="so-vertical-banner-overlay" />
+                        <span className="so-vertical-banner-tag">{currentIndustry.name} Blueprint</span>
                       </div>
 
                       <div className="so-vertical-stat-box">
@@ -944,7 +955,7 @@ export function SolutionsOverview() {
                       <span>Faster approvals →</span>
                     </div>
                     <svg className="so-fl-noodle-line" viewBox="0 0 65 95" fill="none">
-                      <path d="M 2 15 C 30 10, 52 35, 48 58 C 44 78, 12 80, 24 55 C 32 38, 52 42, 62 25" stroke="#7b2958" strokeWidth="1.5" opacity="0.6" strokeLinecap="round" />
+                      <path d="M 2 15 C 30 10, 52 35, 48 58 C 44 78, 12 80, 24 55 C 32 38, 52 42, 62 25" stroke="#004B49" strokeWidth="1.5" opacity="0.6" strokeLinecap="round" />
                     </svg>
                   </div>
                 </div>
@@ -1038,13 +1049,13 @@ export function SolutionsOverview() {
                                 <svg viewBox="0 0 100 100" className="so-fl-donut-svg">
                                   <circle cx="50" cy="50" r="38" fill="none" stroke="#f1f5f9" strokeWidth="13" />
                                   {/* Basic: 62% */}
-                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#7b2958" strokeWidth="13"
+                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#004B49" strokeWidth="13"
                                     strokeDasharray="148 238.76" strokeDashoffset="0" transform="rotate(-90 50 50)" />
                                   {/* Allowances: 18% */}
-                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#a83b74" strokeWidth="13"
+                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#004B49" strokeWidth="13"
                                     strokeDasharray="43 238.76" strokeDashoffset="-148" transform="rotate(-90 50 50)" />
                                   {/* Deductions: 12% */}
-                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#ba8ec5" strokeWidth="13"
+                                  <circle cx="50" cy="50" r="38" fill="none" stroke="#006865" strokeWidth="13"
                                     strokeDasharray="28.6 238.76" strokeDashoffset="-191" transform="rotate(-90 50 50)" />
                                   {/* Other: 8% */}
                                   <circle cx="50" cy="50" r="38" fill="none" stroke="#f59e0b" strokeWidth="13"
@@ -1058,17 +1069,17 @@ export function SolutionsOverview() {
 
                               <div className="so-fl-donut-legend">
                                 <div className="so-fl-legend-item">
-                                  <span className="dot" style={{ background: "#7b2958" }} />
+                                  <span className="dot" style={{ background: "#004B49" }} />
                                   <span className="name">Basic Salary</span>
                                   <span className="pct">62%</span>
                                 </div>
                                 <div className="so-fl-legend-item">
-                                  <span className="dot" style={{ background: "#a83b74" }} />
+                                  <span className="dot" style={{ background: "#004B49" }} />
                                   <span className="name">Allowances</span>
                                   <span className="pct">18%</span>
                                 </div>
                                 <div className="so-fl-legend-item">
-                                  <span className="dot" style={{ background: "#ba8ec5" }} />
+                                  <span className="dot" style={{ background: "#006865" }} />
                                   <span className="name">Deductions</span>
                                   <span className="pct">12%</span>
                                 </div>

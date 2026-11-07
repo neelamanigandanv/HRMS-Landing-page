@@ -1250,7 +1250,14 @@ export function EnterprisePage() {
         {/* =========================================================================
             SECTION 8 — FINAL CTA (Deep Purple Gradient Banner with Trust Checklist)
             ========================================================================= */}
-        <FooterCTA />
+        <FooterCTA
+          eyebrowBadgeText="SOC 2 Type II Certified Enterprise Infrastructure"
+          headlineLine1="Enterprise-Grade Scale, Security &"
+          headlineLine2="Workforce Orchestration"
+          subheadlineLine1="Deploy custom SLA guarantees, multi-tenant RBAC permissions, audit logging, and dedicated solution engineering built for thousands of employees."
+          primaryButtonText="Talk to Enterprise Sales"
+          secondaryButtonText="Explore Architecture"
+        />
       </main>
 
       <Footer />

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
+import FooterCTA from "../components/common/FooterCTA";
 import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
@@ -584,7 +585,7 @@ export function AboutPage() {
             <defs>
               <linearGradient id="statIndigoArc" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#a5b4fc" stopOpacity="0.3" />
-                <stop offset="50%" stopColor="#5146d8" stopOpacity="1" />
+                <stop offset="50%" stopColor="#004B49" stopOpacity="1" />
                 <stop offset="100%" stopColor="#a5b4fc" stopOpacity="0.3" />
               </linearGradient>
             </defs>
@@ -741,6 +742,18 @@ export function AboutPage() {
         </div>
       </section>
 
+      {/* =========================================================================
+          FINAL FOOTER CTA (Matching Home Page Flagship Banner)
+          ========================================================================= */}
+      <FooterCTA
+        eyebrowBadgeText="Built by HR Tech Specialists in Bengaluru"
+        headlineLine1="Ready to Build a Better"
+        headlineLine2="Workforce Future with Zentilos?"
+        subheadlineLine1="Discover how simple, connected, and compliant people operations transform multi-branch team productivity."
+        primaryButtonText="Book a Live Tour"
+        secondaryButtonText="Explore Careers"
+        secondaryButtonLink="/careers"
+      />
     </PageLayout>
   );
 }

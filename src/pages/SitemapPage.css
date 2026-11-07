@@ -1,10 +1,10 @@
 /* ==========================================================================
    ZENTILOS - HIGH-END HTML SITEMAP & DIRECTORY
-   Brand Palette: Deep Berry / Warm Rose (#802B5B, #571b3e, #ebdcd5, #fcf0f7)
+   Brand Palette: Deep Berry / Warm Rose (#004B49, #00201F, #ebdcd5, #F6F8F8)
    ========================================================================== */
 
 .sitemap-page {
-  background-color: #faf6f9;
+  background-color: #F6F8F8;
   color: #191735;
   min-height: 100vh;
 }
@@ -20,8 +20,8 @@
 .sitemap-hero {
   padding: 5rem 0 4.25rem;
   background:
-    radial-gradient(ellipse at 50% 12%, #fcf0f7 0%, #ffffff 82%),
-    linear-gradient(180deg, #fdf8fa 0%, #ffffff 100%);
+    radial-gradient(ellipse at 50% 12%, #F6F8F8 0%, #ffffff 82%),
+    linear-gradient(180deg, #F6F8F8 0%, #ffffff 100%);
   border-bottom: 1px solid #ebdcd5;
   text-align: center;
 }
@@ -40,14 +40,14 @@
   gap: 0.5rem;
   font-size: 0.85rem;
   font-weight: 800;
-  color: #802B5B;
+  color: #004B49;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.85rem;
 }
 
 .sitemap-hero-eyebrow svg {
-  color: #802B5B;
+  color: #004B49;
 }
 
 .sitemap-hero-title {
@@ -61,7 +61,7 @@
 }
 
 .sitemap-hero-title-highlight {
-  background: linear-gradient(135deg, #802B5B 0%, #b43f70 55%, #9c276a 100%);
+  background: linear-gradient(135deg, #004B49 0%, #004B49 55%, #004B49 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -92,17 +92,17 @@
   border: 1.5px solid #ebdcd5;
   border-radius: 9999px;
   padding: 0.65rem 1.35rem;
-  box-shadow: 0 4px 20px rgba(128, 43, 91, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 75, 73, 0.06);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .sitemap-search-input-box:focus-within {
-  border-color: #802B5B;
-  box-shadow: 0 6px 26px rgba(128, 43, 91, 0.12);
+  border-color: #004B49;
+  box-shadow: 0 6px 26px rgba(0, 75, 73, 0.12);
 }
 
 .sitemap-search-icon {
-  color: #802B5B;
+  color: #004B49;
   flex-shrink: 0;
   margin-right: 0.5rem;
 }
@@ -176,11 +176,11 @@
 
 .sitemap-category-pill:hover,
 .sitemap-category-pill.active {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
-  border-color: #802B5B;
+  border-color: #004B49;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.2);
 }
 
 .sitemap-category-pill.active svg,
@@ -215,7 +215,7 @@
    ========================================================================== */
 .sitemap-content-section {
   padding: 4.5rem 0 6rem;
-  background: #faf6f9;
+  background: #F6F8F8;
 }
 
 .sitemap-category-stack {
@@ -239,7 +239,7 @@
   gap: 1.5rem;
   margin-bottom: 2rem;
   padding-bottom: 1.35rem;
-  border-bottom: 1px solid #f1e6ed;
+  border-bottom: 1px solid #F6F8F8;
   flex-wrap: wrap;
 }
 
@@ -253,14 +253,14 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: #faedf4;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   border: 1px solid #ebdcd5;
-  box-shadow: 0 2px 8px rgba(128, 43, 91, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.05);
 }
 
 .sitemap-category-title-wrap h2 {
@@ -281,8 +281,8 @@
 .sitemap-category-count-badge {
   font-size: 0.8rem;
   font-weight: 800;
-  color: #802B5B;
-  background: #faedf4;
+  color: #004B49;
+  background: #F6F8F8;
   border: 1px solid #ebdcd5;
   border-radius: 9999px;
   padding: 0.4rem 1rem;
@@ -312,8 +312,8 @@
 
 .sitemap-premium-card:hover {
   transform: translateY(-3px);
-  border-color: #802B5B;
-  box-shadow: 0 10px 28px rgba(128, 43, 91, 0.1);
+  border-color: #004B49;
+  box-shadow: 0 10px 28px rgba(0, 75, 73, 0.1);
 }
 
 .sitemap-card-top {
@@ -334,15 +334,15 @@
 }
 
 .sitemap-premium-card:hover .sitemap-card-title {
-  color: #802B5B;
+  color: #004B49;
 }
 
 .sitemap-card-arrow {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #fbf8fa;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,9 +352,9 @@
 }
 
 .sitemap-premium-card:hover .sitemap-card-arrow {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
-  border-color: #802B5B;
+  border-color: #004B49;
   transform: translateX(3px);
 }
 
@@ -373,13 +373,13 @@
   gap: 0.5rem;
   margin-top: auto;
   padding-top: 0.85rem;
-  border-top: 1px solid #f8f3f6;
+  border-top: 1px solid #F6F8F8;
 }
 
 .sitemap-card-path {
   font-size: 0.75rem;
-  color: #802B5B;
-  background: #faf2f6;
+  color: #004B49;
+  background: #F6F8F8;
   padding: 0.25rem 0.65rem;
   border-radius: 6px;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -393,7 +393,7 @@
 .sitemap-card-visit-hint {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #802B5B;
+  color: #004B49;
   display: inline-flex;
   align-items: center;
   gap: 3px;
@@ -420,8 +420,8 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #faedf4;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -446,7 +446,7 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.65rem 1.35rem;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   border: none;
   border-radius: 10px;
@@ -457,7 +457,7 @@
 }
 
 .sitemap-reset-search-btn:hover {
-  background: #571b3e;
+  background: #00201F;
 }
 
 /* Responsive Queries */

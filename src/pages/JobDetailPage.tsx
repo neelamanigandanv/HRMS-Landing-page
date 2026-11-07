@@ -958,7 +958,7 @@ export function JobDetailPage() {
                               href="/privacy"
                               target="_blank"
                               rel="noopener noreferrer"
-                              style={{ color: "#802B5B", fontWeight: 600, textDecoration: "underline" }}
+                              style={{ color: "#004B49", fontWeight: 600, textDecoration: "underline" }}
                             >
                               Privacy Policy
                             </a>

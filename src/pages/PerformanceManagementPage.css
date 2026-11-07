@@ -1,7 +1,7 @@
 /* ==========================================================================
    PERFORMANCE MANAGEMENT PAGE STYLESHEET
    Follows EmployeeManagementPage design system:
-   Plum (#802B5B) & violet highlights, clean typography, 5-step workflow,
+   Plum (#004B49) & violet highlights, clean typography, 5-step workflow,
    floating dashboard stage, and high-fidelity appraisal widgets.
    ========================================================================== */
 
@@ -66,7 +66,7 @@
 
 .perf-hero-showcase-frame:hover {
   transform: translateY(-4px);
-  box-shadow: 0 32px 70px -12px rgba(128, 43, 91, 0.18), 0 8px 22px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 32px 70px -12px rgba(0, 75, 73, 0.18), 0 8px 22px rgba(0, 0, 0, 0.06);
 }
 
 .perf-hero-mockup-img {
@@ -88,7 +88,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 8px 0;
-  border-bottom: 1px solid #f1edf5;
+  border-bottom: 1px solid #F6F8F8;
 }
 
 .perf-widget-metric-row:last-child {
@@ -186,21 +186,21 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden !important;
-  box-shadow: 0 10px 30px -5px rgba(128, 43, 91, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 10px 30px -5px rgba(0, 75, 73, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
 }
 
 .perf-process-card:hover,
 .perf-process-card.is-active {
-  border-color: #802B5B !important;
-  box-shadow: 0 20px 45px -8px rgba(128, 43, 91, 0.14) !important;
+  border-color: #004B49 !important;
+  box-shadow: 0 20px 45px -8px rgba(0, 75, 73, 0.14) !important;
   transform: translateY(-6px);
 }
 
 /* Hover & Active: Semicircle Number Notch turns solid primary plum */
 .perf-process-card:hover .emp-process-notch,
 .perf-process-card.is-active .emp-process-notch {
-  background: #802B5B !important;
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.35) !important;
+  background: #004B49 !important;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.35) !important;
 }
 
 .perf-process-card:hover .emp-process-notch .emp-process-notch-num,
@@ -211,10 +211,10 @@
 /* Hover & Active: Icon Box turns solid primary plum with white icon */
 .perf-process-card:hover .emp-process-icon-box,
 .perf-process-card.is-active .emp-process-icon-box {
-  background: #802B5B !important;
-  border-color: #802B5B !important;
+  background: #004B49 !important;
+  border-color: #004B49 !important;
   color: #ffffff !important;
-  box-shadow: 0 10px 24px -4px rgba(128, 43, 91, 0.4) !important;
+  box-shadow: 0 10px 24px -4px rgba(0, 75, 73, 0.4) !important;
   transform: scale(1.04);
 }
 
@@ -243,8 +243,8 @@
    ========================================================================== */
 .perf-matrix-section {
   padding: 5rem 0 4.5rem;
-  background: #fbf9fc;
-  border-bottom: 1px solid #f0ecf5;
+  background: #F6F8F8;
+  border-bottom: 1px solid #F6F8F8;
 }
 
 .perf-matrix-grid {
@@ -278,17 +278,17 @@
 }
 
 .perf-matrix-card:hover {
-  border-color: #802B5B;
+  border-color: #004B49;
   transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(128, 43, 91, 0.08);
+  box-shadow: 0 10px 28px rgba(0, 75, 73, 0.08);
 }
 
 .perf-matrix-icon-wrap {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: rgba(128, 43, 91, 0.08);
-  color: #802B5B;
+  background: rgba(0, 75, 73, 0.08);
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -297,7 +297,7 @@
 }
 
 .perf-matrix-card:hover .perf-matrix-icon-wrap {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
 }
 
@@ -338,7 +338,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   margin-bottom: 6px;
   display: block;
 }

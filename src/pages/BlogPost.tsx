@@ -172,7 +172,19 @@ export function BlogPost() {
       })();
 
   return (
-    <PageLayout breadcrumbs={breadcrumbs} onOpenDemo={() => openDemoModal()}>
+    <PageLayout
+      breadcrumbs={breadcrumbs}
+      onOpenDemo={() => openDemoModal()}
+      footerCtaProps={{
+        eyebrowBadgeText: "Put These Insights into Practice",
+        headlineLine1: "Experience Smarter Workforce Management",
+        headlineLine2: "with Zentilos Today",
+        subheadlineLine1: "See why 500+ multi-branch businesses trust Zentilos for seamless attendance, statutory payroll, and self-service HR.",
+        primaryButtonText: "Book a 1-on-1 Demo",
+        secondaryButtonText: "Browse More Articles",
+        secondaryButtonLink: "/blog",
+      }}
+    >
       <SEO
         title={seoTitle}
         description={post.excerpt}
@@ -249,7 +261,7 @@ export function BlogPost() {
               <article className="article-center-col">
                 {/* Mobile "Jump to section" Dropdown */}
                 <div className="article-mobile-toc-wrap">
-                  <label htmlFor="mobile-toc-select" style={{ fontSize: "12px", fontWeight: 700, color: "#7b2958", display: "block", marginBottom: "6px" }}>
+                  <label htmlFor="mobile-toc-select" style={{ fontSize: "12px", fontWeight: 700, color: "#004B49", display: "block", marginBottom: "6px" }}>
                     JUMP TO SECTION:
                   </label>
                   <select

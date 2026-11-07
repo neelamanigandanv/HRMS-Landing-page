@@ -1,14 +1,14 @@
 /* ==========================================================================
    BRILLIANT FOOTER CTA SECTION
    Inspired by high-impact tech & architectural CTA banners
-   Brand Primary Plum: #802B5B | Deep Base: #521838 | Vibrant Center: #a23875
+   Brand Primary Plum: #004B49 | Deep Base: #00201F | Vibrant Center: #004B49
    ========================================================================== */
 
 .brilliant-footer-cta {
   position: relative;
   overflow: hidden;
-  background-color: #802B5B;
-  background: radial-gradient(ellipse at 50% 50%, #9e3871 0%, #802B5B 45%, #521838 100%);
+  background-color: #004B49;
+  background: radial-gradient(ellipse at 50% 50%, #004B49 0%, #004B49 45%, #00201F 100%);
   padding: 6.5rem 1.5rem;
   color: #ffffff;
   text-align: center;
@@ -172,7 +172,7 @@
   height: 48px;
   padding: 0 1.85rem;
   background: #ffffff;
-  color: #802B5B;
+  color: #004B49;
   border: 1.5px solid #ffffff;
   border-radius: 6px;
   font-family: inherit;
@@ -187,7 +187,7 @@
 }
 
 .brilliant-btn-primary:hover {
-  background: #fdf2f7;
+  background: #F6F8F8;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
 }

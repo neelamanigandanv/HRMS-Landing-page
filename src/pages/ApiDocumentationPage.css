@@ -16,9 +16,9 @@
 .api-hero-section {
   position: relative;
   background:
-    radial-gradient(circle at 50% 0%, rgba(128, 43, 91, 0.08) 0%, rgba(250, 247, 244, 0.5) 60%, #ffffff 100%),
+    radial-gradient(circle at 50% 0%, rgba(0, 75, 73, 0.08) 0%, rgba(250, 247, 244, 0.5) 60%, #ffffff 100%),
     linear-gradient(180deg, #faf7f4 0%, #ffffff 100%);
-  border-bottom: 1px solid rgba(87, 61, 77, 0.08);
+  border-bottom: 1px solid rgba(0, 75, 73, 0.08);
   padding: 5rem 0 3.75rem;
   text-align: center;
 }
@@ -39,7 +39,7 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   background: transparent;
   padding: 0;
   border-radius: 0;
@@ -49,7 +49,7 @@
 }
 
 .api-hero-sparkle {
-  color: #802B5B;
+  color: #004B49;
   font-size: 0.75rem;
 }
 
@@ -66,7 +66,7 @@
 
 .api-hero-highlight {
   display: inline-block;
-  background: linear-gradient(135deg, #802B5B 0%, #a23874 100%);
+  background: #004B49;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -113,7 +113,7 @@
 }
 
 .api-hero-badge svg {
-  color: #802B5B;
+  color: #004B49;
   flex-shrink: 0;
 }
 
@@ -121,21 +121,21 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
   font-size: 0.9375rem;
   font-weight: 700;
   padding: 0.75rem 1.6rem;
   border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.22);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.22);
   transition: all 0.2s ease;
 }
 
 .api-hero-btn-primary:hover {
-  background: #671f48;
+  background: #00201F;
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(128, 43, 91, 0.28);
+  box-shadow: 0 6px 18px rgba(0, 75, 73, 0.28);
 }
 
 .api-hero-btn-secondary {
@@ -154,9 +154,9 @@
 }
 
 .api-hero-btn-secondary:hover {
-  background: #faf4f7;
-  border-color: #802B5B;
-  color: #802B5B;
+  background: #F6F8F8;
+  border-color: #004B49;
+  color: #004B49;
 }
 
 /* ==========================================================================
@@ -184,7 +184,7 @@
   font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.1em;
-  color: #802B5B;
+  color: #004B49;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
 }
@@ -374,10 +374,10 @@
 }
 
 .api-nav-endpoint-item.selected {
-  background: #f6f2f8;
-  color: #802B5B;
+  background: #F6F8F8;
+  color: #004B49;
   font-weight: 750;
-  border-left-color: #802B5B;
+  border-left-color: #004B49;
 }
 
 .api-nav-endpoint-name {
@@ -755,7 +755,7 @@
 .api-on-this-page-link.active {
   color: #191735;
   font-weight: 750;
-  border-left-color: #802B5B;
+  border-left-color: #004B49;
 }
 
 /* Dark Code Card */

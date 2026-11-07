@@ -1,14 +1,14 @@
 /* ==========================================================================
    CORPORATE HERO SECTION - ZENTILOS
    Exact visual fidelity matching high-converting corporate reference
-   Primary Plum: #802B5B | Deep Navy/Ink: #0c152e | Slate Grey: #5f6980
+   Primary Plum: #004B49 | Deep Navy/Ink: #0c152e | Slate Grey: #5f6980
    ========================================================================== */
 
 .corporate-hero-section {
   position: relative;
   overflow: hidden;
   background-color: #ffffff;
-  border-bottom: 1px solid rgba(87, 61, 77, 0.08);
+  border-bottom: 1px solid rgba(0, 75, 73, 0.08);
 }
 
 /* Background Media & Seamless Gradient Fade */
@@ -75,7 +75,7 @@
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #802B5B;
+  color: #004B49;
   margin: 0 0 1rem;
   line-height: 1.2;
 }
@@ -103,8 +103,8 @@
 
 .hero-highlight-plum {
   display: inline;
-  color: #802B5B;
-  background: linear-gradient(135deg, #802B5B 0%, #b33979 100%);
+  color: #004B49;
+  background: linear-gradient(135deg, #004B49 0%, #007A76 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -133,16 +133,16 @@
   justify-content: space-between;
   gap: 0.9rem;
   height: 46px;
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
-  border: 1px solid #802B5B;
+  border: 1px solid #004B49;
   border-radius: 6px;
   padding: 0 0.35rem 0 1.25rem;
   font-family: inherit;
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(128, 43, 91, 0.22);
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.22);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   outline: none;
@@ -151,10 +151,10 @@
 }
 
 .corporate-hero-btn-primary:hover {
-  background: #661e47;
-  border-color: #661e47;
+  background: #003836;
+  border-color: #003836;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(128, 43, 91, 0.32);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.32);
 }
 
 .corporate-hero-btn-primary:active {
@@ -167,7 +167,7 @@
   height: 34px;
   border-radius: 4px;
   background: #ffffff;
-  color: #802B5B;
+  color: #004B49;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -204,11 +204,11 @@
 }
 
 .corporate-hero-btn-secondary:hover {
-  border-color: #802B5B;
-  color: #802B5B;
-  background: #faedf4;
+  border-color: #004B49;
+  color: #004B49;
+  background: #F6F8F8;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(128, 43, 91, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.1);
 }
 
 .corporate-hero-btn-secondary:active {
@@ -219,7 +219,7 @@
 .corporate-hero-section .company-strip {
   position: relative;
   z-index: 2;
-  border-top: 1px solid rgba(87, 61, 77, 0.08);
+  border-top: 1px solid rgba(0, 75, 73, 0.08);
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;

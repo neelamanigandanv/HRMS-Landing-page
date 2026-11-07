@@ -268,32 +268,32 @@ export function RequestDemoModal({
                   aria-hidden="true"
                 >
                   {/* Confetti circles */}
-                  <circle cx="24" cy="38" r="3" fill="#e879a9" opacity="0.85" />
-                  <circle cx="116" cy="32" r="3.5" stroke="#802B5B" strokeWidth="1.5" fill="none" opacity="0.7" />
+                  <circle cx="24" cy="38" r="3" fill="#C6F36B" opacity="0.85" />
+                  <circle cx="116" cy="32" r="3.5" stroke="#004B49" strokeWidth="1.5" fill="none" opacity="0.7" />
                   <circle cx="92" cy="16" r="2.5" fill="#0d9488" opacity="0.75" />
-                  <circle cx="48" cy="18" r="2" fill="#802B5B" opacity="0.6" />
+                  <circle cx="48" cy="18" r="2" fill="#004B49" opacity="0.6" />
                   <circle cx="28" cy="76" r="2.5" fill="#0d9488" opacity="0.7" />
-                  <circle cx="122" cy="68" r="3" fill="#e879a9" opacity="0.85" />
+                  <circle cx="122" cy="68" r="3" fill="#C6F36B" opacity="0.85" />
 
                   {/* Confetti rectangular ribbons */}
                   <rect x="24" y="22" width="7" height="3" rx="1.5" transform="rotate(-30 24 22)" fill="#0d9488" opacity="0.8" />
-                  <rect x="110" y="20" width="8" height="3.5" rx="1.5" transform="rotate(25 110 20)" fill="#802B5B" opacity="0.7" />
-                  <rect x="18" y="52" width="6" height="3" rx="1.5" transform="rotate(40 18 52)" fill="#e879a9" opacity="0.85" />
+                  <rect x="110" y="20" width="8" height="3.5" rx="1.5" transform="rotate(25 110 20)" fill="#004B49" opacity="0.7" />
+                  <rect x="18" y="52" width="6" height="3" rx="1.5" transform="rotate(40 18 52)" fill="#C6F36B" opacity="0.85" />
                   <rect x="118" y="48" width="7" height="3" rx="1.5" transform="rotate(-35 118 48)" fill="#0d9488" opacity="0.75" />
-                  <rect x="36" y="92" width="7" height="3" rx="1.5" transform="rotate(15 36 92)" fill="#802B5B" opacity="0.6" />
+                  <rect x="36" y="92" width="7" height="3" rx="1.5" transform="rotate(15 36 92)" fill="#004B49" opacity="0.6" />
 
                   {/* Starbursts */}
-                  <path d="M70 6V12M67 9H73" stroke="#e879a9" strokeWidth="1.5" strokeLinecap="round" opacity="0.85" />
-                  <path d="M104 84V88M102 86H106" stroke="#802B5B" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
+                  <path d="M70 6V12M67 9H73" stroke="#004B49" strokeWidth="1.5" strokeLinecap="round" opacity="0.85" />
+                  <path d="M104 84V88M102 86H106" stroke="#004B49" strokeWidth="1.5" strokeLinecap="round" opacity="0.7" />
 
                   {/* Clipboard soft drop shadow */}
-                  <rect x="38" y="30" width="60" height="74" rx="8" fill="rgba(128, 43, 91, 0.08)" />
+                  <rect x="38" y="30" width="60" height="74" rx="8" fill="rgba(0, 75, 73, 0.08)" />
 
                   {/* Clipboard Base with Luxury Plum Outline */}
-                  <rect x="36" y="26" width="60" height="74" rx="7" fill="#ffffff" stroke="#5c183e" strokeWidth="3" />
+                  <rect x="36" y="26" width="60" height="74" rx="7" fill="#ffffff" stroke="#004B49" strokeWidth="3" />
 
                   {/* Top Clip Clamp */}
-                  <rect x="52" y="20" width="28" height="12" rx="4" fill="#802B5B" stroke="#5c183e" strokeWidth="2.5" />
+                  <rect x="52" y="20" width="28" height="12" rx="4" fill="#004B49" stroke="#004B49" strokeWidth="2.5" />
                   <circle cx="66" cy="25" r="2.5" fill="#ffffff" />
 
                   {/* Checkmark inside clipboard */}

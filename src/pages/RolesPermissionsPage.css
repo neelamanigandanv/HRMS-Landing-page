@@ -1,7 +1,7 @@
 /* ==========================================================================
    ROLES & PERMISSIONS PAGE STYLESHEET
    Follows EmployeeManagementPage design system:
-   Plum (#802B5B) & violet highlights, clean typography, 4-step workflow,
+   Plum (#004B49) & violet highlights, clean typography, 4-step workflow,
    live permission matrix, floating dashboard stage, and role cards.
    ========================================================================== */
 
@@ -56,7 +56,7 @@
 /* Center Hero Preview Image Mockup */
 .roles-hero-showcase-frame {
   background: #ffffff;
-  border: 1px solid rgba(81, 70, 216, 0.14);
+  border: 1px solid rgba(0, 75, 73, 0.14);
   border-radius: 24px;
   box-shadow: 0 25px 60px -15px rgba(25, 23, 53, 0.16), 0 6px 18px rgba(0, 0, 0, 0.05);
   overflow: hidden;
@@ -66,7 +66,7 @@
 
 .roles-hero-showcase-frame:hover {
   transform: translateY(-4px);
-  box-shadow: 0 32px 70px -12px rgba(128, 43, 91, 0.18), 0 8px 22px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 32px 70px -12px rgba(0, 75, 73, 0.18), 0 8px 22px rgba(0, 0, 0, 0.06);
 }
 
 .roles-hero-mockup-img {
@@ -146,13 +146,13 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden !important;
-  box-shadow: 0 10px 30px -5px rgba(128, 43, 91, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 10px 30px -5px rgba(0, 75, 73, 0.05), 0 4px 14px rgba(0, 0, 0, 0.02);
 }
 
 .roles-process-card:hover,
 .roles-process-card.is-active {
-  border-color: #802B5B !important;
-  box-shadow: 0 20px 45px -8px rgba(128, 43, 91, 0.14) !important;
+  border-color: #004B49 !important;
+  box-shadow: 0 20px 45px -8px rgba(0, 75, 73, 0.14) !important;
   transform: translateY(-6px);
 }
 
@@ -176,7 +176,7 @@
 .roles-matrix-wrapper {
   margin-top: 3.5rem;
   background: #ffffff;
-  border: 1px solid #e9e5f2;
+  border: 1px solid #E5EAEA;
   border-radius: 20px;
   padding: 2.25rem;
   box-shadow: 0 12px 36px rgba(25, 23, 53, 0.05);
@@ -228,11 +228,11 @@
 }
 
 .roles-chip-indicator.full {
-  background-color: #802B5B;
+  background-color: #004B49;
 }
 
 .roles-chip-indicator.scoped {
-  background-color: #5146d8;
+  background-color: #004B49;
 }
 
 .roles-chip-indicator.self {
@@ -251,12 +251,12 @@
 }
 
 .roles-table th {
-  background: #fbf9fc;
+  background: #F6F8F8;
   color: #191735;
   font-size: 0.8125rem;
   font-weight: 700;
   padding: 14px 16px;
-  border-bottom: 2px solid #eae5f2;
+  border-bottom: 2px solid #E5EAEA;
   letter-spacing: 0.02em;
 }
 
@@ -270,13 +270,13 @@
 
 .roles-table td {
   padding: 14px 16px;
-  border-bottom: 1px solid #f1ecf6;
+  border-bottom: 1px solid #F6F8F8;
   font-size: 0.84rem;
   vertical-align: middle;
 }
 
 .roles-table tr:hover td {
-  background: #faf8fd;
+  background: #F6F8F8;
 }
 
 .roles-role-badge {
@@ -291,8 +291,8 @@
   width: 28px;
   height: 28px;
   border-radius: 8px;
-  background: rgba(128, 43, 91, 0.08);
-  color: #802B5B;
+  background: rgba(0, 75, 73, 0.08);
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -309,15 +309,15 @@
 }
 
 .roles-access-pill.full {
-  background: #fdf2f8;
-  color: #802B5B;
-  border: 1px solid rgba(128, 43, 91, 0.2);
+  background: #F6F8F8;
+  color: #004B49;
+  border: 1px solid rgba(0, 75, 73, 0.2);
 }
 
 .roles-access-pill.scoped {
-  background: #f5f3ff;
-  color: #5146d8;
-  border: 1px solid rgba(81, 70, 216, 0.2);
+  background: #F6F8F8;
+  color: #004B49;
+  border: 1px solid rgba(0, 75, 73, 0.2);
 }
 
 .roles-access-pill.self {
@@ -337,8 +337,8 @@
    ========================================================================== */
 .roles-examples-section {
   padding: 5rem 0 4.5rem;
-  background: #fbf9fc;
-  border-bottom: 1px solid #f0ecf5;
+  background: #F6F8F8;
+  border-bottom: 1px solid #E5EAEA;
 }
 
 .roles-examples-grid {
@@ -362,7 +362,7 @@
 
 .roles-example-card {
   background: #ffffff;
-  border: 1px solid #eae6f2;
+  border: 1px solid #F6F8F8;
   border-radius: 18px;
   padding: 2rem 1.6rem;
   transition: all 0.25s ease;
@@ -372,17 +372,17 @@
 }
 
 .roles-example-card:hover {
-  border-color: #802B5B;
+  border-color: #004B49;
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(128, 43, 91, 0.08);
+  box-shadow: 0 12px 30px rgba(0, 75, 73, 0.08);
 }
 
 .roles-example-icon-wrap {
   width: 50px;
   height: 50px;
   border-radius: 14px;
-  background: rgba(128, 43, 91, 0.08);
-  color: #802B5B;
+  background: rgba(0, 75, 73, 0.08);
+  color: #004B49;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -391,7 +391,7 @@
 }
 
 .roles-example-card:hover .roles-example-icon-wrap {
-  background: #802B5B;
+  background: #004B49;
   color: #ffffff;
 }
 
@@ -417,9 +417,9 @@
   gap: 6px;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #802B5B;
-  background: #fdf5f9;
-  border: 1px solid #fadfe9;
+  color: #004B49;
+  background: #F6F8F8;
+  border: 1px solid #F6F8F8;
   padding: 4px 10px;
   border-radius: 6px;
   width: fit-content;

@@ -111,7 +111,14 @@ export function GuidesPage() {
         {/* ==========================================================================
             3. FINAL CONVERSION CTA (MATCHING HOME PAGE THEME & STYLING)
             ========================================================================== */}
-        <FooterCTA />
+        <FooterCTA
+          eyebrowBadgeText="Practical Compliance & HR Operations Guides"
+          headlineLine1="Streamline Your People Operations"
+          headlineLine2="with Zentilos Today"
+          subheadlineLine1="Transform complex labor statutory requirements, attendance tracking, and payroll registers into automated, effortless daily workflows."
+          primaryButtonText="Book a Live Demo"
+          secondaryButtonText="Browse All Guides"
+        />
       </div>
     </PageLayout>
   );

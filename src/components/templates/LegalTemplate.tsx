@@ -208,7 +208,7 @@ export function LegalTemplate({
         {/* Optional Placeholder / Regulatory Notice Alert */}
         {placeholderNotice && (
           <div className="guide-detail-container" style={{ marginTop: "24px" }}>
-            <div className="guide-callout-box" style={{ margin: 0, borderLeftColor: "#7b2958" }}>
+            <div className="guide-callout-box" style={{ margin: 0, borderLeftColor: "#004B49" }}>
               <div className="guide-callout-title">
                 <Icon name="shield" size={16} /> Statutory Compliance Notice
               </div>
@@ -304,8 +304,8 @@ export function LegalTemplate({
                         fontWeight: 800,
                         textTransform: "uppercase",
                         letterSpacing: "0.08em",
-                        color: "#7b2958",
-                        background: "#fae8f2",
+                        color: "#004B49",
+                        background: "#F6F8F8",
                         padding: "4px 10px",
                         borderRadius: "6px",
                         marginBottom: "14px",

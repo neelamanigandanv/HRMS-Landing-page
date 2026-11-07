@@ -123,7 +123,7 @@ export const featuredHandbooks: GuideHandbook[] = [
     subtitle: "Gross-to-net salary formulas, TDS calculations, EPF & ESIC filing timelines, and zero-penalty audit workflows.",
     category: "Payroll & Tax",
     readTime: "15 min read",
-    accentColor: "#7b2958",
+    accentColor: "#004B49",
     badge: "Statutory Masterclass",
     stat: "Zero-Penalty Audits",
     iconName: "payroll",
@@ -137,7 +137,7 @@ export const featuredHandbooks: GuideHandbook[] = [
     subtitle: "Resolving sandwich leave disputes, biometric sync, encashment liabilities, and eliminating 3.8% monthly payroll leakages.",
     category: "Workforce & Leave",
     readTime: "10 min read",
-    accentColor: "#b43f70",
+    accentColor: "#004B49",
     badge: "Leakage Prevention",
     stat: "Auto Biometric Sync",
     iconName: "calendar",
@@ -184,7 +184,7 @@ export const allGuidesList: GuideListItem[] = [
     readTime: "15 min read",
     excerpt: "Gross-to-net salary processing, automated tax withholdings, statutory EPF/ESI/PT compliance, and zero-penalty audit workflows.",
     badge: "Essential",
-    accentColor: "#f43f5e",
+    accentColor: "#004B49",
     author: "Zentilos Payroll Advisory",
   },
   {
@@ -195,7 +195,7 @@ export const allGuidesList: GuideListItem[] = [
     readTime: "10 min read",
     excerpt: "Eliminate attendance leakages, configure sandwich rules, manage statutory accruals, and automate multi-tier approval chains.",
     badge: "Operations",
-    accentColor: "#7b2958",
+    accentColor: "#004B49",
     author: "Zentilos People Team",
   },
   {
@@ -206,7 +206,7 @@ export const allGuidesList: GuideListItem[] = [
     readTime: "11 min read",
     excerpt: "End-to-end talent acquisition from candidate pipelines and scorecard evaluations to multi-state digital offer letter rollouts.",
     badge: "Talent Ops",
-    accentColor: "#b43f70",
+    accentColor: "#004B49",
     author: "Zentilos Talent Practice",
   },
   {
@@ -261,7 +261,7 @@ export const allGuidesList: GuideListItem[] = [
     readTime: "12 min read",
     excerpt: "Continuous 360-degree feedback, quarterly OKR tracking, 9-box calibration reviews, and merit compensation linking.",
     badge: "Growth",
-    accentColor: "#7b2958",
+    accentColor: "#004B49",
     author: "Zentilos Organizational Design",
   },
   {
@@ -323,7 +323,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     readTime: "15 min read",
     updatedDate: "Updated for Financial Year 2025–2026",
     badge: "Statutory Masterclass",
-    accentColor: "#7b2958",
+    accentColor: "#004B49",
     author: {
       name: "Zentilos Payroll Advisory",
       role: "Reviewed by Certified Statutory Compliance Auditors",
@@ -558,7 +558,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     readTime: "10 min read",
     updatedDate: "Updated for Financial Year 2025–2026",
     badge: "Leakage Prevention",
-    accentColor: "#b43f70",
+    accentColor: "#004B49",
     author: {
       name: "Zentilos People Operations Advisory",
       role: "Reviewed by Senior Labour Law Compliance Specialists",
@@ -972,7 +972,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     readTime: "11 min read",
     updatedDate: "Updated for Financial Year 2025–2026",
     badge: "Talent Velocity",
-    accentColor: "#b43f70",
+    accentColor: "#004B49",
     author: {
       name: "Zentilos Talent Practice",
       role: "Reviewed by Executive Talent Acquisition Leaders",
@@ -1791,7 +1791,7 @@ export const GUIDE_DETAILS_MAP: Record<string, GuideDetailModel> = {
     readTime: "12 min read",
     updatedDate: "Updated for Financial Year 2025–2026",
     badge: "Organizational Growth",
-    accentColor: "#7b2958",
+    accentColor: "#004B49",
     author: {
       name: "Zentilos Organizational Design",
       role: "Reviewed by Talent Strategy & Compensation Leaders",
