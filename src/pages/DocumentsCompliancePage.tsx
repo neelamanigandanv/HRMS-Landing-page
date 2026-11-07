@@ -70,7 +70,7 @@ export function DocumentsCompliancePage() {
       id: "document-storage",
       badge: "01 Document Storage",
       eyebrow: "✦ 01. SECURE DOCUMENT STORAGE ✦",
-      image: "/images/doc-block-storage.jpg?v=2",
+      image: "/images/doc-block-storage.webp?v=2",
       imageAlt: "HR operations specialist organizing digital employee document records on laptop in modern office",
       title: "Secure Document Storage & Unified Employee Records",
       description:
@@ -98,7 +98,7 @@ export function DocumentsCompliancePage() {
       id: "expiry-tracking",
       badge: "02 Expiry Tracking",
       eyebrow: "✦ 02. PROACTIVE EXPIRY TRACKING ✦",
-      image: "/images/doc-block-expiry.jpg?v=2",
+      image: "/images/doc-block-expiry.webp?v=2",
       imageAlt: "HR compliance specialist reviewing document expiration alerts and renewals on tablet with checklist",
       title: "Automated Expiry Tracking & Timely Renewal Follow-Ups",
       description:
@@ -126,7 +126,7 @@ export function DocumentsCompliancePage() {
       id: "compliance-access",
       badge: "03 Checklists & Access",
       eyebrow: "✦ 03. COMPLIANCE & ACCESS CONTROL ✦",
-      image: "/images/doc-block-compliance.jpg?v=2",
+      image: "/images/doc-block-compliance.webp?v=2",
       imageAlt: "Corporate compliance officers in boardroom reviewing audit readiness checklist and security controls",
       title: "Statutory Compliance Checklists & Granular Access Control",
       description:
@@ -227,7 +227,7 @@ export function DocumentsCompliancePage() {
         "Before Zentilos, our document records were scattered across Google Drive, desktop folders, and physical filing cabinets. Now, every employee has an encrypted profile with complete Aadhaar, PAN, and contract verification.",
       name: "Ananya Kapoor",
       role: "Head of Talent & Compliance, UrbanBite",
-      avatar: "/images/leader-ananya-kapoor.jpg",
+      avatar: "/images/leader-ananya-kapoor.webp",
     },
     {
       id: 2,
@@ -237,7 +237,7 @@ export function DocumentsCompliancePage() {
         "With over 400 field technicians and overseas consultants, tracking license expiration dates used to keep our legal team up at night. The 60-day automated reminder alerts completely solved our renewal delays.",
       name: "Rohan Mehta",
       role: "Chief Operating Officer, Apex Labs",
-      avatar: "/images/leader-rohan-mehta.jpg",
+      avatar: "/images/leader-rohan-mehta.webp",
     },
     {
       id: 3,
@@ -247,7 +247,7 @@ export function DocumentsCompliancePage() {
         "New hires upload their statutory identity proofs and signed agreements before Day 1 through the mobile portal. Our HR managers just click verify, and the records file into the compliance vault automatically.",
       name: "Sarah Jenkins",
       role: "VP of People Operations, CloudScale",
-      avatar: "/images/testi-avatar-2.jpg",
+      avatar: "/images/testi-avatar-2.webp",
     },
     {
       id: 4,
@@ -257,7 +257,7 @@ export function DocumentsCompliancePage() {
         "Confidential compensation letters and health insurance records are isolated with bank-grade encryption. Department managers only see what they need, while HR admins retain complete governance.",
       name: "Freddy Dean",
       role: "Co-Founder, Modern FinTech",
-      avatar: "/images/testi-avatar-1.jpg",
+      avatar: "/images/testi-avatar-1.webp",
     },
   ];
 
@@ -456,7 +456,7 @@ export function DocumentsCompliancePage() {
 
                 <div className="doc-hero-showcase-frame">
                   <img
-                    src="/images/doc-hero-showcase.jpg?v=2"
+                    src="/images/doc-hero-showcase.webp?v=2"
                     alt="Zentilos Documents and Compliance Overview Dashboard showing employee document cards and expiry alerts"
                     className="doc-hero-mockup-img"
                     loading="eager"
@@ -897,7 +897,7 @@ export function DocumentsCompliancePage() {
               {/* Overlapping Photorealistic Team Collaboration Image */}
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/emp-cta-collaboration.jpg"
+                  src="/images/emp-cta-collaboration.webp"
                   alt="HR compliance and legal team collaborating on employee document governance"
                   className="emp-cta-img"
                   loading="lazy"

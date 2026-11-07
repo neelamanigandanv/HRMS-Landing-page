@@ -101,6 +101,7 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ initialPartnerType = "
 
     try {
       await submitEnquiry({
+        form_type: "partner_application",
         first_name: values.firstName.trim(),
         last_name: values.lastName.trim(),
         name: `${values.firstName.trim()} ${values.lastName.trim()}`.trim(),
@@ -108,15 +109,14 @@ export const EnquiryForm: React.FC<EnquiryFormProps> = ({ initialPartnerType = "
         business_email: values.businessEmail.trim(),
         work_email: values.businessEmail.trim(),
         email: values.businessEmail.trim(),
+        phone_number: values.phone.trim(),
         phone: values.phone.trim(),
+        location: values.location.trim(),
+        interested_partner_track: values.partnerType,
+        tell_us_about_your_client_base_and_operations: values.additionalComments.trim(),
         source_page: "/partners",
         nature_of_enquiry: "PARTNER_APPLICATION",
         notes: `Location: ${values.location.trim()} | Track: ${values.partnerType} | Operations: ${values.additionalComments.trim()}`,
-        extra_data: {
-          location: values.location.trim(),
-          interested_partner_track: values.partnerType,
-          client_base_and_operations: values.additionalComments.trim(),
-        },
       });
 
       setIsSubmitting(false);

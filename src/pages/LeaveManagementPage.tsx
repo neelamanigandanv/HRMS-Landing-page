@@ -75,7 +75,7 @@ export function LeaveManagementPage() {
         "Tracking paper leave forms and email approvals across our 500+ employee team was chaotic. With Zentilos's mobile app and Slack integration, managers approve requests in seconds while team calendars update automatically.",
       name: "Freddy Dean",
       role: "Head of People Operations, FinTech Horizon",
-      avatar: "/images/testi-avatar-1.jpg",
+      avatar: "/images/testi-avatar-1.webp",
     },
     {
       id: 2,
@@ -85,7 +85,7 @@ export function LeaveManagementPage() {
         "Pre-payroll reconciliation used to take our HR team three full days every month. Zentilos's automatic Loss of Pay (LOP) synchronization directly feeds approved time off into salary slips with 100% precision.",
       name: "Sarah Jenkins",
       role: "VP of HR, CloudScale Systems",
-      avatar: "/images/testi-avatar-2.jpg",
+      avatar: "/images/testi-avatar-2.webp",
     },
     {
       id: 3,
@@ -95,7 +95,7 @@ export function LeaveManagementPage() {
         "During major festival seasons, multiple department specialists used to take off simultaneously. Zentilos's real-time clash detection alerts managers before approvals, protecting our critical customer support coverage.",
       name: "Rohan Mehta",
       role: "Chief Operating Officer, Apex Retail",
-      avatar: "/images/leader-rohan-mehta.jpg",
+      avatar: "/images/leader-rohan-mehta.webp",
     },
     {
       id: 4,
@@ -105,7 +105,7 @@ export function LeaveManagementPage() {
         "Operating across multiple Indian states with different statutory festival lists used to cause massive compliance confusion. Zentilos lets us assign branch-specific holiday calendars with zero manual maintenance.",
       name: "Ananya Kapoor",
       role: "Director of People & Culture, UrbanBite",
-      avatar: "/images/leader-ananya-kapoor.jpg",
+      avatar: "/images/leader-ananya-kapoor.webp",
     },
   ];
 
@@ -119,7 +119,7 @@ export function LeaveManagementPage() {
       id: "custom-policies",
       badge: "01 Policy Engine",
       eyebrow: "✦ 01. CUSTOMIZABLE POLICIES & ACCRUAL ENGINE ✦",
-      image: "/images/leave-block-accrual.jpg",
+      image: "/images/leave-block-accrual.webp",
       imageAlt: "HR Director configuring leave types, annual quotas, and carry-forward rules on desktop screen",
       title: "Customizable Leave Policies & Automated Accrual Engine",
       description:
@@ -147,7 +147,7 @@ export function LeaveManagementPage() {
       id: "approval-workflows",
       badge: "02 Multi-Tier Approvals",
       eyebrow: "✦ 02. MULTI-LEVEL APPROVALS & CLASH DETECTION ✦",
-      image: "/images/leave-block-approval.jpg",
+      image: "/images/leave-block-approval.webp",
       imageAlt: "Manager reviewing team leave request with team calendar and clash detection on mobile app",
       title: "Multi-Level Approval Workflows & Team Clash Detection",
       description:
@@ -175,7 +175,7 @@ export function LeaveManagementPage() {
       id: "payroll-sync",
       badge: "03 Payroll & Attendance",
       eyebrow: "✦ 03. ATTENDANCE & PAYROLL SYNCHRONIZATION ✦",
-      image: "/images/leave-block-payroll.jpg",
+      image: "/images/leave-block-payroll.webp",
       imageAlt: "Finance and HR specialists reviewing payroll reconciliation report with leave encashment and unpaid days",
       title: "Seamless Attendance & Automated Payroll Synchronization",
       description:
@@ -435,7 +435,7 @@ export function LeaveManagementPage() {
               {/* Center Main Card: Real Employee Managing Time Off on Tablet */}
               <div className="emp-hero-center-photo-card">
                 <img
-                  src="/images/leave-hero-showcase.jpg"
+                  src="/images/leave-hero-showcase.webp"
                   alt="Employee checking approved vacation leave on tablet in modern office with time-off dashboard"
                   className="emp-hero-center-img"
                   loading="eager"
@@ -887,7 +887,7 @@ export function LeaveManagementPage() {
               {/* Overlapping Photorealistic Team Collaboration Image */}
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/leave-block-payroll.jpg"
+                  src="/images/leave-block-payroll.webp"
                   alt="Finance and HR managers reviewing leave-to-payroll reconciliation report"
                   className="emp-cta-img"
                   loading="lazy"
@@ -1097,13 +1097,13 @@ export function LeaveManagementPage() {
             BOTTOM CONVERSION CTA BANNER
             ========================================================================= */}
         <FooterCTA
-          variant="matrix-glow"
+          variant="emp-banner"
           eyebrowBadgeText="Automated Leave & Absence Platform"
-          headlineLine1="Ready to streamline leave &"
-          headlineLine2="absence management?"
-          subheadlineLine1="Get enterprise-grade leave tracking and automated multi-tier approvals"
-          subheadlineLine2="in just minutes — zero payroll delays and zero compliance disruptions."
-          primaryButtonText="Book a demo"
+          headlineLine1="Ready to Streamline Leave &"
+          headlineLine2="Absence Management?"
+          subheadlineLine1="Get enterprise-grade leave tracking and automated multi-tier approvals in just minutes — zero payroll delays and zero compliance disruptions."
+          primaryButtonText="Book a Live Demo"
+          secondaryButtonText="Explore Features"
         />
       </main>
 

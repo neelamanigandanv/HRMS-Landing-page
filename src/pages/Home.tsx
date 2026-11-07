@@ -90,13 +90,16 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
 
     try {
       await submitEnquiry({
+        form_type: "request_demo",
         name: formData.name.trim(),
         work_email: formData.email.trim(),
         email: formData.email.trim(),
+        phone_number: formData.phone.trim(),
         phone: formData.phone.trim(),
         company_name: "Prospect Company",
         team_size: formData.employees,
         primary_area_of_interest: "Full Platform Walkthrough",
+        additional_notes: "Demo requested via Home inline form",
         nature_of_enquiry: "SCHEDULE_LIVE_DEMO",
         notes: "Demo requested via Home inline form",
         source_page: "/",
@@ -119,17 +122,70 @@ export function DemoForm({ compact = false }: { compact?: boolean }) {
 
   if (sent) {
     return (
-      <div className={`demo-form ${compact ? "compact" : ""}`}>
-        <div className="demo-success-panel">
-          <div className="demo-success-icon">
-            <Icon name="check" size={24} />
+      <div className={`demo-form ${compact ? "compact" : ""}`} style={{ padding: 0, overflow: "hidden" }}>
+        <div className="demo-success-top-ribbon" />
+        <div className="demo-success-content" style={{ padding: compact ? "22px 18px" : "28px 24px" }}>
+          <div className="demo-success-illustration-wrap">
+            <svg
+              width="100"
+              height="90"
+              viewBox="0 0 140 125"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              className="demo-success-illustration"
+              aria-hidden="true"
+            >
+              <circle cx="24" cy="38" r="3" fill="#e879a9" opacity="0.85" />
+              <circle cx="116" cy="32" r="3.5" stroke="#802B5B" strokeWidth="1.5" fill="none" opacity="0.7" />
+              <circle cx="92" cy="16" r="2.5" fill="#0d9488" opacity="0.75" />
+              <rect x="24" y="22" width="7" height="3" rx="1.5" transform="rotate(-30 24 22)" fill="#0d9488" opacity="0.8" />
+              <rect x="110" y="20" width="8" height="3.5" rx="1.5" transform="rotate(25 110 20)" fill="#802B5B" opacity="0.7" />
+              <rect x="38" y="30" width="60" height="74" rx="8" fill="rgba(128, 43, 91, 0.08)" />
+              <rect x="36" y="26" width="60" height="74" rx="7" fill="#ffffff" stroke="#5c183e" strokeWidth="3" />
+              <rect x="52" y="20" width="28" height="12" rx="4" fill="#802B5B" stroke="#5c183e" strokeWidth="2.5" />
+              <circle cx="66" cy="25" r="2.5" fill="#ffffff" />
+              <path d="M48 62L58 72L82 48" stroke="#0d9488" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+              <g filter="url(#shieldShadowHome)">
+                <path d="M90 62C90 62 99 59 108 62C108 77 99 87 90 92C81 87 72 77 72 62C81 59 90 62 90 62Z" fill="url(#shieldGradHome)" stroke="#ffffff" strokeWidth="2.5" />
+                <path d="M84 76L88 80L96 71" stroke="#ffffff" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+              </g>
+              <defs>
+                <linearGradient id="shieldGradHome" x1="72" y1="62" x2="108" y2="92" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="#0d9488" />
+                  <stop offset="100%" stopColor="#065f46" />
+                </linearGradient>
+                <filter id="shieldShadowHome" x="68" y="60" width="44" height="40" filterUnits="userSpaceOnUse">
+                  <feDropShadow dx="0" dy="3" stdDeviation="3" floodColor="#065f46" floodOpacity="0.3" />
+                </filter>
+              </defs>
+            </svg>
           </div>
-          <h3>Demo Request Received!</h3>
-          <p>
-            Thank you <strong>{formData.name}</strong>. Our product specialist will call you at{" "}
-            <strong>{formData.phone}</strong> for your personalised walkthrough.
+          <h3 className="demo-success-title" style={{ fontSize: "20px" }}>Thank You for Your Interest!</h3>
+          <p className="demo-success-desc" style={{ fontSize: "13.5px" }}>
+            We&apos;ve received your request for <strong>Zentilos HRMS</strong>. Our product specialist will call you at{" "}
+            <strong>{formData.phone}</strong> (or email at <strong>{formData.email}</strong>) within <strong>2 business hours</strong> for your personalized walkthrough.
           </p>
-          <button type="button" className="demo-success-reset" onClick={handleReset}>
+          <div className="demo-success-perks-box" style={{ padding: "10px 14px", gap: "6px" }}>
+            <div className="demo-success-perk-item" style={{ fontSize: "12px" }}>
+              <span className="perk-check-icon" style={{ width: "18px", height: "18px" }}>
+                <Icon name="check" size={11} />
+              </span>
+              <span>30-minute tailored walkthrough</span>
+            </div>
+            <div className="demo-success-perk-item" style={{ fontSize: "12px" }}>
+              <span className="perk-check-icon" style={{ width: "18px", height: "18px" }}>
+                <Icon name="check" size={11} />
+              </span>
+              <span>Multi-branch &amp; compliance walkthrough</span>
+            </div>
+            <div className="demo-success-perk-item" style={{ fontSize: "12px" }}>
+              <span className="perk-check-icon" style={{ width: "18px", height: "18px" }}>
+                <Icon name="check" size={11} />
+              </span>
+              <span>No credit card required • 100% free</span>
+            </div>
+          </div>
+          <button type="button" className="demo-success-btn-done" style={{ width: "100%", height: "42px", marginTop: "6px" }} onClick={handleReset}>
             Book another demo
           </button>
         </div>
@@ -1395,9 +1451,14 @@ export function Home() {
           <div className="corporate-hero-bg-wrapper" aria-hidden="true">
             <div className="corporate-hero-media">
               <img
-                src="/images/hero-colleagues-clean.png"
+                src="/images/hero-colleagues-clean.webp"
                 alt="Zentilos enterprise HR and payroll leaders collaborating"
                 className="corporate-hero-image"
+                width={675}
+                height={472}
+                fetchPriority="high"
+                loading="eager"
+                decoding="async"
               />
               <div className="corporate-hero-gradient-overlay" />
             </div>
@@ -1537,9 +1598,13 @@ export function Home() {
                 {/* Background Executive Working Photo */}
                 <div className="diff-automated-bg-media">
                   <img
-                    src="/images/difference-automated-pro.jpg"
+                    src="/images/difference-automated-pro.webp"
                     alt="Zentilos automated workforce management"
                     className="diff-automated-photo"
+                    width={1200}
+                    height={896}
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="diff-automated-gradient-overlay" />
                 </div>

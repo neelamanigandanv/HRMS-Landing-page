@@ -69,7 +69,7 @@ export function Hero3DStaircase() {
         {/* The Studio 3D Scene Base Render */}
         <div className="hero-3d-render-wrap">
           <img
-            src="/images/hero-3d-staircase.jpg"
+            src="/images/hero-3d-staircase.webp"
             alt="Zentilos 3D Staircase: From Hire to Growth"
             className="hero-3d-base-img"
             loading="eager"

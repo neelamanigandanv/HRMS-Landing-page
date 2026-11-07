@@ -75,7 +75,7 @@ export function AttendanceManagementPage() {
         "Managing shift turnstiles across 18 regional factories with USB punch readers used to be an operational nightmare. With Zentilos's cloud IoT biometric sync, we have zero proxy punches and real-time floor visibility.",
       name: "Freddy Dean",
       role: "VP of Plant Operations, Apex Manufacturing",
-      avatar: "/images/testi-avatar-1.jpg",
+      avatar: "/images/testi-avatar-1.webp",
     },
     {
       id: 2,
@@ -85,7 +85,7 @@ export function AttendanceManagementPage() {
         "Chasing missing punches, paper overtime slips, and cross-checking leave requests used to paralyze our HR team every month. Zentilos's automated payroll handshake compressed reconciliation into a single afternoon.",
       name: "Sarah Jenkins",
       role: "Head of People Operations, RetailNext",
-      avatar: "/images/testi-avatar-2.jpg",
+      avatar: "/images/testi-avatar-2.webp",
     },
     {
       id: 3,
@@ -95,7 +95,7 @@ export function AttendanceManagementPage() {
         "Our sales and medical reps operate across hundreds of hospital client locations. With customizable GPS geofencing polygons, our team checks in smoothly on their mobile app while leadership tracks verified presence.",
       name: "Rohan Mehta",
       role: "Chief Operating Officer, LogiTransit",
-      avatar: "/images/leader-rohan-mehta.jpg",
+      avatar: "/images/leader-rohan-mehta.webp",
     },
     {
       id: 4,
@@ -105,7 +105,7 @@ export function AttendanceManagementPage() {
         "Zentilos's visual shift planner automatically alerts us if an employee is scheduled with insufficient rest between shifts or if a critical ward is understaffed. It has completely modernized our hospital shift management.",
       name: "Ananya Kapoor",
       role: "Director of Workforce Planning, Metro Health",
-      avatar: "/images/leader-ananya-kapoor.jpg",
+      avatar: "/images/leader-ananya-kapoor.webp",
     },
   ];
 
@@ -119,7 +119,7 @@ export function AttendanceManagementPage() {
       id: "touchless-biometrics",
       badge: "01 Touchless Biometrics",
       eyebrow: "✦ 01. TOUCHLESS BIOMETRIC & FACIAL RECOGNITION ✦",
-      image: "/images/att-hero-showcase.jpg",
+      image: "/images/att-hero-showcase.webp",
       imageAlt: "Touchless AI facial recognition scanner verifying employee attendance at modern office entrance",
       title: "Touchless AI Facial Recognition & Biometric Terminal Sync",
       description:
@@ -147,7 +147,7 @@ export function AttendanceManagementPage() {
       id: "geofence-mobile",
       badge: "02 GPS Geofencing",
       eyebrow: "✦ 02. GEOFENCED MOBILE CLOCK-IN & ROSTER PLANNER ✦",
-      image: "/images/att-block-geofence.jpg",
+      image: "/images/att-block-geofence.webp",
       imageAlt: "Employee using GPS geofenced mobile attendance app on smartphone with verified location circle",
       title: "GPS Geofenced Mobile Attendance & Rotational Shift Planner",
       description:
@@ -175,7 +175,7 @@ export function AttendanceManagementPage() {
       id: "overtime-payroll",
       badge: "03 Payroll Integration",
       eyebrow: "✦ 03. AUTOMATED OVERTIME & PAYROLL RECONCILIATION ✦",
-      image: "/images/att-block-overtime.jpg",
+      image: "/images/att-block-overtime.webp",
       imageAlt: "Operations managers reviewing automated attendance and shift roster schedules on digital screens",
       title: "Automated Overtime Reconciliation & 1-Click Payroll Sync",
       description:
@@ -435,7 +435,7 @@ export function AttendanceManagementPage() {
               {/* Center Main Card: Real Attendance Facial Recognition Terminal in Action */}
               <div className="emp-hero-center-photo-card">
                 <img
-                  src="/images/att-hero-showcase.jpg"
+                  src="/images/att-hero-showcase.webp"
                   alt="Employee seamlessly clocking in using AI facial recognition kiosk terminal in modern corporate office"
                   className="emp-hero-center-img"
                   loading="eager"
@@ -888,7 +888,7 @@ export function AttendanceManagementPage() {
               {/* Overlapping Photorealistic Team Collaboration Image */}
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/att-process-workforce.jpg"
+                  src="/images/att-process-workforce.webp"
                   alt="Workforce leaders reviewing real-time attendance dashboard and punch logs"
                   className="emp-cta-img"
                   loading="lazy"
@@ -1098,19 +1098,13 @@ export function AttendanceManagementPage() {
             BOTTOM CONVERSION CTA BANNER
             ========================================================================= */}
         <FooterCTA
-          variant="insight-card"
-          eyebrowBadgeText="ATTENDANCE INSIGHTS"
-          headlineLine1="Real-time attendance overview & insights"
+          variant="emp-banner"
+          eyebrowBadgeText="ATTENDANCE & ROSTER PLATFORM"
+          headlineLine1="Real-Time Attendance Overview &"
+          headlineLine2="Workforce Insights"
           subheadlineLine1="Stay on top of your workforce attendance with real-time dashboards, automated exception alerts, and clear shift analytics — giving managers complete visibility."
-          primaryButtonText="Get Started"
-          insightCardTitle="Overview"
-          insightCardStat="23 insights"
-          insightCardBadge="+4 new"
-          insightCategories={[
-            { label: "On-Time", value: "16", color: "#10b981" },
-            { label: "Late Arrivals", value: "5", color: "#f59e0b" },
-            { label: "Absent", value: "2", color: "#e0629b" },
-          ]}
+          primaryButtonText="Book a Live Demo"
+          secondaryButtonText="Explore Features"
         />
       </main>
 

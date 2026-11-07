@@ -57,8 +57,11 @@ export interface SiteConfig {
 
 export function getSiteUrl(): string {
   const envUrl = import.meta.env.VITE_SITE_URL;
-  if (typeof envUrl === "string" && envUrl.trim().length > 0) {
-    return envUrl.replace(/\/+$/, "");
+  if (typeof envUrl === "string") {
+    const trimmed = envUrl.trim().replace(/^['"]|['"]$/g, "").trim().replace(/\/+$/, "");
+    if (trimmed.length > 0) {
+      return trimmed;
+    }
   }
   return "http://localhost:5173";
 }

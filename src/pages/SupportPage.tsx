@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import CustomSelect from "@/components/ui/CustomSelect";
 import { submitSupportTicket, TicketRecord } from "@/services/supportTicketService";
-import { submitEnquiry } from "@/services/enquiryService";
+import { submitEnquiry, uploadSupportAttachment } from "@/services/enquiryService";
 import "./SupportPage.css";
 
 type SupportType = "technical" | "product" | "sales";
@@ -218,22 +218,30 @@ export default function SupportPage() {
     setIsSubmitting(true);
 
     try {
-      // 1. Submit directly to centralized CRM backend public enquiry endpoint (POST /api/platform/enquiries/public)
+      // 1. Upload attachment if present via POST /upload
+      let uploadedAttachmentUrl = "";
+      if (attachedFiles.length > 0) {
+        try {
+          uploadedAttachmentUrl = await uploadSupportAttachment(attachedFiles[0]);
+        } catch (uploadErr: any) {
+          throw new Error(uploadErr?.message || "Failed to upload attachment. Please ensure it is a PDF or Image (max 5 MB).");
+        }
+      }
+
+      // 2. Submit customer support enquiry with form_type: "customer_support"
       const res = await submitEnquiry({
+        form_type: "customer_support",
         name: fullName.trim(),
         work_email: workEmail.trim(),
         email: workEmail.trim(),
         company_name: companyName.trim(),
+        issue_category: issueCategory,
+        subject: subject.trim(),
+        issue_description: description.trim(),
+        attachment: uploadedAttachmentUrl,
         source_page: "/support",
         nature_of_enquiry: "SUPPORT_REQUEST",
         notes: `[${selectedType.toUpperCase()}] ${subject.trim()}: ${description.trim()}`,
-        extra_data: {
-          issue_category: issueCategory,
-          subject: subject.trim(),
-          issue_description: description.trim(),
-          attachment_url: attachedFiles.length > 0 ? attachedFiles[0].name : "",
-          support_type: selectedType,
-        },
       });
 
       // 2. Once verified stored in CRM backend, also store in local ticket tracker

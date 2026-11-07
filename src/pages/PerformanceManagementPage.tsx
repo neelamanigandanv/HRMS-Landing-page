@@ -86,7 +86,7 @@ export function PerformanceManagementPage() {
       id: "goals-tracking",
       badge: "01 Goals & OKRs",
       eyebrow: "✦ 01. GOAL & OBJECTIVE TRACKING ✦",
-      image: "/images/perf-block-goals.jpg",
+      image: "/images/perf-block-goals.webp",
       imageAlt: "Managers setting organizational goals, key performance indicators, and quarterly OKRs on digital tablet",
       title: "Transparent Goal Setting & Continuous Objective Tracking",
       description:
@@ -114,7 +114,7 @@ export function PerformanceManagementPage() {
       id: "reviews-feedback",
       badge: "02 Reviews & Feedback",
       eyebrow: "✦ 02. STRUCTURED PERFORMANCE REVIEWS ✦",
-      image: "/images/perf-block-reviews.jpg",
+      image: "/images/perf-block-reviews.webp",
       imageAlt: "HR manager conducting a structured employee performance appraisal and sharing constructive feedback",
       title: "Objective Performance Reviews & Continuous Manager Feedback",
       description:
@@ -142,7 +142,7 @@ export function PerformanceManagementPage() {
       id: "development-records",
       badge: "03 Development & Records",
       eyebrow: "✦ 03. DEVELOPMENT & REVIEW HISTORY ✦",
-      image: "/images/perf-block-development.jpg",
+      image: "/images/perf-block-development.webp",
       imageAlt: "Team leader and employee reviewing an individual development roadmap and career progression milestones",
       title: "Performance Progress Monitoring & Employee Development Planning",
       description:
@@ -468,7 +468,7 @@ export function PerformanceManagementPage() {
               {/* Center Main Card: Real Performance Review Meeting */}
               <div className="emp-hero-center-photo-card perf-hero-showcase-frame">
                 <img
-                  src="/images/perf-hero-showcase.jpg"
+                  src="/images/perf-hero-showcase.webp"
                   alt="HR manager and professional conducting a structured 1-on-1 performance review in a modern office"
                   className="emp-hero-center-img perf-hero-mockup-img"
                   loading="eager"
@@ -824,7 +824,7 @@ export function PerformanceManagementPage() {
 
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/emp-cta-collaboration.jpg"
+                  src="/images/emp-cta-collaboration.webp"
                   alt="Team celebrating successful performance review and development milestones"
                   className="emp-cta-img"
                   loading="lazy"

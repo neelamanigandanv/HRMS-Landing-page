@@ -1,0 +1,68 @@
+{
+  "totalDistFiles": 214,
+  "totalDistBytes": 81593389,
+  "totalImgFiles": 140,
+  "totalImgBytes": 75543353,
+  "top10Images": [
+    {
+      "name": "leave-why-scenic-bg.jpg",
+      "bytes": 1176006,
+      "sizeKB": "1148.4",
+      "ext": ".jpg"
+    },
+    {
+      "name": "greenleaf-thumb.jpg",
+      "bytes": 1048059,
+      "sizeKB": "1023.5",
+      "ext": ".jpg"
+    },
+    {
+      "name": "industry-manufacturing.jpg",
+      "bytes": 1023373,
+      "sizeKB": "999.4",
+      "ext": ".jpg"
+    },
+    {
+      "name": "asset-process-inventory.jpg",
+      "bytes": 965280,
+      "sizeKB": "942.7",
+      "ext": ".jpg"
+    },
+    {
+      "name": "team-careers-card.jpg",
+      "bytes": 965280,
+      "sizeKB": "942.7",
+      "ext": ".jpg"
+    },
+    {
+      "name": "asset-hero-showcase.jpg",
+      "bytes": 954397,
+      "sizeKB": "932.0",
+      "ext": ".jpg"
+    },
+    {
+      "name": "industry-tech.jpg",
+      "bytes": 954397,
+      "sizeKB": "932.0",
+      "ext": ".jpg"
+    },
+    {
+      "name": "asset-block-lifecycle.jpg",
+      "bytes": 935261,
+      "sizeKB": "913.3",
+      "ext": ".jpg"
+    },
+    {
+      "name": "skyline-hq.jpg",
+      "bytes": 935261,
+      "sizeKB": "913.3",
+      "ext": ".jpg"
+    },
+    {
+      "name": "industry-retail-health.jpg",
+      "bytes": 928598,
+      "sizeKB": "906.8",
+      "ext": ".jpg"
+    }
+  ]
+}

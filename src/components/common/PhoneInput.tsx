@@ -23,6 +23,7 @@ export interface PhoneInputProps {
   autoFocus?: boolean;
   className?: string;
   showTriggerFlag?: boolean;
+  autoComplete?: string;
 }
 
 export const PhoneInput: React.FC<PhoneInputProps> = ({
@@ -38,6 +39,7 @@ export const PhoneInput: React.FC<PhoneInputProps> = ({
   autoFocus = false,
   className = "",
   showTriggerFlag = false,
+  autoComplete,
 }) => {
   // 1. Initial country detection (USA if from US, India if from IN, or from value)
   const [selectedCountry, setSelectedCountry] = useState<CountryInfo>(() => {
@@ -219,7 +221,7 @@ export const PhoneInput: React.FC<PhoneInputProps> = ({
           required={required}
           disabled={disabled}
           autoFocus={autoFocus}
-          autoComplete="tel-national"
+          autoComplete={autoComplete || "tel-national"}
           aria-invalid={hasError}
         />
       </div>

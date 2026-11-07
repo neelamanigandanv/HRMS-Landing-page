@@ -31,6 +31,7 @@ export function DemoModalProvider({ children }: { children: ReactNode }) {
 
   const closeDemoModal = () => {
     setIsOpen(false);
+    setModalOptions({});
   };
 
   useEffect(() => {

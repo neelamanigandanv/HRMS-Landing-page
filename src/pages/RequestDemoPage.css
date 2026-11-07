@@ -326,6 +326,7 @@
   border-radius: 10px;
   font-size: 0.9375rem;
   font-family: inherit;
+  font-weight: 500 !important;
   color: #191735;
   transition: all 0.2s ease;
   outline: none;
@@ -341,11 +342,28 @@
   border-radius: 10px;
   font-size: 0.9375rem;
   font-family: inherit;
+  font-weight: 500 !important;
   color: #191735;
   transition: all 0.2s ease;
   outline: none;
   resize: vertical;
   box-sizing: border-box;
+}
+
+.demo-page-form input::placeholder,
+.demo-page-form textarea::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.demo-page-form option {
+  font-weight: 500 !important;
+}
+
+.demo-page-form .custom-select-trigger,
+.demo-page-form .custom-select-trigger-label,
+.demo-page-form .custom-select-option {
+  font-weight: 500 !important;
 }
 
 .demo-page-form input:focus,

@@ -25,7 +25,7 @@
   padding: 0 1rem;
   font-family: inherit;
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #191735;
   cursor: pointer;
   text-align: left;
@@ -65,7 +65,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   color: #191735;
-  font-weight: 650;
+  font-weight: 500;
 }
 
 .custom-select-trigger-label.is-placeholder {
@@ -145,7 +145,7 @@
   transition: all 0.15s ease;
   color: #191735;
   font-size: 0.925rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .custom-select-option:hover {
@@ -156,7 +156,7 @@
 .custom-select-option.is-selected {
   background-color: #fdf2f7;
   color: #802B5B;
-  font-weight: 750;
+  font-weight: 600;
 }
 
 .custom-select-option-content {

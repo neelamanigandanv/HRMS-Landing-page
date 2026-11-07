@@ -1,0 +1,955 @@
+{
+  "convertedCount": 124,
+  "keptCount": 10,
+  "largerWebpCount": 0,
+  "svgsCount": 6,
+  "converted": [
+    {
+      "original": "cta-wide-luminous-columns-v6.png",
+      "webp": "cta-wide-luminous-columns-v6.webp",
+      "originalBytes": 132167,
+      "webpBytes": 4724,
+      "reduction": "96.4%"
+    },
+    {
+      "original": "employee-directory-dashboard.jpg",
+      "webp": "employee-directory-dashboard.webp",
+      "originalBytes": 497771,
+      "webpBytes": 60944,
+      "reduction": "87.8%"
+    },
+    {
+      "original": "hero-employee-directory-team.jpg",
+      "webp": "hero-employee-directory-team.webp",
+      "originalBytes": 743111,
+      "webpBytes": 87996,
+      "reduction": "88.2%"
+    },
+    {
+      "original": "cta-exact-transparent-beams.png",
+      "webp": "cta-exact-transparent-beams.webp",
+      "originalBytes": 210496,
+      "webpBytes": 22306,
+      "reduction": "89.4%"
+    },
+    {
+      "original": "cta-halfwhite-curtain-bg-v2.jpg",
+      "webp": "cta-halfwhite-curtain-bg-v2.webp",
+      "originalBytes": 520777,
+      "webpBytes": 20210,
+      "reduction": "96.1%"
+    },
+    {
+      "original": "cta-exact-halfwhite-panels.png",
+      "webp": "cta-exact-halfwhite-panels.webp",
+      "originalBytes": 140522,
+      "webpBytes": 2608,
+      "reduction": "98.1%"
+    },
+    {
+      "original": "recruitment-block-pipeline.jpg",
+      "webp": "recruitment-block-pipeline.webp",
+      "originalBytes": 81690,
+      "webpBytes": 41878,
+      "reduction": "48.7%"
+    },
+    {
+      "original": "recruitment-block-sourcing.jpg",
+      "webp": "recruitment-block-sourcing.webp",
+      "originalBytes": 125687,
+      "webpBytes": 52860,
+      "reduction": "57.9%"
+    },
+    {
+      "original": "solutions-consultation-cta.jpg",
+      "webp": "solutions-consultation-cta.webp",
+      "originalBytes": 683772,
+      "webpBytes": 64504,
+      "reduction": "90.6%"
+    },
+    {
+      "original": "cta-wide-luminous-columns.png",
+      "webp": "cta-wide-luminous-columns.webp",
+      "originalBytes": 132167,
+      "webpBytes": 4724,
+      "reduction": "96.4%"
+    },
+    {
+      "original": "recruitment-hero-showcase.jpg",
+      "webp": "recruitment-hero-showcase.webp",
+      "originalBytes": 98742,
+      "webpBytes": 39812,
+      "reduction": "59.7%"
+    },
+    {
+      "original": "cta-halfwhite-curtain-bg.jpg",
+      "webp": "cta-halfwhite-curtain-bg.webp",
+      "originalBytes": 512310,
+      "webpBytes": 18258,
+      "reduction": "96.4%"
+    },
+    {
+      "original": "cta-halfwhite-curtain-bg.png",
+      "webp": "cta-halfwhite-curtain-bg.webp",
+      "originalBytes": 132167,
+      "webpBytes": 4724,
+      "reduction": "96.4%"
+    },
+    {
+      "original": "cta-reference-clean-dark.png",
+      "webp": "cta-reference-clean-dark.webp",
+      "originalBytes": 227496,
+      "webpBytes": 4022,
+      "reduction": "98.2%"
+    },
+    {
+      "original": "difference-automated-pro.jpg",
+      "webp": "difference-automated-pro.webp",
+      "originalBytes": 745329,
+      "webpBytes": 74896,
+      "reduction": "90.0%"
+    },
+    {
+      "original": "reports-block-attendance.jpg",
+      "webp": "reports-block-attendance.webp",
+      "originalBytes": 807497,
+      "webpBytes": 116308,
+      "reduction": "85.6%"
+    },
+    {
+      "original": "about-milestone-journey.jpg",
+      "webp": "about-milestone-journey.webp",
+      "originalBytes": 757044,
+      "webpBytes": 87996,
+      "reduction": "88.4%"
+    },
+    {
+      "original": "asset-block-handover-v2.jpg",
+      "webp": "asset-block-handover-v2.webp",
+      "originalBytes": 773841,
+      "webpBytes": 99778,
+      "reduction": "87.1%"
+    },
+    {
+      "original": "asset-process-inventory.jpg",
+      "webp": "asset-process-inventory.webp",
+      "originalBytes": 965280,
+      "webpBytes": 163512,
+      "reduction": "83.1%"
+    },
+    {
+      "original": "cta-exact-neon-original.png",
+      "webp": "cta-exact-neon-original.webp",
+      "originalBytes": 317058,
+      "webpBytes": 4438,
+      "reduction": "98.6%"
+    },
+    {
+      "original": "cta-flawless-clean-dark.png",
+      "webp": "cta-flawless-clean-dark.webp",
+      "originalBytes": 204828,
+      "webpBytes": 2886,
+      "reduction": "98.6%"
+    },
+    {
+      "original": "cta-neon-curtain-bg-alt.jpg",
+      "webp": "cta-neon-curtain-bg-alt.webp",
+      "originalBytes": 472754,
+      "webpBytes": 21734,
+      "reduction": "95.4%"
+    },
+    {
+      "original": "feat-digital-onboarding.jpg",
+      "webp": "feat-digital-onboarding.webp",
+      "originalBytes": 430355,
+      "webpBytes": 43974,
+      "reduction": "89.8%"
+    },
+    {
+      "original": "feat-lifecycle-tracking.jpg",
+      "webp": "feat-lifecycle-tracking.webp",
+      "originalBytes": 435749,
+      "webpBytes": 41240,
+      "reduction": "90.5%"
+    },
+    {
+      "original": "footer-cta-workforce-bg.jpg",
+      "webp": "footer-cta-workforce-bg.webp",
+      "originalBytes": 796611,
+      "webpBytes": 114712,
+      "reduction": "85.6%"
+    },
+    {
+      "original": "ind-3d-attendance-block.png",
+      "webp": "ind-3d-attendance-block.webp",
+      "originalBytes": 45064,
+      "webpBytes": 2084,
+      "reduction": "95.4%"
+    },
+    {
+      "original": "ind-card-custom-payroll.png",
+      "webp": "ind-card-custom-payroll.webp",
+      "originalBytes": 92779,
+      "webpBytes": 6224,
+      "reduction": "93.3%"
+    },
+    {
+      "original": "recruitment-block-offer.jpg",
+      "webp": "recruitment-block-offer.webp",
+      "originalBytes": 57336,
+      "webpBytes": 24602,
+      "reduction": "57.1%"
+    },
+    {
+      "original": "reports-block-workforce.jpg",
+      "webp": "reports-block-workforce.webp",
+      "originalBytes": 807094,
+      "webpBytes": 106870,
+      "reduction": "86.8%"
+    },
+    {
+      "original": "cta-exact-halfwhite-v2.png",
+      "webp": "cta-exact-halfwhite-v2.webp",
+      "originalBytes": 112657,
+      "webpBytes": 2420,
+      "reduction": "97.9%"
+    },
+    {
+      "original": "cta-slender-neon-lines.png",
+      "webp": "cta-slender-neon-lines.webp",
+      "originalBytes": 159947,
+      "webpBytes": 37146,
+      "reduction": "76.8%"
+    },
+    {
+      "original": "ind-card-custom-shifts.png",
+      "webp": "ind-card-custom-shifts.webp",
+      "originalBytes": 89936,
+      "webpBytes": 8356,
+      "reduction": "90.7%"
+    },
+    {
+      "original": "ind-card-turned-sample.png",
+      "webp": "ind-card-turned-sample.webp",
+      "originalBytes": 34251,
+      "webpBytes": 3324,
+      "reduction": "90.3%"
+    },
+    {
+      "original": "industry-manufacturing.jpg",
+      "webp": "industry-manufacturing.webp",
+      "originalBytes": 1023373,
+      "webpBytes": 206354,
+      "reduction": "79.8%"
+    },
+    {
+      "original": "industry-retail-health.jpg",
+      "webp": "industry-retail-health.webp",
+      "originalBytes": 928598,
+      "webpBytes": 157478,
+      "reduction": "83.0%"
+    },
+    {
+      "original": "perf-block-development.jpg",
+      "webp": "perf-block-development.webp",
+      "originalBytes": 771410,
+      "webpBytes": 94784,
+      "reduction": "87.7%"
+    },
+    {
+      "original": "product-hero-dashboard.jpg",
+      "webp": "product-hero-dashboard.webp",
+      "originalBytes": 601736,
+      "webpBytes": 61962,
+      "reduction": "89.7%"
+    },
+    {
+      "original": "recruitment-cta-hiring.jpg",
+      "webp": "recruitment-cta-hiring.webp",
+      "originalBytes": 80606,
+      "webpBytes": 41464,
+      "reduction": "48.6%"
+    },
+    {
+      "original": "asset-block-lifecycle.jpg",
+      "webp": "asset-block-lifecycle.webp",
+      "originalBytes": 935261,
+      "webpBytes": 169892,
+      "reduction": "81.8%"
+    },
+    {
+      "original": "att-process-workforce.jpg",
+      "webp": "att-process-workforce.webp",
+      "originalBytes": 905825,
+      "webpBytes": 143674,
+      "reduction": "84.1%"
+    },
+    {
+      "original": "emp-cta-collaboration.jpg",
+      "webp": "emp-cta-collaboration.webp",
+      "originalBytes": 794389,
+      "webpBytes": 108672,
+      "reduction": "86.3%"
+    },
+    {
+      "original": "feat-central-profiles.jpg",
+      "webp": "feat-central-profiles.webp",
+      "originalBytes": 464781,
+      "webpBytes": 45302,
+      "reduction": "90.3%"
+    },
+    {
+      "original": "hero-colleagues-clean.png",
+      "webp": "hero-colleagues-clean.webp",
+      "originalBytes": 529371,
+      "webpBytes": 23380,
+      "reduction": "95.6%"
+    },
+    {
+      "original": "ind-3d-visual-payroll.png",
+      "webp": "ind-3d-visual-payroll.webp",
+      "originalBytes": 67185,
+      "webpBytes": 3834,
+      "reduction": "94.3%"
+    },
+    {
+      "original": "leader-kavya-sundaram.jpg",
+      "webp": "leader-kavya-sundaram.webp",
+      "originalBytes": 666318,
+      "webpBytes": 57696,
+      "reduction": "91.3%"
+    },
+    {
+      "original": "reports-block-payroll.jpg",
+      "webp": "reports-block-payroll.webp",
+      "originalBytes": 778092,
+      "webpBytes": 89930,
+      "reduction": "88.4%"
+    },
+    {
+      "original": "reports-cta-analytics.jpg",
+      "webp": "reports-cta-analytics.webp",
+      "originalBytes": 72939,
+      "webpBytes": 35368,
+      "reduction": "51.5%"
+    },
+    {
+      "original": "reports-hero-showcase.jpg",
+      "webp": "reports-hero-showcase.webp",
+      "originalBytes": 735453,
+      "webpBytes": 90950,
+      "reduction": "87.6%"
+    },
+    {
+      "original": "sb-employee-workspace.jpg",
+      "webp": "sb-employee-workspace.webp",
+      "originalBytes": 810541,
+      "webpBytes": 110146,
+      "reduction": "86.4%"
+    },
+    {
+      "original": "asset-block-handover.jpg",
+      "webp": "asset-block-handover.webp",
+      "originalBytes": 773841,
+      "webpBytes": 99778,
+      "reduction": "87.1%"
+    },
+    {
+      "original": "asset-block-hardware.jpg",
+      "webp": "asset-block-hardware.webp",
+      "originalBytes": 852244,
+      "webpBytes": 114190,
+      "reduction": "86.6%"
+    },
+    {
+      "original": "cta-exact-neon-clean.png",
+      "webp": "cta-exact-neon-clean.webp",
+      "originalBytes": 140522,
+      "webpBytes": 2608,
+      "reduction": "98.1%"
+    },
+    {
+      "original": "doc-block-compliance.jpg",
+      "webp": "doc-block-compliance.webp",
+      "originalBytes": 730279,
+      "webpBytes": 80434,
+      "reduction": "89.0%"
+    },
+    {
+      "original": "doc-hero-showcase-v2.jpg",
+      "webp": "doc-hero-showcase-v2.webp",
+      "originalBytes": 507622,
+      "webpBytes": 66008,
+      "reduction": "87.0%"
+    },
+    {
+      "original": "emp-block-compliance.jpg",
+      "webp": "emp-block-compliance.webp",
+      "originalBytes": 749830,
+      "webpBytes": 84122,
+      "reduction": "88.8%"
+    },
+    {
+      "original": "emp-block-onboarding.jpg",
+      "webp": "emp-block-onboarding.webp",
+      "originalBytes": 922144,
+      "webpBytes": 158096,
+      "reduction": "82.9%"
+    },
+    {
+      "original": "home-hero-colleagues.png",
+      "webp": "home-hero-colleagues.webp",
+      "originalBytes": 517809,
+      "webpBytes": 34712,
+      "reduction": "93.3%"
+    },
+    {
+      "original": "ind-3d-payroll-clean.png",
+      "webp": "ind-3d-payroll-clean.webp",
+      "originalBytes": 77131,
+      "webpBytes": 4436,
+      "reduction": "94.2%"
+    },
+    {
+      "original": "ind-3d-visual-shifts.png",
+      "webp": "ind-3d-visual-shifts.webp",
+      "originalBytes": 42434,
+      "webpBytes": 4584,
+      "reduction": "89.2%"
+    },
+    {
+      "original": "industry-hospitality.jpg",
+      "webp": "industry-hospitality.webp",
+      "originalBytes": 787891,
+      "webpBytes": 90088,
+      "reduction": "88.6%"
+    },
+    {
+      "original": "leader-ananya-kapoor.jpg",
+      "webp": "leader-ananya-kapoor.webp",
+      "originalBytes": 696894,
+      "webpBytes": 81712,
+      "reduction": "88.3%"
+    },
+    {
+      "original": "leave-block-approval.jpg",
+      "webp": "leave-block-approval.webp",
+      "originalBytes": 680330,
+      "webpBytes": 68046,
+      "reduction": "90.0%"
+    },
+    {
+      "original": "sb-manager-workspace.jpg",
+      "webp": "sb-manager-workspace.webp",
+      "originalBytes": 834262,
+      "webpBytes": 117120,
+      "reduction": "86.0%"
+    },
+    {
+      "original": "why-choose-scenic-bg.jpg",
+      "webp": "why-choose-scenic-bg.webp",
+      "originalBytes": 501883,
+      "webpBytes": 25962,
+      "reduction": "94.8%"
+    },
+    {
+      "original": "asset-hero-showcase.jpg",
+      "webp": "asset-hero-showcase.webp",
+      "originalBytes": 954397,
+      "webpBytes": 176596,
+      "reduction": "81.5%"
+    },
+    {
+      "original": "asset-why-scenic-bg.jpg",
+      "webp": "asset-why-scenic-bg.webp",
+      "originalBytes": 801394,
+      "webpBytes": 115292,
+      "reduction": "85.6%"
+    },
+    {
+      "original": "cta-exact-halfwhite.png",
+      "webp": "cta-exact-halfwhite.webp",
+      "originalBytes": 140522,
+      "webpBytes": 2608,
+      "reduction": "98.1%"
+    },
+    {
+      "original": "cta-neon-curtain-bg.jpg",
+      "webp": "cta-neon-curtain-bg.webp",
+      "originalBytes": 317058,
+      "webpBytes": 4438,
+      "reduction": "98.6%"
+    },
+    {
+      "original": "cta-neon-curtain-bg.png",
+      "webp": "cta-neon-curtain-bg.webp",
+      "originalBytes": 317058,
+      "webpBytes": 4438,
+      "reduction": "98.6%"
+    },
+    {
+      "original": "hero-hr-working-pro.jpg",
+      "webp": "hero-hr-working-pro.webp",
+      "originalBytes": 743111,
+      "webpBytes": 87996,
+      "reduction": "88.2%"
+    },
+    {
+      "original": "ind-3d-shifts-clean.png",
+      "webp": "ind-3d-shifts-clean.webp",
+      "originalBytes": 49860,
+      "webpBytes": 5584,
+      "reduction": "88.8%"
+    },
+    {
+      "original": "industry-healthcare.jpg",
+      "webp": "industry-healthcare.webp",
+      "originalBytes": 756159,
+      "webpBytes": 90054,
+      "reduction": "88.1%"
+    },
+    {
+      "original": "leave-block-accrual.jpg",
+      "webp": "leave-block-accrual.webp",
+      "originalBytes": 704972,
+      "webpBytes": 79548,
+      "reduction": "88.7%"
+    },
+    {
+      "original": "leave-block-payroll.jpg",
+      "webp": "leave-block-payroll.webp",
+      "originalBytes": 718666,
+      "webpBytes": 97434,
+      "reduction": "86.4%"
+    },
+    {
+      "original": "leave-hero-showcase.jpg",
+      "webp": "leave-hero-showcase.webp",
+      "originalBytes": 732934,
+      "webpBytes": 84884,
+      "reduction": "88.4%"
+    },
+    {
+      "original": "leave-why-scenic-bg.jpg",
+      "webp": "leave-why-scenic-bg.webp",
+      "originalBytes": 1176006,
+      "webpBytes": 286570,
+      "reduction": "75.6%"
+    },
+    {
+      "original": "roles-block-finance.jpg",
+      "webp": "roles-block-finance.webp",
+      "originalBytes": 734697,
+      "webpBytes": 85254,
+      "reduction": "88.4%"
+    },
+    {
+      "original": "roles-block-manager.jpg",
+      "webp": "roles-block-manager.webp",
+      "originalBytes": 756896,
+      "webpBytes": 95274,
+      "reduction": "87.4%"
+    },
+    {
+      "original": "roles-hero-showcase.jpg",
+      "webp": "roles-hero-showcase.webp",
+      "originalBytes": 742460,
+      "webpBytes": 91886,
+      "reduction": "87.6%"
+    },
+    {
+      "original": "att-block-geofence.jpg",
+      "webp": "att-block-geofence.webp",
+      "originalBytes": 643885,
+      "webpBytes": 56186,
+      "reduction": "91.3%"
+    },
+    {
+      "original": "att-block-overtime.jpg",
+      "webp": "att-block-overtime.webp",
+      "originalBytes": 810487,
+      "webpBytes": 114216,
+      "reduction": "85.9%"
+    },
+    {
+      "original": "feat-org-directory.jpg",
+      "webp": "feat-org-directory.webp",
+      "originalBytes": 613127,
+      "webpBytes": 83918,
+      "reduction": "86.3%"
+    },
+    {
+      "original": "industry-education.jpg",
+      "webp": "industry-education.webp",
+      "originalBytes": 769072,
+      "webpBytes": 93002,
+      "reduction": "87.9%"
+    },
+    {
+      "original": "leader-rohan-mehta.jpg",
+      "webp": "leader-rohan-mehta.webp",
+      "originalBytes": 704093,
+      "webpBytes": 77256,
+      "reduction": "89.0%"
+    },
+    {
+      "original": "middle-cta-network.jpg",
+      "webp": "middle-cta-network.webp",
+      "originalBytes": 124820,
+      "webpBytes": 49140,
+      "reduction": "60.6%"
+    },
+    {
+      "original": "multibranch-global.jpg",
+      "webp": "multibranch-global.webp",
+      "originalBytes": 801394,
+      "webpBytes": 115292,
+      "reduction": "85.6%"
+    },
+    {
+      "original": "perf-block-reviews.jpg",
+      "webp": "perf-block-reviews.webp",
+      "originalBytes": 708930,
+      "webpBytes": 77454,
+      "reduction": "89.1%"
+    },
+    {
+      "original": "perf-hero-showcase.jpg",
+      "webp": "perf-hero-showcase.webp",
+      "originalBytes": 765239,
+      "webpBytes": 98464,
+      "reduction": "87.1%"
+    },
+    {
+      "original": "sb-owner-workspace.jpg",
+      "webp": "sb-owner-workspace.webp",
+      "originalBytes": 763091,
+      "webpBytes": 93512,
+      "reduction": "87.7%"
+    },
+    {
+      "original": "att-hero-showcase.jpg",
+      "webp": "att-hero-showcase.webp",
+      "originalBytes": 787700,
+      "webpBytes": 87450,
+      "reduction": "88.9%"
+    },
+    {
+      "original": "att-why-scenic-bg.jpg",
+      "webp": "att-why-scenic-bg.webp",
+      "originalBytes": 787209,
+      "webpBytes": 112984,
+      "reduction": "85.6%"
+    },
+    {
+      "original": "case-studies-card.jpg",
+      "webp": "case-studies-card.webp",
+      "originalBytes": 900583,
+      "webpBytes": 143110,
+      "reduction": "84.1%"
+    },
+    {
+      "original": "doc-block-storage.jpg",
+      "webp": "doc-block-storage.webp",
+      "originalBytes": 691354,
+      "webpBytes": 72408,
+      "reduction": "89.5%"
+    },
+    {
+      "original": "doc-hero-showcase.jpg",
+      "webp": "doc-hero-showcase.webp",
+      "originalBytes": 507622,
+      "webpBytes": 66008,
+      "reduction": "87.0%"
+    },
+    {
+      "original": "emp-block-profile.jpg",
+      "webp": "emp-block-profile.webp",
+      "originalBytes": 676375,
+      "webpBytes": 65070,
+      "reduction": "90.4%"
+    },
+    {
+      "original": "hero-3d-staircase.jpg",
+      "webp": "hero-3d-staircase.webp",
+      "originalBytes": 525361,
+      "webpBytes": 33502,
+      "reduction": "93.6%"
+    },
+    {
+      "original": "ind-3d-team-block.png",
+      "webp": "ind-3d-team-block.webp",
+      "originalBytes": 45582,
+      "webpBytes": 1454,
+      "reduction": "96.8%"
+    },
+    {
+      "original": "pay-hero-showcase.jpg",
+      "webp": "pay-hero-showcase.webp",
+      "originalBytes": 756750,
+      "webpBytes": 102298,
+      "reduction": "86.5%"
+    },
+    {
+      "original": "roles-block-admin.jpg",
+      "webp": "roles-block-admin.webp",
+      "originalBytes": 725295,
+      "webpBytes": 86026,
+      "reduction": "88.1%"
+    },
+    {
+      "original": "team-careers-card.jpg",
+      "webp": "team-careers-card.webp",
+      "originalBytes": 965280,
+      "webpBytes": 163512,
+      "reduction": "83.1%"
+    },
+    {
+      "original": "work-process-team.jpg",
+      "webp": "work-process-team.webp",
+      "originalBytes": 711568,
+      "webpBytes": 72636,
+      "reduction": "89.8%"
+    },
+    {
+      "original": "brightpath-thumb.jpg",
+      "webp": "brightpath-thumb.webp",
+      "originalBytes": 720382,
+      "webpBytes": 77142,
+      "reduction": "89.3%"
+    },
+    {
+      "original": "doc-block-expiry.jpg",
+      "webp": "doc-block-expiry.webp",
+      "originalBytes": 793817,
+      "webpBytes": 107030,
+      "reduction": "86.5%"
+    },
+    {
+      "original": "feat-bulk-import.jpg",
+      "webp": "feat-bulk-import.webp",
+      "originalBytes": 466157,
+      "webpBytes": 43996,
+      "reduction": "90.6%"
+    },
+    {
+      "original": "hero-workflow-3d.png",
+      "webp": "hero-workflow-3d.webp",
+      "originalBytes": 435319,
+      "webpBytes": 12500,
+      "reduction": "97.1%"
+    },
+    {
+      "original": "industry-finance.jpg",
+      "webp": "industry-finance.webp",
+      "originalBytes": 876610,
+      "webpBytes": 139408,
+      "reduction": "84.1%"
+    },
+    {
+      "original": "perf-block-goals.jpg",
+      "webp": "perf-block-goals.webp",
+      "originalBytes": 719828,
+      "webpBytes": 83934,
+      "reduction": "88.3%"
+    },
+    {
+      "original": "about-team-hero.jpg",
+      "webp": "about-team-hero.webp",
+      "originalBytes": 796611,
+      "webpBytes": 114712,
+      "reduction": "85.6%"
+    },
+    {
+      "original": "branch-regional.jpg",
+      "webp": "branch-regional.webp",
+      "originalBytes": 915591,
+      "webpBytes": 153442,
+      "reduction": "83.2%"
+    },
+    {
+      "original": "cta-emp-neon-v7.jpg",
+      "webp": "cta-emp-neon-v7.webp",
+      "originalBytes": 159947,
+      "webpBytes": 44012,
+      "reduction": "72.5%"
+    },
+    {
+      "original": "greenleaf-thumb.jpg",
+      "webp": "greenleaf-thumb.webp",
+      "originalBytes": 1048059,
+      "webpBytes": 210658,
+      "reduction": "79.9%"
+    },
+    {
+      "original": "industry-retail.jpg",
+      "webp": "industry-retail.webp",
+      "originalBytes": 749579,
+      "webpBytes": 82350,
+      "reduction": "89.0%"
+    },
+    {
+      "original": "branch-payroll.jpg",
+      "webp": "branch-payroll.webp",
+      "originalBytes": 672097,
+      "webpBytes": 62460,
+      "reduction": "90.7%"
+    },
+    {
+      "original": "feat-doc-vault.jpg",
+      "webp": "feat-doc-vault.webp",
+      "originalBytes": 464603,
+      "webpBytes": 43504,
+      "reduction": "90.6%"
+    },
+    {
+      "original": "testi-avatar-1.jpg",
+      "webp": "testi-avatar-1.webp",
+      "originalBytes": 623482,
+      "webpBytes": 42506,
+      "reduction": "93.2%"
+    },
+    {
+      "original": "testi-avatar-2.jpg",
+      "webp": "testi-avatar-2.webp",
+      "originalBytes": 635937,
+      "webpBytes": 48010,
+      "reduction": "92.5%"
+    },
+    {
+      "original": "cta-variant-a.png",
+      "webp": "cta-variant-a.webp",
+      "originalBytes": 80190,
+      "webpBytes": 2238,
+      "reduction": "97.2%"
+    },
+    {
+      "original": "cta-variant-b.png",
+      "webp": "cta-variant-b.webp",
+      "originalBytes": 171274,
+      "webpBytes": 2958,
+      "reduction": "98.3%"
+    },
+    {
+      "original": "cta-variant-c.png",
+      "webp": "cta-variant-c.webp",
+      "originalBytes": 180059,
+      "webpBytes": 20154,
+      "reduction": "88.8%"
+    },
+    {
+      "original": "logo-white.png",
+      "webp": "logo-white.webp",
+      "originalBytes": 20658,
+      "webpBytes": 10760,
+      "reduction": "47.9%"
+    },
+    {
+      "original": "skyline-hq.jpg",
+      "webp": "skyline-hq.webp",
+      "originalBytes": 935261,
+      "webpBytes": 169892,
+      "reduction": "81.8%"
+    },
+    {
+      "original": "branch-hq.jpg",
+      "webp": "branch-hq.webp",
+      "originalBytes": 841063,
+      "webpBytes": 118132,
+      "reduction": "86.0%"
+    },
+    {
+      "original": "logo-mark.png",
+      "webp": "logo-mark.webp",
+      "originalBytes": 7241,
+      "webpBytes": 4038,
+      "reduction": "44.2%"
+    },
+    {
+      "original": "logo.png",
+      "webp": "logo.webp",
+      "originalBytes": 36003,
+      "webpBytes": 14280,
+      "reduction": "60.3%"
+    }
+  ],
+  "kept": [
+    {
+      "filename": "article-multibranch.jpg",
+      "reason": "Kept original JPG for og:image / twitter:image (social scraper compatibility)"
+    },
+    {
+      "filename": "article-onboarding.jpg",
+      "reason": "Kept original JPG for og:image / twitter:image (social scraper compatibility)"
+    },
+    {
+      "filename": "article-payroll.jpg",
+      "reason": "Kept original JPG for og:image / twitter:image (social scraper compatibility)"
+    },
+    {
+      "filename": "branch-biometric.jpg",
+      "reason": "Kept original JPG for og:image / twitter:image (social scraper compatibility)"
+    },
+    {
+      "filename": "hero-plum-dashboard-showcase.jpg",
+      "reason": "Kept original JPG for og:image / twitter:image (social scraper compatibility)"
+    },
+    {
+      "filename": "industry-tech.jpg",
+      "reason": "Kept original JPG for og:image / twitter:image (social scraper compatibility)"
+    },
+    {
+      "filename": "resource-hub-card.jpg",
+      "reason": "Kept original JPG for og:image / twitter:image (social scraper compatibility)"
+    },
+    {
+      "filename": "solution-enterprise.jpg",
+      "reason": "Kept original JPG for og:image / twitter:image (social scraper compatibility)"
+    },
+    {
+      "filename": "solution-mid-sized.jpg",
+      "reason": "Kept original JPG for og:image / twitter:image (social scraper compatibility)"
+    },
+    {
+      "filename": "solution-small-business.jpg",
+      "reason": "Kept original JPG for og:image / twitter:image (social scraper compatibility)"
+    }
+  ],
+  "largerWebp": [],
+  "modifiedFiles": [
+    "src\\components\\common\\FooterCTA.css",
+    "src\\components\\common\\FooterCTA.tsx",
+    "src\\components\\home\\Hero3DStaircase.tsx",
+    "src\\components\\partners\\BenefitGrid.tsx",
+    "src\\components\\ui\\Logo.tsx",
+    "src\\data\\guidesData.ts",
+    "src\\data\\partnersData.ts",
+    "src\\data\\solutionsData.ts",
+    "src\\index.css",
+    "src\\pages\\AboutPage.tsx",
+    "src\\pages\\AssetManagementPage.css",
+    "src\\pages\\AssetManagementPage.tsx",
+    "src\\pages\\AttendanceManagementPage.css",
+    "src\\pages\\AttendanceManagementPage.tsx",
+    "src\\pages\\CareersPage.tsx",
+    "src\\pages\\DocumentsCompliancePage.tsx",
+    "src\\pages\\EmployeeManagementPage.css",
+    "src\\pages\\EmployeeManagementPage.tsx",
+    "src\\pages\\EnterprisePage.tsx",
+    "src\\pages\\Home.tsx",
+    "src\\pages\\IndustrySolutionsPage.tsx",
+    "src\\pages\\LeaveManagementPage.css",
+    "src\\pages\\LeaveManagementPage.tsx",
+    "src\\pages\\MidSizedBusinessPage.tsx",
+    "src\\pages\\PayrollManagementPage.css",
+    "src\\pages\\PayrollManagementPage.tsx",
+    "src\\pages\\PerformanceManagementPage.tsx",
+    "src\\pages\\RecruitmentPage.css",
+    "src\\pages\\RecruitmentPage.tsx",
+    "src\\pages\\ReportsAnalyticsPage.tsx",
+    "src\\pages\\ResourcesOverview.tsx",
+    "src\\pages\\RolesPermissionsPage.tsx",
+    "src\\pages\\SmallBusinessPage.tsx",
+    "src\\pages\\SolutionsOverview.tsx"
+  ]
+}

@@ -28,7 +28,7 @@ export interface FooterCTAProps {
 }
 
 export function FooterCTA({
-  variant = "default",
+  variant = "emp-banner",
   eyebrowBadgeText = "Built for Modern Multi-Branch Workforce Operations",
   headlineLine1,
   headlineLine2,
@@ -138,21 +138,20 @@ export function FooterCTA({
     );
   }
 
-  // ======================== EMP BANNER VARIANT ========================
+  // ======================== EMP BANNER VARIANT (Default) ========================
   // Pure white background CTA banner with ambient brand plum glow at bottom-left and top-right
-  if (variant === "emp-banner") {
+  if (variant === "emp-banner" || variant === "default") {
     const empHead1 = headlineLine1 ?? "Boost Your Workforce";
-    const empHead2 = headlineLine2 ?? "Potential with Zentilos";
-    const empSub = subheadlineLine1 ??
-      "Focus on team growth while we handle the rest — employee directory, self-service, leave, attendance, document vault, and approvals.";
-    const empBadge = eyebrowBadgeText !== "Built for Modern Multi-Branch Workforce Operations"
-      ? eyebrowBadgeText
-      : "Built for Modern Multi-Branch Workforce Operations";
+    const empHead2 = headlineLine2 !== undefined ? headlineLine2 : (headlineLine1 ? "" : "Potential with Zentilos");
+    const empSub = subheadlineLine1
+      ? (subheadlineLine2 ? `${subheadlineLine1} ${subheadlineLine2}` : subheadlineLine1)
+      : "Focus on team growth while we handle the rest — employee directory, self-service, leave, attendance, document vault, and approvals.";
+    const empBadge = eyebrowBadgeText || "Built for Modern Multi-Branch Workforce Operations";
     const empPrimary = primaryButtonText ?? "Book a Live Demo";
     const empSecondary = secondaryButtonText ?? "Explore Features";
 
     return (
-      <section className={`footer-cta-emp-banner ${className}`} aria-label="Employee Management Call to Action">
+      <section className={`footer-cta-emp-banner ${className}`} aria-label="Workforce Call to Action">
         {/* Minimal Light Grid Lines across Full Background */}
         <div className="emp-banner-grid-lines" aria-hidden="true" />
 
@@ -174,8 +173,12 @@ export function FooterCTA({
           {/* Headline */}
           <h2 className="emp-banner-headline">
             <span>{empHead1}</span>
-            <br />
-            <span className="emp-banner-headline-accent">{empHead2}</span>
+            {empHead2 ? (
+              <>
+                <br />
+                <span className="emp-banner-headline-accent">{empHead2}</span>
+              </>
+            ) : null}
           </h2>
 
           {/* Subheadline */}
@@ -229,7 +232,7 @@ export function FooterCTA({
         <div
           className="neon-curtain-bg-layer"
           style={{
-            backgroundImage: "url('/images/cta-slender-neon-lines.png?v=9')",
+            backgroundImage: "url('/images/cta-slender-neon-lines.webp?v=9')",
             backgroundSize: "auto 100%",
             backgroundPosition: "right top",
             backgroundRepeat: "no-repeat",

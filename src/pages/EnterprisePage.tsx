@@ -34,7 +34,7 @@ export function EnterprisePage() {
         { title: "Custom Enterprise SLA", desc: "Backed by 99.99% uptime commitments, 24/7 dedicated support SLA, and a named technical account director." },
       ],
       buttonText: "Request Enterprise Demo",
-      image: "/images/roles-block-admin.jpg",
+      image: "/images/roles-block-admin.webp",
       alt: "Chief Human Resources Officer reviewing global workforce intelligence in Zentilos",
     },
     {
@@ -50,7 +50,7 @@ export function EnterprisePage() {
         { title: "Department Budget Governance", desc: "Gain real-time visibility into cost center overtime expenditures, contractor pools, and headcounts." },
       ],
       buttonText: "Request Enterprise Demo",
-      image: "/images/work-process-team.jpg",
+      image: "/images/work-process-team.webp",
       alt: "Plant director managing team shift operations and enterprise approvals",
     },
     {
@@ -66,7 +66,7 @@ export function EnterprisePage() {
         { title: "Consumer-Grade Mobile App", desc: "Modern native app experience available in multiple regional languages across iOS and Android." },
       ],
       buttonText: "Request Enterprise Demo",
-      image: "/images/emp-cta-collaboration.jpg",
+      image: "/images/emp-cta-collaboration.webp",
       alt: "Enterprise employee accessing mobile self-service and attendance",
     },
   ];

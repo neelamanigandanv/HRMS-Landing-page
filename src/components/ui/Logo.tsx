@@ -18,7 +18,7 @@ export function Logo({ light = false, className = "", height }: LogoProps) {
     }
   };
 
-  const logoSrc = light ? "/images/logo-white.png" : "/images/logo.png";
+  const logoSrc = light ? "/images/logo-white.webp" : "/images/logo.webp";
 
   return (
     <Link
@@ -31,6 +31,9 @@ export function Logo({ light = false, className = "", height }: LogoProps) {
         src={logoSrc}
         alt="zentilos"
         className="logo-img"
+        width={1024}
+        height={269}
+        decoding="async"
         style={height ? { height: `${height}px` } : undefined}
       />
     </Link>

@@ -21,21 +21,35 @@ const DIST_DIR = path.resolve(__dirname, '../dist');
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 
 // 1. Detect Chrome / Chromium executable
+function sanitizeSiteUrl(raw) {
+  if (!raw || typeof raw !== 'string') return '';
+  return raw.trim().replace(/^['"]|['"]$/g, '').trim().replace(/\/+$/, '');
+}
+
 function resolveSiteUrl() {
-  if (process.env.VITE_SITE_URL) return process.env.VITE_SITE_URL;
+  if (process.env.VITE_SITE_URL) {
+    const cleaned = sanitizeSiteUrl(process.env.VITE_SITE_URL);
+    if (cleaned) return cleaned;
+  }
   // Try loading from .env.production
   const prodEnvPath = path.join(PROJECT_ROOT, '.env.production');
   if (fs.existsSync(prodEnvPath)) {
     const content = fs.readFileSync(prodEnvPath, 'utf8');
     const match = content.match(/^VITE_SITE_URL\s*=\s*(.*)$/m);
-    if (match && match[1].trim()) return match[1].trim().replace(/^['"]|['"]$/g, '');
+    if (match) {
+      const cleaned = sanitizeSiteUrl(match[1]);
+      if (cleaned) return cleaned;
+    }
   }
   // Try loading from .env
   const devEnvPath = path.join(PROJECT_ROOT, '.env');
   if (fs.existsSync(devEnvPath)) {
     const content = fs.readFileSync(devEnvPath, 'utf8');
     const match = content.match(/^VITE_SITE_URL\s*=\s*(.*)$/m);
-    if (match && match[1].trim()) return match[1].trim().replace(/^['"]|['"]$/g, '');
+    if (match) {
+      const cleaned = sanitizeSiteUrl(match[1]);
+      if (cleaned) return cleaned;
+    }
   }
   return 'http://localhost:5173';
 }
@@ -159,7 +173,19 @@ const STATIC_NOINDEX_ROUTES = [
 
 // 4. Lightweight static HTTP server serving the pristine SPA shell in memory
 function startStaticServer(port = 0) {
-  const SPA_TEMPLATE = fs.readFileSync(path.join(DIST_DIR, 'index.html'), 'utf8');
+  let rawTemplate = fs.readFileSync(path.join(DIST_DIR, 'index.html'), 'utf8');
+  let SPA_TEMPLATE = rawTemplate.replace(/\s+data-prerender-ready="true"/g, '');
+  const rootIndex = SPA_TEMPLATE.indexOf('<div id="root">');
+  if (rootIndex !== -1) {
+    const afterRoot = rootIndex + '<div id="root">'.length;
+    const scriptIndex = SPA_TEMPLATE.indexOf('<script', afterRoot);
+    if (scriptIndex !== -1) {
+      const lastDiv = SPA_TEMPLATE.lastIndexOf('</div>', scriptIndex);
+      if (lastDiv >= afterRoot) {
+        SPA_TEMPLATE = SPA_TEMPLATE.slice(0, afterRoot) + SPA_TEMPLATE.slice(lastDiv);
+      }
+    }
+  }
 
   const mimeTypes = {
     '.html': 'text/html; charset=utf-8',
@@ -330,7 +356,6 @@ async function main() {
       '--disable-background-timer-throttling',
       '--disable-backgrounding-occluded-windows',
       '--disable-renderer-backgrounding',
-      `--user-data-dir=${tempUserDataDir}`,
     ],
   });
 
@@ -350,6 +375,10 @@ async function main() {
 
       // Wait for the React Seo effect to complete and mark data-prerender-ready="true"
       await page.waitForSelector('html[data-prerender-ready="true"]', { timeout: 30000 });
+      await page.waitForFunction(() => {
+        const root = document.getElementById('root');
+        return root && root.children.length > 0 && root.textContent.trim().length > 20;
+      }, { timeout: 30000 });
 
       // Extract metadata for validation (Condition 3)
       const meta = await page.evaluate(() => {
@@ -472,9 +501,11 @@ async function main() {
 
   // Commit all rendered HTML files to disk
   console.log(`💾 [Zentilos Prerender] Writing ${renderedOutputs.length} static HTML files to dist/...`);
+  const localOriginRegex = new RegExp(`http://(127\\.0\\.0\\.1|localhost):${port}`, 'g');
   for (const item of renderedOutputs) {
     fs.mkdirSync(path.dirname(item.targetFile), { recursive: true });
-    fs.writeFileSync(item.targetFile, item.html, 'utf8');
+    const cleanHtml = item.html.replace(localOriginRegex, '');
+    fs.writeFileSync(item.targetFile, cleanHtml, 'utf8');
   }
 
   // Generate sitemap.xml (Condition 4)

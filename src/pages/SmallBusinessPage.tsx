@@ -35,7 +35,7 @@ export function SmallBusinessPage() {
         { title: "Quick 2-Week Launch", desc: "Guided onboarding so you go live smoothly with zero disruption." },
       ],
       buttonText: "Request a Demo",
-      image: "/images/sb-owner-workspace.jpg",
+      image: "/images/sb-owner-workspace.webp",
       alt: "Small business owner workspace overview in Zentilos",
     },
     {
@@ -51,7 +51,7 @@ export function SmallBusinessPage() {
         { title: "Zero Approval Delays", desc: "Resolve routine time-off requests in under 2 hours without email chains." },
       ],
       buttonText: "Request a Demo",
-      image: "/images/sb-manager-workspace.jpg",
+      image: "/images/sb-manager-workspace.webp",
       alt: "Team manager reviewing attendance and leave schedule",
     },
     {
@@ -67,7 +67,7 @@ export function SmallBusinessPage() {
         { title: "Transparent Request Tracking", desc: "Submit leave or comp-off requests and track manager sign-offs live." },
       ],
       buttonText: "Request a Demo",
-      image: "/images/sb-employee-workspace.jpg",
+      image: "/images/sb-employee-workspace.webp",
       alt: "Employee accessing Zentilos self-service on smartphone",
     },
   ];

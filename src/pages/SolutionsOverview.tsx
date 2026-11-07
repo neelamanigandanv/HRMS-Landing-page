@@ -352,7 +352,7 @@ export function SolutionsOverview() {
                   <div className="so-biz-visual-col">
                     <div className="so-biz-img-frame">
                       <img
-                        src="/images/solution-small-business.jpg"
+                        src="/images/solution-small-business.webp"
                         alt="Zentilos Standard Solution Dashboard"
                         className="so-biz-card-img"
                         loading="lazy"
@@ -372,7 +372,7 @@ export function SolutionsOverview() {
                   <div className="so-biz-visual-col">
                     <div className="so-biz-img-frame">
                       <img
-                        src="/images/solution-mid-sized.jpg"
+                        src="/images/solution-mid-sized.webp"
                         alt="Zentilos Professional Solution Multi-Branch Dashboard"
                         className="so-biz-card-img"
                         loading="lazy"
@@ -522,7 +522,7 @@ export function SolutionsOverview() {
                   <div className="so-biz-visual-col">
                     <div className="so-biz-img-frame">
                       <img
-                        src="/images/solution-enterprise.jpg"
+                        src="/images/solution-enterprise.webp"
                         alt="Zentilos Enterprise Global Operations Dashboard"
                         className="so-biz-card-img"
                         loading="lazy"
@@ -672,7 +672,7 @@ export function SolutionsOverview() {
               {/* Overlapping Photorealistic Team Collaboration Image */}
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/emp-cta-collaboration.jpg"
+                  src="/images/emp-cta-collaboration.webp"
                   alt="HR leadership and management team collaborating on workforce strategy"
                   className="emp-cta-img"
                   loading="lazy"

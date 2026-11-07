@@ -46,7 +46,7 @@ export const BenefitGrid: React.FC = () => {
               {/* Photo 1: Big top/middle office team */}
               <div className="partner-mosaic-item mosaic-1">
                 <img
-                  src="/images/skyline-hq.jpg"
+                  src="/images/skyline-hq.webp"
                   alt="Zentilos Corporate Campus"
                   loading="lazy"
                 />
@@ -55,7 +55,7 @@ export const BenefitGrid: React.FC = () => {
               {/* Photo 2: Executive portrait */}
               <div className="partner-mosaic-item mosaic-2">
                 <img
-                  src="/images/hero-hr-working-pro.jpg"
+                  src="/images/hero-hr-working-pro.webp"
                   alt="HR Strategy Consultant"
                   loading="lazy"
                 />
@@ -64,7 +64,7 @@ export const BenefitGrid: React.FC = () => {
               {/* Photo 3: Modern branch */}
               <div className="partner-mosaic-item mosaic-3">
                 <img
-                  src="/images/branch-hq.jpg"
+                  src="/images/branch-hq.webp"
                   alt="Enterprise Regional Hub"
                   loading="lazy"
                 />
@@ -73,7 +73,7 @@ export const BenefitGrid: React.FC = () => {
               {/* Photo 4: Hands & laptop strategy table (like Image 1's map & coffee tile) */}
               <div className="partner-mosaic-item mosaic-4">
                 <img
-                  src="/images/work-process-team.jpg"
+                  src="/images/work-process-team.webp"
                   alt="Consulting Alliance Strategy"
                   loading="lazy"
                 />
@@ -82,7 +82,7 @@ export const BenefitGrid: React.FC = () => {
               {/* Photo 5: Modern bridge/cityscape */}
               <div className="partner-mosaic-item mosaic-5">
                 <img
-                  src="/images/solutions-consultation-cta.jpg"
+                  src="/images/solutions-consultation-cta.webp"
                   alt="Strategic Client Advisory"
                   loading="lazy"
                 />
@@ -91,7 +91,7 @@ export const BenefitGrid: React.FC = () => {
               {/* Photo 6: Enterprise collaboration */}
               <div className="partner-mosaic-item mosaic-6">
                 <img
-                  src="/images/solution-enterprise.jpg"
+                  src="/images/solution-enterprise.webp"
                   alt="Enterprise Collaboration"
                   loading="lazy"
                 />

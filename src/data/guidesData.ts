@@ -127,7 +127,7 @@ export const featuredHandbooks: GuideHandbook[] = [
     badge: "Statutory Masterclass",
     stat: "Zero-Penalty Audits",
     iconName: "payroll",
-    coverImage: "/images/article-payroll.jpg",
+    coverImage: "/images/article-payroll.webp",
     description: "Master Indian and international payroll processing, gross-to-net calculations, statutory PF/ESI/PT rules, and automated audit trails.",
   },
   {
@@ -141,7 +141,7 @@ export const featuredHandbooks: GuideHandbook[] = [
     badge: "Leakage Prevention",
     stat: "Auto Biometric Sync",
     iconName: "calendar",
-    coverImage: "/images/branch-biometric.jpg",
+    coverImage: "/images/branch-biometric.webp",
     description: "Craft fair leave policies, eliminate absenteeism, automate multi-tier approval chains, and sync with payroll seamlessly.",
   },
   {
@@ -155,7 +155,7 @@ export const featuredHandbooks: GuideHandbook[] = [
     badge: "Talent Ops",
     stat: "94% Joining Ratio",
     iconName: "users",
-    coverImage: "/images/article-onboarding.jpg",
+    coverImage: "/images/article-onboarding.webp",
     description: "From structured candidate pipelines and multi-stage interviews to automated offer letter rollouts and seamless day-one onboarding across distributed branches.",
   },
   {
@@ -169,7 +169,7 @@ export const featuredHandbooks: GuideHandbook[] = [
     badge: "Legal & Offboarding",
     stat: "Compliant Exits",
     iconName: "shield",
-    coverImage: "/images/branch-payroll.jpg",
+    coverImage: "/images/branch-payroll.webp",
     description: "Comprehensive breakdown of EPF Act, ESIC regulations, Payment of Bonus Act, Gratuity calculations, and state-wise Professional Tax slabs with zero-penalty deadline checklists.",
   },
 ];

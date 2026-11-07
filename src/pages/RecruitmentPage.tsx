@@ -70,7 +70,7 @@ export function RecruitmentPage() {
       id: "requisition-sourcing",
       badge: "01 Requisition & Sourcing",
       eyebrow: "✦ 01. REQUISITION & SOURCING ✦",
-      image: "/images/recruitment-block-sourcing.jpg",
+      image: "/images/recruitment-block-sourcing.webp",
       imageAlt: "Candidate Profile Record UI showing verified candidate details, resume attachment, and skills tags",
       title: "Structured Job Openings & Unified Candidate Records",
       description:
@@ -98,7 +98,7 @@ export function RecruitmentPage() {
       id: "pipeline-tracking",
       badge: "02 Pipeline & Stages",
       eyebrow: "✦ 02. PIPELINE & STAGES ✦",
-      image: "/images/recruitment-block-pipeline.jpg",
+      image: "/images/recruitment-block-pipeline.webp",
       imageAlt: "Recruitment Pipeline Stages UI showing candidate progression, reviewer scorecards, and hiring status",
       title: "Visual Pipeline Tracking Across Every Hiring Stage",
       description:
@@ -126,7 +126,7 @@ export function RecruitmentPage() {
       id: "interview-selection",
       badge: "03 Interview & Selection",
       eyebrow: "✦ 03. INTERVIEW & SELECTION ✦",
-      image: "/images/recruitment-block-offer.jpg",
+      image: "/images/recruitment-block-offer.webp",
       imageAlt: "Candidate Selection and Digital Offer Letter UI showing compensation details and onboarding convert button",
       title: "Structured Interview Scorecards & Seamless Offer Generation",
       description:
@@ -369,7 +369,7 @@ export function RecruitmentPage() {
               {/* Center Main Card: Real Recruitment Dashboard Showcase */}
               <div className="emp-hero-center-photo-card">
                 <img
-                  src="/images/recruitment-hero-showcase.jpg"
+                  src="/images/recruitment-hero-showcase.webp"
                   alt="Recruitment talent acquisition pipeline dashboard showing candidate profiles and hiring stages"
                   className="emp-hero-center-img"
                   loading="eager"
@@ -781,7 +781,7 @@ export function RecruitmentPage() {
               {/* Overlapping Photorealistic Team Collaboration Image */}
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/recruitment-cta-hiring.jpg"
+                  src="/images/recruitment-cta-hiring.webp"
                   alt="Talent acquisition team reviewing candidate pipeline"
                   className="emp-cta-img"
                   loading="lazy"

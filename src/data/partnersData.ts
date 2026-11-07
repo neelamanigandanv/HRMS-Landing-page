@@ -25,8 +25,9 @@ export interface ChecklistItem {
   id: string;
   title: string;
   description: string;
-  icon: IconName;
+  icon: IconName | string;
   badge: string;
+  isFeatured?: boolean;
 }
 
 export interface HowItWorksStep {
@@ -110,7 +111,7 @@ export const PARTNER_TYPES: PartnerType[] = [
     title: "Reseller Partners",
     tagline: "Full-Cycle Commercial Distribution",
     description: "Package, distribute, and implement Zentilos as an authorized regional or national solution partner.",
-    imagePlaceholder: "/images/work-process-team.jpg",
+    imagePlaceholder: "/images/work-process-team.webp",
     badge: "Most Popular",
     whoCanJoin: [
       "IT solution providers and systems integrators",
@@ -124,7 +125,7 @@ export const PARTNER_TYPES: PartnerType[] = [
     title: "Referral Partners",
     tagline: "Zero Implementation Overhead",
     description: "Introduce qualified prospects and clients to Zentilos and earn generous referral bonuses on every closed account.",
-    imagePlaceholder: "/images/solutions-consultation-cta.jpg",
+    imagePlaceholder: "/images/solutions-consultation-cta.webp",
     badge: "Quick Start",
     whoCanJoin: [
       "Chartered accountants & corporate tax consultants",
@@ -138,7 +139,7 @@ export const PARTNER_TYPES: PartnerType[] = [
     title: "Technology Partners",
     tagline: "Bi-Directional API Integrations",
     description: "Build seamless data connectors between Zentilos and your biometric hardware, ERP, accounting, or banking system.",
-    imagePlaceholder: "/images/industry-tech.jpg",
+    imagePlaceholder: "/images/industry-tech.webp",
     badge: "Ecosystem Integration",
     whoCanJoin: [
       "Biometric attendance & access control manufacturers",
@@ -150,50 +151,51 @@ export const PARTNER_TYPES: PartnerType[] = [
 ];
 
 /* ==========================================================================
-   3. WHAT YOU GET — 6 CHECKLIST CARDS
+   3. WHAT YOU GET — 6 ENTERPRISE RESOURCE CARDS (2 Rows of 3 Cards)
    ========================================================================== */
 export const PARTNER_CHECKLIST: ChecklistItem[] = [
   {
     id: "item-welcome-kit",
     icon: "award",
-    title: "Welcome Kit",
+    title: "Partner Welcome Kit",
     badge: "Day 1 Access",
-    description: "Comprehensive partner credentials, digital certification badge, brand assets, and quick-start directory.",
+    description: "Official partner accreditation badge, verified partner directory listing, enterprise brand asset kit, and immediate Day-1 portal credentials.",
   },
   {
     id: "item-training",
-    icon: "briefcase",
-    title: "Product and Sales Training",
+    icon: "zap",
+    title: "Tailored Solutions & Training",
     badge: "Certifications",
-    description: "Self-paced modules, interactive demonstration simulations, objection-handling scripts, and pitch kits.",
-  },
-  {
-    id: "item-lead-support",
-    icon: "users",
-    title: "Lead Support",
-    badge: "Pipeline Boost",
-    description: "Geographic lead distribution, co-selling opportunities, and deal registration with conflict protection.",
+    isFeatured: true,
+    description: "Role-based enablement tracks, interactive product demo simulations, objection-handling scripts, and certified technical architecture tracks.",
   },
   {
     id: "item-demo-support",
-    icon: "shield",
-    title: "Demo Support",
-    badge: "Presales Help",
-    description: "Unlimited sandbox tenant accounts pre-loaded with sample multi-branch employee and payroll data.",
+    icon: "rocket",
+    title: "Dedicated Demo Sandboxes",
+    badge: "Live Sandbox",
+    description: "Pre-configured multi-branch demo environments loaded with realistic employee records, biometric attendance sync, and statutory payroll.",
+  },
+  {
+    id: "item-lead-support",
+    icon: "target",
+    title: "Lead Routing & Co-Selling",
+    badge: "Pipeline Boost",
+    description: "Targeted regional lead distribution, deal registration with conflict protection, and direct co-selling with Zentilos solution architects.",
   },
   {
     id: "item-marketing-material",
     icon: "file-text",
-    title: "Marketing Material",
+    title: "Marketing & Collateral Hub",
     badge: "Ready-to-Use",
-    description: "Customizable brochures, client case studies, comparison decks, email templates, and landing page kits.",
+    description: "Customizable co-branded pitch decks, client ROI calculators, competitive battle cards, regional case studies, and email campaigns.",
   },
   {
     id: "item-partner-manager",
-    icon: "phone",
-    title: "Dedicated Partner Manager",
+    icon: "users",
+    title: "24/7 Dedicated Partner Support",
     badge: "Direct Contact",
-    description: "A single named point of contact for escalations, commercial negotiations, and business growth planning.",
+    description: "A named alliance manager and priority technical presales desk to help you structure complex proposals and close high-value accounts.",
   },
 ];
 

@@ -75,7 +75,7 @@ export function PayrollManagementPage() {
         "Reconciling spreadsheets, biometric logs, and tax deductions used to consume our entire finance team every month end. Zentilos automates statutory withholdings and direct bank files with 100% precision.",
       name: "Freddy Dean",
       role: "Chief Financial Officer, FinTech Horizon",
-      avatar: "/images/testi-avatar-1.jpg",
+      avatar: "/images/testi-avatar-1.webp",
     },
     {
       id: 2,
@@ -85,7 +85,7 @@ export function PayrollManagementPage() {
         "Zentilos's automatic PF ECR and TDS Form 24Q generators completely eliminated our compliance headaches. Everything is pre-calculated, verified by maker-checker workflows, and audit-ready.",
       name: "Sarah Jenkins",
       role: "Head of Finance & Operations, CloudScale",
-      avatar: "/images/testi-avatar-2.jpg",
+      avatar: "/images/testi-avatar-2.webp",
     },
     {
       id: 3,
@@ -95,7 +95,7 @@ export function PayrollManagementPage() {
         "We operate retail branches across 8 states with different Professional Tax rates and holiday calendars. Zentilos handles entity-specific salary runs and bank batch files effortlessly.",
       name: "Rohan Mehta",
       role: "VP of Finance & Treasury, Apex Retail",
-      avatar: "/images/leader-rohan-mehta.jpg",
+      avatar: "/images/leader-rohan-mehta.webp",
     },
     {
       id: 4,
@@ -105,7 +105,7 @@ export function PayrollManagementPage() {
         "Employees love the self-service tax declaration portal. Comparing Old vs. New tax regimes and downloading Form 16 directly from their mobile app solved our internal HR ticketing bottleneck.",
       name: "Ananya Kapoor",
       role: "Director of People Operations, UrbanBite",
-      avatar: "/images/leader-ananya-kapoor.jpg",
+      avatar: "/images/leader-ananya-kapoor.webp",
     },
   ];
 
@@ -119,7 +119,7 @@ export function PayrollManagementPage() {
       id: "statutory-engine",
       badge: "01 Statutory Engine",
       eyebrow: "✦ 01. 100% STATUTORY COMPLIANCE & TAX ENGINE ✦",
-      image: "/images/branch-payroll.jpg",
+      image: "/images/branch-payroll.webp",
       imageAlt: "Corporate finance executives and tax specialists reviewing statutory payroll compliance reports",
       title: "Automated Statutory Compliance & Multi-Tier Tax Engine",
       description:
@@ -147,7 +147,7 @@ export function PayrollManagementPage() {
       id: "direct-bank-payouts",
       badge: "02 Direct Bank Payouts",
       eyebrow: "✦ 02. DIRECT BANK INTEGRATION & MAKER-CHECKER CONTROLS ✦",
-      image: "/images/industry-finance.jpg",
+      image: "/images/industry-finance.webp",
       imageAlt: "Treasury and finance specialists executing secure batch salary disbursement with two-factor authorization",
       title: "1-Click Direct Bank Disbursal & Maker-Checker Dual Controls",
       description:
@@ -175,7 +175,7 @@ export function PayrollManagementPage() {
       id: "employee-self-service",
       badge: "03 Self-Service Payslips",
       eyebrow: "✦ 03. EMPLOYEE SELF-SERVICE & TAX DECLARATIONS ✦",
-      image: "/images/article-payroll.jpg",
+      image: "/images/article-payroll.webp",
       imageAlt: "HR professional and finance lead reviewing digital employee payslips and tax deduction proofs",
       title: "Transparent Employee Self-Service & Digital Payslips",
       description:
@@ -433,7 +433,7 @@ export function PayrollManagementPage() {
               {/* Center Main Card: Real Payroll Controller Processing Salaries */}
               <div className="emp-hero-center-photo-card">
                 <img
-                  src="/images/pay-hero-showcase.jpg"
+                  src="/images/pay-hero-showcase.webp"
                   alt="Finance Director and Payroll Controller reviewing monthly salary processing dashboard on wide screen in corporate office"
                   className="emp-hero-center-img"
                   loading="eager"
@@ -885,7 +885,7 @@ export function PayrollManagementPage() {
               {/* Overlapping Photorealistic Team Collaboration Image */}
               <div className="emp-cta-img-wrap">
                 <img
-                  src="/images/leave-block-payroll.jpg"
+                  src="/images/leave-block-payroll.webp"
                   alt="Finance Director and HR payroll lead reviewing monthly compensation disbursements"
                   className="emp-cta-img"
                   loading="lazy"

@@ -29,6 +29,8 @@ export interface BlogPostData {
   views: string;
   excerpt: string;
   coverImage: string;
+  /** Open Graph social sharing image path (max 1200w JPG under 200 KB in /og/) */
+  ogImage?: string;
   author: BlogAuthor;
   toc: BlogTOCItem[];
   keyTakeaway: {
@@ -70,7 +72,8 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Oct 19, 2025",
     views: "4.2k views",
     excerpt: "Compare physical biometric hardware and GPS geofenced mobile check-ins on cost, reliability, speed, and multi-branch scalability.",
-    coverImage: "/images/branch-biometric.jpg",
+    coverImage: "/images/branch-biometric.webp",
+    ogImage: "/og/branch-biometric.jpg",
     author: {
       name: "Arjun Malhotra",
       role: "VP of Workforce Engineering",
@@ -185,7 +188,8 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Oct 17, 2025",
     views: "5.8k views",
     excerpt: "Everything HR and finance leaders must know about PF, ESI, Professional Tax slabs, and TDS deductions across multiple states.",
-    coverImage: "/images/article-payroll.jpg",
+    coverImage: "/images/article-payroll.webp",
+    ogImage: "/og/article-payroll.jpg",
     author: {
       name: "Ria Desai",
       role: "Head of Payroll & Compliance",
@@ -271,7 +275,8 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Oct 12, 2025",
     views: "3.7k views",
     excerpt: "Crucial criteria for multi-location enterprises: regional holiday calendars, branch policy overrides, and unified executive rollups.",
-    coverImage: "/images/article-multibranch.jpg",
+    coverImage: "/images/article-multibranch.webp",
+    ogImage: "/og/article-multibranch.jpg",
     author: {
       name: "Kavya Sundaram",
       role: "Enterprise Solutions Architect",
@@ -351,7 +356,8 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Oct 08, 2025",
     views: "2.9k views",
     excerpt: "How pre-boarding digital KYC, document vaults, and day-one orientation workflows transform first impressions into long-term retention.",
-    coverImage: "/images/article-onboarding.jpg",
+    coverImage: "/images/article-onboarding.webp",
+    ogImage: "/og/article-onboarding.jpg",
     author: {
       name: "Neha Srinivasan",
       role: "VP of People & Culture",
@@ -407,7 +413,8 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Oct 02, 2025",
     views: "3.1k views",
     excerpt: "Why the dreaded once-a-year performance appraisal is dying, and how agile quarterly OKRs drive measurable revenue growth.",
-    coverImage: "/images/solution-enterprise.jpg",
+    coverImage: "/images/solution-enterprise.webp",
+    ogImage: "/og/solution-enterprise.jpg",
     author: {
       name: "Rohan Mehta",
       role: "Chief Strategy Officer",
@@ -463,7 +470,8 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Sep 24, 2025",
     views: "4.6k views",
     excerpt: "Formulas break, compliance penalties mount, and founder weekends vanish. Here is the blueprint for automated salary disbursements.",
-    coverImage: "/images/solution-small-business.jpg",
+    coverImage: "/images/solution-small-business.webp",
+    ogImage: "/og/solution-small-business.jpg",
     author: {
       name: "Ria Desai",
       role: "Head of Payroll & Compliance",
@@ -518,7 +526,8 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Sep 18, 2025",
     views: "3.5k views",
     excerpt: "Managing morning, evening, and night shifts across retail, healthcare, and manufacturing without burnout or compliance violations.",
-    coverImage: "/images/solution-mid-sized.jpg",
+    coverImage: "/images/solution-mid-sized.webp",
+    ogImage: "/og/solution-mid-sized.jpg",
     author: {
       name: "Arjun Malhotra",
       role: "VP of Workforce Engineering",
@@ -566,7 +575,8 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Sep 10, 2025",
     views: "2.8k views",
     excerpt: "Server maintenance, consultant fees, clunky mobile apps, and version lock-in: the true total cost of ownership of on-premise HRMS.",
-    coverImage: "/images/industry-tech.jpg",
+    coverImage: "/images/industry-tech.webp",
+    ogImage: "/og/industry-tech.jpg",
     author: {
       name: "Kavya Sundaram",
       role: "Enterprise Solutions Architect",
@@ -613,7 +623,8 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Sep 02, 2025",
     views: "3.3k views",
     excerpt: "Why empowering staff with instant access to leave balances, payslips, and loan requests eliminates administrative friction and boosts morale.",
-    coverImage: "/images/resource-hub-card.jpg",
+    coverImage: "/images/resource-hub-card.webp",
+    ogImage: "/og/resource-hub-card.jpg",
     author: {
       name: "Neha Srinivasan",
       role: "VP of People & Culture",
