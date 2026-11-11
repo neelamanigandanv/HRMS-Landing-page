@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 840" role="img" aria-labelledby="title desc">
+  <title id="title">Zentilos Time Logs mobile screen</title>
+  <desc id="desc">Mobile attendance time log with weekly dates, work and break summary, clock events, and total hours.</desc>
+  <defs>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f4ec"/>
+      <stop offset=".52" stop-color="#d5eee0"/>
+      <stop offset="1" stop-color="#f1f5e8"/>
+    </linearGradient>
+    <linearGradient id="summary" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#073f33"/>
+      <stop offset="1" stop-color="#087c5a"/>
+    </linearGradient>
+    <linearGradient id="hours" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#eff9d2"/>
+      <stop offset="1" stop-color="#c6efd7"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-20%" width="160%" height="150%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#183a32" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect x="3" y="3" width="394" height="834" rx="58" fill="#070909" stroke="#9b9e9c" stroke-width="3"/>
+  <rect x="14" y="14" width="372" height="812" rx="49" fill="#111514" stroke="#353937" stroke-width="2"/>
+  <rect x="24" y="24" width="352" height="792" rx="42" fill="url(#screen)"/>
+  <rect x="145" y="31" width="110" height="30" rx="16" fill="#050606"/>
+  <text x="70" y="62" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#111916">9:41</text>
+  <g fill="#101916">
+    <rect x="302" y="48" width="4" height="11" rx="2"/><rect x="309" y="44" width="4" height="15" rx="2"/>
+    <rect x="316" y="40" width="4" height="19" rx="2"/><path d="M329 47q10-11 20 0l-2 3q-8-8-16 0z"/>
+    <rect x="354" y="43" width="19" height="13" rx="3" fill="none" stroke="#101916" stroke-width="2"/><rect x="374" y="47" width="3" height="5" rx="1"/><rect x="357" y="46" width="12" height="7" rx="1"/>
+  </g>
+  <circle cx="58" cy="112" r="21" fill="#fff"/>
+  <path d="m61 104-8 8 8 8" fill="none" stroke="#103a31" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="342" cy="112" r="21" fill="#fff"/>
+  <rect x="334" y="103" width="16" height="17" rx="2" fill="none" stroke="#103a31" stroke-width="2"/><path d="M338 100v6m8-6v6m-12 1h16" fill="none" stroke="#103a31" stroke-width="2" stroke-linecap="round"/>
+  <text x="200" y="119" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#102f28">Time Logs</text>
+  <circle cx="58" cy="164" r="16" fill="#fff"/><path d="m60 158-6 6 6 6" fill="none" stroke="#153a32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="342" cy="164" r="16" fill="#fff"/><path d="m340 158 6 6-6 6" fill="none" stroke="#153a32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="170" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#102f28">29 Sep 2026</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <g transform="translate(39 194)"><rect width="42" height="62" rx="14" fill="#10352c"/><text x="21" y="22" font-size="10" fill="#bfd3c9">Thu</text><text x="21" y="45" font-size="15" font-weight="700" fill="#fff">29</text></g>
+    <g transform="translate(85 194)"><rect width="42" height="62" rx="14" fill="#fff"/><text x="21" y="22" font-size="10" fill="#6c7f77">Fri</text><text x="21" y="45" font-size="15" font-weight="700" fill="#18362d">30</text></g>
+    <g transform="translate(131 194)"><rect width="42" height="62" rx="14" fill="#fff"/><text x="21" y="22" font-size="10" fill="#6c7f77">Sat</text><text x="21" y="45" font-size="15" font-weight="700" fill="#9aaca4">31</text></g>
+    <g transform="translate(177 194)"><rect width="42" height="62" rx="14" fill="#fff"/><text x="21" y="22" font-size="10" fill="#6c7f77">Sun</text><text x="21" y="45" font-size="15" font-weight="700" fill="#9aaca4">1</text></g>
+    <g transform="translate(223 194)"><rect width="42" height="62" rx="14" fill="#fff"/><text x="21" y="22" font-size="10" fill="#6c7f77">Mon</text><text x="21" y="45" font-size="15" font-weight="700" fill="#18362d">2</text></g>
+    <g transform="translate(269 194)"><rect width="42" height="62" rx="14" fill="#fff"/><text x="21" y="22" font-size="10" fill="#6c7f77">Tue</text><text x="21" y="45" font-size="15" font-weight="700" fill="#18362d">3</text></g>
+    <g transform="translate(315 194)"><rect width="42" height="62" rx="14" fill="#fff"/><text x="21" y="22" font-size="10" fill="#6c7f77">Wed</text><text x="21" y="45" font-size="15" font-weight="700" fill="#18362d">4</text></g>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="40" y="270" width="320" height="174" rx="18" fill="url(#summary)"/>
+    <circle cx="77" cy="308" r="23" fill="#d9eee2"/>
+    <text x="77" y="313" text-anchor="middle" font-family="Arial,sans-serif" font-size="22">👩🏻</text>
+    <text x="110" y="304" font-family="Arial,sans-serif" font-size="18" font-weight="700" fill="#fff">Alexandra</text>
+    <text x="110" y="322" font-family="Arial,sans-serif" font-size="12" fill="#adcabd">UX Designer</text>
+    <rect x="268" y="293" width="78" height="27" rx="14" fill="#268c5d"/>
+    <circle cx="282" cy="306" r="4" fill="#d7f45a"/><text x="312" y="311" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#d7f45a">Present</text>
+    <circle cx="70" cy="354" r="16" fill="#236b53"/><text x="70" y="360" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" fill="#d7f45a">◷</text>
+    <text x="100" y="350" font-family="Arial,sans-serif" font-size="11" fill="#afc9bd">Work hours</text><text x="100" y="372" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#fff">6h 24m</text>
+    <path d="M199 338v39" stroke="#ffffff" stroke-opacity=".18"/>
+    <circle cx="232" cy="354" r="16" fill="#236b53"/><text x="232" y="360" text-anchor="middle" font-family="Arial,sans-serif" font-size="16" fill="#d7f45a">☕</text>
+    <text x="258" y="350" font-family="Arial,sans-serif" font-size="11" fill="#afc9bd">Break time</text><text x="258" y="372" font-family="Arial,sans-serif" font-size="20" font-weight="700" fill="#fff">30m</text>
+    <rect x="54" y="391" width="210" height="9" rx="5" fill="#d6f15b"/><rect x="266" y="391" width="20" height="9" rx="5" fill="#ffc449"/><rect x="288" y="391" width="58" height="9" rx="5" fill="#d6f15b"/>
+    <text x="54" y="424" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#acc5ba">9:00 AM</text><text x="200" y="424" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#ffd157">Lunch 12:30</text><text x="346" y="424" text-anchor="end" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#acc5ba">3:54 PM</text>
+  </g>
+  <rect x="40" y="458" width="320" height="226" rx="18" fill="#fff"/>
+  <path d="M70 497v150" stroke="#d7eee3" stroke-width="3" stroke-dasharray="5 5"/>
+  <g font-family="Arial,sans-serif">
+    <circle cx="70" cy="497" r="17" fill="#d9f3e7"/><text x="70" y="503" text-anchor="middle" font-size="19" fill="#087c5a">➜</text><text x="101" y="493" font-size="14" font-weight="700" fill="#15352c">Check In</text><text x="101" y="510" font-size="11" fill="#75877f">Arrived on schedule</text><text x="340" y="496" text-anchor="end" font-size="13" font-weight="700" fill="#17352c">09:00 AM</text><rect x="284" y="504" width="56" height="18" rx="9" fill="#def4e8"/><text x="312" y="517" text-anchor="middle" font-size="9" font-weight="700" fill="#146246">On Time</text>
+    <circle cx="70" cy="550" r="17" fill="#d9f3e7"/><text x="70" y="556" text-anchor="middle" font-size="17" fill="#087c5a">☕</text><text x="101" y="546" font-size="14" font-weight="700" fill="#15352c">Break Out</text><text x="101" y="563" font-size="11" fill="#75877f">Lunch break</text><text x="340" y="550" text-anchor="end" font-size="13" font-weight="700" fill="#17352c">12:30 PM</text>
+    <circle cx="70" cy="603" r="17" fill="#e4eaff"/><text x="70" y="609" text-anchor="middle" font-size="17" fill="#4161e9">☕</text><text x="101" y="599" font-size="14" font-weight="700" fill="#15352c">Break In</text><text x="101" y="616" font-size="11" fill="#75877f">Back at desk</text><text x="340" y="603" text-anchor="end" font-size="13" font-weight="700" fill="#17352c">01:00 PM</text>
+    <circle cx="70" cy="656" r="17" fill="#ffe5e5"/><text x="70" y="662" text-anchor="middle" font-size="18" fill="#ed5050">↪</text><text x="101" y="652" font-size="14" font-weight="700" fill="#15352c">Check Out</text><text x="101" y="669" font-size="11" fill="#75877f">Work completed</text><text x="340" y="656" text-anchor="end" font-size="13" font-weight="700" fill="#17352c">03:54 PM</text>
+  </g>
+  <rect x="40" y="698" width="320" height="112" rx="18" fill="#fff"/>
+  <text x="56" y="729" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#17232b">Total Summary</text>
+  <text x="344" y="726" text-anchor="end" font-family="Arial,sans-serif" font-size="10" fill="#87909b">Status</text>
+  <text x="344" y="744" text-anchor="end" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#087c5a">✓ Present</text>
+  <path d="M55 759h290" stroke="#e1e6eb" stroke-dasharray="5 6"/>
+  <text x="56" y="785" font-family="Arial,sans-serif" font-size="11" fill="#87909b">Effective Hours</text>
+  <text x="56" y="808" font-family="Arial,sans-serif" font-size="21" font-weight="700" fill="#087c5a">5h 54m</text>
+  <text x="225" y="785" font-family="Arial,sans-serif" font-size="11" fill="#87909b">Work Hours</text>
+  <text x="344" y="793" text-anchor="end" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#17232b">6h 24m</text>
+</svg>
