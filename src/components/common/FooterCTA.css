@@ -119,7 +119,7 @@
 }
 
 /* Primary Button: Book a Demo
-   Exact 6px border radius matching Home Page Hero section button */
+   8px border radius matching Home Page Hero section button */
 .footer-cta-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -129,7 +129,7 @@
   background: #004B49;
   color: #ffffff;
   border: 1px solid #004B49;
-  border-radius: 6px; /* Exactly like home page hero section button border radius */
+  border-radius: 8px; /* Matches standard 8px button border radius */
   padding: 0 0.35rem 0 1.25rem;
   font-family: inherit;
   font-size: 0.9rem;
@@ -174,7 +174,7 @@
 }
 
 /* Secondary Button: Estimate Price
-   Exact 6px border radius matching Home Page Hero section button */
+   8px border radius matching Home Page Hero section button */
 .footer-cta-btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -184,7 +184,7 @@
   background: #ffffff;
   color: #0c152e;
   border: 1.5px solid #ffffff;
-  border-radius: 6px; /* Exactly like home page hero section button border radius */
+  border-radius: 8px; /* Matches standard 8px button border radius */
   padding: 0 1.35rem;
   font-family: inherit;
   font-size: 0.9rem;
@@ -424,7 +424,7 @@
   background: #004B49;
   color: #ffffff !important;
   border: 1px solid #004B49;
-  border-radius: 10px;
+  border-radius: 8px;
   font-family: inherit;
   font-size: 0.9375rem;
   font-weight: 800;
@@ -464,7 +464,7 @@
   background: #ffffff;
   border: 1.5px solid rgba(0, 75, 73, 0.22);
   color: #00201F;
-  border-radius: 10px;
+  border-radius: 8px;
   font-family: inherit;
   font-size: 0.9375rem;
   font-weight: 700;
@@ -762,7 +762,7 @@
   flex-wrap: wrap;
 }
 
-/* Primary Action Button (Matches Home Page Hero Section Primary Button Exactly) */
+/* Primary Action Button (Matches Home Page Hero Section Primary Button) */
 .matrix-glow-btn {
   position: relative;
   z-index: 2;
@@ -774,7 +774,7 @@
   background: #004B49;
   color: #ffffff;
   border: 1px solid #004B49;
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 0 0.35rem 0 1.25rem;
   font-family: inherit;
   font-size: 0.9rem;
@@ -825,7 +825,7 @@
   justify-content: center;
   height: 46px;
   padding: 0 1.35rem;
-  border-radius: 6px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
   border: 1.5px solid rgba(255, 255, 255, 0.3);
@@ -969,7 +969,7 @@
   height: 48px;
   padding: 0 32px;
   border: none;
-  border-radius: 24px;
+  border-radius: 8px;
   background: #004B49;
   color: #ffffff;
   font-family: inherit;

@@ -196,19 +196,19 @@ export function GlossaryPage() {
               <div className="glossary-hero-actions">
                 <button
                   type="button"
+                  onClick={() => openDemoModal()}
+                  className="glossary-hero-btn glossary-hero-btn--primary"
+                >
+                  Request a Demo
+                </button>
+                <button
+                  type="button"
                   onClick={() => {
                     document.getElementById("glossary-directory")?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="glossary-hero-btn glossary-hero-btn--secondary"
                 >
                   Explore Glossary <Icon name="arrow" size={14} />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => openDemoModal()}
-                  className="glossary-hero-btn glossary-hero-btn--primary"
-                >
-                  Book a Demo
                 </button>
               </div>
 

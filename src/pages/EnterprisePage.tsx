@@ -297,8 +297,8 @@ export function EnterprisePage() {
               >
                 Request Enterprise Demo <Icon name="arrow" size={16} />
               </button>
-              <a href="#workspace" className="sb-btn-secondary">
-                Explore Enterprise Workspace
+              <a href="#the-way-of-working" className="sb-btn-secondary">
+                Explore Features
               </a>
             </div>
 

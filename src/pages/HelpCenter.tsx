@@ -680,7 +680,7 @@ export function HelpCenter() {
                         <HelpWorkflowIsometric className="help-workflow-isometric-svg" />
                       </div>
 
-                      {/* Explore All Guides Action placed below the image in the left side */}
+                      {/* Explore All Guides Action centered under the illustration in left column */}
                       <div className="help-workflow-left-cta">
                         <Link to="/guides" className="help-workflow-explore-btn">
                           <span>Explore All Guides</span>

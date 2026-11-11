@@ -834,8 +834,8 @@ export function ProductOverview() {
         headlineLine2: "Into One Seamless Platform",
         subheadlineLine1: "Eliminate disconnected spreadsheets and fragmented tools with Zentilos's all-in-one multi-branch workforce platform.",
         primaryButtonText: "Book a Live Product Tour",
-        secondaryButtonText: "Explore All Modules",
-        secondaryButtonLink: "#modules",
+        secondaryButtonText: "Explore Module",
+        secondaryButtonLink: "/features/employee-management",
       }}
     >
       <SEO

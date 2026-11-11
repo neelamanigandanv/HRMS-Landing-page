@@ -127,7 +127,7 @@
   background: #004B49;
   color: #ffffff;
   border: 1px solid #004B49;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 0 28px;
   font-size: 15px;
   font-weight: 700;
@@ -152,7 +152,7 @@
   background: #ffffff;
   color: #191735;
   border: 1px solid #d7d5e0;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 0 24px;
   font-size: 15px;
   font-weight: 700;
@@ -2720,7 +2720,7 @@
   font-size: 0.9375rem;
   font-weight: 700;
   padding: 0.8rem 2.25rem;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(0, 75, 73, 0.28);

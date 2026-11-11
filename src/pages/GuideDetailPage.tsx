@@ -256,6 +256,11 @@ export function GuideDetailPage() {
         <section className="guide-detail-hero" aria-labelledby="guide-title">
           <div className="guide-detail-container">
             <div className="guide-hero-centered-content">
+              <span className="guide-hero-eyebrow">
+                <Icon name="sparkle" size={13} />
+                {currentGuide.category} &bull; Step-by-Step Playbook
+              </span>
+
               <h1 id="guide-title" className="guide-hero-title">
                 {renderDoubleColorTitle(currentGuide.title)}
               </h1>

@@ -1,0 +1,604 @@
+/* ==========================================================================
+   MOBILE FEATURES BANNER  –  Light background
+   Layout: Left = feature list, Right = phone + smartwatch
+   ========================================================================== */
+
+.mfb-section {
+  position: relative;
+  background: #F4F9F8;
+  background-image:
+    radial-gradient(ellipse 60% 55% at 72% 50%, rgba(0, 75, 73, 0.07) 0%, transparent 70%),
+    radial-gradient(circle at 8% 15%, rgba(16, 185, 129, 0.05) 0%, transparent 55%);
+  padding: 100px 0 108px;
+  overflow: hidden;
+  border-top: 1px solid #E3EDED;
+  border-bottom: 1px solid #E3EDED;
+}
+
+.mfb-section::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -60px;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 75, 73, 0.09) 0%, transparent 68%);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mfb-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* ───────────────────────────────────────────────────────
+   LEFT COLUMN
+   ─────────────────────────────────────────────────────── */
+.mfb-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mfb-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #004B49;
+  margin-bottom: 18px;
+}
+
+.mfb-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #004B49;
+  display: inline-block;
+}
+
+.mfb-title {
+  font-size: clamp(28px, 3.1vw, 42px);
+  font-weight: 800;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: #0B1514;
+  margin: 0 0 14px;
+}
+
+.mfb-title span {
+  background: linear-gradient(135deg, #004B49 0%, #0D7A76 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mfb-lead {
+  font-size: 15.5px;
+  line-height: 1.72;
+  color: #4B5857;
+  margin: 0 0 40px;
+  max-width: 490px;
+}
+
+/* Feature items */
+.mfb-features {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+}
+
+.mfb-feat {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.mfb-feat-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: #E6F4F2;
+  color: #004B49;
+  border: 1.5px solid rgba(0, 75, 73, 0.14);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 75, 73, 0.08);
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.mfb-feat:hover .mfb-feat-icon {
+  background: #004B49;
+  color: #FFFFFF;
+  border-color: #004B49;
+}
+
+.mfb-feat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mfb-feat-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0B1514;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.mfb-feat-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #52606D;
+  margin: 0;
+}
+
+/* CTA row */
+.mfb-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.mfb-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  background: #004B49;
+  color: #FFFFFF;
+  font-size: 14.5px;
+  font-weight: 700;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 24px rgba(0, 75, 73, 0.22);
+}
+
+.mfb-btn-primary:hover {
+  background: #003836;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 75, 73, 0.3);
+}
+
+.mfb-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  background: transparent;
+  color: #004B49;
+  font-size: 14.5px;
+  font-weight: 600;
+  border-radius: 100px;
+  border: 1.5px solid rgba(0, 75, 73, 0.3);
+  cursor: pointer;
+  font-family: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.mfb-btn-ghost:hover {
+  border-color: #004B49;
+  background: rgba(0, 75, 73, 0.05);
+}
+
+/* ───────────────────────────────────────────────────────
+   RIGHT COLUMN — Phone + Watch Stage
+   ─────────────────────────────────────────────────────── */
+.mfb-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 580px;
+}
+
+/* Large soft radial glow orb behind devices */
+.mfb-stage-orb {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 75, 73, 0.12) 0%,
+    rgba(13, 122, 118, 0.07) 45%,
+    transparent 70%
+  );
+  filter: blur(4px);
+  z-index: 1;
+}
+
+/* Dashed orbit ring */
+.mfb-orbit-ring {
+  position: absolute;
+  width: 460px;
+  height: 460px;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(0, 75, 73, 0.14);
+  z-index: 2;
+  animation: mfbOrbitSpin 60s linear infinite;
+}
+
+@keyframes mfbOrbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Phone wrapper */
+.mfb-phone-wrap {
+  position: relative;
+  z-index: 4;
+  transform: translateX(-36px);
+  filter: drop-shadow(0 28px 56px rgba(0, 36, 34, 0.2));
+}
+
+.mfb-phone-img {
+  width: 230px;
+  height: auto;
+  display: block;
+  border-radius: 32px;
+}
+
+/* ── Smartwatch ── */
+.mfb-watch-wrap {
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%) rotate(8deg);
+  z-index: 5;
+  filter: drop-shadow(0 20px 40px rgba(0, 36, 34, 0.18));
+  animation: mfbWatchFloat 5s ease-in-out infinite;
+}
+
+@keyframes mfbWatchFloat {
+  0%, 100% { transform: translateY(-50%) rotate(8deg); }
+  50%       { transform: translateY(calc(-50% - 10px)) rotate(8deg); }
+}
+
+/* Watch body — rounded rect */
+.mfb-watch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bands */
+.mfb-watch-band {
+  width: 68px;
+  height: 60px;
+  background: linear-gradient(180deg, #1a3534 0%, #0f2322 100%);
+  border-radius: 8px;
+}
+
+.mfb-band-top {
+  border-radius: 8px 8px 0 0;
+  margin-bottom: -2px;
+  z-index: 1;
+}
+
+.mfb-band-bottom {
+  border-radius: 0 0 8px 8px;
+  margin-top: -2px;
+  z-index: 1;
+}
+
+/* Watch screen / case */
+.mfb-watch-screen {
+  position: relative;
+  z-index: 2;
+  width: 136px;
+  background: linear-gradient(160deg, #004B49 0%, #002e2d 100%);
+  border-radius: 36px;
+  padding: 18px 14px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    0 0 0 3px rgba(0, 32, 30, 0.6);
+}
+
+/* Crown button on the right side */
+.mfb-watch-crown {
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 28px;
+  background: linear-gradient(180deg, #2a5c5a 0%, #1a3534 100%);
+  border-radius: 3px;
+  z-index: 3;
+  box-shadow: 1px 0 3px rgba(0,0,0,0.3);
+}
+
+/* Watch content */
+.mfb-watch-time {
+  font-size: 26px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.mfb-watch-label {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #C6F36B;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.mfb-watch-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 10px;
+}
+
+.mfb-watch-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #C6F36B;
+  box-shadow: 0 0 5px #C6F36B;
+  animation: mfbWatchPulse 2s ease-in-out infinite;
+}
+
+@keyframes mfbWatchPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+.mfb-watch-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin-bottom: 10px;
+}
+
+.mfb-watch-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.mfb-watch-stat-label {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.mfb-watch-stat-val {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* Floating chips */
+.mfb-chip-top {
+  position: absolute;
+  top: 52px;
+  left: 0;
+  z-index: 6;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 75, 73, 0.18);
+  border-radius: 50px;
+  padding: 8px 14px 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(0, 36, 34, 0.1);
+  animation: mfbChipFloat 4s ease-in-out infinite;
+}
+
+.mfb-chip-bottom {
+  position: absolute;
+  bottom: 64px;
+  right: 0;
+  z-index: 6;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 75, 73, 0.14);
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0, 36, 34, 0.1);
+  animation: mfbChipFloat 5s ease-in-out 1.2s infinite;
+}
+
+@keyframes mfbChipFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+
+.mfb-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+  animation: mfbLivePulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes mfbLivePulse {
+  0%   { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6); }
+  70%  { box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.mfb-chip-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #E6F4F2;
+  color: #004B49;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.mfb-chip-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.mfb-chip-text small {
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #004B49;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.mfb-chip-text strong {
+  font-size: 12px;
+  font-weight: 700;
+  color: #0B1514;
+  white-space: nowrap;
+}
+
+/* ───────────────────────────────────────────────────────
+   RESPONSIVE
+   ─────────────────────────────────────────────────────── */
+@media (max-width: 1080px) {
+  .mfb-inner {
+    gap: 48px;
+  }
+
+  .mfb-phone-img {
+    width: 200px;
+  }
+
+  .mfb-watch-screen {
+    width: 118px;
+  }
+}
+
+@media (max-width: 960px) {
+  .mfb-section {
+    padding: 72px 0 80px;
+  }
+
+  .mfb-inner {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .mfb-copy {
+    align-items: center;
+    text-align: center;
+  }
+
+  .mfb-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mfb-feat {
+    text-align: left;
+  }
+
+  .mfb-cta-row {
+    justify-content: center;
+  }
+
+  .mfb-stage {
+    min-height: 440px;
+  }
+
+  .mfb-phone-wrap {
+    transform: translateX(-28px);
+  }
+
+  .mfb-phone-img {
+    width: 190px;
+  }
+
+  .mfb-watch-wrap {
+    right: 16px;
+  }
+
+  .mfb-watch-screen {
+    width: 110px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mfb-section {
+    padding: 60px 0 68px;
+  }
+
+  .mfb-phone-wrap {
+    transform: none;
+  }
+
+  .mfb-phone-img {
+    width: 210px;
+  }
+
+  .mfb-watch-wrap {
+    right: 10px;
+    transform: translateY(-50%) rotate(6deg);
+  }
+
+  .mfb-watch-screen {
+    width: 100px;
+    padding: 14px 10px 12px;
+  }
+
+  .mfb-watch-band {
+    width: 56px;
+    height: 44px;
+  }
+
+  .mfb-watch-time {
+    font-size: 20px;
+  }
+
+  .mfb-chip-top,
+  .mfb-chip-bottom {
+    display: none;
+  }
+
+  .mfb-stage-orb,
+  .mfb-orbit-ring {
+    width: 320px;
+    height: 320px;
+  }
+}

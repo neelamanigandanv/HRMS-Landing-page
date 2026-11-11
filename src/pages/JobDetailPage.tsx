@@ -513,10 +513,10 @@ export function JobDetailPage() {
               {/* Left Column: Heading, Subheading & Content (Styled clean like Request Demo Page) */}
               <div className="job-apply-left-col">
                 <div className="job-apply-left-header">
-                  <div className="demo-eyebrow">
-                    <span className="demo-sparkle">✦</span>
+                  <div className="job-apply-clean-eyebrow">
+                    <span className="careers-sparkle">✦</span>
                     <span>DIRECT APPLICATION • {job.department.toUpperCase()}</span>
-                    <span className="demo-sparkle">✦</span>
+                    <span className="careers-sparkle">✦</span>
                   </div>
 
                   {(() => {
@@ -555,7 +555,7 @@ export function JobDetailPage() {
                     return (
                       <h2 id="apply-form-title" className="job-apply-hero-title">
                         {line1} <br />
-                        <span className="demo-highlight-plum">{line2}</span>
+                        <span className="careers-highlight-word">{line2}</span>
                       </h2>
                     );
                   })()}

@@ -621,17 +621,16 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                   ))}
                 </div>
 
-                {/* Bottom Left Circular Violet Action Button */}
-                <Link
-                  to={solution.impactBento.cardDark.buttonLink || "/request-demo"}
+                {/* Bottom Left Circular Action Visual */}
+                <div
                   className="impact-dark-btn"
-                  aria-label={isFinanceTeams ? "Explore Financial Ledger Synchronization" : "Explore Unified Workforce Intelligence"}
+                  aria-hidden="true"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="7" y1="17" x2="17" y2="7" />
                     <polyline points="7 7 17 7 17 17" />
                   </svg>
-                </Link>
+                </div>
               </div>
 
               {/* Card 2: Top Middle White Card */}

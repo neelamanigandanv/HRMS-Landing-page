@@ -476,7 +476,7 @@ export function EmployeeManagementPage() {
                 type="button"
                 className="emp-pill-btn-secondary"
                 onClick={() => {
-                  const el = document.getElementById('why-choose-title');
+                  const el = document.getElementById('features');
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }}
               >

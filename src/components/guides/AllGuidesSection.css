@@ -646,7 +646,7 @@
   display: inline-flex;
   align-items: center;
   padding: 10px 24px;
-  border-radius: 9999px;
+  border-radius: 8px;
   background: #004B49;
   color: #ffffff;
   font-size: 13.5px;

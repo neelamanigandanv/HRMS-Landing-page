@@ -322,7 +322,7 @@
   background: #004B49;
   color: #ffffff;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 800;
   font-family: inherit;
@@ -398,7 +398,7 @@
   background-color: #004B49;
   color: #ffffff;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 0.75rem 1.75rem;
   font-size: 0.9375rem;
   font-weight: 750;

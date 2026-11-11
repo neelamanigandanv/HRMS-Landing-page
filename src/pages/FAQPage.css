@@ -34,12 +34,12 @@
   font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   color: #004B49;
-  background: #F6F8F8;
-  border: 1px solid #E5EAEA;
-  padding: 6px 16px;
-  border-radius: 9999px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  border-radius: 0;
   margin-bottom: 20px;
 }
 
@@ -172,7 +172,7 @@
   padding: 0 24px;
   font-size: 14px;
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -287,22 +287,26 @@
 }
 
 .faq-sidebar-help-btn-primary {
-  background: #f15b38;
+  background: #006E6B;
+  border: 1px solid rgba(255, 255, 255, 0.14);
   color: #ffffff !important;
   font-size: 14px;
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 8px;
   min-height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .faq-sidebar-help-btn-primary:hover {
-  background: #df4b28;
+  background: #005956;
+  border-color: rgba(255, 255, 255, 0.24);
   transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
 }
 
 .faq-sidebar-help-btn-secondary {
@@ -311,7 +315,7 @@
   color: #ffffff !important;
   font-size: 14px;
   font-weight: 700;
-  border-radius: 10px;
+  border-radius: 8px;
   min-height: 42px;
   display: flex;
   align-items: center;
@@ -800,7 +804,7 @@
   justify-content: center;
   gap: 7px;
   padding: 10px 20px;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 13.5px;
   font-weight: 700;
   text-decoration: none;

@@ -241,7 +241,7 @@
   background: #004B49;
   color: #ffffff;
   font-weight: 700;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 13px 20px;
   font-size: 14.5px;
   border: none;
@@ -568,7 +568,7 @@
   gap: 6px;
   width: 100%;
   padding: 9px 14px;
-  border-radius: 10px;
+  border-radius: 8px;
   background: #ffffff;
   border: 1.5px solid #004B49;
   color: #004B49;

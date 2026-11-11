@@ -126,14 +126,14 @@
   font-size: 0.9375rem;
   font-weight: 700;
   padding: 0.75rem 1.6rem;
-  border-radius: 12px;
+  border-radius: 8px;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(0, 75, 73, 0.22);
   transition: all 0.2s ease;
 }
 
 .api-hero-btn-primary:hover {
-  background: #00201F;
+  background: #003836;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(0, 75, 73, 0.28);
 }
@@ -147,8 +147,8 @@
   font-size: 0.9375rem;
   font-weight: 700;
   padding: 0.75rem 1.5rem;
-  border-radius: 12px;
-  border: 1px solid #decbc3;
+  border-radius: 8px;
+  border: 1px solid #E5EAEA;
   text-decoration: none;
   transition: all 0.2s ease;
 }

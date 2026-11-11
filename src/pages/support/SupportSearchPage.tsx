@@ -75,7 +75,7 @@ export function SupportSearchPage() {
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-[#004B49] text-white font-bold rounded-xl hover:bg-[#00201F] transition"
+                className="px-6 py-3 bg-[#004B49] text-white font-bold rounded-[8px] hover:bg-[#00201F] transition"
               >
                 Search
               </button>
@@ -147,13 +147,13 @@ export function SupportSearchPage() {
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link
                   to="/support#ticket"
-                  className="px-5 py-2.5 bg-[#004B49] text-white font-bold text-sm rounded-xl hover:bg-[#00201F] transition"
+                  className="px-5 py-2.5 bg-[#004B49] text-white font-bold text-sm rounded-[8px] hover:bg-[#00201F] transition"
                 >
                   Raise a Ticket
                 </Link>
                 <a
                   href="mailto:support@zentilos.com"
-                  className="px-5 py-2.5 bg-white border border-gray-300 text-gray-800 font-bold text-sm rounded-xl hover:border-gray-400 transition"
+                  className="px-5 py-2.5 bg-white border border-gray-300 text-gray-800 font-bold text-sm rounded-[8px] hover:border-gray-400 transition"
                 >
                   Email Support
                 </a>

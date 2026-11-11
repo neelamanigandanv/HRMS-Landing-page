@@ -4,6 +4,7 @@ import Logo from "../ui/Logo";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
 import {
+  aboutNavItems,
   productNavItems,
   solutionsNavItems,
   resourcesNavItems,
@@ -285,12 +286,61 @@ export function Navbar() {
             )}
           </div>
 
-          <Link
-            to="/about"
-            className={`nav-link-item ${location.pathname === "/about" ? "active" : ""}`}
+          {/* About Us Dropdown */}
+          <div
+            className={`nav-dropdown-wrapper ${activeMenu === "about" ? "is-open" : ""}`}
+            onMouseEnter={() => handleMouseEnter("about")}
+            onMouseLeave={handleMouseLeave}
           >
-            About Us
-          </Link>
+            <button
+              type="button"
+              className={`nav-link-item dropdown-trigger ${isCurrentActive("/about") ? "active" : ""}`}
+              onClick={() => toggleDropdown("about")}
+              aria-expanded={activeMenu === "about"}
+              aria-haspopup="true"
+            >
+              <span>About Us</span>
+              <Icon name="chevron-down" size={13} className="dropdown-caret" />
+            </button>
+
+            {activeMenu === "about" && (
+              <div
+                className="mega-menu mega-menu-about"
+                role="menu"
+                onMouseEnter={() => handleMouseEnter("about")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <div className="mega-menu-header">
+                  <div>
+                    <strong>About Zentilos</strong>
+                    <p>Our story, purpose, capabilities, and where we're headed.</p>
+                  </div>
+                </div>
+
+                <div className="mega-grid-about">
+                  {aboutNavItems.map((item: NavLinkItem) => (
+                    <Link
+                      key={item.href}
+                      to={item.href}
+                      className="mega-item"
+                      role="menuitem"
+                    >
+                      <span className="mega-icon-box">
+                        <Icon name={item.icon || "users"} size={17} />
+                      </span>
+                      <div className="mega-text">
+                        <div className="mega-title-row">
+                          <strong>{item.title}</strong>
+                          {item.badge && <span className="mini-badge">{item.badge}</span>}
+                        </div>
+                        <small>{item.desc}</small>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* CTA Actions */}
@@ -399,9 +449,35 @@ export function Navbar() {
                 )}
               </div>
 
-              <Link to="/about" className="mobile-nav-link" onClick={() => setMobileOpen(false)}>
-                About Us
-              </Link>
+              {/* Mobile About Us Accordion */}
+              <div className="mobile-nav-accordion">
+                <button
+                  type="button"
+                  className="mobile-accordion-btn"
+                  onClick={() => toggleMobileSection("about")}
+                >
+                  <span>About Us</span>
+                  <Icon
+                    name="chevron-down"
+                    size={16}
+                    className={mobileExpandedSection === "about" ? "rotate-180" : ""}
+                  />
+                </button>
+                {mobileExpandedSection === "about" && (
+                  <div className="mobile-sublinks">
+                    {aboutNavItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        to={item.href}
+                        className="mobile-sublink"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
 
             <div className="mobile-drawer-cta">

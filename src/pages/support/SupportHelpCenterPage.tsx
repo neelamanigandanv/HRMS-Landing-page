@@ -196,13 +196,13 @@ export function SupportHelpCenterPage() {
             <div className="flex justify-center gap-3">
               <Link
                 to="/support"
-                className="px-5 py-2.5 rounded-xl bg-[#004B49] text-white font-bold text-sm shadow hover:bg-[#00201F] transition"
+                className="px-5 py-2.5 rounded-[8px] bg-[#004B49] text-white font-bold text-sm shadow hover:bg-[#00201F] transition"
               >
                 Contact Support
               </Link>
               <Link
                 to="/faq"
-                className="px-5 py-2.5 rounded-xl border border-gray-300 font-bold text-sm text-gray-800 hover:bg-gray-50 transition"
+                className="px-5 py-2.5 rounded-[8px] border border-gray-300 font-bold text-sm text-gray-800 hover:bg-gray-50 transition"
               >
                 Browse FAQs
               </Link>

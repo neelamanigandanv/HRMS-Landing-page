@@ -413,7 +413,7 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Oct 02, 2025",
     views: "3.1k views",
     excerpt: "Why the dreaded once-a-year performance appraisal is dying, and how agile quarterly OKRs drive measurable revenue growth.",
-    coverImage: "/images/solution-enterprise.webp",
+    coverImage: "/images/perf-block-reviews.webp",
     ogImage: "/og/solution-enterprise.jpg",
     author: {
       name: "Rohan Mehta",
@@ -470,7 +470,7 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Sep 24, 2025",
     views: "4.6k views",
     excerpt: "Formulas break, compliance penalties mount, and founder weekends vanish. Here is the blueprint for automated salary disbursements.",
-    coverImage: "/images/solution-small-business.webp",
+    coverImage: "/images/reports-block-payroll.webp",
     ogImage: "/og/solution-small-business.jpg",
     author: {
       name: "Ria Desai",
@@ -526,7 +526,7 @@ export const blogArticles: BlogPostData[] = [
     lastUpdated: "Sep 18, 2025",
     views: "3.5k views",
     excerpt: "Managing morning, evening, and night shifts across retail, healthcare, and manufacturing without burnout or compliance violations.",
-    coverImage: "/images/solution-mid-sized.webp",
+    coverImage: "/images/att-block-overtime.webp",
     ogImage: "/og/solution-mid-sized.jpg",
     author: {
       name: "Arjun Malhotra",

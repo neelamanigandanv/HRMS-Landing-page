@@ -69,9 +69,7 @@ export function GuidesPage() {
               <button
                 type="button"
                 className="guides-hero-btn-primary"
-                onClick={() => {
-                  window.location.href = "/request-demo";
-                }}
+                onClick={() => openDemoModal()}
               >
                 <Icon name="arrow" size={16} /> Book a Free Demo
               </button>

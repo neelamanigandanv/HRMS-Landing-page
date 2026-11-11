@@ -21,8 +21,9 @@ export function GlossaryDetailPage() {
     return getQuestionBySlug(slug || "attendance-management");
   }, [slug]);
 
-  // Scroll to top on slug change
+  // Reset email input and scroll to top on slug change
   useEffect(() => {
+    setSidebarEmail("");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [slug]);
 
@@ -74,7 +75,7 @@ export function GlossaryDetailPage() {
             </p>
             <Link
               to="/resources/hrms-glossary"
-              className="inline-flex items-center px-6 py-2.5 rounded-full bg-[#004B49] text-white font-semibold text-sm hover:bg-[#00201F] transition-all"
+              className="inline-flex items-center px-6 py-2.5 rounded-[8px] bg-[#004B49] text-white font-semibold text-sm hover:bg-[#003836] transition-all"
             >
               Browse All HRMS Terms &rarr;
             </Link>
@@ -187,7 +188,7 @@ export function GlossaryDetailPage() {
                       See how Zentilos unifies attendance, payroll automation, biometric sync, and statutory compliance in one modern platform.
                     </p>
 
-                    <form onSubmit={handleSidebarDemoSubmit} className="glossary-primary-cta-form">
+                    <form key={slug || "default"} onSubmit={handleSidebarDemoSubmit} className="glossary-primary-cta-form">
                       <div className="glossary-sidebar-input-wrap">
                         <Icon name="mail" size={15} className="glossary-sidebar-input-icon" />
                         <input

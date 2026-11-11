@@ -399,8 +399,8 @@ export function SmallBusinessPage() {
               >
                 Request a Demo <Icon name="arrow" size={16} />
               </button>
-              <a href="#workspace" className="sb-btn-secondary">
-                Explore the Workspace
+              <a href="#the-way-of-working" className="sb-btn-secondary">
+                Explore Features
               </a>
             </div>
 

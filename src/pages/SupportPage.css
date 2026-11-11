@@ -106,7 +106,7 @@
   background: #ffffff !important;
   color: #0c152e !important;
   border: 1.5px solid #ebdcd5 !important;
-  border-radius: 6px !important;
+  border-radius: 8px !important;
   padding: 0 1.65rem !important;
   font-family: inherit !important;
   font-size: 0.95rem !important;
@@ -770,7 +770,7 @@
   padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: 750;
-  border-radius: 12px;
+  border-radius: 8px;
   background: #004B49;
   color: #ffffff;
   border: none;
@@ -783,7 +783,7 @@
 }
 
 .support-submit-btn:hover:not(:disabled) {
-  background: #00201F;
+  background: #003836;
   box-shadow: 0 8px 20px rgba(0, 75, 73, 0.25);
 }
 

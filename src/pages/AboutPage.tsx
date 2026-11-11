@@ -1,160 +1,57 @@
-import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import FooterCTA from "../components/common/FooterCTA";
+import ImpactSection from "../components/common/ImpactSection";
 import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
 import "./AboutPage.css";
 
-function CountUpNumber({
-  target,
-  prefix = "",
-  suffix = "",
-  decimals = 0,
-}: {
-  target: number;
-  prefix?: string;
-  suffix?: string;
-  decimals?: number;
-}) {
-  const [value, setValue] = useState(0);
-  const elementRef = useRef<HTMLSpanElement>(null);
-  const hasAnimated = useRef(false);
-
-  useEffect(() => {
-    let frame = 0;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!entries[0].isIntersecting || hasAnimated.current) return;
-        hasAnimated.current = true;
-        const startedAt = performance.now();
-        const duration = 1600;
-        const animate = (now: number) => {
-          const progress = Math.min((now - startedAt) / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          setValue(target * eased);
-          if (progress < 1) {
-            frame = requestAnimationFrame(animate);
-          }
-        };
-        frame = requestAnimationFrame(animate);
-        observer.disconnect();
-      },
-      { threshold: 0.3 }
-    );
-    if (elementRef.current) observer.observe(elementRef.current);
-    return () => {
-      observer.disconnect();
-      cancelAnimationFrame(frame);
-    };
-  }, [target]);
-
-  const formatted =
-    decimals > 0
-      ? value.toFixed(decimals)
-      : Math.floor(value).toLocaleString("en-US");
-
-  return (
-    <span ref={elementRef} className="stat-number-run">
-      {prefix}
-      {formatted}
-      {suffix}
-    </span>
-  );
-}
-
-interface MilestoneItem {
-  id: string;
-  year: string;
-  tag: string;
-  title: string;
-  desc: string;
-  icon: IconName;
-  badge: string;
-  image?: string;
-  stats: { label: string; val: string }[];
-}
-
-const milestonesData: MilestoneItem[] = [
+const VALUE_CARDS = [
   {
-    id: "m2017",
-    year: "2017",
-    tag: "THE INCEPTION",
-    title: "The Starting Spark in Bengaluru to Eliminate Attendance Chaos",
-    desc: "Zentilos was founded in Bengaluru after experiencing the everyday friction of running multi-branch frontline teams on paper logs and broken spreadsheets. We built our v1 foundation solely to eliminate manual attendance chaos.",
     icon: "zap",
-    badge: "Founded 2017",
-    image: "/images/work-process-team.webp",
-    stats: [
-      { label: "Founded City", val: "Bengaluru" },
-      { label: "Admin Chasing Saved", val: "-85%" },
+    title: "Simplicity First",
+    desc: "If a workflow needs a user manual, it slows teams down. We design every interaction to be fast and intuitive.",
+    points: [
+      "Zero-Training Daily Workflows",
+      "Clean 1-Tap Manager Approvals",
+      "Fast Multi-Branch Onboarding",
     ],
   },
   {
-    id: "m2020",
-    year: "2020",
-    tag: "EARLY ADOPTERS",
-    title: "First 25 Enterprise Pilot Partners & Real-Time Mobile Sync",
-    desc: "Rolled out our private beta with 25 fast-moving retail chains and tech teams. We perfected geofenced mobile verification, automated shift-swap workflows, and instant leave approvals on shop floors.",
+    icon: "lock",
+    title: "Data Privacy & Trust",
+    desc: "Employee records and payroll figures are sacred. We protect company data with strict access rules and encryption.",
+    points: [
+      "Role-Based Access Controls",
+      "Encrypted Pay & Record Vault",
+      "Audit-Ready Compliance Logs",
+    ],
+  },
+  {
     icon: "users",
-    badge: "25+ Pilot Teams",
-    image: "/images/team-careers-card.webp",
-    stats: [
-      { label: "Pilot Enterprises", val: "25+" },
-      { label: "GPS Punch Accuracy", val: "99.8%" },
+    title: "Customer at the Center",
+    desc: "We never hide behind automated queues. When urgent payday deadlines arrive, our specialists stand beside you.",
+    points: [
+      "Dedicated Onboarding Specialists",
+      "Priority Payday Resolution",
+      "Direct HR Policy Guidance",
     ],
   },
   {
-    id: "m2022",
-    year: "2022",
-    tag: "COMPLIANCE ENGINE",
-    title: "100% Automated Statutory Payroll with 3-Minute Processing",
-    desc: "Engineered a native payroll engine fully compliant with statutory regulations (PF, ESI, TDS, PT, and Bonus Act). Monthly payroll processing dropped from 4 stressful days to 3 error-free minutes with automated salary slips.",
-    icon: "finance",
-    badge: "100% Compliant",
-    image: "/images/sb-manager-workspace.webp",
-    stats: [
-      { label: "Payroll Run Time", val: "3 Min" },
-      { label: "Statutory Accuracy", val: "100%" },
-    ],
-  },
-  {
-    id: "m2024",
-    year: "2024",
-    tag: "ENTERPRISE SCALE",
-    title: "Centralized Multi-Branch Governance Across 12+ States",
-    desc: "Unveiled centralized multi-location governance. Regional factories, warehouses, and branch showrooms enforce localized state compliance while executive headquarters maintains unified real-time workforce visibility.",
-    icon: "building",
-    badge: "12+ Regions",
-    image: "/images/about-team-hero.webp",
-    stats: [
-      { label: "Active Regions", val: "12+ States" },
-      { label: "Audit Readiness", val: "100%" },
-    ],
-  },
-  {
-    id: "today",
-    year: "Today",
-    tag: "TRUSTED AT SCALE",
-    title: "We know all the hiring requirements of clients – Including business type, job roles, qualifications & skills.",
-    desc: "Zentilos unifies every layer of workforce operations. From frontline hiring pipelines and automated document verification to multi-branch attendance and 100% compliant statutory payroll, we empower modern enterprises to scale with zero administrative friction.",
-    icon: "sparkle",
-    badge: "40,000+ Staff",
-    image: "/images/about-milestone-reference.webp",
-    stats: [
-      { label: "Jobs Placement", val: "40k" },
-      { label: "Growth This Year", val: "6.1%" },
+    icon: "shield",
+    title: "Radical Transparency",
+    desc: "Honest communication, clear workforce policies, and straightforward pricing — inside our team and with clients.",
+    points: [
+      "Clear Itemized Pay Breakdowns",
+      "Straightforward Plan Pricing",
+      "Open Leave & Policy Rules",
     ],
   },
 ];
 
 export function AboutPage() {
-  const [activeMilestoneId, setActiveMilestoneId] = useState<string>("today");
-  const activeMilestone =
-    milestonesData.find((m) => m.id === activeMilestoneId) || milestonesData[0];
-
   const breadcrumbs = [
     { label: "Home", to: "/" },
     { label: "About Us" },
@@ -258,8 +155,8 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* 3. Milestones on our Journey: Interactive Showcase (Matches Uploaded Reference Design) */}
-      <section className="about-milestones-section" id="story">
+      {/* 3. Milestones on our Journey: Focused Narrative & Impact */}
+      <section className="about-milestones-section" id="milestones">
         <div className="container">
           <SectionHeading
             eyebrow="✦ HOW WE GOT HERE ✦"
@@ -268,55 +165,33 @@ export function AboutPage() {
             center
           />
 
-          {/* Centered Pill Year Tabs */}
-          <div className="milestones-tabs-wrapper">
-            <div className="milestones-pill-nav" role="tablist" aria-label="Journey Milestones Timeline">
-              {milestonesData.map((m) => {
-                const isActive = m.id === activeMilestoneId;
-                return (
-                  <button
-                    key={m.id}
-                    role="tab"
-                    aria-selected={isActive}
-                    type="button"
-                    className={`milestone-pill-tab ${isActive ? "active" : ""}`}
-                    onClick={() => setActiveMilestoneId(m.id)}
-                  >
-                    {m.year === "Today" && <span className="live-dot" />}
-                    <span>{m.year}</span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* 2-Column Showcase Layout matching Reference: Left Photo, Right Story & 2 Stat Cards */}
+          {/* 2-Column Showcase Layout: Left Team Image, Right Story & 2 Stat Cards */}
           <div className="milestone-showcase-stage">
-            {/* Left Column: Portrait Team Photo */}
             <div className="milestone-img-wrapper">
               <img
-                src={activeMilestone.image || "/images/about-milestone-reference.webp"}
-                alt="Zentilos founders and leadership team collaborating on workforce growth"
+                src="/images/about-milestone-journey.webp"
+                alt="Zentilos founding team collaborating in our Bengaluru workspace"
                 className="milestone-journey-img"
                 loading="lazy"
                 decoding="async"
               />
             </div>
 
-            {/* Right Column: Narrative Story & 2 Stat Cards */}
             <div className="milestone-info-wrapper">
-              <h3 className="milestone-headline">{activeMilestone.title}</h3>
+              <h3 className="milestone-headline">
+                Built for modern multi-branch teams — unifying attendance, workflows, and payroll in
+                one calm system.
+              </h3>
 
-              <p className="milestone-paragraph">{activeMilestone.desc}</p>
-
-              <Link to="/request-demo" className="milestone-cta-btn">
-                <span>About Us</span>
-                <span className="milestone-btn-arrow" aria-hidden="true">↘</span>
-              </Link>
+              <p className="milestone-paragraph">
+                Zentilos unifies every layer of workforce operations. From streamlined employee
+                onboarding and automated document verification to geofenced branch attendance and
+                100% compliant statutory payroll, we empower growing organizations to scale with
+                zero administrative friction.
+              </p>
 
               {/* Bottom 2 Pastel Stat Cards */}
               <div className="milestone-stat-cards">
-                {/* Card 1: Lavender/Plum Pastel with Climber on Steps Flag Icon */}
                 <div className="milestone-stat-card milestone-stat-card--purple">
                   <div className="milestone-card-icon" aria-hidden="true">
                     <svg
@@ -341,11 +216,10 @@ export function AboutPage() {
                       <path d="M36 9L43 12L36 15Z" fill="none" />
                     </svg>
                   </div>
-                  <span className="milestone-card-num">{activeMilestone.stats[0]?.val}</span>
-                  <span className="milestone-card-label">{activeMilestone.stats[0]?.label}</span>
+                  <span className="milestone-card-num">40k+</span>
+                  <span className="milestone-card-label">Employees on Platform</span>
                 </div>
 
-                {/* Card 2: Mint/Sage Pastel with Presentation Growth Chart Board Icon */}
                 <div className="milestone-stat-card milestone-stat-card--mint">
                   <div className="milestone-card-icon" aria-hidden="true">
                     <svg
@@ -367,8 +241,8 @@ export function AboutPage() {
                       <line x1="14" y1="35" x2="34" y2="35" />
                     </svg>
                   </div>
-                  <span className="milestone-card-num">{activeMilestone.stats[1]?.val}</span>
-                  <span className="milestone-card-label">{activeMilestone.stats[1]?.label}</span>
+                  <span className="milestone-card-num">98%</span>
+                  <span className="milestone-card-label">On-Time Payroll Rate</span>
                 </div>
               </div>
             </div>
@@ -546,23 +420,36 @@ export function AboutPage() {
           />
 
           <div className="setup-grid" style={{ marginTop: "40px" }}>
-            {[
-              ["zap", "Simplicity First", "If a workflow needs a 50-page user manual, it is broken. We design every interaction to be intuitive, clean, and fast."],
-              ["lock", "Data Privacy & Trust", "Employee records and payroll figures are sacred. We protect your company data with strict access rules, encryption, and zero compromises."],
-              ["users", "Customer at the Center", "We do not hide behind automated ticket queues. When you have an urgent payroll deadline, our dedicated team is right beside you."],
-              ["shield", "Radical Transparency", "We believe in honest communication, clear policies, and straightforward pricing—both within our own team and with our clients."],
-            ].map((x, i) => (
-              <div className="setup-card" key={x[1]}>
+            {VALUE_CARDS.map((item, i) => (
+              <div className="setup-card" key={item.title}>
                 <span className={`setup-icon i${i}`}>
-                  <Icon name={x[0] as IconName} />
+                  <Icon name={item.icon as IconName} />
                 </span>
-                <strong>{x[1]}</strong>
-                <p>{x[2]}</p>
-                <div className={`setup-art art${i}`}>
-                  <i />
-                  <i />
-                  <i />
-                  <i />
+                <strong>{item.title}</strong>
+                <p>{item.desc}</p>
+                <div className={`setup-art setup-art-points setup-art-bg-${i}`}>
+                  <ul className="setup-points">
+                    {item.points.map((pt) => (
+                      <li key={pt} className="setup-point-item">
+                        <svg
+                          className="setup-point-arrow"
+                          width="12"
+                          height="12"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                          stroke="#10B981"
+                          strokeWidth="2.1"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          aria-hidden="true"
+                        >
+                          <line x1="3.5" y1="3.5" x2="12.5" y2="12.5" />
+                          <polyline points="12.5 5.5 12.5 12.5 5.5 12.5" />
+                        </svg>
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -570,98 +457,8 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* 7. Numbers: Animated Running Counters matching Home Page exact size and indigo color */}
-      <section className="about-numbers-section">
-        <div className="container">
-          <SectionHeading
-            eyebrow="OUR IMPACT"
-            title="Numbers we stand behind"
-            body="Concrete milestones that demonstrate the reliability, scale, and trust placed in our platform."
-            center
-          />
-
-          {/* Hidden SVG defs for reusable glowing arc gradient matching home page indigo */}
-          <svg style={{ position: "absolute", width: 0, height: 0 }} aria-hidden="true">
-            <defs>
-              <linearGradient id="statIndigoArc" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#a5b4fc" stopOpacity="0.3" />
-                <stop offset="50%" stopColor="#004B49" stopOpacity="1" />
-                <stop offset="100%" stopColor="#a5b4fc" stopOpacity="0.3" />
-              </linearGradient>
-            </defs>
-          </svg>
-
-          <div className="impact-stats-container">
-            <div className="impact-stats-bar">
-              <div className="impact-stat-item">
-                <div className="stat-number-group">
-                  <CountUpNumber target={500} suffix="+" />
-                  <svg className="stat-glow-arc" viewBox="0 0 54 8" fill="none">
-                    <path
-                      d="M 3 2.5 C 16 7.5 38 7.5 51 2.5"
-                      stroke="url(#statIndigoArc)"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-                <div className="stat-label-text">Businesses trust Zentilos</div>
-              </div>
-
-              <div className="impact-stat-divider" />
-
-              <div className="impact-stat-item">
-                <div className="stat-number-group">
-                  <CountUpNumber target={98} suffix="%" />
-                  <svg className="stat-glow-arc" viewBox="0 0 54 8" fill="none">
-                    <path
-                      d="M 3 2.5 C 16 7.5 38 7.5 51 2.5"
-                      stroke="url(#statIndigoArc)"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-                <div className="stat-label-text">On-time payroll rate</div>
-              </div>
-
-              <div className="impact-stat-divider" />
-
-              <div className="impact-stat-item">
-                <div className="stat-number-group">
-                  <CountUpNumber target={2.4} decimals={1} suffix="M+" />
-                  <svg className="stat-glow-arc" viewBox="0 0 54 8" fill="none">
-                    <path
-                      d="M 3 2.5 C 16 7.5 38 7.5 51 2.5"
-                      stroke="url(#statIndigoArc)"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-                <div className="stat-label-text">Attendance logs monthly</div>
-              </div>
-
-              <div className="impact-stat-divider" />
-
-              <div className="impact-stat-item">
-                <div className="stat-number-group">
-                  <CountUpNumber target={4.8} decimals={1} suffix="/5" />
-                  <svg className="stat-glow-arc" viewBox="0 0 54 8" fill="none">
-                    <path
-                      d="M 3 2.5 C 16 7.5 38 7.5 51 2.5"
-                      stroke="url(#statIndigoArc)"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </div>
-                <div className="stat-label-text">Average customer rating</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 7. Numbers: Animated Running Counters matching Home Page exact size and teal color */}
+      <ImpactSection />
 
       {/* 8. Find Out More: Discover Zentilos & Our Team (Careers, Case Studies, Resource Hub) */}
       <section className="about-discover-section">

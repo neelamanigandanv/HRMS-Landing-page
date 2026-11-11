@@ -47,17 +47,17 @@
   align-items: center;
   justify-content: center;
   gap: 7px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: #F6F8F8;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
   color: #004B49;
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   margin: 0 auto 18px;
-  border: 1px solid rgba(0, 75, 73, 0.16);
-  box-shadow: 0 2px 6px rgba(0, 75, 73, 0.04);
+  border: none;
+  box-shadow: none;
 }
 
 .blog-main-title {
@@ -128,10 +128,16 @@
 }
 
 .blog-cat-btn.is-active {
-  background: #00201F;
+  background: #004B49;
   color: #ffffff;
-  border-color: #00201F;
+  border-color: #004B49;
   box-shadow: 0 3px 12px rgba(0, 75, 73, 0.22);
+}
+
+.blog-cat-btn.is-active:hover {
+  background: #003836;
+  border-color: #003836;
+  color: #ffffff;
 }
 
 /* --- Cards Grid Section --- */
@@ -306,7 +312,7 @@
   align-items: center;
   gap: 8px;
   padding: 12px 32px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: #ffffff;
   color: #004B49;
   border: 1px solid #004B49;
@@ -1233,7 +1239,7 @@
   align-items: center;
   gap: 8px;
   padding: 13px 30px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: #ffffff;
   color: #00201F !important;
   font-size: 14.5px;
@@ -1256,7 +1262,7 @@
   align-items: center;
   gap: 8px;
   padding: 13px 28px;
-  border-radius: 999px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff !important;
   font-size: 14.5px;

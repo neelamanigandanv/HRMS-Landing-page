@@ -126,7 +126,7 @@
   gap: 0.85rem;
 }
 
-/* Primary Button - Exact styling of the reference: 6px radius, white inner arrow square */
+/* Primary Button - 8px radius, white inner arrow square */
 .corporate-hero-btn-primary {
   display: inline-flex;
   align-items: center;
@@ -136,7 +136,7 @@
   background: #004B49;
   color: #ffffff;
   border: 1px solid #004B49;
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 0 0.35rem 0 1.25rem;
   font-family: inherit;
   font-size: 0.9rem;
@@ -190,7 +190,7 @@
   background: #ffffff;
   color: #0c152e;
   border: 1.5px solid #ebdcd5;
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 0 1.35rem;
   font-family: inherit;
   font-size: 0.9rem;

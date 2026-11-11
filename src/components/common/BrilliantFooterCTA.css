@@ -174,7 +174,7 @@
   background: #ffffff;
   color: #004B49;
   border: 1.5px solid #ffffff;
-  border-radius: 6px;
+  border-radius: 8px;
   font-family: inherit;
   font-size: 0.9375rem;
   font-weight: 750;
@@ -206,7 +206,7 @@
   background: rgba(255, 255, 255, 0.18);
   color: #ffffff;
   border: 1.5px solid rgba(255, 255, 255, 0.45);
-  border-radius: 6px;
+  border-radius: 8px;
   font-family: inherit;
   font-size: 0.9375rem;
   font-weight: 750;

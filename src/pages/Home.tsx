@@ -13,6 +13,7 @@ import { useCurrency } from "../context/CurrencyContext";
 import { submitEnquiry } from "../services/enquiryService";
 import { buildFAQSchema } from "../lib/schema";
 import FooterCTA from "../components/common/FooterCTA";
+import MobileAppPromoSection from "../components/home/MobileAppPromoSection";
 import "../components/home/CorporateHero.css";
 
 export function DemoForm({ compact = false }: { compact?: boolean }) {
@@ -1224,15 +1225,52 @@ function PriceEstimator() {
           </button>
         ))}
       </div>
-      <div className="estimator-panel">
+      <div className={`estimator-panel ${plan === "enterprise" ? "estimator-panel--enterprise" : ""}`}>
         {plan === "enterprise" ? (
           <div className="enterprise-price">
-            <span>
-              <Icon name="branch" size={28} />
-            </span>
-            <h3>Built around your business</h3>
-            <p>Let’s create a plan for your scale, structure, and security needs.</p>
-            <Button
+            {/* Soft decorative background circles */}
+            <div className="enterprise-bg-decor" aria-hidden="true">
+              <span className="enterprise-decor-circle-1" />
+              <span className="enterprise-decor-circle-2" />
+              <span className="enterprise-decor-circle-3" />
+            </div>
+
+            {/* Rounded Icon Badge */}
+            <div className="enterprise-icon-box" aria-hidden="true">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M3 21h18" />
+                <path d="M5 21V11l4-2v12" />
+                <path d="M9 21V5l6-2v18" />
+                <path d="M15 21V9l4 2v10" />
+                <path d="M12 7h.01M12 10h.01M12 13h.01M12 16h.01M7 13h.01M7 16h.01M17 13h.01M17 16h.01" />
+              </svg>
+            </div>
+
+            {/* Two-line bold heading */}
+            <h3 className="enterprise-title">
+              Built around
+              <br />
+              your <span className="enterprise-title-accent">business</span>
+            </h3>
+
+            {/* Subtitle */}
+            <p className="enterprise-subtitle">
+              Let&rsquo;s create a plan for your scale, structure, and security needs.
+            </p>
+
+            {/* Primary Pill CTA Button */}
+            <button
+              type="button"
+              className="enterprise-sales-btn"
               onClick={() =>
                 openDemoModal({
                   title: "Talk to Sales",
@@ -1241,8 +1279,75 @@ function PriceEstimator() {
                 })
               }
             >
-              Talk to Sales <Icon name="arrow" />
-            </Button>
+              <span>Talk to Sales</span>
+              <Icon name="arrow" size={16} />
+            </button>
+
+            {/* Bottom 3 Trust Points Strip */}
+            <div className="enterprise-trust-strip">
+              <div className="enterprise-trust-item">
+                <span className="enterprise-trust-icon" aria-hidden="true">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M3 16l6-6 4 4 8-8" />
+                    <path d="M17 6h4v4" />
+                    <path d="M5 21v-2M9 21v-4M13 21v-3M17 21v-6M21 21v-7" />
+                  </svg>
+                </span>
+                <span className="enterprise-trust-text">
+                  Scalable
+                  <br />
+                  for growth
+                </span>
+              </div>
+
+              <div className="enterprise-trust-divider" aria-hidden="true" />
+
+              <div className="enterprise-trust-item">
+                <span className="enterprise-trust-icon" aria-hidden="true">
+                  <Icon name="shield" size={20} />
+                </span>
+                <span className="enterprise-trust-text">
+                  Enterprise-grade
+                  <br />
+                  security
+                </span>
+              </div>
+
+              <div className="enterprise-trust-divider" aria-hidden="true" />
+
+              <div className="enterprise-trust-item">
+                <span className="enterprise-trust-icon" aria-hidden="true">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                    <path d="M12 22c2 0 4-1 4-2.5" />
+                  </svg>
+                </span>
+                <span className="enterprise-trust-text">
+                  Dedicated
+                  <br />
+                  support
+                </span>
+              </div>
+            </div>
           </div>
         ) : (
           <>
@@ -1499,20 +1604,13 @@ export function Home() {
                   </span>
                 </button>
 
-                <a
-                  href="#built-around-your-business"
+                <Link
+                  to="/product"
                   className="corporate-hero-btn-secondary"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const el = document.getElementById("built-around-your-business");
-                    if (el) {
-                      el.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }
-                  }}
                 >
                   <span>Explore Features</span>
                   <Icon name="arrow" size={14} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -1624,19 +1722,40 @@ export function Home() {
                   {/* Left Column: Top Header + Bottom 2 Capability Badges */}
                   <div className="diff-auto-col-left">
                     <div className="diff-automated-header">
-                      <span className="diff-automated-tag">ZENTILOS</span>
+                      <span className="diff-automated-tag">
+                        <span className="diff-automated-logo-mark" aria-hidden="true">
+                          <svg
+                            viewBox="0 0 100 100"
+                            width="20"
+                            height="20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <circle cx="50" cy="50" r="50" fill="#FFFFFF" />
+                            <path
+                              d="M34 29H70L28 71H46"
+                              stroke="#004B49"
+                              strokeWidth="15"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <circle cx="71" cy="70" r="9" fill="#FFB969" />
+                          </svg>
+                        </span>
+                        <span>ZENTILOS</span>
+                      </span>
                       <h3 className="diff-automated-title">
                         Zentilos Automated<br />Process
                       </h3>
                     </div>
 
                     <div className="diff-auto-badges-left">
-                      {/* Floating Card 1: GPS + Selfie Verified */}
+                      {/* Floating Card 1: Biometric Attendance Synced */}
                       <div className="diff-floating-pill-card">
                         <span className="diff-pill-card-icon">
-                          <Icon name="map-pin" size={16} />
+                          <Icon name="attendance" size={16} />
                         </span>
-                        <span className="diff-pill-card-label">GPS + Selfie Verified Instantly</span>
+                        <span className="diff-pill-card-label">Biometric Attendance Synced Instantly</span>
                         <span className="diff-pill-card-check">✓</span>
                       </div>
 
@@ -1651,18 +1770,9 @@ export function Home() {
                     </div>
                   </div>
 
-                  {/* Right Column: 3 Capability Badges Evenly Stacked */}
+                  {/* Right Column: 2 Capability Badges Aligned Straight with Bottom Left */}
                   <div className="diff-auto-col-right">
-                    {/* Floating Card 3: WhatsApp Reminder */}
-                    <div className="diff-floating-pill-card">
-                      <span className="diff-pill-card-icon">
-                        <Icon name="whatsapp" size={16} />
-                      </span>
-                      <span className="diff-pill-card-label">WhatsApp Reminder Automatically Sent</span>
-                      <span className="diff-pill-card-check">✓</span>
-                    </div>
-
-                    {/* Floating Card 4: No Missing Entries */}
+                    {/* Floating Card 3: No Missing Entries */}
                     <div className="diff-floating-pill-card">
                       <span className="diff-pill-card-icon">
                         <Icon name="calendar" size={16} />
@@ -1671,7 +1781,7 @@ export function Home() {
                       <span className="diff-pill-card-check">✓</span>
                     </div>
 
-                    {/* Floating Card 5: Payroll Ready */}
+                    {/* Floating Card 4: Payroll Ready */}
                     <div className="diff-floating-pill-card">
                       <span className="diff-pill-card-icon">
                         <Icon name="payroll" size={16} />
@@ -1696,22 +1806,128 @@ export function Home() {
             />
             <div className="setup-grid">
               {[
-                ["branch", "Organization structure", "Map every branch, department and reporting line."],
-                ["role", "Custom roles", "Give each person exactly the access they need."],
-                ["calendar", "Work calendars", "Set shifts, weeks and holidays by location."],
-                ["globe", "Multi-country ready", "Run policies and payroll across geographies."],
-              ].map((x, i) => (
-                <div className="setup-card" key={x[1]}>
-                  <span className={`setup-icon i${i}`}>
-                    <Icon name={x[0] as IconName} />
-                  </span>
-                  <strong>{x[1]}</strong>
-                  <p>{x[2]}</p>
-                  <div className={`setup-art art${i}`}>
-                    <i />
-                    <i />
-                    <i />
-                    <i />
+                {
+                  icon: "branch",
+                  image: "/images/setup-card-org.jpg",
+                  title: "Organization structure",
+                  desc: "Map every branch, department and reporting hierarchy with complete structural clarity.",
+                  linkText: "Explore hierarchies",
+                  href: "/features/employee-management",
+                  waveD: "M0,20 C110,42 260,8 400,24 L400,60 L0,60 Z",
+                  points: [
+                    "Branch & Regional Hierarchies",
+                    "Departments & Cost Centers",
+                    "Manager Reporting Trees",
+                  ],
+                },
+                {
+                  icon: "role",
+                  image: "/images/setup-card-roles.jpg",
+                  title: "Custom roles",
+                  desc: "Give each person exactly the access they need across admin, branch, and team portals.",
+                  linkText: "Manage custom roles",
+                  href: "/features/roles-permissions",
+                  waveD: "M0,14 C140,40 270,10 400,30 L400,60 L0,60 Z",
+                  points: [
+                    "HR Admins & Payroll Leads",
+                    "Branch & Shift Managers",
+                    "Employee Self-Service Portal",
+                  ],
+                },
+                {
+                  icon: "calendar",
+                  image: "/images/setup-card-calendar.jpg",
+                  title: "Work calendars",
+                  desc: "Configure flexible shifts, location holiday calendars, and rotational office schedules.",
+                  linkText: "Configure work calendars",
+                  href: "/features/attendance-management",
+                  waveD: "M0,26 C130,10 250,42 400,18 L400,60 L0,60 Z",
+                  points: [
+                    "Rotational & Flexible Shifts",
+                    "Location Holiday Calendars",
+                    "Weekend & Overtime Rules",
+                  ],
+                },
+                {
+                  icon: "globe",
+                  image: "/images/setup-card-global.jpg",
+                  title: "Multi-country ready",
+                  desc: "Run localized workforce policies and statutory payroll accurately across all regions.",
+                  linkText: "Explore global compliance",
+                  href: "/features/payroll-management",
+                  waveD: "M0,18 C160,44 290,14 400,22 L400,60 L0,60 Z",
+                  points: [
+                    "Local Statutory Compliance",
+                    "Multi-Currency Payroll Setup",
+                    "Regional Policy Controls",
+                  ],
+                },
+              ].map((item, i) => (
+                <div className="setup-card sf-setup-card" key={item.title}>
+                  <div className="setup-card-visual">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="setup-card-img"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="setup-card-visual-overlay" aria-hidden="true" />
+                    <span className={`setup-card-badge setup-icon i${i}`}>
+                      <Icon name={item.icon as IconName} />
+                    </span>
+                    <svg
+                      className="setup-card-wave"
+                      viewBox="0 0 400 60"
+                      preserveAspectRatio="none"
+                      fill="#FFFFFF"
+                      aria-hidden="true"
+                    >
+                      <path d={item.waveD} />
+                    </svg>
+                  </div>
+
+                  <div className="setup-card-body">
+                    <strong className="setup-card-title">{item.title}</strong>
+                    <p className="setup-card-desc">{item.desc}</p>
+
+                    <ul className="setup-card-points">
+                      {item.points.map((pt) => (
+                        <li key={pt} className="setup-card-point-item">
+                          <span className="setup-point-check-badge" aria-hidden="true">
+                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+                              <path
+                                d="M10 3L4.5 8.5L2 6"
+                                stroke="#004B49"
+                                strokeWidth="2.2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          </span>
+                          <span>{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link to={item.href} className="setup-card-link">
+                      <span>{item.linkText}</span>
+                      <svg
+                        className="setup-card-link-arrow"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.1"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <line x1="3.5" y1="8" x2="12.5" y2="8" />
+                        <polyline points="8.5 4 12.5 8 8.5 12" />
+                      </svg>
+                    </Link>
                   </div>
                 </div>
               ))}
@@ -1736,6 +1952,8 @@ export function Home() {
             <ModuleCarousel3D />
           </div>
         </section>
+
+        <MobileAppPromoSection />
 
         <section className="pricing-section" id="pricing">
           <div className="container">
@@ -1784,7 +2002,7 @@ export function Home() {
             />
             <div className="testimonials">
               <article>
-                <div className="quote-mark">“</div>
+                <div className="story-company-name">UrbanBite</div>
                 <p>
                   Zentilos brought our five branches onto one system in under three weeks. Payroll
                   that took us four days now takes a few hours.
@@ -1799,7 +2017,7 @@ export function Home() {
                 </div>
               </article>
               <article>
-                <div className="quote-mark">“</div>
+                <div className="story-company-name">Northstar Logistics</div>
                 <p>
                   Our employees actually use it. Attendance is transparent, leave approvals are
                   quick, and our managers finally have the visibility they need.
@@ -1814,7 +2032,7 @@ export function Home() {
                 </div>
               </article>
               <article>
-                <div className="quote-mark">“</div>
+                <div className="story-company-name">OrbitWorks</div>
                 <p>
                   The support during migration was exceptional. The team understood complex statutory payroll
                   and helped us configure every policy correctly.
