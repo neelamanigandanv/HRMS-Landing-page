@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
+import PanoramicMidCTA from "../components/common/PanoramicMidCTA";
 import SEO from "../components/layout/SEO";
 import Icon, { IconName } from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -930,48 +931,15 @@ export function RolesPermissionsPage() {
         {/* =========================================================================
             6. MIDDLE CTA SECTION (Give Every Role the Right Level of Access)
             ========================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="middle-cta-title">
-          <div className="container">
-            <div className="emp-center-cta-card">
-              <div className="emp-cta-primary-bar" />
-
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/emp-cta-collaboration.webp"
-                  alt="Enterprise security team reviewing roles and permissions policies"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
-
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ ENTERPRISE DATA PROTECTION ✦</span>
-                <h2 id="middle-cta-title" className="emp-cta-title">
-                  Give Every Role the Right Level of Access.
-                </h2>
-                <p className="emp-cta-desc">
-                  Protect confidential workforce data and empower your team with clear, role-scoped permissions across all branches.
-                </p>
-                <div className="emp-cta-btn-group">
-                  <button
-                    type="button"
-                    className="emp-cta-btn"
-                    onClick={handleOpenDemo}
-                  >
-                    Request a Demo
-                  </button>
-                  <button
-                    type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={handleOpenDemo}
-                  >
-                    Talk to a Security Specialist <Icon name="arrow" size={14} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PanoramicMidCTA
+          eyebrow="Helping Growing Companies Secure Every Role and Record!"
+          title="Bringing Modern Roles & Permissions Solutions"
+          imageSrc="/images/employee-directory-dashboard.webp"
+          imageAlt="Administrator managing employee roles and access permissions from a directory dashboard"
+          demoTitle="Schedule a Roles & Permissions Demo"
+          demoSubtitle="Experience granular role-based access, branch-scoped permissions, and audit-ready security controls with Zentilos."
+          defaultInterest="Roles & Permissions"
+        />
 
         {/* =========================================================================
             7. HOW IT WORKS TOGETHER (Access Control Across Your HRMS)

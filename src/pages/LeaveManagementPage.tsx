@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
+import PanoramicMidCTA from "../components/common/PanoramicMidCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -175,8 +176,8 @@ export function LeaveManagementPage() {
       id: "payroll-sync",
       badge: "03 Payroll & Attendance",
       eyebrow: "✦ 03. ATTENDANCE & PAYROLL SYNCHRONIZATION ✦",
-      image: "/images/leave-block-payroll.webp",
-      imageAlt: "Finance and HR specialists reviewing payroll reconciliation report with leave encashment and unpaid days",
+      image: "/images/branch-payroll.webp",
+      imageAlt: "Payroll specialists reconciling leave encashment and Loss of Pay deductions",
       title: "Seamless Attendance & Automated Payroll Synchronization",
       description:
         "Never manually calculate Loss of Pay (LOP) again. Approved leaves instantly update biometric attendance rosters, shift calendars, and monthly salary computations in real time.",
@@ -878,63 +879,15 @@ export function LeaveManagementPage() {
         {/* =========================================================================
             6. CENTER CTA SECTION
             ========================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
-          <div className="container">
-            <div className="emp-center-cta-card">
-              {/* Primary Color Accent Block */}
-              <div className="emp-cta-primary-bar" />
-
-              {/* Overlapping Photorealistic Team Collaboration Image */}
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/leave-block-payroll.webp"
-                  alt="Finance and HR managers reviewing leave-to-payroll reconciliation report"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Right Content Area */}
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ CONNECTED TIME-OFF PLATFORM ✦</span>
-                <h2 id="cta-banner-title" className="emp-cta-title">
-                  Ready to Modernize Your Leave Management?
-                </h2>
-                <p className="emp-cta-desc">
-                  Eliminate spreadsheet balance disputes, stop coverage blindspots, and link approved leaves straight to payroll. Keep your workforce rested, compliant, and energized.
-                </p>
-                <div className="emp-cta-btn-group">
-                  <button
-                    type="button"
-                    className="emp-cta-btn"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Schedule a Leave Management Demo",
-                        subtitle:
-                          "Experience automated accruals, team collision alerts, and 1-click payroll sync with Zentilos.",
-                      })
-                    }
-                  >
-                    Book a Demo
-                  </button>
-                  <button
-                    type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Talk to a Leave Specialist",
-                        subtitle:
-                          "Consult with our product advisors on custom policy structures, multi-branch holiday lists, and seamless migration assistance.",
-                      })
-                    }
-                  >
-                    Talk to a Specialist <Icon name="arrow" size={14} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PanoramicMidCTA
+          eyebrow="Helping Growing Teams Balance Time-Off With Confidence!"
+          title="Bringing Modern Leave Management Solutions"
+          imageSrc="/images/leave-block-payroll.webp"
+          imageAlt="Finance and HR managers reviewing leave-to-payroll reconciliation report"
+          demoTitle="Schedule a Leave Management Demo"
+          demoSubtitle="Experience automated accruals, team collision alerts, and 1-click payroll sync with Zentilos."
+          defaultInterest="Leave Management"
+        />
 
         {/* =========================================================================
             7. CONNECTED HRMS MODULES (Works Better Together)

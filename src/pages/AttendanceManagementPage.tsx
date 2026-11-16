@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
+import PanoramicMidCTA from "../components/common/PanoramicMidCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -119,8 +120,8 @@ export function AttendanceManagementPage() {
       id: "touchless-biometrics",
       badge: "01 Touchless Biometrics",
       eyebrow: "✦ 01. TOUCHLESS BIOMETRIC & FACIAL RECOGNITION ✦",
-      image: "/images/att-hero-showcase.webp",
-      imageAlt: "Touchless AI facial recognition scanner verifying employee attendance at modern office entrance",
+      image: "/images/branch-biometric.webp",
+      imageAlt: "Biometric access terminal verifying employee identity at a workplace entrance",
       title: "Touchless AI Facial Recognition & Biometric Terminal Sync",
       description:
         "Deploy tamper-proof biometric terminals and AI facial recognition scanners that authenticate employees in under 0.8 seconds with liveness detection, completely eradicating buddy punching.",
@@ -432,11 +433,11 @@ export function AttendanceManagementPage() {
                 </div>
               </div>
 
-              {/* Center Main Card: Real Attendance Facial Recognition Terminal in Action */}
+              {/* Center Main Card: Real Attendance Facial Recognition & Digital Terminal in Action */}
               <div className="emp-hero-center-photo-card">
                 <img
                   src="/images/att-hero-showcase.webp"
-                  alt="Employee seamlessly clocking in using AI facial recognition kiosk terminal in modern corporate office"
+                  alt="Interactive attendance management terminal with automated clock-in, team sync, and shift tracking"
                   className="emp-hero-center-img"
                   loading="eager"
                 />
@@ -879,63 +880,15 @@ export function AttendanceManagementPage() {
         {/* =========================================================================
             6. CENTER CTA SECTION
             ========================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
-          <div className="container">
-            <div className="emp-center-cta-card">
-              {/* Primary Color Accent Block */}
-              <div className="emp-cta-primary-bar" />
-
-              {/* Overlapping Photorealistic Team Collaboration Image */}
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/att-process-workforce.webp"
-                  alt="Workforce leaders reviewing real-time attendance dashboard and punch logs"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Right Content Area */}
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ CONNECTED TIME & ATTENDANCE ✦</span>
-                <h2 id="cta-banner-title" className="emp-cta-title">
-                  Ready to Modernize Workforce Attendance?
-                </h2>
-                <p className="emp-cta-desc">
-                  Replace disconnected punch machines, manual spreadsheets, and overtime disputes with one unified, automated attendance system. Keep every shift verified and compliant from day one.
-                </p>
-                <div className="emp-cta-btn-group">
-                  <button
-                    type="button"
-                    className="emp-cta-btn"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Schedule an Attendance Management Demo",
-                        subtitle:
-                          "Experience touchless biometrics, GPS geofencing, and automated payroll sync with Zentilos.",
-                      })
-                    }
-                  >
-                    Book a Demo
-                  </button>
-                  <button
-                    type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Talk to an Attendance Specialist",
-                        subtitle:
-                          "Consult with our product advisors on hardware terminal compatibility, shift roster policies, and seamless migration assistance.",
-                      })
-                    }
-                  >
-                    Talk to a Specialist <Icon name="arrow" size={14} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PanoramicMidCTA
+          eyebrow="Helping Growing Teams Track Every Shift and Punch!"
+          title="Bringing Modern Time & Attendance Solutions"
+          imageSrc="/images/att-process-workforce.webp"
+          imageAlt="Workforce leaders reviewing real-time attendance dashboard and punch logs"
+          demoTitle="Schedule an Attendance Management Demo"
+          demoSubtitle="Experience touchless biometrics, GPS geofencing, and automated payroll sync with Zentilos."
+          defaultInterest="Attendance Management"
+        />
 
         {/* =========================================================================
             7. CONNECTED HRMS MODULES (Works Better Together)

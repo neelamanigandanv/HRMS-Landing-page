@@ -218,24 +218,26 @@
 
 /* Left & Right Floating UI Cards */
 .emp-hero-float-card {
-  background: #ffffff;
+  background: linear-gradient(165deg, #FFFFFF 0%, #F0F8F7 50%, #E3F2F1 100%);
   border-radius: 20px;
   padding: 1.5rem 1.35rem;
   box-shadow:
-    0 20px 40px -10px rgba(25, 23, 53, 0.08),
+    0 20px 40px -10px rgba(0, 75, 73, 0.14),
+    0 4px 14px rgba(0, 75, 73, 0.06),
     0 1px 3px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 75, 73, 0.9);
+  border: 1px solid rgba(0, 75, 73, 0.22);
   text-align: left;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
   z-index: 3;
 }
 
 .emp-hero-float-card:hover {
   transform: translateY(-4px);
+  border-color: rgba(0, 75, 73, 0.45);
   box-shadow:
-    0 28px 50px -12px rgba(0, 75, 73, 0.12),
-    0 2px 6px rgba(0, 0, 0, 0.05);
+    0 28px 50px -12px rgba(0, 75, 73, 0.2),
+    0 8px 24px rgba(0, 75, 73, 0.09);
 }
 
 /* Left Widget: Compact height matching the right widget */
@@ -288,8 +290,9 @@
   font-weight: 600;
   padding: 0.25rem 0.55rem;
   border-radius: 9999px;
-  background-color: #F6F8F8;
+  background-color: rgba(0, 75, 73, 0.08);
   color: #004B49;
+  border: 1px solid rgba(0, 75, 73, 0.16);
 }
 
 .emp-float-widget-pill-green {
@@ -297,8 +300,9 @@
   font-weight: 600;
   padding: 0.25rem 0.55rem;
   border-radius: 9999px;
-  background-color: #ecfdf5;
-  color: #059669;
+  background-color: rgba(0, 75, 73, 0.1);
+  color: #004B49;
+  border: 1px solid rgba(0, 75, 73, 0.22);
 }
 
 /* Donut Chart inside Left Widget */
@@ -367,10 +371,10 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow:
-    0 25px 60px -15px rgba(25, 23, 53, 0.16),
-    0 6px 18px rgba(0, 0, 0, 0.05);
+    0 25px 60px -15px rgba(0, 75, 73, 0.18),
+    0 6px 18px rgba(0, 0, 0, 0.06);
   background: #ffffff;
-  border: 1px solid rgba(0, 75, 73, 0.8);
+  border: 1px solid rgba(0, 75, 73, 0.5);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
   z-index: 2;
 }
@@ -378,8 +382,8 @@
 .emp-hero-center-photo-card:hover {
   transform: translateY(-3px) scale(1.005);
   box-shadow:
-    0 32px 70px -12px rgba(0, 75, 73, 0.18),
-    0 8px 22px rgba(0, 0, 0, 0.06);
+    0 32px 70px -12px rgba(0, 75, 73, 0.22),
+    0 8px 22px rgba(0, 0, 0, 0.08);
 }
 
 .emp-hero-center-img {
@@ -413,6 +417,7 @@
   color: #065f46;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.8);
+  z-index: 3;
 }
 
 .emp-live-pulse {
@@ -1575,8 +1580,230 @@
 
 
 /* =========================================================================
-   6. CENTER CTA SECTION (Replaces Impact Section - Matches Reference Image 1)
+   6. PANORAMIC MID-PAGE CTA BANNER (Inspired by Recruitment Solutions Reference)
+   Full-width rounded card, background team discussion photo, 
+   smooth signature teal gradient shade, and dual yellow/mint slanted-arrow buttons.
    ========================================================================= */
+.emp-panoramic-cta-section {
+  padding: 5.5rem 0 6rem;
+  background: #ffffff;
+  position: relative;
+}
+
+.emp-panoramic-cta-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  box-shadow:
+    0 24px 54px -12px rgba(0, 52, 48, 0.16),
+    0 6px 18px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 75, 73, 0.18);
+  background-color: #002B29;
+}
+
+/* Background photo covering the card - shifted rightward */
+.emp-panoramic-bg-img {
+  position: absolute;
+  top: 0;
+  left: 65px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+  z-index: 1;
+}
+
+@media (max-width: 991px) {
+  .emp-panoramic-bg-img {
+    left: 0;
+    object-position: center center;
+  }
+}
+
+/* Smooth Signature Teal Gradient Overlay */
+.emp-panoramic-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 39, 37, 0.98) 0%,
+    rgba(0, 48, 46, 0.96) 28%,
+    rgba(0, 75, 73, 0.88) 46%,
+    rgba(0, 75, 73, 0.45) 64%,
+    rgba(0, 75, 73, 0.12) 80%,
+    rgba(0, 75, 73, 0) 92%
+  );
+  pointer-events: none;
+}
+
+/* Content Container on the left */
+.emp-panoramic-content {
+  position: relative;
+  z-index: 3;
+  padding: 60px 48px 60px 64px;
+  max-width: 620px;
+}
+
+@media (max-width: 991px) {
+  .emp-panoramic-content {
+    padding: 48px 36px;
+    max-width: 100%;
+  }
+
+  .emp-panoramic-gradient-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 39, 37, 0.96) 0%,
+      rgba(0, 48, 46, 0.92) 50%,
+      rgba(0, 75, 73, 0.75) 100%
+    );
+  }
+}
+
+@media (max-width: 640px) {
+  .emp-panoramic-content {
+    padding: 36px 22px;
+  }
+}
+
+/* Eyebrow matching "Helping Job Seekers Get Working Opportunities!" */
+.emp-panoramic-eyebrow {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #D1FAE5;
+  margin-bottom: 1.15rem;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 640px) {
+  .emp-panoramic-eyebrow {
+    font-size: 0.85rem;
+    margin-bottom: 0.85rem;
+  }
+}
+
+/* Display Headline matching "Bringing The Global Recruitment Solutions" */
+.emp-panoramic-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  margin: 0 0 2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1200px) {
+  .emp-panoramic-title {
+    font-size: 2.35rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .emp-panoramic-title {
+    font-size: 1.85rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Dual Button Group */
+.emp-panoramic-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* 1. Primary Button: Signature Brand Deep Teal (#004B49) with 8px radius & crisp white text */
+.emp-panoramic-btn-primary,
+.emp-panoramic-btn-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #004B49;
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 35, 33, 0.45);
+  transition: transform 0.22s ease, background-color 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.emp-panoramic-btn-primary:hover,
+.emp-panoramic-btn-yellow:hover {
+  background-color: #003836;
+  border-color: rgba(255, 255, 255, 0.75);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 35, 33, 0.6);
+}
+
+.emp-panoramic-btn-primary:active,
+.emp-panoramic-btn-yellow:active {
+  transform: translateY(0);
+}
+
+/* 2. Secondary Button: Crisp Pure White (#FFFFFF) with Brand Deep Teal Text (#004B49) */
+.emp-panoramic-btn-secondary,
+.emp-panoramic-btn-mint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #FFFFFF;
+  color: #004B49;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: 8px;
+  border: 1.5px solid #FFFFFF;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: transform 0.22s ease, background-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.emp-panoramic-btn-secondary:hover,
+.emp-panoramic-btn-mint:hover {
+  background-color: #F6F8F8;
+  border-color: #F6F8F8;
+  color: #003836;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.emp-panoramic-btn-secondary:active,
+.emp-panoramic-btn-mint:active {
+  transform: translateY(0);
+}
+
+/* Slanted down-right arrow icon */
+.emp-panoramic-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.emp-panoramic-btn-primary:hover .emp-panoramic-arrow,
+.emp-panoramic-btn-yellow:hover .emp-panoramic-arrow,
+.emp-panoramic-btn-secondary:hover .emp-panoramic-arrow,
+.emp-panoramic-btn-mint:hover .emp-panoramic-arrow {
+  transform: translate(2px, 2px);
+}
+
 .emp-center-cta-section {
   padding: 5.5rem 0 6rem;
   background: #ffffff;
@@ -1585,72 +1812,75 @@
 
 .emp-center-cta-card {
   position: relative;
-  background: #f6f8f8;
-  border-radius: 20px;
+  background: #ffffff;
+  border-radius: 24px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  min-height: 340px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e2ebe8;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  min-height: 420px;
+  box-shadow: 0 20px 48px -12px rgba(0, 52, 48, 0.08), 0 4px 16px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e0ebe8;
 }
 
-/* Primary color accent block (replaces the red block from reference) */
+/* Hide legacy narrow color bar so image takes full left space */
 .emp-cta-primary-bar {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 175px;
-  background: #004B49;
-  z-index: 1;
+  display: none !important;
 }
 
-/* Overlapping Photorealistic Image Container */
+/* Full-bleed left image space: uses full left half of the card */
 .emp-cta-img-wrap {
   position: relative;
-  z-index: 2;
-  margin-left: 80px;
-  width: 310px;
-  height: 230px;
-  flex-shrink: 0;
-  border-radius: 12px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: #ebf3f1;
   overflow: hidden;
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
-  border: 4px solid #ffffff;
-  background: #ffffff;
 }
 
 .emp-cta-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
 
-/* Content Area on the right */
+/* Content Area on the right with generous editorial padding */
 .emp-cta-content {
   position: relative;
   z-index: 2;
-  padding: 3rem 4rem 3rem 3.5rem;
-  flex: 1;
+  padding: clamp(40px, 4.5vw, 64px) clamp(36px, 4.5vw, 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: #ffffff;
 }
 
 .emp-cta-badge {
-  display: inline-block;
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   color: #004B49;
-  margin-bottom: 0.75rem;
-  background: transparent !important;
-  border: none !important;
-  padding: 0 !important;
+  background: rgba(0, 75, 73, 0.08) !important;
+  border: 1px solid rgba(0, 75, 73, 0.16) !important;
+  padding: 5px 14px !important;
+  border-radius: 9999px !important;
+  margin-bottom: 1.1rem;
 }
 
 .emp-cta-title {
-  font-size: 2.15rem;
-  font-weight: 600;
+  font-size: clamp(1.9rem, 2.7vw, 2.45rem);
+  font-weight: 700;
   color: #111827;
   line-height: 1.2;
   letter-spacing: -0.025em;
@@ -1659,10 +1889,10 @@
 
 .emp-cta-desc {
   font-size: 1rem;
-  line-height: 1.68;
+  line-height: 1.7;
   color: #4b5563;
   margin: 0 0 2rem;
-  max-width: 580px;
+  max-width: 540px;
 }
 
 /* Mid CTA Button Group with Primary and Secondary Buttons */
@@ -1678,22 +1908,33 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.6rem;
+  height: 46px;
   background: #004B49;
   color: #ffffff;
   font-size: 0.9375rem;
   font-weight: 700;
-  padding: 0.875rem 2.25rem;
+  padding: 0 1.85rem;
   border-radius: 8px;
-  border: none;
+  border: 1px solid #004B49;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 14px rgba(0, 75, 73, 0.3);
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .emp-cta-btn:hover {
   background: #003836;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(0, 75, 73, 0.4);
+  border-color: #003836;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.4);
+}
+
+.emp-cta-btn:active {
+  transform: translateY(0);
 }
 
 /* Secondary Button for Mid CTA Section */
@@ -1702,24 +1943,33 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  height: 46px;
   background: #ffffff;
   color: #004B49;
   border: 1.5px solid #004B49;
   font-size: 0.9375rem;
   font-weight: 700;
-  padding: 0.875rem 1.85rem;
+  padding: 0 1.75rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .emp-cta-btn-secondary:hover {
   background: #F6F8F8;
   border-color: #003836;
   color: #003836;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 75, 73, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.15);
+}
+
+.emp-cta-btn-secondary:active {
+  transform: translateY(0);
 }
 
 .emp-cta-btn-secondary svg {
@@ -1727,62 +1977,53 @@
 }
 
 .emp-cta-btn-secondary:hover svg {
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
 @media (max-width: 960px) {
   .emp-center-cta-card {
-    flex-direction: column;
-    padding-bottom: 2.5rem;
-    align-items: flex-start;
-  }
-
-  .emp-cta-primary-bar {
-    width: 100%;
-    height: 110px;
-    bottom: auto;
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-bottom: 0;
   }
 
   .emp-cta-img-wrap {
-    margin-left: 2rem;
-    margin-top: 2rem;
-    width: 270px;
-    height: 195px;
+    width: 100%;
+    height: 280px;
+    min-height: 280px;
   }
 
   .emp-cta-content {
-    padding: 2rem 2rem 0;
+    padding: 36px 28px 44px;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .emp-cta-title {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
   }
 }
 
 @media (max-width: 600px) {
-  .emp-cta-primary-bar {
-    height: 80px;
-  }
-
   .emp-cta-img-wrap {
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    height: 200px;
+    height: 220px;
+    min-height: 220px;
   }
 
   .emp-cta-content {
-    padding: 1.75rem 1.25rem 0;
-    text-align: center;
+    padding: 28px 20px 34px;
   }
 
-  .emp-cta-desc {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .emp-cta-btn {
+  .emp-cta-btn-group {
     width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .emp-cta-btn,
+  .emp-cta-btn-secondary {
+    width: 100%;
+    justify-content: center;
   }
 }
 

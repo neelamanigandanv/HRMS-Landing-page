@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
+import PanoramicMidCTA from "../components/common/PanoramicMidCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -772,54 +773,15 @@ export function RecruitmentPage() {
         {/* =========================================================================
             6. MIDDLE CTA SECTION (Immediately after Why Zentilos section)
             ========================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
-          <div className="container">
-            <div className="emp-center-cta-card">
-              {/* Primary Color Accent Block */}
-              <div className="emp-cta-primary-bar" />
-
-              {/* Overlapping Photorealistic Team Collaboration Image */}
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/recruitment-cta-hiring.webp"
-                  alt="Talent acquisition team reviewing candidate pipeline"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Right Content Area */}
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ STRUCTURED TALENT PIPELINE ✦</span>
-                <h2 id="cta-banner-title" className="emp-cta-title">
-                  Ready to Modernize Your Hiring Process?
-                </h2>
-                <p className="emp-cta-desc">
-                  Replace slow, disconnected hiring workflows and messy spreadsheets with one structured applicant tracking system. Screen, interview, and onboard top talent faster.
-                </p>
-                <div className="emp-cta-btn-group">
-                  <button
-                    type="button"
-                    className="emp-cta-btn"
-                    onClick={handleOpenDemo}
-                  >
-                    <span>Request Walkthrough</span>
-                    <Icon name="arrow" size={16} />
-                  </button>
-
-                  <button
-                    type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={handleOpenDemo}
-                  >
-                    <span>Talk to an Expert</span>
-                    <Icon name="arrow" size={16} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PanoramicMidCTA
+          eyebrow="Helping Growing Companies Hire Top Talent Faster!"
+          title="Bringing Modern Recruitment Solutions"
+          imageSrc="/images/recruitment-cta-hiring.webp"
+          imageAlt="Talent acquisition team reviewing candidate pipeline"
+          demoTitle="Schedule a Recruitment Demo"
+          demoSubtitle="Experience structured pipelines, collaborative interview scheduling, and offer management with Zentilos."
+          defaultInterest="Recruitment"
+        />
 
         {/* =========================================================================
             7. HOW IT WORKS TOGETHER SECTION (Connect Recruitment With Your Workforce)

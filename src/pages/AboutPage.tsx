@@ -67,12 +67,23 @@ export function AboutPage() {
 
       {/* 1. Hero: Purpose & Story with Elevated Colored Stage (Centered & Brand Colored) */}
       <section className="about-hero-section">
-        <div className="about-hero-ambient" />
+        <img
+          src="/images/hero-hr-working-pro.webp"
+          alt=""
+          aria-hidden="true"
+          className="about-hero-bg-img"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+        />
+        <div className="about-hero-ambient" aria-hidden="true" />
+        <div className="about-hero-frame" aria-hidden="true" />
         <div className="container">
           <div className="about-hero-center">
             <span className="about-hero-chip">
-              <Icon name="sparkle" size={13} />
-              ✦ ABOUT ZENTILOS ✦
+              <Icon name="star" size={12} />
+              About Zentilos
+              <Icon name="star" size={12} />
             </span>
 
             <h1 className="about-hero-heading">
@@ -101,6 +112,12 @@ export function AboutPage() {
                 Our Story &amp; Journey <Icon name="arrow" size={15} />
               </Button>
             </div>
+
+            <div className="about-hero-meta" aria-hidden="true">
+              <span>Est. 2017</span>
+              <span className="about-hero-meta-dot" />
+              <span>Bengaluru, India</span>
+            </div>
           </div>
         </div>
       </section>
@@ -126,6 +143,7 @@ export function AboutPage() {
                   loading="lazy"
                   decoding="async"
                 />
+                <span className="story-founder-badge">Est. 2017</span>
               </div>
               <div className="story-founder-details">
                 <h3 className="story-founder-name">Kavya Sundaram</h3>
@@ -138,6 +156,10 @@ export function AboutPage() {
 
             {/* Right Column: Narrative Typography */}
             <div className="story-narrative-col">
+              <span className="story-narrative-kicker">
+                <Icon name="sparkle" size={14} />
+                From frustration to focus
+              </span>
               <p className="story-lead-statement">
                 In <span className="story-year-accent">2017</span>, our founder{" "}
                 <strong>Kavya Sundaram</strong> was spending hours every week chasing
@@ -155,97 +177,134 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* 3. Milestones on our Journey: Focused Narrative & Impact */}
-      <section className="about-milestones-section" id="milestones">
+      {/* 3. HOW WE GOT HERE — Full-width split, matches reference exactly */}
+      <section className="about-milestones-section" id="milestones" aria-labelledby="milestones-heading">
         <div className="container">
-          <SectionHeading
-            eyebrow="✦ HOW WE GOT HERE ✦"
-            title="Milestones on our journey"
-            body="From our founding spark in Bengaluru to powering tens of thousands of workforce operations daily."
-            center
-          />
+          <div className="ms2-grid">
 
-          {/* 2-Column Showcase Layout: Left Team Image, Right Story & 2 Stat Cards */}
-          <div className="milestone-showcase-stage">
-            <div className="milestone-img-wrapper">
-              <img
-                src="/images/about-milestone-journey.webp"
-                alt="Zentilos founding team collaborating in our Bengaluru workspace"
-                className="milestone-journey-img"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            {/* ── LEFT HALF: Top Photo + Bottom Row ── */}
+            <div className="ms2-left">
+              {/* Top Photo */}
+              <div className="ms2-photo-card">
+                <img
+                  src="/images/about-milestone-team.jpg"
+                  alt="Team collaboration in modern office"
+                  className="ms2-team-img"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
 
-            <div className="milestone-info-wrapper">
-              <h3 className="milestone-headline">
-                Built for modern multi-branch teams — unifying attendance, workflows, and payroll in
-                one calm system.
-              </h3>
+              {/* Bottom Row */}
+              <div className="ms2-bottom-row">
 
-              <p className="milestone-paragraph">
-                Zentilos unifies every layer of workforce operations. From streamlined employee
-                onboarding and automated document verification to geofenced branch attendance and
-                100% compliant statutory payroll, we empower growing organizations to scale with
-                zero administrative friction.
-              </p>
-
-              {/* Bottom 2 Pastel Stat Cards */}
-              <div className="milestone-stat-cards">
-                <div className="milestone-stat-card milestone-stat-card--purple">
-                  <div className="milestone-card-icon" aria-hidden="true">
-                    <svg
-                      width="42"
-                      height="42"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                      stroke="#18181b"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M6 38H16V32H26V26H36V38" />
-                      <line x1="4" y1="38" x2="38" y2="38" />
-                      <circle cx="31" cy="12" r="3.5" />
-                      <path d="M31 16V24" />
-                      <path d="M31 24L26 26" />
-                      <path d="M31 24L34 26" />
-                      <path d="M31 18L26 20" />
-                      <path d="M31 18L36 15" />
-                      <line x1="36" y1="9" x2="36" y2="26" />
-                      <path d="M36 9L43 12L36 15Z" fill="none" />
-                    </svg>
+                {/* Lime Experience Box */}
+                <div className="ms2-lime-card">
+                  <div className="ms2-ribbon-tag" aria-hidden="true">
+                    EXPERIENCE
                   </div>
-                  <span className="milestone-card-num">40k+</span>
-                  <span className="milestone-card-label">Employees on Platform</span>
+                  <div className="ms2-stat-20">20<sup>+</sup></div>
+                  <p className="ms2-stat-sub">
+                    Years of Excellence in IT Solutions Company.
+                  </p>
                 </div>
 
-                <div className="milestone-stat-card milestone-stat-card--mint">
-                  <div className="milestone-card-icon" aria-hidden="true">
-                    <svg
-                      width="42"
-                      height="42"
-                      viewBox="0 0 48 48"
-                      fill="none"
-                      stroke="#18181b"
-                      strokeWidth="2.2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <rect x="8" y="8" width="32" height="22" rx="2" />
-                      <path d="M13 24L21 17L28 21L35 14" />
-                      <path d="M30 14H35V19" />
-                      <line x1="16" y1="30" x2="11" y2="40" />
-                      <line x1="32" y1="30" x2="37" y2="40" />
-                      <line x1="24" y1="30" x2="24" y2="40" />
-                      <line x1="14" y1="35" x2="34" y2="35" />
-                    </svg>
+                {/* White Founder Card */}
+                <div className="ms2-founder-card">
+                  <div className="ms2-founder-left">
+                    <img
+                      src="/images/about-founder-avatar.webp"
+                      alt="Burdee Nicolas, Co. Founder"
+                      className="ms2-avatar-img"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="ms2-founder-details">
+                      <strong>Burdee Nicolas</strong>
+                      <span>Co. Founder</span>
+                    </div>
                   </div>
-                  <span className="milestone-card-num">98%</span>
-                  <span className="milestone-card-label">On-Time Payroll Rate</span>
+                  <div className="ms2-v-divider" aria-hidden="true" />
+                  <div className="ms2-sig-wrap">
+                    <img
+                      src="/images/about-burdee-signature.png"
+                      alt="Burdee Nicolas Signature"
+                      className="ms2-hand-sig-img"
+                    />
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* ── RIGHT HALF: Large White Content Card ── */}
+            <div className="ms2-right-card">
+              <span className="ms2-eyebrow">ABOUT ZENTILOS</span>
+
+              <h2 id="milestones-heading" className="ms2-headline">
+                Delivering Solution That<br />
+                Drive Our Innovation &amp;<br />
+                Fast Success.
+              </h2>
+
+              <p className="ms2-desc">
+                We are a team of passionate tech experts delivering innovative IT solutions
+                tailored to help businesses grow, adapt, and thrive in a digital. Stay ahead
+                of the competition.
+              </p>
+
+              {/* Stats + Circular Brand Stamp */}
+              <div className="ms2-metrics-row">
+                <div className="ms2-metrics-stats">
+                  <div className="ms2-metric-col">
+                    <div className="ms2-metric-num">3K<sup>+</sup></div>
+                    <div className="ms2-metric-lbl">Successful Projects.</div>
+                  </div>
+                  <div className="ms2-metric-col">
+                    <div className="ms2-metric-num">98<sup>+</sup></div>
+                    <div className="ms2-metric-lbl">IT Professionals.</div>
+                  </div>
+                </div>
+
+                <div className="ms2-badge-cluster">
+                  <div className="ms2-logo-stamp" role="img" aria-label="Zentilos — About Us">
+                    <svg className="ms2-logo-stamp-ring" viewBox="0 0 120 120" aria-hidden="true">
+                      <defs>
+                        <path
+                          id="ms2BrandRing"
+                          d="M 60,60 m -41,0 a 41,41 0 1,1 82,0 a 41,41 0 1,1 -82,0"
+                        />
+                      </defs>
+                      <circle cx="60" cy="60" r="58" fill="#004B49" />
+                      <circle
+                        cx="60"
+                        cy="60"
+                        r="52"
+                        fill="none"
+                        stroke="#2E7B76"
+                        strokeWidth="1"
+                        strokeDasharray="2 3"
+                      />
+                      <text fill="#D2F535" fontSize="9" fontWeight="800" letterSpacing="0.14em">
+                        <textPath href="#ms2BrandRing" startOffset="12%">
+                          ZENTILOS · ABOUT US · EST. 2017 ·
+                        </textPath>
+                      </text>
+                    </svg>
+                    <span className="ms2-logo-stamp-center">
+                      <img
+                        src="/images/logo-mark.webp"
+                        alt=""
+                        className="ms2-logo-stamp-mark"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </section>
@@ -264,7 +323,7 @@ export function AboutPage() {
             <div className="leader-card">
               <div className="leader-avatar-box">
                 <img
-                  src="/images/leader-kavya-sundaram.webp"
+                  src="/images/leader-kavya-sundaram-profile.webp"
                   alt="Kavya Sundaram, Founder & CEO"
                   className="leader-photo"
                   loading="lazy"
@@ -328,7 +387,7 @@ export function AboutPage() {
       <section className="about-mv-section">
         <div className="container">
           <SectionHeading
-            eyebrow="✦ OUR PURPOSE ✦"
+            eyebrow="OUR PURPOSE"
             title="What drives us every day"
             body="Two fundamental commitments that shape every decision we make."
             center
@@ -421,7 +480,10 @@ export function AboutPage() {
 
           <div className="setup-grid" style={{ marginTop: "40px" }}>
             {VALUE_CARDS.map((item, i) => (
-              <div className="setup-card" key={item.title}>
+              <div className="setup-card about-value-card" key={item.title}>
+                <span className="value-card-index" aria-hidden="true">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
                 <span className={`setup-icon i${i}`}>
                   <Icon name={item.icon as IconName} />
                 </span>
@@ -431,21 +493,9 @@ export function AboutPage() {
                   <ul className="setup-points">
                     {item.points.map((pt) => (
                       <li key={pt} className="setup-point-item">
-                        <svg
-                          className="setup-point-arrow"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                          stroke="#10B981"
-                          strokeWidth="2.1"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          aria-hidden="true"
-                        >
-                          <line x1="3.5" y1="3.5" x2="12.5" y2="12.5" />
-                          <polyline points="12.5 5.5 12.5 12.5 5.5 12.5" />
-                        </svg>
+                        <span className="setup-point-check" aria-hidden="true">
+                          <Icon name="check" size={11} />
+                        </span>
                         <span>{pt}</span>
                       </li>
                     ))}

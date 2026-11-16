@@ -1,7 +1,7 @@
 const fs = require('fs');
 
 async function runLiveIntegrationTests() {
-  const BASE_URL = 'http://143.110.191.151:9001/neuverve';
+  const BASE_URL = 'http://143.110.191.151:9001/zentilos';
   console.log(`\n======================================================`);
   console.log(`RUNNING FULL FRONTEND API INTEGRATION TEST SUITE`);
   console.log(`Base URL: ${BASE_URL}`);

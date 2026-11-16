@@ -6,7 +6,9 @@ import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
 import RequestDemoModal from "../components/common/RequestDemoModal";
+import EmployeeStyleHero from "../components/common/EmployeeStyleHero";
 import "./EmployeeManagementPage.css";
+import "./ProductOverview.css";
 
 interface FlowStep {
   stepNum: string;
@@ -844,54 +846,51 @@ export function ProductOverview() {
         canonicalPath="/product"
       />
 
-      {/* 1. Hero */}
-      <section className="po-hero-section">
-        <div className="po-hero-grid-pattern" />
-        <div className="po-hero-ambient" />
-        <div className="container">
-          <div className="po-hero-content">
-            <span className="po-hero-eyebrow">
-              <Icon name="sparkle" size={14} />
-              ALL-IN-ONE HRMS ARCHITECTURE
-            </span>
-
-            <h1 className="po-hero-title">
-              One platform for <span className="po-hero-title-accent">every part of HR</span>
-            </h1>
-
-            <p className="po-hero-promise">
-              Connect your entire people operations—from candidate sourcing to biometric attendance and statutory payroll—on one single, real-time employee ledger.
-            </p>
-
-            <div className="po-hero-actions">
-              <Button onClick={() => setIsDemoModalOpen(true)}>
-                Book a Demo <Icon name="arrow" size={16} />
-              </Button>
-              <Button href="#categories" secondary className="po-secondary-action-btn">
-                Explore modules
-              </Button>
-            </div>
-
-            {/* Proof highlights pill row */}
-            <div className="po-hero-proof-row">
-              <div className="po-hero-proof-item">
-                <span className="po-proof-dot">●</span>
-                <span>10 Unified Modules</span>
-              </div>
-              <div className="po-hero-proof-separator">•</div>
-              <div className="po-hero-proof-item">
-                <span className="po-proof-dot">●</span>
-                <span>Multi-Branch Biometrics</span>
-              </div>
-              <div className="po-hero-proof-separator">•</div>
-              <div className="po-hero-proof-item">
-                <span className="po-proof-dot">●</span>
-                <span>100% Statutory Compliance</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* 1. Hero Section - Employee Management Spotlight Hero */}
+      <EmployeeStyleHero
+        badgeText="✦ ZENTILOS ✦"
+        title={
+          <>
+            One Platform. <span className="emp-glow-text">Every</span>
+            <br className="emp-hero-br" />
+            HR Workflow Connected.
+          </>
+        }
+        subhead="Explore all ten Zentilos modules — core HR, attendance, payroll, leave, recruitment, performance, documents, assets, roles, and analytics — unified on one employee record."
+        primaryLabel="Book a Free Demo"
+        onPrimaryClick={() => setIsDemoModalOpen(true)}
+        secondaryLabel="Explore Features"
+        onSecondaryClick={() => {
+          const el = document.getElementById("categories");
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }}
+        trustPoints={[
+          "10 connected HR modules",
+          "Real-time workforce insights",
+          "Free migration assistance",
+        ]}
+        imageSrc="/images/product-hero-executive.webp"
+        imageAlt="HR leader reviewing the unified Zentilos product suite on a live dashboard"
+        statusPill="Platform Live"
+        leftWidgetTitle="Product Coverage"
+        leftWidgetSub="By Module Family"
+        leftWidgetBadge="Live"
+        donutCenterLabel="Active Modules"
+        donutCenterValue="10"
+        donutSegments={[
+          { label: "Core HR", percent: 40, color: "#004B49" },
+          { label: "Payroll", percent: 35, color: "#10b981" },
+          { label: "Analytics", percent: 25, color: "#8b5cf6" },
+        ]}
+        rightWidgetTitle="Automation Activity"
+        rightWidgetSub="Last 30 Days"
+        rightWidgetBadge="Synced"
+        rightStatValue="+2,480"
+        rightStatLabel="Workflows Automated"
+        rightStatMeta="99.8% accuracy"
+        barHeights={[42, 65, 55, 78, 96, 60, 82]}
+        rightFooterText="10 modules connected on one employee record"
+      />
 
       {/* 2. Explore by Category */}
       <section id="categories" className="po-categories-section">
@@ -910,45 +909,87 @@ export function ProductOverview() {
               const borderColor = "#E5EAEA";
               return (
                 <Fragment key={cat.id}>
-                  {/* High-Converting Mid-Page CTA Section Above Payroll - Matches Employee Management Page Mid-CTA */}
+                  {/* High-Converting Mid-Page CTA Section Above Payroll - Clean Editorial Card */}
                   {cat.id === "payroll" && (
-                    <div className="emp-center-cta-card po-mid-center-cta-card" style={{ marginBottom: "48px", marginTop: "16px" }}>
-                      {/* Primary Color Accent Block */}
-                      <div className="emp-cta-primary-bar" />
-
-                      {/* Overlapping Product Platform Dashboard Image */}
-                      <div className="emp-cta-img-wrap">
-                        <img
-                          src="/images/product-hero-dashboard.webp"
-                          alt="Zentilos all-in-one unified HRMS platform dashboard"
-                          className="emp-cta-img"
-                          loading="lazy"
-                        />
+                    <div className="po-jasper-cta-card">
+                      {/* Left Column: Clean Content Wrap without circular clutter */}
+                      <div className="po-jasper-content-col">
+                        {/* Text Content */}
+                        <div className="po-jasper-text-wrap">
+                          <span className="po-jasper-eyebrow">
+                            INTELLIGENT WORKFORCE PLATFORM
+                          </span>
+                          <h2 className="po-jasper-title">
+                            Put modern HR to work, on your terms
+                          </h2>
+                          <p className="po-jasper-desc">
+                            Explore how Zentilos unified modules help teams turn complex workforce policies into automated execution across every branch, department, and payroll cycle.
+                          </p>
+                          <div className="po-jasper-btn-wrap">
+                            <button
+                              type="button"
+                              className="po-jasper-btn po-jasper-btn-primary"
+                              onClick={() => setIsDemoModalOpen(true)}
+                            >
+                              Get A Demo
+                            </button>
+                            <a
+                              href="#categories"
+                              className="po-jasper-btn po-jasper-btn-secondary"
+                            >
+                              Explore Features
+                            </a>
+                          </div>
+                        </div>
                       </div>
 
-                      {/* Right Content Area */}
-                      <div className="emp-cta-content">
-                        <span className="emp-cta-badge">✦ ALL-IN-ONE HRMS PLATFORM ✦</span>
-                        <h2 id="cta-banner-title" className="emp-cta-title">
-                          Ready to Unify Your Entire Workforce Operations?
-                        </h2>
-                        <p className="emp-cta-desc">
-                          Connect employee records, biometric &amp; mobile attendance, statutory payroll, leave approvals, and branch compliance in one platform. Eliminate tool fragmentation and run every team with complete clarity.
-                        </p>
-                        <div className="emp-cta-btn-group">
+                      {/* Right Column: Editorial Team Photo with Stepped Mosaic Cutout */}
+                      <div className="po-jasper-media-col">
+                        <img
+                          src="/images/product-mid-cta-team.webp"
+                          alt="Modern HR and business team collaborating in sunlit corporate office"
+                          className="po-jasper-img"
+                          loading="lazy"
+                        />
+
+                        {/* Stepped Pixelated Mosaic Cutout SVG Transition */}
+                        <svg
+                          className="po-jasper-mosaic-overlay"
+                          viewBox="0 0 120 440"
+                          preserveAspectRatio="none"
+                          fill="#EFF7F6"
+                          aria-hidden="true"
+                        >
+                          <rect x="0" y="0" width="72" height="24" />
+                          <rect x="0" y="24" width="96" height="24" />
+                          <rect x="0" y="48" width="48" height="24" />
+                          <rect x="0" y="72" width="72" height="24" />
+                          <rect x="0" y="96" width="24" height="24" />
+                          <rect x="0" y="120" width="48" height="24" />
+                          <rect x="0" y="144" width="72" height="24" />
+                          <rect x="0" y="168" width="24" height="24" />
+                          <rect x="48" y="168" width="24" height="24" />
+                          <rect x="0" y="192" width="96" height="24" />
+                          <rect x="0" y="216" width="48" height="24" />
+                          <rect x="0" y="240" width="72" height="24" />
+                          <rect x="0" y="264" width="24" height="24" />
+                          <rect x="0" y="288" width="48" height="24" />
+                          <rect x="0" y="312" width="72" height="24" />
+                          <rect x="0" y="336" width="96" height="24" />
+                          <rect x="0" y="360" width="48" height="24" />
+                          <rect x="0" y="384" width="72" height="24" />
+                          <rect x="0" y="408" width="48" height="32" />
+                        </svg>
+
+                        {/* Floating Interactive Assistant Widget */}
+                        <div className="po-jasper-chat-widget">
                           <button
                             type="button"
-                            className="emp-cta-btn"
+                            className="po-jasper-chat-pill"
                             onClick={() => setIsDemoModalOpen(true)}
                           >
-                            Book a Demo
-                          </button>
-                          <button
-                            type="button"
-                            className="emp-cta-btn-secondary"
-                            onClick={() => setIsDemoModalOpen(true)}
-                          >
-                            Talk to an HR Expert <Icon name="arrow" size={14} />
+                            <span className="po-jasper-chat-avatar">Z</span>
+                            <span>Ask Zentilos</span>
                           </button>
                         </div>
                       </div>

@@ -1,0 +1,537 @@
+/* ==========================================================================
+   PRODUCT OVERVIEW: JASPER-STYLE EDITORIAL MID-PAGE CTA BANNER
+   Stepped mosaic pixel transition, bold serif display title, 
+   vivid coral-red button, green circular coin pattern & interactive chat prompt.
+   ========================================================================== */
+
+.po-jasper-cta-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #D6EAE7;
+  box-shadow: 0 18px 45px -10px rgba(0, 52, 48, 0.08), 0 4px 16px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  margin: 36px 0 54px;
+  display: grid;
+  grid-template-columns: 48% 52%;
+  min-height: 440px;
+}
+
+@media (max-width: 991px) {
+  .po-jasper-cta-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    margin: 28px 0 42px;
+  }
+}
+
+/* ─── LEFT COLUMN: CONTENT WITH SOFT TEAL SHADE ─── */
+.po-jasper-content-col {
+  position: relative;
+  z-index: 3;
+  padding: 56px 44px 56px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: #EFF7F6;
+}
+
+@media (max-width: 640px) {
+  .po-jasper-content-col {
+    padding: 36px 22px 42px;
+  }
+}
+
+/* Content Container */
+.po-jasper-text-wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+}
+
+/* Eyebrow: Clean with no border and no background */
+.po-jasper-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #004B49;
+  margin-bottom: 12px;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Display Serif Title matching Jasper's "Put AI agents to work, on your terms" */
+.po-jasper-title {
+  font-family: Georgia, "Playfair Display", "Times New Roman", serif;
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: #0A192F;
+  margin: 0 0 18px;
+}
+
+@media (max-width: 1200px) {
+  .po-jasper-title {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .po-jasper-title {
+    font-size: 1.95rem;
+    line-height: 1.15;
+  }
+}
+
+/* Subtitle description */
+.po-jasper-desc {
+  font-size: 15px;
+  line-height: 1.62;
+  color: #4A5B57;
+  margin: 0 0 28px;
+  max-width: 440px;
+}
+
+@media (max-width: 640px) {
+  .po-jasper-desc {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+}
+
+/* Dual Action Buttons (Primary & Secondary) */
+.po-jasper-btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.po-jasper-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.22s ease, background-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.po-jasper-btn-primary {
+  background-color: #004B49;
+  color: #FFFFFF;
+  border: 1px solid #004B49;
+  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.25);
+}
+
+.po-jasper-btn-primary:hover {
+  background-color: #003836;
+  border-color: #003836;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 75, 73, 0.35);
+}
+
+.po-jasper-btn-secondary {
+  background-color: transparent;
+  color: #004B49;
+  border: 1.5px solid #004B49;
+  box-shadow: none;
+}
+
+.po-jasper-btn-secondary:hover {
+  background-color: rgba(0, 75, 73, 0.06);
+  color: #003836;
+  border-color: #003836;
+  transform: translateY(-2px);
+}
+
+.po-jasper-btn:active {
+  transform: translateY(0);
+}
+
+/* ─── RIGHT COLUMN: PHOTO & MOSAIC CUTOUT ─── */
+.po-jasper-media-col {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 440px;
+  background: #FAFCFB;
+}
+
+@media (max-width: 991px) {
+  .po-jasper-media-col {
+    min-height: 350px;
+  }
+}
+
+.po-jasper-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  display: block;
+}
+
+/* Stepped Pixelated Mosaic Cutout Overlay */
+.po-jasper-mosaic-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 120px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  fill: #EFF7F6;
+}
+
+@media (max-width: 991px) {
+  .po-jasper-mosaic-overlay {
+    display: none;
+  }
+}
+
+/* ─── FLOATING CHAT / ASSISTANT PROMPT (BOTTOM RIGHT) ─── */
+.po-jasper-chat-widget {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  max-width: 290px;
+}
+
+@media (max-width: 640px) {
+  .po-jasper-chat-widget {
+    bottom: 14px;
+    right: 14px;
+    max-width: calc(100% - 28px);
+  }
+}
+
+.po-jasper-chat-bubble {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #1F2937;
+  font-weight: 500;
+  text-align: left;
+}
+
+.po-jasper-chat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 4px 11px 4px 5px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.po-jasper-chat-pill:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
+}
+
+.po-jasper-chat-avatar {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #004B49;
+  color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10.5px;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   PRODUCT OVERVIEW: HERO SECTION (Unified Full Panoramic Background & Dual CTAs)
+   ========================================================================== */
+
+.po-hero-section {
+  position: relative;
+  background-color: #217775 !important;
+  background-image: url('/images/product-hero-lady-scene-v2.webp') !important;
+  background-repeat: no-repeat !important;
+  background-position: center right !important;
+  background-size: cover !important;
+  color: #FFFFFF !important;
+  padding: 130px 0 145px;
+  min-height: 670px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Expansive container width */
+.po-hero-full-wrap {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 56px);
+}
+
+.po-hero-content-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Left Content Column - Lightly shifted rightward with refined breathing room */
+.po-hero-text-col {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+  margin-left: clamp(16px, 3.2vw, 40px);
+}
+
+/* Eyebrow: Clean, No Border, No Background, Rich Golden Champagne (#F9D67C) with dual star icons */
+.po-hero-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 !important;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: #7cf97e;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.po-eyebrow-star {
+  font-size: 14px;
+  color: #F9D67C;
+  line-height: 1;
+  display: inline-block;
+  text-shadow: 0 0 10px rgba(249, 214, 124, 0.9), 0 0 2px #FFFFFF;
+}
+
+/* Headline - Improved line-height space between lines */
+.po-hero-headline {
+  font-size: clamp(2.4rem, 4vw, 3.35rem);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  color: #FFFFFF !important;
+  margin: 0 0 24px;
+}
+
+/* Subtitle description - Comfortable generous line-height */
+.po-hero-desc {
+  font-size: clamp(0.92rem, 1.2vw, 1.02rem);
+  line-height: 1.76;
+  color: #D6EAE8 !important;
+  margin: 0 0 36px;
+  max-width: 480px;
+}
+
+/* Action Buttons Wrap */
+.po-hero-btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+/* Primary Button: Exact match to About Us 2.0 (Pine Teal #004B49, 8px radius, white inner arrow square) */
+.po-hero-primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+  height: 46px;
+  background: #004B49;
+  color: #ffffff;
+  border: 1px solid #004B49;
+  border-radius: 8px;
+  padding: 0 0.35rem 0 1.25rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  outline: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.po-hero-primary-btn:hover {
+  background: #003836;
+  border-color: #003836;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.38);
+}
+
+.po-hero-primary-btn:active {
+  transform: translateY(0);
+}
+
+/* White inner arrow box - 4px radius matching About Us 2.0 & CorporateHero */
+.po-btn-arrow-box {
+  width: 34px;
+  height: 34px;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #004B49;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  transition: transform 0.18s ease;
+}
+
+.po-hero-primary-btn:hover .po-btn-arrow-box {
+  transform: translateX(2px);
+}
+
+/* Secondary Button: Transparent background with crisp white outline */
+.po-hero-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 46px;
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.75) !important;
+  border-radius: 8px;
+  padding: 0 1.35rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.po-hero-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+.po-hero-secondary-btn:active {
+  transform: translateY(0);
+}
+
+.po-hero-secondary-btn:active {
+  transform: translateY(0);
+}
+
+/* Standalone mobile visual - hidden on desktop */
+.po-hero-mobile-visual {
+  display: none !important;
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 991px) {
+  .po-hero-section {
+    background-image: none !important;
+    background: #217775 !important;
+    padding: 64px 0 52px;
+    min-height: auto;
+    display: block;
+  }
+
+  .po-hero-content-wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .po-hero-text-col {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .po-hero-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .po-hero-btn-wrap {
+    justify-content: center;
+  }
+
+  .po-hero-mobile-visual {
+    display: block !important;
+    margin-top: 36px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .po-hero-mobile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+    display: block;
+  }
+}
+
+@media (max-width: 640px) {
+  .po-hero-section {
+    padding: 48px 0 40px;
+  }
+
+  .po-hero-primary-btn,
+  .po-hero-secondary-btn {
+    width: 100%;
+  }
+
+  .po-hero-btn-wrap {
+    flex-direction: column;
+    width: 100%;
+  }
+}

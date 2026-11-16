@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => {
       port: parseInt(process.env.PORT || '8443'),
       strictPort: false,
       proxy: {
-        '/neuverve': {
+        '/zentilos': {
           target: 'http://192.168.1.5:5173',
           changeOrigin: true,
           secure: false,

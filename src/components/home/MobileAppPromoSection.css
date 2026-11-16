@@ -512,7 +512,7 @@
 
 .mobile-promo-grid {
   grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
-  gap: 64px;
+  gap: 80px;
 }
 
 .mobile-promo-copy {
@@ -530,7 +530,7 @@
   max-width: 560px;
   margin-bottom: 18px;
   color: #10201D;
-  font-size: 48px;
+  font-size: 43px;
   font-weight: 720;
   line-height: 1.08;
   letter-spacing: 0;
@@ -547,7 +547,7 @@
   max-width: 500px;
   margin-bottom: 26px;
   color: #4B5D58;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.65;
 }
 
@@ -631,27 +631,50 @@
   gap: 18px;
 }
 
-.mobile-promo-demo-btn {
+.mobile-promo-app-btn {
   display: inline-flex;
-  min-height: 46px;
+  min-height: 40px;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 0 18px;
-  border: 1px solid #004B49;
-  border-radius: 6px;
-  background: #004B49;
-  color: #FFFFFF;
+  gap: 8px;
+  padding: 4px 13px 4px 6px;
+  border: 1px solid #D8E5E1;
+  border-radius: 8px;
+  background: #FFFFFF;
+  color: #17302B;
   font: inherit;
-  font-size: 14px;
-  font-weight: 650;
+  font-size: 13px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 180ms ease, border-color 180ms ease;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 52, 48, 0.06);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.mobile-promo-demo-btn:hover {
-  border-color: #00645D;
-  background: #00645D;
+.mobile-promo-app-icon {
+  display: grid;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  place-items: center;
+  border-radius: 7px;
+  background: #E5F2EE;
+  color: #00645D;
+}
+
+.mobile-promo-app-btn:hover {
+  transform: translateY(-1px);
+  border-color: #80B9AE;
+  box-shadow: 0 5px 12px rgba(0, 75, 73, 0.12);
+}
+
+.mobile-promo-app-btn:focus-visible {
+  outline: 2px solid #00645D;
+  outline-offset: 3px;
+}
+
+.mobile-promo-app-icon svg {
+  fill: #D7F45A;
 }
 
 .mobile-promo-details-link {
@@ -823,7 +846,7 @@
 
 @media (max-width: 1080px) {
   .mobile-promo-grid {
-    gap: 36px;
+    gap: 52px;
   }
 }
 
@@ -863,7 +886,7 @@
   }
 
   .mobile-promo-title {
-    font-size: 36px;
+    font-size: 43px;
   }
 
   .mobile-promo-lead {

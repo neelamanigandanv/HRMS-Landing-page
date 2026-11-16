@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
+import PanoramicMidCTA from "../components/common/PanoramicMidCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -429,7 +430,7 @@ export function AssetManagementPage() {
               <div className="emp-hero-center-photo-card">
                 <img
                   src="/images/asset-hero-showcase.webp"
-                  alt="IT asset manager cataloging serialized corporate laptops and reviewing digital handover receipts"
+                  alt="Digital assets and IT infrastructure management dashboard showcase"
                   className="emp-hero-center-img"
                   loading="eager"
                 />
@@ -828,63 +829,15 @@ export function AssetManagementPage() {
         {/* =========================================================================
             6. CENTER CTA SECTION (High-Impact Mid-Page Conversion Card)
             ========================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
-          <div className="container">
-            <div className="emp-center-cta-card">
-              {/* Primary Color Accent Block */}
-              <div className="emp-cta-primary-bar" />
-
-              {/* Overlapping Photorealistic Image */}
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/asset-process-inventory.webp"
-                  alt="IT asset management team conducting serialized hardware inventory audits"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Right Content Area */}
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ CENTRALIZED ASSET GOVERNANCE ✦</span>
-                <h2 id="cta-banner-title" className="emp-cta-title">
-                  Ready to Eliminate Ghost Assets Across All Your Branches?
-                </h2>
-                <p className="emp-cta-desc">
-                  Replace disconnected inventory spreadsheets and unrecorded equipment handovers with one unified, automated IT asset management platform. Protect every device from day-one onboarding to final offboarding.
-                </p>
-                <div className="emp-cta-btn-group">
-                  <button
-                    type="button"
-                    className="emp-cta-btn"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Schedule an Asset Management Demo",
-                        subtitle:
-                          "Experience serialized equipment tracking, mobile digital handovers, and offboarding exit clearance with Zentilos.",
-                      })
-                    }
-                  >
-                    Book a Demo
-                  </button>
-                  <button
-                    type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Talk to an IT Asset Specialist",
-                        subtitle:
-                          "Consult with our solutions team on multi-branch device tracking, barcode auditing, and ISO 27001 audit readiness.",
-                      })
-                    }
-                  >
-                    Talk to an Asset Specialist <Icon name="arrow" size={14} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PanoramicMidCTA
+          eyebrow="Helping Growing Companies Track Every Asset With Confidence!"
+          title="Bringing Modern Asset Management Solutions"
+          imageSrc="/images/asset-process-inventory.webp"
+          imageAlt="IT asset management team conducting serialized hardware inventory audits"
+          demoTitle="Schedule an Asset Management Demo"
+          demoSubtitle="Experience serialized equipment tracking, mobile digital handovers, and offboarding exit clearance with Zentilos."
+          defaultInterest="Asset Management"
+        />
 
         {/* =========================================================================
             7. CONNECTED HRMS MODULES (Works Better Together)

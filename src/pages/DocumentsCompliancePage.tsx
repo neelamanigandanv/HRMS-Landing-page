@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
+import PanoramicMidCTA from "../components/common/PanoramicMidCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -126,8 +127,8 @@ export function DocumentsCompliancePage() {
       id: "compliance-access",
       badge: "03 Checklists & Access",
       eyebrow: "✦ 03. COMPLIANCE & ACCESS CONTROL ✦",
-      image: "/images/doc-block-compliance.webp?v=2",
-      imageAlt: "Corporate compliance officers in boardroom reviewing audit readiness checklist and security controls",
+      image: "/images/feat-doc-vault.webp",
+      imageAlt: "Encrypted document vault dashboard with role-based compliance access controls",
       title: "Statutory Compliance Checklists & Granular Access Control",
       description:
         "Maintain airtight statutory compliance while protecting sensitive employee information. Enforce mandatory document verification checklists by role, grant granular role-based permissions, and log digital policy acknowledgments.",
@@ -888,51 +889,15 @@ export function DocumentsCompliancePage() {
         {/* =========================================================================
             6. MIDDLE CTA SECTION (“Bring More Control to Your HR Documentation.”)
             ========================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
-          <div className="container">
-            <div className="emp-center-cta-card">
-              {/* Primary Color Accent Block */}
-              <div className="emp-cta-primary-bar" />
-
-              {/* Overlapping Photorealistic Team Collaboration Image */}
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/emp-cta-collaboration.webp"
-                  alt="HR compliance and legal team collaborating on employee document governance"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Right Content Area */}
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ CENTRALIZED HR DOCUMENTATION ✦</span>
-                <h2 id="cta-banner-title" className="emp-cta-title">
-                  Bring More Control to Your HR Documentation.
-                </h2>
-                <p className="emp-cta-desc">
-                  Replace missing documents, scattered records, and manual expiry follow-ups with one centralized, encrypted document workspace. Keep every record audit-ready from day one.
-                </p>
-                <div className="emp-cta-btn-group">
-                  <button
-                    type="button"
-                    className="emp-cta-btn"
-                    onClick={handleOpenDemo}
-                  >
-                    Book a Demo
-                  </button>
-                  <button
-                    type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={handleOpenDemo}
-                  >
-                    Talk to an HR Expert <Icon name="arrow" size={14} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PanoramicMidCTA
+          eyebrow="Helping Growing Teams Stay Audit-Ready Every Day!"
+          title="Bringing Modern Document & Compliance Solutions"
+          imageSrc="/images/doc-block-compliance.webp?v=2"
+          imageAlt="HR compliance and legal team collaborating on employee document governance"
+          demoTitle="Schedule a Documents & Compliance Demo"
+          demoSubtitle="Experience centralized document storage, automated expiry alerts, and audit-ready compliance checklists with Zentilos."
+          defaultInterest="Documents & Compliance"
+        />
 
         {/* =========================================================================
             7. CONNECTED HRMS MODULES (How It Works Together)

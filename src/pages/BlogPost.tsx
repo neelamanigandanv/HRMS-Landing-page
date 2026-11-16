@@ -163,13 +163,13 @@ export function BlogPost() {
   const seoTitle = post.seoTitle
     ? (post.seoTitle.includes("Zentilos") ? post.seoTitle : `${post.seoTitle}${blogBrand}`)
     : (function () {
-        const maxBaseLen = 60 - blogBrand.length;
-        if (post.title.length <= maxBaseLen) return `${post.title}${blogBrand}`;
-        const sliced = post.title.slice(0, maxBaseLen);
-        const lastSpace = sliced.lastIndexOf(" ");
-        const clean = (lastSpace > 0 ? sliced.slice(0, lastSpace) : sliced).replace(/[\s,:;\-\/]+$/, "");
-        return `${clean}${blogBrand}`;
-      })();
+      const maxBaseLen = 60 - blogBrand.length;
+      if (post.title.length <= maxBaseLen) return `${post.title}${blogBrand}`;
+      const sliced = post.title.slice(0, maxBaseLen);
+      const lastSpace = sliced.lastIndexOf(" ");
+      const clean = (lastSpace > 0 ? sliced.slice(0, lastSpace) : sliced).replace(/[\s,:;\-\/]+$/, "");
+      return `${clean}${blogBrand}`;
+    })();
 
   return (
     <PageLayout
@@ -240,7 +240,11 @@ export function BlogPost() {
               <aside className="article-left-col" aria-label="Table of contents">
                 <div className="article-toc-box">
                   <div className="article-toc-title">
-                    <Icon name="file-text" size={13} /> IN THIS ARTICLE
+                    <div className="article-toc-heading">
+                      <Icon name="file-text" size={13} />
+                      <span>IN THIS ARTICLE</span>
+                    </div>
+                    <hr className="border-hr" />
                   </div>
                   <nav className="article-toc-nav">
                     {post.toc.map((item) => (

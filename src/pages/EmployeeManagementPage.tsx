@@ -555,8 +555,8 @@ export function EmployeeManagementPage() {
               {/* Center Main Card: Real HR Partner Working */}
               <div className="emp-hero-center-photo-card">
                 <img
-                  src="/images/hero-hr-working-pro.webp"
-                  alt="Zentilos professional managing workforce directory on laptop in modern office"
+                  src="/images/hero-employee-directory-team.webp"
+                  alt="HR team collaborating around a centralized employee directory in a modern office"
                   className="emp-hero-center-img"
                   loading="eager"
                 />
@@ -1005,37 +1005,36 @@ export function EmployeeManagementPage() {
         </section>
 
         {/* =========================================================================
-            6. CENTER CTA SECTION (Replaces Impact Section - Matches Reference Image 1)
+            6. PANORAMIC MID-PAGE CTA BANNER (Inspired by Recruitment Solutions Reference)
             ========================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
+        <section className="emp-panoramic-cta-section" aria-labelledby="cta-banner-title">
           <div className="container">
-            <div className="emp-center-cta-card">
-              {/* Primary Color Accent Block (Replaces Red Block from Reference) */}
-              <div className="emp-cta-primary-bar" />
+            <div className="emp-panoramic-cta-card">
+              {/* Background Photo */}
+              <img
+                src="/images/emp-mid-cta-meeting.webp"
+                alt="Corporate leadership and employee management team in an engaging strategic discussion"
+                className="emp-panoramic-bg-img"
+                loading="lazy"
+              />
 
-              {/* Overlapping Photorealistic Team Collaboration Image */}
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/emp-cta-collaboration.webp"
-                  alt="HR management team collaborating on workforce directory"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
+              {/* Smooth Signature Teal Gradient Overlay */}
+              <div className="emp-panoramic-gradient-overlay" aria-hidden="true" />
 
-              {/* Right Content Area */}
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ CENTRALIZED WORKFORCE PLATFORM ✦</span>
-                <h2 id="cta-banner-title" className="emp-cta-title">
-                  Ready to Centralize Your Employee Management?
+              {/* Left Content Area */}
+              <div className="emp-panoramic-content">
+                <span className="emp-panoramic-eyebrow">
+                  Helping Growing Companies Centralize Their Entire Workforce!
+                </span>
+                <h2 id="cta-banner-title" className="emp-panoramic-title">
+                  Bringing Modern Employee Management Solutions
                 </h2>
-                <p className="emp-cta-desc">
-                  Replace disconnected spreadsheets and manual paperwork with one unified, automated employee directory. Keep every profile verified, compliant, and accessible from day one.
-                </p>
-                <div className="emp-cta-btn-group">
+
+                {/* Dual Action Buttons matching reference style with slanted arrows */}
+                <div className="emp-panoramic-btn-group">
                   <button
                     type="button"
-                    className="emp-cta-btn"
+                    className="emp-panoramic-btn-primary"
                     onClick={() =>
                       openDemoModal({
                         title: "Schedule an Employee Management Demo",
@@ -1044,20 +1043,32 @@ export function EmployeeManagementPage() {
                       })
                     }
                   >
-                    Book a Demo
+                    <span>Book a Demo</span>
+                    <svg className="emp-panoramic-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <line x1="7" y1="7" x2="17" y2="17" />
+                      <polyline points="17 7 17 17 7 17" />
+                    </svg>
                   </button>
                   <button
                     type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Talk to an HR Expert",
-                        subtitle:
-                          "Consult with our product advisors on custom company structures, branch hierarchy, and seamless migration assistance.",
-                      })
-                    }
+                    className="emp-panoramic-btn-secondary"
+                    onClick={() => {
+                      const el = document.getElementById("emp-features-grid") || document.querySelector(".emp-flow-process-section");
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+                      } else {
+                        openDemoModal({
+                          title: "Explore Zentilos Employee Management",
+                          subtitle: "Learn how Zentilos unifies profiles, branch policies, and digital onboarding.",
+                        });
+                      }
+                    }}
                   >
-                    Talk to an HR Expert <Icon name="arrow" size={14} />
+                    <span>What We Offer</span>
+                    <svg className="emp-panoramic-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <line x1="7" y1="7" x2="17" y2="17" />
+                      <polyline points="17 7 17 17 7 17" />
+                    </svg>
                   </button>
                 </div>
               </div>

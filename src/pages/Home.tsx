@@ -1573,7 +1573,7 @@ export function Home() {
             <div className="corporate-hero-content">
               {/* Eyebrow in signature Plum #004B49 replacing the green from reference */}
               <div className="corporate-hero-eyebrow">
-                INNOVATE. CONNECT. GROW.
+                ✦ INNOVATE. CONNECT. GROW. ✦
               </div>
 
               {/* Bold, commanding, clean corporate headline */}
@@ -1799,7 +1799,7 @@ export function Home() {
         <section className="setup-section" id="built-around-your-business">
           <div className="container">
             <SectionHeading
-              eyebrow="BUILT AROUND YOUR BUSINESS"
+              eyebrow="✦ BUILT AROUND YOUR BUSINESS ✦"
               title="Your organization, your rules"
               body="Configure Zentilos to match how your company actually works — not the other way around."
               center
@@ -1864,7 +1864,7 @@ export function Home() {
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="setup-card-img"
+                      className={`setup-card-img setup-card-img-${i}`}
                       loading="lazy"
                       decoding="async"
                     />
@@ -1931,7 +1931,7 @@ export function Home() {
           <div className="container">
             <div className="business-setup-v2-layout">
               <div className="business-setup-v2-intro">
-                <span className="business-setup-v2-eyebrow">BUILT AROUND YOUR BUSINESS</span>
+                <span className="business-setup-v2-eyebrow">✦ BUILT AROUND YOUR BUSINESS ✦</span>
                 <h2>Your organization, <span>your rules.</span></h2>
                 <p>
                   Set up your people, permissions, schedules, and locations around the way your
@@ -2016,7 +2016,7 @@ export function Home() {
         >
           <div className="container">
             <SectionHeading
-              eyebrow="BUILT AROUND YOUR BUSINESS 3.0"
+              eyebrow="✦ BUILT AROUND YOUR BUSINESS 3.0 ✦"
               title="The right setup for every team"
               body="Bring your people, locations and policies together in one workforce platform."
               center
@@ -2091,7 +2091,7 @@ export function Home() {
         <section className="modules-section">
           <div className="container">
             <SectionHeading
-              eyebrow="ONE COMPLETE PLATFORM"
+              eyebrow="✦ ONE COMPLETE PLATFORM ✦"
               title="Everything your people team needs"
               body="Start with what you need today. Add more as your business grows."
               center
@@ -2105,7 +2105,7 @@ export function Home() {
         <section className="pricing-section" id="pricing">
           <div className="container">
             <SectionHeading
-              eyebrow="SIMPLE, TRANSPARENT PRICING"
+              eyebrow="✦ SIMPLE, TRANSPARENT PRICING ✦"
               title="Estimate your investment"
               body="No hidden costs. Adjust the team size to see an instant estimate."
               center
@@ -2143,7 +2143,7 @@ export function Home() {
               </div>
             </div>
             <SectionHeading
-              eyebrow="CUSTOMER STORIES"
+              eyebrow="✦ CUSTOMER STORIES ✦"
               title="Loved by teams that are growing"
               center
             />
@@ -2201,7 +2201,7 @@ export function Home() {
           <div className="container faq-grid">
             <div>
               <SectionHeading
-                eyebrow="QUESTIONS, ANSWERED"
+                eyebrow="✦ QUESTIONS, ANSWERED ✦"
                 title="Everything you need to know"
                 body="Can’t find what you’re looking for? Our team is happy to help."
               />

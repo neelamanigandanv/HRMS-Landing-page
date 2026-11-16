@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
+import PanoramicMidCTA from "../components/common/PanoramicMidCTA";
 import SEO from "../components/layout/SEO";
 import Icon, { IconName } from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -817,48 +818,15 @@ export function PerformanceManagementPage() {
         {/* =========================================================================
             6. MIDDLE CTA SECTION (Help Every Employee Move Forward)
             ========================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="middle-cta-title">
-          <div className="container">
-            <div className="emp-center-cta-card">
-              <div className="emp-cta-primary-bar" />
-
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/emp-cta-collaboration.webp"
-                  alt="Team celebrating successful performance review and development milestones"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
-
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ HELP EVERY EMPLOYEE GROW ✦</span>
-                <h2 id="middle-cta-title" className="emp-cta-title">
-                  Help Every Employee Move Forward.
-                </h2>
-                <p className="emp-cta-desc">
-                  Bring more structure to employee goals, reviews, and development conversations.
-                </p>
-                <div className="emp-cta-btn-group">
-                  <button
-                    type="button"
-                    className="emp-cta-btn"
-                    onClick={handleOpenDemo}
-                  >
-                    Request a Demo
-                  </button>
-                  <button
-                    type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={handleOpenDemo}
-                  >
-                    Talk to a Product Specialist <Icon name="arrow" size={14} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PanoramicMidCTA
+          eyebrow="Helping Growing Teams Build High-Performing Workforces!"
+          title="Bringing Modern Performance Management Solutions"
+          imageSrc="/images/reports-block-workforce.webp"
+          imageAlt="People analytics dashboard tracking workforce performance and development progress"
+          demoTitle="Schedule a Performance Management Demo"
+          demoSubtitle="Experience goal tracking, structured appraisals, and development conversations with Zentilos."
+          defaultInterest="Performance Management"
+        />
 
         {/* =========================================================================
             7. HOW IT WORKS TOGETHER (Connect Individual Progress With Team Goals)

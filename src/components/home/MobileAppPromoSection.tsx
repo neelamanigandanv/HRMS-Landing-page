@@ -67,7 +67,7 @@ export function MobileAppPromoSection() {
           {/* Left Column: Headline, 4 Interactive Features & Store CTAs */}
           <div className="mobile-promo-copy">
             <span className="mobile-promo-eyebrow">
-              ZENTILOS MOBILE · IOS AND ANDROID
+              ✦ ZENTILOS MOBILE · IOS AND ANDROID ✦
             </span>
 
             <h2 id="mobile-app-heading" className="mobile-promo-title">
@@ -135,6 +135,18 @@ export function MobileAppPromoSection() {
                   loading="lazy"
                   decoding="async"
                 />
+              </a>
+              <a
+                className="mobile-promo-app-btn"
+                href="https://play.google.com/store/search?q=Zentilos&c=apps"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Find the Zentilos app on Google Play"
+              >
+                <span className="mobile-promo-app-icon" aria-hidden="true">
+                  <Icon name="star" size={15} />
+                </span>
+                Zentilos App
               </a>
             </div>
 

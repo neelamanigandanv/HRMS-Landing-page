@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
+import PanoramicMidCTA from "../components/common/PanoramicMidCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
@@ -876,63 +877,15 @@ export function PayrollManagementPage() {
         {/* =========================================================================
             6. CENTER CTA SECTION
             ========================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
-          <div className="container">
-            <div className="emp-center-cta-card">
-              {/* Primary Color Accent Block */}
-              <div className="emp-cta-primary-bar" />
-
-              {/* Overlapping Photorealistic Team Collaboration Image */}
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/leave-block-payroll.webp"
-                  alt="Finance Director and HR payroll lead reviewing monthly compensation disbursements"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Right Content Area */}
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ CONNECTED PAYROLL PLATFORM ✦</span>
-                <h2 id="cta-banner-title" className="emp-cta-title">
-                  Ready to Modernize Your Monthly Payroll?
-                </h2>
-                <p className="emp-cta-desc">
-                  Replace complex formulas, manual bank files, and compliance anxiety with an automated, 100% compliant salary platform. Give your team peace of mind on payday.
-                </p>
-                <div className="emp-cta-btn-group">
-                  <button
-                    type="button"
-                    className="emp-cta-btn"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Schedule a Payroll Management Demo",
-                        subtitle:
-                          "Experience 1-click salary processing, statutory tax calculation, and direct bank disbursals with Zentilos.",
-                      })
-                    }
-                  >
-                    Book a Demo
-                  </button>
-                  <button
-                    type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Talk to a Payroll Specialist",
-                        subtitle:
-                          "Consult with our product advisors on tax regime setup, banking API integrations, and seamless migration assistance.",
-                      })
-                    }
-                  >
-                    Talk to a Specialist <Icon name="arrow" size={14} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PanoramicMidCTA
+          eyebrow="Helping Growing Companies Run Payroll Without Errors!"
+          title="Bringing Modern Payroll Management Solutions"
+          imageSrc="/images/reports-block-payroll.webp"
+          imageAlt="Payroll analytics dashboard showing salary disbursements and statutory deductions"
+          demoTitle="Schedule a Payroll Management Demo"
+          demoSubtitle="Experience 1-click salary processing, statutory tax calculation, and direct bank disbursals with Zentilos."
+          defaultInterest="Payroll Management"
+        />
 
         {/* =========================================================================
             7. CONNECTED HRMS MODULES (Works Better Together)

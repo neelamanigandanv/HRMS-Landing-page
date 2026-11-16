@@ -13,6 +13,7 @@ interface ServiceCard {
   title: string;
   desc: string;
   href: string;
+  icon: IconName;
 }
 
 interface ValuePrinciple {
@@ -68,42 +69,48 @@ const OUR_SERVICES: ServiceCard[] = [
     title: "Payroll Management",
     desc: "Automated payroll processing to ensure timely statutory compliance and accurate employee compensation.",
     href: "/features/payroll-management",
+    icon: "payroll",
   },
   {
     image: "/images/emp-block-onboarding.webp",
     title: "Employee Directory",
     desc: "Centralized digital workforce profiles, org hierarchies, and guided onboarding across every branch office.",
     href: "/features/employee-management",
+    icon: "employee",
   },
   {
     image: "/images/att-hero-showcase.webp",
     title: "Attendance & Shifts",
     desc: "Geofenced mobile punches, biometric sync, and automated shift rules built for multi-location accuracy.",
     href: "/features/attendance-management",
+    icon: "attendance",
   },
   {
     image: "/images/leave-block-accrual.webp",
     title: "Leave Administration",
     desc: "Comprehensive leave accruals, regional holiday calendars, and 1-tap approval workflows that simplify planning.",
     href: "/features/leave-management",
+    icon: "leave",
   },
   {
     image: "/images/perf-block-goals.webp",
     title: "Performance & OKRs",
     desc: "Structured appraisal cycles, peer feedback, and goal tracking aligned to support company-wide growth.",
     href: "/features/performance-management",
+    icon: "target",
   },
   {
     image: "/images/reports-block-workforce.webp",
     title: "Workforce Analytics",
     desc: "Decision-ready headcount, attrition, and payroll cost reports to guide real-time executive planning.",
     href: "/features/reports-analytics",
+    icon: "reports",
   },
 ];
 
 const FUTURE_PILLARS: FuturePillar[] = [
   {
-    icon: "zap",
+    icon: "sparkle",
     title: "Intelligent Workflow Automation",
     status: "Core Priority",
     desc: "Smart anomaly detection for missing punches, automated overtime threshold alerts, and exception-first payroll verification so teams review only what needs attention.",
@@ -115,7 +122,7 @@ const FUTURE_PILLARS: FuturePillar[] = [
     desc: "Deeper multi-currency support, localized holiday engines, and regional statutory templates for ambitious companies expanding across cities and borders.",
   },
   {
-    icon: "chart",
+    icon: "reports",
     title: "Mobile-First Workforce Clarity",
     status: "In Focus",
     desc: "Richer iOS and Android self-service experiences connecting field teams, shift managers, and headquarters in real time with offline-resilient sync.",
@@ -124,28 +131,43 @@ const FUTURE_PILLARS: FuturePillar[] = [
 
 export function AboutUs2Page() {
   const servicesTrackRef = useRef<HTMLDivElement>(null);
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(true);
+  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
 
-  const syncServiceScrollButtons = useCallback(() => {
+  const syncActiveServiceIndex = useCallback(() => {
     const el = servicesTrackRef.current;
     if (!el) return;
-    setCanScrollPrev(el.scrollLeft > 4);
-    setCanScrollNext(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+    const cards = Array.from(el.querySelectorAll<HTMLElement>(".ab2-service-card"));
+    if (!cards.length) return;
+    const scrollCenter = el.scrollLeft + el.clientWidth / 2;
+    let closestIndex = 0;
+    let minDistance = Infinity;
+    cards.forEach((card, index) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const dist = Math.abs(cardCenter - scrollCenter);
+      if (dist < minDistance) {
+        minDistance = dist;
+        closestIndex = index;
+      }
+    });
+    setActiveServiceIndex(closestIndex);
   }, []);
 
   useEffect(() => {
-    syncServiceScrollButtons();
-    window.addEventListener("resize", syncServiceScrollButtons);
-    return () => window.removeEventListener("resize", syncServiceScrollButtons);
-  }, [syncServiceScrollButtons]);
+    syncActiveServiceIndex();
+    window.addEventListener("resize", syncActiveServiceIndex);
+    return () => window.removeEventListener("resize", syncActiveServiceIndex);
+  }, [syncActiveServiceIndex]);
 
-  const scrollServices = (direction: -1 | 1) => {
+  const scrollToService = (index: number) => {
     const el = servicesTrackRef.current;
     if (!el) return;
-    const firstCard = el.querySelector<HTMLElement>(".ab2-service-card");
-    const step = firstCard ? firstCard.offsetWidth + 22 : 300;
-    el.scrollBy({ left: direction * step, behavior: "smooth" });
+    const cards = Array.from(el.querySelectorAll<HTMLElement>(".ab2-service-card"));
+    const targetCard = cards[index];
+    if (targetCard) {
+      const targetScroll = targetCard.offsetLeft - el.offsetLeft;
+      el.scrollTo({ left: targetScroll, behavior: "smooth" });
+      setActiveServiceIndex(index);
+    }
   };
 
   const scrollToSection = (targetId: string) => {
@@ -372,7 +394,7 @@ export function AboutUs2Page() {
         <section className="ab2-mv-section" id="ab2-mission-vision">
           <div className="container">
             <SectionHeading
-              eyebrow="✦ MISSION & VISION ✦"
+              eyebrow="MISSION & VISION"
               title="What we believe and where we're going"
               body="Two fundamental commitments that shape every product decision we make."
               center
@@ -484,7 +506,7 @@ export function AboutUs2Page() {
             <div
               ref={servicesTrackRef}
               className="ab2-services-track"
-              onScroll={syncServiceScrollButtons}
+              onScroll={syncActiveServiceIndex}
               role="region"
               aria-label="Zentilos HR Services"
             >
@@ -497,6 +519,9 @@ export function AboutUs2Page() {
                       loading="lazy"
                       decoding="async"
                     />
+                    <div className="ab2-service-icon-badge" aria-hidden="true">
+                      <Icon name={service.icon} size={18} />
+                    </div>
                   </div>
                   <div className="ab2-service-body">
                     <h3>{service.title}</h3>
@@ -506,25 +531,18 @@ export function AboutUs2Page() {
               ))}
             </div>
 
-            <div className="ab2-services-controls">
-              <button
-                type="button"
-                className="ab2-carousel-btn"
-                onClick={() => scrollServices(-1)}
-                disabled={!canScrollPrev}
-                aria-label="Scroll services left"
-              >
-                <Icon name="chevron" size={16} className="ab2-chevron-prev" />
-              </button>
-              <button
-                type="button"
-                className="ab2-carousel-btn"
-                onClick={() => scrollServices(1)}
-                disabled={!canScrollNext}
-                aria-label="Scroll services right"
-              >
-                <Icon name="chevron" size={16} />
-              </button>
+            <div className="ab2-services-dots" role="tablist" aria-label="Services carousel pagination">
+              {OUR_SERVICES.map((service, index) => (
+                <button
+                  key={service.title}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeServiceIndex === index}
+                  aria-label={`Go to slide ${index + 1}: ${service.title}`}
+                  className={`ab2-carousel-dot ${activeServiceIndex === index ? "is-active" : ""}`}
+                  onClick={() => scrollToService(index)}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -584,11 +602,14 @@ export function AboutUs2Page() {
               <div className="ab2-future-intro">
                 <div>
                   <span className="ab2-eyebrow">LOOKING AHEAD</span>
-                  <h2>Our future direction</h2>
+                  <h2>
+                    Our future direction
+                    <span>starts with people.</span>
+                  </h2>
                   <p>
-                    Workplaces are becoming more distributed, shift-flexible, and compliance-conscious
-                    every year. We&apos;re building the next generation of automated HR intelligence
-                    while keeping the experience light, human, and reliable.
+                    As work becomes more distributed and connected, we&apos;re shaping HR technology
+                    that helps every team move forward with clarity, confidence, and a more human
+                    experience.
                   </p>
                 </div>
 
@@ -603,12 +624,13 @@ export function AboutUs2Page() {
               </div>
 
               <div className="ab2-future-cards">
-                {FUTURE_PILLARS.map((pillar) => (
+                {FUTURE_PILLARS.map((pillar, index) => (
                   <article className="ab2-future-card" key={pillar.title}>
                     <span className="ab2-future-icon">
-                      <Icon name={pillar.icon} size={20} />
+                      <Icon name={pillar.icon} size={18} />
                     </span>
                     <div>
+                      <span className="ab2-future-step">PILLAR 0{index + 1}</span>
                       <div className="ab2-future-meta">
                         <h3>{pillar.title}</h3>
                         <span className="ab2-future-status">{pillar.status}</span>

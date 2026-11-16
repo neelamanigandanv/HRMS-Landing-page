@@ -139,7 +139,7 @@ export function Navbar() {
                     <p>Modular, connected workforce tools designed for multi-branch companies.</p>
                   </div>
                   <Link to="/product" className="mega-overview-btn">
-                    View Product Overview <Icon name="arrow" size={14} />
+                    Product Overview <Icon name="arrow" size={14} />
                   </Link>
                 </div>
 
@@ -198,7 +198,7 @@ export function Navbar() {
                     <p>Tailored configurations built for your business stage and role.</p>
                   </div>
                   <Link to="/solutions" className="mega-overview-btn">
-                    All Solutions <Icon name="arrow" size={14} />
+                    Solutions Overview <Icon name="arrow" size={14} />
                   </Link>
                 </div>
 

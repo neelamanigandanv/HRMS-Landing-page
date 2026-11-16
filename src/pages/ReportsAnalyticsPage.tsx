@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
+import PanoramicMidCTA from "../components/common/PanoramicMidCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
 import SectionHeading from "../components/ui/SectionHeading";
@@ -893,62 +894,15 @@ export function ReportsAnalyticsPage() {
         {/* =========================================================================
             6. CENTER CTA SECTION (Plum Accent Bar + Overlapping Image)
             ========================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
-          <div className="container">
-            <div className="emp-center-cta-card">
-              <div className="emp-cta-primary-bar" />
-
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/reports-cta-analytics.webp"
-                  alt="HR leaders and management reviewing report summaries in a collaborative meeting"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
-
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ DECISION-READY REPORTING ✦</span>
-                <h2 id="cta-banner-title" className="emp-cta-title">
-                  Ready to Eliminate Spreadsheet Reporting Forever?
-                </h2>
-                <p className="emp-cta-desc">
-                  Replace disconnected spreadsheets and manual paperwork with one unified, automated analytics platform. Keep every report verified, compliant, and accessible on demand.
-                </p>
-                <div className="emp-cta-btn-group">
-                  <button
-                    type="button"
-                    className="emp-cta-btn"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Schedule a Reports & Analytics Demo",
-                        subtitle:
-                          "Experience automated workforce reporting, attendance analytics, and pre-payroll registers with Zentilos.",
-                        defaultInterest: "Reports & Analytics",
-                      })
-                    }
-                  >
-                    Book a Demo
-                  </button>
-                  <button
-                    type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Talk to a Data Specialist",
-                        subtitle:
-                          "Consult with our product advisors on custom report templates, multi-branch metrics, and export automation.",
-                        defaultInterest: "Reports & Analytics",
-                      })
-                    }
-                  >
-                    Talk to an HR Expert <Icon name="arrow" size={14} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <PanoramicMidCTA
+          eyebrow="Helping Growing Companies Turn Data Into Decisions!"
+          title="Bringing Modern Reports & Analytics Solutions"
+          imageSrc="/images/reports-cta-analytics.webp"
+          imageAlt="HR leaders and management reviewing report summaries in a collaborative meeting"
+          demoTitle="Schedule a Reports & Analytics Demo"
+          demoSubtitle="Experience automated workforce reporting, attendance analytics, and pre-payroll registers with Zentilos."
+          defaultInterest="Reports & Analytics"
+        />
 
         {/* =========================================================================
             7. CONNECTED HRMS MODULES (Works Better Together - 4 Cards)

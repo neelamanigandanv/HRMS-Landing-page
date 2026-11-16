@@ -1,0 +1,216 @@
+/* =========================================================================
+   PANORAMIC MID-PAGE CTA BANNER
+   Shared across product detail pages to match the Employee Management mid-CTA.
+   Full-width rounded card, background photo, signature teal gradient overlay,
+   and dual primary/secondary slanted-arrow buttons.
+   ========================================================================= */
+.emp-panoramic-cta-section {
+  padding: 5.5rem 0 6rem;
+  background: #ffffff;
+  position: relative;
+}
+
+.emp-panoramic-cta-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  box-shadow:
+    0 24px 54px -12px rgba(0, 52, 48, 0.16),
+    0 6px 18px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 75, 73, 0.18);
+  background-color: #002b29;
+}
+
+.emp-panoramic-bg-img {
+  position: absolute;
+  top: 0;
+  left: 65px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  display: block;
+  z-index: 1;
+}
+
+@media (max-width: 991px) {
+  .emp-panoramic-bg-img {
+    left: 0;
+    object-position: center center;
+  }
+}
+
+.emp-panoramic-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 39, 37, 0.98) 0%,
+    rgba(0, 48, 46, 0.96) 28%,
+    rgba(0, 75, 73, 0.88) 46%,
+    rgba(0, 75, 73, 0.45) 64%,
+    rgba(0, 75, 73, 0.12) 80%,
+    rgba(0, 75, 73, 0) 92%
+  );
+  pointer-events: none;
+}
+
+.emp-panoramic-content {
+  position: relative;
+  z-index: 3;
+  padding: 60px 48px 60px 64px;
+  max-width: 620px;
+}
+
+@media (max-width: 991px) {
+  .emp-panoramic-content {
+    padding: 48px 36px;
+    max-width: 100%;
+  }
+
+  .emp-panoramic-gradient-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 39, 37, 0.96) 0%,
+      rgba(0, 48, 46, 0.92) 50%,
+      rgba(0, 75, 73, 0.75) 100%
+    );
+  }
+}
+
+@media (max-width: 640px) {
+  .emp-panoramic-content {
+    padding: 36px 22px;
+  }
+}
+
+.emp-panoramic-eyebrow {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #d1fae5;
+  margin-bottom: 1.15rem;
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 640px) {
+  .emp-panoramic-eyebrow {
+    font-size: 0.85rem;
+    margin-bottom: 0.85rem;
+  }
+}
+
+.emp-panoramic-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+  margin: 0 0 2rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1200px) {
+  .emp-panoramic-title {
+    font-size: 2.35rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .emp-panoramic-title {
+    font-size: 1.85rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.emp-panoramic-btn-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.emp-panoramic-btn-primary,
+.emp-panoramic-btn-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #004b49;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 35, 33, 0.45);
+  transition: transform 0.22s ease, background-color 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.emp-panoramic-btn-primary:hover,
+.emp-panoramic-btn-yellow:hover {
+  background-color: #003836;
+  border-color: rgba(255, 255, 255, 0.75);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 35, 33, 0.6);
+}
+
+.emp-panoramic-btn-primary:active,
+.emp-panoramic-btn-yellow:active {
+  transform: translateY(0);
+}
+
+.emp-panoramic-btn-secondary,
+.emp-panoramic-btn-mint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #004b49;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 13px 26px;
+  border-radius: 8px;
+  border: 1.5px solid #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  transition: transform 0.22s ease, background-color 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.emp-panoramic-btn-secondary:hover,
+.emp-panoramic-btn-mint:hover {
+  background-color: #f6f8f8;
+  border-color: #f6f8f8;
+  color: #003836;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.emp-panoramic-btn-secondary:active,
+.emp-panoramic-btn-mint:active {
+  transform: translateY(0);
+}
+
+.emp-panoramic-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.emp-panoramic-btn-primary:hover .emp-panoramic-arrow,
+.emp-panoramic-btn-yellow:hover .emp-panoramic-arrow,
+.emp-panoramic-btn-secondary:hover .emp-panoramic-arrow,
+.emp-panoramic-btn-mint:hover .emp-panoramic-arrow {
+  transform: translate(2px, 2px);
+}

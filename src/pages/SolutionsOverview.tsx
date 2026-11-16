@@ -5,6 +5,8 @@ import SEO from "../components/layout/SEO";
 import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
+import EmployeeStyleHero from "../components/common/EmployeeStyleHero";
+import EditorialMidCTA from "../components/common/EditorialMidCTA";
 import { useDemoModal } from "../context/DemoModalContext";
 import { useCurrency } from "../context/CurrencyContext";
 import "./EmployeeManagementPage.css";
@@ -236,54 +238,59 @@ export function SolutionsOverview() {
 
       <div className="solutions-overview-page">
         {/* =================================================================
-            1. HERO SECTION (CENTERED)
+            1. HERO SECTION (EMPLOYEE MANAGEMENT SPOTLIGHT HERO)
             ================================================================= */}
-        <section className="so-hero-section">
-          <div className="so-hero-ambient-glow" />
-          <div className="container so-hero-centered-wrap">
-            <div className="so-hero-copy">
-              <span className="so-eyebrow-badge">
-                <i>
-                  <Icon name="sparkle" size={14} />
-                </i>
-                TAILORED WORKFLOWS
-              </span>
-              <h1 className="so-hero-title">
-                Software That <em>Adapts to Your Organization</em> — Not the Other Way Around
-              </h1>
-              <p className="so-hero-lead">
-                From fast-growing teams to distributed multi-branch enterprises,
-                explore how Zentilos unifies workforce operations, attendance, and payroll.
-              </p>
-              <div className="so-hero-actions">
-                <Button onClick={() => openDemoModal()}>
-                  Book a Free Demo <Icon name="arrow" size={16} />
-                </Button>
-                <Button href="#stages" secondary className="so-hero-btn-secondary">
-                  Explore Solutions
-                </Button>
-              </div>
-
-              {/* Trust & Proof Bar */}
-              <div className="so-hero-proof-bar">
-                <div className="so-proof-item">
-                  <span className="so-proof-num">500+</span>
-                  <span className="so-proof-label">Growing businesses</span>
-                </div>
-                <div className="so-proof-sep" />
-                <div className="so-proof-item">
-                  <span className="so-proof-num">99.8%</span>
-                  <span className="so-proof-label">Statutory compliance</span>
-                </div>
-                <div className="so-proof-sep" />
-                <div className="so-proof-item">
-                  <span className="so-proof-num">2 Weeks</span>
-                  <span className="so-proof-label">Average deployment</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <EmployeeStyleHero
+          badgeText="✦ ZENTILOS ✦"
+          title={
+            <>
+              Software That <span className="emp-glow-text">Adapts</span>
+              <br className="emp-hero-br" />
+              To Your Organization
+            </>
+          }
+          subhead="From fast-growing teams to distributed multi-branch enterprises, explore how Zentilos tailors workforce operations, attendance, payroll, and compliance to the way your business runs."
+          primaryLabel="Book a Free Demo"
+          onPrimaryClick={() =>
+            openDemoModal({
+              title: "Book a Solutions Overview Demo",
+              subtitle:
+                "Explore tailored Zentilos solutions for your company stage, team structure, and multi-branch operations.",
+              defaultInterest: "Solutions Overview",
+            })
+          }
+          secondaryLabel="Explore Solutions"
+          onSecondaryClick={() => {
+            const el = document.getElementById("stages");
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+          }}
+          trustPoints={[
+            "500+ growing businesses",
+            "99.8% statutory compliance",
+            "2-week average deployment",
+          ]}
+          imageSrc="/images/product-mid-cta-team.webp"
+          imageAlt="Business team collaborating on tailored workforce solutions in a modern office"
+          statusPill="Solutions Active"
+          leftWidgetTitle="Solution Adoption"
+          leftWidgetSub="By Company Stage"
+          leftWidgetBadge="Matched"
+          donutCenterLabel="Solutions"
+          donutCenterValue="5"
+          donutSegments={[
+            { label: "Startups", percent: 32, color: "#004B49" },
+            { label: "Mid-Market", percent: 38, color: "#10b981" },
+            { label: "Enterprise", percent: 30, color: "#8b5cf6" },
+          ]}
+          rightWidgetTitle="Deployment Readiness"
+          rightWidgetSub="Last 30 Days"
+          rightWidgetBadge="Ready"
+          rightStatValue="2 Weeks"
+          rightStatLabel="Average Go-Live"
+          rightStatMeta="Dedicated implementation"
+          barHeights={[38, 60, 52, 74, 92, 68, 85]}
+          rightFooterText="Every solution mapped to your growth stage"
+        />
 
         {/* =================================================================
             2. SOLUTIONS BY COMPANY STAGE
@@ -672,67 +679,35 @@ export function SolutionsOverview() {
         </section>
 
         {/* =================================================================
-            4. MIDDLE CTA SECTION (Matches Employee Management Page Mid-CTA)
+            4. MIDDLE CTA SECTION (Matches Product Overview Mid-CTA)
             ================================================================= */}
-        <section className="emp-center-cta-section" aria-labelledby="cta-banner-title">
-          <div className="container">
-            <div className="emp-center-cta-card">
-              {/* Primary Color Accent Block */}
-              <div className="emp-cta-primary-bar" />
-
-              {/* Overlapping Photorealistic Team Collaboration Image */}
-              <div className="emp-cta-img-wrap">
-                <img
-                  src="/images/emp-cta-collaboration.webp"
-                  alt="HR leadership and management team collaborating on workforce strategy"
-                  className="emp-cta-img"
-                  loading="lazy"
-                />
-              </div>
-
-              {/* Right Content Area */}
-              <div className="emp-cta-content">
-                <span className="emp-cta-badge">✦ MULTI-ENTITY WORKFORCE PLATFORM ✦</span>
-                <h2 id="cta-banner-title" className="emp-cta-title">
-                  Ready to Unify Your HR Across Every Branch &amp; Country?
-                </h2>
-                <p className="emp-cta-desc">
-                  Run payroll, attendance, and compliance for all your locations and legal entities from one unified dashboard. Keep every team aligned, compliant, and accessible from day one.
-                </p>
-                <div className="emp-cta-btn-group">
-                  <button
-                    type="button"
-                    className="emp-cta-btn"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Schedule an Enterprise Solutions Demo",
-                        subtitle:
-                          "Experience centralized multi-entity management, cross-branch workforce directories, and automated compliance.",
-                        defaultInterest: "Enterprise Solutions",
-                      })
-                    }
-                  >
-                    Book a Demo
-                  </button>
-                  <button
-                    type="button"
-                    className="emp-cta-btn-secondary"
-                    onClick={() =>
-                      openDemoModal({
-                        title: "Talk to an HR Solutions Specialist",
-                        subtitle:
-                          "Consult with our product advisors on custom company structures, branch hierarchy, and seamless migration assistance.",
-                        defaultInterest: "Solutions Consultation",
-                      })
-                    }
-                  >
-                    Talk to an HR Expert <Icon name="arrow" size={14} />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <EditorialMidCTA
+          eyebrow="SOLUTIONS FOR THE WAY YOU WORK"
+          title="Solutions built around your business"
+          description="From fast-growing startups to multi-country enterprises, see how Zentilos adapts HR, payroll, attendance, and compliance to your team structure, locations, and stage of growth."
+          primaryLabel="Get A Demo"
+          onPrimaryClick={() =>
+            openDemoModal({
+              title: "Book a Solutions Overview Demo",
+              subtitle:
+                "Explore tailored Zentilos solutions for your company stage, team structure, and multi-branch operations.",
+              defaultInterest: "Solutions Overview",
+            })
+          }
+          secondaryLabel="Explore Role Solutions"
+          secondaryHref="#roles"
+          imageSrc="/images/solutions-consultation-cta.webp"
+          imageAlt="Zentilos solutions consultants tailoring HR software for growing businesses"
+          chatLabel="Ask Zentilos"
+          onChatClick={() =>
+            openDemoModal({
+              title: "Talk to a Zentilos Solutions Specialist",
+              subtitle:
+                "Get guidance on choosing the right Zentilos setup for your company size, industry, and workforce model.",
+              defaultInterest: "Solutions Consultation",
+            })
+          }
+        />
 
         {/* =================================================================
             5. FUNCTIONAL LEADERSHIP SOLUTIONS (EXACT REFERENCE PARITY WITH PRIMARY THEME)

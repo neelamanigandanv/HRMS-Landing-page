@@ -21,7 +21,7 @@ export function getApiBaseUrl(): string {
     return cleaned;
   }
 
-  return "http://143.110.191.151:9001/neuverve";
+  return "http://143.110.191.151:9001/zentilos";
 }
 
 export function buildApiUrl(endpointPath: string): string {
@@ -29,8 +29,8 @@ export function buildApiUrl(endpointPath: string): string {
   const cleanPath = endpointPath.startsWith("/") ? endpointPath : `/${endpointPath}`;
 
   // If base already contains /neuverve, and path starts with /neuverve, avoid duplicate
-  if (base.endsWith("/neuverve") && cleanPath.startsWith("/neuverve/")) {
-    return `${base}${cleanPath.substring("/neuverve".length)}`;
+  if (base.endsWith("/zentilos") && cleanPath.startsWith("/zentilos/")) {
+    return `${base}${cleanPath.substring("/zentilos".length)}`;
   }
 
   return `${base}${cleanPath}`;
