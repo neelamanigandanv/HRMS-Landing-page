@@ -721,9 +721,6 @@ export function RolesPermissionsPage() {
                     tabIndex={0}
                     aria-pressed={isActive}
                   >
-                    <div className="emp-process-notch">
-                      <span className="emp-process-notch-num">{step.number}</span>
-                    </div>
 
                     <div className="emp-process-icon-box">{step.icon}</div>
 
@@ -934,7 +931,7 @@ export function RolesPermissionsPage() {
         <PanoramicMidCTA
           eyebrow="Helping Growing Companies Secure Every Role and Record!"
           title="Bringing Modern Roles & Permissions Solutions"
-          imageSrc="/images/employee-directory-dashboard.webp"
+          imageSrc="/image-originals/role permission image.png"
           imageAlt="Administrator managing employee roles and access permissions from a directory dashboard"
           demoTitle="Schedule a Roles & Permissions Demo"
           demoSubtitle="Experience granular role-based access, branch-scoped permissions, and audit-ready security controls with Zentilos."
@@ -974,9 +971,6 @@ export function RolesPermissionsPage() {
                     tabIndex={0}
                     aria-pressed={isActive}
                   >
-                    <div className="emp-process-notch" aria-label={`Module ${mod.number}`}>
-                      <span className="emp-process-notch-num">{mod.number}</span>
-                    </div>
 
                     <div className="emp-process-icon-box" aria-hidden="true">
                       {mod.icon}

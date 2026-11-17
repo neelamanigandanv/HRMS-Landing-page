@@ -686,9 +686,6 @@ export function PerformanceManagementPage() {
                     tabIndex={0}
                     aria-pressed={isActive}
                   >
-                    <div className="emp-process-notch">
-                      <span className="emp-process-notch-num">{step.number}</span>
-                    </div>
 
                     <div className="emp-process-icon-box">{step.icon}</div>
 
@@ -861,9 +858,6 @@ export function PerformanceManagementPage() {
                     tabIndex={0}
                     aria-pressed={isActive}
                   >
-                    <div className="emp-process-notch" aria-label={`Module ${mod.number}`}>
-                      <span className="emp-process-notch-num">{mod.number}</span>
-                    </div>
 
                     <div className="emp-process-icon-box" aria-hidden="true">
                       {mod.icon}

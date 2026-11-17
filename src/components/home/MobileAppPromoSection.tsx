@@ -136,7 +136,7 @@ export function MobileAppPromoSection() {
                   decoding="async"
                 />
               </a>
-              <a
+              {/* <a
                 className="mobile-promo-app-btn"
                 href="https://play.google.com/store/search?q=Zentilos&c=apps"
                 target="_blank"
@@ -147,7 +147,7 @@ export function MobileAppPromoSection() {
                   <Icon name="star" size={15} />
                 </span>
                 Zentilos App
-              </a>
+              </a> */}
             </div>
 
           </div>

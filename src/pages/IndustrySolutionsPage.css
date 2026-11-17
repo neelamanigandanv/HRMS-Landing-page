@@ -92,9 +92,9 @@
   align-items: center;
   justify-content: center;
   gap: 0.55rem;
-  background: #004B49;
-  color: #ffffff;
-  border: 1px solid #004B49;
+  background:#004B49;
+  color: #f4f9f9;
+  border: 1px solid #033432;
   border-radius: 8px;
   padding: 0 28px;
   font-size: 15px;
@@ -873,9 +873,9 @@
 }
 
 .ind-core-icon-ring {
-  width: 82px;
-  height: 82px;
-  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  border-radius: 35%;
   border: 2.5px solid #E5EAEA;
   display: flex;
   align-items: center;
@@ -1089,21 +1089,35 @@
   transform: scale(1.05);
 }
 
+.ind-turn-front-icon {
+  width: 48px;
+  height: 48px;
+  margin: 16px auto 0;
+  border-radius: 14px;
+  border: 1px solid #E5EAEA;
+  background: #F6F8F8;
+  color: #004B49;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 75, 73, 0.06);
+}
+
 .ind-turn-front-content {
-  padding: 1.25rem 1.25rem 0.25rem;
+  padding: 0.85rem 1.25rem 0.25rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: auto;
 }
 
 /* Pill badge in lower-middle */
 .ind-turn-pill-badge {
   display: inline-block;
-  background: #F6F8F8;
+  /* background: #F6F8F8; */
   color: #004B49;
-  border: 1px solid rgba(0, 75, 73, 0.18);
+  /* border: 1px solid rgba(0, 75, 73, 0.18); */
   font-size: 0.72rem;
   font-weight: 750;
   text-transform: uppercase;
@@ -1111,7 +1125,7 @@
   border-radius: 999px;
   padding: 4px 12px;
   margin-bottom: 0.65rem;
-  box-shadow: 0 2px 6px rgba(0, 75, 73, 0.06);
+  /* box-shadow: 0 2px 6px rgba(0, 75, 73, 0.06); */
 }
 
 /* Bold dark title at bottom */
@@ -1409,6 +1423,20 @@
   flex-wrap: wrap;
 }
 
+.ind-mid-cta-section .ind-btn-primary {
+  background: #FFFFFF;
+  color: #004B49;
+  border: 1.5px solid #FFFFFF;
+  box-shadow: 0 4px 16px rgba(0, 35, 33, 0.25);
+}
+
+.ind-mid-cta-section .ind-btn-primary:hover {
+  background: #F6F8F8;
+  border-color: #FFFFFF;
+  color: #003836;
+  box-shadow: 0 8px 24px rgba(0, 35, 33, 0.35);
+}
+
 .ind-btn-secondary-white {
   display: inline-flex;
   align-items: center;
@@ -1436,7 +1464,7 @@
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 18px;
-  padding: 2rem;
+  padding: 4rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -1475,33 +1503,6 @@
 
 .industry-solutions-page .testimonials {
   margin-top: 3.5rem;
-}
-
-.industry-solutions-page .testimonials article {
-  background: #ffffff;
-  box-shadow: 0 8px 24px rgba(25, 23, 53, 0.04);
-}
-
-.industry-solutions-page .testimonials article:hover {
-  box-shadow: 0 18px 40px rgba(0, 75, 73, 0.12);
-  border-color: #E5EAEA;
-}
-
-.industry-solutions-page .testimonials article > div:last-child div strong {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #191735;
-}
-
-.industry-solutions-page .testimonials article > div:last-child div small {
-  font-size: 0.8125rem;
-  color: #68667c;
-}
-
-.industry-solutions-page .testimonials em {
-  color: #f59e0b;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
 }
 
 .industry-solutions-page .faq-section {

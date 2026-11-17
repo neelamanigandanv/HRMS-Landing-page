@@ -237,6 +237,7 @@ export function SolutionsOverview() {
       />
 
       <div className="solutions-overview-page">
+
         {/* =================================================================
             1. HERO SECTION (EMPLOYEE MANAGEMENT SPOTLIGHT HERO)
             ================================================================= */}

@@ -1,12 +1,14 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import ImpactSection from "../components/common/ImpactSection";
+import EmployeeStyleHero from "../components/common/EmployeeStyleHero";
 import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
 import "./AboutUs2Page.css";
+import "./EmployeeManagementPage.css";
 
 interface ServiceCard {
   image: string;
@@ -130,6 +132,7 @@ const FUTURE_PILLARS: FuturePillar[] = [
 ];
 
 export function AboutUs2Page() {
+  const navigate = useNavigate();
   const servicesTrackRef = useRef<HTMLDivElement>(null);
   const [activeServiceIndex, setActiveServiceIndex] = useState(0);
 
@@ -186,54 +189,48 @@ export function AboutUs2Page() {
       />
 
       <div className="ab2-shell">
-        {/* ─── 01. HERO: FULL-BLEED PHOTO BACKDROP WITH CENTERED CONTENT ─── */}
-        <section className="ab2-hero" id="ab2-hero">
-          <img
-            src="/images/ab2-hero-bg.jpg"
-            alt=""
-            aria-hidden="true"
-            className="ab2-hero-bg-img"
-            fetchPriority="high"
-            loading="eager"
-            decoding="async"
-          />
-          <div className="ab2-hero-ambient" aria-hidden="true" />
-          <div className="container">
-            <div className="ab2-hero-center">
-              <span className="ab2-hero-chip">
-                <Icon name="sparkle" size={13} />
-                ✦ ABOUT US 2.0 ✦
-              </span>
-
-              <h1 className="ab2-hero-title">
-                Where People and Technology{" "}
-                <span className="ab2-hero-accent">Work Better Together.</span>
-              </h1>
-
-              <p className="ab2-hero-lead">
-                Bringing people, processes and technology together to create simpler and more
-                meaningful HR experiences.
-              </p>
-
-              <div className="ab2-hero-actions">
-                <Link to="/request-demo" className="ab2-hero-btn-primary">
-                  <span>Book a Free Demo</span>
-                  <span className="ab2-btn-arrow-box" aria-hidden="true">
-                    <Icon name="arrow" size={14} />
-                  </span>
-                </Link>
-                <button
-                  type="button"
-                  className="ab2-hero-btn-secondary"
-                  onClick={() => scrollToSection("ab2-story")}
-                >
-                  <span>Our Story &amp; Journey</span>
-                  <Icon name="arrow" size={14} />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* ─── 01. HERO: EMPLOYEE MANAGEMENT STYLE SPOTLIGHT HERO ─── */}
+        <EmployeeStyleHero
+          badgeText="✦ ABOUT ZENTILOS ✦"
+          title={
+            <>
+              Where <span className="emp-glow-text">People</span> and Technology
+              <br className="emp-hero-br" />
+              Work Better Together.
+            </>
+          }
+          subhead="Bringing people, processes and technology together to create simpler and more meaningful HR experiences for every team we serve."
+          primaryLabel="Book a Free Demo"
+          onPrimaryClick={() => navigate("/request-demo")}
+          secondaryLabel="Our Story & Journey"
+          onSecondaryClick={() => scrollToSection("ab2-story")}
+          trustPoints={[
+            "Founded in 2026",
+            "500+ businesses onboard",
+            "People-first support",
+          ]}
+          imageSrc="/images/about-team-hero.webp"
+          imageAlt="The Zentilos team collaborating on people-first HR technology in a modern office"
+          statusPill="Our Team at Work"
+          leftWidgetTitle="Who We Are"
+          leftWidgetSub="By Team Function"
+          leftWidgetBadge="Unified"
+          donutCenterLabel="Founded"
+          donutCenterValue="2026"
+          donutSegments={[
+            { label: "Product", percent: 42, color: "#004B49" },
+            { label: "Customer Success", percent: 33, color: "#10b981" },
+            { label: "People & Ops", percent: 25, color: "#8b5cf6" },
+          ]}
+          rightWidgetTitle="Our Journey"
+          rightWidgetSub="Since 2026"
+          rightWidgetBadge="Growing"
+          rightStatValue="+500"
+          rightStatLabel="Businesses Served"
+          rightStatMeta="Across multi-branch teams"
+          barHeights={[30, 48, 42, 66, 88, 62, 95]}
+          rightFooterText="People, processes & technology working together"
+        />
 
         {/* ─── 02. OUR STORY: BENTO MOSAIC GRID (STARTED IN 2026) ─── */}
         <section className="ab2-story-section" id="ab2-story">

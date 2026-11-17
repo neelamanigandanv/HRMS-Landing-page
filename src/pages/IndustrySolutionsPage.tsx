@@ -72,9 +72,9 @@ export function IndustrySolutionsPage() {
         "Granular sabbatical tracking, leave encashments, and equity vesting data",
       ],
       ctaText: "Configure for Technology",
-      bgImage: "/images/skyline-hq.webp",
+      bgImage: "/image-originals/Product Development Services.jpg",
       bgAlt: "Contemporary tech agency headquarters and glass corporate high-rise",
-      fgImage: "/images/industry-tech.webp",
+      fgImage: "/image-originals/Security.jpg",
       fgAlt: "Tech software engineering team collaborating on sprint goals and system architecture",
     },
     {
@@ -102,9 +102,9 @@ export function IndustrySolutionsPage() {
         "Department resource forecasting to prevent campaign crunch and burnout",
       ],
       ctaText: "Configure for Agencies",
-      bgImage: "/images/branch-hq.webp",
+      bgImage: "/image-originals/nexthub Innovations _ Best Digital Marketing Agency Dubai.jpg",
       bgAlt: "Modern creative agency headquarters building and studio campus",
-      fgImage: "/images/hero-employee-directory-team.webp",
+      fgImage: "/image-originals/🎯 Pinterest Pin Topic_ _Why Digital Marketing is Crucial for Every Business in 2025_.jpg",
       fgAlt: "Digital agency creative team reviewing campaign milestones and resource allocation on tablet",
     },
     {
@@ -132,7 +132,7 @@ export function IndustrySolutionsPage() {
         "Daily contractor headcounts and ready-to-file factory registers",
       ],
       ctaText: "Configure for Manufacturing",
-      bgImage: "/images/multibranch-global.webp",
+      bgImage: "/image-originals/Reliable Industrial Control Systems for Smart Operations.jpg",
       bgAlt: "State-of-the-art manufacturing plant and industrial facility",
       fgImage: "/images/industry-manufacturing.webp",
       fgAlt: "Factory plant supervisor managing shift rosters on shop floor",
@@ -162,7 +162,7 @@ export function IndustrySolutionsPage() {
         "Statutory resting interval locks and fair overtime calculations",
       ],
       ctaText: "Configure for Healthcare",
-      bgImage: "/images/solution-enterprise.webp",
+      bgImage: "/image-originals/Hospital Revenue Cycle Management_ Features Every Modern RCM Platform Should Have.jpg",
       bgAlt: "Modern glass hospital clinical building and medical center",
       fgImage: "/images/industry-healthcare.webp",
       fgAlt: "Clinical charge nurse reviewing rotational night rota on tablet",
@@ -194,7 +194,7 @@ export function IndustrySolutionsPage() {
       ctaText: "Configure for Hospitality",
       bgImage: "/images/industry-hospitality.webp",
       bgAlt: "Upscale hospitality venue with hotel dining room and banquet space",
-      fgImage: "/images/work-process-team.webp",
+      fgImage: "/image-originals/Hotel receptionist checking in guest at front desk.jpg",
       fgAlt: "Hospitality operations team coordinating banquet coverage and split shifts",
     },
     {
@@ -222,9 +222,9 @@ export function IndustrySolutionsPage() {
         "Automated lecture and exam duty honorarium calculation sheets",
       ],
       ctaText: "Configure for Education",
-      bgImage: "/images/industry-education.webp",
+      bgImage: "/image-originals/875950196284883277.jpg",
       bgAlt: "Prestigious academic university campus library and lecture quad",
-      fgImage: "/images/emp-cta-collaboration.webp",
+      fgImage: "/image-originals/711498441176652643.jpg",
       fgAlt: "Academic leadership team reviewing faculty timetables and campus operations",
     },
     {
@@ -252,7 +252,7 @@ export function IndustrySolutionsPage() {
         "Centralized geofenced attendance tracking across all outlets",
       ],
       ctaText: "Configure for Retail",
-      bgImage: "/images/branch-regional.webp",
+      bgImage: "/image-originals/What Is Retail Workforce Management and Why Is It Important_.jpg",
       bgAlt: "Modern retail store glass facade and shopping high-street",
       fgImage: "/images/industry-retail.webp",
       fgAlt: "Retail store manager scheduling store staff roster on digital tablet",
@@ -367,7 +367,7 @@ export function IndustrySolutionsPage() {
       icon: "clock",
       title: "Custom Shifts & Rosters",
       chipLabel: "Shift Engine",
-      image: "/images/att-block-overtime.webp",
+      image: "/image-originals/twenty four.jpg",
       tagline: "Shifts that match your operational rhythm",
       points: [
         "24/7 continuous rotations & graveyard shifts",
@@ -406,7 +406,7 @@ export function IndustrySolutionsPage() {
       icon: "role",
       title: "Role-Based Access",
       chipLabel: "Security Matrix",
-      image: "/images/roles-block-admin.webp",
+      image: "/image-originals/Algorithm Vs_ Individual_ AI’s Role In Modern___.jpg",
       tagline: "Granular controls for every managerial level",
       points: [
         "Store managers view only their local branch roster",
@@ -841,6 +841,9 @@ export function IndustrySolutionsPage() {
                           loading="lazy"
                         />
                       </div>
+                      <div className="ind-turn-front-icon">
+                        <Icon name={pil.icon as any} size={22} />
+                      </div>
                       <div className="ind-turn-front-content">
                         <span className="ind-turn-pill-badge">{pil.chipLabel}</span>
                         <h3 className="ind-turn-title">{pil.title}</h3>
@@ -878,14 +881,14 @@ export function IndustrySolutionsPage() {
       <section className="proof-section" id="customers">
         <div className="container">
           <SectionHeading
-            eyebrow="CUSTOMER STORIES"
-            title="Trusted Across Retail, Healthcare & Plants"
+            eyebrow="✦ CUSTOMER STORIES ✦"
+            title="Trusted by teams across industries"
             center
           />
           <div className="testimonials">
             {testimonials.map((t, tIdx) => (
               <article key={tIdx}>
-                <div className="quote-mark">“</div>
+                <div className="story-company-name">{t.company}</div>
                 <p>{t.quote}</p>
                 <div>
                   <span className={`customer-avatar ca${(tIdx % 3) + 1}`}>

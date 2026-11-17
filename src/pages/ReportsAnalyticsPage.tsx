@@ -876,9 +876,6 @@ export function ReportsAnalyticsPage() {
                     tabIndex={0}
                     aria-pressed={isActive}
                   >
-                    <div className="emp-process-notch">
-                      <span className="emp-process-notch-num">{step.number}</span>
-                    </div>
 
                     <div className="emp-process-icon-box">{step.icon}</div>
 
@@ -936,13 +933,6 @@ export function ReportsAnalyticsPage() {
                     tabIndex={0}
                     aria-pressed={isActive}
                   >
-                    <div className="emp-process-notch" aria-label={`Module ${mod.number}`}>
-                      {isActive ? (
-                        <span className="emp-process-notch-pill">{mod.number}</span>
-                      ) : (
-                        <span className="emp-process-notch-num">{mod.number}</span>
-                      )}
-                    </div>
 
                     <div className="emp-process-icon-box" aria-hidden="true">
                       {mod.icon}

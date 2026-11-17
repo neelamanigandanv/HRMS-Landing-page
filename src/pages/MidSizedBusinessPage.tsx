@@ -192,7 +192,6 @@ export function MidSizedBusinessPage() {
   const whyMidSizedCards = [
     {
       id: "multilocation",
-      number: "01",
       title: "Multi-Location Governance",
       desc: "Run unified company-wide policies while granting each branch its own holiday calendars, shift patterns, and localized rules with central HQ oversight.",
       icon: (
@@ -206,7 +205,6 @@ export function MidSizedBusinessPage() {
     },
     {
       id: "crossdept",
-      number: "02",
       title: "Cross-Department Automation",
       desc: "Connect digital onboarding, biometric attendance, tiered leave approvals, and multi-state payroll into one seamless, automated pipeline.",
       isFeatured: true,
@@ -221,7 +219,6 @@ export function MidSizedBusinessPage() {
     },
     {
       id: "rolesecurity",
-      number: "03",
       title: "Granular Role Security",
       desc: "Protect sensitive salary figures, executive contracts, and personal records with granular role-based access for HR, Finance, Branch Leads, and Managers.",
       icon: (
@@ -233,7 +230,6 @@ export function MidSizedBusinessPage() {
     },
     {
       id: "scalepricing",
-      number: "04",
       title: "Predictable Scale Pricing",
       desc: "Transparent tiered plans built specifically for 50 to 500 headcount. Scale employees and open new regional branches without unexpected price jumps.",
       icon: (
@@ -1014,11 +1010,6 @@ export function MidSizedBusinessPage() {
                   key={card.id}
                   className={`sb-why-process-card ${card.isFeatured ? "is-featured" : ""}`}
                 >
-                  {/* Top Notch Badge */}
-                  <div className="sb-why-notch">
-                    <span>{card.number}</span>
-                  </div>
-
                   {/* Centered Icon Box */}
                   <div className="sb-why-icon-box">
                     {card.icon}

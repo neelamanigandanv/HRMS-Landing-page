@@ -1847,7 +1847,7 @@ export function Home() {
                 },
                 {
                   icon: "globe",
-                  image: "/images/setup-card-global.jpg",
+                  image: "/images/Top 5 Global eSIM Providers in 2025.jpg",
                   title: "Multi-country ready",
                   desc: "Run localized workforce policies and statutory payroll accurately across all regions.",
                   linkText: "Explore global compliance",
@@ -1986,7 +1986,6 @@ export function Home() {
                 },
                 ].map((item, index) => (
                   <article className="business-setup-v2-card" key={item.title}>
-                    <span className="business-setup-v2-number">0{index + 1}</span>
                     <span className="business-setup-v2-icon">
                       <Icon name={item.icon as IconName} />
                     </span>

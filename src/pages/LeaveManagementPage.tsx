@@ -856,10 +856,6 @@ export function LeaveManagementPage() {
                     tabIndex={0}
                     aria-pressed={isActive}
                   >
-                    {/* Top Notch Semicircle with Number having full half-circle background */}
-                    <div className="emp-process-notch">
-                      <span className="emp-process-notch-num">{step.number}</span>
-                    </div>
 
                     {/* Centered Icon Box */}
                     <div className="emp-process-icon-box">
@@ -922,14 +918,6 @@ export function LeaveManagementPage() {
                     tabIndex={0}
                     aria-pressed={isActive}
                   >
-                    {/* Top Notch with Step / Module Number */}
-                    <div className="emp-process-notch" aria-label={`Module ${mod.number}`}>
-                      {isActive ? (
-                        <span className="emp-process-notch-pill">{mod.number}</span>
-                      ) : (
-                        <span className="emp-process-notch-num">{mod.number}</span>
-                      )}
-                    </div>
 
                     {/* Centered Rounded Icon Box */}
                     <div className="emp-process-icon-box" aria-hidden="true">

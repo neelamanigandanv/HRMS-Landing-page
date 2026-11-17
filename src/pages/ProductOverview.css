@@ -67,7 +67,7 @@
 
 /* Display Serif Title matching Jasper's "Put AI agents to work, on your terms" */
 .po-jasper-title {
-  font-family: Georgia, "Playfair Display", "Times New Roman", serif;
+  font-family:'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 2.75rem;
   font-weight: 700;
   line-height: 1.1;

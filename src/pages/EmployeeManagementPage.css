@@ -1445,7 +1445,7 @@
   background: #ffffff;
   border: 1px solid #edf2f0;
   border-radius: 22px;
-  padding: 3.5rem 2rem 2.75rem;
+  padding: 2.25rem 2rem 2.75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2368,7 +2368,7 @@
 .emp-connected-card {
   text-decoration: none !important;
   color: inherit !important;
-  padding: 3.75rem 1.5rem 2rem !important;
+  padding: 2rem 1.5rem 2rem !important;
   min-height: 340px;
   display: flex !important;
   flex-direction: column !important;
@@ -2440,7 +2440,7 @@
   width: 52px !important;
   height: 52px !important;
   border-radius: 14px !important;
-  margin: 1.15rem auto 1.25rem !important;
+  margin: 0 auto 1.25rem !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;

@@ -293,7 +293,6 @@ export function SmallBusinessPage() {
   const whySmallBusinessCards = [
     {
       id: "simplicity",
-      number: "01",
       title: "Fast & Easy Setup",
       desc: "Get your workspace running in under 48 hours with easy team imports, pre-built leave policies, and zero complex IT onboarding.",
       icon: (
@@ -307,7 +306,6 @@ export function SmallBusinessPage() {
     },
     {
       id: "operations",
-      number: "02",
       title: "Unified Workflow",
       desc: "Connect daily mobile clock-ins, leave approvals, and monthly pre-payroll records into one single, error-free operational flow.",
       isFeatured: true,
@@ -322,7 +320,6 @@ export function SmallBusinessPage() {
     },
     {
       id: "security",
-      number: "03",
       title: "Role-Based Privacy",
       desc: "Protect sensitive salary figures, personal identification documents, and contract records with clear role-based access controls.",
       icon: (
@@ -334,7 +331,6 @@ export function SmallBusinessPage() {
     },
     {
       id: "pricing",
-      number: "04",
       title: "Predictable Pricing",
       desc: "Transparent, affordable plans built specifically for 5 to 50 staff. Scale your team and branches without unexpected price jumps.",
       icon: (
@@ -1174,10 +1170,6 @@ export function SmallBusinessPage() {
                   key={card.id}
                   className={`sb-why-process-card ${card.isFeatured ? "is-featured" : ""}`}
                 >
-                  {/* Top Notch Badge */}
-                  <div className="sb-why-notch">
-                    <span>{card.number}</span>
-                  </div>
 
                   {/* Centered Icon Box */}
                   <div className="sb-why-icon-box">

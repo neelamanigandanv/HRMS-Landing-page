@@ -192,7 +192,6 @@ export function EnterprisePage() {
   const whyEnterpriseCards = [
     {
       id: "globalarch",
-      number: "01",
       title: "Global Multi-Entity Architecture",
       desc: "Manage subsidiaries, international operating entities, and localized regional tax frameworks under one consolidated master account with complete data sovereignty.",
       icon: (
@@ -206,7 +205,6 @@ export function EnterprisePage() {
     },
     {
       id: "erpconnectors",
-      number: "02",
       title: "Bi-Directional ERP Connectors",
       desc: "Native cloud connectors for SAP S/4HANA, Oracle Fusion, NetSuite, and host-to-host banking APIs. Keep general ledger and headcount records synchronized in real time.",
       isFeatured: true,
@@ -221,7 +219,6 @@ export function EnterprisePage() {
     },
     {
       id: "securityvault",
-      number: "03",
       title: "SOC 2 & Bank-Grade Security",
       desc: "Rigorous ISO 27001 and SOC 2 Type II controls. Complete SAML 2.0 SSO, SCIM de-provisioning, immutable audit logs, and granular field-level permission encryption.",
       icon: (
@@ -233,7 +230,6 @@ export function EnterprisePage() {
     },
     {
       id: "dedicatedsla",
-      number: "04",
       title: "99.99% SLA & Dedicated CSM",
       desc: "Guaranteed enterprise uptime backed by enforceable financial SLAs, 24/7 mission-critical response routing, and a named enterprise solutions director.",
       icon: (
@@ -1014,10 +1010,6 @@ export function EnterprisePage() {
                   key={card.id}
                   className={`sb-why-process-card ${card.isFeatured ? "is-featured" : ""}`}
                 >
-                  {/* Top Notch Badge */}
-                  <div className="sb-why-notch">
-                    <span>{card.number}</span>
-                  </div>
 
                   {/* Centered Icon Box */}
                   <div className="sb-why-icon-box">
