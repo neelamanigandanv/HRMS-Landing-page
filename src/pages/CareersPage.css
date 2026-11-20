@@ -2357,7 +2357,7 @@
   margin: 0;
   line-height: 1.25;
   letter-spacing: -0.02em;
-  white-space: nowrap;
+  overflow-wrap: anywhere;
 }
 
 .job-form-subheading {
@@ -2366,9 +2366,7 @@
   color: #555268;
   margin: 0;
   line-height: 1.4;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow-wrap: anywhere;
 }
 
 .job-form-grid {
@@ -2781,6 +2779,7 @@
 }
 
 .careers-form-label .optional {
+  white-space: normal;
   color: #94a3b8;
   font-weight: 500;
 }

@@ -38,7 +38,7 @@ export interface SeoRouteMeta {
 export const APPROVED_SEO_ROUTES: Record<string, SeoRouteMeta> = {
   // Core & Solutions (Section 3 Approved)
   "/": {
-    title: "Zentilos | HR, Payroll & Attendance For Multi-Branch Teams",
+    title: "Zentilos | All-in-One HRMS Software for Growing Businesses",
     description:
       "Replace spreadsheets with one HR, payroll and attendance system for every branch. Run payroll in minutes and approve faster. Book a demo.",
     ogType: "website",

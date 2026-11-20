@@ -70,7 +70,7 @@ export function Footer() {
       </div>
 
       <div className="container-wide footer-bottom">
-        <span>© {new Date().getFullYear()} Zentilos Technologies Pvt. Ltd. All rights reserved.</span>
+        <span>©Zentilos</span>
         <div className="footer-bottom-links">
           <Link to="/privacy-policy">Privacy</Link>
           <Link to="/terms-of-service">Terms</Link>
@@ -83,7 +83,7 @@ export function Footer() {
             Cookie Preferences
           </button>
         </div>
-        <em>Built for global & multi-branch teams</em>
+        <em>All-in-One HRMS Software for Growing Businesses</em>
       </div>
     </footer>
   );

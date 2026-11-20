@@ -895,6 +895,8 @@ export function AssetManagementPage() {
         {/* =========================================================================
             8. TESTIMONIALS SECTION (Flagship Slider)
             ========================================================================= */}
+        {/* TESTIMONIALS SECTION - TEMPORARILY DISABLED */}
+        {false && (
         <section className="emp-testimonials-section" aria-labelledby="testi-title">
           <div className="container">
             <div className="emp-section-header center">
@@ -956,6 +958,7 @@ export function AssetManagementPage() {
             </div>
           </div>
         </section>
+        )}
 
         {/* =========================================================================
             9. FAQ SECTION (Canonical 2-Column Accordion Layout)

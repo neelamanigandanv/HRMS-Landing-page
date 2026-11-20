@@ -37,6 +37,8 @@
   width: 100%;
   max-width: 860px;
   margin: 0 auto;
+  padding-inline: var(--section-gutter);
+  box-sizing: border-box;
 }
 
 /* Eyebrow: Pure text with icon, NO background and NO border */

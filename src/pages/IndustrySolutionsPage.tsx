@@ -876,9 +876,9 @@ export function IndustrySolutionsPage() {
       </section>
 
       {/* ======================================================================
-          07 · CUSTOMER TESTIMONIALS (Matching Home Page Structure)
+          07 — CUSTOMER TESTIMONIALS (Matching Home Page Structure)
           ====================================================================== */}
-      <section className="proof-section" id="customers">
+      {/* <section className="proof-section" id="customers">
         <div className="container">
           <SectionHeading
             eyebrow="✦ CUSTOMER STORIES ✦"
@@ -907,7 +907,7 @@ export function IndustrySolutionsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ======================================================================
           08 · FAQ SECTION (Matching Home Page 2-Column Structure)

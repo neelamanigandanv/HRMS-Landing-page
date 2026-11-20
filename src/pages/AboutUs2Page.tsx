@@ -183,9 +183,9 @@ export function AboutUs2Page() {
   return (
     <PageLayout>
       <SEO
-        title="About Us 2.0 | Zentilos — Where People and Technology Work Better Together"
-        description="Bringing people, processes and technology together to create simpler and more meaningful HR experiences. Founded in 2026."
-        canonicalPath="/about-2"
+        title="About Us | Zentilos — Where People and Technology Work Better Together"
+        description="Bringing people, processes and technology together to create simpler and more meaningful HR experiences."
+        canonicalPath="/about"
       />
 
       <div className="ab2-shell">
@@ -205,67 +205,65 @@ export function AboutUs2Page() {
           secondaryLabel="Our Story & Journey"
           onSecondaryClick={() => scrollToSection("ab2-story")}
           trustPoints={[
-            "Founded in 2026",
-            "500+ businesses onboard",
-            "People-first support",
+            // "Simple, connected HR",
+            // "500+ businesses onboard",
+            // "People-first support",
           ]}
           imageSrc="/images/about-team-hero.webp"
           imageAlt="The Zentilos team collaborating on people-first HR technology in a modern office"
           statusPill="Our Team at Work"
-          leftWidgetTitle="Who We Are"
-          leftWidgetSub="By Team Function"
-          leftWidgetBadge="Unified"
-          donutCenterLabel="Founded"
-          donutCenterValue="2026"
-          donutSegments={[
-            { label: "Product", percent: 42, color: "#004B49" },
-            { label: "Customer Success", percent: 33, color: "#10b981" },
-            { label: "People & Ops", percent: 25, color: "#8b5cf6" },
-          ]}
-          rightWidgetTitle="Our Journey"
-          rightWidgetSub="Since 2026"
-          rightWidgetBadge="Growing"
-          rightStatValue="+500"
-          rightStatLabel="Businesses Served"
-          rightStatMeta="Across multi-branch teams"
-          barHeights={[30, 48, 42, 66, 88, 62, 95]}
-          rightFooterText="People, processes & technology working together"
+          widgetVariant="missionValues"
+          leftWidgetTitle=""
+          leftWidgetSub=""
+          leftWidgetBadge=""
+          donutCenterLabel=""
+          donutCenterValue=""
+          donutSegments={[]}
+          rightWidgetTitle=""
+          rightWidgetSub=""
+          rightWidgetBadge=""
+          rightStatValue=""
+          rightStatLabel=""
+          rightStatMeta=""
+          barHeights={[]}
+          rightFooterText=""
         />
 
-        {/* ─── 02. OUR STORY: BENTO MOSAIC GRID (STARTED IN 2026) ─── */}
+        {/* ─── 02. OUR STORY: BENTO MOSAIC GRID ─── */}
         <section className="ab2-story-section" id="ab2-story">
           <div className="container">
             <div className="ab2-section-head ab2-section-head--center">
-              <span className="ab2-eyebrow">OUR STORY</span>
-              <h2>Why we started building HRMS</h2>
+              <span className="ab2-eyebrow">A BETTER WAY TO MANAGE PEOPLE</span>
+              <h2>Built Around the Way Teams Work</h2>
               <p>
-                Launched in 2026 to replace decades-old spreadsheets and rigid tools with clean,
-                dependable workforce operations.
+                Managing people shouldn&apos;t mean managing endless spreadsheets, disconnected systems, and complicated processes. We built Zentilos to bring everything together in one simple, connected workspace.
               </p>
             </div>
 
             <div className="ab2-story-mosaic">
-              {/* Tile 1: Our Beginning 2026 */}
+              {/* Tile 1: Our Philosophy */}
               <article className="ab2-bento-tile ab2-bento-year">
                 <div className="ab2-bento-sketch-icon" aria-hidden="true">
                   <svg
-                    width="48"
-                    height="48"
-                    viewBox="0 0 48 48"
+                    width="44"
+                    height="44"
+                    viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.9"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <path d="M14 23V13.5C14 11.8 15.3 10.5 17 10.5C18.7 10.5 20 11.8 20 13.5V22" />
-                    <path d="M20 20V11.5C20 9.8 21.3 8.5 23 8.5C24.7 8.5 26 9.8 26 11.5V22" />
-                    <path d="M26 21V13C26 11.3 27.3 10 29 10C30.7 10 32 11.3 32 13V26.5C32 33 27.5 37.5 21 37.5C16.2 37.5 12.5 34.4 11 29.8L8.8 23.2C8.3 21.6 9.2 19.9 10.8 19.5C12.2 19.1 13.6 19.9 14 21.3L15.2 25" />
-                    <path d="M23 4V5.5M14 6.5L15 8M32 6.5L31 8" />
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                   </svg>
                 </div>
-                <p className="ab2-bento-year-label">Our Beginning</p>
-                <div className="ab2-bento-year-num">2026</div>
+                <h3 className="ab2-bento-year-label">People First</h3>
+                <p className="ab2-bento-year-desc">
+                  Technology should make work easier, not more complicated.
+                </p>
               </article>
 
               {/* Tile 2: Clean Team Photo Tile */}
@@ -278,23 +276,31 @@ export function AboutUs2Page() {
                 />
               </div>
 
-              {/* Tile 3: Soft Mint Why We Started Tile */}
+              {/* Tile 3: Our Approach */}
               <article className="ab2-bento-tile ab2-bento-mint">
-                <h3>Why We Started</h3>
-                <p>
-                  Built from scratch in 2026 to end scattered attendance sheets and manual payroll
-                  stress.
-                </p>
-                <a
-                  href="#ab2-our-services"
-                  className="ab2-bento-underline-link"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection("ab2-our-services");
-                  }}
-                >
-                  EXPLORE SERVICES
-                </a>
+                <div className="ab2-bento-mint-icon" aria-hidden="true">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#004B49"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m11 17 2 2a1 1 0 0 0 1.4 0l4.3-4.3a1 1 0 0 0 0-1.4l-2.6-2.6a1 1 0 0 0-1.4 0l-1.4 1.4" />
+                    <path d="m18 10 1-1a2 2 0 0 0 0-2.8l-2.2-2.2a2 2 0 0 0-2.8 0l-5.6 5.6a2 2 0 0 0 0 2.8l2.2 2.2a2 2 0 0 0 2.8 0l1.4-1.4" />
+                    <path d="m2 14 6 6" />
+                    <path d="m5 11-4 4" />
+                    <path d="m14 14 4-4" />
+                  </svg>
+                </div>
+                <h3>One Connected Team</h3>
+                <p>Bringing HR, payroll and attendance together in one place.</p>
+                <Link to="/solutions" className="ab2-bento-underline-link">
+                  EXPLORE OUR SOLUTIONS
+                </Link>
 
                 <div className="ab2-bento-mint-bg-art" aria-hidden="true">
                   <svg width="210" height="128" viewBox="0 0 210 128" fill="none">
@@ -321,7 +327,7 @@ export function AboutUs2Page() {
                 </div>
               </article>
 
-              {/* Tile 4: Light Teal CTA Action Tile */}
+              {/* Tile 4: CTA Card */}
               <article className="ab2-bento-tile ab2-bento-action">
                 <img
                   src="/images/logo-mark.webp"
@@ -332,7 +338,10 @@ export function AboutUs2Page() {
                   loading="lazy"
                   decoding="async"
                 />
-                <h3>Start Your Modern HR Journey in 2026</h3>
+                <h3>Ready for a Better HR Experience?</h3>
+                <p className="ab2-bento-action-desc">
+                  Discover a simpler way to manage your workforce.
+                </p>
                 <Link to="/request-demo" className="ab2-bento-cta-btn">
                   BOOK A DEMO
                 </Link>
@@ -346,40 +355,29 @@ export function AboutUs2Page() {
                 </div>
               </article>
 
-              {/* Tile 5: Wide Pine-Teal Story Banner */}
+              {/* Tile 5: Wide Content Card */}
               <article className="ab2-bento-tile ab2-bento-quote-banner">
                 <div className="ab2-bento-quote-copy">
+                  <span className="ab2-bento-quote-tag">ZENTILOS · PEOPLE. PROCESS. PROGRESS.</span>
+                  <h3 className="ab2-bento-quote-heading">Less Manual Work. More Meaningful Work.</h3>
                   <p className="ab2-bento-quote-text">
-                    Teams in 2026 shouldn&apos;t lose hours to messy Excel attendance tracking or
-                    late-night compliance math. We launched Zentilos to deliver crystal-clear HR
-                    control from day one.
-                  </p>
-                  <span className="ab2-bento-quote-tag">ZENTILOS FOUNDED · 2026</span>
-                  <p className="ab2-bento-quote-closing">
-                    Built Fresh for Today&apos;s Teams, <span>Ready to Scale!</span>
+                    We believe great workforce management starts with clarity, connection and simplicity. Zentilos brings essential HR operations together so teams can focus on what matters most.
                   </p>
                 </div>
 
                 <div className="ab2-bento-quote-bubble" aria-hidden="true">
                   <svg
-                    width="82"
-                    height="78"
-                    viewBox="0 0 84 78"
+                    width="64"
+                    height="64"
+                    viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#FFFFFF"
-                    strokeWidth="2.2"
+                    stroke="#5EEAD4"
+                    strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
-                    <path d="M18 16C12 18 9 25 9 34C9 45 16 54 30 56L26 68L40 57C58 56 72 47 72 32C72 17 58 10 38 11C28 11 22 14 18 16Z" />
-                    <path
-                      d="M32 25C29 25 27 27 27 30C27 33 29 35 32 35C32 38 30 41 27 42"
-                      fill="#FFFFFF"
-                    />
-                    <path
-                      d="M48 25C45 25 43 27 43 30C43 33 45 35 48 35C48 38 46 41 43 42"
-                      fill="#FFFFFF"
-                    />
+                    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                    <polyline points="16 7 22 7 22 13" />
                   </svg>
                 </div>
               </article>
@@ -467,7 +465,7 @@ export function AboutUs2Page() {
                 </div>
 
                 <p className="purpose-card-desc">
-                  A connected workplace future where every organization—from a new 2026 startup to a
+                  A connected workplace future where every organization—from an ambitious startup to a
                   multi-city enterprise—operates with transparent pay, instant leave clarity, and
                   zero administrative roadblocks.
                 </p>
@@ -590,7 +588,7 @@ export function AboutUs2Page() {
         </section>
 
         {/* ─── 06. OUR IMPACT: EXACT ABOUT US PAGE SECTION ─── */}
-        <ImpactSection id="ab2-our-impact" />
+        {/* <ImpactSection id="ab2-our-impact" /> */}
 
         {/* ─── 07. LOOKING AHEAD: OUR FUTURE DIRECTION ─── */}
         <section className="ab2-future-section" id="ab2-looking-ahead">

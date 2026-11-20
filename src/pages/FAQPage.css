@@ -451,6 +451,11 @@
   margin-bottom: 28px;
   -webkit-overflow-scrolling: touch;
   border-bottom: 1px solid #F6F8F8;
+  scrollbar-width: none;
+}
+
+.faq-mobile-chips-bar::-webkit-scrollbar {
+  display: none;
 }
 
 .faq-mobile-chip {
@@ -997,6 +1002,7 @@
 
   .faq-mobile-chips-bar {
     display: flex;
+    max-width: 100%;
   }
 
   .faq-helpful-cards-grid {

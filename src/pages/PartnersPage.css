@@ -651,6 +651,9 @@
   position: relative;
   margin: 3.5rem auto 3rem;
   max-width: 960px;
+  width: 100%;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .partner-process-timeline-line {
@@ -843,6 +846,9 @@
   padding: 1.5rem 0.5rem;
   scroll-behavior: smooth;
   flex: 1;
+  min-width: 0;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
 }
 
 .partner-carousel-track::-webkit-scrollbar {
@@ -1418,6 +1424,14 @@
 }
 
 @media (max-width: 768px) {
+  .partner-process-timeline-bar {
+    justify-content: center;
+  }
+
+  .partner-process-timeline-pill {
+    white-space: nowrap;
+  }
+
   .partner-hero-rich-title {
     font-size: 2.35rem;
   }

@@ -91,7 +91,7 @@ export function Seo({
   const finalTitle =
     routeMeta?.title ||
     title ||
-    "Zentilos | HR, Payroll & Attendance For Multi-Branch Teams";
+    "Zentilos | All-in-One HRMS Software for Growing Businesses";
   const finalDescription =
     routeMeta?.description ||
     description ||

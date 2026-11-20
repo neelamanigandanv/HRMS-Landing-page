@@ -49,7 +49,7 @@ const CaseStudiesPage = lazy(() => import("./pages/CaseStudiesPage"));
 const ApiDocumentationPage = lazy(() => import("./pages/ApiDocumentationPage"));
 const GuidesPage = lazy(() => import("./pages/GuidesPage"));
 const GuideDetailPage = lazy(() => import("./pages/GuideDetailPage"));
-const AboutPage = lazy(() => import("./pages/AboutPage"));
+// const AboutPage = lazy(() => import("./pages/AboutPage")); // About Us 1.0 (commented out)
 const AboutUs2Page = lazy(() => import("./pages/AboutUs2Page"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const PartnersPage = lazy(() => import("./pages/PartnersPage"));
@@ -177,7 +177,8 @@ export function App() {
             <Route path="/help/getting-started" element={<GuidesPage />} />
 
             {/* Company */}
-            <Route path="/about" element={<AboutPage />} />
+            {/* About Us 1.0 (commented out): <Route path="/about-1" element={<AboutPage />} /> */}
+            <Route path="/about" element={<AboutUs2Page />} />
             <Route path="/about-2" element={<AboutUs2Page />} />
             <Route path="/about-us-2" element={<AboutUs2Page />} />
             <Route path="/contact" element={<ContactPage />} />

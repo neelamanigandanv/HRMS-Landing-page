@@ -1132,6 +1132,8 @@ export function EmployeeManagementPage() {
         {/* =========================================================================
             8. TESTIMONIALS SECTION (Above FAQ - Matches Reference Image 2 with Primary Color Theme)
             ========================================================================= */}
+        {/* TESTIMONIALS SECTION - TEMPORARILY DISABLED */}
+        {false && (
         <section className="emp-testimonials-section" aria-labelledby="testi-title">
           <div className="container">
             <div className="emp-section-header center">
@@ -1191,6 +1193,7 @@ export function EmployeeManagementPage() {
             </div>
           </div>
         </section>
+        )}
 
         {/* =========================================================================
             9. FAQ SECTION (Exact Home Page 2-Column Style)

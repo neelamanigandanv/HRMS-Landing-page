@@ -714,12 +714,12 @@ export function ResourcesOverview() {
           </div>
         </section>
 
-        <div className="res-section-divider" />
+        {/* <div className="res-section-divider" /> */}
 
         {/* =========================================================================
             4. CUSTOMER STORIES (EXACT REPLICA OF SCREENSHOT)
             ========================================================================= */}
-        <section className="res-exact-section" id="stories">
+        {/* <section className="res-exact-section" id="stories">
           <div className="container">
             <div className="res-stories-section-header centered">
               <div className="res-stories-eyebrow-wrap">
@@ -733,9 +733,7 @@ export function ResourcesOverview() {
               </p>
             </div>
 
-            {/* Stories Grid: Left Big Featured + Right 2 Stacked Cards */}
             <div className="res-exact-stories-grid">
-              {/* Left Big Featured Card: Skyline Group */}
               <div className="res-story-featured-card">
                 <div className="res-story-featured-img-wrap">
                   <img
@@ -784,9 +782,7 @@ export function ResourcesOverview() {
                 </div>
               </div>
 
-              {/* Right Stacked Cards: BrightPath & GreenLeaf */}
               <div className="res-exact-stories-stacked">
-                {/* Card 1: BrightPath Solutions */}
                 <div className="res-story-side-card">
                   <div className="res-story-side-icon-box">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#004B49" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="res-side-box-icon">
@@ -843,7 +839,6 @@ export function ResourcesOverview() {
                   </div>
                 </div>
 
-                {/* Card 2: GreenLeaf Retail */}
                 <div className="res-story-side-card">
                   <div className="res-story-side-icon-box">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#004B49" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="res-side-box-icon">
@@ -903,9 +898,9 @@ export function ResourcesOverview() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        <div className="res-section-divider" />
+        {/* <div className="res-section-divider" /> */}
 
         {/* =========================================================================
             5. HR GLOSSARY (EXACT REPLICA OF SCREENSHOT - NO SEARCH BAR)

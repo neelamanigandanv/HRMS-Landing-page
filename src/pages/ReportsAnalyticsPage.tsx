@@ -955,6 +955,8 @@ export function ReportsAnalyticsPage() {
         {/* =========================================================================
             8. TESTIMONIALS SECTION (Slider with Prev/Next Controls)
             ========================================================================= */}
+        {/* TESTIMONIALS SECTION - TEMPORARILY DISABLED */}
+        {false && (
         <section className="emp-testimonials-section" aria-labelledby="testi-title">
           <div className="container">
             <div className="emp-section-header center">
@@ -1014,6 +1016,7 @@ export function ReportsAnalyticsPage() {
             </div>
           </div>
         </section>
+        )}
 
         {/* =========================================================================
             9. FAQ SECTION (2-Column Layout)

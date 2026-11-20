@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import FooterCTA from "../components/common/FooterCTA";
-import ImpactSection from "../components/common/ImpactSection";
+// import ImpactSection from "../components/common/ImpactSection";
 import SectionHeading from "../components/ui/SectionHeading";
 import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
@@ -508,7 +508,7 @@ export function AboutPage() {
       </section>
 
       {/* 7. Numbers: Animated Running Counters matching Home Page exact size and teal color */}
-      <ImpactSection />
+      {/* <ImpactSection /> */}
 
       {/* 8. Find Out More: Discover Zentilos & Our Team (Careers, Case Studies, Resource Hub) */}
       <section className="about-discover-section">

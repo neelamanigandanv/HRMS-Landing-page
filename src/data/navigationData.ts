@@ -14,18 +14,18 @@ export interface NavSection {
 }
 
 export const aboutNavItems: NavLinkItem[] = [
+  // {
+  //   title: "About Us",
+  //   href: "/about",
+  //   desc: "Our founding journey since 2017, leadership team, impact metrics, and open roles",
+  //   icon: "users",
+  // },
   {
     title: "About Us",
-    href: "/about",
-    desc: "Our founding journey since 2017, leadership team, impact metrics, and open roles",
-    icon: "users",
-  },
-  {
-    title: "About Us 2.0",
     href: "/about-2",
     desc: "Company purpose, HRMS story, capabilities, core values, approach, and roadmap",
-    icon: "sparkle",
-    badge: "New",
+    icon: "users",
+    // badge: "New",
   },
 ];
 
@@ -250,7 +250,6 @@ export const footerColumns = [
     title: "Company",
     links: [
       { label: "About Us", href: "/about" },
-      { label: "About Us 2.0", href: "/about-2" },
       { label: "Contact Us", href: "/contact" },
       { label: "Security", href: "/security" },
       { label: "Partners", href: "/partners" },

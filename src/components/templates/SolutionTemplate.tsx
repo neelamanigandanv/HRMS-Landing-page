@@ -859,7 +859,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
       {isHrOrFinance && <SectionDivider />}
 
       {/* Customer Testimonials Section (Matching Home Page Structure) */}
-      {solution.testimonials && solution.testimonials.length > 0 && (
+      {/* {solution.testimonials && solution.testimonials.length > 0 && (
         <section className="proof-section" id="customers">
           <div className="container">
             {solution.testimonialsStats && solution.testimonialsStats.length > 0 && (
@@ -906,7 +906,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
       {isHrOrFinance && <SectionDivider />}
 

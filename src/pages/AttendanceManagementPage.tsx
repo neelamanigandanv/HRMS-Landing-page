@@ -946,6 +946,8 @@ export function AttendanceManagementPage() {
         {/* =========================================================================
             8. TESTIMONIALS SECTION
             ========================================================================= */}
+        {/* TESTIMONIALS SECTION - TEMPORARILY DISABLED */}
+        {false && (
         <section className="emp-testimonials-section" aria-labelledby="testi-title">
           <div className="container">
             <div className="emp-section-header center">
@@ -1005,6 +1007,7 @@ export function AttendanceManagementPage() {
             </div>
           </div>
         </section>
+        )}
 
         {/* =========================================================================
             9. FAQ SECTION

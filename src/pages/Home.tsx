@@ -1542,7 +1542,7 @@ export function Home() {
   return (
     <div className="app-shell">
       <SEO
-        title="HR, Payroll & Attendance For Multi-Branch Teams"
+        title="All-in-One HRMS Software for Growing Businesses"
         description="Replace spreadsheets with one HR, payroll and attendance system for every branch. Run payroll in minutes and approve faster. Request a demo."
         canonicalPath="/"
         additionalSchemas={[buildFAQSchema(homeSchemaFaqs, "/")]}
@@ -1556,7 +1556,7 @@ export function Home() {
           <div className="corporate-hero-bg-wrapper" aria-hidden="true">
             <div className="corporate-hero-media">
               <img
-                src="/images/hero-colleagues-clean.webp"
+                src="/images/image_text_removed.png"
                 alt="Zentilos enterprise HR and payroll leaders collaborating"
                 className="corporate-hero-image"
                 width={675}
@@ -1616,7 +1616,7 @@ export function Home() {
           </div>
 
           {/* Social Proof Companies Strip */}
-          <div className="container company-strip">
+          {/* <div className="container company-strip">
             <span>POWERING PEOPLE AT</span>
             <div>
               <strong>northstar</strong>
@@ -1627,7 +1627,7 @@ export function Home() {
               <strong>UrbanBite</strong>
               <strong>novus</strong>
             </div>
-          </div>
+          </div> */}
         </section>
 
         <section className="difference-showcase-section" id="platform">
@@ -2113,7 +2113,7 @@ export function Home() {
           </div>
         </section>
 
-        <section className="proof-section" id="customers">
+        {/* <section className="proof-section" id="customers">
           <div className="container">
             <div className="stats-row">
               <div>
@@ -2194,7 +2194,7 @@ export function Home() {
               </article>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="faq-section">
           <div className="container faq-grid">
