@@ -18,9 +18,9 @@ const faqList = [
       "Most teams go live in 2–4 weeks. Your dedicated implementation specialist handles configuration, data import, and team training.",
   },
   {
-    question: "Can Zentilos handle multiple branches?",
+    question: "Can I explore Zentilos before booking a demo?",
     answer:
-      "Yes. Create branch-specific policies, holiday calendars, roles, and dashboards while keeping a unified company-wide view.",
+      "Yes. Browse the product, solutions, pricing, and guides on this website, then book a live demo when you're ready for a tailored walkthrough.",
   },
   {
     question: "Is payroll compliant with statutory regulations?",

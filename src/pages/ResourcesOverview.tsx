@@ -1,18 +1,17 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
-import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import { useDemoModal } from "../context/DemoModalContext";
 import { buildFAQSchema } from "../lib/schema";
 import "./ResourcesOverview.css";
 
 export function ResourcesOverview() {
   const { openDemoModal } = useDemoModal();
-  const navigate = useNavigate();
 
   // Glossary category filter state (search bar removed per user request)
   const [glossaryCategory, setGlossaryCategory] = useState("All");
@@ -177,14 +176,20 @@ export function ResourcesOverview() {
                 Explore helpful guides, FAQs, and support resources to simplify HR management and get the most out of ZentilosMS.
               </p>
 
-              <div className="res-hero-actions">
-                <Button to="/resources/blog" className="res-hero-primary-btn">
-                  Explore Resources <Icon name="arrow" size={15} />
-                </Button>
-                <Button to="/contact" secondary className="res-hero-secondary-btn">
-                  Contact Support
-                </Button>
-              </div>
+              <CtaButtonGroup
+                className="res-hero-actions"
+                primary={{
+                  label: "Explore Resources",
+                  to: "/resources/blog",
+                  icon: <Icon name="arrow" size={15} />,
+                  className: "btn res-hero-primary-btn",
+                }}
+                secondary={{
+                  label: "Contact Support",
+                  to: "/contact",
+                  className: "btn btn-secondary res-hero-secondary-btn",
+                }}
+              />
 
               {/* 3 Key Points matching Home Page Hero pattern */}
               <div className="res-hero-benefits">

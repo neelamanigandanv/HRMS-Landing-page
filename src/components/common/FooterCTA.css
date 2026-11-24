@@ -1149,21 +1149,6 @@
   justify-content: center;
 }
 
-/* ── Minimal Light Grid Lines across Full Background (Vertical & Horizontal) ── */
-.emp-banner-grid-lines {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-  background-size: 16px 16px;
-  background-position: center center;
-  background-image:
-    linear-gradient(to right, rgba(0, 75, 73, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 75, 73, 0.04) 1px, transparent 1px);
-}
-
 /* ── Ambient Primary Brand Plum Radial Glows ── */
 .emp-banner-blob {
   position: absolute;
@@ -1386,5 +1371,84 @@
     height: 240px;
     top: -60px;
     right: -60px;
+  }
+}
+
+@layer utilities {
+  @media (max-width: 767px) {
+    .footer-cta-emp-banner .emp-banner-actions {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 10px !important;
+    }
+
+    .footer-cta-emp-banner .emp-banner-btn-primary,
+    .footer-cta-emp-banner .emp-banner-btn-secondary {
+      width: auto !important;
+      max-width: 100% !important;
+      flex: 0 1 auto !important;
+    }
+
+    .footer-cta-emp-banner .emp-banner-actions--stack {
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+
+    .footer-cta-emp-banner .emp-banner-actions--stack .emp-banner-btn-primary,
+    .footer-cta-emp-banner .emp-banner-actions--stack .emp-banner-btn-secondary {
+      width: 100% !important;
+      max-width: 320px !important;
+      flex: 0 0 auto !important;
+      justify-content: center !important;
+      gap: 10px !important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+    }
+
+    .footer-cta-emp-banner .emp-banner-btn-primary,
+    .footer-cta-btn-primary,
+    .matrix-glow-btn {
+      height: 44px !important;
+      gap: 10px !important;
+      padding: 0 5px 0 16px !important;
+      justify-content: space-between !important;
+    }
+
+    .footer-cta-emp-banner .emp-banner-btn-primary span:first-child {
+      margin-right: 0 !important;
+    }
+
+    .footer-cta-emp-banner .emp-banner-btn-arrow,
+    .footer-cta-arrow-box,
+    .matrix-btn-arrow-box {
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 8px !important;
+    }
+
+    .footer-cta-emp-banner .emp-banner-btn-arrow svg,
+    .footer-cta-arrow-box svg,
+    .matrix-btn-arrow-box svg {
+      width: 14px !important;
+      height: 14px !important;
+      stroke-width: 2 !important;
+    }
+
+    .footer-cta-emp-banner .emp-banner-btn-secondary,
+    .footer-cta-btn-secondary,
+    .matrix-glow-btn-secondary {
+      gap: 6px !important;
+    }
+
+    .footer-cta-emp-banner .emp-banner-btn-secondary svg,
+    .footer-cta-btn-secondary svg,
+    .matrix-glow-btn-secondary svg {
+      width: 14px !important;
+      height: 14px !important;
+      stroke-width: 2 !important;
+    }
   }
 }

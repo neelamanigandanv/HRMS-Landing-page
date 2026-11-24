@@ -1480,3 +1480,22 @@
     width: 100%;
   }
 }
+
+@media (max-width: 767px) {
+  .partner-form-left-col .partner-section-eyebrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .partner-form-left-col .partner-form-main-title {
+    text-align: center;
+  }
+
+  .partner-form-left-col .partner-form-main-subhead {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

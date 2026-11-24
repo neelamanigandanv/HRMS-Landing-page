@@ -1,8 +1,8 @@
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import SectionHeading from "../components/ui/SectionHeading";
-import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import { caseStudies } from "../data/resourcesData";
 import { useCurrency } from "../context/CurrencyContext";
 import { useDemoModal } from "../context/DemoModalContext";
@@ -35,11 +35,15 @@ export function CaseStudiesPage() {
               Discover how ambitious organizations simplified attendance, accelerated monthly
               payroll, and unified their branches on Zentilos.
             </p>
-            <div className="feature-hero-actions">
-              <Button onClick={() => openDemoModal()}>
-                Request a Live Demo <Icon name="arrow" size={16} />
-              </Button>
-            </div>
+            <CtaButtonGroup
+              className="feature-hero-actions"
+              primary={{
+                label: "Request a Live Demo",
+                className: "btn",
+                onClick: () => openDemoModal(),
+                icon: <Icon name="arrow" size={16} />,
+              }}
+            />
           </div>
         </div>
       </section>

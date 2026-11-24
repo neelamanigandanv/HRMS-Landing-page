@@ -6,6 +6,7 @@ import FooterCTA from "../common/FooterCTA";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
+import CtaButtonGroup from "../ui/CtaButtonGroup";
 import { SolutionData } from "../../data/solutionsData";
 import { useCurrency } from "../../context/CurrencyContext";
 import { useDemoModal } from "../../context/DemoModalContext";
@@ -26,6 +27,9 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
     solution.slug === "finance" ||
     solution.slug === "finance-team";
   const isHrOrFinance = isHrTeams || isFinanceTeams;
+  const midPrimaryLabel = solution.midCta?.primaryBtnText || "Schedule Tailored Walkthrough";
+  const midSecondaryLabel = solution.midCta?.secondaryBtnText || "";
+  const stackMidActions = Math.max(midPrimaryLabel.length, midSecondaryLabel.length) > 18 || midPrimaryLabel.length + midSecondaryLabel.length > 36;
 
   const SectionDivider = () => (
     <div className="container solution-divider-container" aria-hidden="true">
@@ -74,10 +78,11 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
             </p>
 
             {/* Hero CTAs */}
-            <div className="solution-hero-sb-actions">
-              <Button
-                type="button"
-                onClick={() =>
+            <CtaButtonGroup
+              className="solution-hero-sb-actions"
+              primary={{
+                type: "button",
+                onClick: () =>
                   openDemoModal({
                     title: isFinanceTeams
                       ? "Request a Finance & Payroll Demo"
@@ -90,23 +95,20 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                       : isHrTeams
                       ? "HR Teams Solution"
                       : solution.title,
-                  })
-                }
-                className="solution-hero-btn-primary"
-              >
-                Request a Demo <Icon name="arrow" size={16} />
-              </Button>
-              <Button
-                onClick={() => {
+                  }),
+                className: "btn solution-hero-btn-primary",
+                label: "Request a Demo ",
+                icon: <Icon name="arrow" size={16} />,
+              }}
+              secondary={{
+                onClick: () => {
                   const el = document.getElementById("the-solution") || document.getElementById("workflow-process");
                   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                secondary
-                className="solution-hero-btn-secondary"
-              >
-                {isFinanceTeams ? "Explore Payroll Features ↓" : "Explore HR Features ↓"}
-              </Button>
-            </div>
+                },
+                className: "btn btn-secondary solution-hero-btn-secondary",
+                label: isFinanceTeams ? "Explore Payroll Features ↓" : "Explore HR Features ↓",
+              }}
+            />
 
             {/* Trust Row */}
             {solution.heroTrustPoints && solution.heroTrustPoints.length > 0 && (
@@ -141,21 +143,23 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                 </h1>
                 <p className="solution-hero-rich-subhead">{solution.subhead}</p>
 
-                <div className="solution-hero-actions">
-                  <Button to="/request-demo" className="solution-hero-btn-primary">
-                    Request a Demo <Icon name="arrow" size={16} />
-                  </Button>
-                  <Button
-                    onClick={() => {
+                <CtaButtonGroup
+                  className="solution-hero-actions"
+                  primary={{
+                    to: "/request-demo",
+                    className: "btn solution-hero-btn-primary",
+                    label: "Request a Demo ",
+                    icon: <Icon name="arrow" size={16} />,
+                  }}
+                  secondary={{
+                    onClick: () => {
                       const el = document.getElementById("the-solution");
                       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }}
-                    secondary
-                    className="solution-hero-btn-secondary"
-                  >
-                    Explore HR Features ↓
-                  </Button>
-                </div>
+                    },
+                    className: "btn btn-secondary solution-hero-btn-secondary",
+                    label: "Explore HR Features ↓",
+                  }}
+                />
 
                 {solution.heroTrustPoints && solution.heroTrustPoints.length > 0 && (
                   <div className="solution-hero-trust-row">
@@ -227,14 +231,20 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
               </span>
               <h1>{solution.headline}</h1>
               <p className="solution-subhead">{solution.subhead}</p>
-              <div className="solution-hero-actions">
-                <Button to="/request-demo">
-                  Request a Demo <Icon name="arrow" size={16} />
-                </Button>
-                <Button to="/solutions" secondary>
-                  Explore All Solutions
-                </Button>
-              </div>
+              <CtaButtonGroup
+                className="solution-hero-actions"
+                primary={{
+                  to: "/request-demo",
+                  className: "btn",
+                  label: "Request a Demo ",
+                  icon: <Icon name="arrow" size={16} />,
+                }}
+                secondary={{
+                  to: "/solutions",
+                  className: "btn btn-secondary",
+                  label: "Explore All Solutions",
+                }}
+              />
             </div>
           </div>
         </section>
@@ -491,7 +501,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                 <span className="solution-mid-cta-tag">{solution.midCta.tag || "✦ INTERACTIVE HR CONSULTATION ✦"}</span>
                 <h2 className="solution-mid-cta-title">{solution.midCta.title}</h2>
                 <p className="solution-mid-cta-desc">{solution.midCta.description}</p>
-                <div className="solution-mid-cta-actions">
+                <div className={`solution-mid-cta-actions${stackMidActions ? " solution-mid-cta-actions--stack" : ""}`}>
                   <Button
                     type="button"
                     onClick={() =>
@@ -511,7 +521,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                     }
                     className="solution-mid-btn-primary"
                   >
-                    <span>{solution.midCta.primaryBtnText || "Schedule Tailored Walkthrough"}</span>
+                    <span>{midPrimaryLabel}</span>
                     <Icon name="arrow" />
                   </Button>
                   {solution.midCta.secondaryBtnText && (
@@ -535,7 +545,7 @@ export function SolutionTemplate({ solution }: { solution: SolutionData }) {
                       secondary
                       className="solution-mid-btn-secondary"
                     >
-                      <span>{solution.midCta.secondaryBtnText}</span>
+                      <span>{midSecondaryLabel}</span>
                     </Button>
                   )}
                 </div>

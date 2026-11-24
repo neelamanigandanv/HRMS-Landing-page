@@ -545,3 +545,21 @@
     font-size: 0.85rem;
   }
 }
+
+@media (max-width: 767px) {
+  .glossary-hero-section {
+    min-height: auto;
+    align-items: flex-start;
+    padding: 28px 0 20px;
+  }
+
+  .glossary-hero-points {
+    margin-top: 24px;
+    margin-bottom: 0;
+  }
+
+  .glossary-alphabet-bar-wrapper {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}

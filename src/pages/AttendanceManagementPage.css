@@ -200,3 +200,29 @@
   background-size: cover !important;
   background-position: center !important;
 }
+
+#cap-block-touchless-biometrics .emp-block-hero-img {
+  object-position: center 20%;
+}
+
+@media (max-width: 1040px) {
+  #cap-block-touchless-biometrics .emp-block-img-col {
+    width: min(100%, 420px);
+    height: 520px;
+    min-height: 0;
+    max-height: none;
+    margin-inline: auto;
+    background: #f7f9fc;
+  }
+
+  #cap-block-touchless-biometrics .emp-block-hero-img {
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 600px) {
+  #cap-block-touchless-biometrics .emp-block-img-col {
+    width: min(100%, 340px);
+    height: 440px;
+  }
+}

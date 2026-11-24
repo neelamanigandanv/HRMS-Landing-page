@@ -6,6 +6,7 @@ import FooterCTA from "../common/FooterCTA";
 import SectionHeading from "../ui/SectionHeading";
 import Button from "../ui/Button";
 import Icon, { IconName } from "../ui/Icon";
+import CtaButtonGroup from "../ui/CtaButtonGroup";
 import {
   FeatureData,
   DemoTabItem,
@@ -198,14 +199,20 @@ export function FeatureTemplate({ feature }: { feature: FeatureData }) {
             </span>
             <h1>{feature.headline}</h1>
             <p className="product-hero-subhead">{feature.subhead}</p>
-            <div className="product-hero-actions">
-              <Button to="/request-demo">
-                Request a Demo <Icon name="arrow" size={16} />
-              </Button>
-              <Button href="#demo" secondary>
-                Explore Features
-              </Button>
-            </div>
+            <CtaButtonGroup
+              className="product-hero-actions"
+              primary={{
+                to: "/request-demo",
+                className: "btn",
+                label: "Request a Demo ",
+                icon: <Icon name="arrow" size={16} />,
+              }}
+              secondary={{
+                href: "#demo",
+                className: "btn btn-secondary",
+                label: "Explore Features",
+              }}
+            />
             <div className="product-hero-trust">
               <span>
                 <Icon name="check" size={14} /> Bank-grade security

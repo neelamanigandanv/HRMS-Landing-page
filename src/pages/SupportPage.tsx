@@ -4,6 +4,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import SEO from "@/components/layout/SEO";
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
+import CtaButtonGroup from "@/components/ui/CtaButtonGroup";
 import CustomSelect from "@/components/ui/CustomSelect";
 import { submitSupportTicket, TicketRecord } from "@/services/supportTicketService";
 import { submitEnquiry, uploadSupportAttachment } from "@/services/enquiryService";
@@ -329,20 +330,23 @@ export default function SupportPage() {
               </p>
 
               {/* Action Buttons */}
-              <div className="support-hero-actions">
-                <Button
-                  onClick={() => {
+              <CtaButtonGroup
+                className="support-hero-actions"
+                primary={{
+                  label: "Submit a Support Request",
+                  onClick: () => {
                     const el = document.getElementById("submit-request");
                     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                  }}
-                  className="support-hero-btn-primary"
-                >
-                  Submit a Support Request <Icon name="arrow" size={16} />
-                </Button>
-                <Button to="/help" secondary className="support-hero-btn-secondary">
-                  View Help Center
-                </Button>
-              </div>
+                  },
+                  icon: <Icon name="arrow" size={16} />,
+                  className: "btn support-hero-btn-primary",
+                }}
+                secondary={{
+                  label: "View Help Center",
+                  to: "/help",
+                  className: "btn btn-secondary support-hero-btn-secondary",
+                }}
+              />
 
               {/* Trust Badges */}
               <div className="support-hero-trust-row">

@@ -1274,10 +1274,23 @@
 }
 
 .careers-faq-toggle-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #004B49;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.35rem;
   font-weight: 400;
-  color: #004B49;
   flex-shrink: 0;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.careers-faq-item.is-open .careers-faq-toggle-icon {
+  background: #E8F5F3;
+  color: #004B49;
 }
 
 .careers-faq-answer-panel {
@@ -3766,5 +3779,13 @@
   color: #ef4444 !important;
   font-weight: 700;
   margin-left: 2px;
+}
+
+@media (max-width: 767px) {
+  .careers-orbit-center-card {
+    width: 225px;
+    height: 225px;
+    transform: translateX(-24px);
+  }
 }
 

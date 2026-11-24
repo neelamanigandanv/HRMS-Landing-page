@@ -92,7 +92,7 @@ export function MobileFeaturesBanner() {
             {/* Primary Phone */}
             <div className="mfb-phone-wrap">
               <img
-                src="/images/mobile-app-clockin.png"
+                src="/images/mobile-app-clockin.webp"
                 alt="Zentilos mobile clock-in screen"
                 className="mfb-phone-img"
                 width={480}

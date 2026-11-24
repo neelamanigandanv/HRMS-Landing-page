@@ -4,8 +4,8 @@ import SEO from "../components/layout/SEO";
 import FooterCTA from "../components/common/FooterCTA";
 // import ImpactSection from "../components/common/ImpactSection";
 import SectionHeading from "../components/ui/SectionHeading";
-import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import "./AboutPage.css";
 
 const VALUE_CARDS = [
@@ -97,21 +97,24 @@ export function AboutPage() {
             </p>
 
             {/* Hero Action Buttons */}
-            <div className="about-hero-actions">
-              <Button to="/request-demo" className="about-hero-btn-primary">
-                Book a Free Demo <Icon name="arrow" size={15} />
-              </Button>
-              <Button
-                onClick={() => {
+            <CtaButtonGroup
+              className="about-hero-actions"
+              primary={{
+                label: "Book a Free Demo",
+                to: "/request-demo",
+                className: "btn about-hero-btn-primary",
+                icon: <Icon name="arrow" size={15} />,
+              }}
+              secondary={{
+                label: "Our Story & Journey",
+                className: "btn btn-secondary about-hero-btn-secondary",
+                onClick: () => {
                   const el = document.getElementById("story");
                   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-                secondary
-                className="about-hero-btn-secondary"
-              >
-                Our Story &amp; Journey <Icon name="arrow" size={15} />
-              </Button>
-            </div>
+                },
+                icon: <Icon name="arrow" size={15} />,
+              }}
+            />
 
             <div className="about-hero-meta" aria-hidden="true">
               <span>Est. 2017</span>
@@ -187,7 +190,7 @@ export function AboutPage() {
               {/* Top Photo */}
               <div className="ms2-photo-card">
                 <img
-                  src="/images/about-milestone-team.jpg"
+                  src="/images/about-milestone-team.webp"
                   alt="Team collaboration in modern office"
                   className="ms2-team-img"
                   loading="lazy"

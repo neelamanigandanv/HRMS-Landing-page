@@ -817,6 +817,9 @@ export function ProductOverview() {
   const [activeConnectStep, setActiveConnectStep] = useState(0);
   const [isConnectPaused, setIsConnectPaused] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const jasperPrimaryLabel = "Get A Demo";
+  const jasperSecondaryLabel = "Explore Features";
+  const stackJasperActions = Math.max(jasperPrimaryLabel.length, jasperSecondaryLabel.length) > 18 || jasperPrimaryLabel.length + jasperSecondaryLabel.length > 36;
 
   useEffect(() => {
     if (isConnectPaused) return;
@@ -925,7 +928,7 @@ export function ProductOverview() {
                           <p className="po-jasper-desc">
                             Explore how Zentilos unified modules help teams turn complex workforce policies into automated execution across every branch, department, and payroll cycle.
                           </p>
-                          <div className="po-jasper-btn-wrap">
+                          <div className={`po-jasper-btn-wrap${stackJasperActions ? " po-jasper-btn-wrap--stack" : ""}`}>
                             <button
                               type="button"
                               className="po-jasper-btn po-jasper-btn-primary"

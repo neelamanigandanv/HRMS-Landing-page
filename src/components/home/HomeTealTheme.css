@@ -475,36 +475,16 @@
 }
 
 .home-teal-theme .faq-item button i {
+  background: #004B49 !important;
+  color: #ffffff !important;
+}
+
+.home-teal-theme .faq-item.open button i {
+  background: #E8F5F3 !important;
   color: #004B49 !important;
 }
 
 .home-teal-theme .faq-section .text-link {
-  color: #004B49 !important;
-}
-
-/* ==========================================================================
-   10. FOOTER CTA SECTION (HOME ONLY)
-   ========================================================================== */
-.home-teal-theme .footer-cta-btn-primary {
-  background: #004B49 !important;
-  border-color: #004B49 !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(0, 75, 73, 0.35) !important;
-}
-
-.home-teal-theme .footer-cta-btn-primary:hover {
-  background: #003836 !important;
-  border-color: #003836 !important;
-  box-shadow: 0 6px 20px rgba(0, 75, 73, 0.45) !important;
-}
-
-.home-teal-theme .footer-cta-arrow-box {
-  color: #004B49 !important;
-}
-
-.home-teal-theme .footer-cta-btn-secondary:hover {
-  border-color: #004B49 !important;
-  background: #F6F8F8 !important;
   color: #004B49 !important;
 }
 

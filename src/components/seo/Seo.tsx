@@ -20,7 +20,7 @@ export interface SeoProps {
   canonicalPath?: string;
   /** Open Graph type: "website" | "article" */
   ogType?: "website" | "article";
-  /** Optional custom Open Graph image path (e.g. "/images/...") */
+  /** Optional custom Open Graph image path (e.g. "/og/...") */
   ogImage?: string;
   /** Optional Open Graph image width */
   ogImageWidth?: string | number;

@@ -5,6 +5,7 @@ import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon, { IconName } from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
@@ -459,30 +460,29 @@ export function EmployeeManagementPage() {
             </p>
 
             {/* Dual Pill Action Buttons */}
-            <div className="emp-hero-rich-actions">
-              <button
-                type="button"
-                className="emp-pill-btn-primary"
-                onClick={() =>
+            <CtaButtonGroup
+              className="emp-hero-rich-actions"
+              primary={{
+                type: "button",
+                className: "emp-pill-btn-primary",
+                onClick: () =>
                   openDemoModal({
                     title: 'Book an Employee Management Demo',
                     subtitle: 'Experience effortless employee records, hierarchy visualization, and document management with Zentilos.',
-                  })
-                }
-              >
-                Book a Free Demo <Icon name="arrow" size={15} />
-              </button>
-              <button
-                type="button"
-                className="emp-pill-btn-secondary"
-                onClick={() => {
+                  }),
+                label: <>Book a Free Demo </>,
+                icon: <Icon name="arrow" size={15} />,
+              }}
+              secondary={{
+                type: "button",
+                className: "emp-pill-btn-secondary",
+                onClick: () => {
                   const el = document.getElementById('features');
                   if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }}
-              >
-                Explore Features
-              </button>
-            </div>
+                },
+                label: "Explore Features",
+              }}
+            />
 
             {/* Trust Points */}
             <div className="emp-hero-trust-row">
@@ -759,16 +759,16 @@ export function EmployeeManagementPage() {
                 <div className="container">
                   <article
                     id={`cap-block-${blk.id}`}
-                    className="emp-reference-block-card"
+                    className="emp-reference-block-card max-md:!h-auto max-md:!self-start"
                   >
                     {/* Top Deck: 2 Columns (Left Image + Right Content) */}
-                    <div className="emp-block-top-deck">
+                    <div className="emp-block-top-deck max-md:!gap-5 max-md:!p-4">
                       {/* Left Column: Vertical Image */}
-                      <div className="emp-block-img-col">
+                      <div className="emp-block-img-col max-md:!relative max-md:!h-auto max-md:!min-h-0 max-md:!max-h-none max-md:!w-full max-md:!self-start max-md:!overflow-hidden max-md:!rounded-xl max-md:!aspect-[16/9]">
                         <img
                           src={blk.image}
                           alt={blk.imageAlt}
-                          className="emp-block-hero-img"
+                          className="emp-block-hero-img max-md:!block max-md:!h-full max-md:!w-full max-md:!object-cover max-md:!rounded-xl"
                           loading={idx === 0 ? "eager" : "lazy"}
                         />
                       </div>
@@ -1229,7 +1229,7 @@ export function EmployeeManagementPage() {
             ========================================================================= */}
         <FooterCTA
           variant="emp-banner"
-          eyebrowBadgeText="Built for Modern Multi-Branch Workforce Operations"
+          eyebrowBadgeText="Built for Modern Workforce Operations"
           headlineLine1="Boost Your Workforce"
           headlineLine2="Potential with Zentilos"
           subheadlineLine1="Focus on team growth while we handle the rest — employee directory, self-service, leave, attendance, document vault, and approvals."

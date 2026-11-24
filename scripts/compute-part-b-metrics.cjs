@@ -35,13 +35,13 @@ const ogFiles = fs.readdirSync('public/og').map(f => {
     sizeKB: (s / 1024).toFixed(1) + ' KB',
     bytes: s
   };
-}).sort((a,b) => b.bytes - a.bytes);
+}).sort((a, b) => b.bytes - a.bytes);
 
 console.log('=== DIRECTORY STATS ===');
 console.log('public/ folder:', publicStats.fileCount, 'files |', publicStats.sizeMB, 'MB (' + publicStats.bytes + ' bytes)');
 console.log('dist/ folder:', distStats.fileCount, 'files |', distStats.sizeMB, 'MB (' + distStats.bytes + ' bytes)');
 
-console.log('\n=== OG FILES (in public/og/ and dist/og/) ===');
+console.log('\n=== OG FILES (in public/images/ and dist/images/) ===');
 console.table(ogFiles);
 
 // Sample og:image values

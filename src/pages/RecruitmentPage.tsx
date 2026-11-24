@@ -6,6 +6,7 @@ import FooterCTA from "../components/common/FooterCTA";
 import PanoramicMidCTA from "../components/common/PanoramicMidCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
 import { useDemoModal } from "../context/DemoModalContext";
@@ -252,25 +253,25 @@ export function RecruitmentPage() {
             </p>
 
             {/* Dual Pill Action Buttons */}
-            <div className="emp-hero-rich-actions">
-              <button
-                type="button"
-                className="emp-pill-btn-primary"
-                onClick={handleOpenDemo}
-              >
-                Request a Demo <Icon name="arrow" size={15} />
-              </button>
-              <button
-                type="button"
-                className="emp-pill-btn-secondary"
-                onClick={() => {
+            <CtaButtonGroup
+              className="emp-hero-rich-actions"
+              primary={{
+                type: "button",
+                className: "emp-pill-btn-primary",
+                onClick: handleOpenDemo,
+                label: <>Request a Demo </>,
+                icon: <Icon name="arrow" size={15} />,
+              }}
+              secondary={{
+                type: "button",
+                className: "emp-pill-btn-secondary",
+                onClick: () => {
                   const el = document.getElementById("challenges");
                   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
-              >
-                Explore Features
-              </button>
-            </div>
+                },
+                label: "Explore Features",
+              }}
+            />
 
             {/* Trust Points Row */}
             <div className="emp-hero-trust-row">
@@ -531,15 +532,15 @@ export function RecruitmentPage() {
             {capabilityBlocks.map((blk, idx) => (
               <div key={blk.id} className={`emp-cap-block-wrapper emp-cap-bg-${idx}`}>
                 <div className="container">
-                  <article id={`cap-block-${blk.id}`} className="emp-reference-block-card">
+                  <article id={`cap-block-${blk.id}`} className="emp-reference-block-card max-md:!h-auto max-md:!self-start">
                     {/* Top Deck: 2 Columns (Left Image + Right Content) */}
-                    <div className="emp-block-top-deck">
+                    <div className="emp-block-top-deck max-md:!gap-5 max-md:!p-4">
                       {/* Left Column: Vertical Image */}
-                      <div className="emp-block-img-col">
+                      <div className="emp-block-img-col max-md:!relative max-md:!h-auto max-md:!min-h-0 max-md:!max-h-none max-md:!w-full max-md:!self-start max-md:!overflow-hidden max-md:!rounded-xl max-md:!aspect-[16/9]">
                         <img
                           src={blk.image}
                           alt={blk.imageAlt}
-                          className="emp-block-hero-img"
+                          className="emp-block-hero-img max-md:!block max-md:!h-full max-md:!w-full max-md:!object-cover max-md:!rounded-xl"
                           loading={idx === 0 ? "eager" : "lazy"}
                           width="580"
                           height="440"

@@ -2,8 +2,8 @@ import { useState, useMemo, useEffect, useRef, Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
-import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import { useDemoModal } from "../context/DemoModalContext";
 import { faqCategories, FAQItem } from "../data/faqData";
 import { buildFAQSchema } from "../lib/schema";
@@ -298,14 +298,20 @@ export function FAQPage() {
             </div>
 
             {/* Hero Quick Action Buttons */}
-            <div className="faq-hero-actions">
-              <Button onClick={() => openDemoModal()} className="faq-hero-btn faq-hero-btn--primary">
-                Book a Live Demo <Icon name="arrow" size={14} />
-              </Button>
-              <Button to="/contact" secondary className="faq-hero-btn faq-hero-btn--secondary">
-                Talk to Sales Support
-              </Button>
-            </div>
+            <CtaButtonGroup
+              className="faq-hero-actions"
+              primary={{
+                label: "Book a Live Demo",
+                className: "btn faq-hero-btn faq-hero-btn--primary",
+                onClick: () => openDemoModal(),
+                icon: <Icon name="arrow" size={14} />,
+              }}
+              secondary={{
+                label: "Talk to Sales Support",
+                to: "/contact",
+                className: "btn btn-secondary faq-hero-btn faq-hero-btn--secondary",
+              }}
+            />
           </div>
         </section>
 

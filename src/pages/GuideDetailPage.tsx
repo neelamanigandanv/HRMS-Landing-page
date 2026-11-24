@@ -4,8 +4,8 @@ import { Link, useParams } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import { useDemoModal } from "../context/DemoModalContext";
-import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import { useCurrency } from "../context/CurrencyContext";
 import { GUIDE_DETAILS_MAP, GuideDetailModel } from "../data/guidesData";
 import { buildFAQSchema } from "../lib/schema";
@@ -268,24 +268,24 @@ export function GuideDetailPage() {
               <p className="guide-hero-subtitle">{currentGuide.subtitle}</p>
 
               {/* Action Buttons in Hero */}
-              <div className="guide-hero-actions">
-                <button
-                  type="button"
-                  className="guide-hero-btn-primary"
-                  onClick={() => openDemoModal()}
-                >
-                  <span>Request Platform Demo</span>
-                  <Icon name="arrow" size={15} />
-                </button>
-                <button
-                  type="button"
-                  className="guide-hero-btn-secondary"
-                  onClick={handleDownloadGuide}
-                >
-                  <Icon name="download" size={15} />
-                  <span>Save / Print PDF</span>
-                </button>
-              </div>
+              <CtaButtonGroup
+                className="guide-hero-actions"
+                primary={{
+                  label: <span>Request Platform Demo</span>,
+                  type: "button",
+                  className: "guide-hero-btn-primary",
+                  onClick: () => openDemoModal(),
+                  icon: <Icon name="arrow" size={15} />,
+                }}
+                secondary={{
+                  label: <span>Save / Print PDF</span>,
+                  type: "button",
+                  className: "guide-hero-btn-secondary",
+                  onClick: handleDownloadGuide,
+                  icon: <Icon name="download" size={15} />,
+                  iconPosition: "before",
+                }}
+              />
 
               {/* 3 Process Flow Cards Header */}
               <div className="guide-hero-flow-stage">

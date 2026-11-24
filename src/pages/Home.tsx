@@ -5,6 +5,7 @@ import Footer from "../components/layout/Footer";
 import SEO from "../components/layout/SEO";
 import Logo from "../components/ui/Logo";
 import Button from "../components/ui/Button";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import SectionHeading from "../components/ui/SectionHeading";
 import Icon, { IconName } from "../components/ui/Icon";
 import CustomSelect from "../components/ui/CustomSelect";
@@ -745,7 +746,7 @@ function RoleSection({
               <Icon
                 name={
                   ["employee", "role", "shield", "finance", "reports"][
-                    index
+                  index
                   ] as IconName
                 }
               />
@@ -754,17 +755,39 @@ function RoleSection({
           </span>
           <h2>{item.title}</h2>
           <p>{item.body}</p>
-          <ul>
+          <ul className="max-md:!mx-auto max-md:!w-fit max-md:!max-w-full max-md:!min-w-0 max-md:!grid-cols-1">
             {item.bullets.map((x) => (
-              <li key={x}>
-                <span>
+              <li key={x} className="max-md:!justify-start max-md:!text-left">
+                <span className="max-md:!shrink-0">
                   <Icon name="check" size={14} />
                 </span>
                 {x}
               </li>
             ))}
           </ul>
-          <Link to={item.link} className="text-link">
+          {index === 2 && (
+            <div className="workflow workflow-in-copy">
+              <div>
+                {["Employee", "Manager", "HR", "Finance"].map((x, i) => (
+                  <div key={x}>
+                    <span>
+                      <Icon
+                        name={
+                          ["employee", "role", "shield", "finance"][i] as IconName
+                        }
+                      />
+                    </span>
+                    <strong>{x}</strong>
+                    {i < 3 && <Icon name="chevron" className="workflow-arrow" />}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+          <Link
+            to={item.link}
+            className="text-link max-md:!mx-auto max-md:!flex max-md:!w-fit max-md:!justify-center max-md:!text-center"
+          >
             Explore this workspace <Icon name="arrow" size={17} />
           </Link>
         </div>
@@ -784,26 +807,6 @@ function RoleSection({
           </span>
         </div>
       </div>
-      {index === 2 && (
-        <div className="container workflow">
-          <small>SMART APPROVAL WORKFLOW</small>
-          <div>
-            {["Employee", "Manager", "HR", "Finance"].map((x, i) => (
-              <div key={x}>
-                <span>
-                  <Icon
-                    name={
-                      ["employee", "role", "shield", "finance"][i] as IconName
-                    }
-                  />
-                </span>
-                <strong>{x}</strong>
-                {i < 3 && <Icon name="chevron" className="workflow-arrow" />}
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
       {index === 3 && (
         <div className="container formula">
           <small>EVERY INPUT, AUTOMATICALLY CONNECTED</small>
@@ -815,7 +818,7 @@ function RoleSection({
                     <Icon
                       name={
                         ["attendance", "leave", "loan", "wallet"][
-                          i
+                        i
                         ] as IconName
                       }
                     />
@@ -1430,8 +1433,8 @@ const faqs = [
     "Most teams go live in 2–4 weeks. Your dedicated implementation specialist handles configuration, data import, and team training.",
   ],
   [
-    "Can Zentilos handle multiple branches?",
-    "Yes. Create branch-specific policies, holiday calendars, roles, and dashboards while keeping a unified company-wide view.",
+    "Can I explore Zentilos before booking a demo?",
+    "Yes. Browse the product, solutions, pricing, and guides on this website, then book a live demo when you're ready for a tailored walkthrough.",
   ],
   [
     "Is payroll compliant with statutory regulations?",
@@ -1556,7 +1559,7 @@ export function Home() {
           <div className="corporate-hero-bg-wrapper" aria-hidden="true">
             <div className="corporate-hero-media">
               <img
-                src="/images/image_text_removed.png"
+                src="/images/home-hero-banner.webp"
                 alt="Zentilos enterprise HR and payroll leaders collaborating"
                 className="corporate-hero-image"
                 width={675}
@@ -1578,12 +1581,24 @@ export function Home() {
 
               {/* Bold, commanding, clean corporate headline */}
               <h1 className="corporate-hero-title">
-                <span className="hero-title-line">HR, Payroll &amp; Attendance</span>
+                <span className="hero-title-line">Complete</span>
                 <span className="hero-title-line">
-                  for <span className="hero-highlight-plum">Every Branch,</span>
+                  <span className="hero-highlight-plum">Workforce Management</span>
                 </span>
                 <span className="hero-title-line">in One System</span>
               </h1>
+
+              <div className="corporate-hero-mobile-visual">
+                <img
+                  src="/images/home-hero-banner.webp"
+                  alt="Zentilos enterprise HR and payroll leaders collaborating"
+                  className="corporate-hero-mobile-image"
+                  width={675}
+                  height={472}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
 
               {/* Clean descriptive paragraph */}
               <p className="corporate-hero-description">
@@ -1592,26 +1607,23 @@ export function Home() {
               </p>
 
               {/* Two Action Buttons matching the reference image styling */}
-              <div className="corporate-hero-actions">
-                <button
-                  type="button"
-                  className="corporate-hero-btn-primary"
-                  onClick={() => openDemoModal()}
-                >
-                  <span>Book a Demo</span>
-                  <span className="corporate-btn-arrow-box" aria-hidden="true">
-                    <Icon name="arrow" size={14} />
-                  </span>
-                </button>
-
-                <Link
-                  to="/product"
-                  className="corporate-hero-btn-secondary"
-                >
-                  <span>Explore Features</span>
-                  <Icon name="arrow" size={14} />
-                </Link>
-              </div>
+              <CtaButtonGroup
+                className="corporate-hero-actions"
+                primary={{
+                  label: "Book a Demo",
+                  className: "corporate-hero-btn-primary",
+                  onClick: () => openDemoModal(),
+                  icon: <Icon name="arrow" size={14} />,
+                  iconBox: true,
+                  iconClassName: "corporate-btn-arrow-box",
+                }}
+                secondary={{
+                  label: "Explore Features",
+                  to: "/product",
+                  className: "corporate-hero-btn-secondary",
+                  icon: <Icon name="arrow" size={14} />,
+                }}
+              />
             </div>
           </div>
 
@@ -1808,7 +1820,7 @@ export function Home() {
               {[
                 {
                   icon: "branch",
-                  image: "/images/setup-card-org.jpg",
+                  image: "/images/setup-card-org.webp",
                   title: "Organization structure",
                   desc: "Map every branch, department and reporting hierarchy with complete structural clarity.",
                   linkText: "Explore hierarchies",
@@ -1821,7 +1833,7 @@ export function Home() {
                 },
                 {
                   icon: "role",
-                  image: "/images/setup-card-roles.jpg",
+                  image: "/images/setup-card-roles.webp",
                   title: "Custom roles",
                   desc: "Give each person exactly the access they need across admin, branch, and team portals.",
                   linkText: "Manage custom roles",
@@ -1834,7 +1846,7 @@ export function Home() {
                 },
                 {
                   icon: "calendar",
-                  image: "/images/setup-card-calendar.jpg",
+                  image: "/images/setup-card-calendar.webp",
                   title: "Work calendars",
                   desc: "Configure flexible shifts, location holiday calendars, and rotational office schedules.",
                   linkText: "Configure work calendars",
@@ -1847,7 +1859,7 @@ export function Home() {
                 },
                 {
                   icon: "globe",
-                  image: "/images/Top 5 Global eSIM Providers in 2025.jpg",
+                  image: "/images/country-based-card.webp",
                   title: "Multi-country ready",
                   desc: "Run localized workforce policies and statutory payroll accurately across all regions.",
                   linkText: "Explore global compliance",
@@ -1924,160 +1936,160 @@ export function Home() {
 
         {false && (
           <>
-        <section
-          className="business-setup-v2"
-          aria-label="Built around your business: Your organization, your rules"
-        >
-          <div className="container">
-            <div className="business-setup-v2-layout">
-              <div className="business-setup-v2-intro">
-                <span className="business-setup-v2-eyebrow">✦ BUILT AROUND YOUR BUSINESS ✦</span>
-                <h2>Your organization, <span>your rules.</span></h2>
-                <p>
-                  Set up your people, permissions, schedules, and locations around the way your
-                  business actually works.
-                </p>
-              </div>
-              <div className="business-setup-v2-grid">
-                {[
-                {
-                  icon: "branch",
-                  title: "Organization structure",
-                  desc: "Bring every branch, department, and reporting line into one clear structure.",
-                  points: [
-                    "Branch & Regional Hierarchies",
-                    "Departments & Cost Centers",
-                    "Manager Reporting Trees",
-                  ],
-                  href: "/features/employee-management#cap-block-profiles-directory",
-                },
-                {
-                  icon: "role",
-                  title: "Roles & permissions",
-                  desc: "Give every person the right access for their responsibilities.",
-                  points: [
-                    "HR Admins & Payroll Leads",
-                    "Branch & Shift Managers",
-                    "Employee Self-Service Portal",
-                  ],
-                  href: "/features/roles-permissions",
-                },
-                {
-                  icon: "calendar",
-                  title: "Work calendars",
-                  desc: "Coordinate shifts, work weeks, and local holidays by location.",
-                  points: [
-                    "Rotational & Flexible Shifts",
-                    "Location Holiday Calendars",
-                    "Weekend & Overtime Rules",
-                  ],
-                  href: "/features/attendance-management",
-                },
-                {
-                  icon: "globe",
-                  title: "Built for every region",
-                  desc: "Manage localized people policies and payroll as you grow.",
-                  points: [
-                    "Local Statutory Compliance",
-                    "Multi-Currency Payroll Setup",
-                    "Regional Policy Controls",
-                  ],
-                  href: "/features/payroll-management",
-                },
-                ].map((item, index) => (
-                  <article className="business-setup-v2-card" key={item.title}>
-                    <span className="business-setup-v2-icon">
-                      <Icon name={item.icon as IconName} />
-                    </span>
-                    <h3>{item.title}</h3>
-                    <p>{item.desc}</p>
-                    <ul className="business-setup-v2-points">
-                      {item.points.map((point) => (
-                        <li key={point}>
-                          <span aria-hidden="true">✓</span>
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link to={item.href} className="business-setup-v2-link">
-                      Explore <span aria-hidden="true">↗</span>
-                    </Link>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          className="business-setup-v3"
-          aria-label="Built around your business 3.0"
-        >
-          <div className="container">
-            <SectionHeading
-              eyebrow="✦ BUILT AROUND YOUR BUSINESS 3.0 ✦"
-              title="The right setup for every team"
-              body="Bring your people, locations and policies together in one workforce platform."
-              center
-            />
-            <div className="business-setup-v3-grid">
-              {[
-                {
-                  icon: "branch",
-                  image: "/images/branch-regional.webp",
-                  imageAlt: "Colleagues collaborating in a bright regional office",
-                  title: "Organization structure",
-                  desc: "Connect every branch, department and reporting line in one clear view.",
-                  href: "/features/employee-management",
-                },
-                {
-                  icon: "role",
-                  image: "/images/roles-hero-showcase.webp",
-                  imageAlt: "Business team reviewing access and policy information",
-                  title: "Roles & permissions",
-                  desc: "Give every manager, HR admin and employee access that fits their role.",
-                  href: "/features/roles-permissions",
-                },
-                {
-                  icon: "calendar",
-                  image: "/images/work-process-team.webp",
-                  imageAlt: "Team planning work together around a table",
-                  title: "Work calendars",
-                  desc: "Coordinate shifts, working weeks and holidays across every location.",
-                  href: "/features/attendance-management",
-                },
-                {
-                  icon: "globe",
-                  image: "/images/branch-hq.webp",
-                  imageAlt: "Global operations team monitoring locations around the world",
-                  title: "Global workforce",
-                  desc: "Manage localized policies and payroll as your organization grows.",
-                  href: "/features/payroll-management",
-                },
-              ].map((item) => (
-                <article className="business-setup-v3-card" key={item.title}>
-                  <img
-                    className="business-setup-v3-image"
-                    src={item.image}
-                    alt={item.imageAlt}
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <span className="business-setup-v3-icon" aria-hidden="true">
-                    <Icon name={item.icon as IconName} />
-                  </span>
-                  <div className="business-setup-v3-body">
-                    <h3>{item.title}</h3>
-                    <p>{item.desc}</p>
-                    <Link to={item.href} className="business-setup-v3-link">
-                      Learn more <span aria-hidden="true">↗</span>
-                    </Link>
+            <section
+              className="business-setup-v2"
+              aria-label="Built around your business: Your organization, your rules"
+            >
+              <div className="container">
+                <div className="business-setup-v2-layout">
+                  <div className="business-setup-v2-intro">
+                    <span className="business-setup-v2-eyebrow">✦ BUILT AROUND YOUR BUSINESS ✦</span>
+                    <h2>Your organization, <span>your rules.</span></h2>
+                    <p>
+                      Set up your people, permissions, schedules, and locations around the way your
+                      business actually works.
+                    </p>
                   </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+                  <div className="business-setup-v2-grid">
+                    {[
+                      {
+                        icon: "branch",
+                        title: "Organization structure",
+                        desc: "Bring every branch, department, and reporting line into one clear structure.",
+                        points: [
+                          "Branch & Regional Hierarchies",
+                          "Departments & Cost Centers",
+                          "Manager Reporting Trees",
+                        ],
+                        href: "/features/employee-management#cap-block-profiles-directory",
+                      },
+                      {
+                        icon: "role",
+                        title: "Roles & permissions",
+                        desc: "Give every person the right access for their responsibilities.",
+                        points: [
+                          "HR Admins & Payroll Leads",
+                          "Branch & Shift Managers",
+                          "Employee Self-Service Portal",
+                        ],
+                        href: "/features/roles-permissions",
+                      },
+                      {
+                        icon: "calendar",
+                        title: "Work calendars",
+                        desc: "Coordinate shifts, work weeks, and local holidays by location.",
+                        points: [
+                          "Rotational & Flexible Shifts",
+                          "Location Holiday Calendars",
+                          "Weekend & Overtime Rules",
+                        ],
+                        href: "/features/attendance-management",
+                      },
+                      {
+                        icon: "globe",
+                        title: "Built for every region",
+                        desc: "Manage localized people policies and payroll as you grow.",
+                        points: [
+                          "Local Statutory Compliance",
+                          "Multi-Currency Payroll Setup",
+                          "Regional Policy Controls",
+                        ],
+                        href: "/features/payroll-management",
+                      },
+                    ].map((item, index) => (
+                      <article className="business-setup-v2-card" key={item.title}>
+                        <span className="business-setup-v2-icon">
+                          <Icon name={item.icon as IconName} />
+                        </span>
+                        <h3>{item.title}</h3>
+                        <p>{item.desc}</p>
+                        <ul className="business-setup-v2-points">
+                          {item.points.map((point) => (
+                            <li key={point}>
+                              <span aria-hidden="true">✓</span>
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                        <Link to={item.href} className="business-setup-v2-link">
+                          Explore <span aria-hidden="true">↗</span>
+                        </Link>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section
+              className="business-setup-v3"
+              aria-label="Built around your business 3.0"
+            >
+              <div className="container">
+                <SectionHeading
+                  eyebrow="✦ BUILT AROUND YOUR BUSINESS 3.0 ✦"
+                  title="The right setup for every team"
+                  body="Bring your people, locations and policies together in one workforce platform."
+                  center
+                />
+                <div className="business-setup-v3-grid">
+                  {[
+                    {
+                      icon: "branch",
+                      image: "/images/branch-regional.webp",
+                      imageAlt: "Colleagues collaborating in a bright regional office",
+                      title: "Organization structure",
+                      desc: "Connect every branch, department and reporting line in one clear view.",
+                      href: "/features/employee-management",
+                    },
+                    {
+                      icon: "role",
+                      image: "/images/roles-hero-showcase.webp",
+                      imageAlt: "Business team reviewing access and policy information",
+                      title: "Roles & permissions",
+                      desc: "Give every manager, HR admin and employee access that fits their role.",
+                      href: "/features/roles-permissions",
+                    },
+                    {
+                      icon: "calendar",
+                      image: "/images/work-process-team.webp",
+                      imageAlt: "Team planning work together around a table",
+                      title: "Work calendars",
+                      desc: "Coordinate shifts, working weeks and holidays across every location.",
+                      href: "/features/attendance-management",
+                    },
+                    {
+                      icon: "globe",
+                      image: "/images/branch-hq.webp",
+                      imageAlt: "Global operations team monitoring locations around the world",
+                      title: "Global workforce",
+                      desc: "Manage localized policies and payroll as your organization grows.",
+                      href: "/features/payroll-management",
+                    },
+                  ].map((item) => (
+                    <article className="business-setup-v3-card" key={item.title}>
+                      <img
+                        className="business-setup-v3-image"
+                        src={item.image}
+                        alt={item.imageAlt}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                      <span className="business-setup-v3-icon" aria-hidden="true">
+                        <Icon name={item.icon as IconName} />
+                      </span>
+                      <div className="business-setup-v3-body">
+                        <h3>{item.title}</h3>
+                        <p>{item.desc}</p>
+                        <Link to={item.href} className="business-setup-v3-link">
+                          Learn more <span aria-hidden="true">↗</span>
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </div>
+            </section>
           </>
         )}
 
@@ -2216,12 +2228,6 @@ export function Home() {
       <FooterCTA secondaryButtonLink="/product" />
 
       <Footer />
-
-      <div className="mobile-sticky">
-        <button type="button" onClick={() => openDemoModal()}>
-          Book a Demo <Icon name="arrow" />
-        </button>
-      </div>
     </div>
   );
 }

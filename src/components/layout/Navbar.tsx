@@ -338,7 +338,7 @@ export function Navbar() {
                     <Link to="/product" className="mobile-sublink overview-link">
                       Product Overview
                     </Link>
-                    {productNavItems.slice(1).map((item) => (
+                    {productNavItems.map((item) => (
                       <Link key={item.href} to={item.href} className="mobile-sublink">
                         {item.title}
                       </Link>
@@ -366,7 +366,7 @@ export function Navbar() {
                     <Link to="/solutions" className="mobile-sublink overview-link">
                       Solutions Overview
                     </Link>
-                    {solutionsNavItems.slice(1).map((item) => (
+                    {solutionsNavItems.map((item) => (
                       <Link key={item.href} to={item.href} className="mobile-sublink">
                         {item.title}
                       </Link>

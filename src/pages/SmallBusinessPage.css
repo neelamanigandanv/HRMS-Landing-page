@@ -2158,13 +2158,18 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: #eeecff;
-  color: var(--indigo, #53457a);
+  background: #004B49;
+  color: #ffffff;
   font-style: normal;
   font-size: 17px;
   font-weight: 600;
   flex-shrink: 0;
   margin-left: 16px;
+}
+
+.sb-faq-section .faq-item.open button i {
+  background: #E8F5F3;
+  color: #004B49;
 }
 
 .sb-faq-section .faq-item p {
@@ -2281,5 +2286,53 @@
   .sb-page-wrapper h2:not(.sb-manifesto-headline) {
     font-size: 28px !important;
     letter-spacing: -1px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .sb-page-wrapper:has(#working-directory) .sb-checkerboard-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .sb-page-wrapper:has(#working-directory) :is(#working-directory, #working-attendance, #working-leave, #working-payroll) .sb-checkerboard-visual-col {
+    overflow: visible;
+  }
+
+  .sb-page-wrapper:has(#working-directory) :is(#working-directory, #working-attendance, #working-leave, #working-payroll) .sb-mockup-stage {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 24px;
+  }
+
+  .sb-page-wrapper:has(#working-directory) :is(#working-directory, #working-attendance, #working-leave, #working-payroll) .sb-mockup-main-card {
+    width: 100%;
+  }
+
+  .sb-page-wrapper:has(#working-directory) :is(#working-directory, #working-attendance, #working-leave, #working-payroll) .sb-mockup-gauge-card {
+    position: static;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    animation: none;
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 16px auto 0;
+  }
+
+  .sb-page-wrapper:has(#working-directory) :is(#working-directory, #working-attendance, #working-leave, #working-payroll) .sb-gauge-item {
+    display: flex;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .sb-page-wrapper:has(#working-directory) :is(#working-directory, #working-attendance, #working-leave, #working-payroll) .sb-gauge-item:last-child {
+    margin-bottom: 0;
   }
 }

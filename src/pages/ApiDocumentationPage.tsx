@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import PageLayout from "@/components/layout/PageLayout";
 import SEO from "@/components/layout/SEO";
 import Icon from "@/components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import {
   API_MODULES,
   API_ENDPOINTS,
@@ -190,28 +191,30 @@ export default function ApiDocumentationPage() {
               </p>
 
               {/* Action Buttons */}
-              <div className="api-hero-actions">
-                <a
-                  href="#explore-api-documentation"
-                  className="api-hero-btn-primary"
-                  onClick={(e) => {
+              <CtaButtonGroup
+                className="api-hero-actions"
+                primary={{
+                  label: "Explore Endpoints",
+                  href: "#explore-api-documentation",
+                  className: "api-hero-btn-primary",
+                  onClick: (e) => {
                     e.preventDefault();
                     document.getElementById("explore-api-documentation")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  Explore Endpoints <Icon name="arrow" size={15} />
-                </a>
-                <button
-                  type="button"
-                  className="api-hero-btn-secondary"
-                  onClick={() => {
+                  },
+                  icon: <Icon name="arrow" size={15} />,
+                }}
+                secondary={{
+                  label: "Quickstart & Auth",
+                  type: "button",
+                  className: "api-hero-btn-secondary",
+                  onClick: () => {
                     handleModuleClick("authentication");
                     document.getElementById("explore-api-documentation")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  <Icon name="lock" size={14} /> Quickstart &amp; Auth
-                </button>
-              </div>
+                  },
+                  icon: <Icon name="lock" size={14} />,
+                  iconPosition: "before",
+                }}
+              />
 
               {/* Developer Badges / Key Points */}
               <div className="api-hero-badges-row">

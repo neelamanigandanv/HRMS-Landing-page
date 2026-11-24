@@ -18,7 +18,7 @@ const list = [
 async function test() {
   console.log('Testing optimization on the 10 images:');
   for (const f of list) {
-    const origPath = path.join('image-originals', f);
+    const origPath = path.join('images', f);
     const origBytes = fs.statSync(origPath).size;
     const meta = await sharp(origPath).metadata();
 
@@ -33,9 +33,9 @@ async function test() {
       .jpeg({ quality: 78, progressive: true })
       .toBuffer();
 
-    console.log(`\n${f} (${meta.width}x${meta.height}) - Original: ${(origBytes/1024).toFixed(1)} KB`);
-    console.log(`  -> WebP: ${(webpBuf.length/1024).toFixed(1)} KB (-${((1 - webpBuf.length/origBytes)*100).toFixed(1)}%)`);
-    console.log(`  -> OG JPG (max 1200w): ${(ogBuf.length/1024).toFixed(1)} KB (-${((1 - ogBuf.length/origBytes)*100).toFixed(1)}%)`);
+    console.log(`\n${f} (${meta.width}x${meta.height}) - Original: ${(origBytes / 1024).toFixed(1)} KB`);
+    console.log(`  -> WebP: ${(webpBuf.length / 1024).toFixed(1)} KB (-${((1 - webpBuf.length / origBytes) * 100).toFixed(1)}%)`);
+    console.log(`  -> OG JPG (max 1200w): ${(ogBuf.length / 1024).toFixed(1)} KB (-${((1 - ogBuf.length / origBytes) * 100).toFixed(1)}%)`);
   }
 }
 

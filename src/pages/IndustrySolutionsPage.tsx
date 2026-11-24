@@ -5,8 +5,8 @@ import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
-import Button from "../components/ui/Button";
 import SectionHeading from "../components/ui/SectionHeading";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import { useDemoModal } from "../context/DemoModalContext";
 import { buildFAQSchema } from "../lib/schema";
 import "./IndustrySolutionsPage.css";
@@ -72,9 +72,9 @@ export function IndustrySolutionsPage() {
         "Granular sabbatical tracking, leave encashments, and equity vesting data",
       ],
       ctaText: "Configure for Technology",
-      bgImage: "/image-originals/Product Development Services.jpg",
+      bgImage: "/images/industry-security.webp",
       bgAlt: "Contemporary tech agency headquarters and glass corporate high-rise",
-      fgImage: "/image-originals/Security.jpg",
+      fgImage: "/images/Security.webp",
       fgAlt: "Tech software engineering team collaborating on sprint goals and system architecture",
     },
     {
@@ -102,9 +102,9 @@ export function IndustrySolutionsPage() {
         "Department resource forecasting to prevent campaign crunch and burnout",
       ],
       ctaText: "Configure for Agencies",
-      bgImage: "/image-originals/nexthub Innovations _ Best Digital Marketing Agency Dubai.jpg",
+      bgImage: "/images/industry-agencys-card.webp",
       bgAlt: "Modern creative agency headquarters building and studio campus",
-      fgImage: "/image-originals/🎯 Pinterest Pin Topic_ _Why Digital Marketing is Crucial for Every Business in 2025_.jpg",
+      fgImage: "/images/marketing-industry-card.webp",
       fgAlt: "Digital agency creative team reviewing campaign milestones and resource allocation on tablet",
     },
     {
@@ -132,7 +132,7 @@ export function IndustrySolutionsPage() {
         "Daily contractor headcounts and ready-to-file factory registers",
       ],
       ctaText: "Configure for Manufacturing",
-      bgImage: "/image-originals/Reliable Industrial Control Systems for Smart Operations.jpg",
+      bgImage: "/images/industry-automation-card.webp",
       bgAlt: "State-of-the-art manufacturing plant and industrial facility",
       fgImage: "/images/industry-manufacturing.webp",
       fgAlt: "Factory plant supervisor managing shift rosters on shop floor",
@@ -162,7 +162,7 @@ export function IndustrySolutionsPage() {
         "Statutory resting interval locks and fair overtime calculations",
       ],
       ctaText: "Configure for Healthcare",
-      bgImage: "/image-originals/Hospital Revenue Cycle Management_ Features Every Modern RCM Platform Should Have.jpg",
+      bgImage: "/images/industry-hospital-card.webp",
       bgAlt: "Modern glass hospital clinical building and medical center",
       fgImage: "/images/industry-healthcare.webp",
       fgAlt: "Clinical charge nurse reviewing rotational night rota on tablet",
@@ -194,7 +194,7 @@ export function IndustrySolutionsPage() {
       ctaText: "Configure for Hospitality",
       bgImage: "/images/industry-hospitality.webp",
       bgAlt: "Upscale hospitality venue with hotel dining room and banquet space",
-      fgImage: "/image-originals/Hotel receptionist checking in guest at front desk.jpg",
+      fgImage: "/images/industry-clinic-card.webp",
       fgAlt: "Hospitality operations team coordinating banquet coverage and split shifts",
     },
     {
@@ -222,9 +222,9 @@ export function IndustrySolutionsPage() {
         "Automated lecture and exam duty honorarium calculation sheets",
       ],
       ctaText: "Configure for Education",
-      bgImage: "/image-originals/875950196284883277.jpg",
+      bgImage: "/images/industry-university-card.webp",
       bgAlt: "Prestigious academic university campus library and lecture quad",
-      fgImage: "/image-originals/711498441176652643.jpg",
+      fgImage: "/images/industry-academic-card.webp",
       fgAlt: "Academic leadership team reviewing faculty timetables and campus operations",
     },
     {
@@ -252,7 +252,7 @@ export function IndustrySolutionsPage() {
         "Centralized geofenced attendance tracking across all outlets",
       ],
       ctaText: "Configure for Retail",
-      bgImage: "/image-originals/What Is Retail Workforce Management and Why Is It Important_.jpg",
+      bgImage: "/images/industry-retailservice-card.webp",
       bgAlt: "Modern retail store glass facade and shopping high-street",
       fgImage: "/images/industry-retail.webp",
       fgAlt: "Retail store manager scheduling store staff roster on digital tablet",
@@ -367,7 +367,7 @@ export function IndustrySolutionsPage() {
       icon: "clock",
       title: "Custom Shifts & Rosters",
       chipLabel: "Shift Engine",
-      image: "/image-originals/twenty four.jpg",
+      image: "/images/industry-twentyfour.webp",
       tagline: "Shifts that match your operational rhythm",
       points: [
         "24/7 continuous rotations & graveyard shifts",
@@ -406,7 +406,7 @@ export function IndustrySolutionsPage() {
       icon: "role",
       title: "Role-Based Access",
       chipLabel: "Security Matrix",
-      image: "/image-originals/Algorithm Vs_ Individual_ AI’s Role In Modern___.jpg",
+      image: "/images/industry-rolebased-acess-card.webp",
       tagline: "Granular controls for every managerial level",
       points: [
         "Store managers view only their local branch roster",
@@ -545,23 +545,22 @@ export function IndustrySolutionsPage() {
             Shifts, rotations, seasonal teams, or office hours, Zentilos adapts to how your industry works.
           </p>
 
-          <div className="ind-hero-ctas">
-            <button
-              onClick={() => openDemoModal()}
-              className="ind-btn-primary"
-              id="hero-request-demo-btn"
-            >
-              <span>Request a Demo</span>
-              <Icon name="arrow" />
-            </button>
-            <button
-              onClick={scrollToChips}
-              className="ind-btn-secondary"
-              id="hero-explore-industries-btn"
-            >
-              <span>Explore Industries ↓</span>
-            </button>
-          </div>
+          <CtaButtonGroup
+            className="ind-hero-ctas"
+            primary={{
+              label: "Request a Demo",
+              onClick: () => openDemoModal(),
+              icon: <Icon name="arrow" />,
+              className: "ind-btn-primary",
+              id: "hero-request-demo-btn",
+            }}
+            secondary={{
+              label: "Explore Industries ↓",
+              onClick: scrollToChips,
+              className: "ind-btn-secondary",
+              id: "hero-explore-industries-btn",
+            }}
+          />
 
           {/* Quick Stats / Highlights Strip */}
           <div className="ind-hero-stats-strip">
@@ -646,6 +645,12 @@ export function IndustrySolutionsPage() {
                     <div className="ind-dark-split-grid">
                       {/* Sub-column 1: Common Challenges (Left) */}
                       <div className="ind-dark-subcol ind-challenges-subcol">
+                        <img
+                          className="ind-mobile-visual md:hidden"
+                          src={ind.bgImage}
+                          alt={ind.bgAlt}
+                          loading="lazy"
+                        />
                         <div className="ind-challenges-main">
                           <div className="ind-challenge-col-head">
                             <div className="ind-subcol-icon-box">
@@ -682,6 +687,12 @@ export function IndustrySolutionsPage() {
 
                       {/* Sub-column 2: Why Choose Zentilos (with vertical divider line) */}
                       <div className="ind-dark-subcol ind-why-subcol">
+                        <img
+                          className="ind-mobile-visual ind-mobile-visual--fg md:hidden"
+                          src={ind.fgImage}
+                          alt={ind.fgAlt}
+                          loading="lazy"
+                        />
                         <h3 className="ind-why-heading">{ind.whyChooseTitle}</h3>
                         <ul className="ind-why-list">
                           {ind.solutions.map((s, sIdx) => (
@@ -772,7 +783,7 @@ export function IndustrySolutionsPage() {
                 Schedule a 20-minute tailored walkthrough. Our workforce specialists will show you exactly
                 how Zentilos configures for your industry’s shifts, attendance hardware, and pay structures.
               </p>
-              <div className="ind-mid-actions">
+              <div className="ind-mid-actions ind-mid-actions--stack">
                 <button onClick={() => openDemoModal()} className="ind-btn-primary" id="mid-cta-demo-btn">
                   <span>Request a Tailored Demo</span>
                   <Icon name="arrow" />

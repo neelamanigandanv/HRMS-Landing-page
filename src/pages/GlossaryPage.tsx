@@ -3,6 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import { useDemoModal } from "../context/DemoModalContext";
 import {
   glossaryQuestions,
@@ -193,24 +194,24 @@ export function GlossaryPage() {
               </div>
 
               {/* Hero Action Buttons */}
-              <div className="glossary-hero-actions">
-                <button
-                  type="button"
-                  onClick={() => openDemoModal()}
-                  className="glossary-hero-btn glossary-hero-btn--primary"
-                >
-                  Request a Demo
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
+              <CtaButtonGroup
+                className="glossary-hero-actions"
+                primary={{
+                  label: "Request a Demo",
+                  type: "button",
+                  className: "glossary-hero-btn glossary-hero-btn--primary",
+                  onClick: () => openDemoModal(),
+                }}
+                secondary={{
+                  label: "Explore Glossary",
+                  type: "button",
+                  className: "glossary-hero-btn glossary-hero-btn--secondary",
+                  onClick: () => {
                     document.getElementById("glossary-directory")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="glossary-hero-btn glossary-hero-btn--secondary"
-                >
-                  Explore Glossary <Icon name="arrow" size={14} />
-                </button>
-              </div>
+                  },
+                  icon: <Icon name="arrow" size={14} />,
+                }}
+              />
 
               {/* Trust & Metric Points Below Buttons */}
               <div className="glossary-hero-points">

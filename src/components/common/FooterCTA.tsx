@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDemoModal } from "../../context/DemoModalContext";
 import Icon from "../ui/Icon";
+import CtaButtonGroup from "../ui/CtaButtonGroup";
 import "./FooterCTA.css";
 
 export interface InsightCardStat {
@@ -32,7 +33,7 @@ export interface FooterCTAProps {
 
 export function FooterCTA({
   variant = "emp-banner",
-  eyebrowBadgeText = "Built for Modern Multi-Branch Workforce Operations",
+  eyebrowBadgeText = "Built for Modern Workforce Operations",
   headlineLine1,
   headlineLine2,
   subheadlineLine1,
@@ -151,26 +152,67 @@ export function FooterCTA({
     const empSub = subheadlineLine1
       ? (subheadlineLine2 ? `${subheadlineLine1} ${subheadlineLine2}` : subheadlineLine1)
       : "Focus on team growth while we handle the rest — employee directory, self-service, leave, attendance, document vault, and approvals.";
-    const empBadge = eyebrowBadgeText || "Built for Modern Multi-Branch Workforce Operations";
+    const empBadge = eyebrowBadgeText || "Built for Modern Workforce Operations";
     const empPrimary = primaryButtonText ?? "Book a Live Demo";
     const empSecondary = secondaryButtonText ?? "Explore Features";
+    const stackEmpActions = empPrimary.length + empSecondary.length > 36;
     const finalEmpSecondaryLink = secondaryButtonLink || (
       empSecondary.toLowerCase().includes("pric") ? "/#pricing" : "/product"
     );
+    const empArrowIcon = (
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    );
+    const empPrimaryAction = primaryButtonLink
+      ? primaryButtonLink.startsWith("/")
+        ? {
+            label: empPrimary,
+            to: primaryButtonLink,
+            className: "emp-banner-btn-primary",
+            icon: empArrowIcon,
+            iconBox: true,
+            iconClassName: "emp-banner-btn-arrow",
+          }
+        : {
+            label: empPrimary,
+            href: primaryButtonLink,
+            className: "emp-banner-btn-primary",
+            icon: empArrowIcon,
+            iconBox: true,
+            iconClassName: "emp-banner-btn-arrow",
+          }
+      : {
+          label: empPrimary,
+          className: "emp-banner-btn-primary",
+          onClick: () => openDemoModal(),
+          icon: empArrowIcon,
+          iconBox: true,
+          iconClassName: "emp-banner-btn-arrow",
+        };
+    const empSecondaryAction = finalEmpSecondaryLink.startsWith("/") && !finalEmpSecondaryLink.startsWith("/#")
+      ? {
+          label: empSecondary,
+          to: finalEmpSecondaryLink,
+          className: "emp-banner-btn-secondary",
+        }
+      : {
+          label: empSecondary,
+          href: finalEmpSecondaryLink,
+          onClick: finalEmpSecondaryLink.includes("#pricing") ? handleEstimatePrice : undefined,
+          className: "emp-banner-btn-secondary",
+        };
 
     return (
       <section className={`footer-cta-emp-banner ${className}`} aria-label="Workforce Call to Action">
-        {/* Minimal Light Grid Lines across Full Background */}
-        <div className="emp-banner-grid-lines" aria-hidden="true" />
-
         {/* Ambient Primary Color Radial Glows: Bottom-Left and Top-Right */}
         <div className="emp-banner-blob emp-banner-blob-bottom-left" aria-hidden="true" />
         <div className="emp-banner-blob emp-banner-blob-top-right" aria-hidden="true" />
 
         {/* Content Container */}
-        <div className="emp-banner-container">
+        <div className="emp-banner-container max-md:!mx-auto max-md:!w-full">
           {/* Badge Pill */}
-          <div className="emp-banner-badge">
+          <div className="emp-banner-badge max-md:!mx-auto">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
               <circle cx="7" cy="7" r="7" fill="#004B49" opacity="0.16" />
               <path d="M4 7l2 2 4-4" stroke="#004B49" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -179,7 +221,7 @@ export function FooterCTA({
           </div>
 
           {/* Headline */}
-          <h2 className="emp-banner-headline">
+          <h2 className="emp-banner-headline max-md:!mx-auto max-md:!text-center">
             <span>{empHead1}</span>
             {empHead2 ? (
               <>
@@ -190,59 +232,15 @@ export function FooterCTA({
           </h2>
 
           {/* Subheadline */}
-          <p className="emp-banner-subtitle">{empSub}</p>
+          <p className="emp-banner-subtitle max-md:!mx-auto max-md:!text-center">{empSub}</p>
 
           {/* Action Buttons */}
-          <div className="emp-banner-actions">
-            {primaryButtonLink ? (
-              primaryButtonLink.startsWith("/") ? (
-                <Link to={primaryButtonLink} className="emp-banner-btn-primary">
-                  <span>{empPrimary}</span>
-                  <span className="emp-banner-btn-arrow" aria-hidden="true">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                </Link>
-              ) : (
-                <a href={primaryButtonLink} className="emp-banner-btn-primary">
-                  <span>{empPrimary}</span>
-                  <span className="emp-banner-btn-arrow" aria-hidden="true">
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                </a>
-              )
-            ) : (
-              <button
-                type="button"
-                className="emp-banner-btn-primary"
-                onClick={() => openDemoModal()}
-              >
-                <span>{empPrimary}</span>
-                <span className="emp-banner-btn-arrow" aria-hidden="true">
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </span>
-              </button>
-            )}
-
-            {finalEmpSecondaryLink.startsWith("/") && !finalEmpSecondaryLink.startsWith("/#") ? (
-              <Link to={finalEmpSecondaryLink} className="emp-banner-btn-secondary">
-                <span>{empSecondary}</span>
-              </Link>
-            ) : (
-              <a
-                href={finalEmpSecondaryLink}
-                className="emp-banner-btn-secondary"
-                onClick={finalEmpSecondaryLink.includes("#pricing") ? handleEstimatePrice : undefined}
-              >
-                <span>{empSecondary}</span>
-              </a>
-            )}
-          </div>
+          <CtaButtonGroup
+            className={`emp-banner-actions${stackEmpActions ? " emp-banner-actions--stack" : ""}`}
+            align="center"
+            primary={empPrimaryAction}
+            secondary={empSecondaryAction}
+          />
         </div>
       </section>
     );
@@ -341,7 +339,7 @@ export function FooterCTA({
     const matrixBtnText = primaryButtonText ?? "Book a demo";
     const matrixSecondaryText = secondaryButtonText ?? "Explore Features";
     const matrixEyebrow =
-      eyebrowBadgeText && eyebrowBadgeText !== "Built for Modern Multi-Branch Workforce Operations"
+      eyebrowBadgeText && eyebrowBadgeText !== "Built for Modern Workforce Operations"
         ? eyebrowBadgeText
         : "Automated Leave & Absence Platform";
 

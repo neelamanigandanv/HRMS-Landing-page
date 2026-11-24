@@ -35,6 +35,8 @@ export default function EditorialMidCTA({
   mosaicFill = "#EFF7F6",
   titleId = "cta-banner-title",
 }: EditorialMidCTAProps) {
+  const stackActions = Math.max(primaryLabel.length, secondaryLabel.length) > 18 || primaryLabel.length + secondaryLabel.length > 36;
+
   return (
     <section className="emc-mid-cta-section" aria-labelledby={titleId}>
       <div className="container">
@@ -46,7 +48,7 @@ export default function EditorialMidCTA({
                 {title}
               </h2>
               <p className="emc-mid-cta-desc">{description}</p>
-              <div className="emc-mid-cta-btn-wrap">
+              <div className={`emc-mid-cta-btn-wrap${stackActions ? " emc-mid-cta-btn-wrap--stack" : ""}`}>
                 <button
                   type="button"
                   className="emc-mid-cta-btn emc-mid-cta-btn-primary"

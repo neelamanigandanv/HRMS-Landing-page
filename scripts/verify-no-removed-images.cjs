@@ -28,8 +28,8 @@ function walk(dir, extList) {
     const full = path.join(dir, file);
     const stat = fs.statSync(full);
     if (stat && stat.isDirectory()) {
-      // Skip node_modules, .git, image-originals, .system_generated
-      if (['node_modules', '.git', 'image-originals', '.system_generated'].includes(file)) return;
+      // Skip node_modules, .git, images, .system_generated
+      if (['node_modules', '.git', 'images', '.system_generated'].includes(file)) return;
       results = results.concat(walk(full, extList));
     } else if (!extList || extList.some(ext => file.endsWith(ext))) {
       results.push(full);

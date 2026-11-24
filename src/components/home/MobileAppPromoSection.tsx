@@ -19,7 +19,7 @@ const MOBILE_FEATURES: FeatureItem[] = [
     icon: "map-pin",
     title: "Location Clock-In",
     desc: "Geofenced check-in & break timer",
-    image: "/images/mobile-app-clockin.png",
+    image: "/images/mobile-app-clockin.webp",
     alt: "Zentilos mobile Clock In / Out screen showing Within Headquarters zone (17 m), 11:47 AM check-in, breaks, and slide to check out",
   },
   {
@@ -27,7 +27,7 @@ const MOBILE_FEATURES: FeatureItem[] = [
     icon: "calendar",
     title: "Attendance & Shifts",
     desc: "Daily check-ins & overtime tracking",
-    image: "/images/mobile-app-attendance.png",
+    image: "/images/mobile-app-attendance.webp",
     alt: "Zentilos mobile All attendance screen showing Today/This week/This month filters, quick actions, and weekly attendance calendar",
   },
   {
@@ -43,7 +43,7 @@ const MOBILE_FEATURES: FeatureItem[] = [
     icon: "users",
     title: "Home Dashboard",
     desc: "Attendance, leave, payslips & team at a glance",
-    image: "/images/mobile-app-home.png",
+    image: "/images/mobile-app-home.webp",
     alt: "Zentilos mobile home screen showing today's attendance, leave balance, payslip, team directory, and quick access tools",
   },
 ];

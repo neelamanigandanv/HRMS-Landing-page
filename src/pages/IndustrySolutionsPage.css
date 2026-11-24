@@ -1518,3 +1518,147 @@
   position: relative;
   overflow: hidden;
 }
+
+@media (max-width: 767px) {
+  .industry-solutions-page {
+    --section-gutter: 16px;
+  }
+
+  .ind-blocks-wrapper .container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .ind-dark-showcase-card,
+  .ind-dark-showcase-card.layout-content-left,
+  .ind-dark-showcase-card.layout-content-right {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 16px;
+  }
+
+  .ind-dark-content-col,
+  .ind-dark-split-grid,
+  .ind-dark-subcol,
+  .ind-challenges-subcol,
+  .ind-challenges-main,
+  .ind-challenge-col-head,
+  .ind-subcol-items,
+  .ind-why-subcol,
+  .ind-why-list,
+  .ind-dark-actions {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .ind-dark-showcase-card.layout-content-left .ind-dark-content-col,
+  .ind-dark-showcase-card.layout-content-right .ind-dark-content-col {
+    order: 1;
+  }
+
+  .ind-dark-eyebrow,
+  .ind-dark-title,
+  .ind-dark-description,
+  .ind-challenge-heading,
+  .ind-challenge-title,
+  .ind-challenge-desc,
+  .ind-why-heading,
+  .ind-why-text,
+  .ind-challenge-point,
+  .ind-why-item {
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .ind-dark-eyebrow {
+    display: block;
+  }
+
+  .ind-dark-visual-col {
+    display: none;
+  }
+
+  .ind-dark-split-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ind-challenges-subcol {
+    margin: 0;
+    padding: 0;
+  }
+
+  .ind-challenge-col-head {
+    position: relative;
+  }
+
+  .ind-challenge-col-head .ind-subcol-icon-box {
+    display: none;
+  }
+
+  .ind-subcol-items {
+    gap: 12px;
+  }
+
+  .ind-why-subcol {
+    border-left: none;
+    border-top: 1px solid #ebe9f3;
+    padding: 1.5rem 0 0;
+    margin: 0;
+  }
+
+  .ind-why-heading {
+    min-height: 0;
+  }
+
+  .ind-why-list {
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .ind-mobile-visual {
+    display: block;
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 24px rgba(25, 23, 53, 0.12);
+    margin: 16px 0 20px;
+    padding: 0;
+    transform: none;
+  }
+
+  .ind-mobile-visual--fg {
+    border: 3px solid #ffffff;
+    box-shadow: 0 14px 30px -8px rgba(25, 23, 53, 0.18);
+  }
+
+  .ind-mid-actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .ind-mid-actions .ind-btn-primary,
+  .ind-mid-actions .ind-btn-secondary-white {
+    width: 100%;
+    max-width: 320px;
+    height: 48px;
+    min-height: 48px;
+    padding: 0 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+}

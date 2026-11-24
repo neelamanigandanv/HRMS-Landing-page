@@ -25,7 +25,7 @@ const imagePaths = new Set();
 
 htmlFiles.forEach(f => {
   const content = fs.readFileSync(f, 'utf8');
-  // Match src="/images/...", content=".../images/...", url(/images/...) as well as /og/...
+  // Match src="/images/...", content=".../images/...", url(/images/...) as well as /images/...
   const matches = [...content.matchAll(/(?:\/(images|og)\/|http[s]?:\/\/[^/]+\/(images|og)\/)([a-zA-Z0-9_.-]+(?:\?[a-zA-Z0-9_=.-]+)?)/g)];
   matches.forEach(m => {
     const folder = m[1] || m[2];
@@ -34,7 +34,7 @@ htmlFiles.forEach(f => {
   });
 });
 
-// Also check dist/assets/*.css for url(/images/...) and url(/og/...)
+// Also check dist/assets/*.css for url(/images/...) and url(/images/...)
 const cssFiles = walk('dist/assets', ['.css']);
 cssFiles.forEach(f => {
   const content = fs.readFileSync(f, 'utf8');
@@ -45,7 +45,7 @@ cssFiles.forEach(f => {
   });
 });
 
-console.log(`Discovered ${imagePaths.size} unique image URLs (/images/ and /og/) referenced across prerendered HTML and CSS.\n`);
+console.log(`Discovered ${imagePaths.size} unique image URLs (/images/ and /images/) referenced across prerendered HTML and CSS.\n`);
 
 // Start a lightweight static server for dist
 const mimeTypes = {

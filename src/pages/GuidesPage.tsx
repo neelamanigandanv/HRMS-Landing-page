@@ -2,8 +2,8 @@ import FooterCTA from "../components/common/FooterCTA";
 import { useState } from "react";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
-import Button from "../components/ui/Button";
 import Icon from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import { useDemoModal } from "../context/DemoModalContext";
 import AllGuidesSection from "../components/guides/AllGuidesSection";
 import "./GuidesPage.css";
@@ -65,24 +65,27 @@ export function GuidesPage() {
             </div>
 
             {/* Related Action Buttons in Hero: Book a Free Demo (Primary) + Browse All Guides (Secondary) */}
-            <div className="guides-hero-actions">
-              <button
-                type="button"
-                className="guides-hero-btn-primary"
-                onClick={() => openDemoModal()}
-              >
-                <Icon name="arrow" size={16} /> Book a Free Demo
-              </button>
-              <button
-                type="button"
-                className="guides-hero-btn-secondary"
-                onClick={() => {
+            <CtaButtonGroup
+              className="guides-hero-actions"
+              primary={{
+                label: "Book a Free Demo",
+                type: "button",
+                className: "guides-hero-btn-primary",
+                onClick: () => openDemoModal(),
+                icon: <Icon name="arrow" size={16} />,
+                iconPosition: "before",
+              }}
+              secondary={{
+                label: "Browse All Guides",
+                type: "button",
+                className: "guides-hero-btn-secondary",
+                onClick: () => {
                   document.getElementById("all-guides-library")?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                <Icon name="file-text" size={16} /> Browse All Guides
-              </button>
-            </div>
+                },
+                icon: <Icon name="file-text" size={16} />,
+                iconPosition: "before",
+              }}
+            />
 
             {/* 3 Related Keypoints Under Buttons */}
             <div className="guides-hero-keypoints">

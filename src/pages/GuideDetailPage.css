@@ -1774,3 +1774,46 @@
     box-shadow: none;
   }
 }
+
+@media (max-width: 767px) {
+  .guide-faq-answer {
+    border-left: none;
+    padding-left: 0;
+    border-radius: 8px;
+  }
+
+  .guide-faq-answer-block::before {
+    display: none;
+  }
+
+  .keep-reading-handbooks-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .keep-reading-handbooks-grid .handbook-card {
+    width: 100%;
+    min-height: 0;
+    padding: 24px 20px;
+  }
+
+  .playbook-card-title,
+  .playbook-card-desc {
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+  }
+
+  .playbook-card-desc {
+    display: block;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+    -webkit-box-orient: initial;
+    overflow: visible;
+  }
+
+  .playbook-card-footer {
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+}

@@ -3,7 +3,7 @@ import path from 'path';
 import sharp from 'sharp';
 
 const IMAGES_DIR = path.resolve('public/images');
-const BACKUP_DIR = path.resolve('image-originals');
+const BACKUP_DIR = path.resolve('images');
 
 // Kept originals per requirement 4:
 // og:image, twitter:image, favicon, apple-touch-icon, and JSON-LD images
@@ -41,7 +41,7 @@ async function run() {
 
   // Verify backup directory exists
   if (!fs.existsSync(BACKUP_DIR)) {
-    console.error('Error: image-originals/ backup directory not found!');
+    console.error('Error: images/ backup directory not found!');
     process.exit(1);
   }
 

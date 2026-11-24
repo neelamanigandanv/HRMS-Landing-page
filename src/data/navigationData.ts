@@ -215,11 +215,7 @@ export const footerColumns = [
     title: "Product",
     links: [
       { label: "Product Overview", href: "/product" },
-      { label: "Employee Management", href: "/features/employee-management" },
-      { label: "Attendance Management", href: "/features/attendance-management" },
-      { label: "Leave Management", href: "/features/leave-management" },
-      { label: "Payroll Management", href: "/features/payroll-management" },
-      { label: "Asset Management", href: "/features/asset-management" },
+      ...productNavItems.map((item) => ({ label: item.title, href: item.href })),
     ],
   },
   {

@@ -3,8 +3,8 @@ import { buildJobPostingSchema } from "../lib/schema";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import SectionHeading from "../components/ui/SectionHeading";
-import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import {
   JOB_OPENINGS,
   CULTURE_PERKS,
@@ -291,11 +291,15 @@ export function CareersPage() {
               </p>
 
               {/* View Open Positions CTA */}
-              <div className="careers-hero-actions">
-                <Button onClick={scrollToPositions} className="careers-hero-btn-primary">
-                  View Open Positions <Icon name="arrow" size={16} />
-                </Button>
-              </div>
+              <CtaButtonGroup
+                className="careers-hero-actions"
+                primary={{
+                  label: "View Open Positions",
+                  className: "btn careers-hero-btn-primary",
+                  onClick: scrollToPositions,
+                  icon: <Icon name="arrow" size={16} />,
+                }}
+              />
 
               {/* Quick Culture Signals */}
               <div className="careers-hero-highlights">

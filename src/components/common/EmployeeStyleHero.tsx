@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import Icon from "../ui/Icon";
+import CtaButtonGroup from "../ui/CtaButtonGroup";
 
 export interface HeroDonutSegment {
   label: string;
@@ -115,22 +116,22 @@ export function EmployeeStyleHero({
         </h1>
         <p className="emp-hero-rich-subhead">{subhead}</p>
 
-        <div className="emp-hero-rich-actions">
-          <button
-            type="button"
-            className="emp-pill-btn-primary"
-            onClick={onPrimaryClick}
-          >
-            {primaryLabel} <Icon name="arrow" size={15} />
-          </button>
-          <button
-            type="button"
-            className="emp-pill-btn-secondary"
-            onClick={onSecondaryClick}
-          >
-            {secondaryLabel}
-          </button>
-        </div>
+        <CtaButtonGroup
+          className="emp-hero-rich-actions"
+          primary={{
+            type: "button",
+            className: "emp-pill-btn-primary",
+            onClick: onPrimaryClick,
+            label: <>{primaryLabel} </>,
+            icon: <Icon name="arrow" size={15} />,
+          }}
+          secondary={{
+            type: "button",
+            className: "emp-pill-btn-secondary",
+            onClick: onSecondaryClick,
+            label: secondaryLabel,
+          }}
+        />
 
         <div className="emp-hero-trust-row">
           {trustPoints.map((point) => (

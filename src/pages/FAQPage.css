@@ -673,8 +673,8 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #F6F8F8;
-  color: #00201F;
+  background: #004B49;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -684,8 +684,8 @@
 }
 
 .faq-accordion-card.is-open .faq-toggle-pill {
-  background: #00201F;
-  color: #ffffff;
+  background: #E8F5F3;
+  color: #004B49;
 }
 
 /* Answer Pane */

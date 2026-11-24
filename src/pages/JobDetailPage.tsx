@@ -4,6 +4,7 @@ import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Button from "../components/ui/Button";
 import Icon, { IconName } from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import CustomSelect, { CustomSelectOption } from "../components/ui/CustomSelect";
 import PhoneInput from "../components/common/PhoneInput";
 import { validatePhoneNumber } from "../utils/phoneUtils";
@@ -249,29 +250,30 @@ export function JobDetailPage() {
               </div>
 
               {/* Hero Action Buttons */}
-              <div className="job-detail-hero-actions">
-                <button
-                  type="button"
-                  onClick={scrollToForm}
-                  className="careers-btn-apply-main"
-                >
-                  Apply for this Role <Icon name="arrow" size={16} />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => {
+              <CtaButtonGroup
+                className="job-detail-hero-actions"
+                primary={{
+                  label: "Apply for this Role",
+                  type: "button",
+                  onClick: scrollToForm,
+                  icon: <Icon name="arrow" size={16} />,
+                  className: "careers-btn-apply-main",
+                }}
+                secondary={{
+                  label: copied ? "Link Copied to Clipboard!" : "Share / Copy Job Link",
+                  type: "button",
+                  onClick: () => {
                     if (navigator.clipboard) {
                       navigator.clipboard.writeText(window.location.href);
                       setCopied(true);
                       setTimeout(() => setCopied(false), 2500);
                     }
-                  }}
-                  className="job-detail-hero-share-btn"
-                >
-                  <Icon name={copied ? "check" : "document"} size={14} />
-                  <span>{copied ? "Link Copied to Clipboard!" : "Share / Copy Job Link"}</span>
-                </button>
-              </div>
+                  },
+                  icon: <Icon name={copied ? "check" : "document"} size={14} />,
+                  iconPosition: "before",
+                  className: "job-detail-hero-share-btn",
+                }}
+              />
             </div>
           </div>
         </header>

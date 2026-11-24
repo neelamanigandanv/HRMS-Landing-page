@@ -2225,8 +2225,8 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #F6F8F8;
-  color: #004B49;
+  background: #004B49;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2246,8 +2246,8 @@
 }
 
 .res-faq-toggle-circle.open {
-  background: #004B49;
-  color: #ffffff;
+  background: #E8F5F3;
+  color: #004B49;
 }
 
 .res-faq-toggle-circle.open .res-faq-vert-line {

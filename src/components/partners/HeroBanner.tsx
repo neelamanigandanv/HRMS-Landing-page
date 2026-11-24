@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "@/components/ui/Icon";
+import CtaButtonGroup from "../ui/CtaButtonGroup";
 
 interface HeroBannerProps {
   onBecomePartnerClick: () => void;
@@ -28,25 +29,25 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({ onBecomePartnerClick }) 
         </p>
 
         {/* Dual Pill Action Buttons */}
-        <div className="partner-hero-rich-actions">
-          <button
-            type="button"
-            className="partner-pill-btn-primary"
-            onClick={onBecomePartnerClick}
-          >
-            Become a Partner <Icon name="arrow" size={15} />
-          </button>
-          <button
-            type="button"
-            className="partner-pill-btn-secondary"
-            onClick={() => {
+        <CtaButtonGroup
+          className="partner-hero-rich-actions"
+          primary={{
+            type: "button",
+            className: "partner-pill-btn-primary",
+            onClick: onBecomePartnerClick,
+            label: "Become a Partner ",
+            icon: <Icon name="arrow" size={15} />,
+          }}
+          secondary={{
+            type: "button",
+            className: "partner-pill-btn-secondary",
+            onClick: () => {
               const el = document.getElementById("find-the-right-fit");
               if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-            }}
-          >
-            Explore Partner Tracks
-          </button>
-        </div>
+            },
+            label: "Explore Partner Tracks",
+          }}
+        />
 
         {/* Trust Points */}
         <div className="partner-hero-trust-row">

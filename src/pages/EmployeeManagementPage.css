@@ -2276,8 +2276,8 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: #EFF2F4;
-  color: #004B49;
+  background: #004B49;
+  color: #ffffff;
   font-style: normal;
   font-size: 17px;
   font-weight: 500;
@@ -2286,8 +2286,8 @@
 }
 
 .emp-page-faq .faq-item.open button i {
-  background: #004B49;
-  color: #ffffff;
+  background: #E8F5F3;
+  color: #004B49;
 }
 
 .emp-page-faq .faq-item p {

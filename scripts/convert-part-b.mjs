@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const IMAGES_ORIGINALS_DIR = path.resolve('image-originals');
+const IMAGES_ORIGINALS_DIR = path.resolve('images');
 const PUBLIC_IMAGES_DIR = path.resolve('public/images');
 const PUBLIC_OG_DIR = path.resolve('public/og');
 
@@ -53,7 +53,7 @@ async function run() {
       savings: ((1 - webpBuffer.length / origBytes) * 100).toFixed(1) + '%'
     });
 
-    // 2. Generate smaller JPG in public/og/ (max width 1200px, progressive, quality 78, under 200 KB)
+    // 2. Generate smaller JPG in public/images/ (max width 1200px, progressive, quality 78, under 200 KB)
     const ogPath = path.join(PUBLIC_OG_DIR, `${baseName}.jpg`);
     const ogBuffer = await sharp(origPath)
       .resize({ width: 1200, withoutEnlargement: true })
@@ -82,7 +82,7 @@ async function run() {
   console.log('\n--- WebP Generation in public/images/ ---');
   console.table(webpResults);
 
-  console.log('\n--- OG JPG Generation in public/og/ ---');
+  console.log('\n--- OG JPG Generation in public/images/ ---');
   console.table(ogResults);
 
   fs.writeFileSync('scripts/part-b-report.json', JSON.stringify({ webpResults, ogResults }, null, 2));

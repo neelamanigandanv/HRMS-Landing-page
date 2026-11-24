@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PageLayout from "../components/layout/PageLayout";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import "./GettingStartedPage.css";
 
 export function GettingStartedPage() {
@@ -133,22 +134,26 @@ export function GettingStartedPage() {
               </div>
 
               {/* Header Actions */}
-              <div className="gs-header-actions">
-                <button
-                  type="button"
-                  onClick={scrollToGuide}
-                  className="gs-header-btn-primary"
-                >
-                  <span>Start Reading Guide</span>
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 5v14M19 12l-7 7-7-7" />
-                  </svg>
-                </button>
-                <Link to="/resources" className="gs-header-btn-secondary">
-                  <span>Browse All Guides</span>
-                  <Icon name="arrow" size={14} />
-                </Link>
-              </div>
+              <CtaButtonGroup
+                className="gs-header-actions"
+                primary={{
+                  label: "Start Reading Guide",
+                  type: "button",
+                  onClick: scrollToGuide,
+                  className: "gs-header-btn-primary",
+                  icon: (
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M12 5v14M19 12l-7 7-7-7" />
+                    </svg>
+                  ),
+                }}
+                secondary={{
+                  label: "Browse All Guides",
+                  to: "/resources",
+                  className: "gs-header-btn-secondary",
+                  icon: <Icon name="arrow" size={14} />,
+                }}
+              />
             </div>
           </div>
         </header>

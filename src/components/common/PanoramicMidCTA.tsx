@@ -25,6 +25,8 @@ export function PanoramicMidCTA({
   secondaryTargetSelector = ".emp-connected-section",
 }: PanoramicMidCTAProps) {
   const { openDemoModal } = useDemoModal();
+  const primaryLabel = "Book a Demo";
+  const stackActions = Math.max(primaryLabel.length, secondaryLabel.length) > 18 || primaryLabel.length + secondaryLabel.length > 36;
 
   const handleSecondaryClick = () => {
     const target = document.querySelector(secondaryTargetSelector);
@@ -59,7 +61,7 @@ export function PanoramicMidCTA({
               {title}
             </h2>
 
-            <div className="emp-panoramic-btn-group">
+            <div className={`emp-panoramic-btn-group${stackActions ? " emp-panoramic-btn-group--stack" : ""}`}>
               <button
                 type="button"
                 className="emp-panoramic-btn-primary"
@@ -71,7 +73,7 @@ export function PanoramicMidCTA({
                   })
                 }
               >
-                <span>Book a Demo</span>
+                <span>{primaryLabel}</span>
                 <svg className="emp-panoramic-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <line x1="7" y1="7" x2="17" y2="17" />
                   <polyline points="17 7 17 17 7 17" />

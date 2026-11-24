@@ -5,6 +5,7 @@ import Footer from "../components/layout/Footer";
 import FooterCTA from "../components/common/FooterCTA";
 import SEO from "../components/layout/SEO";
 import Icon from "../components/ui/Icon";
+import CtaButtonGroup from "../components/ui/CtaButtonGroup";
 import { useDemoModal } from "../context/DemoModalContext";
 import { buildFAQSchema } from "../lib/schema";
 import "./EnterprisePage.css";
@@ -285,18 +286,21 @@ export function EnterprisePage() {
             </p>
 
             {/* Hero CTAs */}
-            <div className="sb-hero-actions">
-              <button
-                type="button"
-                className="sb-btn-primary"
-                onClick={handleOpenDemo}
-              >
-                Request Enterprise Demo <Icon name="arrow" size={16} />
-              </button>
-              <a href="#the-way-of-working" className="sb-btn-secondary">
-                Explore Features
-              </a>
-            </div>
+            <CtaButtonGroup
+              className="sb-hero-actions"
+              primary={{
+                label: "Request Enterprise Demo",
+                type: "button",
+                className: "sb-btn-primary",
+                onClick: handleOpenDemo,
+                icon: <Icon name="arrow" size={16} />,
+              }}
+              secondary={{
+                label: "Explore Features",
+                href: "#the-way-of-working",
+                className: "sb-btn-secondary",
+              }}
+            />
 
             {/* Trust Row */}
             <div className="sb-hero-trust-row">

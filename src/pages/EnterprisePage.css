@@ -34,3 +34,96 @@
   padding: 3.15rem;
 }
 
+@media (max-width: 767px) {
+  #the-way-of-working .sb-checkerboard-wrapper:has(#working-multientity) {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  #working-multientity .sb-checkerboard-visual-col {
+    overflow: visible;
+  }
+
+  #working-multientity .sb-mockup-stage {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 24px;
+  }
+
+  #working-multientity .sb-mockup-main-card {
+    width: 100%;
+  }
+
+  #working-multientity .sb-mockup-gauge-card {
+    position: static;
+    transform: none;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 280px;
+    margin: 16px auto 0;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  #working-multientity .sb-gauge-item {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  #working-iot .sb-checkerboard-visual-col,
+  #working-matrix .sb-checkerboard-visual-col,
+  #working-payroll .sb-checkerboard-visual-col {
+    overflow: visible;
+  }
+
+  #working-iot .sb-mockup-stage,
+  #working-matrix .sb-mockup-stage,
+  #working-payroll .sb-mockup-stage {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 24px;
+  }
+
+  #working-iot .sb-mockup-main-card,
+  #working-matrix .sb-mockup-main-card,
+  #working-payroll .sb-mockup-main-card {
+    width: 100%;
+  }
+
+  #working-iot .sb-mockup-gauge-card,
+  #working-matrix .sb-mockup-gauge-card,
+  #working-payroll .sb-mockup-gauge-card {
+    position: static;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    animation: none;
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 16px auto 0;
+  }
+
+  #working-iot .sb-gauge-item,
+  #working-matrix .sb-gauge-item,
+  #working-payroll .sb-gauge-item {
+    display: flex;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  #working-iot .sb-gauge-item:last-child,
+  #working-matrix .sb-gauge-item:last-child,
+  #working-payroll .sb-gauge-item:last-child {
+    margin-bottom: 0;
+  }
+}
+

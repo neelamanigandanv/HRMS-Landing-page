@@ -51,7 +51,7 @@ list.forEach(jpgName => {
 
 console.log(`\nScan Complete:`);
 console.log(`- Valid /og/ references: ${ogOccurrences}`);
-console.log(`- Non-og references to removed JPGs: ${nonOgOccurrences}`);
+console.log(`- Non-OG references to removed JPGs: ${nonOgOccurrences}`);
 
 if (nonOgOccurrences > 0) {
   console.error('FAIL: Found lingering non-og references to removed JPGs!');

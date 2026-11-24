@@ -1198,13 +1198,18 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: #eeecff;
-  color: var(--indigo, #53457a);
+  background: #004B49;
+  color: #ffffff;
   font-style: normal;
   font-size: 17px;
   font-weight: 600;
   flex-shrink: 0;
   margin-left: 16px;
+}
+
+.help-faq-section .faq-item.open button i {
+  background: #E8F5F3;
+  color: #004B49;
 }
 
 .help-faq-section .faq-item p {

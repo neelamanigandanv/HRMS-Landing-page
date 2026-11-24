@@ -32,3 +32,51 @@
 .sb-page-wrapper .sb-manifesto-action-box {
   padding: 3.15rem;
 }
+
+@media (max-width: 767px) {
+  #the-way-of-working .sb-checkerboard-wrapper {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  :is(#working-hierarchy, #working-biometric, #working-approvals, #working-payroll) .sb-checkerboard-visual-col {
+    overflow: visible;
+  }
+
+  :is(#working-hierarchy, #working-biometric, #working-approvals, #working-payroll) .sb-mockup-stage {
+    width: 100%;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 24px;
+  }
+
+  :is(#working-hierarchy, #working-biometric, #working-approvals, #working-payroll) .sb-mockup-main-card {
+    width: 100%;
+  }
+
+  :is(#working-hierarchy, #working-biometric, #working-approvals, #working-payroll) .sb-mockup-gauge-card {
+    position: static;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    animation: none;
+    display: block;
+    width: 100%;
+    max-width: 320px;
+    margin: 16px auto 0;
+  }
+
+  :is(#working-hierarchy, #working-biometric, #working-approvals, #working-payroll) .sb-gauge-item {
+    display: flex;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  :is(#working-hierarchy, #working-biometric, #working-approvals, #working-payroll) .sb-gauge-item:last-child {
+    margin-bottom: 0;
+  }
+}
